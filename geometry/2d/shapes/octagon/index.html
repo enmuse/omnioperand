@@ -400,31 +400,31 @@
             <div class="step-num">a</div>
             <div class="step-content">
               <strong>Sum of Interior Angles:</strong>
-              For any convex <span class="math-tex">n</span>-gon, the sum of interior angles is given by <span class="math-tex">S = (n - 2) \times 180^\circ</span>. For an octagon (<span class="math-tex">n = 8</span>):
+              For any convex <span class="math-tex">n</span>-gon, the sum of interior angles is given by <span class="math-tex">S = (n - 2) × 180°</span>. For an octagon (<span class="math-tex">n = 8</span>):
               <div class="math-display">
-                S = (8 - 2) \times 180^\circ = 6 \times 180^\circ = 1080^\circ \quad \left(6\pi \text{ rad}\right)
+                S = (8 - 2) × 180° = 6 × 180° = 1080° &nbsp; (6π rad)
               </div>
             </div>
           </div>
           <div class="proof-step">
             <div class="step-num">b</div>
             <div class="step-content">
-              <strong>Individual Interior Angle:</strong>
+              <strong>Individual Interior Angle (α):</strong>
               Because the polygon is regular, all 8 angles are congruent:
               <div class="math-display">
-                \alpha = \frac{1080^\circ}{8} = 135^\circ \quad \left(\frac{3\pi}{4} \text{ rad}\right)
+                α = 1080° / 8 = 135° &nbsp; (3π / 4 rad)
               </div>
             </div>
           </div>
           <div class="proof-step">
             <div class="step-num">c</div>
             <div class="step-content">
-              <strong>Central & Exterior Angle:</strong>
-              Dividing a full revolution (<span class="math-tex">360^\circ</span>) equally among 8 sectors yields:
+              <strong>Central & Exterior Angle (β):</strong>
+              Dividing a full revolution (360°) equally among 8 sectors yields:
               <div class="math-display">
-                \beta = \frac{360^\circ}{8} = 45^\circ \quad \left(\frac{\pi}{4} \text{ rad}\right)
+                β = 360° / 8 = 45° &nbsp; (π / 4 rad)
               </div>
-              The half-central angle subtending each right triangle is <span class="math-tex">\theta = \frac{45^\circ}{2} = 22.5^\circ \left(\frac{\pi}{8} \text{ rad}\right)</span>.
+              The half-central angle subtending each right triangle is <span class="math-tex">θ = 45° / 2 = 22.5° &nbsp; (π / 8 rad)</span>.
             </div>
           </div>
         </div>
@@ -441,22 +441,22 @@
         </div>
         <div class="proof-body">
           <p>
-            The apothem <span class="math-tex">r_i</span> is the perpendicular distance from the geometric center to the midpoint of any side. In the right triangle formed by the center, a vertex, and the side midpoint:
+            The apothem <span class="math-tex">r<sub>i</sub></span> is the perpendicular distance from the geometric center to the midpoint of any side. In the right triangle formed by the center, a vertex, and the side midpoint:
           </p>
           <div class="math-display">
-            \tan(22.5^\circ) = \frac{a/2}{r_i} \implies r_i = \frac{a}{2 \tan(22.5^\circ)}
+            tan(22.5°) = (a / 2) / r<sub>i</sub> ⟹ r<sub>i</sub> = a / [2 · tan(22.5°)]
           </div>
           <p>
-            Using the tangent half-angle trigonometric identity <span class="math-tex">\tan\left(\frac{\theta}{2}\right) = \frac{\sin\theta}{1 + \cos\theta}</span> with <span class="math-tex">\theta = 45^\circ</span>:
+            Using the tangent half-angle trigonometric identity <span class="math-tex">tan(θ / 2) = sin(θ) / [1 + cos(θ)]</span> with <span class="math-tex">θ = 45°</span>:
           </p>
           <div class="math-display">
-            \tan(22.5^\circ) = \frac{\frac{\sqrt{2}}{2}}{1 + \frac{\sqrt{2}}{2}} = \frac{\sqrt{2}}{2 + \sqrt{2}} = \frac{\sqrt{2}(2 - \sqrt{2})}{4 - 2} = \sqrt{2} - 1
+            tan(22.5°) = (√2 / 2) / (1 + √2 / 2) = √2 / (2 + √2) = [√2(2 - √2)] / (4 - 2) = √2 - 1
           </div>
           <p>
             Substituting this into the apothem formula and rationalizing the denominator:
           </p>
           <div class="math-display">
-            r_i = \frac{a}{2(\sqrt{2} - 1)} = \frac{a(\sqrt{2} + 1)}{2(2 - 1)} = \frac{1 + \sqrt{2}}{2} a \approx 1.20710678 \times a
+            r<sub>i</sub> = a / [2(√2 - 1)] = [a(√2 + 1)] / [2(2 - 1)] = [a(1 + √2)] / 2 ≈ 1.20710678 · a
           </div>
         </div>
       </div>
@@ -475,13 +475,13 @@
             The circumradius <span class="math-tex">R</span> is the distance from the center to any vertex:
           </p>
           <div class="math-display">
-            \sin(22.5^\circ) = \frac{a/2}{R} \implies R = \frac{a}{2 \sin(22.5^\circ)}
+            sin(22.5°) = (a / 2) / R ⟹ R = a / [2 · sin(22.5°)]
           </div>
           <p>
-            Applying the sine half-angle identity <span class="math-tex">\sin(22.5^\circ) = \sqrt{\frac{1 - \cos(45^\circ)}{2}} = \sqrt{\frac{1 - \frac{\sqrt{2}}{2}}{2}} = \frac{\sqrt{2 - \sqrt{2}}}{2}</span>:
+            Applying the sine half-angle identity <span class="math-tex">sin(22.5°) = √[(1 - cos(45°)) / 2] = √[(1 - √2/2) / 2] = √(2 - √2) / 2</span>:
           </p>
           <div class="math-display">
-            R = \frac{a}{2 \cdot \frac{\sqrt{2 - \sqrt{2}}}{2}} = \frac{a}{\sqrt{2 - \sqrt{2}}} = \frac{a \sqrt{2 + \sqrt{2}}}{\sqrt{4 - 2}} = \frac{\sqrt{4 + 2\sqrt{2}}}{2} a \approx 1.30656296 \times a
+            R = a / [2 · (√(2 - √2) / 2)] = a / √(2 - √2) = [a√(2 + √2)] / √(4 - 2) = [a√(4 + 2√2)] / 2 ≈ 1.30656296 · a
           </div>
         </div>
       </div>
@@ -500,9 +500,9 @@
             <div class="step-num">A</div>
             <div class="step-content">
               <strong>Method 1: Sum of 8 Isosceles Triangles</strong>
-              The octagon can be partitioned into 8 congruent isosceles triangles, each having base <span class="math-tex">a</span> and height equal to apothem <span class="math-tex">r_i</span>:
+              The octagon can be partitioned into 8 congruent isosceles triangles, each having base <span class="math-tex">a</span> and height equal to apothem <span class="math-tex">r<sub>i</sub></span>:
               <div class="math-display">
-                A = 8 \times \left(\frac{1}{2} a \cdot r_i\right) = 4 a \left(\frac{1 + \sqrt{2}}{2} a\right) = 2(1 + \sqrt{2}) a^2 \approx 4.82842712 \times a^2
+                A = 8 × (½ · a · r<sub>i</sub>) = 4a · [a(1 + √2) / 2] = 2(1 + √2)a² ≈ 4.82842712 · a²
               </div>
             </div>
           </div>
@@ -512,16 +512,16 @@
             <div class="step-content">
               <strong>Method 2: Bounding Square Subtraction (Carpentry Cut-Off Method)</strong>
               Enclose the octagon in a tight bounding square. Each of the 4 corners is an isosceles right triangle with hypotenuse <span class="math-tex">a</span>.
-              The legs of each corner triangle are <span class="math-tex">x = \frac{a}{\sqrt{2}}</span>.
+              The legs of each corner triangle are <span class="math-tex">x = a / √2</span>.
               The total side length of the bounding square is:
               <div class="math-display">
-                S = a + 2x = a + 2\left(\frac{a}{\sqrt{2}}\right) = a(1 + \sqrt{2})
+                S = a + 2x = a + 2(a / √2) = a(1 + √2)
               </div>
-              The area of the square is <span class="math-tex">S^2 = a^2(1 + \sqrt{2})^2 = a^2(3 + 2\sqrt{2})</span>.
-              The total area of the 4 corner triangles is <span class="math-tex">4 \times \left(\frac{1}{2} x^2\right) = 2 \left(\frac{a^2}{2}\right) = a^2</span>.
+              The area of the square is <span class="math-tex">S² = a²(1 + √2)² = a²(3 + 2√2)</span>.
+              The total area of the 4 corner triangles is <span class="math-tex">4 × (½ x²) = 2(a² / 2) = a²</span>.
               Subtracting the 4 corners:
               <div class="math-display">
-                A = S^2 - a^2 = a^2(3 + 2\sqrt{2}) - a^2 = 2(1 + \sqrt{2}) a^2
+                A = S² - a² = a²(3 + 2√2) - a² = 2(1 + √2)a²
               </div>
             </div>
           </div>
@@ -530,9 +530,9 @@
             <div class="step-num">C</div>
             <div class="step-content">
               <strong>Method 3: From Flat-to-Flat Span (<span class="math-tex">S</span>)</strong>
-              Because <span class="math-tex">S = a(1 + \sqrt{2}) \implies a = \frac{S}{1 + \sqrt{2}} = S(\sqrt{2} - 1)</span>:
+              Because <span class="math-tex">S = a(1 + √2) ⟹ a = S / (1 + √2) = S(√2 - 1)</span>:
               <div class="math-display">
-                A = 2(1 + \sqrt{2}) \left[S(\sqrt{2} - 1)\right]^2 = 2(1 + \sqrt{2})(3 - 2\sqrt{2}) S^2 = 2(\sqrt{2} - 1) S^2 \approx 0.82842712 \times S^2
+                A = 2(1 + √2)[S(√2 - 1)]² = 2(1 + √2)(3 - 2√2)S² = 2(√2 - 1)S² ≈ 0.82842712 · S²
               </div>
             </div>
           </div>
@@ -541,9 +541,9 @@
             <div class="step-num">D</div>
             <div class="step-content">
               <strong>Method 4: From Circumradius (<span class="math-tex">R</span>)</strong>
-              Using the triangle area formula with central angle <span class="math-tex">\beta = 45^\circ</span>:
+              Using the triangle area formula with central angle <span class="math-tex">β = 45°</span>:
               <div class="math-display">
-                A = 8 \times \left(\frac{1}{2} R^2 \sin(45^\circ)\right) = 4 R^2 \left(\frac{\sqrt{2}}{2}\right) = 2\sqrt{2} R^2 \approx 2.82842712 \times R^2
+                A = 8 × [½ R² sin(45°)] = 4R² · (√2 / 2) = 2√2 · R² ≈ 2.82842712 · R²
               </div>
             </div>
           </div>
@@ -561,18 +561,18 @@
         </div>
         <div class="proof-body">
           <p>
-            An <span class="math-tex">n</span>-gon has <span class="math-tex">\frac{n(n-3)}{2}</span> diagonals. For <span class="math-tex">n = 8</span>, there are exactly <span class="math-tex">\frac{8(5)}{2} = 20</span> diagonals, grouped into three distinct congruence classes:
+            An <span class="math-tex">n</span>-gon has <span class="math-tex">n(n - 3) / 2</span> diagonals. For <span class="math-tex">n = 8</span>, there are exactly <span class="math-tex">8(5) / 2 = 20</span> diagonals, grouped into three distinct congruence classes:
           </p>
           <div class="proof-step">
             <div class="step-num">1</div>
             <div class="step-content">
-              <strong>Short Diagonal (<span class="math-tex">d_S</span>, 8 total):</strong>
-              Connects vertices separated by 1 vertex. In the triangle formed by two adjacent sides of length <span class="math-tex">a</span> and interior angle <span class="math-tex">135^\circ</span>, apply the Law of Cosines:
+              <strong>Short Diagonal (<span class="math-tex">d<sub>S</sub></span>, 8 total):</strong>
+              Connects vertices separated by 1 vertex. In the triangle formed by two adjacent sides of length <span class="math-tex">a</span> and interior angle 135°, apply the Law of Cosines:
               <div class="math-display">
-                d_S^2 = a^2 + a^2 - 2a^2 \cos(135^\circ) = 2a^2 - 2a^2\left(-\frac{\sqrt{2}}{2}\right) = a^2(2 + \sqrt{2})
+                d<sub>S</sub>² = a² + a² - 2a² cos(135°) = 2a² - 2a²(-√2 / 2) = a²(2 + √2)
               </div>
               <div class="math-display">
-                d_S = a \sqrt{2 + \sqrt{2}} \approx 1.84775907 \times a
+                d<sub>S</sub> = a · √(2 + √2) ≈ 1.84775907 · a
               </div>
             </div>
           </div>
@@ -583,7 +583,7 @@
               <strong>Medium Diagonal / Span (<span class="math-tex">S</span>, 8 total):</strong>
               Connects vertices across two intervening sides. This equals the flat-to-flat height:
               <div class="math-display">
-                S = 2 r_i = a(1 + \sqrt{2}) \approx 2.41421356 \times a
+                S = 2r<sub>i</sub> = a(1 + √2) ≈ 2.41421356 · a
               </div>
             </div>
           </div>
@@ -591,10 +591,10 @@
           <div class="proof-step">
             <div class="step-num">3</div>
             <div class="step-content">
-              <strong>Long Diagonal / Diameter (<span class="math-tex">d_L</span>, 4 total):</strong>
+              <strong>Long Diagonal / Diameter (<span class="math-tex">d<sub>L</sub></span>, 4 total):</strong>
               Connects directly opposite vertices through the polygon center. This is the diameter of the circumcircle:
               <div class="math-display">
-                d_L = 2R = a \sqrt{4 + 2\sqrt{2}} \approx 2.61312593 \times a
+                d<sub>L</sub> = 2R = a · √(4 + 2√2) ≈ 2.61312593 · a
               </div>
             </div>
           </div>
@@ -639,7 +639,7 @@
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          The area of a regular octagon with side length <span class="math-tex">a</span> is <span class="math-tex">A = 2(1 + \sqrt{2})a^2 \approx 4.828427a^2</span>. If you know the inradius (apothem) <span class="math-tex">r_i</span>, the area is <span class="math-tex">A = 8(\sqrt{2}-1)r_i^2</span>. If you know the flat-to-flat span <span class="math-tex">S</span>, the area is <span class="math-tex">A = 2(\sqrt{2}-1)S^2 \approx 0.828427S^2</span>.
+          The area of a regular octagon with side length <span class="math-tex">a</span> is <span class="math-tex">A = 2(1 + √2)a² ≈ 4.828427a²</span>. If you know the inradius (apothem) <span class="math-tex">r<sub>i</sub></span>, the area is <span class="math-tex">A = 8(√2 - 1)r<sub>i</sub>² ≈ 3.313708r<sub>i</sub>²</span>. If you know the flat-to-flat span <span class="math-tex">S</span>, the area is <span class="math-tex">A = 2(√2 - 1)S² ≈ 0.828427S²</span>.
         </div>
       </div>
 
@@ -650,7 +650,7 @@
         </div>
         <div class="faq-answer">
           To solve for side length <span class="math-tex">a</span> from area <span class="math-tex">A</span>, invert the formula:
-          <span class="math-tex">a = \sqrt{\frac{A}{2(1 + \sqrt{2})}} = \sqrt{\frac{A(\sqrt{2} - 1)}{2}} \approx 0.4550898 \times \sqrt{A}</span>.
+          <span class="math-tex">a = √[A / (2(1 + √2))] = √[A(√2 - 1) / 2] ≈ 0.4550898 · √A</span>.
         </div>
       </div>
 
@@ -661,9 +661,9 @@
         </div>
         <div class="faq-answer">
           A regular octagon has three distinct diagonal lengths:
-          1. <strong>Short diagonal (<span class="math-tex">d_S</span>)</strong>: <span class="math-tex">d_S = a\sqrt{2 + \sqrt{2}} \approx 1.84776a</span>
-          2. <strong>Medium diagonal / Span (<span class="math-tex">S</span>)</strong>: <span class="math-tex">S = a(1 + \sqrt{2}) \approx 2.41421a</span>
-          3. <strong>Long diagonal (<span class="math-tex">d_L</span>)</strong>: <span class="math-tex">d_L = a\sqrt{4 + 2\sqrt{2}} \approx 2.61313a</span>
+          1. <strong>Short diagonal (<span class="math-tex">d<sub>S</sub></span>)</strong>: <span class="math-tex">d<sub>S</sub> = a · √(2 + √2) ≈ 1.84776a</span>
+          2. <strong>Medium diagonal / Span (<span class="math-tex">S</span>)</strong>: <span class="math-tex">S = a(1 + √2) ≈ 2.41421a</span>
+          3. <strong>Long diagonal (<span class="math-tex">d<sub>L</sub></span>)</strong>: <span class="math-tex">d<sub>L</sub> = a · √(4 + 2√2) ≈ 2.61313a</span>
         </div>
       </div>
 
@@ -673,7 +673,7 @@
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          Each interior angle of a regular octagon is <span class="math-tex">135^\circ</span>. Because two pieces of wood meet at each corner, divide the corner angle in half: <span class="math-tex">135^\circ / 2 = 67.5^\circ</span>. Since miter saws measure angles relative to a 90° square cut, set your saw to <strong>22.5°</strong> (<span class="math-tex">90^\circ - 67.5^\circ = 22.5^\circ</span>).
+          Each interior angle of a regular octagon is <span class="math-tex">135°</span>. Because two pieces of wood meet at each corner, divide the corner angle in half: <span class="math-tex">135° / 2 = 67.5°</span>. Since miter saws measure angles relative to a 90° square cut, set your saw to <strong>22.5°</strong> (<span class="math-tex">90° - 67.5° = 22.5°</span>).
         </div>
       </div>
 
