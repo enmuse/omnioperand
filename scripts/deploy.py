@@ -30,12 +30,33 @@ def load_env_token():
                 tokens["standard"] = line.split("=", 1)[1].strip().strip('"').strip("'")
             elif line.startswith("CLOUDFLARE_ACCOUNT_ID="):
                 tokens["account"] = line.split("=", 1)[1].strip().strip('"').strip("'")
+            elif line.startswith("CLOUDFLARE_ZONE_ID="):
+                tokens["zone"] = line.split("=", 1)[1].strip().strip('"').strip("'")
     return tokens
+
+def purge_cloudflare_cache(zone_id, token):
+    if not zone_id or not token:
+        return
+    import urllib.request, json
+    url = f"https://api.cloudflare.com/client/v4/zones/{zone_id}/purge_cache"
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json"
+    }
+    data = json.dumps({"purge_everything": True}).encode("utf-8")
+    req = urllib.request.Request(url, data=data, headers=headers, method="POST")
+    try:
+        with urllib.request.urlopen(req) as resp:
+            if resp.status == 200:
+                print("🧹 Cloudflare Edge Cache successfully purged across global edge!")
+    except Exception as e:
+        print(f"⚠️ Cache purge notice: {e}")
 
 def deploy_pages():
     tokens = load_env_token()
     token = tokens.get("pages") or tokens.get("standard")
     account_id = tokens.get("account") or DEFAULT_ACCOUNT_ID
+    zone_id = tokens.get("zone")
 
     if not token:
         print("❌ Error: No Cloudflare API token found in .env")
@@ -67,6 +88,10 @@ def deploy_pages():
             print(f"\n✨ Successfully deployed OmniOperand!")
             print(f"🔗 Edge URL: https://{PROJECT_NAME}.pages.dev")
             print(f"🌐 Custom Domain: https://omnioperand.com")
+            
+            # Automatically purge edge cache
+            standard_token = tokens.get("standard") or token
+            purge_cloudflare_cache(zone_id, standard_token)
             return True
         else:
             print(f"⚠️ Deployment error:\n{res.stderr}")
