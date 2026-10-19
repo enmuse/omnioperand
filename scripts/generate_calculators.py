@@ -35,6 +35,13 @@ TAXONOMY = {
                         "icon": "🛑",
                         "calculators": [
                             {
+                                "slug": "regular-polygon",
+                                "name": "Universal Regular Polygon Calculator",
+                                "description": "Arbitrary n-sided regular polygon solver for side length, area, perimeter, apothem, circumradius, and Archimedean convergence.",
+                                "status": "active",
+                                "inputs": ["n", "side", "area", "perimeter", "apothem", "circumradius", "span"]
+                            },
+                            {
                                 "slug": "octagon",
                                 "name": "Regular Octagon Calculator",
                                 "description": "8-sided regular polygon solver for side length, area, perimeter, apothem, circumradius, and 3 distinct diagonals.",

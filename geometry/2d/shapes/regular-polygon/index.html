@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regular Polygon Calculator: Exact N-Sided Formulas, Blueprint & Proofs</title>
+  <meta name="description" content="Universal regular n-sided polygon calculator. Compute area, perimeter, apothem, circumradius, span, diagonals, and angles for any n (3 to 1000). Includes exact closed-form radicals, dynamic SVG blueprints, and academic proofs.">
+  <link rel="canonical" href="https://omnioperand.com/geometry/2d/shapes/regular-polygon/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Regular Polygon Calculator — Universal Bidirectional N-Gon Engine">
+  <meta property="og:description" content="Calculate all geometric properties of any regular n-sided polygon with machine precision, dynamic SVG blueprints, exact radicals, and academic proofs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://omnioperand.com/geometry/2d/shapes/regular-polygon/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Regular Polygon Calculator | OmniOperand">
+  <meta name="twitter:description" content="Universal bidirectional solver for regular n-sided polygons with exact radical derivations, interactive blueprints, and LLM directives.">
+
+  <!-- Core Math CSS -->
+  <link rel="stylesheet" href="/assets/css/omni-core.css">
+  <link rel="stylesheet" href="/assets/css/calculator.css">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Universal Regular Polygon Calculator",
+        "url": "https://omnioperand.com/geometry/2d/shapes/regular-polygon/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "description": "High-precision bidirectional mathematical solver for any regular n-sided polygon.",
+        "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas & SVG.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://omnioperand.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Geometry",
+            "item": "https://omnioperand.com/geometry/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "2D Geometry",
+            "item": "https://omnioperand.com/geometry/2d/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Shapes & Polygons",
+            "item": "https://omnioperand.com/geometry/2d/shapes/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Universal Regular Polygon",
+            "item": "https://omnioperand.com/geometry/2d/shapes/regular-polygon/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the formula for the area of any regular n-sided polygon?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For a regular polygon with n sides of length a, the area is A = (n · a²) / [4 · tan(π/n)]. In terms of apothem (inradius ri), A = n · ri² · tan(π/n) = ½ · P · ri. In terms of circumradius R, A = (n · R² / 2) · sin(2π/n)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you calculate the number of diagonals in an n-sided polygon?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The total number of diagonals in an n-gon is Nd = n(n - 3) / 2. This arises because each of the n vertices can connect to (n - 3) non-adjacent vertices, and dividing by 2 prevents double-counting identical endpoints."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Archimedes' method relate to regular polygons?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Archimedes calculated upper and lower bounds for π by inscribing and circumscribing regular 96-sided polygons around a circle. As the number of sides n approaches infinity, the perimeter approaches the circle circumference 2πR and the area approaches πR²."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Master Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link" id="brand-home-link">
+        <div class="brand-icon">⨁</div>
+        <span>OmniOperand</span>
+        <span class="brand-badge">Math Engine</span>
+      </a>
+
+      <nav class="header-nav">
+        <a href="/geometry/" class="nav-link active">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <a href="/statistics/" class="nav-link">Statistics</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Breadcrumbs -->
+  <nav class="breadcrumb-wrapper">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/geometry/">Geometry</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/geometry/2d/">2D Geometry</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/geometry/2d/shapes/">Shapes & Polygons</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item current" aria-current="page">Universal Regular Polygon</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Main Calculator Workspace -->
+  <main class="container">
+
+    <!-- Page Title & Header HUD -->
+    <header class="calc-header-section">
+      <div class="calc-tag-row">
+        <span class="calc-category-tag">2D Analytic Geometry</span>
+        <span class="calc-spec-tag" id="n-badge-display">n = 8</span>
+        <span class="calc-spec-tag">Master Inversion Engine</span>
+        <span class="calc-spec-tag">Archimedean Limit: n ➔ ∞</span>
+      </div>
+      <h1 class="calc-main-title" id="polygon-name-display">Regular Octagon</h1>
+      <p class="calc-intro-description">
+        Universal bidirectional mathematical solver for any regular <span class="math-tex">n</span>-sided polygon (<span class="math-tex">3 \le n \le 1000</span>). Adjust the number of sides and enter any known parameter to instantaneously resolve all side lengths, radii, areas, spans, and diagonal metrics with machine precision.
+      </p>
+    </header>
+
+    <!-- N-Selector & Presets Bar -->
+    <section class="n-selector-card" style="background:var(--bg-glass-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:1.25rem 1.5rem; margin-bottom:1.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
+        <div>
+          <label for="input-n" style="font-weight:700; font-size:1rem; color:var(--text-primary); display:flex; align-items:center; gap:0.5rem;">
+            <span>Select Number of Sides (n):</span>
+            <input type="number" id="input-n" min="3" max="1000" value="8" style="width:90px; background:var(--bg-surface); border:1px solid var(--border-active); color:var(--accent-cyan); font-family:var(--font-mono); font-size:1.1rem; font-weight:700; padding:0.25rem 0.5rem; border-radius:var(--radius-sm); text-align:center;">
+          </label>
+          <span style="font-size:0.75rem; color:var(--text-muted);">Enter 3 to 1000 sides for micro-precision polygon geometry</span>
+        </div>
+        <div style="flex:1; min-width:240px; max-width:400px;">
+          <input type="range" id="slider-n" min="3" max="100" value="8" step="1" style="width:100%; accent-color:var(--accent-cyan); cursor:pointer;" aria-label="Number of sides slider">
+          <div style="display:flex; justify-content:space-between; font-size:0.68rem; font-family:var(--font-mono); color:var(--text-muted); margin-top:0.2rem;">
+            <span>Triangle (3)</span>
+            <span>Decagon (10)</span>
+            <span>Icosagon (20)</span>
+            <span>Hectagon (100)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Preset Chips -->
+      <div style="display:flex; flex-wrap:wrap; gap:0.4rem; align-items:center;">
+        <span style="font-size:0.75rem; font-weight:600; color:var(--text-muted); margin-right:0.25rem;">Quick Presets:</span>
+        <button class="layer-pill preset-n-btn" data-n="3">Triangle (3)</button>
+        <button class="layer-pill preset-n-btn" data-n="4">Square (4)</button>
+        <button class="layer-pill preset-n-btn" data-n="5">Pentagon (5)</button>
+        <button class="layer-pill preset-n-btn" data-n="6">Hexagon (6)</button>
+        <button class="layer-pill preset-n-btn" data-n="7">Heptagon (7)</button>
+        <button class="layer-pill preset-n-btn active" data-n="8">Octagon (8)</button>
+        <button class="layer-pill preset-n-btn" data-n="9">Nonagon (9)</button>
+        <button class="layer-pill preset-n-btn" data-n="10">Decagon (10)</button>
+        <button class="layer-pill preset-n-btn" data-n="12">Dodecagon (12)</button>
+        <button class="layer-pill preset-n-btn" data-n="16">Hexadecagon (16)</button>
+        <button class="layer-pill preset-n-btn" data-n="20">Icosagon (20)</button>
+        <button class="layer-pill preset-n-btn" data-n="100">Circle Limit (100)</button>
+      </div>
+    </section>
+
+    <!-- Archimedean Circle Exhaustion Banner -->
+    <div style="background:rgba(6, 182, 212, 0.06); border:1px solid rgba(6, 182, 212, 0.25); border-radius:var(--radius-md); padding:0.85rem 1.25rem; margin-bottom:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+      <div>
+        <div style="font-size:0.8rem; font-weight:700; color:var(--accent-cyan); text-transform:uppercase; letter-spacing:0.04em;">Archimedes Method of Exhaustion Convergence</div>
+        <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:0.2rem;">
+          Area Coverage: <strong id="archimedes-area-ratio" style="color:var(--accent-emerald);">90.032% of Circle</strong> &nbsp;|&nbsp; 
+          Perimeter Coverage: <strong id="archimedes-perim-ratio" style="color:var(--accent-blue);">97.450% of Circle</strong>
+        </div>
+      </div>
+      <div style="flex:1; max-width:240px; height:8px; background:rgba(255,255,255,0.08); border-radius:4px; overflow:hidden;">
+        <div id="archimedes-progress-bar" style="width:90%; height:100%; background:linear-gradient(90deg, var(--accent-cyan), var(--accent-emerald)); transition:width 0.2s ease;"></div>
+      </div>
+    </div>
+
+    <!-- Interactive Calculator HUD Grid -->
+    <section class="calculator-hud-grid">
+      
+      <!-- Left Panel: Parameters & Controls -->
+      <div class="solver-panel">
+        
+        <!-- Toolbar: Units & Precision -->
+        <div class="hud-toolbar">
+          <div class="toolbar-group">
+            <span class="toolbar-label">Units:</span>
+            <div class="segmented-control" id="unit-selector">
+              <button class="unit-btn active" data-unit="cm">cm</button>
+              <button class="unit-btn" data-unit="mm">mm</button>
+              <button class="unit-btn" data-unit="m">m</button>
+              <button class="unit-btn" data-unit="in">in</button>
+              <button class="unit-btn" data-unit="ft">ft</button>
+              <button class="unit-btn" data-unit="yd">yd</button>
+            </div>
+          </div>
+
+          <div class="toolbar-group">
+            <span class="toolbar-label">Decimals:</span>
+            <div class="segmented-control" id="prec-selector">
+              <button class="prec-btn" data-prec="2">2</button>
+              <button class="prec-btn active" data-prec="4">4</button>
+              <button class="prec-btn" data-prec="6">6</button>
+              <button class="prec-btn" data-prec="8">8</button>
+              <button class="prec-btn" data-prec="10">10</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Driver Variable Selector -->
+        <div class="driver-selector-bar">
+          <label for="driver-select">Known Input Variable (Driver):</label>
+          <select id="driver-select" class="driver-dropdown">
+            <option value="side" selected>Side Length (a)</option>
+            <option value="area">Area (A)</option>
+            <option value="perimeter">Perimeter (P)</option>
+            <option value="apothem">Apothem / Inradius (r_i)</option>
+            <option value="circumradius">Circumradius (R)</option>
+            <option value="span">Span / Height (S or H)</option>
+          </select>
+        </div>
+
+        <!-- Master Parameter Cards -->
+        <div class="parameter-grid">
+          
+          <!-- 1. Side Length -->
+          <div class="param-card is-driver" id="card-side">
+            <div class="param-header">
+              <span class="param-title">Side Length <span class="param-symbol">a</span></span>
+              <span class="param-status-tag input" id="status-side">Input (Driver)</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-side" class="param-input" value="10" step="any" min="0.0001" aria-label="Side Length">
+              <span class="param-unit" id="unit-side">cm</span>
+            </div>
+            <input type="range" id="slider-side" class="param-slider" min="1" max="100" value="10" step="0.1" aria-label="Side Length Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-side">a = 10</span>
+              <button class="copy-param-btn" id="copy-side" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 2. Area -->
+          <div class="param-card" id="card-area">
+            <div class="param-header">
+              <span class="param-title">Area <span class="param-symbol">A</span></span>
+              <span class="param-status-tag calculated" id="status-area">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-area" class="param-input" value="482.8427" step="any" min="0.0001" aria-label="Area">
+              <span class="param-unit" id="unit-area">cm²</span>
+            </div>
+            <input type="range" id="slider-area" class="param-slider" min="1" max="5000" value="482.8427" step="1" aria-label="Area Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-area">A = 2(1+√2)a²</span>
+              <button class="copy-param-btn" id="copy-area" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 3. Perimeter -->
+          <div class="param-card" id="card-perimeter">
+            <div class="param-header">
+              <span class="param-title">Perimeter <span class="param-symbol">P</span></span>
+              <span class="param-status-tag calculated" id="status-perimeter">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-perimeter" class="param-input" value="80" step="any" min="0.0001" aria-label="Perimeter">
+              <span class="param-unit" id="unit-perimeter">cm</span>
+            </div>
+            <input type="range" id="slider-perimeter" class="param-slider" min="1" max="800" value="80" step="0.5" aria-label="Perimeter Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-perimeter">P = n · a</span>
+              <button class="copy-param-btn" id="copy-perimeter" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 4. Apothem / Inradius -->
+          <div class="param-card" id="card-apothem">
+            <div class="param-header">
+              <span class="param-title">Apothem / Inradius <span class="param-symbol">r<sub>i</sub></span></span>
+              <span class="param-status-tag calculated" id="status-apothem">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-apothem" class="param-input" value="12.0711" step="any" min="0.0001" aria-label="Apothem">
+              <span class="param-unit" id="unit-apothem">cm</span>
+            </div>
+            <input type="range" id="slider-apothem" class="param-slider" min="1" max="200" value="12.0711" step="0.1" aria-label="Apothem Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-apothem">r<sub>i</sub> = a / [2 tan(π/n)]</span>
+              <button class="copy-param-btn" id="copy-apothem" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 5. Circumradius -->
+          <div class="param-card" id="card-circumradius">
+            <div class="param-header">
+              <span class="param-title">Circumradius <span class="param-symbol">R</span></span>
+              <span class="param-status-tag calculated" id="status-circumradius">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-circumradius" class="param-input" value="13.0656" step="any" min="0.0001" aria-label="Circumradius">
+              <span class="param-unit" id="unit-circumradius">cm</span>
+            </div>
+            <input type="range" id="slider-circumradius" class="param-slider" min="1" max="200" value="13.0656" step="0.1" aria-label="Circumradius Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-circumradius">R = a / [2 sin(π/n)]</span>
+              <button class="copy-param-btn" id="copy-circumradius" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 6. Span / Height -->
+          <div class="param-card" id="card-span">
+            <div class="param-header">
+              <span class="param-title" id="title-span">Span (Flat-to-Flat) <span class="param-symbol">S</span></span>
+              <span class="param-status-tag calculated" id="status-span">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-span" class="param-input" value="24.1421" step="any" min="0.0001" aria-label="Span">
+              <span class="param-unit" id="unit-span">cm</span>
+            </div>
+            <input type="range" id="slider-span" class="param-slider" min="1" max="300" value="24.1421" step="0.2" aria-label="Span Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-span">S = 2r<sub>i</sub> = a / tan(π/n)</span>
+              <button class="copy-param-btn" id="copy-span" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 7. Total Diagonals -->
+          <div class="param-card" id="card-diagonals_count" style="cursor:default;">
+            <div class="param-header">
+              <span class="param-title">Total Diagonals <span class="param-symbol">N<sub>d</sub></span></span>
+              <span class="param-status-tag calculated">Invariant</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="text" id="input-diagonals_count" class="param-input" value="20" readonly aria-label="Total Diagonals" style="cursor:default;">
+              <span class="param-unit">lines</span>
+            </div>
+            <div class="param-footer" style="margin-top:0.9rem;">
+              <span class="param-exact" id="exact-diagonals_count">N<sub>d</sub> = n(n-3)/2</span>
+              <button class="copy-param-btn" id="copy-diagonals_count" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 8. Interior Angle -->
+          <div class="param-card" id="card-interior_angle" style="cursor:default;">
+            <div class="param-header">
+              <span class="param-title">Interior Angle <span class="param-symbol">α</span></span>
+              <span class="param-status-tag calculated">Angle</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="text" id="input-interior_angle" class="param-input" value="135" readonly aria-label="Interior Angle" style="cursor:default;">
+              <span class="param-unit">°</span>
+            </div>
+            <div class="param-footer" style="margin-top:0.9rem;">
+              <span class="param-exact" id="exact-interior_angle">α = (n-2)·180° / n</span>
+              <button class="copy-param-btn" id="copy-interior_angle" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 9. Central / Exterior Angle -->
+          <div class="param-card" id="card-central_angle" style="cursor:default;">
+            <div class="param-header">
+              <span class="param-title">Central Angle <span class="param-symbol">β</span></span>
+              <span class="param-status-tag calculated">Angle</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="text" id="input-central_angle" class="param-input" value="45" readonly aria-label="Central Angle" style="cursor:default;">
+              <span class="param-unit">°</span>
+            </div>
+            <div class="param-footer" style="margin-top:0.9rem;">
+              <span class="param-exact" id="exact-central_angle">β = 360° / n</span>
+              <button class="copy-param-btn" id="copy-central_angle" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Panel: Live Dynamic SVG Blueprint -->
+      <div class="canvas-panel">
+        <div class="canvas-header">
+          <div class="canvas-title">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 19 6 22 13 17 21 7 21 2 13 5 6 12 2"></polygon></svg>
+            <span>Universal Dynamic Blueprint</span>
+          </div>
+          <div class="canvas-hud-coords" id="blueprint-coord-display">Hover vertex for coordinates</div>
+        </div>
+
+        <!-- Blueprint Layer Toggles -->
+        <div class="blueprint-layer-bar">
+          <span class="layer-bar-label">Layers:</span>
+          <button class="layer-pill active" id="toggle-layer-grid" title="Toggle Coordinate Grid & Axes">Grid</button>
+          <button class="layer-pill active" id="toggle-layer-circles" title="Toggle Incircle & Circumcircle">Circles</button>
+          <button class="layer-pill active" id="toggle-layer-dims" title="Toggle Dimension Lines">Dimensions</button>
+          <button class="layer-pill active" id="toggle-layer-labels" title="Toggle Vertex Points">Vertices</button>
+          <button class="layer-pill" id="toggle-blueprint-theme" title="Toggle Blueprint Theme">Blueprint Mode</button>
+        </div>
+
+        <div class="canvas-wrapper" id="blueprint-canvas-wrapper">
+          <svg id="svg-regular-polygon-canvas" class="omni-blueprint-svg octagon-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="smallGridUniversal" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" />
+              </pattern>
+            </defs>
+            <rect width="400" height="400" fill="url(#smallGridUniversal)" />
+
+            <!-- Coordinate Axes -->
+            <line x1="200" y1="20" x2="200" y2="380" class="svg-axis" />
+            <line x1="20" y1="200" x2="380" y2="200" class="svg-axis" />
+
+            <!-- Dimension & Circle Overlays -->
+            <g id="svg-dimension-overlay"></g>
+
+            <!-- Dynamic Regular Polygon Shape Body -->
+            <polygon id="svg-polygon-shape-body" class="svg-polygon-shape" points="" />
+
+            <!-- Vertices Points -->
+            <g id="svg-vertices-group"></g>
+
+            <!-- Technical Watermark & Scale Meta -->
+            <text x="14" y="22" class="svg-blueprint-meta">SCALE 1:1 • UNIVERSAL REGULAR POLYGON</text>
+            <text x="386" y="388" text-anchor="end" class="svg-blueprint-watermark">OmniOperand • omnioperand.com</text>
+          </svg>
+        </div>
+
+        <!-- Blueprint Export Toolbar -->
+        <div class="blueprint-export-bar">
+          <button class="export-btn" id="btn-export-png" title="Download High-Resolution PNG (2000×2000)">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            High-Res PNG
+          </button>
+          <button class="export-btn" id="btn-export-svg" title="Download Vector SVG File">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            Vector SVG
+          </button>
+          <button class="export-btn" id="btn-export-tikz" title="Copy LaTeX TikZ Vector Code">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            LaTeX TikZ
+          </button>
+          <button class="export-btn highlight" id="btn-open-attribution" title="Citation & Backlink Attribution">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            Backlink / Cite
+          </button>
+        </div>
+
+        <div class="canvas-legend">
+          <div class="legend-item"><span class="legend-dot" style="background:#06b6d4;"></span> Side (a)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#10b981;"></span> Apothem (r<sub>i</sub>)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#a855f7;"></span> Circumradius (R)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> Span / Height</div>
+        </div>
+
+        <!-- Commercial & Academic Attribution Notice -->
+        <div class="blueprint-license-box">
+          <div class="license-badge-row">
+            <span class="license-badge">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Free for Commerce & Academia
+            </span>
+            <span class="license-cc">CC BY 4.0 License</span>
+          </div>
+          <p class="license-desc">
+            All generated diagrams and blueprints are free to use in academic papers, websites, books, and software. <strong>Backlink attribution to omnioperand.com is requested.</strong>
+          </p>
+          <div class="attribution-snippet-group">
+            <div class="snippet-header">
+              <span>Web Backlink Attribution:</span>
+              <button class="copy-snippet-btn" id="copy-backlink-html">Copy HTML</button>
+            </div>
+            <code class="snippet-code" id="snippet-backlink-html">&lt;a href="https://omnioperand.com/geometry/2d/shapes/regular-polygon/" target="_blank" rel="noopener"&gt;Diagram courtesy of OmniOperand&lt;/a&gt;</code>
+          </div>
+          <div class="attribution-snippet-group" style="margin-top:0.45rem;">
+            <div class="snippet-header">
+              <span>Academic BibTeX Citation:</span>
+              <button class="copy-snippet-btn" id="copy-backlink-bibtex">Copy BibTeX</button>
+            </div>
+            <code class="snippet-code" id="snippet-backlink-bibtex">@misc{omnioperand_regular_polygon, title={Universal Regular Polygon Calculator & Blueprint}, author={OmniOperand}, url={https://omnioperand.com/geometry/2d/shapes/regular-polygon/}, year={2026}}</code>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Mathematical Foundations & Analytical Derivations -->
+    <section class="proofs-section">
+      <h2>Mathematical Foundations & Universal Proofs</h2>
+      <p>
+        A regular polygon is an equiangular and equilateral planar polygon. It belongs to the dihedral symmetry group <strong>D<sub>n</sub></strong> with <span class="math-tex">n</span> reflection axes and <span class="math-tex">n</span>-fold rotational symmetry (<span class="math-tex">360° / n</span> invariance). The following analytical proofs form the computational bedrock of the solver matrix.
+      </p>
+
+      <!-- Proof 1: Angles -->
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">1</span>
+            <span>Interior, Exterior, and Central Angles</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            Any simple <span class="math-tex">n</span>-gon can be partitioned into <span class="math-tex">(n - 2)</span> non-overlapping triangles by drawing all non-intersecting diagonals from a single vertex. Because the interior angles of each triangle sum to 180°:
+          </p>
+          <div class="math-display">
+            \sum \text{Interior Angles} = (n - 2) \cdot 180° = (n - 2)\pi\text{ rad}
+          </div>
+          <p>
+            Because all <span class="math-tex">n</span> interior angles are congruent:
+          </p>
+          <div class="math-display">
+            \alpha = \frac{(n - 2) \cdot 180°}{n} = \left(1 - \frac{2}{n}\right) \cdot 180°
+          </div>
+          <p>
+            The exterior angle <span class="math-tex">\theta</span> is supplementary to the interior angle:
+          </p>
+          <div class="math-display">
+            \theta = 180° - \alpha = 180° - \left(180° - \frac{360°}{n}\right) = \frac{360°}{n}
+          </div>
+          <p>
+            The central angle <span class="math-tex">\beta</span> subtended by one side at the circumcenter equals the full circle divided by <span class="math-tex">n</span>:
+          </p>
+          <div class="math-display">
+            \beta = \frac{360°}{n} = \frac{2\pi}{n}\text{ rad} = \theta
+          </div>
+        </div>
+      </div>
+
+      <!-- Proof 2: Apothem & Circumradius -->
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">2</span>
+            <span>Right-Triangle Decomposition: Inradius (<span class="math-tex">r_i</span>) and Circumradius (<span class="math-tex">R</span>)</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            Connecting the center of the polygon to any two adjacent vertices forms an isosceles triangle with vertex angle <span class="math-tex">\beta = 2\pi / n</span> and base length <span class="math-tex">a</span>. Dropping a perpendicular altitude from the center to the midpoint of the base bisects the triangle into two congruent right triangles:
+          </p>
+          <ul>
+            <li>Opposite leg = <span class="math-tex">a / 2</span></li>
+            <li>Adjacent leg = Apothem / Inradius <span class="math-tex">r_i</span></li>
+            <li>Hypotenuse = Circumradius <span class="math-tex">R</span></li>
+            <li>Angle at the center = <span class="math-tex">\beta / 2 = \pi / n</span> (or <span class="math-tex">180° / n</span>)</li>
+          </ul>
+          <p>Applying elementary trigonometry:</p>
+          <div class="math-display">
+            \tan\left(\frac{\pi}{n}\right) = \frac{a / 2}{r_i} \implies r_i = \frac{a}{2 \tan(\pi / n)}
+          </div>
+          <div class="math-display">
+            \sin\left(\frac{\pi}{n}\right) = \frac{a / 2}{R} \implies R = \frac{a}{2 \sin(\pi / n)}
+          </div>
+          <p>Furthermore, dividing the two equations gives the fundamental invariance:</p>
+          <div class="math-display">
+            \frac{r_i}{R} = \cos\left(\frac{\pi}{n}\right) \implies r_i = R \cos\left(\frac{\pi}{n}\right)
+          </div>
+        </div>
+      </div>
+
+      <!-- Proof 3: Area Derivations -->
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">3</span>
+            <span>Area from Triangulation, Apothem, and Circumradius</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            A regular <span class="math-tex">n</span>-gon is the union of <span class="math-tex">n</span> congruent isosceles triangles, each having base <span class="math-tex">a</span> and height <span class="math-tex">r_i</span>.
+          </p>
+          <div class="math-display">
+            A = n \cdot \left(\frac{1}{2} a \cdot r_i\right) = \frac{1}{2} (n \cdot a) \cdot r_i = \frac{1}{2} P \cdot r_i
+          </div>
+          <p>Substituting <span class="math-tex">r_i = \frac{a}{2\tan(\pi/n)}</span>:</p>
+          <div class="math-display">
+            A = \frac{n \cdot a^2}{4 \tan(\pi / n)}
+          </div>
+          <p>Expressing the area strictly in terms of circumradius <span class="math-tex">R</span> using <span class="math-tex">\text{Area} = \frac{1}{2}ab\sin(\theta)</span> for each triangle:</p>
+          <div class="math-display">
+            A = n \cdot \left[\frac{1}{2} R^2 \sin\left(\frac{2\pi}{n}\right)\right] = \frac{n R^2}{2} \sin\left(\frac{2\pi}{n}\right)
+          </div>
+        </div>
+      </div>
+
+      <!-- Proof 4: Diagonals -->
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">4</span>
+            <span>Total Diagonals Combinatorics & Diagonal Chord Lengths</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            A diagonal is any line segment connecting two non-adjacent vertices. From any of the <span class="math-tex">n</span> vertices, we can draw line segments to all other vertices except itself and its two immediate neighbors, yielding <span class="math-tex">(n - 3)</span> diagonals per vertex. Multiplying by <span class="math-tex">n</span> and dividing by 2 (since segment <span class="math-tex">V_i V_j = V_j V_i</span>):
+          </p>
+          <div class="math-display">
+            N_d = \frac{n(n - 3)}{2}
+          </div>
+          <p>
+            Diagonals fall into <span class="math-tex">\lfloor n/2 \rfloor - 1</span> distinct length congruence classes. The <span class="math-tex">k</span>-th diagonal <span class="math-tex">d_k</span> (skipping <span class="math-tex">k</span> edges along the perimeter) subtends an arc of <span class="math-tex">k \cdot \frac{2\pi}{n}</span> on the circumscribed circle. Using the chord theorem:
+          </p>
+          <div class="math-display">
+            d_k = 2 R \sin\left(\frac{k \pi}{n}\right) = a \cdot \frac{\sin(k\pi / n)}{\sin(\pi / n)}
+          </div>
+        </div>
+      </div>
+
+      <!-- Proof 5: Archimedes Limit -->
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">5</span>
+            <span>The Archimedean Limit as <span class="math-tex">n \to \infty</span> (Method of Exhaustion)</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            Around 250 BCE, Archimedes of Syracuse calculated the bounds of <span class="math-tex">\pi</span> by doubling polygon sides from hexagon (<span class="math-tex">n=6</span>) to 12, 24, 48, and 96-gon. Taking the limit of perimeter and area as <span class="math-tex">n \to \infty</span> with fixed circumradius <span class="math-tex">R</span>:
+          </p>
+          <div class="math-display">
+            \lim_{n \to \infty} P = \lim_{n \to \infty} \left[2n R \sin\left(\frac{\pi}{n}\right)\right] = 2\pi R \cdot \lim_{n \to \infty} \frac{\sin(\pi / n)}{\pi / n} = 2\pi R
+          </div>
+          <div class="math-display">
+            \lim_{n \to \infty} A = \lim_{n \to \infty} \left[\frac{n R^2}{2} \sin\left(\frac{2\pi}{n}\right)\right] = \pi R^2 \cdot \lim_{n \to \infty} \frac{\sin(2\pi / n)}{2\pi / n} = \pi R^2
+          </div>
+          <p>
+            Similarly, <span class="math-tex">\lim_{n \to \infty} r_i = \lim_{n \to \infty} R \cos(\pi / n) = R</span>, proving that the polygon converges to a circle of radius <span class="math-tex">R</span>.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Copyable AI & LLM Integration Prompt -->
+    <section class="llm-prompt-section">
+      <div class="llm-prompt-header">
+        <div class="llm-prompt-title">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          <span>Verified Prompt for LLMs & AI Agents</span>
+        </div>
+        <div style="display:flex; gap:0.5rem;">
+          <button class="copy-prompt-btn" id="copy-json-btn">Copy JSON Data</button>
+          <button class="copy-prompt-btn" id="copy-llm-prompt-btn">Copy Prompt for AI</button>
+        </div>
+      </div>
+      <div class="llm-prompt-box">
+        <pre id="llm-prompt-display">Generating verified polygon prompt...</pre>
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the formula for the area of any regular n-sided polygon?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The area of any regular polygon with <span class="math-tex">n</span> sides of length <span class="math-tex">a</span> is <span class="math-tex">A = (n \cdot a^2) / [4 \cdot \tan(\pi/n)]</span>. If you know the apothem (inradius) <span class="math-tex">r_i</span>, the area is <span class="math-tex">A = n \cdot r_i^2 \cdot \tan(\pi/n) = \frac{1}{2} P \cdot r_i</span>. If you know the circumradius <span class="math-tex">R</span>, the area is <span class="math-tex">A = \frac{n R^2}{2} \cdot \sin(2\pi/n)</span>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How many diagonals does an n-gon have?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          An <span class="math-tex">n</span>-sided polygon has <span class="math-tex">N_d = n(n - 3) / 2</span> diagonals. For example:
+          <ul>
+            <li>Triangle (<span class="math-tex">n = 3</span>): <span class="math-tex">3(0)/2 = 0</span> diagonals</li>
+            <li>Square (<span class="math-tex">n = 4</span>): <span class="math-tex">4(1)/2 = 2</span> diagonals</li>
+            <li>Pentagon (<span class="math-tex">n = 5</span>): <span class="math-tex">5(2)/2 = 5</span> diagonals</li>
+            <li>Hexagon (<span class="math-tex">n = 6</span>): <span class="math-tex">6(3)/2 = 9</span> diagonals</li>
+            <li>Octagon (<span class="math-tex">n = 8</span>): <span class="math-tex">8(5)/2 = 20</span> diagonals</li>
+            <li>Decagon (<span class="math-tex">n = 10</span>): <span class="math-tex">10(7)/2 = 35</span> diagonals</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What is the difference between an apothem and a circumradius?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The <strong>apothem (inradius <span class="math-tex">r_i</span>)</strong> is the perpendicular distance from the center to the midpoint of any flat edge. It is the radius of the inscribed circle. The <strong>circumradius (<span class="math-tex">R</span>)</strong> is the distance from the center to any vertex corner. It is the radius of the circumscribed circle passing through all vertices. The two are always related by <span class="math-tex">r_i = R \cdot \cos(\pi / n)</span>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Which regular polygons can be constructed with compass and straightedge?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          By the <strong>Gauss-Wantzel Theorem</strong>, a regular <span class="math-tex">n</span>-gon is constructible with compass and straightedge if and only if <span class="math-tex">n</span> is the product of a power of 2 and any number of distinct Fermat primes (<span class="math-tex">3, 5, 17, 257, 65537</span>). Constructible polygons include <span class="math-tex">n = 3, 4, 5, 6, 8, 10, 12, 15, 16, 17, 20, 24, 30</span>. Non-constructible regular polygons include <span class="math-tex">n = 7, 9, 11, 13, 14, 18, 19</span>.
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Master Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>OmniOperand</h3>
+          <p style="font-size:0.875rem; line-height:1.6;">
+            Precision mathematical computation engines, verified geometric solvers, and quantitative algorithms designed for students, scientists, engineers, and autonomous AI agents.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3>Geometry Hub</h3>
+          <ul class="footer-links">
+            <li><a href="/geometry/2d/shapes/regular-polygon/">Universal Regular Polygon</a></li>
+            <li><a href="/geometry/2d/shapes/octagon/">Regular Octagon</a></li>
+            <li><a href="/geometry/2d/shapes/hexagon/">Regular Hexagon</a></li>
+            <li><a href="/geometry/2d/shapes/pentagon/">Regular Pentagon</a></li>
+            <li><a href="/geometry/2d/shapes/decagon/">Regular Decagon</a></li>
+            <li><a href="/geometry/2d/shapes/">Polygons & Shapes Directory</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Core Domains</h3>
+          <ul class="footer-links">
+            <li><a href="/calculus/">Calculus & Analysis</a></li>
+            <li><a href="/finance/">Quantitative Finance</a></li>
+            <li><a href="/physics/">Physics & Mechanics</a></li>
+            <li><a href="/statistics/">Probability & Statistics</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Machine Protocols</h3>
+          <ul class="footer-links">
+            <li><a href="/llms.txt">llms.txt Specification</a></li>
+            <li><a href="/llms-full.txt">Full AI Knowledge File</a></li>
+            <li><a href="/sitemap.xml">XML Sitemap</a></li>
+            <li><a href="/robots.txt">Robots Directives</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+        <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Modal Overlay -->
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators (e.g. regular polygon, n-gon, octagon, apothem)...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/assets/js/omni-search.js"></script>
+  <script src="/assets/js/regular-polygon-solver.js"></script>
+  <script src="/assets/js/blueprint-engine.js" defer></script>
+</body>
+</html>

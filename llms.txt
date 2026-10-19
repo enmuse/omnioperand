@@ -6,6 +6,7 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
 
 ## Canonical Endpoints & Tools
 
+- [Universal Regular Polygon Calculator](https://omnioperand.com/geometry/2d/shapes/regular-polygon/): Master arbitrary n-sided regular polygon solver (3 to 1000 sides) with Archimedean circle convergence and exact radicals.
 - [Regular Octagon Calculator](https://omnioperand.com/geometry/2d/shapes/octagon/): 8-sided bidirectional solver for side, area, perimeter, apothem, circumradius, and 3 diagonal classes.
 - [Regular Hexagon Calculator](https://omnioperand.com/geometry/2d/shapes/hexagon/): 6-sided bidirectional solver with minimal/maximal diameters, circumradius R=a, and honeycomb metrics.
 - [Regular Pentagon Calculator](https://omnioperand.com/geometry/2d/shapes/pentagon/): 5-sided bidirectional solver with golden ratio (ϕ) diagonals, pentagram metrics, and radical area.

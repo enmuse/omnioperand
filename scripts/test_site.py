@@ -172,6 +172,31 @@ def test_mathematical_precision():
 
     print("  ✅ Decagon: All 8 forward and inverse mathematical derivations passed with 1e-12 precision!")
 
+    # Universal Regular N-Gon Invariant Tests (Testing Heptagon n=7 and Dodecagon n=12)
+    for test_n in [7, 12]:
+        angle_pi_n = math.pi / test_n
+        tan_pi_n = math.tan(angle_pi_n)
+        sin_pi_n = math.sin(angle_pi_n)
+
+        p_n = test_n * a
+        ri_n = a / (2 * tan_pi_n)
+        R_n = a / (2 * sin_pi_n)
+        A_n = (test_n * a * a) / (4 * tan_pi_n)
+
+        # Inversions back to a
+        inv_p = p_n / test_n
+        inv_ri = 2 * ri_n * tan_pi_n
+        inv_R = 2 * R_n * sin_pi_n
+        inv_A = math.sqrt((4 * A_n * tan_pi_n) / test_n)
+
+        for name, val in [(f"n{test_n}-P", inv_p), (f"n{test_n}-ri", inv_ri), (f"n{test_n}-R", inv_R), (f"n{test_n}-A", inv_A)]:
+            assert math.isclose(val, 10.0, rel_tol=1e-12), f"N-gon ({test_n}) inversion failure for {name}: {val}"
+
+        # Invariant ratio ri / R strictly equals cos(pi/n)
+        assert math.isclose(ri_n / R_n, math.cos(angle_pi_n), rel_tol=1e-12), f"Cosine invariant failed for n={test_n}"
+
+    print("  ✅ Universal N-Gon: Arbitrary n=7 and n=12 forward & inverse derivations passed with 1e-12 precision!")
+
 def test_file_integrity():
     print("Testing File & Asset Integrity...")
     required_files = [
@@ -189,10 +214,12 @@ def test_file_integrity():
         "assets/js/hexagon-solver.js",
         "assets/js/pentagon-solver.js",
         "assets/js/decagon-solver.js",
+        "assets/js/regular-polygon-solver.js",
         "assets/js/blueprint-engine.js",
         "geometry/index.html",
         "geometry/2d/index.html",
         "geometry/2d/shapes/index.html",
+        "geometry/2d/shapes/regular-polygon/index.html",
         "geometry/2d/shapes/octagon/index.html",
         "geometry/2d/shapes/hexagon/index.html",
         "geometry/2d/shapes/pentagon/index.html",

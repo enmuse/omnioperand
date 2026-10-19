@@ -22,10 +22,14 @@
     const titleEl = document.querySelector('title');
     const rawTitle = titleEl ? titleEl.textContent.split('|')[0].trim() : 'Geometric Blueprint';
 
-    // Detect shape from URL or title
-    let shapeName = 'polygon';
+    // Detect shape from URL, input-n, or title
+    let shapeName = 'regular-polygon';
     let n = 8;
-    if (canonicalUrl.includes('octagon')) { shapeName = 'octagon'; n = 8; }
+    const inputN = document.getElementById('input-n');
+    if (inputN && inputN.value) {
+      n = parseInt(inputN.value, 10) || 8;
+      shapeName = `regular-${n}-gon`;
+    } else if (canonicalUrl.includes('octagon')) { shapeName = 'octagon'; n = 8; }
     else if (canonicalUrl.includes('hexagon')) { shapeName = 'hexagon'; n = 6; }
     else if (canonicalUrl.includes('pentagon')) { shapeName = 'pentagon'; n = 5; }
     else if (canonicalUrl.includes('decagon')) { shapeName = 'decagon'; n = 10; }

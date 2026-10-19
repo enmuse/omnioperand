@@ -9,6 +9,12 @@
   // Calculator & Hub Index Database
   const SEARCH_INDEX = [
     {
+      title: "Universal Regular Polygon Calculator",
+      category: "Geometry > 2D Geometry > Shapes",
+      url: "/geometry/2d/shapes/regular-polygon/",
+      keywords: ["regular polygon", "n-gon", "n-sided", "polygon", "triangle", "square", "pentagon", "hexagon", "heptagon", "octagon", "nonagon", "decagon", "dodecagon", "icosagon", "apothem", "circumradius", "diagonals", "area", "archimedes"]
+    },
+    {
       title: "Regular Octagon Calculator",
       category: "Geometry > 2D Geometry > Shapes",
       url: "/geometry/2d/shapes/octagon/",
