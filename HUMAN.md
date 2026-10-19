@@ -17,26 +17,27 @@
   - `omnioperand.com` → `omnioperand.pages.dev`
   - `www.omnioperand.com` → `omnioperand.pages.dev`
 - [x] **Secure API Credentials Configured**: Created `.env` containing Cloudflare, GitHub, and PageSpeed API keys. Protected by `.gitignore`.
-- [x] **Flagship Regular Octagon Bidirectional Solver**:
-  - Full 8-variable bidirectional solving engine: Side length ($a$), Area ($A$), Perimeter ($P$), Apothem / Inradius ($r_i$), Circumradius ($R$), Short diagonal ($d_S$), Medium diagonal / Span ($S$), Long diagonal ($d_L$).
-  - Exact radical formulas rendered on each card.
-  - Interactive tactile range sliders and input boxes synced in real-time.
-  - Unit converter (mm, cm, m, in, ft, yd) and decimal precision toggles (2 to 10 decimal digits).
-- [x] **Live Interactive SVG Blueprint**: 400×400 Cartesian coordinate canvas with stop-sign orientation, incircle, circumcircle, vertex tooltips, and dynamic dimension lines that highlight when corresponding parameter cards are hovered or focused.
-- [x] **Comprehensive Mathematical Proofs**: 5 deep analytical derivation cards covering symmetry group $D_8$, angles, exact radical proofs for apothem and circumradius, 4 distinct area proofs, and the Law of Cosines for all 3 diagonal classes.
+- [x] **Flagship Regular Polygons Suite**:
+  - **Regular Octagon ($n=8$):** 8-variable bidirectional solver, $D_8$ symmetry group proofs, interactive blueprint.
+  - **Regular Hexagon ($n=6$):** 8-variable bidirectional solver, equilateral triangle tessellation proofs, flat-to-flat and point-to-point diagonals.
+  - **Regular Pentagon ($n=5$):** 7-variable bidirectional solver, golden ratio ($\phi$) proofs, exact radical derivations.
+  - **Regular Decagon ($n=10$):** 9-variable bidirectional solver, 4 diagonal congruence classes ($d_1, d_2, d_3, d_4=2R$), golden ratio invariants ($R=a\phi$).
+- [x] **Clean Mathematical Notation & Typography**: Eliminated all raw LaTeX backslash syntax, adopting standard Unicode notation (`α`, `β`, `θ`, `π`, `ϕ`, `√`, `°`, `²`, `³`) across all solvers and explanations.
+- [x] **Live Interactive SVG Blueprints**: Coordinate-plane blueprints with incircles, circumcircles, vertex tooltips, and dynamic hover dimension highlights.
+- [x] **Comprehensive Mathematical Proofs**: Analytical derivations for symmetry groups, angles, exact radicals, area formulas, and diagonal lengths.
 - [x] **LLM Integration & Prompt Engineering Suite**:
   - On-page copyable verified prompt for ChatGPT, Claude, and Gemini with system directives and verification heuristics.
-  - Machine-readable JSON export button.
+  - Machine-readable JSON export button on all solvers.
   - Standardized `/llms.txt` and comprehensive `/llms-full.txt` files at root.
 - [x] **Hierarchical Hub-and-Spoke Architecture**:
   - Level 1: Root Homepage (`index.html`) featuring search and all 5 primary mathematical disciplines.
   - Level 2: Geometry Master Hub (`/geometry/index.html`).
   - Level 3: 2D Geometry Hub (`/geometry/2d/index.html`).
   - Level 4: Shapes & Polygons Hub (`/geometry/2d/shapes/index.html`).
-  - Level 5: Regular Octagon Calculator (`/geometry/2d/shapes/octagon/index.html`).
+  - Level 5: Regular Octagon, Hexagon, Pentagon, and Decagon Calculators.
   - Level 2 Discipline Hubs for Calculus, Finance, Physics, and Statistics.
 - [x] **Automated Tooling & Test Suite**:
-  - `scripts/test_site.py`: Automated testing suite passing with 1e-12 mathematical precision and 100% file integrity.
+  - `scripts/test_site.py`: Automated testing suite passing with 1e-12 mathematical precision for all 4 polygon engines and 100% file integrity.
   - `scripts/generate_calculators.py`: Scalable taxonomy builder and sitemap generator.
   - `scripts/deploy.py`: Programmatic Cloudflare Pages deployment script.
 
