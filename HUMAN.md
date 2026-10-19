@@ -23,7 +23,13 @@
   - **Regular Pentagon ($n=5$):** 7-variable bidirectional solver, golden ratio ($\phi$) proofs, exact radical derivations.
   - **Regular Decagon ($n=10$):** 9-variable bidirectional solver, 4 diagonal congruence classes ($d_1, d_2, d_3, d_4=2R$), golden ratio invariants ($R=a\phi$).
 - [x] **Clean Mathematical Notation & Typography**: Eliminated all raw LaTeX backslash syntax, adopting standard Unicode notation (`α`, `β`, `θ`, `π`, `ϕ`, `√`, `°`, `²`, `³`) across all solvers and explanations.
-- [x] **Live Interactive SVG Blueprints**: Coordinate-plane blueprints with incircles, circumcircles, vertex tooltips, and dynamic hover dimension highlights.
+- [x] **Enhanced Interactive Blueprints & Export Suite**:
+  - Live Cartesian coordinate HUD with dynamic vertex $(X, Y)$ and angle readouts.
+  - Interactive layer toggle pills (Cartesian Grid, Incircle/Circumcircle, Dimension Overlays, Vertex Points, Blueprint Theme).
+  - High-Resolution PNG export (2000×2000 canvas with crisp anti-aliasing, coordinate grid, and embedded attribution watermark).
+  - Standalone Vector SVG download with inline styles and CC BY 4.0 metadata.
+  - Automatic LaTeX TikZ generator generating compilable Overleaf/LaTeX vector code.
+  - **Commercial & Academic Attribution Box:** All blueprints are declared free to use in commerce, academia, textbooks, and software under CC BY 4.0 with ready-to-copy HTML web backlink and BibTeX citation code.
 - [x] **Comprehensive Mathematical Proofs**: Analytical derivations for symmetry groups, angles, exact radicals, area formulas, and diagonal lengths.
 - [x] **LLM Integration & Prompt Engineering Suite**:
   - On-page copyable verified prompt for ChatGPT, Claude, and Gemini with system directives and verification heuristics.
