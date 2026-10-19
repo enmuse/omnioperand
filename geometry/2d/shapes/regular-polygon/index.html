@@ -151,13 +151,33 @@
         <li class="breadcrumb-separator">/</li>
         <li class="breadcrumb-item"><a href="/geometry/2d/shapes/">Shapes & Polygons</a></li>
         <li class="breadcrumb-separator">/</li>
-        <li class="breadcrumb-item current" aria-current="page">Universal Regular Polygon</li>
+        <li class="breadcrumb-item active" aria-current="page">Universal Regular Polygon</li>
       </ol>
     </div>
   </nav>
 
   <!-- Main Calculator Workspace -->
   <main class="container">
+
+    <!-- Quick Shape Navigation Bar -->
+    <nav class="polygon-switcher-bar" aria-label="Polygon Selector">
+      <div class="switcher-label">
+        <span class="switcher-dot"></span>
+        <span>Polygon Solvers:</span>
+      </div>
+      <div class="switcher-pills">
+        <a href="/geometry/2d/shapes/regular-polygon/" class="switcher-pill active featured">
+          <span>⨁</span> Universal N-Gon <span class="pill-badge">3–1000</span>
+        </a>
+        <a href="/geometry/2d/shapes/regular-polygon/?n=3" class="switcher-pill">▲ Triangle (3)</a>
+        <a href="/geometry/2d/shapes/regular-polygon/?n=4" class="switcher-pill">■ Square (4)</a>
+        <a href="/geometry/2d/shapes/pentagon/" class="switcher-pill">⬠ Pentagon (5)</a>
+        <a href="/geometry/2d/shapes/hexagon/" class="switcher-pill">⬡ Hexagon (6)</a>
+        <a href="/geometry/2d/shapes/octagon/" class="switcher-pill">🛑 Octagon (8)</a>
+        <a href="/geometry/2d/shapes/decagon/" class="switcher-pill">⯃ Decagon (10)</a>
+        <a href="/geometry/2d/shapes/" class="switcher-pill switcher-more">📁 All Shapes →</a>
+      </div>
+    </nav>
 
     <!-- Page Title & Header HUD -->
     <header class="calc-header-section">
@@ -169,7 +189,7 @@
       </div>
       <h1 class="calc-main-title" id="polygon-name-display">Regular Octagon</h1>
       <p class="calc-intro-description">
-        Universal bidirectional mathematical solver for any regular <span class="math-tex">n</span>-sided polygon (<span class="math-tex">3 \le n \le 1000</span>). Adjust the number of sides and enter any known parameter to instantaneously resolve all side lengths, radii, areas, spans, and diagonal metrics with machine precision.
+        Universal bidirectional mathematical solver for any regular <span class="math-tex">n</span>-sided polygon (<span class="math-tex">3 ≤ n ≤ 1000</span>). Adjust the number of sides and enter any known parameter to instantaneously resolve all side lengths, radii, areas, spans, and diagonal metrics with machine precision.
       </p>
     </header>
 
@@ -555,25 +575,25 @@
             Any simple <span class="math-tex">n</span>-gon can be partitioned into <span class="math-tex">(n - 2)</span> non-overlapping triangles by drawing all non-intersecting diagonals from a single vertex. Because the interior angles of each triangle sum to 180°:
           </p>
           <div class="math-display">
-            \sum \text{Interior Angles} = (n - 2) \cdot 180° = (n - 2)\pi\text{ rad}
+            ∑ (Interior Angles) = (n - 2) · 180° = (n - 2)π rad
           </div>
           <p>
             Because all <span class="math-tex">n</span> interior angles are congruent:
           </p>
           <div class="math-display">
-            \alpha = \frac{(n - 2) \cdot 180°}{n} = \left(1 - \frac{2}{n}\right) \cdot 180°
+            α = [(n - 2) · 180°] / n = (1 - 2/n) · 180°
           </div>
           <p>
-            The exterior angle <span class="math-tex">\theta</span> is supplementary to the interior angle:
+            The exterior angle <span class="math-tex">θ</span> is supplementary to the interior angle:
           </p>
           <div class="math-display">
-            \theta = 180° - \alpha = 180° - \left(180° - \frac{360°}{n}\right) = \frac{360°}{n}
+            θ = 180° - α = 180° - (180° - 360°/n) = 360° / n
           </div>
           <p>
-            The central angle <span class="math-tex">\beta</span> subtended by one side at the circumcenter equals the full circle divided by <span class="math-tex">n</span>:
+            The central angle <span class="math-tex">β</span> subtended by one side at the circumcenter equals the full circle divided by <span class="math-tex">n</span>:
           </p>
           <div class="math-display">
-            \beta = \frac{360°}{n} = \frac{2\pi}{n}\text{ rad} = \theta
+            β = 360° / n = (2π / n) rad = θ
           </div>
         </div>
       </div>
@@ -583,30 +603,30 @@
         <div class="proof-header">
           <h3>
             <span class="step-num">2</span>
-            <span>Right-Triangle Decomposition: Inradius (<span class="math-tex">r_i</span>) and Circumradius (<span class="math-tex">R</span>)</span>
+            <span>Right-Triangle Decomposition: Inradius (<span class="math-tex">r<sub>i</sub></span>) and Circumradius (<span class="math-tex">R</span>)</span>
           </h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
           <p>
-            Connecting the center of the polygon to any two adjacent vertices forms an isosceles triangle with vertex angle <span class="math-tex">\beta = 2\pi / n</span> and base length <span class="math-tex">a</span>. Dropping a perpendicular altitude from the center to the midpoint of the base bisects the triangle into two congruent right triangles:
+            Connecting the center of the polygon to any two adjacent vertices forms an isosceles triangle with vertex angle <span class="math-tex">β = 2π / n</span> and base length <span class="math-tex">a</span>. Dropping a perpendicular altitude from the center to the midpoint of the base bisects the triangle into two congruent right triangles:
           </p>
           <ul>
             <li>Opposite leg = <span class="math-tex">a / 2</span></li>
-            <li>Adjacent leg = Apothem / Inradius <span class="math-tex">r_i</span></li>
+            <li>Adjacent leg = Apothem / Inradius <span class="math-tex">r<sub>i</sub></span></li>
             <li>Hypotenuse = Circumradius <span class="math-tex">R</span></li>
-            <li>Angle at the center = <span class="math-tex">\beta / 2 = \pi / n</span> (or <span class="math-tex">180° / n</span>)</li>
+            <li>Angle at the center = <span class="math-tex">β / 2 = π / n</span> (or <span class="math-tex">180° / n</span>)</li>
           </ul>
           <p>Applying elementary trigonometry:</p>
           <div class="math-display">
-            \tan\left(\frac{\pi}{n}\right) = \frac{a / 2}{r_i} \implies r_i = \frac{a}{2 \tan(\pi / n)}
+            tan(π / n) = (a / 2) / r<sub>i</sub> ⟹ r<sub>i</sub> = a / [2 tan(π / n)]
           </div>
           <div class="math-display">
-            \sin\left(\frac{\pi}{n}\right) = \frac{a / 2}{R} \implies R = \frac{a}{2 \sin(\pi / n)}
+            sin(π / n) = (a / 2) / R ⟹ R = a / [2 sin(π / n)]
           </div>
           <p>Furthermore, dividing the two equations gives the fundamental invariance:</p>
           <div class="math-display">
-            \frac{r_i}{R} = \cos\left(\frac{\pi}{n}\right) \implies r_i = R \cos\left(\frac{\pi}{n}\right)
+            r<sub>i</sub> / R = cos(π / n) ⟹ r<sub>i</sub> = R · cos(π / n)
           </div>
         </div>
       </div>
@@ -622,18 +642,18 @@
         </div>
         <div class="proof-body">
           <p>
-            A regular <span class="math-tex">n</span>-gon is the union of <span class="math-tex">n</span> congruent isosceles triangles, each having base <span class="math-tex">a</span> and height <span class="math-tex">r_i</span>.
+            A regular <span class="math-tex">n</span>-gon is the union of <span class="math-tex">n</span> congruent isosceles triangles, each having base <span class="math-tex">a</span> and height <span class="math-tex">r<sub>i</sub></span>.
           </p>
           <div class="math-display">
-            A = n \cdot \left(\frac{1}{2} a \cdot r_i\right) = \frac{1}{2} (n \cdot a) \cdot r_i = \frac{1}{2} P \cdot r_i
+            A = n · (½ · a · r<sub>i</sub>) = ½ (n · a) · r<sub>i</sub> = ½ P · r<sub>i</sub>
           </div>
-          <p>Substituting <span class="math-tex">r_i = \frac{a}{2\tan(\pi/n)}</span>:</p>
+          <p>Substituting <span class="math-tex">r<sub>i</sub> = a / [2 tan(π / n)]</span>:</p>
           <div class="math-display">
-            A = \frac{n \cdot a^2}{4 \tan(\pi / n)}
+            A = (n · a²) / [4 tan(π / n)]
           </div>
-          <p>Expressing the area strictly in terms of circumradius <span class="math-tex">R</span> using <span class="math-tex">\text{Area} = \frac{1}{2}ab\sin(\theta)</span> for each triangle:</p>
+          <p>Expressing the area strictly in terms of circumradius <span class="math-tex">R</span> using <span class="math-tex">Area = ½ a b · sin(θ)</span> for each triangle:</p>
           <div class="math-display">
-            A = n \cdot \left[\frac{1}{2} R^2 \sin\left(\frac{2\pi}{n}\right)\right] = \frac{n R^2}{2} \sin\left(\frac{2\pi}{n}\right)
+            A = n · [½ R² · sin(2π / n)] = ½ n R² · sin(2π / n)
           </div>
         </div>
       </div>
@@ -649,16 +669,16 @@
         </div>
         <div class="proof-body">
           <p>
-            A diagonal is any line segment connecting two non-adjacent vertices. From any of the <span class="math-tex">n</span> vertices, we can draw line segments to all other vertices except itself and its two immediate neighbors, yielding <span class="math-tex">(n - 3)</span> diagonals per vertex. Multiplying by <span class="math-tex">n</span> and dividing by 2 (since segment <span class="math-tex">V_i V_j = V_j V_i</span>):
+            A diagonal is any line segment connecting two non-adjacent vertices. From any of the <span class="math-tex">n</span> vertices, we can draw line segments to all other vertices except itself and its two immediate neighbors, yielding <span class="math-tex">(n - 3)</span> diagonals per vertex. Multiplying by <span class="math-tex">n</span> and dividing by 2 (since segment <span class="math-tex">V<sub>i</sub>V<sub>j</sub> = V<sub>j</sub>V<sub>i</sub></span>):
           </p>
           <div class="math-display">
-            N_d = \frac{n(n - 3)}{2}
+            N<sub>d</sub> = n(n - 3) / 2
           </div>
           <p>
-            Diagonals fall into <span class="math-tex">\lfloor n/2 \rfloor - 1</span> distinct length congruence classes. The <span class="math-tex">k</span>-th diagonal <span class="math-tex">d_k</span> (skipping <span class="math-tex">k</span> edges along the perimeter) subtends an arc of <span class="math-tex">k \cdot \frac{2\pi}{n}</span> on the circumscribed circle. Using the chord theorem:
+            Diagonals fall into <span class="math-tex">⌊n/2⌋ - 1</span> distinct length congruence classes. The <span class="math-tex">k</span>-th diagonal <span class="math-tex">d<sub>k</sub></span> (skipping <span class="math-tex">k</span> edges along the perimeter) subtends an arc of <span class="math-tex">k · (2π / n)</span> on the circumscribed circle. Using the chord theorem:
           </p>
           <div class="math-display">
-            d_k = 2 R \sin\left(\frac{k \pi}{n}\right) = a \cdot \frac{\sin(k\pi / n)}{\sin(\pi / n)}
+            d<sub>k</sub> = 2R · sin(kπ / n) = a · [sin(kπ / n) / sin(π / n)]
           </div>
         </div>
       </div>
@@ -668,22 +688,22 @@
         <div class="proof-header">
           <h3>
             <span class="step-num">5</span>
-            <span>The Archimedean Limit as <span class="math-tex">n \to \infty</span> (Method of Exhaustion)</span>
+            <span>The Archimedean Limit as <span class="math-tex">n ➔ ∞</span> (Method of Exhaustion)</span>
           </h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
           <p>
-            Around 250 BCE, Archimedes of Syracuse calculated the bounds of <span class="math-tex">\pi</span> by doubling polygon sides from hexagon (<span class="math-tex">n=6</span>) to 12, 24, 48, and 96-gon. Taking the limit of perimeter and area as <span class="math-tex">n \to \infty</span> with fixed circumradius <span class="math-tex">R</span>:
+            Around 250 BCE, Archimedes of Syracuse calculated the bounds of <span class="math-tex">π</span> by doubling polygon sides from hexagon (<span class="math-tex">n = 6</span>) to 12, 24, 48, and 96-gon. Taking the limit of perimeter and area as <span class="math-tex">n ➔ ∞</span> with fixed circumradius <span class="math-tex">R</span>:
           </p>
           <div class="math-display">
-            \lim_{n \to \infty} P = \lim_{n \to \infty} \left[2n R \sin\left(\frac{\pi}{n}\right)\right] = 2\pi R \cdot \lim_{n \to \infty} \frac{\sin(\pi / n)}{\pi / n} = 2\pi R
+            lim (n ➔ ∞) P = lim (n ➔ ∞) [2n R · sin(π/n)] = 2πR · lim (n ➔ ∞) [sin(π/n) / (π/n)] = 2πR
           </div>
           <div class="math-display">
-            \lim_{n \to \infty} A = \lim_{n \to \infty} \left[\frac{n R^2}{2} \sin\left(\frac{2\pi}{n}\right)\right] = \pi R^2 \cdot \lim_{n \to \infty} \frac{\sin(2\pi / n)}{2\pi / n} = \pi R^2
+            lim (n ➔ ∞) A = lim (n ➔ ∞) [½ n R² · sin(2π/n)] = πR² · lim (n ➔ ∞) [sin(2π/n) / (2π/n)] = πR²
           </div>
           <p>
-            Similarly, <span class="math-tex">\lim_{n \to \infty} r_i = \lim_{n \to \infty} R \cos(\pi / n) = R</span>, proving that the polygon converges to a circle of radius <span class="math-tex">R</span>.
+            Similarly, <span class="math-tex">lim (n ➔ ∞) r<sub>i</sub> = lim (n ➔ ∞) [R · cos(π/n)] = R</span>, proving that the polygon converges to a circle of radius <span class="math-tex">R</span>.
           </p>
         </div>
       </div>
@@ -717,7 +737,7 @@
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          The area of any regular polygon with <span class="math-tex">n</span> sides of length <span class="math-tex">a</span> is <span class="math-tex">A = (n \cdot a^2) / [4 \cdot \tan(\pi/n)]</span>. If you know the apothem (inradius) <span class="math-tex">r_i</span>, the area is <span class="math-tex">A = n \cdot r_i^2 \cdot \tan(\pi/n) = \frac{1}{2} P \cdot r_i</span>. If you know the circumradius <span class="math-tex">R</span>, the area is <span class="math-tex">A = \frac{n R^2}{2} \cdot \sin(2\pi/n)</span>.
+          The area of any regular polygon with <span class="math-tex">n</span> sides of length <span class="math-tex">a</span> is <span class="math-tex">A = (n · a²) / [4 tan(π/n)]</span>. If you know the apothem (inradius) <span class="math-tex">r<sub>i</sub></span>, the area is <span class="math-tex">A = n · r<sub>i</sub>² · tan(π/n) = ½ P · r<sub>i</sub></span>. If you know the circumradius <span class="math-tex">R</span>, the area is <span class="math-tex">A = ½ n R² · sin(2π/n)</span>.
         </div>
       </div>
 
@@ -727,7 +747,7 @@
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          An <span class="math-tex">n</span>-sided polygon has <span class="math-tex">N_d = n(n - 3) / 2</span> diagonals. For example:
+          An <span class="math-tex">n</span>-sided polygon has <span class="math-tex">N<sub>d</sub> = n(n - 3) / 2</span> diagonals. For example:
           <ul>
             <li>Triangle (<span class="math-tex">n = 3</span>): <span class="math-tex">3(0)/2 = 0</span> diagonals</li>
             <li>Square (<span class="math-tex">n = 4</span>): <span class="math-tex">4(1)/2 = 2</span> diagonals</li>
@@ -745,7 +765,7 @@
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          The <strong>apothem (inradius <span class="math-tex">r_i</span>)</strong> is the perpendicular distance from the center to the midpoint of any flat edge. It is the radius of the inscribed circle. The <strong>circumradius (<span class="math-tex">R</span>)</strong> is the distance from the center to any vertex corner. It is the radius of the circumscribed circle passing through all vertices. The two are always related by <span class="math-tex">r_i = R \cdot \cos(\pi / n)</span>.
+          The <strong>apothem (inradius <span class="math-tex">r<sub>i</sub></span>)</strong> is the perpendicular distance from the center to the midpoint of any flat edge. It is the radius of the inscribed circle. The <strong>circumradius (<span class="math-tex">R</span>)</strong> is the distance from the center to any vertex corner. It is the radius of the circumscribed circle passing through all vertices. The two are always related by <span class="math-tex">r<sub>i</sub> = R · cos(π / n)</span>.
         </div>
       </div>
 

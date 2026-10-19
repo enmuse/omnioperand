@@ -120,6 +120,26 @@
   </nav>
 
   <main class="container">
+    <!-- Quick Shape Navigation Bar -->
+    <nav class="polygon-switcher-bar" aria-label="Polygon Selector">
+      <div class="switcher-label">
+        <span class="switcher-dot"></span>
+        <span>Polygon Solvers:</span>
+      </div>
+      <div class="switcher-pills">
+        <a href="/geometry/2d/shapes/regular-polygon/" class="switcher-pill featured">
+          <span>⨁</span> Universal N-Gon <span class="pill-badge">3–1000</span>
+        </a>
+        <a href="/geometry/2d/shapes/regular-polygon/?n=3" class="switcher-pill">▲ Triangle (3)</a>
+        <a href="/geometry/2d/shapes/regular-polygon/?n=4" class="switcher-pill">■ Square (4)</a>
+        <a href="/geometry/2d/shapes/pentagon/" class="switcher-pill">⬠ Pentagon (5)</a>
+        <a href="/geometry/2d/shapes/hexagon/" class="switcher-pill active">⬡ Hexagon (6)</a>
+        <a href="/geometry/2d/shapes/octagon/" class="switcher-pill">🛑 Octagon (8)</a>
+        <a href="/geometry/2d/shapes/decagon/" class="switcher-pill">⯃ Decagon (10)</a>
+        <a href="/geometry/2d/shapes/" class="switcher-pill switcher-more">📁 All Shapes →</a>
+      </div>
+    </nav>
+
     <section class="calculator-hero">
       <div class="calc-title-badge">Polygon Geometry • 6-Sided Regular Polytope</div>
       <h1>Regular Hexagon Calculator</h1>
@@ -475,7 +495,7 @@
             Connect the center <span class="math-tex">O</span> to any two adjacent vertices <span class="math-tex">V_1</span> and <span class="math-tex">V_2</span>. The central angle is <span class="math-tex">∠V_1OV_2 = 60°</span>. Since both radii legs are equal (<span class="math-tex">OV_1 = OV_2 = R</span>), the triangle <span class="math-tex">ΔOV_1V_2</span> is isosceles.
           </p>
           <div class="math-display">
-            \text{Base angles} = (180° - 60°) / 2 = 60°
+            Base angles = (180° - 60°) / 2 = 60°
           </div>
           <p>
             Because all three angles are 60°, the triangle is <strong>equilateral</strong>. Therefore:
@@ -623,7 +643,7 @@
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          Wrench and socket sizes measure the <strong>flat-to-flat span</strong> (<span class="math-tex">S</span>), which equals <span class="math-tex">2r<sub>i</sub> = a√3</span>. For example, a bolt with a side length of 10 mm requires a socket size of <span class="math-tex">10√3 ≈ 17.32\text{ mm}</span> (typically a standard 17mm or 18mm socket).
+          Wrench and socket sizes measure the <strong>flat-to-flat span</strong> (<span class="math-tex">S</span>), which equals <span class="math-tex">2r<sub>i</sub> = a√3</span>. For example, a bolt with a side length of 10 mm requires a socket size of <span class="math-tex">10√3 ≈ 17.32 mm</span> (typically a standard 17mm or 18mm socket).
         </div>
       </div>
     </section>

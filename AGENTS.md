@@ -110,6 +110,28 @@ Every calculator and hub page MUST include:
 - Always maintain root `/llms.txt` and `/llms-full.txt`.
 - Every calculator must include a copyable "Prompt for LLMs" with explicit system directives and verification checks so users can feed verified problem context into ChatGPT, Claude, and Gemini without hallucination.
 
+### 6. Strict Zero-Raw-LaTeX Mandate (Clean Mathematical Unicode Typography)
+- **Hard Prohibition on Raw LaTeX in HTML:** AI agents must **NEVER** write raw LaTeX backslash commands (e.g. `\frac`, `\alpha`, `\theta`, `\beta`, `\pi`, `\sum`, `\lim`, `\sqrt`, `\cdot`, `\implies`, `\le`, `\ge`, `\text{...}`) inside user-facing HTML files.
+- **Why:** OmniOperand maintains 100/100 Google PageSpeed scores by eliminating heavy 200KB+ client libraries (MathJax, KaTeX) and external web fonts. Placing raw LaTeX backslashes into HTML causes them to render as ugly, broken, unparsed code to the user.
+- **Mandated Mathematical Typography Standard:**
+  - **Greek Symbols:** Use native Unicode characters: `α`, `β`, `γ`, `θ`, `π`, `ϕ`, `φ`, `λ`, `σ`, `ω`, `Δ`, `∑`.
+  - **Arithmetic & Logic Operators:** Use standard mathematical Unicode: `·` (middle dot), `×`, `÷`, `±`, `∓`, `√`, `∛`, `≈`, `≠`, `≤`, `≥`, `⟹`, `➔`, `→`, `∞`, `∠`, `⊥`.
+  - **Powers, Roots & Indices:** Use semantic HTML `<sup>` and `<sub>` (e.g. `r<sub>i</sub>`, `V<sub>j</sub>`, `S²`, `a³`, `aⁿ`).
+  - **Fractions:** Use typographic fractions `½`, `¼`, `¾`, or clean inline bracketed forms: `[(n - 2) · 180°] / n` or `a / [2 tan(π/n)]`.
+  - **Limits & Summations:** Format cleanly: `lim (n ➔ ∞) P = 2πR` and `∑ (Interior Angles) = (n - 2) · 180°`.
+- **Allowed Exception:** Only programmatic LaTeX TikZ export templates for downloadable files or inside copyable code blocks (e.g. `blueprint-engine.js` TikZ output) may contain LaTeX backslashes.
+- **Automated CI Enforcement:** `scripts/test_site.py` contains `test_zero_raw_latex_in_html()`, which scans all `.html` files in the repository. Any unparsed backslash command will fail the test suite and block Cloudflare deployment.
+
+### 7. Flagship Engine & Cross-Shape Navigation Architecture
+- **Discoverability Mandate:** The **Universal Regular Polygon Solver** (`/geometry/2d/shapes/regular-polygon/`) is the master 2D computational engine. It must never be buried or hard to find. It must be prominently linked from:
+  1. Root Homepage (`/`): Hero CTA buttons, featured solver showcase, and Geometry hub card.
+  2. Level 2 Geometry Hub (`/geometry/`): Top featured item under Two-Dimensional Geometry.
+  3. Level 3 2D Hub (`/geometry/2d/`): Top featured item under Polygons & Shapes.
+  4. Level 4 Shapes Hub (`/geometry/2d/shapes/`): Full-width master solver showcase banner.
+- **Unified Polygon Switcher Bar:** Every shape calculator (`regular-polygon`, `octagon`, `hexagon`, `pentagon`, `decagon`) MUST feature a persistent, responsive **Polygon Switcher Bar** directly above the solver HUD:
+  - Quick-switch pills: `[⨁ Universal N-Gon (3–1000)]`, `[▲ Triangle (3)]`, `[■ Square (4)]`, `[⬠ Pentagon (5)]`, `[⬡ Hexagon (6)]`, `[🛑 Octagon (8)]`, `[⯃ Decagon (10)]`, `[📁 All Shapes]`.
+  - The current active shape must be styled with an active highlight, and the Universal N-Gon pill must feature an accent badge so users can effortlessly pivot between dedicated radical closed-form solvers and the universal arbitrary $n$ solver in a single click without dead ends.
+
 ---
 
 ## 4. Operational Scripts & Automation

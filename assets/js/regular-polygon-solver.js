@@ -608,7 +608,21 @@ Mathematical Verification Directives:
   // Initialize
   document.addEventListener('DOMContentLoaded', () => {
     initEvents();
-    currentValues = computeAll(8, 10);
+
+    // Check for URL query parameter ?n=
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const nParam = parseInt(urlParams.get('n'), 10);
+      if (!isNaN(nParam) && nParam >= 3 && nParam <= 1000) {
+        currentN = nParam;
+        const nInput = document.getElementById('input-n');
+        if (nInput) nInput.value = currentN;
+      }
+    } catch (e) {
+      // Fallback to default
+    }
+
+    currentValues = computeAll(currentN, 10);
     updateDOM();
   });
 

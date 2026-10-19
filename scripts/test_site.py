@@ -242,6 +242,30 @@ def test_file_integrity():
 
     print(f"  ✅ All {len(required_files)} core files verified and non-empty!")
 
+def test_zero_raw_latex_in_html():
+    print("Testing for Zero Raw LaTeX Commands in HTML...")
+    import re
+    latex_pattern = re.compile(r"\\[a-zA-Z]+")
+    violations = []
+
+    for html_file in REPO_ROOT.glob("**/*.html"):
+        if ".git" in html_file.parts:
+            continue
+        content = html_file.read_text(encoding="utf-8")
+        lines = content.splitlines()
+        for idx, line in enumerate(lines):
+            matches = latex_pattern.findall(line)
+            if matches:
+                rel = html_file.relative_to(REPO_ROOT)
+                violations.append((f"{rel}:{idx+1}", matches, line.strip()))
+
+    if violations:
+        for loc, matches, line in violations[:10]:
+            print(f"  ❌ Raw LaTeX violation at {loc}: {matches} -> {line[:80]}")
+        assert False, f"Found {len(violations)} raw LaTeX backslash commands in HTML files! Use clean Unicode math notation instead."
+
+    print("  ✅ Zero raw LaTeX backslash commands found across all HTML files!")
+
 def main():
     print("=========================================================")
     print("🧪 Running OmniOperand Integrity Test Suite")
@@ -249,6 +273,7 @@ def main():
     try:
         test_mathematical_precision()
         test_file_integrity()
+        test_zero_raw_latex_in_html()
         print("\n🎉 ALL TESTS PASSED! Site is 100% compliant.")
         return 0
     except AssertionError as e:
