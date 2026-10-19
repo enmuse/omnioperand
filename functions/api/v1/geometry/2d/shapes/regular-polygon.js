@@ -192,6 +192,8 @@ export async function onRequestGet(context) {
   });
 }
 
+export const onRequestHead = onRequestGet;
+
 export async function onRequestPost(context) {
   try {
     let body = {};
