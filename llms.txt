@@ -1,0 +1,33 @@
+# OmniOperand (omnioperand.com)
+> High-precision quantitative computing engine, bidirectional geometric solvers, and exact radical mathematical derivations.
+
+## Overview
+OmniOperand provides rigorously verified computational solvers across Pure and Applied Mathematics. Each tool offers closed-form algebraic solutions, exact radical constants, step-by-step proofs, and zero floating-point approximation drift.
+
+## Canonical Endpoints & Tools
+
+- [Regular Octagon Calculator](https://omnioperand.com/geometry/2d/shapes/octagon/): Bidirectional regular octagon solver. Given any one known parameter (side length, area, perimeter, inradius/apothem, circumradius, short diagonal, medium diagonal/span, or long diagonal), it computes all remaining 7 parameters with machine precision and exact radical formulas.
+- [2D Shapes & Polygons Hub](https://omnioperand.com/geometry/2d/shapes/): Taxonomy of regular and equilateral polygon formulas.
+- [Two-Dimensional (2D) Geometry](https://omnioperand.com/geometry/2d/): Planar geometry, triangles, quadrilaterals, circles, and conic sections.
+- [Geometry Master Hub](https://omnioperand.com/geometry/): Euclidean, analytic, coordinate, and 3D spatial geometry.
+- [Calculus & Analysis Hub](https://omnioperand.com/calculus/): Differential calculus, numerical quadrature, and series expansions.
+- [Quantitative Finance Hub](https://omnioperand.com/finance/): Black-Scholes pricing, compound interest, and amortization.
+- [Physics & Mechanics Hub](https://omnioperand.com/physics/): Kinematics, thermodynamics, and fluid mechanics.
+- [Probability & Statistics Hub](https://omnioperand.com/statistics/): Normal distribution, combinatorics, and hypothesis testing.
+
+## Regular Octagon Mathematical Quick Reference
+- Interior angle: 135° (3π/4 rad)
+- Exterior/Central angle: 45° (π/4 rad)
+- Half-central angle: 22.5° (π/8 rad)
+- Apothem (Inradius): r_i = a * (1 + √2) / 2 ≈ 1.20710678 * a
+- Circumradius: R = a * √(4 + 2√2) / 2 ≈ 1.30656296 * a
+- Area from side: A = 2(1 + √2) * a² ≈ 4.82842712 * a²
+- Side from area: a = √(A / [2(1 + √2)]) = √(A * (√2 - 1) / 2) ≈ 0.45508986 * √A
+- Short diagonal (across 2 sides): d_S = a * √(2 + √2) ≈ 1.84775907 * a
+- Medium diagonal (Span / Height flat-to-flat): S = 2 * r_i = a * (1 + √2) ≈ 2.41421356 * a
+- Long diagonal (across opposite vertices): d_L = 2 * R = a * √(4 + 2√2) ≈ 2.61312593 * a
+- Carpentry corner cut from span S: Corner cut leg = (S - a) / 2 = a / √2 ≈ 0.70710678 * a
+- Miter saw angle: 22.5°
+
+## Optional
+- For full proofs, step-by-step algebraic derivations, and JSON schemas, see [llms-full.txt](https://omnioperand.com/llms-full.txt).

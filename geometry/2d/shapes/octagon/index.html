@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regular Octagon Calculator — Exact Formulas, Area, Diagonals & Apothem | OmniOperand</title>
+  <meta name="description" content="Bidirectional regular octagon calculator. Compute area, perimeter, apothem (inradius), circumradius, and all 3 diagonal lengths from any single known dimension with exact radical proofs and step-by-step math derivations.">
+  <link rel="canonical" href="https://omnioperand.com/geometry/2d/shapes/octagon/">
+
+  <!-- OpenGraph & Social Sharing -->
+  <meta property="og:title" content="Regular Octagon Calculator & Analytic Geometry Solver | OmniOperand">
+  <meta property="og:description" content="Interactive 8-variable regular octagon solver. Real-time SVG blueprint, exact radical formulas, step-by-step proofs, and LLM reasoning instructions.">
+  <meta property="og:url" content="https://omnioperand.com/geometry/2d/shapes/octagon/">
+  <meta property="og:type" content="website">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/omni-core.css">
+  <link rel="stylesheet" href="/assets/css/calculator.css">
+
+  <!-- Structured Data: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://omnioperand.com/geometry/2d/shapes/octagon/#app",
+        "name": "Regular Octagon Calculator & Solver",
+        "url": "https://omnioperand.com/geometry/2d/shapes/octagon/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "High-precision bidirectional regular octagon calculator computing side length, area, perimeter, apothem, circumradius, and 3 distinct diagonals."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://omnioperand.com/geometry/2d/shapes/octagon/#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "OmniOperand", "item": "https://omnioperand.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Geometry", "item": "https://omnioperand.com/geometry/" },
+          { "@type": "ListItem", "position": 3, "name": "2D Geometry", "item": "https://omnioperand.com/geometry/2d/" },
+          { "@type": "ListItem", "position": 4, "name": "Shapes & Polygons", "item": "https://omnioperand.com/geometry/2d/shapes/" },
+          { "@type": "ListItem", "position": 5, "name": "Regular Octagon", "item": "https://omnioperand.com/geometry/2d/shapes/octagon/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://omnioperand.com/geometry/2d/shapes/octagon/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the formula for the area of a regular octagon?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The area of a regular octagon with side length a is given by A = 2(1 + √2)a² ≈ 4.828427a². In terms of the inradius (apothem) r_i, the area is A = 8(√2 - 1)r_i² ≈ 3.313708r_i². In terms of the span (flat-to-flat distance S = 2r_i), the area is A = 2(√2 - 1)S² ≈ 0.828427S²."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you calculate the side length of an octagon from its area?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To find the side length a from area A, divide the area by 2(1 + √2) and take the square root: a = √(A / [2(1 + √2)]) = √(A · (√2 - 1) / 2) ≈ 0.4550898 · √A."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the three different diagonal lengths of a regular octagon?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A regular octagon has 20 total diagonals of 3 distinct lengths: (1) Short diagonal d_S = a√(2 + √2) ≈ 1.84776a connecting vertices separated by one vertex; (2) Medium diagonal (Span / Height) S = a(1 + √2) ≈ 2.41421a connecting opposite parallel sides; (3) Long diagonal d_L = a√(4 + 2√2) = 2R ≈ 2.61313a connecting opposite vertices passing through the center."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the miter angle for building an octagon frame or gazebo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each corner of a regular octagon has an interior angle of 135°. When joining two pieces of wood to form this corner, each piece must be cut at a 22.5° miter angle (90° - 135°/2 = 22.5°)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Master Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link" id="brand-home-link">
+        <div class="brand-icon">⨁</div>
+        <span>OmniOperand</span>
+        <span class="brand-badge">Math Engine</span>
+      </a>
+
+      <nav class="header-nav">
+        <a href="/geometry/" class="nav-link active">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <a href="/statistics/" class="nav-link">Statistics</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search Calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation Bar -->
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/geometry/">Geometry</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/geometry/2d/">2D Geometry</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/geometry/2d/shapes/">Shapes & Polygons</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active" aria-current="page">Regular Octagon Calculator</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Hero Header -->
+    <section class="calculator-hero">
+      <div class="calc-title-badge">Polygon Geometry • 8-Sided Regular Polytope</div>
+      <h1>Regular Octagon Calculator</h1>
+      <p>
+        High-precision bidirectional analytic solver. Enter <strong>any single known variable</strong>—such as side length, area, perimeter, apothem (inradius), circumradius, or any of the 3 diagonals—and all other 7 geometric parameters will compute instantaneously with exact radical derivations.
+      </p>
+    </section>
+
+    <!-- Dual-Column Interactive Solver & SVG Blueprint -->
+    <section class="solver-container">
+      
+      <!-- Left Panel: Solver Matrix HUD -->
+      <div class="solver-panel">
+        
+        <!-- Top Controls: Unit Selector & Precision -->
+        <div class="solver-toolbar">
+          <div class="toolbar-group">
+            <span class="toolbar-label">Units:</span>
+            <div class="segmented-control" id="unit-selector">
+              <button class="unit-btn active" data-unit="cm">cm</button>
+              <button class="unit-btn" data-unit="mm">mm</button>
+              <button class="unit-btn" data-unit="m">m</button>
+              <button class="unit-btn" data-unit="in">in</button>
+              <button class="unit-btn" data-unit="ft">ft</button>
+              <button class="unit-btn" data-unit="yd">yd</button>
+            </div>
+          </div>
+
+          <div class="toolbar-group">
+            <span class="toolbar-label">Decimals:</span>
+            <div class="segmented-control" id="prec-selector">
+              <button class="prec-btn" data-prec="2">2</button>
+              <button class="prec-btn active" data-prec="4">4</button>
+              <button class="prec-btn" data-prec="6">6</button>
+              <button class="prec-btn" data-prec="8">8</button>
+              <button class="prec-btn" data-prec="10">10</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Driver Variable Selector -->
+        <div class="driver-selector-bar">
+          <label for="driver-select">Select Known Input (Driver):</label>
+          <select id="driver-select" class="driver-dropdown">
+            <option value="side" selected>Side Length (a)</option>
+            <option value="area">Area (A)</option>
+            <option value="perimeter">Perimeter (P)</option>
+            <option value="apothem">Apothem / Inradius (r_i)</option>
+            <option value="circumradius">Circumradius (R)</option>
+            <option value="span">Span / Flat-to-Flat Medium Diagonal (S)</option>
+            <option value="long_diag">Long Diagonal / Vertex-to-Vertex (d_L)</option>
+            <option value="short_diag">Short Diagonal (d_S)</option>
+          </select>
+        </div>
+
+        <!-- 8-Parameter Matrix -->
+        <div class="parameter-grid">
+          
+          <!-- 1. Side Length -->
+          <div class="param-card is-driver" id="card-side">
+            <div class="param-header">
+              <span class="param-title">Side Length <span class="param-symbol">a</span></span>
+              <span class="param-status-tag input" id="status-side">Input (Driver)</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-side" class="param-input" value="10" step="any" min="0.0001" aria-label="Side Length">
+              <span class="param-unit" id="unit-side">cm</span>
+            </div>
+            <input type="range" id="slider-side" class="param-slider" min="1" max="100" value="10" step="0.1" aria-label="Side Length Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-side">a = 10</span>
+              <button class="copy-param-btn" id="copy-side" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 2. Area -->
+          <div class="param-card" id="card-area">
+            <div class="param-header">
+              <span class="param-title">Area <span class="param-symbol">A</span></span>
+              <span class="param-status-tag calculated" id="status-area">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-area" class="param-input" value="482.8427" step="any" min="0.0001" aria-label="Area">
+              <span class="param-unit" id="unit-area">cm²</span>
+            </div>
+            <input type="range" id="slider-area" class="param-slider" min="1" max="5000" value="482.8427" step="1" aria-label="Area Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-area">A = 2(1+√2)a²</span>
+              <button class="copy-param-btn" id="copy-area" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 3. Perimeter -->
+          <div class="param-card" id="card-perimeter">
+            <div class="param-header">
+              <span class="param-title">Perimeter <span class="param-symbol">P</span></span>
+              <span class="param-status-tag calculated" id="status-perimeter">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-perimeter" class="param-input" value="80" step="any" min="0.0001" aria-label="Perimeter">
+              <span class="param-unit" id="unit-perimeter">cm</span>
+            </div>
+            <input type="range" id="slider-perimeter" class="param-slider" min="1" max="800" value="80" step="0.5" aria-label="Perimeter Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-perimeter">P = 8a</span>
+              <button class="copy-param-btn" id="copy-perimeter" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 4. Apothem / Inradius -->
+          <div class="param-card" id="card-apothem">
+            <div class="param-header">
+              <span class="param-title">Apothem (Inradius) <span class="param-symbol">r<sub>i</sub></span></span>
+              <span class="param-status-tag calculated" id="status-apothem">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-apothem" class="param-input" value="12.0711" step="any" min="0.0001" aria-label="Apothem">
+              <span class="param-unit" id="unit-apothem">cm</span>
+            </div>
+            <input type="range" id="slider-apothem" class="param-slider" min="1" max="150" value="12.0711" step="0.1" aria-label="Apothem Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-apothem">r<sub>i</sub> = a(1+√2)/2</span>
+              <button class="copy-param-btn" id="copy-apothem" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 5. Circumradius -->
+          <div class="param-card" id="card-circumradius">
+            <div class="param-header">
+              <span class="param-title">Circumradius <span class="param-symbol">R</span></span>
+              <span class="param-status-tag calculated" id="status-circumradius">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-circumradius" class="param-input" value="13.0656" step="any" min="0.0001" aria-label="Circumradius">
+              <span class="param-unit" id="unit-circumradius">cm</span>
+            </div>
+            <input type="range" id="slider-circumradius" class="param-slider" min="1" max="160" value="13.0656" step="0.1" aria-label="Circumradius Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-circumradius">R = a√(4+2√2)/2</span>
+              <button class="copy-param-btn" id="copy-circumradius" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 6. Long Diagonal -->
+          <div class="param-card" id="card-long_diag">
+            <div class="param-header">
+              <span class="param-title">Long Diagonal <span class="param-symbol">d<sub>L</sub></span></span>
+              <span class="param-status-tag calculated" id="status-long_diag">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-long_diag" class="param-input" value="26.1313" step="any" min="0.0001" aria-label="Long Diagonal">
+              <span class="param-unit" id="unit-long_diag">cm</span>
+            </div>
+            <input type="range" id="slider-long_diag" class="param-slider" min="1" max="320" value="26.1313" step="0.2" aria-label="Long Diagonal Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-long_diag">d<sub>L</sub> = 2R = a√(4+2√2)</span>
+              <button class="copy-param-btn" id="copy-long_diag" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 7. Span (Medium Diagonal) -->
+          <div class="param-card" id="card-span">
+            <div class="param-header">
+              <span class="param-title">Span / Flat-to-Flat <span class="param-symbol">S</span></span>
+              <span class="param-status-tag calculated" id="status-span">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-span" class="param-input" value="24.1421" step="any" min="0.0001" aria-label="Span">
+              <span class="param-unit" id="unit-span">cm</span>
+            </div>
+            <input type="range" id="slider-span" class="param-slider" min="1" max="300" value="24.1421" step="0.2" aria-label="Span Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-span">S = 2r<sub>i</sub> = a(1+√2)</span>
+              <button class="copy-param-btn" id="copy-span" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+          <!-- 8. Short Diagonal -->
+          <div class="param-card" id="card-short_diag">
+            <div class="param-header">
+              <span class="param-title">Short Diagonal <span class="param-symbol">d<sub>S</sub></span></span>
+              <span class="param-status-tag calculated" id="status-short_diag">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-short_diag" class="param-input" value="18.4776" step="any" min="0.0001" aria-label="Short Diagonal">
+              <span class="param-unit" id="unit-short_diag">cm</span>
+            </div>
+            <input type="range" id="slider-short_diag" class="param-slider" min="1" max="250" value="18.4776" step="0.1" aria-label="Short Diagonal Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-short_diag">d<sub>S</sub> = a√(2+√2)</span>
+              <button class="copy-param-btn" id="copy-short_diag" title="Copy value">Copy</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Panel: Live Dynamic SVG Canvas -->
+      <div class="canvas-panel">
+        <div class="canvas-header">
+          <div class="canvas-title">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon></svg>
+            <span>Interactive Analytic Blueprint</span>
+          </div>
+          <span style="font-size:0.75rem; color:var(--text-muted);">Cartesian (400×400)</span>
+        </div>
+
+        <div class="canvas-wrapper">
+          <svg id="svg-octagon-canvas" class="octagon-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <!-- Cartesian Grid Lines -->
+            <defs>
+              <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" />
+              </pattern>
+            </defs>
+            <rect width="400" height="400" fill="url(#smallGrid)" />
+
+            <!-- Coordinate Axes -->
+            <line x1="200" y1="20" x2="200" y2="380" class="svg-axis" />
+            <line x1="20" y1="200" x2="380" y2="200" class="svg-axis" />
+
+            <!-- Dimension & Circle Overlays -->
+            <g id="svg-dimension-overlay"></g>
+
+            <!-- Regular Octagon Polygon Body -->
+            <polygon id="svg-octagon-polygon" class="svg-polygon-shape" points="" />
+
+            <!-- Octagon Vertices -->
+            <g id="svg-vertices-group"></g>
+          </svg>
+        </div>
+
+        <!-- Canvas Color Legend -->
+        <div class="canvas-legend">
+          <div class="legend-item"><span class="legend-dot" style="background:#06b6d4;"></span> Side (a)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#10b981;"></span> Apothem (r<sub>i</sub>)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#a855f7;"></span> Circumradius (R)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#f59e0b;"></span> Long Diag (d<sub>L</sub>)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> Span (S)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#ec4899;"></span> Short Diag (d<sub>S</sub>)</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Deep Mathematical Explanations & Step-by-Step Proofs -->
+    <section class="proofs-section">
+      <h2>Mathematical Foundations & Analytical Derivations</h2>
+      <p>
+        A regular octagon is a two-dimensional convex regular polygon with 8 equal sides and 8 equal interior angles. It belongs to the dihedral symmetry group <strong>D<sub>8</sub></strong>, featuring 8 axes of reflective symmetry and 8-fold rotational symmetry (45° rotational invariance).
+      </p>
+
+      <!-- Proof Card 1: Angles & Invariants -->
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">1</span>
+            <span>Interior, Exterior & Central Angles</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <div class="proof-step">
+            <div class="step-num">a</div>
+            <div class="step-content">
+              <strong>Sum of Interior Angles:</strong>
+              For any convex <span class="math-tex">n</span>-gon, the sum of interior angles is given by <span class="math-tex">S = (n - 2) \times 180^\circ</span>. For an octagon (<span class="math-tex">n = 8</span>):
+              <div class="math-display">
+                S = (8 - 2) \times 180^\circ = 6 \times 180^\circ = 1080^\circ \quad \left(6\pi \text{ rad}\right)
+              </div>
+            </div>
+          </div>
+          <div class="proof-step">
+            <div class="step-num">b</div>
+            <div class="step-content">
+              <strong>Individual Interior Angle:</strong>
+              Because the polygon is regular, all 8 angles are congruent:
+              <div class="math-display">
+                \alpha = \frac{1080^\circ}{8} = 135^\circ \quad \left(\frac{3\pi}{4} \text{ rad}\right)
+              </div>
+            </div>
+          </div>
+          <div class="proof-step">
+            <div class="step-num">c</div>
+            <div class="step-content">
+              <strong>Central & Exterior Angle:</strong>
+              Dividing a full revolution (<span class="math-tex">360^\circ</span>) equally among 8 sectors yields:
+              <div class="math-display">
+                \beta = \frac{360^\circ}{8} = 45^\circ \quad \left(\frac{\pi}{4} \text{ rad}\right)
+              </div>
+              The half-central angle subtending each right triangle is <span class="math-tex">\theta = \frac{45^\circ}{2} = 22.5^\circ \left(\frac{\pi}{8} \text{ rad}\right)</span>.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proof Card 2: Apothem & Inradius -->
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">2</span>
+            <span>Apothem (Inradius) Exact Radical Derivation</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            The apothem <span class="math-tex">r_i</span> is the perpendicular distance from the geometric center to the midpoint of any side. In the right triangle formed by the center, a vertex, and the side midpoint:
+          </p>
+          <div class="math-display">
+            \tan(22.5^\circ) = \frac{a/2}{r_i} \implies r_i = \frac{a}{2 \tan(22.5^\circ)}
+          </div>
+          <p>
+            Using the tangent half-angle trigonometric identity <span class="math-tex">\tan\left(\frac{\theta}{2}\right) = \frac{\sin\theta}{1 + \cos\theta}</span> with <span class="math-tex">\theta = 45^\circ</span>:
+          </p>
+          <div class="math-display">
+            \tan(22.5^\circ) = \frac{\frac{\sqrt{2}}{2}}{1 + \frac{\sqrt{2}}{2}} = \frac{\sqrt{2}}{2 + \sqrt{2}} = \frac{\sqrt{2}(2 - \sqrt{2})}{4 - 2} = \sqrt{2} - 1
+          </div>
+          <p>
+            Substituting this into the apothem formula and rationalizing the denominator:
+          </p>
+          <div class="math-display">
+            r_i = \frac{a}{2(\sqrt{2} - 1)} = \frac{a(\sqrt{2} + 1)}{2(2 - 1)} = \frac{1 + \sqrt{2}}{2} a \approx 1.20710678 \times a
+          </div>
+        </div>
+      </div>
+
+      <!-- Proof Card 3: Circumradius -->
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">3</span>
+            <span>Circumradius Exact Radical Derivation</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            The circumradius <span class="math-tex">R</span> is the distance from the center to any vertex:
+          </p>
+          <div class="math-display">
+            \sin(22.5^\circ) = \frac{a/2}{R} \implies R = \frac{a}{2 \sin(22.5^\circ)}
+          </div>
+          <p>
+            Applying the sine half-angle identity <span class="math-tex">\sin(22.5^\circ) = \sqrt{\frac{1 - \cos(45^\circ)}{2}} = \sqrt{\frac{1 - \frac{\sqrt{2}}{2}}{2}} = \frac{\sqrt{2 - \sqrt{2}}}{2}</span>:
+          </p>
+          <div class="math-display">
+            R = \frac{a}{2 \cdot \frac{\sqrt{2 - \sqrt{2}}}{2}} = \frac{a}{\sqrt{2 - \sqrt{2}}} = \frac{a \sqrt{2 + \sqrt{2}}}{\sqrt{4 - 2}} = \frac{\sqrt{4 + 2\sqrt{2}}}{2} a \approx 1.30656296 \times a
+          </div>
+        </div>
+      </div>
+
+      <!-- Proof Card 4: Four Area Derivations -->
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">4</span>
+            <span>Area Derivation: Four Distinct Proof Methods</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <div class="proof-step">
+            <div class="step-num">A</div>
+            <div class="step-content">
+              <strong>Method 1: Sum of 8 Isosceles Triangles</strong>
+              The octagon can be partitioned into 8 congruent isosceles triangles, each having base <span class="math-tex">a</span> and height equal to apothem <span class="math-tex">r_i</span>:
+              <div class="math-display">
+                A = 8 \times \left(\frac{1}{2} a \cdot r_i\right) = 4 a \left(\frac{1 + \sqrt{2}}{2} a\right) = 2(1 + \sqrt{2}) a^2 \approx 4.82842712 \times a^2
+              </div>
+            </div>
+          </div>
+
+          <div class="proof-step">
+            <div class="step-num">B</div>
+            <div class="step-content">
+              <strong>Method 2: Bounding Square Subtraction (Carpentry Cut-Off Method)</strong>
+              Enclose the octagon in a tight bounding square. Each of the 4 corners is an isosceles right triangle with hypotenuse <span class="math-tex">a</span>.
+              The legs of each corner triangle are <span class="math-tex">x = \frac{a}{\sqrt{2}}</span>.
+              The total side length of the bounding square is:
+              <div class="math-display">
+                S = a + 2x = a + 2\left(\frac{a}{\sqrt{2}}\right) = a(1 + \sqrt{2})
+              </div>
+              The area of the square is <span class="math-tex">S^2 = a^2(1 + \sqrt{2})^2 = a^2(3 + 2\sqrt{2})</span>.
+              The total area of the 4 corner triangles is <span class="math-tex">4 \times \left(\frac{1}{2} x^2\right) = 2 \left(\frac{a^2}{2}\right) = a^2</span>.
+              Subtracting the 4 corners:
+              <div class="math-display">
+                A = S^2 - a^2 = a^2(3 + 2\sqrt{2}) - a^2 = 2(1 + \sqrt{2}) a^2
+              </div>
+            </div>
+          </div>
+
+          <div class="proof-step">
+            <div class="step-num">C</div>
+            <div class="step-content">
+              <strong>Method 3: From Flat-to-Flat Span (<span class="math-tex">S</span>)</strong>
+              Because <span class="math-tex">S = a(1 + \sqrt{2}) \implies a = \frac{S}{1 + \sqrt{2}} = S(\sqrt{2} - 1)</span>:
+              <div class="math-display">
+                A = 2(1 + \sqrt{2}) \left[S(\sqrt{2} - 1)\right]^2 = 2(1 + \sqrt{2})(3 - 2\sqrt{2}) S^2 = 2(\sqrt{2} - 1) S^2 \approx 0.82842712 \times S^2
+              </div>
+            </div>
+          </div>
+
+          <div class="proof-step">
+            <div class="step-num">D</div>
+            <div class="step-content">
+              <strong>Method 4: From Circumradius (<span class="math-tex">R</span>)</strong>
+              Using the triangle area formula with central angle <span class="math-tex">\beta = 45^\circ</span>:
+              <div class="math-display">
+                A = 8 \times \left(\frac{1}{2} R^2 \sin(45^\circ)\right) = 4 R^2 \left(\frac{\sqrt{2}}{2}\right) = 2\sqrt{2} R^2 \approx 2.82842712 \times R^2
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proof Card 5: Diagonals -->
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">5</span>
+            <span>The 3 Distinct Diagonal Classes & Law of Cosines</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            An <span class="math-tex">n</span>-gon has <span class="math-tex">\frac{n(n-3)}{2}</span> diagonals. For <span class="math-tex">n = 8</span>, there are exactly <span class="math-tex">\frac{8(5)}{2} = 20</span> diagonals, grouped into three distinct congruence classes:
+          </p>
+          <div class="proof-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <strong>Short Diagonal (<span class="math-tex">d_S</span>, 8 total):</strong>
+              Connects vertices separated by 1 vertex. In the triangle formed by two adjacent sides of length <span class="math-tex">a</span> and interior angle <span class="math-tex">135^\circ</span>, apply the Law of Cosines:
+              <div class="math-display">
+                d_S^2 = a^2 + a^2 - 2a^2 \cos(135^\circ) = 2a^2 - 2a^2\left(-\frac{\sqrt{2}}{2}\right) = a^2(2 + \sqrt{2})
+              </div>
+              <div class="math-display">
+                d_S = a \sqrt{2 + \sqrt{2}} \approx 1.84775907 \times a
+              </div>
+            </div>
+          </div>
+
+          <div class="proof-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <strong>Medium Diagonal / Span (<span class="math-tex">S</span>, 8 total):</strong>
+              Connects vertices across two intervening sides. This equals the flat-to-flat height:
+              <div class="math-display">
+                S = 2 r_i = a(1 + \sqrt{2}) \approx 2.41421356 \times a
+              </div>
+            </div>
+          </div>
+
+          <div class="proof-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <strong>Long Diagonal / Diameter (<span class="math-tex">d_L</span>, 4 total):</strong>
+              Connects directly opposite vertices through the polygon center. This is the diameter of the circumcircle:
+              <div class="math-display">
+                d_L = 2R = a \sqrt{4 + 2\sqrt{2}} \approx 2.61312593 \times a
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- LLM Instructions & Agent Prompting Section -->
+    <section class="llm-box">
+      <div class="llm-header">
+        <div>
+          <span class="llm-badge">LLM Directive & API Spec</span>
+          <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
+        </div>
+        <div class="llm-actions">
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+          <button class="btn btn-secondary btn-sm" id="copy-json-btn">Copy JSON Data</button>
+        </div>
+      </div>
+
+      <p style="color:var(--text-secondary); font-size:0.95rem;">
+        Large Language Models frequently make arithmetic hallucinations when calculating radical trigonometry for polygons. Use the verified prompt payload below when feeding geometry problems into ChatGPT, Claude, or Gemini to ensure zero hallucination and mathematically validated step-by-step reasoning.
+      </p>
+
+      <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
+
+      <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Precision verified up to 10 decimal digits</span>
+        <span>✓ Exact analytic radicals included</span>
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions (FAQ) Section -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the formula for the area of a regular octagon?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The area of a regular octagon with side length <span class="math-tex">a</span> is <span class="math-tex">A = 2(1 + \sqrt{2})a^2 \approx 4.828427a^2</span>. If you know the inradius (apothem) <span class="math-tex">r_i</span>, the area is <span class="math-tex">A = 8(\sqrt{2}-1)r_i^2</span>. If you know the flat-to-flat span <span class="math-tex">S</span>, the area is <span class="math-tex">A = 2(\sqrt{2}-1)S^2 \approx 0.828427S^2</span>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do you calculate the side length from the area of an octagon?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          To solve for side length <span class="math-tex">a</span> from area <span class="math-tex">A</span>, invert the formula:
+          <span class="math-tex">a = \sqrt{\frac{A}{2(1 + \sqrt{2})}} = \sqrt{\frac{A(\sqrt{2} - 1)}{2}} \approx 0.4550898 \times \sqrt{A}</span>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do you find the three diagonal lengths of an octagon?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          A regular octagon has three distinct diagonal lengths:
+          1. <strong>Short diagonal (<span class="math-tex">d_S</span>)</strong>: <span class="math-tex">d_S = a\sqrt{2 + \sqrt{2}} \approx 1.84776a</span>
+          2. <strong>Medium diagonal / Span (<span class="math-tex">S</span>)</strong>: <span class="math-tex">S = a(1 + \sqrt{2}) \approx 2.41421a</span>
+          3. <strong>Long diagonal (<span class="math-tex">d_L</span>)</strong>: <span class="math-tex">d_L = a\sqrt{4 + 2\sqrt{2}} \approx 2.61313a</span>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What miter angle should I cut on a miter saw to build an octagon?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Each interior angle of a regular octagon is <span class="math-tex">135^\circ</span>. Because two pieces of wood meet at each corner, divide the corner angle in half: <span class="math-tex">135^\circ / 2 = 67.5^\circ</span>. Since miter saws measure angles relative to a 90° square cut, set your saw to <strong>22.5°</strong> (<span class="math-tex">90^\circ - 67.5^\circ = 22.5^\circ</span>).
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Master Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>OmniOperand</h4>
+          <p style="font-size:0.875rem; line-height:1.6;">
+            Precision mathematical computation engines, verified geometric solvers, and quantitative algorithms designed for students, scientists, engineers, and autonomous AI agents.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Geometry Hub</h4>
+          <ul class="footer-links">
+            <li><a href="/geometry/2d/shapes/octagon/">Regular Octagon</a></li>
+            <li><a href="/geometry/2d/shapes/">Polygons & Shapes</a></li>
+            <li><a href="/geometry/2d/">2D Geometry</a></li>
+            <li><a href="/geometry/">Geometry Directory</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Core Domains</h4>
+          <ul class="footer-links">
+            <li><a href="/calculus/">Calculus & Analysis</a></li>
+            <li><a href="/finance/">Quantitative Finance</a></li>
+            <li><a href="/physics/">Physics & Mechanics</a></li>
+            <li><a href="/statistics/">Probability & Statistics</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Machine Protocols</h4>
+          <ul class="footer-links">
+            <li><a href="/llms.txt">llms.txt Specification</a></li>
+            <li><a href="/llms-full.txt">Full AI Knowledge File</a></li>
+            <li><a href="/sitemap.xml">XML Sitemap</a></li>
+            <li><a href="/robots.txt">Robots Directives</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+        <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Modal Overlay -->
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators (e.g. octagon, apothem, calculus)...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/assets/js/omni-search.js"></script>
+  <script src="/assets/js/octagon-solver.js"></script>
+</body>
+</html>
