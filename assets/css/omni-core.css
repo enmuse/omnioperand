@@ -15,9 +15,9 @@
   --border-active: rgba(56, 189, 248, 0.38);
   --border-accent: rgba(6, 182, 212, 0.5);
 
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
   --text-inverse: #030712;
 
   --accent-cyan: #06b6d4;
@@ -663,6 +663,7 @@ code, kbd, samp, pre {
   margin-bottom: 2.5rem;
 }
 
+.footer-col h3,
 .footer-col h4 {
   color: var(--text-primary);
   font-size: 0.95rem;

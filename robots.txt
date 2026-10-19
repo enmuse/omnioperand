@@ -3,5 +3,6 @@ Allow: /
 
 # Canonical Sitemaps & LLM Manifests
 Sitemap: https://omnioperand.com/sitemap.xml
-LLM-Spec: https://omnioperand.com/llms.txt
-LLM-Full: https://omnioperand.com/llms-full.txt
+# LLM-Spec: https://omnioperand.com/llms.txt
+# LLM-Full: https://omnioperand.com/llms-full.txt
+

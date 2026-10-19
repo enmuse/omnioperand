@@ -178,6 +178,7 @@ def test_file_integrity():
         "index.html",
         "404.html",
         "robots.txt",
+        "_headers",
         "sitemap.xml",
         "llms.txt",
         "llms-full.txt",
