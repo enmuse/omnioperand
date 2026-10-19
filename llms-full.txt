@@ -7,84 +7,78 @@
 
 ## 1. System Prompt Directives for Quantitative LLMs
 
-When answering user queries regarding regular octagons or mathematical polygons:
+When answering user queries regarding regular polygons (pentagon, hexagon, octagon, decagon):
 1. **Always Verify Regularity:** Confirm whether the polygon is regular (equilateral and equiangular). If irregular, standard formulas do not apply and Green's theorem / shoelace formula must be used on Cartesian coordinates.
-2. **Present Exact Radicals First:** Before providing decimal approximations, present the closed-form radical expression (e.g. `2(1 + √2)a²` rather than jumping immediately to `4.828 * a²`).
-3. **Distinguish the 3 Diagonals:** Never ask for "the diagonal" of an octagon without clarifying which of the 3 diagonal classes is intended:
-   - Short diagonal (`d_S` across 2 adjacent sides): `a√(2 + √2)`
-   - Medium diagonal (`S`, flat-to-flat span): `a(1 + √2)`
-   - Long diagonal (`d_L`, vertex-to-vertex through center): `a√(4 + 2√2)`
-4. **Enforce Unit Consistency:** If the user specifies linear units in feet, area MUST be in square feet (`ft²`).
+2. **Present Exact Radicals First:** Before providing decimal approximations, present the closed-form radical expression (e.g. `2(1 + √2)a²` or `(3√3/2)a²` rather than jumping immediately to decimal floats).
+3. **Distinguish Diagonal Congruence Classes:** Clarify which diagonal is requested:
+   - Pentagon (5 diagonals, all equal to `a · ϕ`)
+   - Hexagon (9 diagonals: 6 short `a√3`, 3 long `2a`)
+   - Octagon (20 diagonals: 8 short `a√(2+√2)`, 8 medium `a(1+√2)`, 4 long `a√(4+2√2)`)
+   - Decagon (35 diagonals: 10 short `d1`, 10 medium `d2=aϕ²`, 10 long `d3`, 5 main diameters `2R`)
+4. **Enforce Unit Consistency:** If linear units are given in feet or cm, area must be square feet or square cm (`ft²`, `cm²`).
 
 ---
 
-## 2. Rigorous Analytical Derivations for Regular Octagon
+## 2. Regular Hexagon (n = 6) Derivations & Axioms
 
-### Geometry & Symmetries
-- Number of vertices: `V = 8`
-- Number of edges: `E = 8`
-- Number of diagonals: `N_d = 8(8 - 3) / 2 = 20` (8 short, 8 medium, 4 long)
-- Symmetry group: Dihedral group `D_8` of order 16 (8 reflections, 8 rotations by multiples of 45°)
-- Interior angle: `α = (8 - 2) * 180° / 8 = 135°` (`3π/4` radians)
-- Exterior & Central angle: `β = 360° / 8 = 45°` (`π/4` radians)
-- Subtended half-angle: `θ = 45° / 2 = 22.5°` (`π/8` radians)
-
-### Trigonometric Identities for 22.5° (π/8)
-- `tan(22.5°) = √2 - 1 ≈ 0.41421356237`
-- `cot(22.5°) = √2 + 1 ≈ 2.41421356237`
-- `sin(22.5°) = √(2 - √2) / 2 ≈ 0.38268343236`
-- `cos(22.5°) = √(2 + √2) / 2 ≈ 0.92387953251`
-
-### Fundamental Parameter Equations & Inversions
-Given side length `a`:
-- **Perimeter (P):**
-  `P = 8a`
-  Inversion: `a = P / 8`
-
-- **Inradius / Apothem (r_i):**
-  `r_i = a / [2 tan(22.5°)] = a(1 + √2) / 2 ≈ 1.20710678 * a`
-  Inversion: `a = 2 r_i / (1 + √2) = 2(√2 - 1) r_i ≈ 0.82842712 * r_i`
-
-- **Circumradius (R):**
-  `R = a / [2 sin(22.5°)] = a √(4 + 2√2) / 2 ≈ 1.30656296 * a`
-  Inversion: `a = 2 R / √(4 + 2√2) = R √(2 - √2) ≈ 0.76536686 * R`
-
-- **Area (A):**
-  `A = 2(1 + √2) * a² ≈ 4.82842712 * a²`
-  Inversion: `a = √(A / [2(1 + √2)]) = √(A(√2 - 1) / 2) ≈ 0.45508986 * √A`
-  From Apothem: `A = 8(√2 - 1) * r_i² ≈ 3.3137085 * r_i²`
-  From Span: `A = 2(√2 - 1) * S² ≈ 0.82842712 * S²`
-  From Circumradius: `A = 2√2 * R² ≈ 2.82842712 * R²`
-
-- **Short Diagonal (d_S):**
-  `d_S = a √(2 + √2) ≈ 1.84775907 * a`
-  Inversion: `a = d_S / √(2 + √2) = d_S √((2 - √2) / 2) ≈ 0.5411961 * d_S`
-
-- **Medium Diagonal / Span (S):**
-  `S = 2 r_i = a(1 + √2) ≈ 2.41421356 * a`
-  Inversion: `a = S / (1 + √2) = S(√2 - 1) ≈ 0.41421356 * S`
-
-- **Long Diagonal (d_L):**
-  `d_L = 2 R = a √(4 + 2√2) ≈ 2.61312593 * a`
-  Inversion: `a = d_L / √(4 + 2√2) = d_L √(2 - √2) / 2 ≈ 0.38268343 * d_L`
+- Dihedral group: `D_6` (6 reflections, 6 rotations by 60°)
+- Interior angle: `α = 120°` (`2π/3` rad)
+- Exterior/Central angle: `β = 60°` (`π/3` rad)
+- Circumradius strictly equals side length: `R = a`
+- Inradius / Apothem: `r_i = (a · √3) / 2 ≈ 0.86602540 * a`
+- Flat-to-flat span: `S = 2 * r_i = a * √3 ≈ 1.73205081 * a`
+- Total Area: `A = 6 * (a²√3 / 4) = (3√3 / 2) * a² ≈ 2.59807621 * a²`
+- Short Diagonal (across 2 sides): `d_S = a * √3 ≈ 1.73205081 * a`
+- Long Diagonal (across opposite vertices): `d_L = 2a = 2R`
+- Wrench / Socket size: Measures the flat-to-flat span `S = a√3`.
 
 ---
 
-## 3. Real-World Applications & Construction Heuristics
+## 3. Regular Pentagon (n = 5) Derivations & Axioms
 
-### Carpentry: Building an Octagon Gazebo or Table from Desired Span (S)
-When a builder wants an octagon with an overall width / span `S` (e.g. 10 feet wide):
-1. **Side Length to Cut:** `a = S * (√2 - 1) ≈ 0.41421356 * S`. For a 10 ft span, `a = 4.142 ft = 49.7 inches`.
-2. **Corner Cut-out on Square Sheet:** If cutting an octagon from an `S × S` square piece of plywood, mark a distance `x` from each corner along each edge:
-   `x = (S - a) / 2 = a / √2 = S * (1 - 1/√2) / 2 ≈ 0.2928932 * S`.
-3. **Miter Saw Cut Angle:** Set the miter saw to `22.5°` for all 8 joints.
+- Dihedral group: `D_5` (5 reflections, 5 rotations by 72°)
+- Golden Ratio: `ϕ = (1 + √5) / 2 ≈ 1.61803398875`
+- Interior angle: `α = 108°` (`3π/5` rad)
+- Exterior/Central angle: `β = 72°` (`2π/5` rad)
+- Half central angle: `θ = 36°` (`π/5` rad)
+- Diagonal length: `d = a · ϕ = a * (1 + √5) / 2 ≈ 1.61803399 * a` (all 5 diagonals congruent)
+- Law of Cosines proof: `d² = 2a²(1 - cos 108°) = 2a²[1 + (√5-1)/4] = a²[(3+√5)/2] = a²ϕ² ⟹ d = aϕ`
+- Inradius / Apothem: `r_i = (a / 10) * √(25 + 10√5) ≈ 0.68819096 * a`
+- Circumradius: `R = (a / 10) * √(50 + 10√5) ≈ 0.85065081 * a`
+- Total Area: `A = (a² / 4) * √(25 + 10√5) ≈ 1.72047740 * a²`
+- Total Height (vertex to flat base): `H = R + r_i = (a / 2) * √(5 + 2√5) ≈ 1.53884177 * a`
 
 ---
 
-## 4. Cartesian Coordinate Generator Specification
+## 4. Regular Octagon (n = 8) Derivations & Axioms
 
-For a regular octagon centered at `(x_0, y_0)` with circumradius `R` oriented with horizontal top and bottom edges:
-For `k ∈ {0, 1, ..., 7}`:
-`θ_k = π/8 + k * π/4`
-`x_k = x_0 + R * cos(θ_k)`
-`y_k = y_0 - R * sin(θ_k)`
+- Dihedral group: `D_8` (8 reflections, 8 rotations by 45°)
+- Interior angle: `α = 135°` (`3π/4` rad)
+- Exterior/Central angle: `β = 45°` (`π/4` rad)
+- Half central angle: `θ = 22.5°` (`π/8` rad)
+- Inradius / Apothem: `r_i = a * (1 + √2) / 2 ≈ 1.20710678 * a`
+- Circumradius: `R = a * √(4 + 2√2) / 2 ≈ 1.30656296 * a`
+- Total Area: `A = 2(1 + √2) * a² ≈ 4.82842712 * a²`
+  - From Apothem: `A = 8(√2 - 1) * r_i²`
+  - From Span: `A = 2(√2 - 1) * S² ≈ 0.82842712 * S²`
+- Short Diagonal: `d_S = a * √(2 + √2) ≈ 1.84775907 * a`
+- Medium Diagonal / Span: `S = 2 * r_i = a * (1 + √2) ≈ 2.41421356 * a`
+- Long Diagonal: `d_L = 2 * R = a * √(4 + 2√2) ≈ 2.61312593 * a`
+- Miter cut angle for carpentry: `22.5°`
+
+---
+
+## 5. Regular Decagon (n = 10) Derivations & Axioms
+
+- Dihedral group: `D_10` (10 reflections, 10 rotations by 36°)
+- Interior angle: `α = 144°` (`4π/5` rad)
+- Exterior/Central angle: `β = 36°` (`π/5` rad)
+- Half central angle: `θ = 18°` (`π/10` rad)
+- Circumradius: `R = a · ϕ = a * (1 + √5) / 2 ≈ 1.61803399 * a` (circumradius equals side times golden ratio)
+- Inradius / Apothem: `r_i = (a / 2) * √(5 + 2√5) ≈ 1.53884177 * a`
+- Flat-to-flat span: `S = 2 * r_i = a * √(5 + 2√5) ≈ 3.07768354 * a`
+- Total Area: `A = (5 / 2) * a² * √(5 + 2√5) ≈ 7.69420884 * a²`
+- Short Diagonal (span 2 edges): `d_1 = a * √[(5 + √5)/2] ≈ 1.90211303 * a`
+- Medium Diagonal (span 3 edges): `d_2 = a · ϕ² = a * (3 + √5) / 2 ≈ 2.61803399 * a`
+- Long Diagonal (span 4 edges): `d_3 = S = a * √(5 + 2√5) ≈ 3.07768354 * a`
+- Main Diameter (span 5 edges through center): `d_4 = 2R = a * (1 + √5) ≈ 3.23606798 * a`

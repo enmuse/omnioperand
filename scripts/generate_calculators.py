@@ -44,16 +44,23 @@ TAXONOMY = {
                             {
                                 "slug": "hexagon",
                                 "name": "Regular Hexagon Calculator",
-                                "description": "6-sided regular polygon solver with minimal/maximal diameters and tessellation metrics.",
-                                "status": "roadmap",
-                                "inputs": ["side", "area", "perimeter", "apothem", "circumradius"]
+                                "description": "6-sided regular polygon solver with minimal/maximal diameters, circumradius R=a, and honeycomb metrics.",
+                                "status": "active",
+                                "inputs": ["side", "area", "perimeter", "apothem", "circumradius", "span", "short_diag", "long_diag"]
                             },
                             {
                                 "slug": "pentagon",
                                 "name": "Regular Pentagon Calculator",
                                 "description": "5-sided regular polygon governed by the golden ratio and pentagram diagonals.",
-                                "status": "roadmap",
-                                "inputs": ["side", "area", "perimeter", "apothem", "circumradius"]
+                                "status": "active",
+                                "inputs": ["side", "area", "perimeter", "apothem", "circumradius", "diagonal", "height"]
+                            },
+                            {
+                                "slug": "decagon",
+                                "name": "Regular Decagon Calculator",
+                                "description": "10-sided regular polygon with circumradius R=a·ϕ, flat-to-flat span, and 4 diagonal classes.",
+                                "status": "active",
+                                "inputs": ["side", "area", "perimeter", "apothem", "circumradius", "span", "diag_1", "diag_2", "main_diameter"]
                             }
                         ]
                     }

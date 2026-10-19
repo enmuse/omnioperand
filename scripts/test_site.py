@@ -56,7 +56,121 @@ def test_mathematical_precision():
     expected_ds_sq = 2 * a * a - 2 * a * a * cos135
     assert math.isclose(d_S * d_S, expected_ds_sq), "Law of Cosines invariant failed"
 
-    print("  ✅ All 8 forward and inverse mathematical derivations passed with 1e-12 precision!")
+    print("  ✅ Octagon: All 8 forward and inverse mathematical derivations passed with 1e-12 precision!")
+
+    # Hexagon Invariants (a = 10)
+    sqrt3 = math.sqrt(3)
+    k_hex_apothem = sqrt3 / 2
+    k_hex_circumradius = 1.0
+    k_hex_perimeter = 6.0
+    k_hex_area = (3 * sqrt3) / 2
+    k_hex_short_diag = sqrt3
+    k_hex_span = sqrt3
+    k_hex_long_diag = 2.0
+
+    p_hex = a * k_hex_perimeter
+    ri_hex = a * k_hex_apothem
+    R_hex = a * k_hex_circumradius
+    A_hex = a * a * k_hex_area
+    ds_hex = a * k_hex_short_diag
+    S_hex = a * k_hex_span
+    dl_hex = a * k_hex_long_diag
+
+    assert math.isclose(p_hex, 60.0), "Hexagon perimeter mismatch"
+    assert math.isclose(ri_hex, 8.660254037844386), "Hexagon apothem mismatch"
+    assert math.isclose(R_hex, 10.0), "Hexagon circumradius mismatch"
+    assert math.isclose(A_hex, 259.8076211353316), "Hexagon area mismatch"
+    assert math.isclose(ds_hex, 17.320508075688775), "Hexagon short diag mismatch"
+    assert math.isclose(S_hex, 17.320508075688775), "Hexagon span mismatch"
+    assert math.isclose(dl_hex, 20.0), "Hexagon long diag mismatch"
+
+    inv_p_hex = p_hex / 6
+    inv_ri_hex = (2 * ri_hex) / sqrt3
+    inv_R_hex = R_hex
+    inv_A_hex = math.sqrt((2 * A_hex) / (3 * sqrt3))
+    inv_ds_hex = ds_hex / sqrt3
+    inv_S_hex = S_hex / sqrt3
+    inv_dl_hex = dl_hex / 2
+    for name, val in [("Hex-P", inv_p_hex), ("Hex-ri", inv_ri_hex), ("Hex-R", inv_R_hex), ("Hex-A", inv_A_hex), ("Hex-ds", inv_ds_hex), ("Hex-S", inv_S_hex), ("Hex-dl", inv_dl_hex)]:
+        assert math.isclose(val, 10.0, rel_tol=1e-12), f"Hexagon inversion failure for {name}: {val}"
+
+    print("  ✅ Hexagon: All 7 forward and inverse mathematical derivations passed with 1e-12 precision!")
+
+    # Pentagon Invariants (a = 10)
+    sqrt5 = math.sqrt(5)
+    phi = (1 + sqrt5) / 2
+    k_pen_apothem = math.sqrt(25 + 10 * sqrt5) / 10
+    k_pen_circumradius = math.sqrt(50 + 10 * sqrt5) / 10
+    k_pen_perimeter = 5.0
+    k_pen_area = math.sqrt(25 + 10 * sqrt5) / 4
+    k_pen_diag = phi
+    k_pen_height = math.sqrt(5 + 2 * sqrt5) / 2
+
+    p_pen = a * k_pen_perimeter
+    ri_pen = a * k_pen_apothem
+    R_pen = a * k_pen_circumradius
+    A_pen = a * a * k_pen_area
+    d_pen = a * k_pen_diag
+    h_pen = a * k_pen_height
+
+    assert math.isclose(p_pen, 50.0), "Pentagon perimeter mismatch"
+    assert math.isclose(ri_pen, 6.881909602355868), "Pentagon apothem mismatch"
+    assert math.isclose(R_pen, 8.5065080835204), "Pentagon circumradius mismatch"
+    assert math.isclose(A_pen, 172.0477400588967), "Pentagon area mismatch"
+    assert math.isclose(d_pen, 16.18033988749895), "Pentagon diagonal mismatch"
+    assert math.isclose(h_pen, 15.388417685876266), "Pentagon height mismatch"
+
+    inv_p_pen = p_pen / 5
+    inv_ri_pen = ri_pen / k_pen_apothem
+    inv_R_pen = R_pen / k_pen_circumradius
+    inv_A_pen = math.sqrt(A_pen / k_pen_area)
+    inv_d_pen = d_pen / phi
+    inv_h_pen = h_pen / k_pen_height
+    for name, val in [("Pen-P", inv_p_pen), ("Pen-ri", inv_ri_pen), ("Pen-R", inv_R_pen), ("Pen-A", inv_A_pen), ("Pen-d", inv_d_pen), ("Pen-h", inv_h_pen)]:
+        assert math.isclose(val, 10.0, rel_tol=1e-12), f"Pentagon inversion failure for {name}: {val}"
+
+    print("  ✅ Pentagon: All 6 forward and inverse mathematical derivations passed with 1e-12 precision!")
+
+    # Decagon Invariants (a = 10)
+    k_dec_apothem = math.sqrt(5 + 2 * sqrt5) / 2
+    k_dec_circumradius = phi
+    k_dec_perimeter = 10.0
+    k_dec_area = (5 / 2) * math.sqrt(5 + 2 * sqrt5)
+    k_dec_span = math.sqrt(5 + 2 * sqrt5)
+    k_dec_d1 = math.sqrt((5 + sqrt5) / 2)
+    k_dec_d2 = phi * phi
+    k_dec_d4 = 2 * phi
+
+    p_dec = a * k_dec_perimeter
+    ri_dec = a * k_dec_apothem
+    R_dec = a * k_dec_circumradius
+    A_dec = a * a * k_dec_area
+    S_dec = a * k_dec_span
+    d1_dec = a * k_dec_d1
+    d2_dec = a * k_dec_d2
+    d4_dec = a * k_dec_d4
+
+    assert math.isclose(p_dec, 100.0), "Decagon perimeter mismatch"
+    assert math.isclose(ri_dec, 15.388417685876266), "Decagon apothem mismatch"
+    assert math.isclose(R_dec, 16.18033988749895), "Decagon circumradius mismatch"
+    assert math.isclose(A_dec, 769.4208842938133), "Decagon area mismatch"
+    assert math.isclose(S_dec, 30.77683537175253), "Decagon span mismatch"
+    assert math.isclose(d1_dec, 19.02113032590307), "Decagon short diag mismatch"
+    assert math.isclose(d2_dec, 26.18033988749895), "Decagon medium diag mismatch"
+    assert math.isclose(d4_dec, 32.3606797749979), "Decagon main diameter mismatch"
+
+    inv_p_dec = p_dec / 10
+    inv_ri_dec = ri_dec / k_dec_apothem
+    inv_R_dec = R_dec / phi
+    inv_A_dec = math.sqrt(A_dec / k_dec_area)
+    inv_S_dec = S_dec / k_dec_span
+    inv_d1_dec = d1_dec / k_dec_d1
+    inv_d2_dec = d2_dec / (phi * phi)
+    inv_d4_dec = d4_dec / (2 * phi)
+    for name, val in [("Dec-P", inv_p_dec), ("Dec-ri", inv_ri_dec), ("Dec-R", inv_R_dec), ("Dec-A", inv_A_dec), ("Dec-S", inv_S_dec), ("Dec-d1", inv_d1_dec), ("Dec-d2", inv_d2_dec), ("Dec-d4", inv_d4_dec)]:
+        assert math.isclose(val, 10.0, rel_tol=1e-12), f"Decagon inversion failure for {name}: {val}"
+
+    print("  ✅ Decagon: All 8 forward and inverse mathematical derivations passed with 1e-12 precision!")
 
 def test_file_integrity():
     print("Testing File & Asset Integrity...")
@@ -71,10 +185,16 @@ def test_file_integrity():
         "assets/css/calculator.css",
         "assets/js/omni-search.js",
         "assets/js/octagon-solver.js",
+        "assets/js/hexagon-solver.js",
+        "assets/js/pentagon-solver.js",
+        "assets/js/decagon-solver.js",
         "geometry/index.html",
         "geometry/2d/index.html",
         "geometry/2d/shapes/index.html",
         "geometry/2d/shapes/octagon/index.html",
+        "geometry/2d/shapes/hexagon/index.html",
+        "geometry/2d/shapes/pentagon/index.html",
+        "geometry/2d/shapes/decagon/index.html",
         "calculus/index.html",
         "finance/index.html",
         "physics/index.html",

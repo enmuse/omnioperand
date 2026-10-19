@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regular Decagon Calculator — Exact Formulas, Area, Diagonals & Apothem | OmniOperand</title>
+  <meta name="description" content="Bidirectional regular decagon calculator. Compute area, perimeter, apothem (inradius), circumradius, span, and all 4 diagonal classes from any single known dimension with exact radical proofs.">
+  <link rel="canonical" href="https://omnioperand.com/geometry/2d/shapes/decagon/">
+
+  <meta property="og:title" content="Regular Decagon Calculator & Geometric Solver | OmniOperand">
+  <meta property="og:description" content="Interactive 9-variable regular decagon solver. Real-time SVG blueprint, exact golden ratio radical proofs, step-by-step derivations, and LLM reasoning instructions.">
+  <meta property="og:url" content="https://omnioperand.com/geometry/2d/shapes/decagon/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css">
+  <link rel="stylesheet" href="/assets/css/calculator.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://omnioperand.com/geometry/2d/shapes/decagon/#app",
+        "name": "Regular Decagon Calculator & Solver",
+        "url": "https://omnioperand.com/geometry/2d/shapes/decagon/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "High-precision bidirectional regular decagon calculator computing side length, area, perimeter, apothem, circumradius, span, and 4 diagonal classes."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://omnioperand.com/geometry/2d/shapes/decagon/#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "OmniOperand", "item": "https://omnioperand.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Geometry", "item": "https://omnioperand.com/geometry/" },
+          { "@type": "ListItem", "position": 3, "name": "2D Geometry", "item": "https://omnioperand.com/geometry/2d/" },
+          { "@type": "ListItem", "position": 4, "name": "Shapes & Polygons", "item": "https://omnioperand.com/geometry/2d/shapes/" },
+          { "@type": "ListItem", "position": 5, "name": "Regular Decagon", "item": "https://omnioperand.com/geometry/2d/shapes/decagon/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://omnioperand.com/geometry/2d/shapes/decagon/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the formula for the area of a regular decagon?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The area of a regular decagon with side length a is A = (5/2)a² · √(5 + 2√5) ≈ 7.694209 · a². In terms of the inradius (apothem) r_i, the area is A = 2 · r_i² · √(25 - 10√5) ≈ 3.249197 · r_i²."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is the circumradius of a regular decagon equal to side length times the golden ratio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each of the 10 central triangles has a central angle of 360° / 10 = 36°, meaning the half central angle is 18°. By definition, sin(18°) = (√5 - 1) / 4 = 1 / (2ϕ), where ϕ = (1 + √5)/2 is the Golden Ratio. Because R = a / [2 sin(18°)], substituting yields R = a · ϕ ≈ 1.618034a."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many diagonals does a regular decagon have?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A regular decagon has 35 total diagonals distributed into 4 distinct congruence classes: 10 short diagonals d1 ≈ 1.9021a, 10 medium diagonals d2 = a·ϕ² ≈ 2.6180a, 10 long diagonals d3 = a√(5+2√5) ≈ 3.0777a, and 5 main diameters d4 = 2R = a(1+√5) ≈ 3.2361a."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <div class="brand-icon">⨁</div>
+        <span>OmniOperand</span>
+        <span class="brand-badge">Math Engine</span>
+      </a>
+
+      <nav class="header-nav">
+        <a href="/geometry/" class="nav-link active">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <a href="/statistics/" class="nav-link">Statistics</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn-trigger">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/geometry/">Geometry</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/geometry/2d/">2D Geometry</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/geometry/2d/shapes/">Shapes & Polygons</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active">Regular Decagon Calculator</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="calculator-hero">
+      <div class="calc-title-badge">Polygon Geometry • 10-Sided Regular Polytope</div>
+      <h1>Regular Decagon Calculator</h1>
+      <p>
+        High-precision bidirectional analytic solver. Enter <strong>any single known variable</strong>—side length, area, perimeter, apothem (inradius), circumradius, flat-to-flat span, or any of the 4 diagonal classes—and all other 8 parameters will compute instantaneously with exact radical derivations.
+      </p>
+    </section>
+
+    <section class="solver-container">
+      
+      <!-- Left Panel: Solver Matrix HUD -->
+      <div class="solver-panel">
+        
+        <div class="solver-toolbar">
+          <div class="toolbar-group">
+            <span class="toolbar-label">Units:</span>
+            <div class="segmented-control" id="unit-selector">
+              <button class="unit-btn active" data-unit="cm">cm</button>
+              <button class="unit-btn" data-unit="mm">mm</button>
+              <button class="unit-btn" data-unit="m">m</button>
+              <button class="unit-btn" data-unit="in">in</button>
+              <button class="unit-btn" data-unit="ft">ft</button>
+              <button class="unit-btn" data-unit="yd">yd</button>
+            </div>
+          </div>
+
+          <div class="toolbar-group">
+            <span class="toolbar-label">Decimals:</span>
+            <div class="segmented-control" id="prec-selector">
+              <button class="prec-btn" data-prec="2">2</button>
+              <button class="prec-btn active" data-prec="4">4</button>
+              <button class="prec-btn" data-prec="6">6</button>
+              <button class="prec-btn" data-prec="8">8</button>
+              <button class="prec-btn" data-prec="10">10</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="driver-selector-bar">
+          <label for="driver-select">Select Known Input (Driver):</label>
+          <select id="driver-select" class="driver-dropdown">
+            <option value="side" selected>Side Length (a)</option>
+            <option value="area">Area (A)</option>
+            <option value="perimeter">Perimeter (P)</option>
+            <option value="apothem">Apothem / Inradius (r_i)</option>
+            <option value="circumradius">Circumradius (R = a·ϕ)</option>
+            <option value="span">Span / Flat-to-Flat (S)</option>
+            <option value="diag_1">Short Diagonal (d_1)</option>
+            <option value="diag_2">Medium Diagonal (d_2 = a·ϕ²)</option>
+            <option value="main_diameter">Main Diameter (d_4 = 2R)</option>
+          </select>
+        </div>
+
+        <div class="parameter-grid">
+          
+          <!-- 1. Side Length -->
+          <div class="param-card is-driver" id="card-side">
+            <div class="param-header">
+              <span class="param-title">Side Length <span class="param-symbol">a</span></span>
+              <span class="param-status-tag input" id="status-side">Input (Driver)</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-side" class="param-input" value="10" step="any" min="0.0001" aria-label="Side Length">
+              <span class="param-unit" id="unit-side">cm</span>
+            </div>
+            <input type="range" id="slider-side" class="param-slider" min="1" max="100" value="10" step="0.1" aria-label="Side Length Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-side">a = 10</span>
+              <button class="copy-param-btn" id="copy-side">Copy</button>
+            </div>
+          </div>
+
+          <!-- 2. Area -->
+          <div class="param-card" id="card-area">
+            <div class="param-header">
+              <span class="param-title">Area <span class="param-symbol">A</span></span>
+              <span class="param-status-tag calculated" id="status-area">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-area" class="param-input" value="769.4209" step="any" min="0.0001" aria-label="Area">
+              <span class="param-unit" id="unit-area">cm²</span>
+            </div>
+            <input type="range" id="slider-area" class="param-slider" min="1" max="7500" value="769.4209" step="1" aria-label="Area Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-area">A = (5a²/2)·√(5+2√5)</span>
+              <button class="copy-param-btn" id="copy-area">Copy</button>
+            </div>
+          </div>
+
+          <!-- 3. Perimeter -->
+          <div class="param-card" id="card-perimeter">
+            <div class="param-header">
+              <span class="param-title">Perimeter <span class="param-symbol">P</span></span>
+              <span class="param-status-tag calculated" id="status-perimeter">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-perimeter" class="param-input" value="100" step="any" min="0.0001" aria-label="Perimeter">
+              <span class="param-unit" id="unit-perimeter">cm</span>
+            </div>
+            <input type="range" id="slider-perimeter" class="param-slider" min="1" max="1000" value="100" step="0.5" aria-label="Perimeter Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-perimeter">P = 10a</span>
+              <button class="copy-param-btn" id="copy-perimeter">Copy</button>
+            </div>
+          </div>
+
+          <!-- 4. Apothem / Inradius -->
+          <div class="param-card" id="card-apothem">
+            <div class="param-header">
+              <span class="param-title">Apothem (Inradius) <span class="param-symbol">r<sub>i</sub></span></span>
+              <span class="param-status-tag calculated" id="status-apothem">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-apothem" class="param-input" value="15.3884" step="any" min="0.0001" aria-label="Apothem">
+              <span class="param-unit" id="unit-apothem">cm</span>
+            </div>
+            <input type="range" id="slider-apothem" class="param-slider" min="1" max="150" value="15.3884" step="0.1" aria-label="Apothem Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-apothem">r<sub>i</sub> = (a/2)·√(5+2√5)</span>
+              <button class="copy-param-btn" id="copy-apothem">Copy</button>
+            </div>
+          </div>
+
+          <!-- 5. Circumradius -->
+          <div class="param-card" id="card-circumradius">
+            <div class="param-header">
+              <span class="param-title">Circumradius <span class="param-symbol">R</span></span>
+              <span class="param-status-tag calculated" id="status-circumradius">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-circumradius" class="param-input" value="16.1803" step="any" min="0.0001" aria-label="Circumradius">
+              <span class="param-unit" id="unit-circumradius">cm</span>
+            </div>
+            <input type="range" id="slider-circumradius" class="param-slider" min="1" max="160" value="16.1803" step="0.1" aria-label="Circumradius Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-circumradius">R = a · ϕ = a(1+√5)/2</span>
+              <button class="copy-param-btn" id="copy-circumradius">Copy</button>
+            </div>
+          </div>
+
+          <!-- 6. Flat-to-Flat Span -->
+          <div class="param-card" id="card-span">
+            <div class="param-header">
+              <span class="param-title">Span / Flat-to-Flat <span class="param-symbol">S</span></span>
+              <span class="param-status-tag calculated" id="status-span">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-span" class="param-input" value="30.7768" step="any" min="0.0001" aria-label="Span">
+              <span class="param-unit" id="unit-span">cm</span>
+            </div>
+            <input type="range" id="slider-span" class="param-slider" min="1" max="300" value="30.7768" step="0.2" aria-label="Span Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-span">S = 2r<sub>i</sub> = a√(5+2√5)</span>
+              <button class="copy-param-btn" id="copy-span">Copy</button>
+            </div>
+          </div>
+
+          <!-- 7. Short Diagonal (d1) -->
+          <div class="param-card" id="card-diag_1">
+            <div class="param-header">
+              <span class="param-title">Short Diagonal <span class="param-symbol">d<sub>1</sub></span></span>
+              <span class="param-status-tag calculated" id="status-diag_1">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-diag_1" class="param-input" value="19.0211" step="any" min="0.0001" aria-label="Short Diagonal">
+              <span class="param-unit" id="unit-diag_1">cm</span>
+            </div>
+            <input type="range" id="slider-diag_1" class="param-slider" min="1" max="200" value="19.0211" step="0.1" aria-label="Short Diagonal Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-diag_1">d<sub>1</sub> = a√[(5+√5)/2]</span>
+              <button class="copy-param-btn" id="copy-diag_1">Copy</button>
+            </div>
+          </div>
+
+          <!-- 8. Medium Diagonal (d2) -->
+          <div class="param-card" id="card-diag_2">
+            <div class="param-header">
+              <span class="param-title">Medium Diagonal <span class="param-symbol">d<sub>2</sub></span></span>
+              <span class="param-status-tag calculated" id="status-diag_2">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-diag_2" class="param-input" value="26.1803" step="any" min="0.0001" aria-label="Medium Diagonal">
+              <span class="param-unit" id="unit-diag_2">cm</span>
+            </div>
+            <input type="range" id="slider-diag_2" class="param-slider" min="1" max="260" value="26.1803" step="0.2" aria-label="Medium Diagonal Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-diag_2">d<sub>2</sub> = a · ϕ² = a(3+√5)/2</span>
+              <button class="copy-param-btn" id="copy-diag_2">Copy</button>
+            </div>
+          </div>
+
+          <!-- 9. Main Diameter (d4) -->
+          <div class="param-card" id="card-main_diameter">
+            <div class="param-header">
+              <span class="param-title">Main Diameter <span class="param-symbol">d<sub>4</sub></span></span>
+              <span class="param-status-tag calculated" id="status-main_diameter">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-main_diameter" class="param-input" value="32.3607" step="any" min="0.0001" aria-label="Main Diameter">
+              <span class="param-unit" id="unit-main_diameter">cm</span>
+            </div>
+            <input type="range" id="slider-main_diameter" class="param-slider" min="1" max="320" value="32.3607" step="0.2" aria-label="Main Diameter Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-main_diameter">d<sub>4</sub> = 2R = a(1+√5)</span>
+              <button class="copy-param-btn" id="copy-main_diameter">Copy</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Panel: Live SVG Blueprint -->
+      <div class="canvas-panel">
+        <div class="canvas-header">
+          <div class="canvas-title">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 18 4 22 9 22 15 18 20 12 22 6 20 2 15 2 9 6 4 12 2"></polygon></svg>
+            <span>Decagonal Analytic Blueprint</span>
+          </div>
+          <span style="font-size:0.75rem; color:var(--text-muted);">Cartesian (400×400)</span>
+        </div>
+
+        <div class="canvas-wrapper">
+          <svg id="svg-decagon-canvas" class="octagon-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="smallGridDec" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" />
+              </pattern>
+            </defs>
+            <rect width="400" height="400" fill="url(#smallGridDec)" />
+
+            <line x1="200" y1="20" x2="200" y2="380" class="svg-axis" />
+            <line x1="20" y1="200" x2="380" y2="200" class="svg-axis" />
+
+            <g id="svg-dimension-overlay"></g>
+            <polygon id="svg-decagon-polygon" class="svg-polygon-shape" points="" />
+            <g id="svg-vertices-group"></g>
+          </svg>
+        </div>
+
+        <div class="canvas-legend">
+          <div class="legend-item"><span class="legend-dot" style="background:#06b6d4;"></span> Side (a)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#10b981;"></span> Apothem (r<sub>i</sub>)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#a855f7;"></span> Circumradius (R)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#f59e0b;"></span> Diameter (d<sub>4</sub>)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> Span (S)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#ec4899;"></span> Short (d<sub>1</sub>)</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Mathematical Foundations -->
+    <section class="proofs-section">
+      <h2>Mathematical Foundations & Decagonal Symmetries</h2>
+      <p>
+        A regular decagon is a 10-sided regular polygon with 10 reflection axes and 10-fold rotational symmetry (dihedral group <strong>D<sub>10</sub></strong>). It is deeply intertwined with the <strong>Golden Ratio</strong> (<span class="math-tex">ϕ = (1 + √5) / 2</span>), with circumradius <span class="math-tex">R</span> strictly equal to <span class="math-tex">a · ϕ</span>.
+      </p>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">1</span>
+            <span>Interior, Exterior & Central Angles</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <div class="proof-step">
+            <div class="step-num">a</div>
+            <div class="step-content">
+              <strong>Sum of Interior Angles:</strong>
+              For <span class="math-tex">n = 10</span>:
+              <div class="math-display">
+                S = (10 - 2) × 180° = 8 × 180° = 1440° &nbsp; (8π rad)
+              </div>
+            </div>
+          </div>
+          <div class="proof-step">
+            <div class="step-num">b</div>
+            <div class="step-content">
+              <strong>Individual Interior Angle (α):</strong>
+              <div class="math-display">
+                α = 1440° / 10 = 144° &nbsp; (4π / 5 rad)
+              </div>
+            </div>
+          </div>
+          <div class="proof-step">
+            <div class="step-num">c</div>
+            <div class="step-content">
+              <strong>Central & Exterior Angle (β):</strong>
+              <div class="math-display">
+                β = 360° / 10 = 36° &nbsp; (π / 5 rad)
+              </div>
+              The half central angle is <span class="math-tex">θ = 36° / 2 = 18° &nbsp; (π / 10 rad)</span>.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">2</span>
+            <span>Proof of Circumradius R = a · ϕ</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            In the right triangle formed by the center, a vertex, and the side midpoint:
+          </p>
+          <div class="math-display">
+            sin(18°) = (a / 2) / R ⟹ R = a / [2 · sin(18°)]
+          </div>
+          <p>
+            Using the exact trigonometric radical <span class="math-tex">sin(18°) = (√5 - 1) / 4 = 1 / (2ϕ)</span>:
+          </p>
+          <div class="math-display">
+            R = a / [2 · (1 / (2ϕ))] = a · ϕ = a · (1 + √5) / 2 ≈ 1.61803399 · a
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">3</span>
+            <span>Apothem (r<sub>i</sub>) & Flat-to-Flat Span (S) Derivations</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            Applying the Pythagorean theorem to <span class="math-tex">r<sub>i</sub>² + (a / 2)² = R²</span>:
+          </p>
+          <div class="math-display">
+            r<sub>i</sub>² = a²ϕ² - a² / 4 = a² · [(3 + √5)/2 - ¼] = a² · [(5 + 2√5) / 4]
+          </div>
+          <div class="math-display">
+            r<sub>i</sub> = (a / 2) · √(5 + 2√5) ≈ 1.53884177 · a
+          </div>
+          <p>
+            The flat-to-flat span <span class="math-tex">S</span> between parallel opposite sides is twice the apothem:
+          </p>
+          <div class="math-display">
+            S = 2r<sub>i</sub> = a · √(5 + 2√5) ≈ 3.07768354 · a
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">4</span>
+            <span>Area Exact Radical Derivation</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            Partitioning into 10 central isosceles triangles:
+          </p>
+          <div class="math-display">
+            A = 10 × (½ · a · r<sub>i</sub>) = 5a · [(a / 2)√(5 + 2√5)] = (5a² / 2) · √(5 + 2√5) ≈ 7.69420884 · a²
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">5</span>
+            <span>The 4 Distinct Diagonal Classes</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            A regular decagon has <span class="math-tex">10(7) / 2 = 35</span> total diagonals in 4 congruence classes:
+          </p>
+          <div class="proof-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <strong>Short Diagonal (<span class="math-tex">d<sub>1</sub></span>, 10 total):</strong>
+              Spans 2 sides across 1 vertex:
+              <div class="math-display">
+                d<sub>1</sub> = a · √[(5 + √5) / 2] ≈ 1.90211303 · a
+              </div>
+            </div>
+          </div>
+          <div class="proof-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <strong>Medium Diagonal (<span class="math-tex">d<sub>2</sub></span>, 10 total):</strong>
+              Spans 3 sides across 2 vertices:
+              <div class="math-display">
+                d<sub>2</sub> = a · ϕ² = a · (3 + √5) / 2 ≈ 2.61803399 · a
+              </div>
+            </div>
+          </div>
+          <div class="proof-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <strong>Long Diagonal (<span class="math-tex">d<sub>3</sub></span>, 10 total):</strong>
+              Spans 4 sides across 3 vertices (equals flat-to-flat span <span class="math-tex">S</span>):
+              <div class="math-display">
+                d<sub>3</sub> = S = a · √(5 + 2√5) ≈ 3.07768354 · a
+              </div>
+            </div>
+          </div>
+          <div class="proof-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <strong>Main Diameter (<span class="math-tex">d<sub>4</sub></span>, 5 total):</strong>
+              Passes directly through the center connecting opposite vertices:
+              <div class="math-display">
+                d<sub>4</sub> = 2R = a · (1 + √5) ≈ 3.23606798 · a
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- LLM Prompt Box -->
+    <section class="llm-box">
+      <div class="llm-header">
+        <div>
+          <span class="llm-badge">LLM Directive & API Spec</span>
+          <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
+        </div>
+        <div class="llm-actions">
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+          <button class="btn btn-secondary btn-sm" id="copy-json-btn">Copy JSON Data</button>
+        </div>
+      </div>
+
+      <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
+
+      <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Precision verified up to 10 decimal digits</span>
+        <span>✓ Exact analytic radicals included</span>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the formula for the area of a regular decagon?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The area of a regular decagon with side length <span class="math-tex">a</span> is <span class="math-tex">A = (5/2)a² · √(5 + 2√5) ≈ 7.694209 · a²</span>. If you know the inradius (apothem) <span class="math-tex">r<sub>i</sub></span>, the area is <span class="math-tex">A = 2 · r<sub>i</sub>² · √(25 - 10√5) ≈ 3.249197 · r<sub>i</sub>²</span>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Why is the circumradius related to the golden ratio?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The central angle of a decagon is <span class="math-tex">36°</span>, and <span class="math-tex">sin(18°) = (√5 - 1) / 4 = 1 / (2ϕ)</span>. Since <span class="math-tex">R = a / [2 sin(18°)]</span>, the circumradius simplifies exactly to <span class="math-tex">R = a · ϕ = a(1 + √5) / 2 ≈ 1.618034a</span>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What are the 4 diagonal lengths of a regular decagon?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          A regular decagon has 35 diagonals in 4 distinct lengths:
+          1. <strong>Short diagonal (<span class="math-tex">d<sub>1</sub></span>)</strong>: <span class="math-tex">d<sub>1</sub> = a√[(5 + √5)/2] ≈ 1.90211a</span>
+          2. <strong>Medium diagonal (<span class="math-tex">d<sub>2</sub></span>)</strong>: <span class="math-tex">d<sub>2</sub> = a · ϕ² ≈ 2.61803a</span>
+          3. <strong>Long diagonal (<span class="math-tex">d<sub>3</sub></span>)</strong>: <span class="math-tex">d<sub>3</sub> = a√(5 + 2√5) ≈ 3.07768a</span> (equal to flat-to-flat span <span class="math-tex">S</span>)
+          4. <strong>Main diameter (<span class="math-tex">d<sub>4</sub></span>)</strong>: <span class="math-tex">d<sub>4</sub> = 2R = a(1 + √5) ≈ 3.23607a</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js"></script>
+  <script src="/assets/js/decagon-solver.js"></script>
+</body>
+</html>

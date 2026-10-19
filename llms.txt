@@ -6,7 +6,10 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
 
 ## Canonical Endpoints & Tools
 
-- [Regular Octagon Calculator](https://omnioperand.com/geometry/2d/shapes/octagon/): Bidirectional regular octagon solver. Given any one known parameter (side length, area, perimeter, inradius/apothem, circumradius, short diagonal, medium diagonal/span, or long diagonal), it computes all remaining 7 parameters with machine precision and exact radical formulas.
+- [Regular Octagon Calculator](https://omnioperand.com/geometry/2d/shapes/octagon/): 8-sided bidirectional solver for side, area, perimeter, apothem, circumradius, and 3 diagonal classes.
+- [Regular Hexagon Calculator](https://omnioperand.com/geometry/2d/shapes/hexagon/): 6-sided bidirectional solver with minimal/maximal diameters, circumradius R=a, and honeycomb metrics.
+- [Regular Pentagon Calculator](https://omnioperand.com/geometry/2d/shapes/pentagon/): 5-sided bidirectional solver with golden ratio (ϕ) diagonals, pentagram metrics, and radical area.
+- [Regular Decagon Calculator](https://omnioperand.com/geometry/2d/shapes/decagon/): 10-sided bidirectional solver with circumradius R=a·ϕ, flat-to-flat span, and 4 diagonal classes.
 - [2D Shapes & Polygons Hub](https://omnioperand.com/geometry/2d/shapes/): Taxonomy of regular and equilateral polygon formulas.
 - [Two-Dimensional (2D) Geometry](https://omnioperand.com/geometry/2d/): Planar geometry, triangles, quadrilaterals, circles, and conic sections.
 - [Geometry Master Hub](https://omnioperand.com/geometry/): Euclidean, analytic, coordinate, and 3D spatial geometry.
@@ -15,19 +18,41 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
 - [Physics & Mechanics Hub](https://omnioperand.com/physics/): Kinematics, thermodynamics, and fluid mechanics.
 - [Probability & Statistics Hub](https://omnioperand.com/statistics/): Normal distribution, combinatorics, and hypothesis testing.
 
-## Regular Octagon Mathematical Quick Reference
-- Interior angle: 135° (3π/4 rad)
-- Exterior/Central angle: 45° (π/4 rad)
-- Half-central angle: 22.5° (π/8 rad)
-- Apothem (Inradius): r_i = a * (1 + √2) / 2 ≈ 1.20710678 * a
+## Regular Polygons Mathematical Quick Reference
+
+### Regular Hexagon (n = 6)
+- Interior angle: 120° (2π/3 rad) | Central angle: 60° (π/3 rad)
+- Circumradius: R = a (strictly equal to side length)
+- Apothem: r_i = (a * √3) / 2 ≈ 0.866025 * a
+- Area: A = (3√3 / 2) * a² ≈ 2.598076 * a²
+- Short diagonal: d_S = a * √3 ≈ 1.732051 * a (equals flat-to-flat span S)
+- Long diagonal: d_L = 2a = 2R
+
+### Regular Pentagon (n = 5)
+- Interior angle: 108° (3π/5 rad) | Central angle: 72° (2π/5 rad)
+- Golden Ratio: ϕ = (1 + √5) / 2 ≈ 1.618034
+- Diagonal: d = a * ϕ = a * (1 + √5) / 2 ≈ 1.618034 * a (all 5 diagonals congruent)
+- Apothem: r_i = (a / 10) * √(25 + 10√5) ≈ 0.688191 * a
+- Circumradius: R = (a / 10) * √(50 + 10√5) ≈ 0.850651 * a
+- Area: A = (a² / 4) * √(25 + 10√5) ≈ 1.720477 * a²
+
+### Regular Octagon (n = 8)
+- Interior angle: 135° (3π/4 rad) | Central angle: 45° (π/4 rad)
+- Apothem: r_i = a * (1 + √2) / 2 ≈ 1.20710678 * a
 - Circumradius: R = a * √(4 + 2√2) / 2 ≈ 1.30656296 * a
-- Area from side: A = 2(1 + √2) * a² ≈ 4.82842712 * a²
-- Side from area: a = √(A / [2(1 + √2)]) = √(A * (√2 - 1) / 2) ≈ 0.45508986 * √A
-- Short diagonal (across 2 sides): d_S = a * √(2 + √2) ≈ 1.84775907 * a
-- Medium diagonal (Span / Height flat-to-flat): S = 2 * r_i = a * (1 + √2) ≈ 2.41421356 * a
-- Long diagonal (across opposite vertices): d_L = 2 * R = a * √(4 + 2√2) ≈ 2.61312593 * a
-- Carpentry corner cut from span S: Corner cut leg = (S - a) / 2 = a / √2 ≈ 0.70710678 * a
+- Area: A = 2(1 + √2) * a² ≈ 4.82842712 * a²
+- Short diagonal: d_S = a * √(2 + √2) ≈ 1.847759 * a
+- Medium diagonal / Span: S = 2 * r_i = a * (1 + √2) ≈ 2.414214 * a
+- Long diagonal: d_L = 2 * R = a * √(4 + 2√2) ≈ 2.613126 * a
 - Miter saw angle: 22.5°
+
+### Regular Decagon (n = 10)
+- Interior angle: 144° (4π/5 rad) | Central angle: 36° (π/5 rad)
+- Circumradius: R = a * ϕ = a * (1 + √5) / 2 ≈ 1.618034 * a
+- Apothem: r_i = (a / 2) * √(5 + 2√5) ≈ 1.538842 * a
+- Area: A = (5/2) * a² * √(5 + 2√5) ≈ 7.694209 * a²
+- Flat-to-flat span: S = 2 * r_i = a * √(5 + 2√5) ≈ 3.077684 * a
+- Main diameter: d_4 = 2R = a * (1 + √5) ≈ 3.236068 * a
 
 ## Optional
 - For full proofs, step-by-step algebraic derivations, and JSON schemas, see [llms-full.txt](https://omnioperand.com/llms-full.txt).

@@ -15,6 +15,24 @@
       keywords: ["octagon", "polygon", "8-sided", "apothem", "circumradius", "diagonal", "stop sign", "area", "perimeter"]
     },
     {
+      title: "Regular Hexagon Calculator",
+      category: "Geometry > 2D Geometry > Shapes",
+      url: "/geometry/2d/shapes/hexagon/",
+      keywords: ["hexagon", "polygon", "6-sided", "honeycomb", "apothem", "circumradius", "diagonal", "hex bolt", "area"]
+    },
+    {
+      title: "Regular Pentagon Calculator",
+      category: "Geometry > 2D Geometry > Shapes",
+      url: "/geometry/2d/shapes/pentagon/",
+      keywords: ["pentagon", "polygon", "5-sided", "golden ratio", "phi", "pentagram", "diagonal", "apothem", "area"]
+    },
+    {
+      title: "Regular Decagon Calculator",
+      category: "Geometry > 2D Geometry > Shapes",
+      url: "/geometry/2d/shapes/decagon/",
+      keywords: ["decagon", "polygon", "10-sided", "golden ratio", "phi", "apothem", "circumradius", "diagonal", "area"]
+    },
+    {
       title: "2D Geometry Hub",
       category: "Geometry",
       url: "/geometry/2d/",

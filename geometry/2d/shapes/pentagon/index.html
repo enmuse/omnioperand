@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regular Pentagon Calculator — Exact Formulas, Area, Diagonal & Golden Ratio | OmniOperand</title>
+  <meta name="description" content="Bidirectional regular pentagon calculator. Compute area, perimeter, apothem (inradius), circumradius, height, and golden ratio diagonal from any single known dimension with exact radical proofs.">
+  <link rel="canonical" href="https://omnioperand.com/geometry/2d/shapes/pentagon/">
+
+  <meta property="og:title" content="Regular Pentagon Calculator & Golden Ratio Solver | OmniOperand">
+  <meta property="og:description" content="Interactive regular pentagon solver. Real-time SVG blueprint, exact golden ratio algebraic proofs, step-by-step derivations, and LLM reasoning instructions.">
+  <meta property="og:url" content="https://omnioperand.com/geometry/2d/shapes/pentagon/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css">
+  <link rel="stylesheet" href="/assets/css/calculator.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://omnioperand.com/geometry/2d/shapes/pentagon/#app",
+        "name": "Regular Pentagon Calculator & Solver",
+        "url": "https://omnioperand.com/geometry/2d/shapes/pentagon/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "High-precision bidirectional regular pentagon calculator computing side length, area, perimeter, apothem, circumradius, height, and golden ratio diagonal."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://omnioperand.com/geometry/2d/shapes/pentagon/#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "OmniOperand", "item": "https://omnioperand.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Geometry", "item": "https://omnioperand.com/geometry/" },
+          { "@type": "ListItem", "position": 3, "name": "2D Geometry", "item": "https://omnioperand.com/geometry/2d/" },
+          { "@type": "ListItem", "position": 4, "name": "Shapes & Polygons", "item": "https://omnioperand.com/geometry/2d/shapes/" },
+          { "@type": "ListItem", "position": 5, "name": "Regular Pentagon", "item": "https://omnioperand.com/geometry/2d/shapes/pentagon/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://omnioperand.com/geometry/2d/shapes/pentagon/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the formula for the area of a regular pentagon?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The area of a regular pentagon with side length a is A = (a² / 4) · √(25 + 10√5) ≈ 1.720477 · a². In terms of the inradius (apothem) r_i, the area is A = 5 · r_i² · √(5 - 2√5) ≈ 3.632712 · r_i²."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is the diagonal of a regular pentagon equal to the golden ratio times the side length?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By applying the Law of Cosines to the triangle formed by two adjacent sides of length a and the 108° interior angle: d² = 2a²(1 - cos(108°)) = 2a²(1 + (√5 - 1)/4) = a² · [(3 + √5)/2] = a² · ϕ², where ϕ = (1 + √5)/2 is the Golden Ratio. Therefore, d = a · ϕ ≈ 1.618034a."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many diagonals does a regular pentagon have?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A regular pentagon has exactly 5 diagonals, and all 5 are congruent with length d = a · ϕ. When all 5 diagonals are drawn, they form a pentagram (five-pointed star) enclosing a smaller inverted regular pentagon in the center."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <div class="brand-icon">⨁</div>
+        <span>OmniOperand</span>
+        <span class="brand-badge">Math Engine</span>
+      </a>
+
+      <nav class="header-nav">
+        <a href="/geometry/" class="nav-link active">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <a href="/statistics/" class="nav-link">Statistics</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn-trigger">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/geometry/">Geometry</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/geometry/2d/">2D Geometry</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/geometry/2d/shapes/">Shapes & Polygons</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active">Regular Pentagon Calculator</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="calculator-hero">
+      <div class="calc-title-badge">Polygon Geometry • 5-Sided Golden Polytope</div>
+      <h1>Regular Pentagon Calculator</h1>
+      <p>
+        High-precision bidirectional analytic solver. Enter <strong>any single known variable</strong>—side length, area, perimeter, apothem (inradius), circumradius, total height, or diagonal—and all other 6 geometric parameters will compute instantaneously with exact golden ratio derivations.
+      </p>
+    </section>
+
+    <section class="solver-container">
+      
+      <!-- Left Panel: Solver Matrix HUD -->
+      <div class="solver-panel">
+        
+        <div class="solver-toolbar">
+          <div class="toolbar-group">
+            <span class="toolbar-label">Units:</span>
+            <div class="segmented-control" id="unit-selector">
+              <button class="unit-btn active" data-unit="cm">cm</button>
+              <button class="unit-btn" data-unit="mm">mm</button>
+              <button class="unit-btn" data-unit="m">m</button>
+              <button class="unit-btn" data-unit="in">in</button>
+              <button class="unit-btn" data-unit="ft">ft</button>
+              <button class="unit-btn" data-unit="yd">yd</button>
+            </div>
+          </div>
+
+          <div class="toolbar-group">
+            <span class="toolbar-label">Decimals:</span>
+            <div class="segmented-control" id="prec-selector">
+              <button class="prec-btn" data-prec="2">2</button>
+              <button class="prec-btn active" data-prec="4">4</button>
+              <button class="prec-btn" data-prec="6">6</button>
+              <button class="prec-btn" data-prec="8">8</button>
+              <button class="prec-btn" data-prec="10">10</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="driver-selector-bar">
+          <label for="driver-select">Select Known Input (Driver):</label>
+          <select id="driver-select" class="driver-dropdown">
+            <option value="side" selected>Side Length (a)</option>
+            <option value="area">Area (A)</option>
+            <option value="perimeter">Perimeter (P)</option>
+            <option value="apothem">Apothem / Inradius (r_i)</option>
+            <option value="circumradius">Circumradius (R)</option>
+            <option value="diagonal">Golden Ratio Diagonal (d)</option>
+            <option value="height">Total Height / Span (H)</option>
+          </select>
+        </div>
+
+        <div class="parameter-grid">
+          
+          <!-- 1. Side Length -->
+          <div class="param-card is-driver" id="card-side">
+            <div class="param-header">
+              <span class="param-title">Side Length <span class="param-symbol">a</span></span>
+              <span class="param-status-tag input" id="status-side">Input (Driver)</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-side" class="param-input" value="10" step="any" min="0.0001" aria-label="Side Length">
+              <span class="param-unit" id="unit-side">cm</span>
+            </div>
+            <input type="range" id="slider-side" class="param-slider" min="1" max="100" value="10" step="0.1" aria-label="Side Length Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-side">a = 10</span>
+              <button class="copy-param-btn" id="copy-side">Copy</button>
+            </div>
+          </div>
+
+          <!-- 2. Area -->
+          <div class="param-card" id="card-area">
+            <div class="param-header">
+              <span class="param-title">Area <span class="param-symbol">A</span></span>
+              <span class="param-status-tag calculated" id="status-area">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-area" class="param-input" value="172.0477" step="any" min="0.0001" aria-label="Area">
+              <span class="param-unit" id="unit-area">cm²</span>
+            </div>
+            <input type="range" id="slider-area" class="param-slider" min="1" max="2000" value="172.0477" step="1" aria-label="Area Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-area">A = (a²/4)·√(25+10√5)</span>
+              <button class="copy-param-btn" id="copy-area">Copy</button>
+            </div>
+          </div>
+
+          <!-- 3. Perimeter -->
+          <div class="param-card" id="card-perimeter">
+            <div class="param-header">
+              <span class="param-title">Perimeter <span class="param-symbol">P</span></span>
+              <span class="param-status-tag calculated" id="status-perimeter">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-perimeter" class="param-input" value="50" step="any" min="0.0001" aria-label="Perimeter">
+              <span class="param-unit" id="unit-perimeter">cm</span>
+            </div>
+            <input type="range" id="slider-perimeter" class="param-slider" min="1" max="500" value="50" step="0.5" aria-label="Perimeter Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-perimeter">P = 5a</span>
+              <button class="copy-param-btn" id="copy-perimeter">Copy</button>
+            </div>
+          </div>
+
+          <!-- 4. Apothem / Inradius -->
+          <div class="param-card" id="card-apothem">
+            <div class="param-header">
+              <span class="param-title">Apothem (Inradius) <span class="param-symbol">r<sub>i</sub></span></span>
+              <span class="param-status-tag calculated" id="status-apothem">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-apothem" class="param-input" value="6.8819" step="any" min="0.0001" aria-label="Apothem">
+              <span class="param-unit" id="unit-apothem">cm</span>
+            </div>
+            <input type="range" id="slider-apothem" class="param-slider" min="1" max="100" value="6.8819" step="0.1" aria-label="Apothem Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-apothem">r<sub>i</sub> = (a/10)·√(25+10√5)</span>
+              <button class="copy-param-btn" id="copy-apothem">Copy</button>
+            </div>
+          </div>
+
+          <!-- 5. Circumradius -->
+          <div class="param-card" id="card-circumradius">
+            <div class="param-header">
+              <span class="param-title">Circumradius <span class="param-symbol">R</span></span>
+              <span class="param-status-tag calculated" id="status-circumradius">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-circumradius" class="param-input" value="8.5065" step="any" min="0.0001" aria-label="Circumradius">
+              <span class="param-unit" id="unit-circumradius">cm</span>
+            </div>
+            <input type="range" id="slider-circumradius" class="param-slider" min="1" max="100" value="8.5065" step="0.1" aria-label="Circumradius Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-circumradius">R = (a/10)·√(50+10√5)</span>
+              <button class="copy-param-btn" id="copy-circumradius">Copy</button>
+            </div>
+          </div>
+
+          <!-- 6. Golden Ratio Diagonal -->
+          <div class="param-card" id="card-diagonal">
+            <div class="param-header">
+              <span class="param-title">Diagonal <span class="param-symbol">d</span></span>
+              <span class="param-status-tag calculated" id="status-diagonal">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-diagonal" class="param-input" value="16.1803" step="any" min="0.0001" aria-label="Diagonal">
+              <span class="param-unit" id="unit-diagonal">cm</span>
+            </div>
+            <input type="range" id="slider-diagonal" class="param-slider" min="1" max="200" value="16.1803" step="0.2" aria-label="Diagonal Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-diagonal">d = a · ϕ = a(1+√5)/2</span>
+              <button class="copy-param-btn" id="copy-diagonal">Copy</button>
+            </div>
+          </div>
+
+          <!-- 7. Total Height -->
+          <div class="param-card" id="card-height">
+            <div class="param-header">
+              <span class="param-title">Total Height <span class="param-symbol">H</span></span>
+              <span class="param-status-tag calculated" id="status-height">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-height" class="param-input" value="15.3884" step="any" min="0.0001" aria-label="Height">
+              <span class="param-unit" id="unit-height">cm</span>
+            </div>
+            <input type="range" id="slider-height" class="param-slider" min="1" max="200" value="15.3884" step="0.2" aria-label="Height Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-height">H = R + r<sub>i</sub> = (a/2)√(5+2√5)</span>
+              <button class="copy-param-btn" id="copy-height">Copy</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Panel: Live SVG Blueprint -->
+      <div class="canvas-panel">
+        <div class="canvas-header">
+          <div class="canvas-title">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 22 9.5 18 21 6 21 2 9.5 12 2"></polygon></svg>
+            <span>Pentagonal Analytic Blueprint</span>
+          </div>
+          <span style="font-size:0.75rem; color:var(--text-muted);">Cartesian (400×400)</span>
+        </div>
+
+        <div class="canvas-wrapper">
+          <svg id="svg-pentagon-canvas" class="octagon-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="smallGridPent" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" />
+              </pattern>
+            </defs>
+            <rect width="400" height="400" fill="url(#smallGridPent)" />
+
+            <line x1="200" y1="20" x2="200" y2="380" class="svg-axis" />
+            <line x1="20" y1="200" x2="380" y2="200" class="svg-axis" />
+
+            <g id="svg-dimension-overlay"></g>
+            <polygon id="svg-pentagon-polygon" class="svg-polygon-shape" points="" />
+            <g id="svg-vertices-group"></g>
+          </svg>
+        </div>
+
+        <div class="canvas-legend">
+          <div class="legend-item"><span class="legend-dot" style="background:#06b6d4;"></span> Side (a)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#10b981;"></span> Apothem (r<sub>i</sub>)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#a855f7;"></span> Circumradius (R)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#f59e0b;"></span> Diagonal (d = aϕ)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> Height (H)</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Mathematical Foundations -->
+    <section class="proofs-section">
+      <h2>Mathematical Foundations & Golden Ratio Invariants</h2>
+      <p>
+        A regular pentagon is a 5-sided regular polygon with 5-fold rotational symmetry and 5 reflection axes (dihedral group <strong>D<sub>5</sub></strong>). It holds deep connections to the <strong>Golden Ratio</strong> (<span class="math-tex">ϕ = (1 + √5) / 2 ≈ 1.618034</span>), the Fibonacci sequence, and Kepler-Poinsot polyhedra.
+      </p>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">1</span>
+            <span>Interior, Exterior & Central Angles</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <div class="proof-step">
+            <div class="step-num">a</div>
+            <div class="step-content">
+              <strong>Sum of Interior Angles:</strong>
+              For <span class="math-tex">n = 5</span>:
+              <div class="math-display">
+                S = (5 - 2) × 180° = 3 × 180° = 540° &nbsp; (3π rad)
+              </div>
+            </div>
+          </div>
+          <div class="proof-step">
+            <div class="step-num">b</div>
+            <div class="step-content">
+              <strong>Individual Interior Angle (α):</strong>
+              <div class="math-display">
+                α = 540° / 5 = 108° &nbsp; (3π / 5 rad)
+              </div>
+            </div>
+          </div>
+          <div class="proof-step">
+            <div class="step-num">c</div>
+            <div class="step-content">
+              <strong>Central & Exterior Angle (β):</strong>
+              <div class="math-display">
+                β = 360° / 5 = 72° &nbsp; (2π / 5 rad)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">2</span>
+            <span>Proof of Golden Ratio Diagonal (d = a · ϕ)</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            Consider the isosceles triangle formed by two adjacent sides of length <span class="math-tex">a</span> and the 108° interior angle. By the Law of Cosines:
+          </p>
+          <div class="math-display">
+            d² = a² + a² - 2a² cos(108°) = 2a²[1 - cos(108°)]
+          </div>
+          <p>
+            Using the exact trigonometric identity <span class="math-tex">cos(108°) = -cos(72°) = -(√5 - 1) / 4</span>:
+          </p>
+          <div class="math-display">
+            1 - cos(108°) = 1 + (√5 - 1) / 4 = (3 + √5) / 4
+          </div>
+          <p>
+            Notice that the square of the Golden Ratio <span class="math-tex">ϕ = (1 + √5) / 2</span> is:
+          </p>
+          <div class="math-display">
+            ϕ² = [(1 + √5) / 2]² = (6 + 2√5) / 4 = (3 + √5) / 2
+          </div>
+          <p>
+            Therefore <span class="math-tex">2 · [(3 + √5) / 4] = (3 + √5) / 2 = ϕ²</span>. Substituting back:
+          </p>
+          <div class="math-display">
+            d² = a² · ϕ² ⟹ d = a · ϕ = a · (1 + √5) / 2 ≈ 1.61803399 · a
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">3</span>
+            <span>Apothem (r<sub>i</sub>) & Circumradius (R) Exact Radicals</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            With half central angle <span class="math-tex">θ = 72° / 2 = 36°</span>:
+          </p>
+          <div class="math-display">
+            r<sub>i</sub> = a / [2 · tan(36°)] = (a / 10) · √(25 + 10√5) ≈ 0.68819096 · a
+          </div>
+          <div class="math-display">
+            R = a / [2 · sin(36°)] = (a / 10) · √(50 + 10√5) ≈ 0.85065081 · a
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">4</span>
+            <span>Area Exact Radical Derivation</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            Summing the 5 central triangles with base <span class="math-tex">a</span> and height <span class="math-tex">r<sub>i</sub></span>:
+          </p>
+          <div class="math-display">
+            A = 5 × (½ · a · r<sub>i</sub>) = (5 / 2)a · [(a / 10)√(25 + 10√5)] = (a² / 4) · √(25 + 10√5) ≈ 1.72047740 · a²
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- LLM Prompt Box -->
+    <section class="llm-box">
+      <div class="llm-header">
+        <div>
+          <span class="llm-badge">LLM Directive & API Spec</span>
+          <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
+        </div>
+        <div class="llm-actions">
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+          <button class="btn btn-secondary btn-sm" id="copy-json-btn">Copy JSON Data</button>
+        </div>
+      </div>
+
+      <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
+
+      <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Precision verified up to 10 decimal digits</span>
+        <span>✓ Exact analytic radicals included</span>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the formula for the area of a regular pentagon?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The area of a regular pentagon with side length <span class="math-tex">a</span> is <span class="math-tex">A = (a² / 4) · √(25 + 10√5) ≈ 1.720477 · a²</span>. If you know the inradius (apothem) <span class="math-tex">r<sub>i</sub></span>, the area is <span class="math-tex">A = 5 · r<sub>i</sub>² · √(5 - 2√5) ≈ 3.632712 · r<sub>i</sub>²</span>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What is the diagonal length of a regular pentagon?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The diagonal of a regular pentagon is directly proportional to its side length by the Golden Ratio (<span class="math-tex">ϕ</span>):
+          <span class="math-tex">d = a · ϕ = a · (1 + √5) / 2 ≈ 1.618034 · a</span>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How many diagonals does a pentagon have?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          A pentagon has exactly 5 diagonals, and all 5 are equal in length. Connecting all 5 diagonals forms a pentagram (five-pointed star) which encloses an inverted smaller regular pentagon in the center.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js"></script>
+  <script src="/assets/js/pentagon-solver.js"></script>
+</body>
+</html>
