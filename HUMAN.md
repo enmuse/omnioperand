@@ -18,6 +18,7 @@
   - `www.omnioperand.com` → `omnioperand.pages.dev`
 - [x] **Secure API Credentials Configured**: Created `.env` containing Cloudflare, GitHub, and PageSpeed API keys. Protected by `.gitignore`.
 - [x] **Flagship Regular Polygons Suite**:
+  - **Universal Regular $n$-Polygon Solver ($n=3$ to $1000$):** Arbitrary $n$-gon bidirectional calculating engine, Archimedean circle exhaustion progress indicators, and dynamic vector morphing.
   - **Regular Octagon ($n=8$):** 8-variable bidirectional solver, $D_8$ symmetry group proofs, interactive blueprint.
   - **Regular Hexagon ($n=6$):** 8-variable bidirectional solver, equilateral triangle tessellation proofs, flat-to-flat and point-to-point diagonals.
   - **Regular Pentagon ($n=5$):** 7-variable bidirectional solver, golden ratio ($\phi$) proofs, exact radical derivations.
