@@ -710,20 +710,29 @@
 
     </section>
 
-    <!-- Copyable AI & LLM Integration Prompt -->
-    <section class="llm-prompt-section">
-      <div class="llm-prompt-header">
-        <div class="llm-prompt-title">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-          <span>Verified Prompt for LLMs & AI Agents</span>
+    <!-- LLM Instructions & Agent Prompting Section -->
+    <section class="llm-box">
+      <div class="llm-header">
+        <div>
+          <span class="llm-badge">LLM Directive & API Spec</span>
+          <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
         </div>
-        <div style="display:flex; gap:0.5rem;">
-          <button class="copy-prompt-btn" id="copy-json-btn">Copy JSON Data</button>
-          <button class="copy-prompt-btn" id="copy-llm-prompt-btn">Copy Prompt for AI</button>
+        <div class="llm-actions">
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for AI</button>
+          <button class="btn btn-secondary btn-sm" id="copy-json-btn">Copy JSON Data</button>
         </div>
       </div>
-      <div class="llm-prompt-box">
-        <pre id="llm-prompt-display">Generating verified polygon prompt...</pre>
+
+      <p style="color:var(--text-secondary); font-size:0.95rem;">
+        Large Language Models frequently make arithmetic hallucinations when calculating radical trigonometry for polygons. Use the verified prompt payload below when feeding polygon problems into ChatGPT, Claude, or Gemini to ensure zero hallucination and mathematically validated step-by-step reasoning.
+      </p>
+
+      <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
+
+      <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Precision verified up to 10 decimal digits</span>
+        <span>✓ Exact analytic radicals & Archimedean limits included</span>
       </div>
     </section>
 
