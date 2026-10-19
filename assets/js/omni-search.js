@@ -9,6 +9,12 @@
   // Calculator & Hub Index Database
   const SEARCH_INDEX = [
     {
+      title: "OmniOperand Computational REST API & OpenAPI Schema",
+      category: "Developer & Machine Protocols",
+      url: "/api/",
+      keywords: ["api", "rest", "rest api", "openapi", "json", "curl", "python", "developer", "programmatic", "endpoints", "chatgpt action", "llm", "agents", "mcp"]
+    },
+    {
       title: "Universal Regular Polygon Calculator",
       category: "Geometry > 2D Geometry > Shapes",
       url: "/geometry/2d/shapes/regular-polygon/",

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mathematical REST API & AI Agent Protocols | OmniOperand</title>
+  <meta name="description" content="Sub-15ms deterministic mathematical REST API. Programmatic geometric solvers, radical closed forms, and OpenAPI 3.1 endpoints for LLMs, ChatGPT Actions, and autonomous AI agents.">
+  <link rel="canonical" href="https://omnioperand.com/api/">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Mathematical REST API & AI Agent Protocols | OmniOperand">
+  <meta property="og:description" content="High-precision computational REST API for AI agents and developers. Sub-15ms edge resolution with exact mathematical radicals.">
+  <meta property="og:url" content="https://omnioperand.com/api/">
+  <meta property="og:type" content="website">
+
+  <!-- Core Math CSS -->
+  <link rel="stylesheet" href="/assets/css/omni-core.css">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.1">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": "OmniOperand Computational REST API & Machine Protocols",
+        "description": "Deterministic computational REST API engineered for autonomous AI agents, LLMs, researchers, and engineers.",
+        "url": "https://omnioperand.com/api/",
+        "author": {
+          "@type": "Organization",
+          "name": "OmniOperand",
+          "url": "https://omnioperand.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://omnioperand.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "API & Machine Protocols",
+            "item": "https://omnioperand.com/api/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <div class="brand-icon">⨁</div>
+        <span>OmniOperand</span>
+        <span class="brand-badge">REST API</span>
+      </a>
+
+      <nav class="header-nav">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/geometry/2d/shapes/regular-polygon/" class="nav-link">Universal N-Gon</a>
+        <a href="/api/" class="nav-link active">REST API</a>
+        <a href="/llms.txt" class="nav-link">llms.txt</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active" aria-current="page">REST API Documentation & Explorer</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Main API Documentation Container -->
+  <main class="container">
+
+    <!-- Header Section -->
+    <header class="calc-header-section" style="padding-top:2.5rem;">
+      <div class="calc-tag-row">
+        <span class="calc-category-tag">Machine Protocols</span>
+        <span class="calc-spec-tag">OpenAPI 3.1.0</span>
+        <span class="calc-spec-tag">Sub-15ms Cloudflare Edge</span>
+        <span class="calc-spec-tag">CORS: Enabled (*)</span>
+      </div>
+      <h1 class="calc-main-title">OmniOperand Computational REST API</h1>
+      <p class="calc-intro-description">
+        Deterministic, sub-millisecond mathematical ground truth service designed for autonomous AI agents, LLMs, CAD pipelines, and engineering workflows. Zero arithmetic hallucination, machine-level precision, and closed-form radical derivations.
+      </p>
+      
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
+        <a href="/api/v1/openapi.json" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>OpenAPI 3.1 Schema (JSON)</span>
+        </a>
+        <a href="/llms.txt" class="btn btn-secondary" target="_blank" rel="noopener">
+          <span>View llms.txt Manifest</span>
+        </a>
+        <a href="#playground" class="btn btn-secondary">
+          <span>Launch Live API Tester ↓</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Key Architecture Specs -->
+    <section class="hub-grid" style="margin:2.5rem 0;">
+      <div class="hub-card" style="--card-accent: var(--accent-cyan);">
+        <div>
+          <div class="hub-card-header">
+            <span style="font-size:1.5rem;">⚡</span>
+            <span class="hub-badge">Sub-15ms</span>
+          </div>
+          <h2 class="hub-card-title">Cloudflare Edge Architecture</h2>
+          <p class="hub-card-desc">
+            Deployed on V8 serverless edge isolates across 330+ cities worldwide. Zero cold starts, execution times under 0.5 ms, and global CDN caching.
+          </p>
+        </div>
+      </div>
+
+      <div class="hub-card" style="--card-accent: var(--accent-emerald);">
+        <div>
+          <div class="hub-card-header">
+            <span style="font-size:1.5rem;">🤖</span>
+            <span class="hub-badge">AI Native</span>
+          </div>
+          <h2 class="hub-card-title">LLM Agent Integration</h2>
+          <p class="hub-card-desc">
+            Directly pluggable into ChatGPT Custom Actions, Anthropic Claude MCP tools, LangChain agents, and AutoGen systems to eliminate floating-point hallucinations.
+          </p>
+        </div>
+      </div>
+
+      <div class="hub-card" style="--card-accent: var(--accent-violet);">
+        <div>
+          <div class="hub-card-header">
+            <span style="font-size:1.5rem;">📐</span>
+            <span class="hub-badge">Closed Forms</span>
+          </div>
+          <h2 class="hub-card-title">Exact Radical Invariants</h2>
+          <p class="hub-card-desc">
+            Every response provides both machine-precision decimal values (up to 14 decimals) and exact radical closed-form algebraic expressions (e.g. 2(1 + √2)a²).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Live API Playground -->
+    <section id="playground" class="llm-box" style="margin-top:2rem;">
+      <div class="llm-header">
+        <div>
+          <span class="llm-badge">Interactive Console</span>
+          <h2 style="margin-top:0.4rem; font-size:1.45rem;">Live Edge API Playground</h2>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-sm" id="send-request-btn">
+            <span>Execute GET Request ➔</span>
+          </button>
+        </div>
+      </div>
+
+      <p style="color:var(--text-secondary); font-size:0.95rem; margin-bottom:1.5rem;">
+        Test live queries against the Cloudflare edge network directly in your browser. All parameters dynamically execute at the edge.
+      </p>
+
+      <!-- Playground Controls -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:1.25rem;">
+        <div>
+          <label for="play-endpoint" style="font-size:0.85rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:0.35rem;">Endpoint Route:</label>
+          <select id="play-endpoint" class="driver-dropdown" style="width:100%; padding:0.6rem; background:var(--bg-surface); border:1px solid var(--border-active); color:var(--text-primary); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.85rem;">
+            <option value="regular-polygon" selected>/api/v1/geometry/2d/shapes/regular-polygon</option>
+            <option value="octagon">/api/v1/geometry/2d/shapes/octagon</option>
+          </select>
+        </div>
+
+        <div id="play-n-group">
+          <label for="play-n" style="font-size:0.85rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:0.35rem;">Number of Sides (n):</label>
+          <input type="number" id="play-n" min="3" max="1000" value="8" style="width:100%; padding:0.6rem; background:var(--bg-surface); border:1px solid var(--border-active); color:var(--accent-cyan); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.9rem; font-weight:700;">
+        </div>
+
+        <div>
+          <label for="play-driver" style="font-size:0.85rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:0.35rem;">Known Driver Input:</label>
+          <select id="play-driver" class="driver-dropdown" style="width:100%; padding:0.6rem; background:var(--bg-surface); border:1px solid var(--border-active); color:var(--text-primary); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.85rem;">
+            <option value="side" selected>side (a)</option>
+            <option value="area">area (A)</option>
+            <option value="perimeter">perimeter (P)</option>
+            <option value="apothem">apothem / inradius (r_i)</option>
+            <option value="circumradius">circumradius (R)</option>
+            <option value="span">span (S)</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="play-value" style="font-size:0.85rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:0.35rem;">Input Value:</label>
+          <input type="number" id="play-value" step="any" value="10" style="width:100%; padding:0.6rem; background:var(--bg-surface); border:1px solid var(--border-active); color:var(--text-primary); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.9rem;">
+        </div>
+
+        <div>
+          <label for="play-prec" style="font-size:0.85rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:0.35rem;">Precision (Decimals):</label>
+          <input type="number" id="play-prec" min="2" max="14" value="8" style="width:100%; padding:0.6rem; background:var(--bg-surface); border:1px solid var(--border-active); color:var(--text-primary); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.9rem;">
+        </div>
+      </div>
+
+      <!-- Live Generated URL -->
+      <div style="background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:0.65rem 1rem; margin-bottom:1rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; font-family:var(--font-mono); font-size:0.85rem; color:var(--accent-cyan); overflow-x:auto;">
+        <span id="play-url-preview">https://omnioperand.com/api/v1/geometry/2d/shapes/regular-polygon?n=8&driver=side&value=10&precision=8</span>
+        <button class="btn btn-secondary btn-sm" id="copy-url-btn" style="padding:0.25rem 0.6rem; font-size:0.75rem;">Copy URL</button>
+      </div>
+
+      <!-- Result Terminal Display -->
+      <div style="position:relative;">
+        <pre class="llm-prompt-code" id="play-response-display" style="min-height:220px; max-height:400px; margin:0;">Click "Execute GET Request ➔" to fetch live JSON from Cloudflare Edge Network...</pre>
+      </div>
+
+      <div style="margin-top:0.75rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; font-size:0.8rem; color:var(--text-muted);">
+        <span id="play-latency-display">Latency: Ready</span>
+        <button class="btn btn-secondary btn-sm" id="copy-response-btn" style="padding:0.25rem 0.6rem; font-size:0.75rem;">Copy Response JSON</button>
+      </div>
+    </section>
+
+    <!-- Code Integration Examples -->
+    <section style="margin: 3.5rem 0;">
+      <h2 style="font-size:1.75rem; margin-bottom:1rem;">Programmatic Integration Examples</h2>
+      <p style="color:var(--text-secondary); margin-bottom:1.5rem;">
+        Connect OmniOperand to any application, terminal, or autonomous AI framework in a single line of code.
+      </p>
+
+      <div class="proof-card open" style="margin-bottom:1rem;">
+        <div class="proof-header">
+          <h3><span>1. cURL Terminal Command</span></h3>
+        </div>
+        <div class="proof-body">
+          <pre class="llm-prompt-code" style="margin:0;">curl -s "https://omnioperand.com/api/v1/geometry/2d/shapes/regular-polygon?n=8&driver=side&value=10" | jq</pre>
+        </div>
+      </div>
+
+      <div class="proof-card open" style="margin-bottom:1rem;">
+        <div class="proof-header">
+          <h3><span>2. Python (Requests)</span></h3>
+        </div>
+        <div class="proof-body">
+          <pre class="llm-prompt-code" style="margin:0;">import requests
+
+response = requests.get(
+    "https://omnioperand.com/api/v1/geometry/2d/shapes/regular-polygon",
+    params={"n": 8, "driver": "area", "value": 482.8427, "precision": 6}
+)
+data = response.json()
+print("Side Length:", data["result"]["side"])
+print("Circumradius:", data["result"]["circumradius"])
+print("Invariance Verified:", data["result"]["verification"]["is_valid"])</pre>
+        </div>
+      </div>
+
+      <div class="proof-card open" style="margin-bottom:1rem;">
+        <div class="proof-header">
+          <h3><span>3. JavaScript / TypeScript (fetch)</span></h3>
+        </div>
+        <div class="proof-body">
+          <pre class="llm-prompt-code" style="margin:0;">const params = new URLSearchParams({ n: '8', driver: 'side', value: '10' });
+const res = await fetch(`https://omnioperand.com/api/v1/geometry/2d/shapes/regular-polygon?${params}`);
+const data = await res.json();
+console.log(`Area: ${data.result.area}, Apothem: ${data.result.apothem}`);</pre>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3><span>4. OpenAI Custom GPT Action / Claude Tool Configuration</span></h3>
+        </div>
+        <div class="proof-body">
+          <p style="font-size:0.875rem; color:var(--text-secondary); margin-bottom:0.75rem;">
+            Import this OpenAPI 3.1 endpoint into OpenAI's GPT Builder or your agent tool runner:
+          </p>
+          <pre class="llm-prompt-code" style="margin:0;">URL for GPT Action Schema: https://omnioperand.com/api/v1/openapi.json
+Authentication: None (Public Anonymous Allowed)
+Rate Limit: 60 requests per minute</pre>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <!-- Search Modal Overlay -->
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators (e.g. regular polygon, api, octagon)...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js"></script>
+  <script>
+  // Interactive API Playground Logic
+  (function() {
+    const endpointSelect = document.getElementById('play-endpoint');
+    const nInput = document.getElementById('play-n');
+    const nGroup = document.getElementById('play-n-group');
+    const driverSelect = document.getElementById('play-driver');
+    const valInput = document.getElementById('play-value');
+    const precInput = document.getElementById('play-prec');
+    const urlPreview = document.getElementById('play-url-preview');
+    const responseDisplay = document.getElementById('play-response-display');
+    const latencyDisplay = document.getElementById('play-latency-display');
+    const sendBtn = document.getElementById('send-request-btn');
+    const copyUrlBtn = document.getElementById('copy-url-btn');
+    const copyResponseBtn = document.getElementById('copy-response-btn');
+
+    function updateUrl() {
+      const ep = endpointSelect.value;
+      const params = new URLSearchParams();
+      if (ep === 'regular-polygon') {
+        params.set('n', nInput.value || '8');
+        nGroup.style.display = 'block';
+      } else {
+        nGroup.style.display = 'none';
+      }
+      params.set('driver', driverSelect.value);
+      params.set('value', valInput.value || '10');
+      params.set('precision', precInput.value || '8');
+
+      const fullUrl = `${window.location.origin}/api/v1/geometry/2d/shapes/${ep}?${params.toString()}`;
+      urlPreview.textContent = fullUrl;
+      return fullUrl;
+    }
+
+    [endpointSelect, nInput, driverSelect, valInput, precInput].forEach(el => {
+      el.addEventListener('input', updateUrl);
+      el.addEventListener('change', updateUrl);
+    });
+
+    async function executeRequest() {
+      const url = updateUrl();
+      responseDisplay.textContent = 'Executing request across Cloudflare edge network...';
+      sendBtn.disabled = true;
+      const t0 = performance.now();
+
+      try {
+        const res = await fetch(url);
+        const t1 = performance.now();
+        const duration = Math.round(t1 - t0);
+        latencyDisplay.textContent = `Latency: ${duration} ms • Status: ${res.status} ${res.statusText}`;
+
+        const data = await res.json();
+        responseDisplay.textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        latencyDisplay.textContent = 'Error: Failed to connect';
+        responseDisplay.textContent = `Error: ${err.message}`;
+      } finally {
+        sendBtn.disabled = false;
+      }
+    }
+
+    sendBtn.addEventListener('click', executeRequest);
+
+    copyUrlBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(urlPreview.textContent).then(() => {
+        copyUrlBtn.textContent = '✓ Copied';
+        setTimeout(() => copyUrlBtn.textContent = 'Copy URL', 2000);
+      });
+    });
+
+    copyResponseBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(responseDisplay.textContent).then(() => {
+        copyResponseBtn.textContent = '✓ Copied JSON';
+        setTimeout(() => copyResponseBtn.textContent = 'Copy Response JSON', 2000);
+      });
+    });
+
+    updateUrl();
+  })();
+  </script>
+</body>
+</html>

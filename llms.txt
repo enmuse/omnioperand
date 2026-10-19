@@ -19,6 +19,13 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
 - [Physics & Mechanics Hub](https://omnioperand.com/physics/): Kinematics, thermodynamics, and fluid mechanics.
 - [Probability & Statistics Hub](https://omnioperand.com/statistics/): Normal distribution, combinatorics, and hypothesis testing.
 
+## Programmatic REST API & Machine Endpoints
+
+- [OpenAPI 3.1.0 Specification](https://omnioperand.com/api/v1/openapi.json): Full machine-readable schema for ChatGPT Custom Actions, Claude MCP, and autonomous AI agents.
+- [REST API Explorer & Documentation](https://omnioperand.com/api/): Interactive edge tester and developer documentation.
+- [Universal Regular Polygon API](https://omnioperand.com/api/v1/geometry/2d/shapes/regular-polygon): GET/POST endpoint for n=3 to 1000.
+- [Regular Octagon API](https://omnioperand.com/api/v1/geometry/2d/shapes/octagon): GET/POST endpoint for 8-variable closed-form radical calculations.
+
 ## Regular Polygons Mathematical Quick Reference
 
 ### Regular Hexagon (n = 6)

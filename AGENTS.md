@@ -47,7 +47,22 @@ graph TD
 │   │   └── calculator.css           # Calculator HUD, parameter cards, sliders, SVG canvas
 │   └── js/
 │       ├── omni-search.js            # Client-side fuzzy search & theme management
-│       └── octagon-solver.js         # Flagship regular octagon 8-variable bidirectional solver
+│       ├── blueprint-engine.js       # Vector SVG, High-Res PNG & LaTeX TikZ blueprint exporter
+│       ├── octagon-solver.js         # Flagship regular octagon 8-variable bidirectional solver
+│       └── regular-polygon-solver.js # Universal n-sided polygon (3-1000) solver engine
+├── api/
+│   ├── index.html                    # REST API Interactive Playground & Documentation
+│   └── v1/
+│       └── openapi.json              # OpenAPI 3.1.0 schema for AI agents and developer tooling
+├── functions/
+│   └── api/
+│       └── v1/
+│           ├── openapi.json.js       # Cloudflare Pages Function serving OpenAPI spec with CORS
+│           └── geometry/
+│               └── 2d/
+│                   └── shapes/
+│                       ├── regular-polygon.js # GET/POST endpoint for arbitrary n-gons
+│                       └── octagon.js         # GET/POST endpoint for 8-variable octagon solver
 ├── geometry/
 │   ├── index.html                    # Level 2 Hub: Geometry & Spatial Analysis
 │   └── 2d/
@@ -131,6 +146,14 @@ Every calculator and hub page MUST include:
 - **Unified Polygon Switcher Bar:** Every shape calculator (`regular-polygon`, `octagon`, `hexagon`, `pentagon`, `decagon`) MUST feature a persistent, responsive **Polygon Switcher Bar** directly above the solver HUD:
   - Quick-switch pills: `[⨁ Universal N-Gon (3–1000)]`, `[▲ Triangle (3)]`, `[■ Square (4)]`, `[⬠ Pentagon (5)]`, `[⬡ Hexagon (6)]`, `[🛑 Octagon (8)]`, `[⯃ Decagon (10)]`, `[📁 All Shapes]`.
   - The current active shape must be styled with an active highlight, and the Universal N-Gon pill must feature an accent badge so users can effortlessly pivot between dedicated radical closed-form solvers and the universal arbitrary $n$ solver in a single click without dead ends.
+
+### 8. Programmatic REST API & Machine Protocol Standards
+- **Sub-15ms Serverless Architecture:** All REST endpoints reside in `/functions/api/v1/` powered by Cloudflare Pages Functions (V8 edge isolates).
+- **Deterministic Math Engine:** Pure algebraic and trigonometric functions with sub-0.5ms CPU execution time and zero external dependencies.
+- **Zero Hallucination Protocol:** Endpoints must return both machine-precision floating-point metrics (up to 14 decimals) and exact algebraic radical representations before rounding.
+- **Mathematical Invariance Verification:** Every API response includes a verified identity proof (`is_valid: true`), proving that fundamental invariants (such as $r_i / R \equiv \cos(\pi/n)$) hold true with machine precision.
+- **OpenAPI 3.1 & Agent Native:** Maintain `/api/v1/openapi.json` for seamless integration into ChatGPT Custom Actions, Anthropic Claude MCP tools, and autonomous agent frameworks.
+- **CORS & Edge Caching:** All endpoints must provide open CORS (`Access-Control-Allow-Origin: *`) and edge cache headers (`Cache-Control: public, max-age=3600, s-maxage=86400`).
 
 ---
 

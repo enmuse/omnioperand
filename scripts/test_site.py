@@ -227,7 +227,9 @@ def test_file_integrity():
         "calculus/index.html",
         "finance/index.html",
         "physics/index.html",
-        "statistics/index.html"
+        "statistics/index.html",
+        "api/index.html",
+        "api/v1/openapi.json"
     ]
 
     for rel_path in required_files:

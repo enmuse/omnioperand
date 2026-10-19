@@ -1,0 +1,259 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OmniOperand High-Precision Mathematical REST API",
+    "version": "1.0.0",
+    "description": "Deterministic computational REST API engineered for autonomous AI agents, LLMs, researchers, and engineers. Resolves multi-parameter geometric systems with machine precision, radical closed forms, and zero arithmetic hallucination.",
+    "contact": {
+      "name": "OmniOperand Computational Systems",
+      "url": "https://omnioperand.com",
+      "email": "api@omnioperand.com"
+    },
+    "license": {
+      "name": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://omnioperand.com/api/v1",
+      "description": "Cloudflare Global Edge Production Server (<15ms latency)"
+    }
+  ],
+  "paths": {
+    "/geometry/2d/shapes/regular-polygon": {
+      "get": {
+        "summary": "Solve any regular n-sided polygon (3 to 1000 sides)",
+        "description": "Bidirectional analytic solver for any regular equilateral and equiangular polygon. Provide any single known variable (side, area, perimeter, apothem/inradius, circumradius, or span) to instantaneously compute all other metrics with Archimedean limit convergence checks.",
+        "operationId": "solveRegularPolygon",
+        "parameters": [
+          {
+            "name": "n",
+            "in": "query",
+            "description": "Number of sides (3 <= n <= 1000)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 3,
+              "maximum": 1000,
+              "default": 8
+            }
+          },
+          {
+            "name": "driver",
+            "in": "query",
+            "description": "The known input variable driving the bidirectional inversion",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["side", "area", "perimeter", "apothem", "inradius", "circumradius", "span"],
+              "default": "side"
+            }
+          },
+          {
+            "name": "value",
+            "in": "query",
+            "description": "Numerical value of the known driver parameter",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "positive": true,
+              "default": 10.0
+            }
+          },
+          {
+            "name": "precision",
+            "in": "query",
+            "description": "Decimal places of precision in numerical output (2 to 14)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 14,
+              "default": 8
+            }
+          },
+          {
+            "name": "units",
+            "in": "query",
+            "description": "Unit label identifier (e.g. cm, mm, m, in, ft)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "units"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Mathematically verified polygon metrics payload",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PolygonResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Solve regular polygon via JSON body payload",
+        "operationId": "solveRegularPolygonPost",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "n": { "type": "integer", "default": 8 },
+                  "driver": { "type": "string", "default": "side" },
+                  "value": { "type": "number", "default": 10.0 },
+                  "precision": { "type": "integer", "default": 8 },
+                  "units": { "type": "string", "default": "units" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Polygon calculation response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PolygonResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/geometry/2d/shapes/octagon": {
+      "get": {
+        "summary": "Solve 8-variable regular octagon with exact radical closed forms",
+        "description": "Specialized high-precision bidirectional solver for regular octagons. Returns exact algebraic radicals (e.g. 2(1+sqrt(2))a^2) and practical carpentry cut-off dimensions.",
+        "operationId": "solveOctagon",
+        "parameters": [
+          {
+            "name": "driver",
+            "in": "query",
+            "description": "The known input variable",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["side", "area", "perimeter", "apothem", "circumradius", "span", "short_diagonal", "long_diagonal"],
+              "default": "side"
+            }
+          },
+          {
+            "name": "value",
+            "in": "query",
+            "description": "Known numerical measurement",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "default": 10.0
+            }
+          },
+          {
+            "name": "precision",
+            "in": "query",
+            "description": "Decimal places of precision (2 to 14)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 8
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Octagon metrics with exact closed-form radicals",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OctagonResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PolygonResponse": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "type": "object",
+            "properties": {
+              "api_version": { "type": "string" },
+              "platform": { "type": "string" },
+              "canonical_url": { "type": "string" },
+              "timestamp_utc": { "type": "string" }
+            }
+          },
+          "query": {
+            "type": "object",
+            "properties": {
+              "n": { "type": "integer" },
+              "driver": { "type": "string" },
+              "input_value": { "type": "number" },
+              "precision": { "type": "integer" }
+            }
+          },
+          "result": {
+            "type": "object",
+            "properties": {
+              "n": { "type": "integer" },
+              "name": { "type": "string" },
+              "side": { "type": "number" },
+              "perimeter": { "type": "number" },
+              "apothem": { "type": "number" },
+              "circumradius": { "type": "number" },
+              "area": { "type": "number" },
+              "span_flat_to_flat": { "type": "number" },
+              "total_diagonals": { "type": "integer" },
+              "angles": {
+                "type": "object",
+                "properties": {
+                  "interior_deg": { "type": "number" },
+                  "exterior_deg": { "type": "number" },
+                  "central_deg": { "type": "number" },
+                  "sum_interior_deg": { "type": "number" }
+                }
+              },
+              "verification": {
+                "type": "object",
+                "properties": {
+                  "is_valid": { "type": "boolean" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "OctagonResponse": {
+        "type": "object",
+        "properties": {
+          "meta": { "type": "object" },
+          "query": { "type": "object" },
+          "result": {
+            "type": "object",
+            "properties": {
+              "shape": { "type": "string" },
+              "parameters": { "type": "object" },
+              "carpentry_and_fabrication": { "type": "object" },
+              "algebraic_proofs": { "type": "object" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
