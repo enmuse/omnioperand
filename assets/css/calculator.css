@@ -308,7 +308,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .canvas-title {
@@ -317,6 +319,57 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.canvas-hud-coords {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+/* Layer Visibility Controls */
+.blueprint-layer-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.layer-bar-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-right: 0.2rem;
+}
+
+.layer-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.layer-pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+}
+
+.layer-pill.active {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.4);
+  color: var(--accent-cyan);
 }
 
 .canvas-wrapper {
@@ -330,8 +383,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
+.canvas-wrapper.blueprint-theme-active {
+  background: radial-gradient(circle at center, #08172e 0%, #030a16 100%);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.omni-blueprint-svg,
 .octagon-svg {
   width: 100%;
   height: 100%;
@@ -395,16 +455,87 @@
   transition: transform 0.2s ease, fill 0.2s ease;
 }
 
-.svg-vertex-dot:hover {
+.svg-vertex-dot:hover,
+.svg-vertex-dot.active {
   fill: var(--accent-amber);
-  transform: scale(1.3);
+  transform: scale(1.35);
+}
+
+.svg-blueprint-meta {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  fill: rgba(148, 163, 184, 0.45);
+  font-weight: 600;
+  user-select: none;
+}
+
+.svg-blueprint-watermark {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.06em;
+  fill: rgba(148, 163, 184, 0.55);
+  font-weight: 600;
+  user-select: none;
+}
+
+.layer-hidden {
+  display: none !important;
+}
+
+/* Blueprint Export Toolbar */
+.blueprint-export-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .blueprint-export-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.export-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.export-btn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--border-active);
+  color: var(--text-primary);
+}
+
+.export-btn.highlight {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.3);
+  color: var(--accent-cyan);
+}
+
+.export-btn.highlight:hover {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: var(--accent-cyan);
 }
 
 .canvas-legend {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   padding-top: 0.75rem;
   border-top: 1px solid var(--border-subtle);
   font-size: 0.75rem;
@@ -421,6 +552,97 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
+}
+
+/* Attribution & Commercial / Academic License Box */
+.blueprint-license-box {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  background: rgba(10, 16, 29, 0.85);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--radius-md);
+}
+
+.license-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.license-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-emerald);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.license-cc {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.license-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 0.65rem;
+}
+
+.license-desc strong {
+  color: var(--accent-cyan);
+}
+
+.attribution-snippet-group {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.65rem;
+}
+
+.snippet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.copy-snippet-btn {
+  background: rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  color: var(--accent-cyan);
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.copy-snippet-btn:hover {
+  background: rgba(6, 182, 212, 0.3);
+  color: #fff;
+}
+
+.snippet-code {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding: 0.15rem 0;
 }
 
 /* Step-by-Step Derivation Section */

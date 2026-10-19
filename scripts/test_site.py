@@ -188,6 +188,7 @@ def test_file_integrity():
         "assets/js/hexagon-solver.js",
         "assets/js/pentagon-solver.js",
         "assets/js/decagon-solver.js",
+        "assets/js/blueprint-engine.js",
         "geometry/index.html",
         "geometry/2d/index.html",
         "geometry/2d/shapes/index.html",

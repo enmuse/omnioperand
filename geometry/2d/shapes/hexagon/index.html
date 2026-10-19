@@ -318,13 +318,23 @@
         <div class="canvas-header">
           <div class="canvas-title">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 21.5 7.5 21.5 16.5 12 22 2.5 16.5 2.5 7.5 12 2"></polygon></svg>
-            <span>Hexagonal Analytic Blueprint</span>
+            <span>Interactive Analytic Blueprint</span>
           </div>
-          <span style="font-size:0.75rem; color:var(--text-muted);">Cartesian (400×400)</span>
+          <div class="canvas-hud-coords" id="blueprint-coord-display">Hover vertex for coordinates</div>
         </div>
 
-        <div class="canvas-wrapper">
-          <svg id="svg-hexagon-canvas" class="octagon-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <!-- Blueprint Layer Toggles -->
+        <div class="blueprint-layer-bar">
+          <span class="layer-bar-label">Layers:</span>
+          <button class="layer-pill active" id="toggle-layer-grid" title="Toggle Coordinate Grid & Axes">Grid</button>
+          <button class="layer-pill active" id="toggle-layer-circles" title="Toggle Incircle & Circumcircle">Circles</button>
+          <button class="layer-pill active" id="toggle-layer-dims" title="Toggle Dimension Lines">Dimensions</button>
+          <button class="layer-pill active" id="toggle-layer-labels" title="Toggle Vertex Points">Vertices</button>
+          <button class="layer-pill" id="toggle-blueprint-theme" title="Toggle Blueprint Theme">Blueprint Mode</button>
+        </div>
+
+        <div class="canvas-wrapper" id="blueprint-canvas-wrapper">
+          <svg id="svg-hexagon-canvas" class="octagon-svg omni-blueprint-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="smallGridHex" width="20" height="20" patternUnits="userSpaceOnUse">
                 <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" />
@@ -338,7 +348,31 @@
             <g id="svg-dimension-overlay"></g>
             <polygon id="svg-hexagon-polygon" class="svg-polygon-shape" points="" />
             <g id="svg-vertices-group"></g>
+
+            <!-- Technical Watermark & Scale Meta -->
+            <text x="14" y="22" class="svg-blueprint-meta">SCALE 1:1 • REGULAR HEXAGON BLUEPRINT</text>
+            <text x="386" y="388" text-anchor="end" class="svg-blueprint-watermark">OmniOperand • omnioperand.com</text>
           </svg>
+        </div>
+
+        <!-- Blueprint Export Toolbar -->
+        <div class="blueprint-export-bar">
+          <button class="export-btn" id="btn-export-png" title="Download High-Resolution PNG (2000×2000)">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            High-Res PNG
+          </button>
+          <button class="export-btn" id="btn-export-svg" title="Download Vector SVG File">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            Vector SVG
+          </button>
+          <button class="export-btn" id="btn-export-tikz" title="Copy LaTeX TikZ Vector Code">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            LaTeX TikZ
+          </button>
+          <button class="export-btn highlight" id="btn-open-attribution" title="Citation & Backlink Attribution">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            Backlink / Cite
+          </button>
         </div>
 
         <div class="canvas-legend">
@@ -348,6 +382,34 @@
           <div class="legend-item"><span class="legend-dot" style="background:#f59e0b;"></span> Long Diag (d<sub>L</sub>)</div>
           <div class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> Span (S)</div>
           <div class="legend-item"><span class="legend-dot" style="background:#ec4899;"></span> Short Diag (d<sub>S</sub>)</div>
+        </div>
+
+        <!-- Commercial & Academic Attribution Notice -->
+        <div class="blueprint-license-box">
+          <div class="license-badge-row">
+            <span class="license-badge">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Free for Commerce & Academia
+            </span>
+            <span class="license-cc">CC BY 4.0 License</span>
+          </div>
+          <p class="license-desc">
+            All generated diagrams and blueprints are free to use in academic papers, websites, books, and software. <strong>Backlink attribution to omnioperand.com is requested.</strong>
+          </p>
+          <div class="attribution-snippet-group">
+            <div class="snippet-header">
+              <span>Web Backlink Attribution:</span>
+              <button class="copy-snippet-btn" id="copy-backlink-html">Copy HTML</button>
+            </div>
+            <code class="snippet-code" id="snippet-backlink-html">&lt;a href="https://omnioperand.com/geometry/2d/shapes/hexagon/" target="_blank" rel="noopener"&gt;Diagram courtesy of OmniOperand&lt;/a&gt;</code>
+          </div>
+          <div class="attribution-snippet-group" style="margin-top:0.45rem;">
+            <div class="snippet-header">
+              <span>Academic BibTeX Citation:</span>
+              <button class="copy-snippet-btn" id="copy-backlink-bibtex">Copy BibTeX</button>
+            </div>
+            <code class="snippet-code" id="snippet-backlink-bibtex">@misc{omnioperand_hexagon, title={Regular Hexagon Calculator & Blueprint}, author={OmniOperand}, url={https://omnioperand.com/geometry/2d/shapes/hexagon/}, year={2026}}</code>
+          </div>
         </div>
       </div>
 
@@ -587,5 +649,6 @@
 
   <script src="/assets/js/omni-search.js"></script>
   <script src="/assets/js/hexagon-solver.js"></script>
+  <script src="/assets/js/blueprint-engine.js" defer></script>
 </body>
 </html>

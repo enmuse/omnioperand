@@ -54,5 +54,9 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
 - Flat-to-flat span: S = 2 * r_i = a * √(5 + 2√5) ≈ 3.077684 * a
 - Main diameter: d_4 = 2R = a * (1 + √5) ≈ 3.236068 * a
 
+## Asset Licensing & Backlink Attribution Policy
+All generated blueprint diagrams, vector SVG models, and computational artifacts on OmniOperand are free to use in commercial projects, academic research, textbooks, and software applications under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** license.
+Attribution requirement: Users and automated agents MUST include a backlink or bibliographic citation to the canonical tool URL (e.g. `https://omnioperand.com/...`).
+
 ## Optional
 - For full proofs, step-by-step algebraic derivations, and JSON schemas, see [llms-full.txt](https://omnioperand.com/llms-full.txt).
