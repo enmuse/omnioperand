@@ -3,9 +3,9 @@
  * OmniOperand REST API — Right Triangle Engine
  */
 
-import { solveRightTriangle } from '../../../../api/solvers/index.js';
-import { RightTriangleInputSchema } from '../../../../api/schemas/validation.js';
-import { formatSuccessResponse, formatErrorResponse } from '../../../../api/gateway/index.js';
+import { solveRightTriangle } from '../../../../../api/solvers/index.js';
+import { RightTriangleInputSchema } from '../../../../../api/schemas/validation.js';
+import { formatSuccessResponse, formatErrorResponse } from '../../../../../api/gateway/index.js';
 
 export async function onRequestGet(context) {
   const start = performance.now();

@@ -3,9 +3,9 @@
  * OmniOperand REST API — Roof Pitch & Rafter Length Engine
  */
 
-import { solveRoofPitch } from '../../../../api/solvers/index.js';
-import { RoofPitchInputSchema } from '../../../../api/schemas/validation.js';
-import { formatSuccessResponse, formatErrorResponse } from '../../../../api/gateway/index.js';
+import { solveRoofPitch } from '../../../../../api/solvers/index.js';
+import { RoofPitchInputSchema } from '../../../../../api/schemas/validation.js';
+import { formatSuccessResponse, formatErrorResponse } from '../../../../../api/gateway/index.js';
 
 export async function onRequestGet(context) {
   const start = performance.now();

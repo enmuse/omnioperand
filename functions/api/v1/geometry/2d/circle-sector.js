@@ -3,9 +3,9 @@
  * OmniOperand REST API — Circle Sector, Chord & Sagitta Engine
  */
 
-import { solveCircleSector } from '../../../../api/solvers/index.js';
-import { CircleSectorInputSchema } from '../../../../api/schemas/validation.js';
-import { formatSuccessResponse, formatErrorResponse } from '../../../../api/gateway/index.js';
+import { solveCircleSector } from '../../../../../api/solvers/index.js';
+import { CircleSectorInputSchema } from '../../../../../api/schemas/validation.js';
+import { formatSuccessResponse, formatErrorResponse } from '../../../../../api/gateway/index.js';
 
 export async function onRequestGet(context) {
   const start = performance.now();
