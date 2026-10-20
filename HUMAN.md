@@ -59,7 +59,7 @@
 │  1. Check Cloudflare SSL Certificate Status (~1 min) [Done]  │
 │  2. Review Initial Live Deployment on Cloudflare (~1 min)    │
 │  3. Sign Up for Affiliate Networks (~45-60 mins)             │
-│  4. Set Up Dedicated Stripe Profile for OmniOperand (~2 mins)│
+│  4. Dedicated Stripe Profile for OmniOperand (~2 mins) [Done]│
 └──────────────────────────────────────────────────────────────┘
 ```
 
