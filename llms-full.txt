@@ -60,6 +60,88 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
 - [Sales Commission & Quota Calculator](https://omnioperand.com/finance/commission/): Calculate tiered sales commission payouts, accelerated accelerator tiers, and On-Target Earnings (OTE) achievement.
 - [Break-Even Point Analysis Calculator](https://omnioperand.com/finance/break-even/): Calculate exact unit and revenue break-even points, contribution margins, and safety margins for commercial operations.
 - [Margin vs Markup Multiplier Calculator](https://omnioperand.com/finance/margin-markup/): Convert between Gross Profit Margin and Markup percentage, calculate target selling prices, and eliminate pricing confusion.
+- [Customer Acquisition Cost (CAC) Calculator](https://omnioperand.com/finance/cac/): Calculate blended and paid Customer Acquisition Cost (CAC) from total sales and marketing expenditure divided by new acquired customers.
+- [Customer Lifetime Value (LTV / CLV) Calculator](https://omnioperand.com/finance/clv-ltv/): Calculate Customer Lifetime Value (LTV) from Average Revenue Per Account (ARPA), gross margin percentage, and customer churn rate.
+- [LTV:CAC Ratio & Payback Period Calculator](https://omnioperand.com/finance/ltv-cac-ratio/): Calculate the gold-standard SaaS unit economics ratio (LTV:CAC) and months required to recover acquisition cash outflows.
+- [Customer & Revenue Churn Rate Calculator](https://omnioperand.com/finance/churn-rate/): Calculate logo churn, gross revenue churn, net revenue retention (NRR), and annualized churn compound curves.
+- [MRR to ARR & Net New MRR Calculator](https://omnioperand.com/finance/mrr-arr/): Calculate Annual Recurring Revenue (ARR) run rate, Net New MRR, expansion rate, and contraction churn components.
+- [Startup Cash Runway & Burn Rate Calculator](https://omnioperand.com/finance/runway-burn/): Calculate net monthly burn rate, gross cash outflows, and exact operational runway in months until zero cash date (ZCD).
+- [SaaS Magic Number & Sales Efficiency Calculator](https://omnioperand.com/finance/saas-magic-number/): Calculate the SaaS Magic Number measuring Net New ARR generated per dollar spent on sales and marketing.
+- [SaaS Rule of 40 Calculator](https://omnioperand.com/finance/saas-rule-of-40/): Calculate the Rule of 40 score balancing YoY ARR revenue growth rate percentage and Free Cash Flow (FCF) margin percentage.
+- [Net Promoter Score (NPS) Calculator](https://omnioperand.com/finance/net-promoter-score/): Calculate Net Promoter Score (NPS), Promoters (9-10), Passives (7-8), Detractors (0-6), and statistical standard error margin.
+- [Average Revenue Per User (ARPU / ARPA) Calculator](https://omnioperand.com/finance/arpu/): Calculate Average Revenue Per User (ARPU) and Average Revenue Per Account (ARPA) across monthly, quarterly, and annual intervals.
+- [Viral Coefficient (K-Factor) & Growth Calculator](https://omnioperand.com/finance/viral-coefficient/): Calculate K-factor viral expansion, viral cycle time, customer compounding multiplier, and organic user generation.
+- [Employee Turnover & Replacement Cost Calculator](https://omnioperand.com/finance/employee-turnover-cost/): Calculate true financial and organizational cost of employee turnover, recruiting fees, onboarding lag, and lost institutional productivity.
+- [Return on Ad Spend (ROAS) & Breakeven Calculator](https://omnioperand.com/finance/roas/): Calculate ROAS, Breakeven ROAS from product profit margin, net advertising profit, and target ad budget scale.
+- [Cost Per Acquisition (CPA) from CPC Calculator](https://omnioperand.com/finance/cpa-cpc/): Calculate Cost Per Acquisition (CPA) from Cost Per Click (CPC) and Landing Page Conversion Rate (CVR).
+- [Email Marketing Campaign ROI Calculator](https://omnioperand.com/finance/email-marketing-roi/): Calculate open rates, click-through rates (CTR), conversion yields, total campaign revenue, and net ROI percentage.
+- [Sales Pipeline Velocity Calculator](https://omnioperand.com/finance/sales-pipeline-velocity/): Calculate sales pipeline velocity (revenue generated per day) and forecast monthly deal flow from win rate, deal size, and sales cycle length.
+- [Working Capital & Current Ratio Calculator](https://omnioperand.com/finance/working-capital-ratio/): Calculate Net Working Capital (NWC), Current Ratio, and short-term corporate liquidity solvency from current assets and liabilities.
+- [Quick Ratio (Acid-Test) Calculator](https://omnioperand.com/finance/quick-ratio/): Calculate the Acid-Test Quick Ratio isolating liquid cash, marketable securities, and accounts receivable against current liabilities.
+- [Corporate DSCR & Interest Coverage Calculator](https://omnioperand.com/finance/debt-service-coverage/): Calculate Debt Service Coverage Ratio (DSCR) and Times Interest Earned (TIE) from Net Operating Income (NOI) / EBITDA and debt service obligations.
+- [Economic Order Quantity (EOQ) & Reorder Point Calculator](https://omnioperand.com/finance/economic-order-quantity/): Calculate optimal inventory order batch size (EOQ), annual carrying costs, ordering costs, and safety stock reorder point.
+- [Bessemer Burn Multiple Calculator](https://omnioperand.com/finance/burn-multiple/): Calculate the Bessemer Venture Partners Burn Multiple measuring net cash burned for each dollar of Net New ARR generated.
+- [Freemium to Paid Conversion Calculator](https://omnioperand.com/finance/freemium-conversion/): Calculate freemium user conversion rates, free-to-paid funnel velocity, monthly recurring revenue from free tier, and cohort monetization.
+- [Gross Revenue Retention (GRR) vs NRR Calculator](https://omnioperand.com/finance/gross-revenue-retention/): Calculate Gross Revenue Retention (GRR), isolating core churn and contraction without obscuring losses behind expansion revenue.
+- [SaaS CAC Payback Period Calculator](https://omnioperand.com/finance/cac-payback/): Calculate exact customer acquisition cost payback period in months accounting for gross margin and customer revenue churn drag.
+- [Inventory Turnover & Days Sales of Inventory (DSI) Calculator](https://omnioperand.com/finance/inventory-turnover/): Calculate inventory turnover ratio, Days Sales of Inventory (DSI / DIO), and capital tied up in warehouse stock.
+- [Car Lease vs Buy Financial Comparison Calculator](https://omnioperand.com/finance/lease-vs-buy/): Compare the total multi-year financial cost of leasing versus purchasing a new vehicle, accounting for depreciation, money factor, and equity at lease end.
+- [Electric Vehicle vs Gas Savings Calculator](https://omnioperand.com/finance/ev-vs-gas-savings/): Calculate annual fuel, maintenance, and brake pad cost savings switching from an internal combustion engine (ICE) car to an EV.
+- [Car Depreciation & Future Value Curve Calculator](https://omnioperand.com/finance/car-depreciation/): Calculate multi-year vehicle depreciation curves, month-by-month residual value, dollar loss per mile driven, and optimal trade-in horizons.
+- [5-Year True Cost to Own (TCO) Calculator](https://omnioperand.com/finance/true-cost-to-own/): Calculate true full cost to own a vehicle over 5 years combining depreciation, financing interest, fuel, insurance, maintenance, and state taxes.
+- [Vehicle Sales Tax & Trade-In Credit Calculator](https://omnioperand.com/finance/car-sales-tax/): Calculate state, county, and local vehicle sales tax, registration fees, and tax credit savings from trading in an existing vehicle.
+- [Auto Loan Refinance Savings Calculator](https://omnioperand.com/finance/auto-refinance-savings/): Calculate monthly payment reduction and lifetime interest savings from refinancing an auto loan to a lower APR interest rate.
+- [Auto GAP Insurance Need & Negative Equity Calculator](https://omnioperand.com/finance/gap-insurance-need/): Calculate negative equity exposure ('underwater loan') comparing outstanding auto loan balance against actual cash value (ACV) after depreciation.
+- [Commercial Real Estate IRR & Equity Multiple Calculator](https://omnioperand.com/finance/internal-rate-of-return/): Calculate commercial property Internal Rate of Return (IRR), Equity Multiple (EM), and multi-year cash flow yield including disposition sale proceeds.
+- [Commercial Real Estate NPV & DCF Calculator](https://omnioperand.com/finance/net-present-value/): Calculate Net Present Value (NPV) and Discounted Cash Flow (DCF) valuation for commercial real estate properties at your required hurdle discount rate.
+- [Cash-on-Cash Return & Pre-Tax Yield Calculator](https://omnioperand.com/finance/cash-on-cash-return/): Calculate Cash-on-Cash (CoC) return percentage measuring annual pre-tax cash flow divided by total out-of-pocket cash capital invested.
+- [Gross Rent Multiplier (GRM) & Valuation Calculator](https://omnioperand.com/finance/gross-rent-multiplier/): Calculate Gross Rent Multiplier (GRM) and estimate fair market multifamily property values from annual gross scheduled rents.
+- [Section 1031 Like-Kind Exchange & Tax Deferral Calculator](https://omnioperand.com/finance/exchange-1031/): Calculate deferred federal capital gains tax, net boot, depreciation recapture tax, and replacement property equity requirements under IRS Section 1031.
+- [Cap Rate Sensitivity & Valuation Matrix Calculator](https://omnioperand.com/finance/cap-rate-sensitivity/): Calculate commercial property asset valuation sensitivity across varying Net Operating Income (NOI) levels and exit capitalization rates.
+- [Commercial Rent Roll & Economic Vacancy Calculator](https://omnioperand.com/finance/rent-roll-analysis/): Analyze commercial rent rolls, Gross Potential Rent (GPR), physical vacancy, economic concessions, and Effective Gross Income (EGI).
+- [Cost Segregation & Accelerated Depreciation Calculator](https://omnioperand.com/finance/cost-segregation/): Estimate year 1 bonus depreciation tax deductions segregating commercial or residential real estate into 5-year, 15-year, and 27.5/39-year property.
+- [Syndication Preferred Return & Waterfall Equity Calculator](https://omnioperand.com/finance/preferred-return-waterfall/): Calculate private equity syndication waterfall distributions between General Partners (GP) and Limited Partners (LP) with preferred returns and promote hurdles.
+- [Triple Net (NNN) vs Full Service Gross Lease Calculator](https://omnioperand.com/finance/commercial-lease-nnn/): Compare commercial lease structures: Triple Net (NNN) versus Full Service Gross (FSG), converting CAM, property tax, and insurance into effective rates.
+- [Tenant Improvement (TI) Allowance & Amortization Calculator](https://omnioperand.com/finance/tenant-improvement/): Calculate Tenant Improvement (TI) build-out costs, landlord allowances per square foot, leasing commissions, and effective net rent.
+- [Short-Term Rental (Airbnb) Cash Flow & ADR Calculator](https://omnioperand.com/finance/str-airbnb-cashflow/): Calculate Short-Term Rental (STR / VRBO) net monthly cash flow, Average Daily Rate (ADR), occupancy yields, cleaning fees, and platform commissions.
+- [Closing Day Property Tax Proration Calculator](https://omnioperand.com/finance/property-tax-proration/): Calculate exact real estate closing day property tax prorations, daily per diem tax rates, and buyer/seller credits using 365-day calendar year rules.
+- [House Flipping 70% Rule & MAO Calculator](https://omnioperand.com/finance/house-flip-profit/): Calculate Maximum Allowable Offer (MAO) for fix-and-flip real estate deals using the investor 70% rule, repair budgets, and holding costs.
+- [Land Subdivision & Development Lot Yield Calculator](https://omnioperand.com/finance/land-development-yield/): Calculate residential subdivision lot yields, infrastructure loss deductions (roads, storm detention, wetlands), and residual land raw value.
+- [Self-Storage Facility Feasibility & Revenue Calculator](https://omnioperand.com/finance/self-storage-roi/): Calculate self-storage facility rental revenue, Net Rentable Square Footage (NRSF), unit mix rent optimization, and commercial valuation.
+- [Mobile Home Park (MHP) Lot Rent & Cap Rate Calculator](https://omnioperand.com/finance/mobile-home-park/): Calculate Mobile Home Park (MHP / Manufactured Housing) Net Operating Income (NOI), tenant-owned home (TOH) lot rents, and commercial valuation.
+- [Mezzanine Debt & Subordinated Financing Blended Cost Calculator](https://omnioperand.com/finance/mezzanine-debt/): Calculate blended Weighted Average Cost of Capital (WACC) across senior mortgage debt, mezzanine subordinated debt, and sponsor equity.
+- [Hard Money Loan Cost & Points Calculator](https://omnioperand.com/finance/hard-money-points/): Calculate total financing fees, upfront origination points, monthly interest-only payments, and effective annualized APR on hard money bridge loans.
+- [Commercial Bridge Loan Interest Reserve Calculator](https://omnioperand.com/finance/bridge-loan-interest/): Calculate interest reserve escrows, floating SOFR spreads, and monthly carrying costs for commercial bridge loans during property repositioning.
+- [Qualified Opportunity Zone (QOZ) Tax Incentive Calculator](https://omnioperand.com/finance/opportunity-zone/): Calculate capital gains tax deferral and complete 10-year tax-free gain elimination on Qualified Opportunity Zone Fund (QOF) investments.
+- [HOA Reserve Fund Adequacy & Percent Funded Calculator](https://omnioperand.com/finance/hoa-reserve-fund/): Calculate Homeowners Association (HOA) or Condominium Reserve Fund Percent Funded metric, Fully Funded Balance (FFB), and special assessment insolvency risk.
+- [Section 1250 Depreciation Recapture Tax Calculator](https://omnioperand.com/finance/depreciation-recapture/): Calculate IRS Section 1250 unrecaptured depreciation tax (25% rate) versus long-term capital gains tax upon commercial or rental property sale.
+- [Real Estate GP Promoted Interest (Carried Interest) Calculator](https://omnioperand.com/finance/promoted-interest-carry/): Calculate General Partner (GP) carried interest promote compensation across multi-tier IRR hurdles and equity waterfall agreements.
+- [Blended Mortgage Interest Rate & Second Loan Calculator](https://omnioperand.com/finance/blended-mortgage-rate/): Calculate effective blended interest rate combining a low-rate first mortgage with a Home Equity Loan, HELOC, or mezzanine second mortgage.
+- [W-2 Employee vs 1099 Contractor Net Pay Calculator](https://omnioperand.com/finance/w2-vs-1099/): Compare net take-home pay between W-2 employment and 1099 independent contractor arrangements, factoring in 15.3% self-employment tax, benefits, and write-offs.
+- [Federal Paycheck Withholding & Net Pay Calculator](https://omnioperand.com/finance/paycheck-withholding/): Calculate exact net paycheck take-home pay after federal income tax, Social Security (6.2%), Medicare (1.45%), and pre-tax deductions.
+- [S-Corporation Reasonable Salary & Tax Savings Calculator](https://omnioperand.com/finance/s-corp-reasonable-salary/): Calculate annual FICA self-employment tax savings from electing S-Corp status, optimizing reasonable compensation salary versus shareholder distributions.
+- [Section 199A Qualified Business Income (QBI) Calculator](https://omnioperand.com/finance/qbi-deduction/): Calculate the 20% Section 199A QBI deduction for pass-through entities (LLCs, S-Corps, partnerships), testing Specified Service Trade or Business (SSTB) thresholds.
+- [401(k) Employer Match & True Compensation Calculator](https://omnioperand.com/finance/401k-employer-match/): Calculate employer 401(k) matching dollars, required employee contribution to maximize match, vesting schedules, and 30-year compound growth.
+- [Mega Backdoor Roth IRA Contribution Calculator](https://omnioperand.com/finance/mega-backdoor-roth/): Calculate maximum allowable after-tax 401(k) contributions and Mega Backdoor Roth capacity under the Section 415(c) overall limit ($69,000 in 2024).
+- [Health Savings Account (HSA) Triple Tax Calculator](https://omnioperand.com/finance/hsa-triple-tax/): Calculate Health Savings Account (HSA) triple tax savings: tax-deductible contributions, tax-free investment growth, and tax-free medical withdrawals.
+- [Healthcare FSA Contribution & Forfeiture Calculator](https://omnioperand.com/finance/fsa-use-it-or-lose-it/): Calculate Healthcare Flexible Spending Account (FSA) tax savings, optimal annual election, and avoid forfeiture under the IRS 'use-it-or-lose-it' rule.
+- [Child Tax Credit (CTC) & Phase-Out Calculator](https://omnioperand.com/finance/child-tax-credit/): Calculate the federal Child Tax Credit ($2,000 per child), refundable Additional Child Tax Credit (ACTC), and high-income phase-outs.
+- [Standard Deduction vs Itemized (Schedule A) Calculator](https://omnioperand.com/finance/standard-vs-itemized/): Compare the standard deduction against itemized Schedule A deductions: mortgage interest, $10k SALT cap, and charitable contributions.
+- [Marginal vs Effective Tax Rate Calculator](https://omnioperand.com/finance/marginal-vs-effective-tax/): Calculate progressive federal tax bracket tiers, top marginal tax rate versus true effective (average) tax rate paid on total income.
+- [State Income Tax Relocation Comparison Calculator](https://omnioperand.com/finance/state-income-tax-comparison/): Compare annual state income tax liabilities between high-tax states (California, New York, New Jersey) and zero-income-tax states (Florida, Texas, Tennessee).
+- [Tax-Loss Harvesting & Capital Gains Offset Calculator](https://omnioperand.com/finance/capital-gains-harvesting/): Calculate realized capital gains offsets using tax-loss harvesting, the IRS $3,000 ordinary income write-off limit, and net tax savings.
+- [Section 179 Equipment Depreciation Calculator](https://omnioperand.com/finance/section-179-deduction/): Calculate immediate first-year Section 179 equipment expensing deductions ($1,220,000 limit in 2024), phase-out ceilings, and net equipment acquisition cost.
+- [Section 168(k) Bonus Depreciation Phase-Down Calculator](https://omnioperand.com/finance/bonus-depreciation/): Calculate Section 168(k) bonus depreciation under the TCJA phase-down schedule (60% in 2024, 40% in 2025, 20% in 2026, 0% in 2027).
+- [Restricted Stock Unit (RSU) Vesting Tax Calculator](https://omnioperand.com/finance/rsu-vesting-tax/): Calculate RSU vesting income, mandatory supplemental tax withholding (22% vs 37%), shares sold-to-cover taxes, and net shares delivered.
+- [Employee Stock Purchase Plan (ESPP) Calculator](https://omnioperand.com/finance/espp-discount/): Calculate Employee Stock Purchase Plan (ESPP) returns with 15% discount and lookback provision, annualized IRR, and qualifying vs disqualifying dispositions.
+- [Net Unrealized Appreciation (NUA) 401(k) Stock Calculator](https://omnioperand.com/finance/nua-company-stock/): Calculate Net Unrealized Appreciation (NUA) tax savings on employer stock inside a 401(k), converting 37% ordinary income tax into 20% capital gains tax.
+- [Rule 72(t) SEPP Early IRA Withdrawal Calculator](https://omnioperand.com/finance/sepp-72t-distribution/): Calculate penalty-free early retirement withdrawals from traditional or Roth IRAs prior to age 59½ using IRS Rule 72(t) Substantially Equal Periodic Payments.
+- [Charitable Remainder Unitrust (CRUT) Tax Calculator](https://omnioperand.com/finance/charitable-remainder-trust/): Calculate immediate upfront income tax deductions, tax-free appreciated asset sales, and annual annuity income streams using a Charitable Remainder Trust (CRUT).
+- [Federal Estate & Lifetime Gift Tax Exemption Calculator](https://omnioperand.com/finance/estate-gift-tax/): Calculate federal estate and gift tax exposure (40% rate), lifetime unified credit ($13.61M individual / $27.22M married), and 2026 TCJA sunset impact.
+- [Inherited IRA 10-Year Rule & RMD Calculator](https://omnioperand.com/finance/inherited-ira-10-year/): Calculate SECURE Act 10-year mandatory withdrawal schedules for inherited traditional and Roth IRAs, minimizing bracket creep and tax drag.
+- [Social Security Benefits Taxation Calculator](https://omnioperand.com/finance/social-security-taxation/): Calculate how much of your Social Security retirement benefit is subject to federal income tax (0%, 50%, or 85%) based on provisional combined income.
+- [Medicare IRMAA Surcharge & Surtax Calculator](https://omnioperand.com/finance/medicare-irmaa-surcharge/): Calculate Medicare Part B and Part D Income-Related Monthly Adjustment Amount (IRMAA) premium surcharges and cliff threshold triggers.
+- [Employer FUTA & SUTA Unemployment Tax Calculator](https://omnioperand.com/finance/futa-suta-payroll/): Calculate Federal Unemployment Tax Act (FUTA 0.6% net) and State Unemployment Tax (SUTA) employer liabilities across payroll wage bases.
 
 ### Construction & Trades Engineering Hub
 - [Square Footage & Area Calculator](https://omnioperand.com/construction/square-footage/): Calculate square footage for single rooms, multi-room floorplans, and landscaping with perimeter and area conversion.
@@ -140,6 +222,24 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
 - [Ohm's Law & Electrical Power (PIVR) Calculator](https://omnioperand.com/physics/ohms-law/): Calculate Voltage (V), Current (I), Resistance (R), and Electrical Power (P) with bidirectional four-quadrant PIVR inversions.
 - [Density, Mass & Volume Calculator](https://omnioperand.com/physics/density-mass-volume/): Calculate material density (ρ), total mass, and displacement volume with bidirectional inversions and material reference library.
 - [Simple Pendulum Period & Harmonic Frequency Calculator](https://omnioperand.com/physics/pendulum-period/): Calculate pendulum period (T), natural frequency (Hz), angular frequency (rad/s), and local gravitational acceleration (g).
+- [Electric Vehicle (EV) Charging Cost & Range Calculator](https://omnioperand.com/physics/ev-charging-cost/): Calculate exact dollar cost to fully charge an electric car at home versus public DC fast chargers, cost per mile, and monthly charging expense.
+- [Vehicle Towing Capacity & Tongue Weight Calculator](https://omnioperand.com/physics/towing-capacity/): Calculate safe legal towing capacity, Gross Combined Weight Rating (GCWR), allowable trailer weight, and mandatory 10-15% tongue weight.
+- [Truck Payload Capacity & Cargo Safety Margin Calculator](https://omnioperand.com/physics/payload-capacity/): Calculate actual remaining payload capacity from Gross Vehicle Weight Rating (GVWR), curb weight, aftermarket accessories, and passenger weight.
+- [Gas Mileage (MPG / L/100km) & Fuel Cost Calculator](https://omnioperand.com/physics/gas-mileage-mpg/): Calculate exact gas mileage in US MPG, Imperial MPG, and Liters per 100km, cost per mile, and annual fuel expense.
+- [Tire Size Comparison & Speedometer Error Calculator](https://omnioperand.com/physics/tire-size-speedometer/): Calculate tire diameter, sidewall height, revolutions per mile, and exact speedometer error when changing tire sizes.
+- [Horsepower & Torque Conversion Calculator](https://omnioperand.com/physics/horsepower-torque/): Convert between rotational Torque (lb-ft or N·m) and Mechanical Horsepower (HP / kW) at any engine RPM, proving the 5,252 RPM crossover law.
+- [Quarter-Mile Elapsed Time (ET) & Trap Speed Calculator](https://omnioperand.com/physics/quarter-mile-speed/): Calculate drag racing 1/4 mile elapsed time (ET) and finish trap speed from vehicle curb weight and wheel horsepower using the iconic Hale and Fox formulas.
+- [Engine Displacement & Cylinder Volume Calculator](https://omnioperand.com/physics/engine-displacement/): Calculate total internal combustion engine displacement in Cubic Centimeters (cc), Liters (L), and Cubic Inches (CID) from bore, stroke, and cylinder count.
+- [Engine Static Compression Ratio Calculator](https://omnioperand.com/physics/compression-ratio/): Calculate static compression ratio (CR) from cylinder swept volume, combustion chamber cc, head gasket thickness/bore, and piston dome/dish volume.
+- [Transmission Gear Ratio & Vehicle Speed at RPM Calculator](https://omnioperand.com/physics/gear-ratio-speed/): Calculate vehicle road speed (MPH / km/h) at any engine RPM for each transmission gear, axle final drive ratio, and tire diameter.
+- [Marine Boat Fuel Burn & Range Calculator](https://omnioperand.com/physics/boat-fuel-burn/): Calculate marine boat fuel burn rate in Gallons Per Hour (GPH), cruising range in nautical miles (NM), and fuel costs with safe reserves.
+- [Aviation Crosswind & Headwind Component Calculator](https://omnioperand.com/physics/aviation-crosswind/): Calculate exact runway crosswind component and headwind/tailwind component from wind speed, wind direction, and magnetic runway heading.
+- [Aircraft Rate of Climb & Climb Gradient Calculator](https://omnioperand.com/physics/aircraft-climb-rate/): Convert between Vertical Speed Rate of Climb (Feet Per Minute - FPM) and Climb Gradient in feet per nautical mile (ft/NM) and percent slope.
+- [RV & Marine Battery Amp Hour & Inverter Runtime Calculator](https://omnioperand.com/physics/battery-amp-hours/): Calculate deep cycle battery runtime in hours from total appliance AC watt load, battery voltage, amp hour capacity, and depth of discharge (DoD).
+- [Vehicle Vinyl Wrap Material & Roll Calculator](https://omnioperand.com/physics/car-wrap-vinyl/): Calculate exact linear feet and square feet of vinyl wrap film required for full vehicle wraps, accounting for bumpers, roof, and 20% waste margin.
+- [Vehicle Braking & Stopping Distance Physics Calculator](https://omnioperand.com/physics/brake-stopping-distance/): Calculate total stopping distance in feet from initial speed, driver perception-reaction time, and road friction coefficient (dry, wet, snow, ice).
+- [Motor Oil Change Interval & Maintenance Cost Calculator](https://omnioperand.com/physics/oil-change-interval/): Calculate optimal motor oil change intervals based on mileage, synthetic vs conventional oil, operating duty cycle, and annual maintenance budget.
+- [RV Travel Trailer Tongue & Hitch Distribution Calculator](https://omnioperand.com/physics/rv-payload-hitch/): Calculate travel trailer hitch weight distribution, weight transfer to front steer axles, and prevention of trailer fishtailing.
 
 ### Calculus & Mathematical Analysis Hub
 - [Quadratic Formula & Parabola Vertex Calculator](https://omnioperand.com/calculus/quadratic-formula/): Calculate real and complex roots, discriminant (Δ = b² - 4ac), and vertex coordinates of any quadratic equation ax² + bx + c = 0.
@@ -823,4 +923,604 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
   - **Torque Restoring Differential Equation**: Net restoring torque τ = -m · g · L · sin(θ). For small angles (θ < 15°), sin(θ) ≈ θ (first-order Taylor series approximation), yielding linear differential equation: d²θ/dt² + (g/L)θ = 0.
   - **Simple Harmonic Motion Solution**: Angular frequency ω = √(g / L). Period T = 2π / ω = 2π · √(L / g).
   - **Mass Invariance of Gravitational Pendulums**: Galileo Galilei discovered in 1581 that period T is completely independent of the pendulum bob's mass, confirming the equivalence principle between inertial and gravitational mass.
+
+### Customer Acquisition Cost (CAC) Calculator (`https://omnioperand.com/finance/cac/`)
+- Governing Formula: `CAC = Total Sales & Marketing Spend / Number of New Customers Acquired`
+  - **Direct S&M Capital Consolidation**: Total acquisition expenditure C_total = Marketing Spend + Sales Team Costs (salaries, commissions, CRM overhead, and paid ad media).
+  - **Cohort Unit Economics Ratio**: CAC = C_total / N_acquired. Dividing total capital deployed by the cohort of acquired paying accounts yields average unit acquisition cost.
+  - **Blended vs Paid Segmentation**: Blended CAC incorporates organic word-of-mouth users; Paid CAC isolates strictly direct paid channel acquisition efficiency.
+
+### Customer Lifetime Value (LTV / CLV) Calculator (`https://omnioperand.com/finance/clv-ltv/`)
+- Governing Formula: `LTV = (ARPU × Gross Margin %) / Churn Rate`
+  - **Customer Lifespan Geometric Series**: Assuming a constant monthly churn rate c, average customer lifespan in months is T = 1 / c (e.g. 1 / 0.025 = 40 months).
+  - **Gross Margin Adjusted Revenue Contribution**: Net revenue contribution per month M = ARPA · (Gross Margin% / 100).
+  - **Lifetime Economic Value**: LTV = M · T = [ARPA · Gross Margin%] / Churn. Gross margin adjustment is mandatory to prevent inflating lifetime value with delivery cost.
+
+### LTV:CAC Ratio & Payback Period Calculator (`https://omnioperand.com/finance/ltv-cac-ratio/`)
+- Governing Formula: `LTV:CAC = Customer Lifetime Value / CAC | Payback Months = CAC / (ARPA × Gross Margin %)`
+  - **Unit Economic Multiplier**: LTV:CAC Ratio = LTV / CAC. Benchmarks: < 1.0 = Value destructive; 1.0–2.9 = Sub-optimal margin; 3.0–5.0 = Gold standard scalable growth; > 5.0 = Under-investing in acquisition.
+  - **Cash Flow Payback Period**: Payback Period in Months = CAC / (ARPA × Gross Margin%). Measures how many months of customer subscription cash flow are required to recover upfront marketing and sales cash outflows.
+  - **Net Economic Profit Contribution**: Net Capital Surplus = LTV - CAC. Represents net scalable profit returned per customer account.
+
+### Customer & Revenue Churn Rate Calculator (`https://omnioperand.com/finance/churn-rate/`)
+- Governing Formula: `Customer Churn % = (Customers Lost / Starting Customers) × 100`
+  - **Monthly Logo Churn Formulation**: Customer Churn Rate c_mo = Lost Customers / Starting Customers. Measures account attrition rate.
+  - **Compound Annualized Churn Curve**: Because churn compounds each period, annualized churn is non-linear: c_annual = 1 - (1 - c_mo)¹². For example, 2.5% monthly churn produces 1 - (0.975)¹² = 26.24% annual account loss.
+  - **Net Revenue Retention (NRR)**: NRR = [(Starting MRR - Churned MRR + Expansion MRR) / Starting MRR] × 100%. NRR above 100% indicates that expansion revenue outpaces churn.
+
+### MRR to ARR & Net New MRR Calculator (`https://omnioperand.com/finance/mrr-arr/`)
+- Governing Formula: `ARR = MRR × 12 | Net New MRR = New MRR + Expansion MRR - Contraction MRR - Churned MRR`
+  - **Annual Run Rate Equivalence**: ARR = MRR × 12. Annualizes recurring monthly cash subscriptions.
+  - **Net New MRR Decomposition**: Net New MRR = (New MRR + Expansion MRR) - (Contraction MRR + Churned MRR).
+  - **Revenue Growth Quality Assessment**: High-efficiency SaaS organizations maintain Quick Ratios: Quick Ratio = (New MRR + Expansion MRR) / (Contraction MRR + Churned MRR) > 4.0.
+
+### Startup Cash Runway & Burn Rate Calculator (`https://omnioperand.com/finance/runway-burn/`)
+- Governing Formula: `Runway (Months) = Current Cash Balance / Net Monthly Burn Rate`
+  - **Gross vs Net Burn Differential**: Gross Burn = Total Monthly Cash Operating Expenses. Net Burn = Gross Expenses - Monthly Cash Collections.
+  - **Runway Derivation**: Runway (Months) = Cash Balance / Net Burn Rate. Represents exact timeline until Zero Cash Date (ZCD).
+  - **Fundraising Buffer Heuristic**: Because institutional Series A/B venture capital rounds average 4 to 6 months to close, founders must kick off fundraising when runway reaches 6 months.
+
+### SaaS Magic Number & Sales Efficiency Calculator (`https://omnioperand.com/finance/saas-magic-number/`)
+- Governing Formula: `Magic Number = [(Q_curr Revenue - Q_prev Revenue) × 4] / Q_prev Sales & Marketing`
+  - **Quarterly Sequential Net ARR Growth**: Annualized New ARR Generated = (Revenue_Q - Revenue_Q-1) × 4.
+  - **Magic Number Ratio**: Magic Number = [Annualized Net New ARR] / Sales & Marketing Expense_Q-1.
+  - **Benchmark Allocation Heuristic**: < 0.5 = Broken model (evaluate churn and pricing); 0.5–0.75 = Acceptable efficiency; 0.75–1.0 = Strong unit economics; > 1.0 = Pour gas on the fire (sales capacity pays back in under 12 months).
+
+### SaaS Rule of 40 Calculator (`https://omnioperand.com/finance/saas-rule-of-40/`)
+- Governing Formula: `Rule of 40 Score = YoY Revenue Growth Rate (%) + Profit Margin (%)`
+  - **The Rule of 40 Equation**: Rule of 40 = Growth Rate% + Free Cash Flow Margin%. For example: 45% growth + 5% FCF margin = 50% score.
+  - **Growth vs Profit Trade-off**: A SaaS business can operate at negative margins (e.g. -20% FCF) if its growth rate is high enough (e.g. 65% growth = 45% score) and remain an elite financial asset.
+  - **Enterprise Multiple Valuation Elasticity**: Public market data shows companies beating the Rule of 40 trade at median enterprise value to revenue multiples 2× to 3× higher than sub-40 peers.
+
+### Net Promoter Score (NPS) Calculator (`https://omnioperand.com/finance/net-promoter-score/`)
+- Governing Formula: `NPS = % Promoters (9-10) - % Detractors (0-6)`
+  - **Response Partitioning**: Total Respondents N = Promoters + Passives + Detractors.
+  - **Bain & Company NPS Formulation**: NPS = [(Promoters / N) × 100] - [(Detractors / N) × 100]. Passives count toward total population N, thereby diluting the percentage.
+  - **Score Range Interpretation**: NPS ranges from -100 to +100. > 0 is good, > +50 is excellent, and > +70 is world-class customer loyalty (Apple, Costco tier).
+
+### Average Revenue Per User (ARPU / ARPA) Calculator (`https://omnioperand.com/finance/arpu/`)
+- Governing Formula: `ARPU = Total Period Revenue / Total Active Users`
+  - **Arithmetic Mean Unit Realization**: ARPU = Period Revenue / Active User Count.
+  - **Annualized Account Contract Value (ACV)**: Annual ARPU = Monthly ARPU × 12. Reflected in Annual Contract Value (ACV).
+  - **Pricing Power Indicator**: A rising ARPU over time indicates successful pricing expansion, seat tier expansion, and premium add-on adoption.
+
+### Viral Coefficient (K-Factor) & Growth Calculator (`https://omnioperand.com/finance/viral-coefficient/`)
+- Governing Formula: `K = Number of Invites per User × Referral Conversion Rate %`
+  - **K-Factor Formulation**: Viral Coefficient K = i · c, where i is number of invites sent per user, and c is the conversion rate percentage.
+  - **Geometric Series Infinite Horizon**: Total users over infinite viral cycles: N_total = N_0 · [1 + K + K² + K³ + ...]. If K < 1, the series converges to N_total = N_0 / (1 - K).
+  - **Viral Threshold (K > 1.0)**: When K > 1.0, the geometric series diverges to infinity, achieving self-sustaining viral growth without paid marketing spend.
+
+### Employee Turnover & Replacement Cost Calculator (`https://omnioperand.com/finance/employee-turnover-cost/`)
+- Governing Formula: `Turnover Cost = (Recruiting + Onboarding + Lost Productivity) × Departing Headcount`
+  - **Direct Hard Recruiting Costs**: Recruiting agency fees (15-25% of salary), job board advertising, and interview panel time: C_recruit ≈ 20% of salary.
+  - **Onboarding and Productivity Ramp Lag**: A new hire takes 3 to 6 months to reach full 100% productivity, operating at an average of 50% efficiency during onboarding: C_ramp ≈ 40-60% of salary.
+  - **Seniority Multiplier Invariant**: SHRM (Society for Human Resource Management) benchmarks indicate replacing mid-level employees costs 75% to 125% of annual salary; technical and executive roles cost 150% to 200%.
+
+### Return on Ad Spend (ROAS) & Breakeven Calculator (`https://omnioperand.com/finance/roas/`)
+- Governing Formula: `ROAS = Ad Revenue Generated / Total Ad Spend | Breakeven ROAS = 1 / Profit Margin %`
+  - **ROAS Yield Calculation**: ROAS = Attributed Revenue / Ad Spend. For example, $35,000 / $10,000 = 3.50×.
+  - **Breakeven ROAS Derivation**: To not lose money, Gross Profit = Ad Spend. (Revenue × Margin%) = Ad Spend, implying Breakeven ROAS = Revenue / Ad Spend = 1 / Margin%.
+  - **Net Economic Ad Profit**: Net Profit = (Attributed Revenue × Margin%) - Ad Spend.
+
+### Cost Per Acquisition (CPA) from CPC Calculator (`https://omnioperand.com/finance/cpa-cpc/`)
+- Governing Formula: `CPA = Cost Per Click (CPC) / Conversion Rate %`
+  - **Traffic Funnel Mathematical Coupling**: Conversions = Clicks × Conversion Rate%. Total Ad Spend = Clicks × CPC.
+  - **CPA Algebraic Derivation**: CPA = Total Spend / Conversions = (Clicks × CPC) / (Clicks × CVR) = CPC / CVR.
+  - **Optimization Leverage**: Doubling conversion rate from 2% to 4% cuts your CPA in half without changing ad auction bids.
+
+### Email Marketing Campaign ROI Calculator (`https://omnioperand.com/finance/email-marketing-roi/`)
+- Governing Formula: `ROI % = [(Campaign Revenue - Campaign Cost) / Campaign Cost] × 100`
+  - **Engagement Funnel Stages**: Opens = List × Open%. Clicks = List × CTR%. Orders = Clicks × Conversion%.
+  - **Total Attributed Revenue**: Revenue = Orders × Average Order Value (AOV).
+  - **Return on Investment Formula**: Net ROI% = [(Revenue - Cost) / Cost] × 100. Direct marketing studies consistently show email marketing delivers an average $36 to $42 return for every $1 invested.
+
+### Sales Pipeline Velocity Calculator (`https://omnioperand.com/finance/sales-pipeline-velocity/`)
+- Governing Formula: `Pipeline Velocity = (Number of Deals × Win Rate % × Average Deal Size) / Sales Cycle (Days)`
+  - **Pipeline Velocity Equation**: Velocity V = (Deals × Win Rate% × Average Deal Size) / Cycle Length (Days). Measures daily revenue momentum passing through the sales pipeline.
+  - **Monthly Cash Flow Scaling**: Monthly Run Rate = Velocity × 30 days.
+  - **Four Levers of Sales Growth**: Revenue velocity increases by improving any of the four variables: increasing deal volume, increasing average contract value, boosting close rates, or shortening sales cycle duration.
+
+### Working Capital & Current Ratio Calculator (`https://omnioperand.com/finance/working-capital-ratio/`)
+- Governing Formula: `Net Working Capital = Current Assets - Current Liabilities | Current Ratio = Current Assets / Current Liabilities`
+  - **Net Working Capital Metric**: NWC = Current Assets - Current Liabilities. Positive NWC indicates that a firm can satisfy all short-term obligations due within 12 months with liquid assets.
+  - **Current Ratio Relative Liquidity**: Current Ratio = Current Assets / Current Liabilities. A ratio of 2.0:1.0 indicates $2.00 of liquid resources for every $1.00 of current debt.
+  - **Credit Rating Heuristic**: < 1.0 = Danger of technical insolvency; 1.5–2.5 = Optimal liquidity balance; > 3.0 = Excess idle cash not deployed for productive yield.
+
+### Quick Ratio (Acid-Test) Calculator (`https://omnioperand.com/finance/quick-ratio/`)
+- Governing Formula: `Quick Ratio = (Cash + Marketable Securities + Accounts Receivable) / Current Liabilities`
+  - **Acid-Test Asset Isolation**: Quick Assets = Cash + Marketable Securities + Net Receivables. Excludes physical inventory and prepaid insurance.
+  - **Quick Ratio Derivation**: Quick Ratio = Quick Assets / Current Liabilities.
+  - **Solvency Invariant**: A Quick Ratio ≥ 1.0 proves that the firm possesses sufficient instant liquidity to pay off 100% of current debt immediately without needing to sell a single unit of inventory.
+
+### Corporate DSCR & Interest Coverage Calculator (`https://omnioperand.com/finance/debt-service-coverage/`)
+- Governing Formula: `DSCR = Net Operating Income (NOI) / Total Debt Service (Principal + Interest)`
+  - **Total Debt Service Obligations**: Total Debt Service = Principal Payments + Interest Expense.
+  - **DSCR Underwriting Formulation**: DSCR = NOI / Total Debt Service. Measures operational cash buffer over mandatory lender debt service.
+  - **Times Interest Earned (TIE)**: TIE = EBITDA / Interest Expense. Assesses ability to service interest burdens independent of principal amortization schedules.
+
+### Economic Order Quantity (EOQ) & Reorder Point Calculator (`https://omnioperand.com/finance/economic-order-quantity/`)
+- Governing Formula: `EOQ = √[(2 · Demand · Order Cost) / Holding Cost per Unit]`
+  - **Ford-Harris Cost Trade-Off Balance**: Annual Ordering Cost = (D / Q) · S. Annual Carrying/Holding Cost = (Q / 2) · H. Total Cost C(Q) = (D/Q)S + (Q/2)H.
+  - **Calculus First-Derivative Optimization**: Setting dC/dQ = -DS/Q² + H/2 = 0 yields the iconic Wilson-Harris formula: EOQ = √[(2 · D · S) / H].
+  - **Reorder Point Formulation**: Reorder Point ROP = (Daily Demand × Lead Time Days) = [(Annual Demand / 365) × Lead Time Days].
+
+### Bessemer Burn Multiple Calculator (`https://omnioperand.com/finance/burn-multiple/`)
+- Governing Formula: `Burn Multiple = Net Burn / Net New ARR`
+  - **Bessemer Unit Capital Burn Metric**: Burn Multiple = Net Burn / Net New ARR. Unlike CAC, which only measures sales and marketing, the Burn Multiple includes all corporate expenses (R&D, G&A, management, cloud infrastructure).
+  - **Venture Capital Benchmark Thresholds**: < 1.0× = Amazing (Best-in-class); 1.0×–1.5× = Good; 1.5×–2.0× = Suspect (Needs optimization); > 2.0× = Bad (Burning too much cash for slow growth).
+  - **Macro Cycle Significance**: In zero-interest-rate environments, investors tolerated 2.5×+ multiples. In modern disciplined capital markets, sub-1.5× multiples are required for premium venture valuations.
+
+### Freemium to Paid Conversion Calculator (`https://omnioperand.com/finance/freemium-conversion/`)
+- Governing Formula: `Conversion Rate % = (New Paid Upgrades / Active Free Users) × 100`
+  - **Product-Led Funnel Transition**: Upgraded Accounts N_paid = N_free × (Conversion Rate% / 100).
+  - **Recurring Revenue Creation**: MRR = N_paid × Monthly Price. ARR = MRR × 12.
+  - **Blended Free User Monetization Yield**: Yield per Free User = MRR / N_free = Conversion Rate% × Price. Useful for setting maximum allowable free tier server hosting costs.
+
+### Gross Revenue Retention (GRR) vs NRR Calculator (`https://omnioperand.com/finance/gross-revenue-retention/`)
+- Governing Formula: `GRR % = [(Beginning MRR - Churn - Contraction) / Beginning MRR] × 100`
+  - **Gross Revenue Preservation Principle**: GRR = [(Starting MRR - Churn - Contraction) / Starting MRR] × 100%. Expansion MRR is strictly omitted from the numerator.
+  - **GRR Upper Bound Ceiling**: By mathematical definition, GRR can never exceed 100.0%. A GRR of 90%+ indicates that customers stick with the platform even without factoring in upgrades.
+  - **The Leaky Bucket Test**: A business with 120% NRR but 75% GRR has a severe underlying product defect that is masked only by aggressive upselling to a small fraction of customers.
+
+### SaaS CAC Payback Period Calculator (`https://omnioperand.com/finance/cac-payback/`)
+- Governing Formula: `Payback Period (Months) = CAC / (Monthly ARPA × Gross Margin %)`
+  - **Monthly Margin Contribution**: Net Margin Contribution per Account = ARPA × (Gross Margin% / 100). For example: $250 × 80% = $200 gross margin per month.
+  - **Direct Payback Horizon Equation**: Payback Months = CAC / Net Monthly Margin. With $2,400 CAC and $200 monthly margin: 2,400 / 200 = 12.0 months.
+  - **Capital Velocity Implication**: A 12-month payback allows a company to recycle the same dollar of acquisition capital annually to fund compounding growth.
+
+### Inventory Turnover & Days Sales of Inventory (DSI) Calculator (`https://omnioperand.com/finance/inventory-turnover/`)
+- Governing Formula: `Inventory Turnover = Cost of Goods Sold (COGS) / Average Inventory | DSI = (Average Inventory / COGS) × 365`
+  - **Inventory Turnover Ratio**: Inventory Turnover = COGS / Average Inventory. Measures how many times inventory is sold and replaced over the year.
+  - **Days Sales of Inventory (DSI)**: DSI (Days Inventory Outstanding - DIO) = (Average Inventory / COGS) × 365 = 365 / Inventory Turnover. Represents average days required to turn inventory into sales.
+  - **Working Capital Free Cash Flow Drag**: Each excess day of inventory ties up corporate cash. Inventory holding costs (storage, insurance, spoilage, financing) typically equal 20% to 25% of inventory value annually.
+
+### Car Lease vs Buy Financial Comparison Calculator (`https://omnioperand.com/finance/lease-vs-buy/`)
+- Governing Formula: `Total Lease Cost = Down Payment + (Monthly Lease × Term) + Disposition Fee | Total Loan Cost = Down Payment + (Monthly Loan × Term) - Resale Equity`
+  - **Gross Capital Outflow Modeling**: Leasing Outflow = Down Payment + (Monthly Lease × Term) + Disposition Fee ($400). Loan Outflow = Down Payment + (Monthly Payment × Term).
+  - **Residual Equity Valuation**: At month 36, the lessee walks away with $0 equity. The purchaser retains an asset worth: Equity = Vehicle Price × (Resale Value% / 100).
+  - **Net Economic Depreciation Cost**: Net Purchase Cost = Total Loan Cash Outflows - Residual Equity Asset Value. Buying almost always beats leasing unless the vehicle depreciates catastrophically faster than manufacturer residual estimates.
+
+### Electric Vehicle (EV) Charging Cost & Range Calculator (`https://omnioperand.com/physics/ev-charging-cost/`)
+- Governing Formula: `Full Charge Cost = Battery Capacity (kWh) × Electricity Rate ($/kWh) / Charging Efficiency`
+  - **AC Charging Efficiency Adjustment**: AC home charging incurs 10% thermal and inverter energy loss (efficiency η ≈ 90%). Energy drawn from grid = Battery Capacity / 0.90.
+  - **Direct Full Recharge Cost**: Cost_home = (Battery kWh / 0.90) × Rate_home. Cost_public = (Battery kWh / 0.90) × Rate_public.
+  - **Distance Energy Intensity (Wh/mi)**: Efficiency = (Battery kWh × 1000) / Range Miles. Cost per Mile = Cost_home / Range Miles.
+
+### Electric Vehicle vs Gas Savings Calculator (`https://omnioperand.com/finance/ev-vs-gas-savings/`)
+- Governing Formula: `Annual Savings = (Gas Gallons × Price/Gal + ICE Maint) - (EV kWh × Price/kWh + EV Maint)`
+  - **Internal Combustion Energy Expense**: Annual Gas Cost = (Annual Miles / MPG) × Gas Price/Gallon. Annual ICE Maintenance ≈ $0.06/mile (oil changes, spark plugs, belts, transmissions).
+  - **Electric Drivetrain Energy Expense**: Annual EV Power Cost = (Annual Miles / mi/kWh) × Electricity Rate. Annual EV Maintenance ≈ $0.02/mile (cabin filters, tire rotations; no motor oil or transmission fluid).
+  - **Compound Economic Differential**: Net Annual Savings = (Gas Fuel + ICE Maintenance) - (EV Electricity + EV Maintenance). Over a 5-year ownership horizon, fuel and maintenance differentials frequently surpass $8,000 to $12,000.
+
+### Car Depreciation & Future Value Curve Calculator (`https://omnioperand.com/finance/car-depreciation/`)
+- Governing Formula: `Value(t) = Purchase Price × (1 - Depreciation Rate)^t`
+  - **Year 1 Drive-Off Steeper Loss**: New vehicles lose an immediate 10% when driving off the dealer lot and ~20% by the end of year 1: V_1 = Price × (1 - 0.20 × Profile).
+  - **Compound Annual Resale Decay**: In years 2 through 5, vehicles depreciate by approximately 15% of their remaining balance annually: V_t = V_1 × (1 - 0.15 × Profile)^(t - 1).
+  - **The 5-Year Residual Benchmark**: By year 5, average vehicles retain approximately 40% of initial MSRP (luxury sedans retain ~30-35%; Toyota Tacomas retain ~55-60%).
+
+### 5-Year True Cost to Own (TCO) Calculator (`https://omnioperand.com/finance/true-cost-to-own/`)
+- Governing Formula: `5-Yr TCO = Depreciation + Financing + Insurance + Fuel + Maintenance + Taxes/Fees`
+  - **Six Pillars of Vehicle Cost Breakdown**: TCO = 1) Depreciation (typically 60% drop in 5 yrs) + 2) Fuel (60 mo) + 3) Insurance (60 mo) + 4) Financing Interest + 5) Maintenance & Repairs ($1,000/yr) + 6) Registration/Fees ($300/yr).
+  - **Hidden Depreciation Primacy**: Depreciation is the single largest hidden expense of vehicle ownership, frequently exceeding fuel and insurance combined.
+  - **Per-Mile Amortization Metric**: Total 5-year miles = 5 × 13,500 = 67,500 miles. Cost per Mile = TCO / 67,500.
+
+### Vehicle Towing Capacity & Tongue Weight Calculator (`https://omnioperand.com/physics/towing-capacity/`)
+- Governing Formula: `Max Safe Tow = GCWR - Vehicle Curb Weight - Passenger/Cargo Payload`
+  - **The Real-World Towing Capacity Law**: Advertised 'maximum tow rating' assumes an empty truck with only a 150 lb driver. Real-world capacity: Max Allowable Trailer = GCWR - Vehicle Curb Weight - Passenger Payload - Cargo.
+  - **Tongue Weight Physics Stability**: To prevent lethal high-speed trailer sway, 10% to 15% of total loaded trailer weight must press down directly on the hitch ball: Tongue Weight = Trailer Weight × [0.10 to 0.15].
+  - **Payload Overload Trap**: Tongue weight counts against vehicle GVWR payload! Most trucks exceed their payload rating long before hitting maximum tow capacity.
+
+### Truck Payload Capacity & Cargo Safety Margin Calculator (`https://omnioperand.com/physics/payload-capacity/`)
+- Governing Formula: `Available Payload = GVWR - Vehicle Curb Weight - Driver & Passengers - Tongue Weight`
+  - **Gross Vehicle Weight Rating Constraint**: GVWR is the absolute legal operating ceiling established by the chassis, suspension, tire load indexes, and brake engineers.
+  - **Maximum Static Payload Formula**: Sticker Payload = GVWR - Base Curb Weight.
+  - **Real-World Usable Headroom**: Remaining Usable Payload = Sticker Payload - Cab Occupants - Bed Accessories - Tongue Weight. Exceeding GVWR compromises emergency braking and voids auto insurance liability coverage.
+
+### Gas Mileage (MPG / L/100km) & Fuel Cost Calculator (`https://omnioperand.com/physics/gas-mileage-mpg/`)
+- Governing Formula: `US MPG = Miles Driven / Gallons Consumed | L/100km = 235.215 / US MPG`
+  - **Direct Volumetric Consumption**: MPG = Distance (Miles) / Volume (Gallons). For example: 345 miles / 12.8 gallons = 26.95 MPG.
+  - **Metric Inverse Representation**: In Europe and Canada, fuel consumption is measured inversely as Liters consumed per 100 km: L/100km = 235.215 / US MPG.
+  - **Cost per Distance Traveled**: Cost/Mile = Fuel Price / MPG. At $3.65/gal and 26.95 MPG: 3.65 / 26.95 = $0.135/mile.
+
+### Tire Size Comparison & Speedometer Error Calculator (`https://omnioperand.com/physics/tire-size-speedometer/`)
+- Governing Formula: `Tire Diameter = 2 × (Width × Aspect Ratio / 25.4) + Rim Diameter | Actual Speed = Indicated Speed × (New Diameter / Old Diameter)`
+  - **Metric to Imperial Tire Geometry**: Sidewall Height = Width (mm) × (Aspect Ratio / 100) / 25.4. Total Diameter = (2 × Sidewall) + Rim Diameter.
+  - **Rolling Circumference and Revolutions**: Circumference C = π × Diameter. Revolutions per Mile = 63,360 / Circumference.
+  - **Speedometer Kinematic Coupling**: Because the vehicle speed sensor reads transmission/wheel rotation frequency, changing tire circumference alters actual road speed: Actual Speed = Indicated Speed × (New Diameter / Old Diameter).
+
+### Horsepower & Torque Conversion Calculator (`https://omnioperand.com/physics/horsepower-torque/`)
+- Governing Formula: `Horsepower = (Torque in lb-ft × Engine RPM) / 5,252 | kW = HP × 0.7457`
+  - **James Watt Horsepower Definition**: One mechanical horsepower HP = 33,000 foot-pounds of work per minute = 550 ft-lb/sec.
+  - **Rotational Work Angular Velocity**: Power = Torque × Angular Velocity = Torque (lb-ft) × [2π × RPM / 60] / 550. Combining constants: 550 × 60 / (2π) = 33,000 / 2π = 5,252.113.
+  - **The 5,252 RPM Dyno Invariant**: On every dyno chart on Earth plotting horsepower and torque in lb-ft on identical scales, the curves MUST cross precisely at 5,252 RPM: HP ≡ Torque at 5,252 RPM.
+
+### Quarter-Mile Elapsed Time (ET) & Trap Speed Calculator (`https://omnioperand.com/physics/quarter-mile-speed/`)
+- Governing Formula: `ET = 5.825 × ∛(Weight / Horsepower) | Trap Speed = 234 × ∛(Horsepower / Weight)`
+  - **Wheel Horsepower Derivation**: WHP = Crank HP × Drivetrain Transfer Efficiency (manual RWD: 15% loss; AWD: 20-22% loss).
+  - **Hale and Fox Empirical Dynamic Laws**: Elapsed Time ET = 5.825 × (Weight / HP)^(1/3). Trap Speed = 234 × (HP / Weight)^(1/3).
+  - **Tire Traction and 60-Foot Sensitivity**: These formulas assume optimal launch traction on a prepped NHRA drag strip surface. Street tires on unprepped asphalt typically add 0.3 to 0.6 seconds to ET.
+
+### Engine Displacement & Cylinder Volume Calculator (`https://omnioperand.com/physics/engine-displacement/`)
+- Governing Formula: `Displacement = π × (Bore / 2)² × Stroke × Cylinders`
+  - **Cylinder Swept Volume Geometry**: Swept Volume V_cyl = π × r² × h = π × (Bore / 2)² × Stroke.
+  - **Total Multi-Cylinder Displacement**: Total Displacement = V_cyl × Number of Cylinders. Convert mm³ to cm³ (cc) by dividing by 1,000.
+  - **Bore / Stroke Mechanical Classification**: Bore / Stroke > 1.0 = Over-square (high-revving racing engines); = 1.0 = Square engine (balanced torque/revs); < 1.0 = Under-square (long-stroke low-end diesel torque).
+
+### Engine Static Compression Ratio Calculator (`https://omnioperand.com/physics/compression-ratio/`)
+- Governing Formula: `Compression Ratio = (Swept Volume + Clearance Volume) / Clearance Volume`
+  - **Clearance Volume Consolidation**: Clearance Volume V_clear = Chamber Volume + Gasket Volume + Piston-to-Deck Volume - Piston Dome Volume (+ Dish Volume).
+  - **Compression Ratio Definition**: CR = (Swept Volume + Clearance Volume) / Clearance Volume. Measures gas volumetric compression from Bottom Dead Center (BDC) to Top Dead Center (TDC).
+  - **Knock and Octane Thresholds**: Naturally aspirated engines with CR > 10.5:1 require premium 91-93 octane fuel to prevent destructive pre-ignition knock (detonation).
+
+### Transmission Gear Ratio & Vehicle Speed at RPM Calculator (`https://omnioperand.com/physics/gear-ratio-speed/`)
+- Governing Formula: `Speed (MPH) = (Engine RPM × Tire Diameter in inches) / (Trans Ratio × Axle Ratio × 336)`
+  - **Total Drivetrain Ratio**: Overall Gear Ratio R_total = Transmission Ratio × Axle Final Drive Ratio. For example: 0.68 × 3.73 = 2.536:1.
+  - **Wheel Rotational Frequency**: Wheel RPM = Engine RPM / R_total.
+  - **Road Linear Velocity Constant**: Speed MPH = (Wheel RPM × π × Diameter × 60) / 63,360 = (Engine RPM × Diameter) / (R_total × 336.135).
+
+### Marine Boat Fuel Burn & Range Calculator (`https://omnioperand.com/physics/boat-fuel-burn/`)
+- Governing Formula: `Cruising Range (NM) = Usable Fuel (Gallons) × (Speed in Knots / GPH)`
+  - **Marine Fuel Efficiency NMPG**: Nautical Miles per Gallon NMPG = Speed (Knots) / Fuel Burn (GPH). For example: 24 knots / 18 GPH = 1.33 NMPG.
+  - **Coast Guard 10% Reserve Rule**: Mariners must maintain at least a 10% (daytime coastal) to 33% (offshore passage) fuel safety reserve: Usable Fuel = Tank Capacity × 0.90.
+  - **Safe Range Formulation**: Safe Range (NM) = Usable Gallons × NMPG. Converting to Statute Miles: Statute Miles = NM × 1.15078.
+
+### Aviation Crosswind & Headwind Component Calculator (`https://omnioperand.com/physics/aviation-crosswind/`)
+- Governing Formula: `Crosswind = Wind Speed × sin(Wind Angle - Runway Heading) | Headwind = Wind Speed × cos(Wind Angle - Runway Heading)`
+  - **Relative Angular Delta**: Angular Offset θ = |Wind Direction - Runway Heading|.
+  - **Trigonometric Vector Decomposition**: Crosswind = Wind Speed × sin(θ). Headwind = Wind Speed × cos(θ).
+  - **Tailwind Safety Hazard**: If θ > 90°, cos(θ) becomes negative, representing a dangerous tailwind that dramatically increases landing rollout distance and stall risk.
+
+### Aircraft Rate of Climb & Climb Gradient Calculator (`https://omnioperand.com/physics/aircraft-climb-rate/`)
+- Governing Formula: `Climb Gradient (ft/NM) = (FPM × 60) / Groundspeed (Knots) | Gradient % = ft/NM / 60.76`
+  - **Kinematic Motion Across Ground**: One nautical mile equals 6,076.12 feet. At groundspeed GS knots, an aircraft travels GS / 60 nautical miles per minute.
+  - **Climb Gradient Formulation**: Gradient (ft/NM) = Vertical Speed (FPM) / Nautical Miles per Minute = (FPM × 60) / GS.
+  - **Obstacle Clearance Standard**: Standard instrument departure procedures (TERPS) mandate a minimum climb gradient of 200 ft/NM (3.3%) to ensure obstacle clearance.
+
+### RV & Marine Battery Amp Hour & Inverter Runtime Calculator (`https://omnioperand.com/physics/battery-amp-hours/`)
+- Governing Formula: `Runtime (Hours) = (Battery Volts × Amp Hours × DoD %) / (Inverter Load Watts / Inverter Efficiency)`
+  - **Total Stored Energy**: Watt-Hours Wh = Voltage × Amp-Hours. For a 12V 200Ah bank: 12 × 200 = 2,400 Wh.
+  - **Depth of Discharge and Usable Energy**: Usable Energy = Total Wh × (DoD% / 100). Lead-acid batteries degrade rapidly if discharged past 50%; LiFePO4 lithium batteries can be discharged to 85-90%.
+  - **Inverter Inefficiency Loss**: DC-to-AC inverters have 85-90% conversion efficiency: Real DC Load = AC Load / 0.88. Runtime = Usable Wh / Real DC Load.
+
+### Vehicle Vinyl Wrap Material & Roll Calculator (`https://omnioperand.com/physics/car-wrap-vinyl/`)
+- Governing Formula: `Roll Length (Feet) = [(Vehicle Length × 3) + Roof + Bumpers] × 1.20 Waste Factor`
+  - **The 3x Length Wrap Heuristic**: Professional wrap installers estimate base coverage using the Rule of Three: (Length × 3) covers left side, right side, and top horizontal hood/roof/trunk surfaces.
+  - **Waste and Complex Curve Overhead**: Bumpers, mirrors, door handles, and deep recesses require stretching margins, adding 20% material buffer.
+  - **Roll Sizing Conversion**: Rolls are sold in 60-inch (5-foot) widths. A 5-foot × 60-foot roll provides 300 square feet, which accommodates 95% of standard cars.
+
+### Vehicle Braking & Stopping Distance Physics Calculator (`https://omnioperand.com/physics/brake-stopping-distance/`)
+- Governing Formula: `Stopping Distance = (Speed × Reaction Time) + (Speed² / [2 × g × Friction Coefficient μ])`
+  - **Driver Perception-Reaction Distance**: Converting speed to feet per second: v (ft/s) = MPH × 1.46667. Reaction Distance d_react = v × Reaction Time.
+  - **Kinetic Energy Dissipation Braking**: Braking Distance d_brake = v² / (2 · g · μ), where g = 32.174 ft/s² and μ is the tire-to-road friction coefficient.
+  - **Quadratic Velocity Scaling**: Braking distance scales with the SQUARE of speed: doubling your speed quadruples your braking distance.
+
+### Vehicle Sales Tax & Trade-In Credit Calculator (`https://omnioperand.com/finance/car-sales-tax/`)
+- Governing Formula: `Net Taxable Base = Purchase Price - Trade-In Value | Sales Tax = Net Taxable Base × Tax Rate %`
+  - **State Trade-In Tax Credit Offset**: In 43 out of 50 US states, sales tax is assessed only on the net difference: Taxable Base = Purchase Price - Trade-In Allowance.
+  - **Direct Tax Calculation**: Sales Tax = Taxable Base × (Tax Rate% / 100).
+  - **Trade-In Hidden Financial Bonus**: Trading in a $14,000 car in a 7% tax state saves an extra $980 in cash sales tax, making a $14,000 trade-in effectively worth $14,980 compared to a private sale.
+
+### Auto Loan Refinance Savings Calculator (`https://omnioperand.com/finance/auto-refinance-savings/`)
+- Governing Formula: `Monthly Payment = P × [r(1+r)ⁿ] / [(1+r)ⁿ - 1] | Lifetime Savings = Current Remaining Payments - New Refinance Payments`
+  - **Current Loan Cash Outflow**: Monthly Payment M = P · [r(1+r)ⁿ] / [(1+r)ⁿ - 1]. Total Remaining Cash Outflow = M_old × n.
+  - **Refinanced Amortization Schedule**: Re-amortize current payoff balance P at new lower interest rate r_new across remaining term n.
+  - **Pure Financial Arbitrage**: Net Lifetime Savings = Total Old Payments - Total New Payments. Refinancing from 9.5% to 5.75% puts over $2,000 directly back into your pocket.
+
+### Auto GAP Insurance Need & Negative Equity Calculator (`https://omnioperand.com/finance/gap-insurance-need/`)
+- Governing Formula: `GAP Exposure = Outstanding Loan Balance - Vehicle Actual Cash Value (ACV)`
+  - **Total Loss Payout Rule**: If a vehicle is totaled or stolen, standard auto insurance pays ONLY Actual Cash Value (ACV) minus your deductible, NOT what you owe on the loan.
+  - **The Negative Equity Gap**: GAP Shortfall = Loan Payoff - (ACV - Deductible). If you owe $32,000 and ACV is $25,500, you must write a $7,000 check to the lender for a car that no longer exists.
+  - **Purchasing Heuristic**: GAP insurance is essential whenever loan-to-value (LTV) exceeds 105-110%, typically occurring on loans with under 15% down payment or terms over 60 months.
+
+### Motor Oil Change Interval & Maintenance Cost Calculator (`https://omnioperand.com/physics/oil-change-interval/`)
+- Governing Formula: `Annual Oil Cost = (Annual Miles / Change Interval) × Cost per Service`
+  - **Duty Cycle Degradation Factors**: Short trips under 5 miles, severe stop-and-go traffic, and heavy towing classify as 'Severe Service', requiring 25% shorter intervals due to fuel dilution and moisture accumulation.
+  - **Full Synthetic Economic Superiority**: While full synthetic oil costs 40% more per change, its 10,000-mile interval cuts service frequency in half compared to 5,000-mile conventional oil, reducing annual cost and time.
+  - **Lubrication Cost per Mile**: Cost/Mile = Service Cost / Interval. At $85 per 10,000 miles, clean oil costs less than 1 cent ($0.0085) per mile—the cheapest insurance for an engine.
+
+### RV Travel Trailer Tongue & Hitch Distribution Calculator (`https://omnioperand.com/physics/rv-payload-hitch/`)
+- Governing Formula: `Hitch Weight % = (Tongue Weight / Total Loaded Trailer Weight) × 100`
+  - **Total Loaded Weight Integration**: Total Loaded Trailer = Dry Weight + Water + Propane + Batteries + Camping Gear.
+  - **Tongue Ratio Dynamic Stability**: Tongue % = (Tongue Weight / Total Trailer Weight) × 100. Target stability window is strictly 10.0% to 15.0%.
+  - **Weight Distribution Hitch (WDH) Leverage**: For trailers over 5,000 lbs, a Weight Distribution Hitch with spring bars acts as a lever, transferring tongue weight forward onto the truck's front steering axle and rearward onto trailer axles.
+
+### Commercial Real Estate IRR & Equity Multiple Calculator (`https://omnioperand.com/finance/internal-rate-of-return/`)
+- Governing Formula: `NPV = ∑ [CF_t / (1 + IRR)^t] = 0 | Equity Multiple = Total Cash Distributions / Total Equity Invested`
+  - **The Net Present Value Equilibrium**: Internal Rate of Return (IRR) is the discount rate r that equates the present value of all future cash flows to the initial equity: 0 = -CF_0 + ∑ [CF_t / (1 + r)^t].
+  - **Equity Multiple Formulation**: Equity Multiple = (Total Cash Distributions + Terminal Sale Proceeds) / Initial Equity Invested. For example: ($210,000 + $820,000) / $500,000 = 2.06×.
+  - **Time-Value Sensitivity**: A 2.0× Equity Multiple in 3 years generates ~26% IRR; that same 2.0× in 10 years yields only ~7.2% IRR. IRR penalizes capital that takes longer to return.
+
+### Commercial Real Estate NPV & DCF Calculator (`https://omnioperand.com/finance/net-present-value/`)
+- Governing Formula: `NPV = ∑ [CF_t / (1 + Discount Rate)^t] - Initial Investment`
+  - **Discounted Cash Flow Summation**: PV = ∑ [CF_t / (1 + r)^t], where r is your target discount rate (hurdle rate).
+  - **Net Economic Surplus (NPV)**: NPV = PV of all future cash flows - Initial Capital Investment. NPV > 0 indicates the property yields returns above your required cost of capital.
+  - **Profitability Index (Benefit-Cost Ratio)**: Profitability Index PI = PV of Cash Inflows / Initial Outflow. PI > 1.0 confirms positive economic value creation.
+
+### Cash-on-Cash Return & Pre-Tax Yield Calculator (`https://omnioperand.com/finance/cash-on-cash-return/`)
+- Governing Formula: `Cash-on-Cash Return % = (Annual Pre-Tax Cash Flow / Total Cash Invested) × 100`
+  - **Total Initial Capital Allocation**: Total Cash Invested C_total = Down Payment + Closing Costs + Upfront Renovation/Rehab.
+  - **Cash-on-Cash Return Formulation**: CoC = (Annual Pre-Tax Cash Flow / C_total) × 100%. Measures instant liquid dividend yield on cash deployed.
+  - **Leverage Multiplier Effect**: If cap rate exceeds the cost of debt (positive leverage), financing a property with 75% LTV increases Cash-on-Cash return significantly above the unlevered cap rate.
+
+### Gross Rent Multiplier (GRM) & Valuation Calculator (`https://omnioperand.com/finance/gross-rent-multiplier/`)
+- Governing Formula: `GRM = Property Purchase Price / Gross Annual Scheduled Rent | Property Value = Gross Rent × GRM`
+  - **Gross Rent Multiplier Definition**: GRM = Purchase Price / Gross Annual Rent. A GRM of 8.85 means the purchase price is 8.85 times annual gross income.
+  - **Comparable Valuation Inversion**: Fair Market Property Value = Gross Annual Rent × Neighborhood Target GRM.
+  - **Rapid Screening Utility**: GRM provides a 10-second preliminary filter to identify potentially undervalued multifamily properties before undertaking detailed expense due diligence.
+
+### Section 1031 Like-Kind Exchange & Tax Deferral Calculator (`https://omnioperand.com/finance/exchange-1031/`)
+- Governing Formula: `Realized Gain = Net Sales Price - Adjusted Basis | Tax Deferred = (Cap Gain × Rate) + (Recapture × 25%)`
+  - **Adjusted Basis Calculation**: Adjusted Basis = Original Basis - Accumulated Depreciation. For example: $650,000 - $180,000 = $470,000.
+  - **Realized Gain Decomposition**: Total Gain = Sales Price - Adjusted Basis = $1,200,000 - $470,000 = $730,000. Composed of $180,000 depreciation recapture (taxed at 25%) + $550,000 capital gain (taxed at 20% federal + 3.8% NIIT + ~3% state).
+  - **Full Deferral Rules**: To achieve 100% tax deferral with zero taxable boot, the replacement property must have equal or greater purchase price AND equal or greater debt/equity.
+
+### Cap Rate Sensitivity & Valuation Matrix Calculator (`https://omnioperand.com/finance/cap-rate-sensitivity/`)
+- Governing Formula: `Property Value = Net Operating Income (NOI) / Capitalization Rate (Cap Rate)`
+  - **Direct Capitalization Valuation Formula**: Value = NOI / Cap Rate. Baseline Value = $180,000 / 0.06 = $3,000,000.
+  - **Optimized Value-Add NOI**: Future NOI = Base NOI × (1 + Growth% / 100). For example: $180,000 × 1.15 = $207,000.
+  - **Cap Rate Decompression Drag**: Exit Cap Rate = Base Cap Rate + (Basis Points / 100). Exit Value = $207,000 / 0.065 = $3,184,615. Increasing NOI by 15% preserved value creation even as interest rates pushed cap rates up by 50 bps.
+
+### Commercial Rent Roll & Economic Vacancy Calculator (`https://omnioperand.com/finance/rent-roll-analysis/`)
+- Governing Formula: `Effective Gross Income (EGI) = Gross Potential Rent - Physical Vacancy - Concessions + Ancillary Income`
+  - **Gross Potential vs Collected Realization**: Gross Potential Rent (GPR) represents the mathematical upper bound ceiling assuming 100% occupancy at full market rent.
+  - **Physical vs Economic Vacancy Disparity**: A building can be 95% physically occupied, but if tenants receive 1 month free rent or default on payments, economic occupancy may only be 87%: Economic Occupancy = (Actual Collected Rent / GPR) × 100%.
+  - **EGI Underwriting Metric**: EGI = GPR - Vacancy Loss - Concessions + Ancillary Income. EGI is the foundational top-line revenue number used by banks for commercial loan underwriting.
+
+### Cost Segregation & Accelerated Depreciation Calculator (`https://omnioperand.com/finance/cost-segregation/`)
+- Governing Formula: `Year 1 Deduction = (5-Year Asset × Bonus %) + (15-Year Asset × Bonus %) + Straight-Line Real Property`
+  - **Asset Class Decomposition Engineering**: Standard commercial real estate depreciates over 39 years (27.5 for residential). Cost segregation reclassifies 20% to 35% of building components into 5-year personal property (carpeting, millwork, specialty lighting) and 15-year land improvements (paving, sidewalks, fences).
+  - **Bonus Depreciation Acceleration**: Under IRC Section 168(k), qualifying 5-year and 15-year assets qualify for immediate bonus depreciation write-offs.
+  - **Instant Cash Tax Shield**: Cash Tax Savings = Total Year 1 Deductions × Investor Marginal Tax Rate. Accelerating $288,000 in deductions at a 37% bracket yields $106,560 in immediate cash tax reduction in Year 1.
+
+### Syndication Preferred Return & Waterfall Equity Calculator (`https://omnioperand.com/finance/preferred-return-waterfall/`)
+- Governing Formula: `Hurdle 1: 100% to LP until 8% Pref | Hurdle 2: 80% LP / 20% GP Promote Split`
+  - **First Priority Preferred Hurdle**: LP Preferred Dollar Hurdle = LP Capital × (Pref Rate% / 100). The first $160,000 goes 100% to passive LP investors.
+  - **Secondary Tier Promote Split**: Excess Distributable Cash = Total Cash - LP Pref. Any surplus is split according to the promote agreement (e.g. 80% to LP, 20% to GP sponsor).
+  - **Alignment of Interests**: Waterfalls ensure sponsors earn performance fees (promote) only after delivering passive investors their promised hurdle return.
+
+### Triple Net (NNN) vs Full Service Gross Lease Calculator (`https://omnioperand.com/finance/commercial-lease-nnn/`)
+- Governing Formula: `Total NNN Rent = Base Rent + CAM Pass-Through + Property Taxes + Insurance`
+  - **NNN Expense Pass-Through Summation**: Effective NNN Rent PSF = Base Rent + CAM + Property Taxes + Insurance = $24.00 + $5.50 + $3.75 = $33.25/SF.
+  - **Total Annual Commitment**: Annual Cost = RSF × Effective Rate PSF. 4,500 RSF × $33.25 = $149,625/yr ($12,468.75/mo).
+  - **Risk Transfer Trade-off**: Full service gross leases charge a premium ($35.00/SF) in exchange for the landlord absorbing all future spikes in property taxes and utility rates.
+
+### Tenant Improvement (TI) Allowance & Amortization Calculator (`https://omnioperand.com/finance/tenant-improvement/`)
+- Governing Formula: `TI Amortization = Total TI Allowance × [r(1+r)ⁿ] / [(1+r)ⁿ - 1] | Effective Net Rent = Base Rent - Amortized TI`
+  - **Gross TI Capital Deployment**: Total TI Outlay = Leased Area (SF) × Allowance per SF = 5,000 × $45 = $225,000.
+  - **Capital Recovery Amortization**: Amortizing $225,000 over 5 years at 8% cost of capital requires $56,350 annually ($11.27/SF/yr).
+  - **Effective Net Rent Reality**: Effective Net Rent = Contract Rent - Amortized TI. While the lease reads $32.00/SF, the landlord actually nets only $20.73/SF after recovering upfront buildout capital.
+
+### Short-Term Rental (Airbnb) Cash Flow & ADR Calculator (`https://omnioperand.com/finance/str-airbnb-cashflow/`)
+- Governing Formula: `Gross Revenue = ADR × Occupied Nights + Cleaning Fees | Net Cash Flow = Gross Revenue - OpEx - Mortgage`
+  - **Nightly Booking Realization**: Booked Nights = 365 × (Occupancy% / 100) = 365 × 0.68 = 248 nights.
+  - **Top-Line Revenue Realization**: Gross Annual Revenue = Booked Nights × ADR. 248 × $245 = $60,809/yr ($5,067/mo).
+  - **Hospitality Operating Cost Burden**: STRs incur higher operating expenses than long-term rentals: utilities, consumable amenities, PMS software, co-host fees, and high-frequency maintenance consume 25% to 35% of gross revenue.
+
+### Closing Day Property Tax Proration Calculator (`https://omnioperand.com/finance/property-tax-proration/`)
+- Governing Formula: `Daily Tax Rate = Annual Property Tax / 365 | Seller Credit = Daily Tax × Seller Days Owned`
+  - **Daily Per Diem Formulation**: Daily Tax Rate = Annual Property Tax / 365 days = $6,200 / 365 = $16.9863/day.
+  - **Ownership Allocation**: The seller is legally responsible for taxes up to the day of closing (or day prior). 182 days × $16.9863 = $3,091.51.
+  - **Arrears vs Advance Direction**: When taxes are paid in arrears, the seller credits the buyer at closing because the buyer will pay the full tax bill at year-end.
+
+### House Flipping 70% Rule & MAO Calculator (`https://omnioperand.com/finance/house-flip-profit/`)
+- Governing Formula: `MAO = (After Repair Value × 70%) - Estimated Repair Costs - Wholesale Fee`
+  - **The 70% Rule Core Mechanism**: The 70% rule reserves 30% of ARV to cover two things: 1) Investor Net Profit (~15%) and 2) Transaction & Holding Costs (~15% for realtor commissions, closing fees, hard money interest).
+  - **Maximum Allowable Offer Formulation**: MAO = (ARV × Rule%) - Rehab Costs - Wholesale Fee = ($375,000 × 0.70) - $55,000 - $10,000 = $197,500.
+  - **Margin of Safety Protection**: Sticking strictly to the 70% rule protects house flippers against unforeseen construction cost overruns or market price drops.
+
+### Land Subdivision & Development Lot Yield Calculator (`https://omnioperand.com/finance/land-development-yield/`)
+- Governing Formula: `Net Buildable Area = Gross Acres × (1 - Infrastructure Loss %) | Lot Yield = Net Area / Minimum Lot Size`
+  - **Acre to Square Foot Conversion**: One acre equals 43,560 square feet. Gross Square Footage = Gross Acres × 43,560.
+  - **Infrastructure Efficiency Deduction**: Subdivisions lose 18% to 28% of gross land to public road rights-of-way, stormwater detention basins, wetlands buffers, and open space mandates: Net Usable Area = Gross Sq Ft × (1 - Infrastructure Loss%).
+  - **Lot Yield Formulation**: Estimated Lot Yield = floor(Net Usable Area / Minimum Lot Size). For 19.5 net acres: 849,420 sq ft / 8,500 sq ft = 99 finished single-family lots.
+
+### Self-Storage Facility Feasibility & Revenue Calculator (`https://omnioperand.com/finance/self-storage-roi/`)
+- Governing Formula: `Annual Revenue = NRSF × Average Rent PSF × Economic Occupancy %`
+  - **Gross Rent Potential Realization**: Gross Potential Revenue = NRSF × Rate PSF × 12 months. 65,000 × $1.45 × 12 = $1,131,000/yr.
+  - **Economic Occupancy Collection**: Collected Revenue = Gross Potential × Economic Occupancy% = $1,131,000 × 0.88 = $997,160/yr.
+  - **Operating Expense Ratio (OER) Invariant**: Self-storage boasts the lowest OER in commercial real estate (30-38% vs 45-55% for apartments). NOI = Revenue × (1 - OER%) = $997,160 × 0.65 = $648,154/yr.
+
+### Mobile Home Park (MHP) Lot Rent & Cap Rate Calculator (`https://omnioperand.com/finance/mobile-home-park/`)
+- Governing Formula: `NOI = (Occupied Lots × Lot Rent × 12) × (1 - Operating Expense Ratio %)`
+  - **Tenant-Owned Home (TOH) Business Model**: In pure MHP investing, the park owner owns ONLY the dirt and utility infrastructure. Tenants own the mobile homes, eliminating all appliance, roofing, and interior maintenance liabilities.
+  - **Gross Lot Rent Aggregation**: Gross Annual Revenue = Total Pads × Occupancy% × Monthly Pad Rent × 12.
+  - **Submetering Margin Expansion**: Submetering city water and sewer to tenants reduces the Operating Expense Ratio from 40% down to 28-30%, adding hundreds of thousands of dollars directly to asset value.
+
+### Mezzanine Debt & Subordinated Financing Blended Cost Calculator (`https://omnioperand.com/finance/mezzanine-debt/`)
+- Governing Formula: `Blended Rate = (Senior % × Senior APR) + (Mezz % × Mezz APR) + (Equity % × Equity Hurdle)`
+  - **Capital Stack Tier Decomposition**: Senior Debt (65% = $13M) + Mezzanine Debt (15% = $3M) + Equity (20% = $4M) = $20,000,000.
+  - **Weighted Average Cost of Debt**: Total Debt = 80%. Blended Rate = [(Senior Debt / Total Debt) × Senior Rate] + [(Mezz Debt / Total Debt) × Mezz Rate]. For example: (65/80 × 6.5%) + (15/80 × 12.5%) = 5.28% + 2.34% = 7.625%.
+  - **Leverage Arbitrage**: Mezzanine debt allows sponsors to minimize equity dilution while maintaining lower borrowing costs than raising expensive preferred equity.
+
+### Hard Money Loan Cost & Points Calculator (`https://omnioperand.com/finance/hard-money-points/`)
+- Governing Formula: `Total Loan Cost = (Loan Amount × Points %) + (Monthly Interest × Term) + Underwriting/Doc Fees`
+  - **Upfront Points Cash Deduction**: Points Cost = Loan Amount × (Points / 100). For example: $280,000 × 2.5% = $7,000 deducted at closing table.
+  - **Monthly Interest-Only Cash Outflow**: Monthly Interest = (Loan Amount × Interest Rate%) / 12 = ($280,000 × 11.5%) / 12 = $2,683.33/mo.
+  - **Effective Annualized APR Formulation**: Because points are paid upfront over a short 6-month term, the effective annualized APR is significantly higher than the nominal coupon rate: Effective APR = 11.5% + (2.5% × 12 / 6) = 16.5%.
+
+### Commercial Bridge Loan Interest Reserve Calculator (`https://omnioperand.com/finance/bridge-loan-interest/`)
+- Governing Formula: `Interest Reserve = Monthly Interest Payment × Stabilization Months`
+  - **All-In Floating Rate Formula**: All-In Rate = SOFR Index + (Spread Basis Points / 100). For example: 5.25% + (375 / 100)% = 9.00%.
+  - **Monthly Interest Payment**: Monthly Interest = (Facility Amount × All-In Rate) / 12 = ($5,500,000 × 9.0%) / 12 = $41,250/mo.
+  - **Lender Reserve Holdback Escrow**: Interest Reserve = Monthly Payment × Stabilization Term = $41,250 × 18 months = $742,500. The lender holds this cash in escrow to make interest payments while the property is renovated and re-tenanted.
+
+### Qualified Opportunity Zone (QOZ) Tax Incentive Calculator (`https://omnioperand.com/finance/opportunity-zone/`)
+- Governing Formula: `10-Year QOZ Benefit = Permanent Zero Capital Gains Tax on All Fund Appreciation`
+  - **180-Day Rollover Deferral**: Eligible taxpayers can defer capital gains from stocks, crypto, or businesses by rolling the gain into a Qualified Opportunity Fund within 180 days.
+  - **The 10-Year Permanent Step-Up to Fair Market Value**: If the QOF investment is held for at least 10 years, the investor's tax basis steps up to 100% of Fair Market Value: ZERO federal or state capital gains tax is owed on all post-acquisition appreciation.
+  - **Compound Wealth Creation**: A $500,000 investment compounding at 10% for 10 years grows to $1,296,871. The $796,871 profit is 100% tax-free, saving $189,655 in cash taxes.
+
+### HOA Reserve Fund Adequacy & Percent Funded Calculator (`https://omnioperand.com/finance/hoa-reserve-fund/`)
+- Governing Formula: `Percent Funded % = (Current Reserve Bank Balance / Fully Funded Balance) × 100`
+  - **Fully Funded Balance (FFB) Actuarial Law**: For each common asset (roof, elevator, pool), Fractional Depreciation = Current Age / Useful Life. Component FFB = Replacement Cost × Fractional Depreciation.
+  - **National Reserve Study Benchmark**: Percent Funded = (Actual Balance / FFB) × 100%. < 30% = Poor / Critical Special Assessment Risk; 30%–69% = Fair; 70%–100% = Strong / Low Risk.
+  - **Homebuyer Mortgage Fannie Mae Guardrail**: Following the Surfside condo collapse, Fannie Mae and Freddie Mac require HOAs to allocate at least 10% of annual budget to reserves, red-flagging underfunded communities.
+
+### Section 1250 Depreciation Recapture Tax Calculator (`https://omnioperand.com/finance/depreciation-recapture/`)
+- Governing Formula: `Total Tax = (Depreciation Deducted × 25%) + (Net Capital Gain × Capital Gains Rate)`
+  - **Adjusted Basis Calculation**: Adjusted Basis = Original Basis - Depreciation Claimed = $600,000 - $145,000 = $455,000.
+  - **Two-Tier Profit Bifurcation**: Total Taxable Gain = Net Sale Price - Adjusted Basis = $950,000 - $455,000 = $495,000. The first $145,000 represents prior depreciation deductions; the remaining $350,000 is pure asset appreciation.
+  - **The Section 1250 Special 25% Rate**: Unrecaptured Section 1250 depreciation is taxed at a maximum federal rate of 25%: $145,000 × 25% = $36,250. The remaining $350,000 capital gain is taxed at 20%: $350,000 × 20% = $70,000. Total Tax = $106,250.
+
+### Real Estate GP Promoted Interest (Carried Interest) Calculator (`https://omnioperand.com/finance/promoted-interest-carry/`)
+- Governing Formula: `GP Promote = Excess Distributable Profits Above Hurdle × Carried Interest %`
+  - **Preferred Return Priority Satisfaction**: Before the GP earns a single dollar of promote, passive LPs receive their full preferred return hurdle ($1,400,000).
+  - **Excess Profit Carried Interest Promote**: Excess Profit = Total Profit - Pref = $3,500,000 - $1,400,000 = $2,100,000. Pure GP Promote = $2,100,000 × 20% = $420,000.
+  - **Total GP Value Realization**: GP Total Income = Pro-Rata Equity Share (5% of $3.5M = $175,000) + Pure Promote ($420,000) = $595,000.
+
+### Blended Mortgage Interest Rate & Second Loan Calculator (`https://omnioperand.com/finance/blended-mortgage-rate/`)
+- Governing Formula: `Blended APR = [(First Balance × First Rate) + (Second Balance × Second Rate)] / Total Debt`
+  - **Debt Balance Weighting**: Total Debt = 1st Mortgage ($320,000) + 2nd Mortgage ($80,000) = $400,000. 1st Mortgage represents 80% of total debt; 2nd represents 20%.
+  - **Blended Rate Equation**: Blended APR = (0.80 × 3.25%) + (0.20 × 9.50%) = 2.60% + 1.90% = 4.50%.
+  - **Preserving Low-Rate Primary Debt**: Borrowing $80,000 at a steep 9.5% HELOC rate creates a blended rate of only 4.50%, far superior to refinancing the entire $400,000 at a current 6.8% cash-out mortgage rate.
+
+### W-2 Employee vs 1099 Contractor Net Pay Calculator (`https://omnioperand.com/finance/w2-vs-1099/`)
+- Governing Formula: `1099 Breakeven = W-2 Salary × 1.30 (to offset FICA + Health + PTO + Retirement)`
+  - **Self-Employment Tax Disparity**: W-2 employees pay 7.65% FICA while their employer pays the matching 7.65%. A 1099 contractor pays both halves: the full 15.3% Self-Employment Tax on net profit.
+  - **Fringe Benefits Economic Value**: W-2 jobs provide employer-subsidized health insurance ($7,500/yr), paid time off ($6,000 value), and 401(k) matches (~$3,000). Total benefits add 25% to 35% above base salary.
+  - **The 1.30x Multiplier Rule**: To achieve identical net financial lifestyle parity, a 1099 contractor must bill at least 30% to 40% more than an equivalent W-2 salary.
+
+### Federal Paycheck Withholding & Net Pay Calculator (`https://omnioperand.com/finance/paycheck-withholding/`)
+- Governing Formula: `Net Paycheck = Gross Pay - Pre-Tax Deductions - FICA Taxes - Federal Withholding`
+  - **Pre-Tax Deductions Shield**: Pre-tax 401(k) and health contributions reduce taxable wages for federal income tax, though FICA taxes still apply to gross wages.
+  - **FICA Mandatory Payroll Tax**: Social Security tax is 6.2% up to the annual wage cap ($168,600). Medicare tax is 1.45% on all earnings uncapped (with 0.9% additional surcharge over $200k).
+  - **Federal Progressive Bracket Withholding**: Withholding mirrors federal income tax brackets (10%, 12%, 22%, 24%) after subtracting the standard deduction allowance.
+
+### S-Corporation Reasonable Salary & Tax Savings Calculator (`https://omnioperand.com/finance/s-corp-reasonable-salary/`)
+- Governing Formula: `FICA Savings = (Net Business Profit - Reasonable Salary) × 15.3%`
+  - **Sole Proprietorship FICA Exposure**: In a standard LLC or sole proprietorship, 100% of the $160,000 net profit is subject to the 15.3% self-employment tax ($24,480 total).
+  - **S-Corp Distribution Exemption**: Under an S-Corp, FICA taxes apply ONLY to the $70,000 W-2 reasonable salary. The remaining $90,000 is taken as a shareholder profit distribution, which is 100% exempt from FICA taxes.
+  - **Net Economic Benefit**: Gross Tax Savings = $90,000 × 15.3% = $13,770. Subtracting $2,200 for payroll processing and corporate CPA returns yields $11,570 in clean annual cash tax savings.
+
+### Section 199A Qualified Business Income (QBI) Calculator (`https://omnioperand.com/finance/qbi-deduction/`)
+- Governing Formula: `QBI Deduction = Qualified Business Income × 20% (Subject to Wage / Property Caps)`
+  - **The 20% Pass-Through Deduction Rule**: Taxpayers operating sole proprietorships, partnerships, or S-Corps can deduct up to 20% of net qualified business income directly off their personal tax return.
+  - **SSTB Threshold Limits**: For 2024, the full 20% deduction is available to all businesses below taxable income thresholds ($191,950 Single / $383,900 MFJ).
+  - **High-Income Phase-Out Restrictions**: Above the threshold, Specified Service Trades (doctors, lawyers, accountants, consultants) completely phase out. Non-service businesses are limited by W-2 wages paid.
+
+### 401(k) Employer Match & True Compensation Calculator (`https://omnioperand.com/finance/401k-employer-match/`)
+- Governing Formula: `Employer Match = Salary × min(Employee Contribution %, Max Match Cap %) × Match Rate %`
+  - **Matching Tier Ceiling Constraint**: Eligible Match Contribution = min(Your Contribution%, Match Cap%) = min(6.0%, 6.0%) = 6.0%.
+  - **Employer Cash Injection**: Employer Match = Salary × Eligible% × Match Rate = $95,000 × 6% × 50% = $2,850/yr.
+  - **Instant Risk-Free Return**: Receiving $0.50 on every dollar contributed represents an immediate, risk-free 50% return before market growth, making capturing the full match the single highest priority in personal finance.
+
+### Mega Backdoor Roth IRA Contribution Calculator (`https://omnioperand.com/finance/mega-backdoor-roth/`)
+- Governing Formula: `Mega Backdoor Capacity = Section 415(c) Limit ($69,000) - Employee Elective Deferral - Employer Match`
+  - **Section 415(c) Ceiling Law**: The IRS limits total annual additions to a defined contribution plan to $69,000 (for 2024). This limit includes employee deferrals, employer matches, and after-tax contributions.
+  - **Mega Backdoor Mathematical Residual**: After-Tax Capacity = $69,000 - $23,000 Employee Deferral - $9,500 Match = $36,500.
+  - **Immediate In-Plan Roth Conversion**: By executing an immediate automated In-Plan Roth Conversion, the $36,500 after-tax dollars convert into a Roth 401(k) / Roth IRA with zero taxes on future gains forever.
+
+### Health Savings Account (HSA) Triple Tax Calculator (`https://omnioperand.com/finance/hsa-triple-tax/`)
+- Governing Formula: `HSA Triple Tax Advantage = Tax Deduction on Contribution + Tax-Free Growth + Tax-Free Withdrawal`
+  - **The Triple Tax Exemption**: 1) Contributions are 100% tax-deductible (and exempt from FICA if made through payroll). 2) Dividends and capital gains compound 100% tax-free. 3) Withdrawals for qualified medical expenses are 100% tax-free.
+  - **Payroll FICA Bonus Advantage**: Unlike 401(k) and IRA contributions which are subject to 7.65% FICA taxes, payroll HSA deductions bypass FICA taxes completely, saving an extra $317/year.
+  - **The Stealth IRA Strategy**: Pay current medical out-of-pocket, save receipts digitally, let HSA capital compound in index funds for 25 years, and reimburse yourself tax-free in retirement.
+
+### Healthcare FSA Contribution & Forfeiture Calculator (`https://omnioperand.com/finance/fsa-use-it-or-lose-it/`)
+- Governing Formula: `Net FSA Benefit = (FSA Contribution × Tax Rate %) - Forfeited Unused Balance`
+  - **Upfront Pre-Tax Shield**: FSA contributions are deducted pre-income-tax and pre-FICA: Gross Tax Savings = FSA Election × Combined Tax Rate% (31.65%).
+  - **The Use-It-or-Lose-It Trap**: Unused funds past the rollover limit ($640 in 2024) or 2.5-month grace period are permanently forfeited to your employer.
+  - **Net Economic Benefit Invariant**: Net Benefit = Gross Tax Savings - Cash Forfeited. Even with a minor $200 unspent balance, the $640 rollover protects you from losing a penny.
+
+### Child Tax Credit (CTC) & Phase-Out Calculator (`https://omnioperand.com/finance/child-tax-credit/`)
+- Governing Formula: `Phase-Out Reduction = $50 for every $1,000 MAGI exceeds $200k (Single) / $400k (MFJ)`
+  - **Maximum Statutory Credit**: Base Credit = $2,000 per qualifying child under age 17. For 2 children: 2 × $2,000 = $4,000.
+  - **High-Income Phase-Out Thresholds**: The credit phases out by $50 for every $1,000 (or fraction thereof) that MAGI exceeds $200,000 (Single / Head of Household) or $400,000 (Married Filing Jointly).
+  - **Refundable Additional Child Tax Credit (ACTC)**: Up to $1,700 per child (2024 limit) is refundable even if your total income tax liability is zero, calculated as 15% of earned income above $2,500.
+
+### Standard Deduction vs Itemized (Schedule A) Calculator (`https://omnioperand.com/finance/standard-vs-itemized/`)
+- Governing Formula: `Itemized Total = min(State/Local Tax, $10,000) + Mortgage Interest + Charitable Giving + Medical > 7.5%`
+  - **The $10,000 SALT Cap Restriction**: Under the Tax Cuts and Jobs Act (TCJA), state and local income taxes plus property taxes are strictly capped at $10,000 ($5,000 MFS): Allowed SALT = min(Actual SALT, $10,000).
+  - **Schedule A Itemization Summation**: Total Itemized = Allowed SALT ($10,000) + Mortgage Interest ($16,200) + Charitable Giving ($5,500) = $31,700.
+  - **Filing Selection Rule**: Because $31,700 itemized exceeds the $29,200 Married Filing Jointly standard deduction by $2,500, itemizing saves an extra $600 in cash taxes.
+
+### Marginal vs Effective Tax Rate Calculator (`https://omnioperand.com/finance/marginal-vs-effective-tax/`)
+- Governing Formula: `Effective Tax Rate % = (Total Federal Tax Paid / Total Gross Income) × 100`
+  - **Progressive Tax Bracket Buckets**: Federal income tax is progressive: income is divided into buckets taxed at increasing rates (10%, 12%, 22%, 24%, 32%, 35%, 37%).
+  - **Marginal vs Effective Distinction**: Your marginal rate (24%) applies ONLY to the last dollar earned in that bucket. Dollars below that bracket are taxed at 10%, 12%, and 22%.
+  - **Effective Tax Rate Formulation**: Effective Tax Rate = Total Tax Due / Taxable Income = $18,765 / $125,000 = 15.01%. You pay only 15 cents of every dollar to federal tax, not 24 cents.
+
+### State Income Tax Relocation Comparison Calculator (`https://omnioperand.com/finance/state-income-tax-comparison/`)
+- Governing Formula: `Annual Relocation Savings = Current State Income Tax - Destination State Income Tax`
+  - **Direct State Tax Arbitrage**: State Tax Outflow = Taxable Income × State Tax Rate%. Relocating from California (9.3%) to Florida (0.0%) on $225,000 saves $20,925 annually.
+  - **Monthly Cash Flow Expansion**: Saving $20,925 per year immediately increases monthly household disposable income by $1,743.75.
+  - **10-Year Wealth Compounding**: Investing that $20,925 annual tax savings into index funds at a 7% CAGR generates $289,112 in pure additional net worth over 10 years.
+
+### Tax-Loss Harvesting & Capital Gains Offset Calculator (`https://omnioperand.com/finance/capital-gains-harvesting/`)
+- Governing Formula: `Net Capital Gain/Loss = Realized Gains - Realized Losses | Offset Limit = $3,000 against Ordinary Income`
+  - **Dollar-for-Dollar Capital Gain Erasure**: Harvested capital losses offset capital gains dollar-for-dollar without any cap: $24,000 gains - $24,000 losses = $0 taxable capital gains.
+  - **The $3,000 Ordinary Income Offset**: Under IRC Section 1211, excess losses over gains can offset up to $3,000 of ordinary W-2 income ($1,500 MFS) per tax year.
+  - **Indefinite Loss Carryforward**: Any remaining unabsorbed losses ($32,000 - $24,000 - $3,000 = $5,000) carry forward indefinitely to offset future gains in subsequent tax years.
+
+### Section 179 Equipment Depreciation Calculator (`https://omnioperand.com/finance/section-179-deduction/`)
+- Governing Formula: `Section 179 Deduction = min(Equipment Cost, $1,220,000) | Net Equipment Cost = Purchase Price - Cash Tax Saved`
+  - **The Section 179 Expensing Rule**: Section 179 allows businesses to write off 100% of the purchase price of qualifying equipment in the year placed in service, rather than depreciating it over 5 to 7 years.
+  - **2024 Statutory Limits**: The 2024 maximum deduction is $1,220,000. The deduction phases out dollar-for-dollar once total equipment purchases exceed $3,050,000.
+  - **Cash Flow Cost Reduction**: True Equipment Cost = Equipment Price - (Deduction × Tax Bracket%). Buying $240,000 of machinery at a 35% tax rate saves $84,000 in cash taxes, reducing actual equipment cost to $156,000.
+
+### Section 168(k) Bonus Depreciation Phase-Down Calculator (`https://omnioperand.com/finance/bonus-depreciation/`)
+- Governing Formula: `Year 1 Deduction = (Asset Cost × Bonus %) + [(Asset Cost - Bonus Deduction) / MACRS Life]`
+  - **TCJA Phase-Down Statutory Schedule**: Bonus rates: 100% (2018-2022) ➔ 80% (2023) ➔ 60% (2024) ➔ 40% (2025) ➔ 20% (2026) ➔ 0% (2027).
+  - **Year 1 Combined Formula**: Bonus Deduction = Cost × Bonus%. Remaining Basis = Cost - Bonus. First-Year MACRS = Remaining Basis × MACRS Year 1 Rate (20% for 5-yr half-year convention).
+  - **Total Deduction Consolidation**: Year 1 Write-off = $108,000 (Bonus) + $14,400 (MACRS) = $122,400. Total Cash Tax Saved at 35% = $42,840.
+
+### Restricted Stock Unit (RSU) Vesting Tax Calculator (`https://omnioperand.com/finance/rsu-vesting-tax/`)
+- Governing Formula: `Vesting Tax = Shares Vested × Share Price × Marginal Tax Rate | Net Shares = Total Shares - Shares Sold to Cover`
+  - **Ordinary W-2 Income Recognition**: RSUs are taxed as ordinary W-2 income on the exact day they vest: Gross Income = Shares Vested × Fair Market Value = 500 × $175 = $87,500.
+  - **Sell-to-Cover Mechanics**: Most companies automatically sell shares to pay required withholding taxes: Shares Sold = ceil(Gross Income × Statutory Withholding% / Share Price) = 110 shares.
+  - **The 22% Underwithholding Trap**: The IRS mandates 22% supplemental withholding. If your actual marginal tax bracket is 35%, your employer under-withheld by 13% ($11,375), resulting in a surprise tax bill in April.
+
+### Employee Stock Purchase Plan (ESPP) Calculator (`https://omnioperand.com/finance/espp-discount/`)
+- Governing Formula: `Purchase Price = min(Start Price, End Price) × 85% | Instant Gain = (End Price - Purchase Price) / Purchase Price`
+  - **The Lookback Provision Super-Power**: With a lookback provision, your 15% discount applies to the LOWER of the start price ($100) or end price ($120): Purchase Price = min($100, $120) × 85% = $85.00.
+  - **Instant Market Arbitrage**: You purchase shares for $85.00 and can immediately sell them on the open market for $120.00: Instant Gain = ($120 - $85) / $85 = +41.18%.
+  - **Capital Utilization Reality**: Because payroll deductions accumulate gradually over 6 months (average dollar held for only 3 months), a 41% gain translates into an annualized IRR exceeding 85% to 95%.
+
+### Net Unrealized Appreciation (NUA) 401(k) Stock Calculator (`https://omnioperand.com/finance/nua-company-stock/`)
+- Governing Formula: `NUA = Current Market Value of Employer Stock - Original Cost Basis`
+  - **The Standard Rollover Pitfall**: If you roll company stock into a Traditional IRA, 100% of future withdrawals are taxed at ordinary income tax rates (up to 37%).
+  - **The NUA Strategy Execution**: Under IRC Section 402(e)(4), you roll non-company assets to an IRA, but transfer company stock in-kind to a taxable brokerage account. You pay ordinary income tax ONLY on the original cost basis ($85,000 × 35% = $29,750).
+  - **Permanent Capital Gains Arbitrage**: The $365,000 NUA gain is permanently locked in at the lower 20% long-term capital gains rate: ($365,000 × 35%) - ($365,000 × 20%) = $54,750 in cash tax savings.
+
+### Rule 72(t) SEPP Early IRA Withdrawal Calculator (`https://omnioperand.com/finance/sepp-72t-distribution/`)
+- Governing Formula: `SEPP Payment = Account Balance / Annuity Factor (or Amortization Formula)`
+  - **The 10% Early Penalty Waiver**: Withdrawals from IRAs before age 59½ normally trigger a 10% early withdrawal excise tax penalty. Section 72(t) waives the penalty if payments are substantially equal.
+  - **IRS Approved Calculation Methods**: Three calculation methods exist: 1) Required Minimum Distribution (RMD - variable), 2) Fixed Amortization (highest payout), and 3) Fixed Annuitization.
+  - **Strict Commitment Lock-In**: Once started, payments must continue without modification for the LONGER of 5 full years or until you reach age 59½. Any modification retroactively triggers all waived 10% penalties plus interest.
+
+### Charitable Remainder Unitrust (CRUT) Tax Calculator (`https://omnioperand.com/finance/charitable-remainder-trust/`)
+- Governing Formula: `Upfront Tax Deduction = Present Value of Remainder Interest (≥ 10% of Contributed Value)`
+  - **Tax-Exempt Trust Sale**: Because a CRUT is a tax-exempt entity under IRC Section 664, it sells the $1,000,000 asset for full value with ZERO capital gains tax, reinvesting 100% of gross proceeds.
+  - **The 10% Remainder Test**: To qualify under IRS rules, the actuarial present value of the ultimate charitable remainder must equal at least 10% of the initial contribution.
+  - **Immediate Cash Tax Shield**: Donating $1M generates an immediate ~$284,500 charitable tax deduction, saving ~$105,000 in personal income taxes in Year 1 while providing a $60,000/year lifetime income stream.
+
+### Federal Estate & Lifetime Gift Tax Exemption Calculator (`https://omnioperand.com/finance/estate-gift-tax/`)
+- Governing Formula: `Estate Tax = (Gross Estate - Applicable Lifetime Exemption) × 40%`
+  - **The Unified Lifetime Exemption**: For 2024, the federal estate and gift tax exemption is $13,610,000 per individual ($27,220,000 for married couples with portability).
+  - **Flat 40% Estate Tax Rate**: Any net estate value exceeding the applicable lifetime exemption is taxed at a flat federal rate of 40% within 9 months of death.
+  - **The 2026 Sunset Cliff**: Unless Congress passes legislation, the TCJA exemption expires on December 31, 2025, cutting the lifetime exemption roughly in half to ~$7 million per individual.
+
+### Inherited IRA 10-Year Rule & RMD Calculator (`https://omnioperand.com/finance/inherited-ira-10-year/`)
+- Governing Formula: `10-Year Distribution = Equal Annual Withdrawals over 10 Years to Prevent Bracket Spikes`
+  - **The SECURE Act 10-Year Mandate**: Under the SECURE Act, non-eligible designated beneficiaries (adult children) must completely liquidate inherited IRAs by December 31 of the 10th year following death.
+  - **Lump-Sum Bracket Explosion**: Waiting until Year 10 to withdraw $450,000 on top of existing salary pushes the beneficiary directly into the maximum 37% federal tax bracket, forfeiting nearly half the inheritance.
+  - **Tax-Smoothing Spreading Optimization**: Withdrawing $45,000 annually over 10 years keeps taxable income inside the 24% tax bracket, saving over $48,000 in pure cash taxes.
+
+### Social Security Benefits Taxation Calculator (`https://omnioperand.com/finance/social-security-taxation/`)
+- Governing Formula: `Provisional Income = AGI (Excluding SS) + Non-Taxable Interest + (50% of Social Security)`
+  - **Provisional Combined Income Formula**: Provisional Income = Adjusted Gross Income + Tax-Exempt Interest + (50% of Social Security Benefit). For example: $45,000 + $0 + $16,000 = $61,000.
+  - **Statutory Threshold Tiers**: For married couples: Under $32,000 = 0% taxable. Between $32,000 and $44,000 = up to 50% taxable. Above $44,000 = up to 85% taxable.
+  - **Maximum 85% Ceiling**: Under federal law, no matter how high your income is, at least 15% of your Social Security benefit is ALWAYS completely exempt from federal income tax.
+
+### Medicare IRMAA Surcharge & Surtax Calculator (`https://omnioperand.com/finance/medicare-irmaa-surcharge/`)
+- Governing Formula: `Total Medicare Premium = Base Premium ($174.70) + Part B IRMAA Surcharge + Part D Surcharge`
+  - **The 2-Year Lookback Rule**: Social Security sets Medicare premiums based on tax returns from 2 years prior: 2024 Medicare premiums are determined by 2022 tax returns.
+  - **The Brutal Cliff Effect**: Unlike income tax brackets which tax only the incremental dollars, IRMAA has strict cliff thresholds. Exceeding a tier limit by even $1 triggers the full annual surcharge on both spouses.
+  - **Part B and Part D Surcharge Tiers**: Premiums scale from standard $174.70/mo up to $594.00/mo for high-income earners (MAGI > $500k Single / $750k MFJ).
+
+### Employer FUTA & SUTA Unemployment Tax Calculator (`https://omnioperand.com/finance/futa-suta-payroll/`)
+- Governing Formula: `FUTA = min(Wages, $7,000) × 0.6% | SUTA = min(Wages, State Wage Base) × SUTA Rate %`
+  - **Federal FUTA Tax Rate and Cap**: FUTA is an employer-paid tax (never withheld from employee wages). The gross rate is 6.0%, but employers paying on-time state unemployment receive a 5.4% credit, resulting in an effective net rate of 0.6% on the first $7,000 of wages: $7,000 × 0.6% = $42.00 per employee per year.
+  - **State SUTA Calculations**: SUTA Tax = min(Wages, State Wage Base) × SUTA Experience Rate. For 8 workers at a $10,000 state cap and 2.7% rate: 8 × $10,000 × 2.7% = $2,160.
+  - **Employer Cost Consolidation**: Total Tax = FUTA ($336) + SUTA ($2,160) = $2,496/year ($312/employee).
 

@@ -598,7 +598,7 @@ def build_sitemap():
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
     ]
     for url, prio, freq in unique_urls:
-        sitemap_lines.append(f'  <url>\n    <loc>{url}</loc>\n    <lastmod>2026-10-19</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{prio}</priority>\n  </url>')
+        sitemap_lines.append(f'  <url>\n    <loc>{url}</loc>\n    <lastmod>2026-10-20</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{prio}</priority>\n  </url>')
     sitemap_lines.append('</urlset>')
 
     sitemap_path = REPO_ROOT / "sitemap.xml"

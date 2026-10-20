@@ -9,6 +9,10 @@ from data_finance_2 import FINANCE_CALCULATORS_2
 from data_construction import CONSTRUCTION_CALCULATORS
 from data_health import HEALTH_CALCULATORS
 from data_stem import STEM_CALCULATORS
+from data_b2b_saas import B2B_SAAS_CALCULATORS
+from data_automotive import AUTOMOTIVE_CALCULATORS
+from data_real_estate_pro import REAL_ESTATE_PRO_CALCULATORS
+from data_tax_payroll import TAX_PAYROLL_CALCULATORS
 
 CALCULATORS_DATA = (
     FINANCE_CALCULATORS
@@ -16,6 +20,10 @@ CALCULATORS_DATA = (
     + CONSTRUCTION_CALCULATORS
     + HEALTH_CALCULATORS
     + STEM_CALCULATORS
+    + B2B_SAAS_CALCULATORS
+    + AUTOMOTIVE_CALCULATORS
+    + REAL_ESTATE_PRO_CALCULATORS
+    + TAX_PAYROLL_CALCULATORS
 )
 
 HUB_DATA = {

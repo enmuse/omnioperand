@@ -96,3 +96,19 @@ git add .
 git commit -m "feat: updates"
 git push origin main
 ```
+
+---
+
+### Task 3: Affiliate Network Account Registration (High-Ticket CPA Monetization)
+
+The contextual recommendation engine (`assets/js/affiliate-engine.js`) is fully active on all calculator pages and reads partner URLs from `config/affiliates.json`. To start capturing $50–$300 CPA commissions on human traffic:
+
+1. **Sign up for Major Affiliate Networks**:
+   - **Impact.com**: LendingTree, Rocket Mortgage, Marcus by Goldman Sachs, Uber/Lyft.
+   - **CJ Affiliate (Commission Junction)**: AutoPay, TurboTax, H&R Block, QuickBooks.
+   - **ShareASale / Awin**: Gusto Payroll, Rockler Woodworking, Northern Tool, Home Depot.
+   - **Rakuten Advertising**: Financial institutions, retail cards, and trade suppliers.
+2. **Update Tracking Links**:
+   - Once approved, open `config/affiliates.json` and replace the placeholder `tracking_url` values with your unique affiliate tracking links.
+   - The engine automatically routes clicks through your tracking codes with zero layout shift (CLS).
+

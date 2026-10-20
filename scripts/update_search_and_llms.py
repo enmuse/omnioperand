@@ -102,7 +102,7 @@ def update_search_js():
     new_index_block = f"  // Calculator & Hub Index Database\n  const SEARCH_INDEX = {json_str};"
 
     # Replace SEARCH_INDEX definition
-    pattern = re.compile(r"  // Calculator & Hub Index Database\s+const SEARCH_INDEX = \[[\s\S]*?\n  \];", re.MULTILINE)
+    pattern = re.compile(r"  // Calculator & Hub Index Database\s+const SEARCH_INDEX = \[[\s\S]*?\n\s*\];", re.MULTILINE)
     if pattern.search(content):
         updated_content = pattern.sub(new_index_block, content)
         search_file.write_text(updated_content, encoding="utf-8")

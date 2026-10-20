@@ -2460,6 +2460,1906 @@
       "and",
       "local"
     ]
+  },
+  {
+    "title": "Customer Acquisition Cost (CAC) Calculator",
+    "category": "Finance > B2B SaaS Metrics • CAC Unit Economics",
+    "url": "/finance/cac/",
+    "keywords": [
+      "customer",
+      "acquisition",
+      "cost",
+      "cac",
+      "calculator",
+      "calculate",
+      "blended",
+      "and",
+      "paid",
+      "from",
+      "total",
+      "sales"
+    ]
+  },
+  {
+    "title": "Customer Lifetime Value (LTV / CLV) Calculator",
+    "category": "Finance > SaaS Unit Economics • LTV Vector Matrix",
+    "url": "/finance/clv-ltv/",
+    "keywords": [
+      "customer",
+      "lifetime",
+      "value",
+      "ltv",
+      "clv",
+      "calculator",
+      "calculate",
+      "from",
+      "average",
+      "revenue",
+      "per",
+      "account"
+    ]
+  },
+  {
+    "title": "LTV:CAC Ratio & Payback Period Calculator",
+    "category": "Finance > Venture Capital • Capital Efficiency Matrix",
+    "url": "/finance/ltv-cac-ratio/",
+    "keywords": [
+      "ltv",
+      "cac",
+      "ratio",
+      "payback",
+      "period",
+      "calculator",
+      "calculate",
+      "the",
+      "gold-standard",
+      "saas",
+      "unit",
+      "economics"
+    ]
+  },
+  {
+    "title": "Customer & Revenue Churn Rate Calculator",
+    "category": "Finance > Retention Engineering • Churn Matrix",
+    "url": "/finance/churn-rate/",
+    "keywords": [
+      "customer",
+      "revenue",
+      "churn",
+      "rate",
+      "calculator",
+      "calculate",
+      "logo",
+      "gross",
+      "net",
+      "retention",
+      "nrr",
+      "and"
+    ]
+  },
+  {
+    "title": "MRR to ARR & Net New MRR Calculator",
+    "category": "Finance > Subscription Economics • Recurring Revenue Matrix",
+    "url": "/finance/mrr-arr/",
+    "keywords": [
+      "mrr",
+      "arr",
+      "net",
+      "new",
+      "calculator",
+      "calculate",
+      "annual",
+      "recurring",
+      "revenue",
+      "run",
+      "rate",
+      "expansion"
+    ]
+  },
+  {
+    "title": "Startup Cash Runway & Burn Rate Calculator",
+    "category": "Finance > Startup Treasury • Cash Runway Vector",
+    "url": "/finance/runway-burn/",
+    "keywords": [
+      "startup",
+      "cash",
+      "runway",
+      "burn",
+      "rate",
+      "calculator",
+      "calculate",
+      "net",
+      "monthly",
+      "gross",
+      "outflows",
+      "and"
+    ]
+  },
+  {
+    "title": "SaaS Magic Number & Sales Efficiency Calculator",
+    "category": "Finance > Growth Engineering • Magic Number Matrix",
+    "url": "/finance/saas-magic-number/",
+    "keywords": [
+      "saas",
+      "magic",
+      "number",
+      "sales",
+      "efficiency",
+      "calculator",
+      "calculate",
+      "the",
+      "measuring",
+      "net",
+      "new",
+      "arr"
+    ]
+  },
+  {
+    "title": "SaaS Rule of 40 Calculator",
+    "category": "Finance > Public SaaS Valuation • Rule of 40 Matrix",
+    "url": "/finance/saas-rule-of-40/",
+    "keywords": [
+      "saas",
+      "rule",
+      "calculator",
+      "calculate",
+      "the",
+      "score",
+      "balancing",
+      "yoy",
+      "arr",
+      "revenue",
+      "growth",
+      "rate"
+    ]
+  },
+  {
+    "title": "Net Promoter Score (NPS) Calculator",
+    "category": "Finance > Customer Experience • NPS Matrix",
+    "url": "/finance/net-promoter-score/",
+    "keywords": [
+      "net",
+      "promoter",
+      "score",
+      "nps",
+      "calculator",
+      "calculate",
+      "promoters",
+      "9-10",
+      "passives",
+      "7-8",
+      "detractors",
+      "0-6"
+    ]
+  },
+  {
+    "title": "Average Revenue Per User (ARPU / ARPA) Calculator",
+    "category": "Finance > Monetization Analytics • ARPU Solver",
+    "url": "/finance/arpu/",
+    "keywords": [
+      "average",
+      "revenue",
+      "per",
+      "user",
+      "arpu",
+      "arpa",
+      "calculator",
+      "calculate",
+      "and",
+      "account",
+      "across",
+      "monthly"
+    ]
+  },
+  {
+    "title": "Viral Coefficient (K-Factor) & Growth Calculator",
+    "category": "Finance > Growth Loops • K-Factor Matrix",
+    "url": "/finance/viral-coefficient/",
+    "keywords": [
+      "viral",
+      "coefficient",
+      "k-factor",
+      "growth",
+      "calculator",
+      "calculate",
+      "expansion",
+      "cycle",
+      "time",
+      "customer",
+      "compounding",
+      "multiplier"
+    ]
+  },
+  {
+    "title": "Employee Turnover & Replacement Cost Calculator",
+    "category": "Finance > HR Economics • Turnover Cost Matrix",
+    "url": "/finance/employee-turnover-cost/",
+    "keywords": [
+      "employee",
+      "turnover",
+      "replacement",
+      "cost",
+      "calculator",
+      "calculate",
+      "true",
+      "financial",
+      "and",
+      "organizational",
+      "recruiting",
+      "fees"
+    ]
+  },
+  {
+    "title": "Return on Ad Spend (ROAS) & Breakeven Calculator",
+    "category": "Finance > Performance Marketing • ROAS Matrix",
+    "url": "/finance/roas/",
+    "keywords": [
+      "return",
+      "spend",
+      "roas",
+      "breakeven",
+      "calculator",
+      "calculate",
+      "from",
+      "product",
+      "profit",
+      "margin",
+      "net",
+      "advertising"
+    ]
+  },
+  {
+    "title": "Cost Per Acquisition (CPA) from CPC Calculator",
+    "category": "Finance > Digital Advertising • CPA Unit Economics",
+    "url": "/finance/cpa-cpc/",
+    "keywords": [
+      "cost",
+      "per",
+      "acquisition",
+      "cpa",
+      "from",
+      "cpc",
+      "calculator",
+      "calculate",
+      "click",
+      "and",
+      "landing",
+      "page"
+    ]
+  },
+  {
+    "title": "Email Marketing Campaign ROI Calculator",
+    "category": "Finance > Direct Response • Email ROI Matrix",
+    "url": "/finance/email-marketing-roi/",
+    "keywords": [
+      "email",
+      "marketing",
+      "campaign",
+      "roi",
+      "calculator",
+      "calculate",
+      "open",
+      "rates",
+      "click-through",
+      "ctr",
+      "conversion",
+      "yields"
+    ]
+  },
+  {
+    "title": "Sales Pipeline Velocity Calculator",
+    "category": "Finance > Enterprise Sales • Pipeline Velocity Matrix",
+    "url": "/finance/sales-pipeline-velocity/",
+    "keywords": [
+      "sales",
+      "pipeline",
+      "velocity",
+      "calculator",
+      "calculate",
+      "revenue",
+      "generated",
+      "per",
+      "day",
+      "and",
+      "forecast",
+      "monthly"
+    ]
+  },
+  {
+    "title": "Working Capital & Current Ratio Calculator",
+    "category": "Finance > Corporate Treasury • Liquidity Solvency Matrix",
+    "url": "/finance/working-capital-ratio/",
+    "keywords": [
+      "working",
+      "capital",
+      "current",
+      "ratio",
+      "calculator",
+      "calculate",
+      "net",
+      "nwc",
+      "and",
+      "short-term",
+      "corporate",
+      "liquidity"
+    ]
+  },
+  {
+    "title": "Quick Ratio (Acid-Test) Calculator",
+    "category": "Finance > Balance Sheet Analysis • Acid-Test Matrix",
+    "url": "/finance/quick-ratio/",
+    "keywords": [
+      "quick",
+      "ratio",
+      "acid-test",
+      "calculator",
+      "calculate",
+      "the",
+      "isolating",
+      "liquid",
+      "cash",
+      "marketable",
+      "securities",
+      "and"
+    ]
+  },
+  {
+    "title": "Corporate DSCR & Interest Coverage Calculator",
+    "category": "Finance > Credit Underwriting • Commercial Debt Coverage",
+    "url": "/finance/debt-service-coverage/",
+    "keywords": [
+      "corporate",
+      "dscr",
+      "interest",
+      "coverage",
+      "calculator",
+      "calculate",
+      "debt",
+      "service",
+      "ratio",
+      "and",
+      "times",
+      "earned"
+    ]
+  },
+  {
+    "title": "Economic Order Quantity (EOQ) & Reorder Point Calculator",
+    "category": "Finance > Supply Chain & Operations • Ford-Harris EOQ Model",
+    "url": "/finance/economic-order-quantity/",
+    "keywords": [
+      "economic",
+      "order",
+      "quantity",
+      "eoq",
+      "reorder",
+      "point",
+      "calculator",
+      "calculate",
+      "optimal",
+      "inventory",
+      "batch",
+      "size"
+    ]
+  },
+  {
+    "title": "Bessemer Burn Multiple Calculator",
+    "category": "Finance > Venture Efficiency • Bessemer Burn Multiple",
+    "url": "/finance/burn-multiple/",
+    "keywords": [
+      "bessemer",
+      "burn",
+      "multiple",
+      "calculator",
+      "calculate",
+      "the",
+      "venture",
+      "partners",
+      "measuring",
+      "net",
+      "cash",
+      "burned"
+    ]
+  },
+  {
+    "title": "Freemium to Paid Conversion Calculator",
+    "category": "Finance > Product-Led Growth • PLG Funnel Matrix",
+    "url": "/finance/freemium-conversion/",
+    "keywords": [
+      "freemium",
+      "paid",
+      "conversion",
+      "calculator",
+      "calculate",
+      "user",
+      "rates",
+      "free-to-paid",
+      "funnel",
+      "velocity",
+      "monthly",
+      "recurring"
+    ]
+  },
+  {
+    "title": "Gross Revenue Retention (GRR) vs NRR Calculator",
+    "category": "Finance > Retention Analytics • GRR Foundation Matrix",
+    "url": "/finance/gross-revenue-retention/",
+    "keywords": [
+      "gross",
+      "revenue",
+      "retention",
+      "grr",
+      "nrr",
+      "calculator",
+      "calculate",
+      "isolating",
+      "core",
+      "churn",
+      "and",
+      "contraction"
+    ]
+  },
+  {
+    "title": "SaaS CAC Payback Period Calculator",
+    "category": "Finance > Unit Economics • Payback Horizon Matrix",
+    "url": "/finance/cac-payback/",
+    "keywords": [
+      "saas",
+      "cac",
+      "payback",
+      "period",
+      "calculator",
+      "calculate",
+      "exact",
+      "customer",
+      "acquisition",
+      "cost",
+      "months",
+      "accounting"
+    ]
+  },
+  {
+    "title": "Inventory Turnover & Days Sales of Inventory (DSI) Calculator",
+    "category": "Finance > Working Capital • Inventory Velocity",
+    "url": "/finance/inventory-turnover/",
+    "keywords": [
+      "inventory",
+      "turnover",
+      "days",
+      "sales",
+      "dsi",
+      "calculator",
+      "calculate",
+      "ratio",
+      "dio",
+      "and",
+      "capital",
+      "tied"
+    ]
+  },
+  {
+    "title": "Car Lease vs Buy Financial Comparison Calculator",
+    "category": "Finance > Automotive Finance • Lease vs Purchase Matrix",
+    "url": "/finance/lease-vs-buy/",
+    "keywords": [
+      "car",
+      "lease",
+      "buy",
+      "financial",
+      "comparison",
+      "calculator",
+      "compare",
+      "the",
+      "total",
+      "multi-year",
+      "cost",
+      "leasing"
+    ]
+  },
+  {
+    "title": "Electric Vehicle (EV) Charging Cost & Range Calculator",
+    "category": "Physics > Electric Mobility • EV Energy Economics",
+    "url": "/physics/ev-charging-cost/",
+    "keywords": [
+      "electric",
+      "vehicle",
+      "charging",
+      "cost",
+      "range",
+      "calculator",
+      "calculate",
+      "exact",
+      "dollar",
+      "fully",
+      "charge",
+      "car"
+    ]
+  },
+  {
+    "title": "Electric Vehicle vs Gas Savings Calculator",
+    "category": "Finance > Fleet Decarbonization • EV vs ICE Fuel Economics",
+    "url": "/finance/ev-vs-gas-savings/",
+    "keywords": [
+      "electric",
+      "vehicle",
+      "gas",
+      "savings",
+      "calculator",
+      "calculate",
+      "annual",
+      "fuel",
+      "maintenance",
+      "and",
+      "brake",
+      "pad"
+    ]
+  },
+  {
+    "title": "Car Depreciation & Future Value Curve Calculator",
+    "category": "Finance > Automotive Asset Valuation • Depreciation Curve Matrix",
+    "url": "/finance/car-depreciation/",
+    "keywords": [
+      "car",
+      "depreciation",
+      "future",
+      "value",
+      "curve",
+      "calculator",
+      "calculate",
+      "multi-year",
+      "vehicle",
+      "curves",
+      "month-by-month",
+      "residual"
+    ]
+  },
+  {
+    "title": "5-Year True Cost to Own (TCO) Calculator",
+    "category": "Finance > Fleet Economics • Full Vehicle TCO Matrix",
+    "url": "/finance/true-cost-to-own/",
+    "keywords": [
+      "5-year",
+      "true",
+      "cost",
+      "own",
+      "tco",
+      "calculator",
+      "calculate",
+      "full",
+      "vehicle",
+      "over",
+      "years",
+      "combining"
+    ]
+  },
+  {
+    "title": "Vehicle Towing Capacity & Tongue Weight Calculator",
+    "category": "Physics > Vehicle Dynamics • Safe Towing Matrix",
+    "url": "/physics/towing-capacity/",
+    "keywords": [
+      "vehicle",
+      "towing",
+      "capacity",
+      "tongue",
+      "weight",
+      "calculator",
+      "calculate",
+      "safe",
+      "legal",
+      "gross",
+      "combined",
+      "rating"
+    ]
+  },
+  {
+    "title": "Truck Payload Capacity & Cargo Safety Margin Calculator",
+    "category": "Physics > Truck Engineering • Payload GVWR Matrix",
+    "url": "/physics/payload-capacity/",
+    "keywords": [
+      "truck",
+      "payload",
+      "capacity",
+      "cargo",
+      "safety",
+      "margin",
+      "calculator",
+      "calculate",
+      "actual",
+      "remaining",
+      "from",
+      "gross"
+    ]
+  },
+  {
+    "title": "Gas Mileage (MPG / L/100km) & Fuel Cost Calculator",
+    "category": "Physics > Fuel Economy • Multi-Standard Metric Matrix",
+    "url": "/physics/gas-mileage-mpg/",
+    "keywords": [
+      "gas",
+      "mileage",
+      "mpg",
+      "100km",
+      "fuel",
+      "cost",
+      "calculator",
+      "calculate",
+      "exact",
+      "imperial",
+      "and",
+      "liters"
+    ]
+  },
+  {
+    "title": "Tire Size Comparison & Speedometer Error Calculator",
+    "category": "Physics > Tire Dynamics • Speedometer Calibration Matrix",
+    "url": "/physics/tire-size-speedometer/",
+    "keywords": [
+      "tire",
+      "size",
+      "comparison",
+      "speedometer",
+      "error",
+      "calculator",
+      "calculate",
+      "diameter",
+      "sidewall",
+      "height",
+      "revolutions",
+      "per"
+    ]
+  },
+  {
+    "title": "Horsepower & Torque Conversion Calculator",
+    "category": "Physics > Mechanical Power • Drivetrain Physics Matrix",
+    "url": "/physics/horsepower-torque/",
+    "keywords": [
+      "horsepower",
+      "torque",
+      "conversion",
+      "calculator",
+      "convert",
+      "between",
+      "rotational",
+      "lb-ft",
+      "and",
+      "mechanical",
+      "any",
+      "engine"
+    ]
+  },
+  {
+    "title": "Quarter-Mile Elapsed Time (ET) & Trap Speed Calculator",
+    "category": "Physics > Motorsports Dynamics • 1/4 Mile ET Matrix",
+    "url": "/physics/quarter-mile-speed/",
+    "keywords": [
+      "quarter-mile",
+      "elapsed",
+      "time",
+      "trap",
+      "speed",
+      "calculator",
+      "calculate",
+      "drag",
+      "racing",
+      "mile",
+      "and",
+      "finish"
+    ]
+  },
+  {
+    "title": "Engine Displacement & Cylinder Volume Calculator",
+    "category": "Physics > Engine Building • Displacement Geometry",
+    "url": "/physics/engine-displacement/",
+    "keywords": [
+      "engine",
+      "displacement",
+      "cylinder",
+      "volume",
+      "calculator",
+      "calculate",
+      "total",
+      "internal",
+      "combustion",
+      "cubic",
+      "centimeters",
+      "liters"
+    ]
+  },
+  {
+    "title": "Engine Static Compression Ratio Calculator",
+    "category": "Physics > Combustion Engineering • Static CR Matrix",
+    "url": "/physics/compression-ratio/",
+    "keywords": [
+      "engine",
+      "static",
+      "compression",
+      "ratio",
+      "calculator",
+      "calculate",
+      "from",
+      "cylinder",
+      "swept",
+      "volume",
+      "combustion",
+      "chamber"
+    ]
+  },
+  {
+    "title": "Transmission Gear Ratio & Vehicle Speed at RPM Calculator",
+    "category": "Physics > Drivetrain Kinematics • Gear Speed Matrix",
+    "url": "/physics/gear-ratio-speed/",
+    "keywords": [
+      "transmission",
+      "gear",
+      "ratio",
+      "vehicle",
+      "speed",
+      "rpm",
+      "calculator",
+      "calculate",
+      "road",
+      "mph",
+      "any",
+      "engine"
+    ]
+  },
+  {
+    "title": "Marine Boat Fuel Burn & Range Calculator",
+    "category": "Physics > Marine Engineering • Boat Fuel Matrix",
+    "url": "/physics/boat-fuel-burn/",
+    "keywords": [
+      "marine",
+      "boat",
+      "fuel",
+      "burn",
+      "range",
+      "calculator",
+      "calculate",
+      "rate",
+      "gallons",
+      "per",
+      "hour",
+      "gph"
+    ]
+  },
+  {
+    "title": "Aviation Crosswind & Headwind Component Calculator",
+    "category": "Physics > Flight Operations • Crosswind Component Matrix",
+    "url": "/physics/aviation-crosswind/",
+    "keywords": [
+      "aviation",
+      "crosswind",
+      "headwind",
+      "component",
+      "calculator",
+      "calculate",
+      "exact",
+      "runway",
+      "and",
+      "tailwind",
+      "from",
+      "wind"
+    ]
+  },
+  {
+    "title": "Aircraft Rate of Climb & Climb Gradient Calculator",
+    "category": "Physics > Aviation Engineering • Climb Gradient Matrix",
+    "url": "/physics/aircraft-climb-rate/",
+    "keywords": [
+      "aircraft",
+      "rate",
+      "climb",
+      "gradient",
+      "calculator",
+      "convert",
+      "between",
+      "vertical",
+      "speed",
+      "feet",
+      "per",
+      "minute"
+    ]
+  },
+  {
+    "title": "RV & Marine Battery Amp Hour & Inverter Runtime Calculator",
+    "category": "Physics > Off-Grid Power • Battery Capacity Matrix",
+    "url": "/physics/battery-amp-hours/",
+    "keywords": [
+      "marine",
+      "battery",
+      "amp",
+      "hour",
+      "inverter",
+      "runtime",
+      "calculator",
+      "calculate",
+      "deep",
+      "cycle",
+      "hours",
+      "from"
+    ]
+  },
+  {
+    "title": "Vehicle Vinyl Wrap Material & Roll Calculator",
+    "category": "Physics > Automotive Aesthetics • Vinyl Film Roll Matrix",
+    "url": "/physics/car-wrap-vinyl/",
+    "keywords": [
+      "vehicle",
+      "vinyl",
+      "wrap",
+      "material",
+      "roll",
+      "calculator",
+      "calculate",
+      "exact",
+      "linear",
+      "feet",
+      "and",
+      "square"
+    ]
+  },
+  {
+    "title": "Vehicle Braking & Stopping Distance Physics Calculator",
+    "category": "Physics > Accident Reconstruction • Braking Distance Matrix",
+    "url": "/physics/brake-stopping-distance/",
+    "keywords": [
+      "vehicle",
+      "braking",
+      "stopping",
+      "distance",
+      "physics",
+      "calculator",
+      "calculate",
+      "total",
+      "feet",
+      "from",
+      "initial",
+      "speed"
+    ]
+  },
+  {
+    "title": "Vehicle Sales Tax & Trade-In Credit Calculator",
+    "category": "Finance > Automotive Tax • Trade-In Deduction Matrix",
+    "url": "/finance/car-sales-tax/",
+    "keywords": [
+      "vehicle",
+      "sales",
+      "tax",
+      "trade-in",
+      "credit",
+      "calculator",
+      "calculate",
+      "state",
+      "county",
+      "and",
+      "local",
+      "registration"
+    ]
+  },
+  {
+    "title": "Auto Loan Refinance Savings Calculator",
+    "category": "Finance > Consumer Lending • Auto Loan Refinance Matrix",
+    "url": "/finance/auto-refinance-savings/",
+    "keywords": [
+      "auto",
+      "loan",
+      "refinance",
+      "savings",
+      "calculator",
+      "calculate",
+      "monthly",
+      "payment",
+      "reduction",
+      "and",
+      "lifetime",
+      "interest"
+    ]
+  },
+  {
+    "title": "Auto GAP Insurance Need & Negative Equity Calculator",
+    "category": "Finance > Risk Underwriting • GAP Insurance Matrix",
+    "url": "/finance/gap-insurance-need/",
+    "keywords": [
+      "auto",
+      "gap",
+      "insurance",
+      "need",
+      "negative",
+      "equity",
+      "calculator",
+      "calculate",
+      "exposure",
+      "underwater",
+      "loan",
+      "comparing"
+    ]
+  },
+  {
+    "title": "Motor Oil Change Interval & Maintenance Cost Calculator",
+    "category": "Physics > Fleet Maintenance • Lubrication Schedule Matrix",
+    "url": "/physics/oil-change-interval/",
+    "keywords": [
+      "motor",
+      "oil",
+      "change",
+      "interval",
+      "maintenance",
+      "cost",
+      "calculator",
+      "calculate",
+      "optimal",
+      "intervals",
+      "based",
+      "mileage"
+    ]
+  },
+  {
+    "title": "RV Travel Trailer Tongue & Hitch Distribution Calculator",
+    "category": "Physics > RV Dynamics • Weight Distribution Matrix",
+    "url": "/physics/rv-payload-hitch/",
+    "keywords": [
+      "travel",
+      "trailer",
+      "tongue",
+      "hitch",
+      "distribution",
+      "calculator",
+      "calculate",
+      "weight",
+      "transfer",
+      "front",
+      "steer",
+      "axles"
+    ]
+  },
+  {
+    "title": "Commercial Real Estate IRR & Equity Multiple Calculator",
+    "category": "Finance > Private Equity • Real Estate IRR Matrix",
+    "url": "/finance/internal-rate-of-return/",
+    "keywords": [
+      "commercial",
+      "real",
+      "estate",
+      "irr",
+      "equity",
+      "multiple",
+      "calculator",
+      "calculate",
+      "property",
+      "internal",
+      "rate",
+      "return"
+    ]
+  },
+  {
+    "title": "Commercial Real Estate NPV & DCF Calculator",
+    "category": "Finance > Institutional Underwriting • Real Estate DCF Matrix",
+    "url": "/finance/net-present-value/",
+    "keywords": [
+      "commercial",
+      "real",
+      "estate",
+      "npv",
+      "dcf",
+      "calculator",
+      "calculate",
+      "net",
+      "present",
+      "value",
+      "and",
+      "discounted"
+    ]
+  },
+  {
+    "title": "Cash-on-Cash Return & Pre-Tax Yield Calculator",
+    "category": "Finance > Real Estate Investing • Cash-on-Cash Matrix",
+    "url": "/finance/cash-on-cash-return/",
+    "keywords": [
+      "cash-on-cash",
+      "return",
+      "pre-tax",
+      "yield",
+      "calculator",
+      "calculate",
+      "coc",
+      "percentage",
+      "measuring",
+      "annual",
+      "cash",
+      "flow"
+    ]
+  },
+  {
+    "title": "Gross Rent Multiplier (GRM) & Valuation Calculator",
+    "category": "Finance > Multifamily Screening • GRM Metric Matrix",
+    "url": "/finance/gross-rent-multiplier/",
+    "keywords": [
+      "gross",
+      "rent",
+      "multiplier",
+      "grm",
+      "valuation",
+      "calculator",
+      "calculate",
+      "and",
+      "estimate",
+      "fair",
+      "market",
+      "multifamily"
+    ]
+  },
+  {
+    "title": "Section 1031 Like-Kind Exchange & Tax Deferral Calculator",
+    "category": "Finance > Tax Deferral • Section 1031 Matrix",
+    "url": "/finance/exchange-1031/",
+    "keywords": [
+      "section",
+      "1031",
+      "like-kind",
+      "exchange",
+      "tax",
+      "deferral",
+      "calculator",
+      "calculate",
+      "deferred",
+      "federal",
+      "capital",
+      "gains"
+    ]
+  },
+  {
+    "title": "Cap Rate Sensitivity & Valuation Matrix Calculator",
+    "category": "Finance > Valuation Engineering • Cap Rate Sensitivity Matrix",
+    "url": "/finance/cap-rate-sensitivity/",
+    "keywords": [
+      "cap",
+      "rate",
+      "sensitivity",
+      "valuation",
+      "matrix",
+      "calculator",
+      "calculate",
+      "commercial",
+      "property",
+      "asset",
+      "across",
+      "varying"
+    ]
+  },
+  {
+    "title": "Commercial Rent Roll & Economic Vacancy Calculator",
+    "category": "Finance > Property Management • Rent Roll Underwriting",
+    "url": "/finance/rent-roll-analysis/",
+    "keywords": [
+      "commercial",
+      "rent",
+      "roll",
+      "economic",
+      "vacancy",
+      "calculator",
+      "analyze",
+      "rolls",
+      "gross",
+      "potential",
+      "gpr",
+      "physical"
+    ]
+  },
+  {
+    "title": "Cost Segregation & Accelerated Depreciation Calculator",
+    "category": "Finance > Tax Engineering • Cost Segregation Shield",
+    "url": "/finance/cost-segregation/",
+    "keywords": [
+      "cost",
+      "segregation",
+      "accelerated",
+      "depreciation",
+      "calculator",
+      "estimate",
+      "year",
+      "bonus",
+      "tax",
+      "deductions",
+      "segregating",
+      "commercial"
+    ]
+  },
+  {
+    "title": "Syndication Preferred Return & Waterfall Equity Calculator",
+    "category": "Finance > Syndication Structuring • Equity Waterfall Matrix",
+    "url": "/finance/preferred-return-waterfall/",
+    "keywords": [
+      "syndication",
+      "preferred",
+      "return",
+      "waterfall",
+      "equity",
+      "calculator",
+      "calculate",
+      "private",
+      "distributions",
+      "between",
+      "general",
+      "partners"
+    ]
+  },
+  {
+    "title": "Triple Net (NNN) vs Full Service Gross Lease Calculator",
+    "category": "Finance > Commercial Leasing • NNN vs Gross Matrix",
+    "url": "/finance/commercial-lease-nnn/",
+    "keywords": [
+      "triple",
+      "net",
+      "nnn",
+      "full",
+      "service",
+      "gross",
+      "lease",
+      "calculator",
+      "compare",
+      "commercial",
+      "structures",
+      "versus"
+    ]
+  },
+  {
+    "title": "Tenant Improvement (TI) Allowance & Amortization Calculator",
+    "category": "Finance > Commercial Underwriting • TI Amortization Matrix",
+    "url": "/finance/tenant-improvement/",
+    "keywords": [
+      "tenant",
+      "improvement",
+      "allowance",
+      "amortization",
+      "calculator",
+      "calculate",
+      "build-out",
+      "costs",
+      "landlord",
+      "allowances",
+      "per",
+      "square"
+    ]
+  },
+  {
+    "title": "Short-Term Rental (Airbnb) Cash Flow & ADR Calculator",
+    "category": "Finance > Hospitality Economics • STR Cash Flow Matrix",
+    "url": "/finance/str-airbnb-cashflow/",
+    "keywords": [
+      "short-term",
+      "rental",
+      "airbnb",
+      "cash",
+      "flow",
+      "adr",
+      "calculator",
+      "calculate",
+      "str",
+      "vrbo",
+      "net",
+      "monthly"
+    ]
+  },
+  {
+    "title": "Closing Day Property Tax Proration Calculator",
+    "category": "Finance > Closing Escrow • Tax Proration Matrix",
+    "url": "/finance/property-tax-proration/",
+    "keywords": [
+      "closing",
+      "day",
+      "property",
+      "tax",
+      "proration",
+      "calculator",
+      "calculate",
+      "exact",
+      "real",
+      "estate",
+      "prorations",
+      "daily"
+    ]
+  },
+  {
+    "title": "House Flipping 70% Rule & MAO Calculator",
+    "category": "Finance > Real Estate Wholesaling • 70% Rule Matrix",
+    "url": "/finance/house-flip-profit/",
+    "keywords": [
+      "house",
+      "flipping",
+      "rule",
+      "mao",
+      "calculator",
+      "calculate",
+      "maximum",
+      "allowable",
+      "offer",
+      "for",
+      "fix-and-flip",
+      "real"
+    ]
+  },
+  {
+    "title": "Land Subdivision & Development Lot Yield Calculator",
+    "category": "Finance > Civil Engineering • Land Subdivision Matrix",
+    "url": "/finance/land-development-yield/",
+    "keywords": [
+      "land",
+      "subdivision",
+      "development",
+      "lot",
+      "yield",
+      "calculator",
+      "calculate",
+      "residential",
+      "yields",
+      "infrastructure",
+      "loss",
+      "deductions"
+    ]
+  },
+  {
+    "title": "Self-Storage Facility Feasibility & Revenue Calculator",
+    "category": "Finance > Commercial Feasibility • Self-Storage Matrix",
+    "url": "/finance/self-storage-roi/",
+    "keywords": [
+      "self-storage",
+      "facility",
+      "feasibility",
+      "revenue",
+      "calculator",
+      "calculate",
+      "rental",
+      "net",
+      "rentable",
+      "square",
+      "footage",
+      "nrsf"
+    ]
+  },
+  {
+    "title": "Mobile Home Park (MHP) Lot Rent & Cap Rate Calculator",
+    "category": "Finance > Affordable Housing • MHP Valuation Matrix",
+    "url": "/finance/mobile-home-park/",
+    "keywords": [
+      "mobile",
+      "home",
+      "park",
+      "mhp",
+      "lot",
+      "rent",
+      "cap",
+      "rate",
+      "calculator",
+      "calculate",
+      "manufactured",
+      "housing"
+    ]
+  },
+  {
+    "title": "Mezzanine Debt & Subordinated Financing Blended Cost Calculator",
+    "category": "Finance > Capital Stack Structuring • Mezzanine Debt Matrix",
+    "url": "/finance/mezzanine-debt/",
+    "keywords": [
+      "mezzanine",
+      "debt",
+      "subordinated",
+      "financing",
+      "blended",
+      "cost",
+      "calculator",
+      "calculate",
+      "weighted",
+      "average",
+      "capital",
+      "wacc"
+    ]
+  },
+  {
+    "title": "Hard Money Loan Cost & Points Calculator",
+    "category": "Finance > Private Lending • Hard Money APR Matrix",
+    "url": "/finance/hard-money-points/",
+    "keywords": [
+      "hard",
+      "money",
+      "loan",
+      "cost",
+      "points",
+      "calculator",
+      "calculate",
+      "total",
+      "financing",
+      "fees",
+      "upfront",
+      "origination"
+    ]
+  },
+  {
+    "title": "Commercial Bridge Loan Interest Reserve Calculator",
+    "category": "Finance > Bridge Financing • Interest Reserve Matrix",
+    "url": "/finance/bridge-loan-interest/",
+    "keywords": [
+      "commercial",
+      "bridge",
+      "loan",
+      "interest",
+      "reserve",
+      "calculator",
+      "calculate",
+      "escrows",
+      "floating",
+      "sofr",
+      "spreads",
+      "and"
+    ]
+  },
+  {
+    "title": "Qualified Opportunity Zone (QOZ) Tax Incentive Calculator",
+    "category": "Finance > Tax Policy • Opportunity Zone Matrix",
+    "url": "/finance/opportunity-zone/",
+    "keywords": [
+      "qualified",
+      "opportunity",
+      "zone",
+      "qoz",
+      "tax",
+      "incentive",
+      "calculator",
+      "calculate",
+      "capital",
+      "gains",
+      "deferral",
+      "and"
+    ]
+  },
+  {
+    "title": "HOA Reserve Fund Adequacy & Percent Funded Calculator",
+    "category": "Finance > Condo Governance • Reserve Fund Matrix",
+    "url": "/finance/hoa-reserve-fund/",
+    "keywords": [
+      "hoa",
+      "reserve",
+      "fund",
+      "adequacy",
+      "percent",
+      "funded",
+      "calculator",
+      "calculate",
+      "homeowners",
+      "association",
+      "condominium",
+      "metric"
+    ]
+  },
+  {
+    "title": "Section 1250 Depreciation Recapture Tax Calculator",
+    "category": "Finance > Tax Accounting • Section 1250 Matrix",
+    "url": "/finance/depreciation-recapture/",
+    "keywords": [
+      "section",
+      "1250",
+      "depreciation",
+      "recapture",
+      "tax",
+      "calculator",
+      "calculate",
+      "irs",
+      "unrecaptured",
+      "rate",
+      "versus",
+      "long-term"
+    ]
+  },
+  {
+    "title": "Real Estate GP Promoted Interest (Carried Interest) Calculator",
+    "category": "Finance > Private Equity Structuring • GP Promote Matrix",
+    "url": "/finance/promoted-interest-carry/",
+    "keywords": [
+      "real",
+      "estate",
+      "promoted",
+      "interest",
+      "carried",
+      "calculator",
+      "calculate",
+      "general",
+      "partner",
+      "promote",
+      "compensation",
+      "across"
+    ]
+  },
+  {
+    "title": "Blended Mortgage Interest Rate & Second Loan Calculator",
+    "category": "Finance > Debt Architecture • Blended APR Matrix",
+    "url": "/finance/blended-mortgage-rate/",
+    "keywords": [
+      "blended",
+      "mortgage",
+      "interest",
+      "rate",
+      "second",
+      "loan",
+      "calculator",
+      "calculate",
+      "effective",
+      "combining",
+      "low-rate",
+      "first"
+    ]
+  },
+  {
+    "title": "W-2 Employee vs 1099 Contractor Net Pay Calculator",
+    "category": "Finance > Tax Optimization • W-2 vs 1099 Matrix",
+    "url": "/finance/w2-vs-1099/",
+    "keywords": [
+      "w-2",
+      "employee",
+      "1099",
+      "contractor",
+      "net",
+      "pay",
+      "calculator",
+      "compare",
+      "take-home",
+      "between",
+      "employment",
+      "and"
+    ]
+  },
+  {
+    "title": "Federal Paycheck Withholding & Net Pay Calculator",
+    "category": "Finance > Payroll Engineering • Net Paycheck Matrix",
+    "url": "/finance/paycheck-withholding/",
+    "keywords": [
+      "federal",
+      "paycheck",
+      "withholding",
+      "net",
+      "pay",
+      "calculator",
+      "calculate",
+      "exact",
+      "take-home",
+      "after",
+      "income",
+      "tax"
+    ]
+  },
+  {
+    "title": "S-Corporation Reasonable Salary & Tax Savings Calculator",
+    "category": "Finance > Corporate Tax Strategy • S-Corp FICA Matrix",
+    "url": "/finance/s-corp-reasonable-salary/",
+    "keywords": [
+      "s-corporation",
+      "reasonable",
+      "salary",
+      "tax",
+      "savings",
+      "calculator",
+      "calculate",
+      "annual",
+      "fica",
+      "self-employment",
+      "from",
+      "electing"
+    ]
+  },
+  {
+    "title": "Section 199A Qualified Business Income (QBI) Calculator",
+    "category": "Finance > Pass-Through Tax Policy • Section 199A Matrix",
+    "url": "/finance/qbi-deduction/",
+    "keywords": [
+      "section",
+      "199a",
+      "qualified",
+      "business",
+      "income",
+      "qbi",
+      "calculator",
+      "calculate",
+      "the",
+      "deduction",
+      "for",
+      "pass-through"
+    ]
+  },
+  {
+    "title": "401(k) Employer Match & True Compensation Calculator",
+    "category": "Finance > Retirement Planning • 401(k) Match Matrix",
+    "url": "/finance/401k-employer-match/",
+    "keywords": [
+      "401",
+      "employer",
+      "match",
+      "true",
+      "compensation",
+      "calculator",
+      "calculate",
+      "matching",
+      "dollars",
+      "required",
+      "employee",
+      "contribution"
+    ]
+  },
+  {
+    "title": "Mega Backdoor Roth IRA Contribution Calculator",
+    "category": "Finance > High Net Worth • Mega Backdoor Roth Matrix",
+    "url": "/finance/mega-backdoor-roth/",
+    "keywords": [
+      "mega",
+      "backdoor",
+      "roth",
+      "ira",
+      "contribution",
+      "calculator",
+      "calculate",
+      "maximum",
+      "allowable",
+      "after-tax",
+      "401",
+      "contributions"
+    ]
+  },
+  {
+    "title": "Health Savings Account (HSA) Triple Tax Calculator",
+    "category": "Finance > Tax Alpha • HSA Triple Tax Shield",
+    "url": "/finance/hsa-triple-tax/",
+    "keywords": [
+      "health",
+      "savings",
+      "account",
+      "hsa",
+      "triple",
+      "tax",
+      "calculator",
+      "calculate",
+      "tax-deductible",
+      "contributions",
+      "tax-free",
+      "investment"
+    ]
+  },
+  {
+    "title": "Healthcare FSA Contribution & Forfeiture Calculator",
+    "category": "Finance > Healthcare Benefits • FSA Optimization Matrix",
+    "url": "/finance/fsa-use-it-or-lose-it/",
+    "keywords": [
+      "healthcare",
+      "fsa",
+      "contribution",
+      "forfeiture",
+      "calculator",
+      "calculate",
+      "flexible",
+      "spending",
+      "account",
+      "tax",
+      "savings",
+      "optimal"
+    ]
+  },
+  {
+    "title": "Child Tax Credit (CTC) & Phase-Out Calculator",
+    "category": "Finance > Family Tax Policy • CTC Phase-Out Matrix",
+    "url": "/finance/child-tax-credit/",
+    "keywords": [
+      "child",
+      "tax",
+      "credit",
+      "ctc",
+      "phase-out",
+      "calculator",
+      "calculate",
+      "the",
+      "federal",
+      "000",
+      "per",
+      "refundable"
+    ]
+  },
+  {
+    "title": "Standard Deduction vs Itemized (Schedule A) Calculator",
+    "category": "Finance > Tax Optimization • Schedule A Matrix",
+    "url": "/finance/standard-vs-itemized/",
+    "keywords": [
+      "standard",
+      "deduction",
+      "itemized",
+      "schedule",
+      "calculator",
+      "compare",
+      "the",
+      "against",
+      "deductions",
+      "mortgage",
+      "interest",
+      "10k"
+    ]
+  },
+  {
+    "title": "Marginal vs Effective Tax Rate Calculator",
+    "category": "Finance > Tax Literacy • Progressive Bracket Matrix",
+    "url": "/finance/marginal-vs-effective-tax/",
+    "keywords": [
+      "marginal",
+      "effective",
+      "tax",
+      "rate",
+      "calculator",
+      "calculate",
+      "progressive",
+      "federal",
+      "bracket",
+      "tiers",
+      "top",
+      "versus"
+    ]
+  },
+  {
+    "title": "State Income Tax Relocation Comparison Calculator",
+    "category": "Finance > Tax Migration • State Tax Arbitrage Matrix",
+    "url": "/finance/state-income-tax-comparison/",
+    "keywords": [
+      "state",
+      "income",
+      "tax",
+      "relocation",
+      "comparison",
+      "calculator",
+      "compare",
+      "annual",
+      "liabilities",
+      "between",
+      "high-tax",
+      "states"
+    ]
+  },
+  {
+    "title": "Tax-Loss Harvesting & Capital Gains Offset Calculator",
+    "category": "Finance > Tax Alpha • Loss Harvesting Matrix",
+    "url": "/finance/capital-gains-harvesting/",
+    "keywords": [
+      "tax-loss",
+      "harvesting",
+      "capital",
+      "gains",
+      "offset",
+      "calculator",
+      "calculate",
+      "realized",
+      "offsets",
+      "using",
+      "the",
+      "irs"
+    ]
+  },
+  {
+    "title": "Section 179 Equipment Depreciation Calculator",
+    "category": "Finance > Capital Expenditure • Section 179 Tax Shield",
+    "url": "/finance/section-179-deduction/",
+    "keywords": [
+      "section",
+      "179",
+      "equipment",
+      "depreciation",
+      "calculator",
+      "calculate",
+      "immediate",
+      "first-year",
+      "expensing",
+      "deductions",
+      "220",
+      "000"
+    ]
+  },
+  {
+    "title": "Section 168(k) Bonus Depreciation Phase-Down Calculator",
+    "category": "Finance > Tax Accounting • Bonus Depreciation Schedule",
+    "url": "/finance/bonus-depreciation/",
+    "keywords": [
+      "section",
+      "168",
+      "bonus",
+      "depreciation",
+      "phase-down",
+      "calculator",
+      "calculate",
+      "under",
+      "the",
+      "tcja",
+      "schedule",
+      "2024"
+    ]
+  },
+  {
+    "title": "Restricted Stock Unit (RSU) Vesting Tax Calculator",
+    "category": "Finance > Equity Compensation • RSU Vesting Matrix",
+    "url": "/finance/rsu-vesting-tax/",
+    "keywords": [
+      "restricted",
+      "stock",
+      "unit",
+      "rsu",
+      "vesting",
+      "tax",
+      "calculator",
+      "calculate",
+      "income",
+      "mandatory",
+      "supplemental",
+      "withholding"
+    ]
+  },
+  {
+    "title": "Employee Stock Purchase Plan (ESPP) Calculator",
+    "category": "Finance > Equity Compensation • ESPP Alpha Matrix",
+    "url": "/finance/espp-discount/",
+    "keywords": [
+      "employee",
+      "stock",
+      "purchase",
+      "plan",
+      "espp",
+      "calculator",
+      "calculate",
+      "returns",
+      "with",
+      "discount",
+      "and",
+      "lookback"
+    ]
+  },
+  {
+    "title": "Net Unrealized Appreciation (NUA) 401(k) Stock Calculator",
+    "category": "Finance > Retirement Distribution • NUA Strategy Matrix",
+    "url": "/finance/nua-company-stock/",
+    "keywords": [
+      "net",
+      "unrealized",
+      "appreciation",
+      "nua",
+      "401",
+      "stock",
+      "calculator",
+      "calculate",
+      "tax",
+      "savings",
+      "employer",
+      "inside"
+    ]
+  },
+  {
+    "title": "Rule 72(t) SEPP Early IRA Withdrawal Calculator",
+    "category": "Finance > Early Retirement • Rule 72(t) SEPP Matrix",
+    "url": "/finance/sepp-72t-distribution/",
+    "keywords": [
+      "rule",
+      "sepp",
+      "early",
+      "ira",
+      "withdrawal",
+      "calculator",
+      "calculate",
+      "penalty-free",
+      "retirement",
+      "withdrawals",
+      "from",
+      "traditional"
+    ]
+  },
+  {
+    "title": "Charitable Remainder Unitrust (CRUT) Tax Calculator",
+    "category": "Finance > High Net Worth • Philanthropic Tax Shield",
+    "url": "/finance/charitable-remainder-trust/",
+    "keywords": [
+      "charitable",
+      "remainder",
+      "unitrust",
+      "crut",
+      "tax",
+      "calculator",
+      "calculate",
+      "immediate",
+      "upfront",
+      "income",
+      "deductions",
+      "tax-free"
+    ]
+  },
+  {
+    "title": "Federal Estate & Lifetime Gift Tax Exemption Calculator",
+    "category": "Finance > Wealth Preservation • Estate Tax Matrix",
+    "url": "/finance/estate-gift-tax/",
+    "keywords": [
+      "federal",
+      "estate",
+      "lifetime",
+      "gift",
+      "tax",
+      "exemption",
+      "calculator",
+      "calculate",
+      "and",
+      "exposure",
+      "rate",
+      "unified"
+    ]
+  },
+  {
+    "title": "Inherited IRA 10-Year Rule & RMD Calculator",
+    "category": "Finance > Estate Distribution • SECURE Act 10-Year Matrix",
+    "url": "/finance/inherited-ira-10-year/",
+    "keywords": [
+      "inherited",
+      "ira",
+      "10-year",
+      "rule",
+      "rmd",
+      "calculator",
+      "calculate",
+      "secure",
+      "act",
+      "mandatory",
+      "withdrawal",
+      "schedules"
+    ]
+  },
+  {
+    "title": "Social Security Benefits Taxation Calculator",
+    "category": "Finance > Retirement Taxation • Social Security Matrix",
+    "url": "/finance/social-security-taxation/",
+    "keywords": [
+      "social",
+      "security",
+      "benefits",
+      "taxation",
+      "calculator",
+      "calculate",
+      "how",
+      "much",
+      "your",
+      "retirement",
+      "benefit",
+      "subject"
+    ]
+  },
+  {
+    "title": "Medicare IRMAA Surcharge & Surtax Calculator",
+    "category": "Finance > Healthcare Policy • Medicare IRMAA Matrix",
+    "url": "/finance/medicare-irmaa-surcharge/",
+    "keywords": [
+      "medicare",
+      "irmaa",
+      "surcharge",
+      "surtax",
+      "calculator",
+      "calculate",
+      "part",
+      "and",
+      "income-related",
+      "monthly",
+      "adjustment",
+      "amount"
+    ]
+  },
+  {
+    "title": "Employer FUTA & SUTA Unemployment Tax Calculator",
+    "category": "Finance > Employer Payroll • Unemployment Tax Matrix",
+    "url": "/finance/futa-suta-payroll/",
+    "keywords": [
+      "employer",
+      "futa",
+      "suta",
+      "unemployment",
+      "tax",
+      "calculator",
+      "calculate",
+      "federal",
+      "act",
+      "net",
+      "and",
+      "state"
+    ]
   }
 ];
 

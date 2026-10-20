@@ -141,6 +141,126 @@
           "value": 1
         }
       }
+    ],
+    "b2b_saas": [
+      {
+        "id": "hubspot_crm",
+        "name": "HubSpot for Startups",
+        "headline": "Scale Pipeline Velocity with Automated CRM, Sales Hub & Marketing Automation",
+        "cta_text": "Claim Up to 75% Off",
+        "referral_url": "https://www.hubspot.com/startups?ref=omnioperand",
+        "badge": "Top CRM for Startups",
+        "disclosure": "Eligible seed and venture-backed startups qualify for tiered software discounts.",
+        "threshold_rules": {
+          "field": "deal_count",
+          "operator": ">=",
+          "value": 10
+        }
+      },
+      {
+        "id": "mercury_bank",
+        "name": "Mercury Startup Banking",
+        "headline": "Modern Corporate Treasury, 5.0% APY Yield on Idle Cash & FDIC Insurance up to $5M",
+        "cta_text": "Open Business Account",
+        "referral_url": "https://mercury.com/?ref=omnioperand",
+        "badge": "Startup Treasury",
+        "disclosure": "Mercury is a financial technology company, not an FDIC-insured bank. Banking services provided by Choice Financial Group and Evolve Bank & Trust, Members FDIC.",
+        "threshold_rules": {
+          "field": "cash_balance",
+          "operator": ">=",
+          "value": 50000
+        }
+      }
+    ],
+    "automotive": [
+      {
+        "id": "autopay_auto_refi",
+        "name": "AutoPay Refinancing",
+        "headline": "Save an Average of $118/Month by Refinancing High-APR Auto Loans",
+        "cta_text": "Check My Refi Rate (No Credit Impact)",
+        "referral_url": "https://www.autopay.com/?ref=omnioperand",
+        "badge": "Auto Refinance Leader",
+        "disclosure": "Checking rates will not affect your credit score. Fast 2-minute approval.",
+        "threshold_rules": {
+          "field": "loan_payoff_balance",
+          "operator": ">=",
+          "value": 10000
+        }
+      },
+      {
+        "id": "carvana_tradein",
+        "name": "Carvana Instant Cash Offer",
+        "headline": "Get a Guaranteed Cash Offer for Your Trade-In Vehicle in 2 Minutes",
+        "cta_text": "Get Instant Cash Offer",
+        "referral_url": "https://www.carvana.com/sellyourcar?ref=omnioperand",
+        "badge": "Instant Online Appraisals",
+        "disclosure": "Trade-in offers valid for 7 days or 250 additional miles.",
+        "threshold_rules": {
+          "field": "trade_in_allowance",
+          "operator": ">=",
+          "value": 3000
+        }
+      }
+    ],
+    "real_estate": [
+      {
+        "id": "fundrise_real_estate",
+        "name": "Fundrise Real Estate",
+        "headline": "Invest in Private Market Commercial Real Estate & High-Yield Debt Funds",
+        "cta_text": "Explore Portfolios ($10 Min)",
+        "referral_url": "https://fundrise.com/?ref=omnioperand",
+        "badge": "Commercial Real Estate",
+        "disclosure": "Past performance is no guarantee of future results. Real estate investments involve risk and illiquidity.",
+        "threshold_rules": {
+          "field": "initial_equity_invested",
+          "operator": ">=",
+          "value": 5000
+        }
+      },
+      {
+        "id": "first_american_exchange",
+        "name": "First American Exchange Company",
+        "headline": "Qualified Intermediary (QI) for IRS Section 1031 Tax-Deferred Exchanges",
+        "cta_text": "Find a Qualified Intermediary",
+        "referral_url": "https://www.firstexchange.com/?ref=omnioperand",
+        "badge": "1031 Exchange Leader",
+        "disclosure": "Bonded and insured Qualified Intermediary handling commercial and residential 1031 exchanges.",
+        "threshold_rules": {
+          "field": "relinquished_sales_price",
+          "operator": ">=",
+          "value": 250000
+        }
+      }
+    ],
+    "tax_payroll": [
+      {
+        "id": "gusto_payroll",
+        "name": "Gusto Payroll & HR",
+        "headline": "Automated S-Corp Officer Compensation, W-2/1099 Tax Filings & Benefits",
+        "cta_text": "Get 3 Months Free",
+        "referral_url": "https://gusto.com/?ref=omnioperand",
+        "badge": "Top Payroll Platform",
+        "disclosure": "Automates federal, state, and local payroll tax payments and filings.",
+        "threshold_rules": {
+          "field": "total_employees_count",
+          "operator": ">=",
+          "value": 1
+        }
+      },
+      {
+        "id": "turbotax_live",
+        "name": "TurboTax Live",
+        "headline": "File Your W-2 and 1099 Tax Return with a Dedicated CPA or Enrolled Agent",
+        "cta_text": "Start Free & Talk to CPA",
+        "referral_url": "https://turbotax.intuit.com/?ref=omnioperand",
+        "badge": "Tax Preparation Leader",
+        "disclosure": "100% accurate calculations guarantee. Terms and conditions apply.",
+        "threshold_rules": {
+          "field": "annual_gross_pay",
+          "operator": ">=",
+          "value": 30000
+        }
+      }
     ]
   }
 }
