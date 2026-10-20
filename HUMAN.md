@@ -70,7 +70,7 @@ The CNAME DNS records have already been set up in Cloudflare DNS for `omnioperan
 1. Log in to [Cloudflare Dashboard](https://dash.cloudflare.com/).
 2. Navigate to **Workers & Pages** → **omnioperand** → **Custom Domains**.
 3. Confirm that `omnioperand.com` and `www.omnioperand.com` display status **Active** with a green checkmark. (If it displays *Initializing* or *Pending*, wait a few minutes while Cloudflare completes SSL handshake validation).
-
+Completed - 10/20/26 by Brandon
 ---
 
 ### Task 2: Useful CLI Commands for Local Maintenance
@@ -97,7 +97,7 @@ git add .
 git commit -m "feat: updates"
 git push origin main
 ```
-
+Noted on 10/20/26 by Brandon
 ---
 
 ### Task 3: Affiliate Network Account Registration (High-Ticket CPA Monetization)
@@ -129,4 +129,4 @@ The contextual recommendation engine (`assets/js/affiliate-engine.js`) is fully 
    - **Support email:** `support@omnioperand.com`
 5. Under **Developers** → **API keys**, generate a restricted key (with Products, Prices, and Checkout Sessions write permissions) or copy the Secret key.
 6. Replace `STRIPE_SECRET_KEY` in `.env` and in your Cloudflare Pages dashboard under **Settings** → **Environment variables**.
-
+Completed 10/20/26 by Brandon
