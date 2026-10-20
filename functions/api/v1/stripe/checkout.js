@@ -11,14 +11,14 @@ const DEFAULT_STRIPE_SECRET_KEY = "";
 
 const TIER_PRICING = {
   pro: {
-    price_id: "price_1USi9QR7kBc65bwPLfPEuImG",
+    price_id: "price_1USiRmAhO4PtNxeltaIxNgHz",
     name: "OmniOperand Pro Tier (API, MCP & White-Label CaaS)",
     unit_amount: 2900, // $29.00
     currency: "usd",
     description: "50,000 requests/mo, 60 req/min, Model Context Protocol (MCP) server access, white-label widget embedding, and commercial license."
   },
   enterprise: {
-    price_id: "price_1USi9UR7kBc65bwPXjROhFd3",
+    price_id: "price_1USiRmAhO4PtNxel0aPnsnLr",
     name: "OmniOperand Enterprise Tier (AI Clusters & Custom SLA)",
     unit_amount: 19900, // $199.00
     currency: "usd",
@@ -53,7 +53,7 @@ export async function onRequestPost(context) {
     params.append('mode', 'subscription');
     params.append('success_url', successUrl);
     params.append('cancel_url', cancelUrl);
-    params.append('payment_method_types[0]', 'card');
+    // Note: payment_method_types omitted to enable Stripe Dynamic Payment Methods (Apple Pay, Google Pay, Cards, Link)
 
     if (email) {
       params.append('customer_email', email);
