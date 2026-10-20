@@ -3,117 +3,687 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quantitative Finance Hub | OmniOperand</title>
-  <meta name="description" content="Financial engineering calculators: Black-Scholes options pricing, continuous compounding, amortization schedules, and DCF equity valuation.">
+  <title>Quantitative Finance & Lending Hub | OmniOperand</title>
+  <meta name="description" content="Calculators for mortgages, debt refinancing, HELOCs, real estate underwriting, tax liabilities, and compound interest models.">
   <link rel="canonical" href="https://omnioperand.com/finance/">
+
+  <meta property="og:title" content="Quantitative Finance & Lending Hub | OmniOperand">
+  <meta property="og:description" content="Calculators for mortgages, debt refinancing, HELOCs, real estate underwriting, tax liabilities, and compound interest models.">
+  <meta property="og:url" content="https://omnioperand.com/finance/">
+  <meta property="og:type" content="website">
+
   <link rel="stylesheet" href="/assets/css/omni-core.css">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.2">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://omnioperand.com/finance/#hub",
+      "name": "Quantitative Finance & Lending Hub",
+      "url": "https://omnioperand.com/finance/",
+      "description": "Calculators for mortgages, debt refinancing, HELOCs, real estate underwriting, tax liabilities, and compound interest models."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/finance/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OmniOperand",
+          "item": "https://omnioperand.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Finance",
+          "item": "https://omnioperand.com/finance/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
-<body>
+<body class="omni-body">
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand-link">
         <div class="brand-icon">⨁</div>
         <span>OmniOperand</span>
-        <span class="brand-badge">Math Engine</span>
+        <span class="brand-badge">Finance Hub</span>
       </a>
       <nav class="header-nav">
         <a href="/geometry/" class="nav-link">Geometry</a>
         <a href="/calculus/" class="nav-link">Calculus</a>
         <a href="/finance/" class="nav-link active">Finance</a>
+        <a href="/construction/" class="nav-link">Construction</a>
+        <a href="/health/" class="nav-link">Health</a>
         <a href="/physics/" class="nav-link">Physics</a>
         <a href="/statistics/" class="nav-link">Statistics</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
       </nav>
       <div class="header-actions">
-        <button class="search-btn-trigger"><kbd class="search-kbd">⌘K</kbd></button>
-        <button class="btn-icon" id="theme-toggle-btn">☀️</button>
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
       </div>
     </div>
   </header>
 
-  <nav class="breadcrumb-wrapper">
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
     <div class="container">
       <ol class="breadcrumbs">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
         <li class="breadcrumb-separator">/</li>
-        <li class="breadcrumb-item active">Finance</li>
+        <li class="breadcrumb-item active" aria-current="page">Finance</li>
       </ol>
     </div>
   </nav>
 
-  <main class="container" style="padding: 3rem 0;">
-    <div style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--accent-violet); background:rgba(168,85,247,0.1); padding:0.3rem 0.8rem; border-radius:999px; margin-bottom:0.75rem;">
-      Domain Hub • Financial Engineering
+  <main class="container" style="padding: 2.5rem 0;">
+    <div style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--accent-blue); background:rgba(56,189,248,0.1); padding:0.3rem 0.8rem; border-radius:999px; margin-bottom:0.75rem;">
+      Domain Hub • Quantitative Finance
     </div>
-    <h1>Quantitative Finance</h1>
-    <p style="max-width:800px;">
-      Actuarial and mathematical financial tools for options valuation, bond yields, debt amortization, and capital budgeting.
+    <h1>Quantitative Finance & Lending Hub</h1>
+    <p style="max-width:800px; color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem; line-height:1.6;">
+      Calculators for mortgages, debt refinancing, HELOCs, real estate underwriting, tax liabilities, and compound interest models.
     </p>
 
-    <div class="hub-grid">
-      <div class="hub-card" style="--card-accent: var(--accent-blue);">
-        <div>
-          <div class="hub-card-header">
-            <div class="hub-card-icon" style="color:var(--accent-blue);">🏠</div>
-            <span class="hub-badge">Debt & Real Estate</span>
-          </div>
-          <h2 class="hub-card-title">Mortgage Amortization & Early Payoff</h2>
-          <p class="hub-card-desc">Fixed-rate payment matrix, borrowing capacity inversion, accelerated payoff simulations, and interest savings proofs.</p>
-        </div>
-        <ul class="hub-card-links">
-          <li><a href="/finance/mortgage-amortization/">Open Mortgage Solver →</a></li>
-        </ul>
-      </div>
+    <!-- Top Leaderboard Ad Container with CLS Safeguard -->
+    <div class="omni-ad-slot omni-ad-leaderboard" data-ad-format="leaderboard"></div>
 
-      <div class="hub-card" style="--card-accent: var(--accent-emerald);">
-        <div>
-          <div class="hub-card-header">
-            <div class="hub-card-icon" style="color:var(--accent-emerald);">📈</div>
-            <span class="hub-badge">Wealth Growth</span>
+    <div class="hub-grid" style="margin-top:2rem;">
+      
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Mortgage Refinancing • Breakeven Analysis</span>
+            </div>
+            <h2 class="hub-card-title">Mortgage Refinance & Breakeven Calculator</h2>
+            <p class="hub-card-desc">Calculate monthly payment savings, lifetime interest reduction, and closing cost breakeven horizon when refinancing a home mortgage.</p>
           </div>
-          <h2 class="hub-card-title">Compound Interest & APY</h2>
-          <p class="hub-card-desc">Discrete and continuous compounding, periodic deposits, APY conversions, and nest-egg goal inversions.</p>
+          <ul class="hub-card-links">
+            <li><a href="/finance/refinance/">Open Solver →</a></li>
+          </ul>
         </div>
-        <ul class="hub-card-links">
-          <li><a href="/finance/compound-interest/">Open Compound Interest Solver →</a></li>
-        </ul>
-      </div>
-
-      <div class="hub-card" style="--card-accent: var(--accent-violet);">
-        <div>
-          <div class="hub-card-header">
-            <div class="hub-card-icon" style="color:var(--accent-violet);">🎯</div>
-            <span class="hub-badge">Valuation</span>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Home Equity • Revolving Credit Matrix</span>
+            </div>
+            <h2 class="hub-card-title">HELOC (Home Equity Line of Credit) Payment Calculator</h2>
+            <p class="hub-card-desc">Calculate interest-only draw period payments and fully amortizing repayment installments for a Home Equity Line of Credit.</p>
           </div>
-          <h2 class="hub-card-title">Compound Annual Growth Rate (CAGR)</h2>
-          <p class="hub-card-desc">Geometric mean growth rate, portfolio doubling periods via Rule of 72, and target valuation inversions.</p>
+          <ul class="hub-card-links">
+            <li><a href="/finance/heloc/">Open Solver →</a></li>
+          </ul>
         </div>
-        <ul class="hub-card-links">
-          <li><a href="/finance/cagr/">Open CAGR Inverter →</a></li>
-        </ul>
-      </div>
-
-      <div class="hub-card" style="--card-accent: var(--accent-amber);">
-        <div>
-          <div class="hub-card-header">
-            <div class="hub-card-icon" style="color:var(--accent-amber);">🚗</div>
-            <span class="hub-badge">Consumer Lending</span>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Underwriting Invariants • DTI Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Debt-to-Income (DTI) Ratio Calculator</h2>
+            <p class="hub-card-desc">Calculate front-end and back-end debt-to-income ratios and determine your maximum qualified home purchase price for mortgage underwriting.</p>
           </div>
-          <h2 class="hub-card-title">Auto Loan & Car Affordability</h2>
-          <p class="hub-card-desc">Monthly installment schedules, trade-in sales tax credits, dealer fees, and monthly budget-to-price inversion.</p>
+          <ul class="hub-card-links">
+            <li><a href="/finance/dti/">Open Solver →</a></li>
+          </ul>
         </div>
-        <ul class="hub-card-links">
-          <li><a href="/finance/auto-loan/">Open Auto Loan Solver →</a></li>
-        </ul>
-      </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Equity Analysis • PMI Invariants</span>
+            </div>
+            <h2 class="hub-card-title">Loan-to-Value (LTV) Ratio & PMI Calculator</h2>
+            <p class="hub-card-desc">Determine your exact Loan-to-Value (LTV) ratio, required private mortgage insurance (PMI) thresholds, and equity milestones.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/ltv/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Government Lending • FHA Formula</span>
+            </div>
+            <h2 class="hub-card-title">FHA Loan & Mortgage Insurance (MIP) Calculator</h2>
+            <p class="hub-card-desc">Calculate monthly FHA payments including upfront (UFMIP) and annual monthly mortgage insurance premiums with minimum 3.5% down payment.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/fha-loan/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Military Benefits • 0% Down Invariant</span>
+            </div>
+            <h2 class="hub-card-title">VA Loan Payment & Funding Fee Calculator</h2>
+            <p class="hub-card-desc">Calculate 0% down VA home loan monthly payments, tiered VA funding fees, and total interest with zero monthly private mortgage insurance.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/va-loan/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Retirement Equity • HECM Formulas</span>
+            </div>
+            <h2 class="hub-card-title">Reverse Mortgage (HECM) Calculator</h2>
+            <p class="hub-card-desc">Estimate Home Equity Conversion Mortgage (HECM) borrowing power, principal limits, and tenure monthly payout streams for homeowners 62+.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/reverse-mortgage/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Unsecured Credit • Amortization Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Personal Loan & Debt Consolidation Calculator</h2>
+            <p class="hub-card-desc">Calculate fixed monthly installments, total interest, and consolidation savings for unsecured personal loans.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/personal-loan/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Education Debt • Refi Yields</span>
+            </div>
+            <h2 class="hub-card-title">Student Loan Refinancing Calculator</h2>
+            <p class="hub-card-desc">Calculate interest savings and monthly payment changes when refinancing federal or private student debt into lower private interest rates.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/student-loan-refinance/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Consumer Debt • Exponential Decay</span>
+            </div>
+            <h2 class="hub-card-title">Credit Card Payoff & Interest Snowball Calculator</h2>
+            <p class="hub-card-desc">Calculate exact debt-free payoff timelines, total compound interest charges, and monthly payment requirements for high-interest revolving credit.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/credit-card-payoff/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Marine Lending • Fixed Installments</span>
+            </div>
+            <h2 class="hub-card-title">Boat Loan Financing & Payment Calculator</h2>
+            <p class="hub-card-desc">Calculate marine loan monthly payments, required down payments (10-20%), and total financing costs for new and used boats and yachts.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/boat-loan/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Recreational Vehicle • Amortization</span>
+            </div>
+            <h2 class="hub-card-title">RV Loan & Motorhome Financing Calculator</h2>
+            <p class="hub-card-desc">Calculate motorhome, travel trailer, and fifth-wheel monthly installments, sales tax adjustments, and loan amortization.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/rv-loan/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Powersports Lending • Fast Installments</span>
+            </div>
+            <h2 class="hub-card-title">Motorcycle Loan & Financing Calculator</h2>
+            <p class="hub-card-desc">Calculate monthly payments and total interest for new or used motorcycle financing.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/motorcycle-loan/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Clean Energy Finance • ITC Tax Credits</span>
+            </div>
+            <h2 class="hub-card-title">Solar Loan & Energy Payoff Calculator</h2>
+            <p class="hub-card-desc">Calculate residential solar system financing, 30% Federal ITC tax credits, utility bill offsets, and net breakeven return on investment.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/solar-loan/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">CRE Financing • Balloon Invariants</span>
+            </div>
+            <h2 class="hub-card-title">Commercial Real Estate Mortgage Calculator</h2>
+            <p class="hub-card-desc">Calculate commercial mortgage monthly payments, balloon balances, and debt yields for multifamily, office, and retail properties.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/commercial-mortgage/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Investor Underwriting • DSCR Formula</span>
+            </div>
+            <h2 class="hub-card-title">DSCR (Debt Service Coverage Ratio) Calculator</h2>
+            <p class="hub-card-desc">Calculate Debt Service Coverage Ratio (DSCR) and qualify for real estate investor loans without personal income or tax returns.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/dscr-loan/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Real Estate Valuation • Cap Rate Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Cap Rate (Capitalization Rate) Calculator</h2>
+            <p class="hub-card-desc">Calculate commercial and residential real estate Capitalization Rates (Cap Rate) and valuation multiples from Net Operating Income.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/cap-rate/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Real Estate ROI • Cash-on-Cash</span>
+            </div>
+            <h2 class="hub-card-title">Rental Property Cash Flow & ROI Calculator</h2>
+            <p class="hub-card-desc">Calculate monthly net cash flow, Cash-on-Cash Return (CoC), and expense ratios for residential investment real estate.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/rental-cash-flow/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Real Estate Wealth • Capital Velocity</span>
+            </div>
+            <h2 class="hub-card-title">BRRRR Real Estate Investment Calculator</h2>
+            <p class="hub-card-desc">Analyze Buy, Rehab, Rent, Refinance, Repeat (BRRRR) transactions. Calculate cash left in the deal and velocity of capital.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/brrrr/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Bridge Lending • Fix-and-Flip Math</span>
+            </div>
+            <h2 class="hub-card-title">Hard Money & Fix-and-Flip Loan Calculator</h2>
+            <p class="hub-card-desc">Calculate short-term bridge and hard money loan costs, origination points, interest reserves, and net flip profit margins.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/hard-money-loan/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Tax Optimization • Compound Exemption</span>
+            </div>
+            <h2 class="hub-card-title">Roth IRA Conversion & Tax Optimizer</h2>
+            <p class="hub-card-desc">Calculate conversion income taxes, future tax-free growth advantages, and optimal tax bracket filling when converting Traditional IRAs to Roth.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/roth-ira-conversion/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Retirement Taxation • Horizon Comparison</span>
+            </div>
+            <h2 class="hub-card-title">Traditional vs Roth 401(k) / IRA Calculator</h2>
+            <p class="hub-card-desc">Compare pre-tax Traditional retirement savings against post-tax Roth contributions based on career income progression and tax brackets.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/traditional-vs-roth/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">IRS Mandates • Uniform Lifetime Table</span>
+            </div>
+            <h2 class="hub-card-title">Required Minimum Distribution (RMD) Calculator</h2>
+            <p class="hub-card-desc">Calculate IRS mandatory annual withdrawals from Traditional IRA and 401(k) accounts using the IRS Uniform Lifetime Table.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/rmd/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Equity Compounding • DRIP Engine</span>
+            </div>
+            <h2 class="hub-card-title">Dividend Reinvestment (DRIP) Calculator</h2>
+            <p class="hub-card-desc">Simulate exponential compounding through automatic dividend reinvestment (DRIP), dividend growth rates, and recurring cash contributions.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/drip/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Financial Independence • 4% Rule</span>
+            </div>
+            <h2 class="hub-card-title">FIRE Calculator (Financial Independence, Retire Early)</h2>
+            <p class="hub-card-desc">Calculate your exact FIRE Number, Lean/Fat FIRE targets, and time to complete financial freedom using Trinity Study safe withdrawal rates.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/fire/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Actuarial Retirement • Social Security</span>
+            </div>
+            <h2 class="hub-card-title">Social Security Benefit & Age Optimizer</h2>
+            <p class="hub-card-desc">Determine your optimal Social Security claiming age (62 vs 67 vs 70), breakeven life expectancy, and lifetime benefit maximization.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/social-security/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Actuarial Science • Pension Decisions</span>
+            </div>
+            <h2 class="hub-card-title">Pension Annuity vs Lump Sum Calculator</h2>
+            <p class="hub-card-desc">Evaluate defined benefit pension options. Determine the internal rate of return (IRR) required to beat a lifetime pension annuity with a lump sum rollover.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/pension-vs-lump-sum/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Fixed Income • Compound Yield</span>
+            </div>
+            <h2 class="hub-card-title">Certificate of Deposit (CD) Calculator</h2>
+            <p class="hub-card-desc">Calculate Certificate of Deposit (CD) compounding yields, early withdrawal penalties, and fixed returns across terms from 3 months to 5 years.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/cd-calculator/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Cash Management • Liquid Compounding</span>
+            </div>
+            <h2 class="hub-card-title">High-Yield Savings Account (HYSA) Calculator</h2>
+            <p class="hub-card-desc">Calculate compound growth in a High-Yield Savings Account with monthly deposits, daily interest accrual, and inflation comparisons.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/hysa/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Monetary Economics • Purchasing Power</span>
+            </div>
+            <h2 class="hub-card-title">Inflation & Purchasing Power Calculator</h2>
+            <p class="hub-card-desc">Calculate the erosion of purchasing power over time, future cost of living, and required future income based on CPI inflation rates.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/inflation/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Mental Math • Logarithmic Approximation</span>
+            </div>
+            <h2 class="hub-card-title">Rule of 72 Investment Doubling Calculator</h2>
+            <p class="hub-card-desc">Calculate exact and heuristic investment doubling periods using the logarithmic Rule of 72, Rule of 70, and Rule of 69.3.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/rule-of-72/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Equity Compensation • Tax Withholding</span>
+            </div>
+            <h2 class="hub-card-title">Stock Option & RSU Vesting Calculator</h2>
+            <p class="hub-card-desc">Calculate equity compensation value, vested shares, tax withholding, and net after-tax proceeds for RSUs, ISOs, and NSOs.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/stock-option-rsu/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Digital Assets • Tax Accounting</span>
+            </div>
+            <h2 class="hub-card-title">Crypto Profit & Capital Gains Tax Calculator</h2>
+            <p class="hub-card-desc">Calculate cryptocurrency trading profits, short-term vs long-term capital gains, and IRS tax liability using FIFO cost basis.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/crypto-profit-tax/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Tax Optimization • Statutory Brackets</span>
+            </div>
+            <h2 class="hub-card-title">Capital Gains Tax Calculator</h2>
+            <p class="hub-card-desc">Calculate federal and state capital gains taxes on stocks, real estate, and collectibles with standard 0%, 15%, and 20% brackets.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/capital-gains-tax/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">1099 Contracting • SECA Matrix</span>
+            </div>
+            <h2 class="hub-card-title">1099 Self-Employment Tax (SECA) Calculator</h2>
+            <p class="hub-card-desc">Calculate 15.3% self-employment tax (Social Security & Medicare), above-the-line 50% SE deduction, and quarterly estimated payments.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/self-employment-tax/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Compensation • Wage Conversion</span>
+            </div>
+            <h2 class="hub-card-title">Salary to Hourly Wage Calculator</h2>
+            <p class="hub-card-desc">Convert annual salary into equivalent hourly, daily, weekly, and bi-weekly wage rates based on standard 2,080 annual work hours.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/salary-to-hourly/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Payroll Math • Overtime Invariant</span>
+            </div>
+            <h2 class="hub-card-title">Hourly to Salary Wage Calculator</h2>
+            <p class="hub-card-desc">Convert hourly pay into gross annual salary, accounting for overtime hours at 1.5x time-and-a-half rates.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/hourly-to-salary/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Sales Compensation • Tier Accelerators</span>
+            </div>
+            <h2 class="hub-card-title">Sales Commission & Quota Calculator</h2>
+            <p class="hub-card-desc">Calculate tiered sales commission payouts, accelerated accelerator tiers, and On-Target Earnings (OTE) achievement.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/commission/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Corporate Finance • Breakeven Invariant</span>
+            </div>
+            <h2 class="hub-card-title">Break-Even Point Analysis Calculator</h2>
+            <p class="hub-card-desc">Calculate exact unit and revenue break-even points, contribution margins, and safety margins for commercial operations.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/break-even/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
+              <span class="hub-badge">Pricing Strategy • Margin-Markup Dual</span>
+            </div>
+            <h2 class="hub-card-title">Margin vs Markup Multiplier Calculator</h2>
+            <p class="hub-card-desc">Convert between Gross Profit Margin and Markup percentage, calculate target selling prices, and eliminate pricing confusion.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/margin-markup/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
     </div>
+
+    <!-- Mid-Page Rectangle Ad Slot with CLS Safeguard -->
+    <div class="omni-ad-slot omni-ad-rectangle" data-ad-format="rectangle"></div>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All rights reserved.</div>
-      <div>Hosted on Cloudflare Pages</div>
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
     </div>
   </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
   <script src="/assets/js/omni-search.js"></script>
 </body>
 </html>

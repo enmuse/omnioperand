@@ -2,8 +2,8 @@
   "openapi": "3.1.0",
   "info": {
     "title": "OmniOperand High-Precision Mathematical REST API",
-    "version": "1.0.0",
-    "description": "Deterministic computational REST API engineered for autonomous AI agents, LLMs, researchers, and engineers. Resolves multi-parameter geometric systems with machine precision, radical closed forms, and zero arithmetic hallucination.",
+    "version": "1.1.0",
+    "description": "Deterministic computational REST API engineered for autonomous AI agents, LLMs, researchers, and engineers. Resolves multi-parameter geometric and financial systems with machine precision, radical closed forms, and zero arithmetic hallucination.",
     "contact": {
       "name": "OmniOperand Computational Systems",
       "url": "https://omnioperand.com",
@@ -20,86 +20,17 @@
       "description": "Cloudflare Global Edge Production Server (<15ms latency)"
     }
   ],
+  "security": [
+    { "bearerAuth": [] },
+    { "apiKeyAuth": [] }
+  ],
   "paths": {
-    "/geometry/2d/shapes/regular-polygon": {
-      "get": {
-        "summary": "Solve any regular n-sided polygon (3 to 1000 sides)",
-        "description": "Bidirectional analytic solver for any regular equilateral and equiangular polygon. Provide any single known variable (side, area, perimeter, apothem/inradius, circumradius, or span) to instantaneously compute all other metrics with Archimedean limit convergence checks.",
-        "operationId": "solveRegularPolygon",
-        "parameters": [
-          {
-            "name": "n",
-            "in": "query",
-            "description": "Number of sides (3 <= n <= 1000)",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "minimum": 3,
-              "maximum": 1000,
-              "default": 8
-            }
-          },
-          {
-            "name": "driver",
-            "in": "query",
-            "description": "The known input variable driving the bidirectional inversion",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": ["side", "area", "perimeter", "apothem", "inradius", "circumradius", "span"],
-              "default": "side"
-            }
-          },
-          {
-            "name": "value",
-            "in": "query",
-            "description": "Numerical value of the known driver parameter",
-            "required": false,
-            "schema": {
-              "type": "number",
-              "positive": true,
-              "default": 10.0
-            }
-          },
-          {
-            "name": "precision",
-            "in": "query",
-            "description": "Decimal places of precision in numerical output (2 to 14)",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "minimum": 2,
-              "maximum": 14,
-              "default": 8
-            }
-          },
-          {
-            "name": "units",
-            "in": "query",
-            "description": "Unit label identifier (e.g. cm, mm, m, in, ft)",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "default": "units"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Mathematically verified polygon metrics payload",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PolygonResponse"
-                }
-              }
-            }
-          }
-        }
-      },
+    "/auth/keys": {
       "post": {
-        "summary": "Solve regular polygon via JSON body payload",
-        "operationId": "solveRegularPolygonPost",
+        "summary": "Create API key",
+        "description": "Generates a cryptographically secure API key with tier quotas (Free, Pro, Enterprise).",
+        "operationId": "createApiKey",
+        "security": [],
         "requestBody": {
           "required": true,
           "content": {
@@ -107,24 +38,151 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "n": { "type": "integer", "default": 8 },
-                  "driver": { "type": "string", "default": "side" },
-                  "value": { "type": "number", "default": 10.0 },
-                  "precision": { "type": "integer", "default": 8 },
-                  "units": { "type": "string", "default": "units" }
+                  "tier": { "type": "string", "enum": ["free", "pro", "enterprise"], "default": "free" },
+                  "name": { "type": "string", "default": "My API Key" },
+                  "email": { "type": "string", "format": "email" }
                 }
               }
             }
           }
         },
         "responses": {
-          "200": {
-            "description": "Polygon calculation response",
+          "201": {
+            "description": "API Key created successfully",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PolygonResponse"
+                "schema": { "$ref": "#/components/schemas/StandardEnvelope" }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Inspect tier quotas and available demo keys",
+        "operationId": "getTierInfo",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Tier quotas information",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/StandardEnvelope" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usage": {
+      "get": {
+        "summary": "Get consumer usage telemetry and billing ledger",
+        "description": "Returns current month request volume, average latency, and endpoint breakdown.",
+        "operationId": "getUsage",
+        "responses": {
+          "200": {
+            "description": "Consumer usage statistics",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/StandardEnvelope" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/prompts": {
+      "get": {
+        "summary": "AI Prompt Library",
+        "description": "Returns optimized system prompts and zero-shot tool invocation prompts for LLMs.",
+        "operationId": "getPrompts",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "AI prompt library payload",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/StandardEnvelope" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/leads": {
+      "post": {
+        "summary": "Ingest embed widget lead capture",
+        "description": "Webhook endpoint for embeddable calculator widgets to store leads.",
+        "operationId": "captureLead",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["email", "calculator"],
+                "properties": {
+                  "email": { "type": "string", "format": "email" },
+                  "calculator": { "type": "string" },
+                  "partner_id": { "type": "string", "default": "direct" },
+                  "inputs": { "type": "object" }
                 }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Lead recorded successfully",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/StandardEnvelope" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/finance/mortgage": {
+      "get": {
+        "summary": "Solve fixed-rate mortgage amortization",
+        "description": "Computes base monthly payment, total interest, and early payoff acceleration with extra monthly payments.",
+        "operationId": "solveMortgage",
+        "parameters": [
+          { "name": "principal", "in": "query", "schema": { "type": "number", "default": 400000 } },
+          { "name": "annual_rate", "in": "query", "schema": { "type": "number", "default": 6.5 } },
+          { "name": "term_years", "in": "query", "schema": { "type": "number", "default": 30 } },
+          { "name": "extra_monthly", "in": "query", "schema": { "type": "number", "default": 0 } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Mortgage calculation results",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/StandardEnvelope" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/finance/compound-interest": {
+      "get": {
+        "summary": "Solve compound interest & APY growth",
+        "operationId": "solveCompoundInterest",
+        "parameters": [
+          { "name": "principal", "in": "query", "schema": { "type": "number", "default": 10000 } },
+          { "name": "annual_rate", "in": "query", "schema": { "type": "number", "default": 7.0 } },
+          { "name": "years", "in": "query", "schema": { "type": "number", "default": 10 } },
+          { "name": "compound_frequency", "in": "query", "schema": { "type": "integer", "default": 12 } },
+          { "name": "monthly_contribution", "in": "query", "schema": { "type": "number", "default": 500 } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Compound interest results",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/StandardEnvelope" }
               }
             }
           }
@@ -133,50 +191,49 @@
     },
     "/geometry/2d/shapes/octagon": {
       "get": {
-        "summary": "Solve 8-variable regular octagon with exact radical closed forms",
-        "description": "Specialized high-precision bidirectional solver for regular octagons. Returns exact algebraic radicals (e.g. 2(1+sqrt(2))a^2) and practical carpentry cut-off dimensions.",
+        "summary": "Solve regular octagon (8 variables)",
         "operationId": "solveOctagon",
         "parameters": [
           {
             "name": "driver",
             "in": "query",
-            "description": "The known input variable",
-            "required": false,
             "schema": {
               "type": "string",
               "enum": ["side", "area", "perimeter", "apothem", "circumradius", "span", "short_diagonal", "long_diagonal"],
               "default": "side"
             }
           },
-          {
-            "name": "value",
-            "in": "query",
-            "description": "Known numerical measurement",
-            "required": false,
-            "schema": {
-              "type": "number",
-              "default": 10.0
-            }
-          },
-          {
-            "name": "precision",
-            "in": "query",
-            "description": "Decimal places of precision (2 to 14)",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "default": 8
-            }
-          }
+          { "name": "value", "in": "query", "schema": { "type": "number", "default": 10.0 } },
+          { "name": "precision", "in": "query", "schema": { "type": "integer", "default": 6 } }
         ],
         "responses": {
           "200": {
-            "description": "Octagon metrics with exact closed-form radicals",
+            "description": "Octagon calculation results",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/OctagonResponse"
-                }
+                "schema": { "$ref": "#/components/schemas/StandardEnvelope" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/geometry/2d/shapes/regular-polygon": {
+      "get": {
+        "summary": "Solve arbitrary regular polygon (n=3 to 1000)",
+        "operationId": "solveRegularPolygon",
+        "parameters": [
+          { "name": "n", "in": "query", "schema": { "type": "integer", "default": 8 } },
+          { "name": "driver", "in": "query", "schema": { "type": "string", "default": "side" } },
+          { "name": "value", "in": "query", "schema": { "type": "number", "default": 10.0 } },
+          { "name": "precision", "in": "query", "schema": { "type": "integer", "default": 6 } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Polygon calculation results",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/StandardEnvelope" }
               }
             }
           }
@@ -185,73 +242,48 @@
     }
   },
   "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Standard Authorization Bearer token header"
+      },
+      "apiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key",
+        "description": "API Key header authentication"
+      }
+    },
     "schemas": {
-      "PolygonResponse": {
+      "StandardEnvelope": {
         "type": "object",
+        "required": ["success", "calculator", "inputs", "result", "execution_time_ms", "units"],
         "properties": {
-          "meta": {
-            "type": "object",
-            "properties": {
-              "api_version": { "type": "string" },
-              "platform": { "type": "string" },
-              "canonical_url": { "type": "string" },
-              "timestamp_utc": { "type": "string" }
-            }
-          },
-          "query": {
-            "type": "object",
-            "properties": {
-              "n": { "type": "integer" },
-              "driver": { "type": "string" },
-              "input_value": { "type": "number" },
-              "precision": { "type": "integer" }
-            }
-          },
-          "result": {
-            "type": "object",
-            "properties": {
-              "n": { "type": "integer" },
-              "name": { "type": "string" },
-              "side": { "type": "number" },
-              "perimeter": { "type": "number" },
-              "apothem": { "type": "number" },
-              "circumradius": { "type": "number" },
-              "area": { "type": "number" },
-              "span_flat_to_flat": { "type": "number" },
-              "total_diagonals": { "type": "integer" },
-              "angles": {
-                "type": "object",
-                "properties": {
-                  "interior_deg": { "type": "number" },
-                  "exterior_deg": { "type": "number" },
-                  "central_deg": { "type": "number" },
-                  "sum_interior_deg": { "type": "number" }
-                }
-              },
-              "verification": {
-                "type": "object",
-                "properties": {
-                  "is_valid": { "type": "boolean" }
-                }
-              }
-            }
-          }
+          "success": { "type": "boolean", "example": true },
+          "calculator": { "type": "string", "example": "mortgage" },
+          "inputs": { "type": "object" },
+          "result": { "type": "object" },
+          "execution_time_ms": { "type": "number", "example": 0.45 },
+          "units": { "type": "object" },
+          "meta": { "type": "object" }
         }
       },
-      "OctagonResponse": {
+      "ErrorEnvelope": {
         "type": "object",
+        "required": ["success", "error", "execution_time_ms"],
         "properties": {
-          "meta": { "type": "object" },
-          "query": { "type": "object" },
-          "result": {
+          "success": { "type": "boolean", "example": false },
+          "error": {
             "type": "object",
+            "required": ["code", "message"],
             "properties": {
-              "shape": { "type": "string" },
-              "parameters": { "type": "object" },
-              "carpentry_and_fabrication": { "type": "object" },
-              "algebraic_proofs": { "type": "object" }
+              "code": { "type": "string", "example": "RATE_LIMIT_EXCEEDED" },
+              "message": { "type": "string" },
+              "details": { "type": "object" }
             }
-          }
+          },
+          "execution_time_ms": { "type": "number", "example": 0.12 }
         }
       }
     }

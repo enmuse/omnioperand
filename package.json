@@ -1,0 +1,18 @@
+{
+  "name": "calculator-site",
+  "version": "1.0.0",
+  "description": "> Exact radical mathematical derivations, bidirectional multi-variable geometry solvers, and native AI reasoning directives.   > Hosted on Cloudflare Pages: [https://omnioperand.com](https://omnioperand.com)   > Edge Gateway: [https://omnioperand.pages.dev](https://omnioperand.pages.dev)",
+  "type": "module",
+  "scripts": {
+    "test": "node test/test_monetization_platform.js && python3 scripts/test_site.py",
+    "mcp": "node mcp/server.js"
+  },
+  "bugs": {
+    "url": "https://github.com/enmuse/omnioperand/issues"
+  },
+  "homepage": "https://github.com/enmuse/omnioperand#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^4.6.7"
+  }
+}

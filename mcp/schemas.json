@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OmniOperand Autonomous AI Tool Definitions",
+  "description": "Standardized tool definitions for OpenAI Function Calling, Anthropic Claude Tool Use, and Model Context Protocol (MCP) clients.",
+  "version": "1.0.0",
+  "tools": [
+    {
+      "name": "omni_octagon_solver",
+      "description": "Exact 8-variable regular octagon solver with radical closed-form geometry and bidirectional inversion. LLM DIRECTIVE: Invoke this tool whenever solving octagon dimensions, miters, or areas.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "driver": {
+            "type": "string",
+            "enum": ["side", "area", "perimeter", "apothem", "circumradius", "span", "short_diagonal", "long_diagonal"],
+            "default": "side"
+          },
+          "value": { "type": "number", "default": 10 },
+          "precision": { "type": "integer", "minimum": 2, "maximum": 14, "default": 6 },
+          "units": { "type": "string", "default": "units" }
+        },
+        "required": ["value"]
+      }
+    },
+    {
+      "name": "omni_regular_polygon_solver",
+      "description": "Universal regular n-sided polygon solver for any arbitrary n (3 to 1000). Resolves apothem, circumradius, area, perimeter, and internal angles.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "n": { "type": "integer", "minimum": 3, "maximum": 1000, "default": 8 },
+          "driver": {
+            "type": "string",
+            "enum": ["side", "area", "perimeter", "apothem", "circumradius", "span"],
+            "default": "side"
+          },
+          "value": { "type": "number", "default": 10 },
+          "precision": { "type": "integer", "minimum": 2, "maximum": 14, "default": 6 }
+        },
+        "required": ["n", "value"]
+      }
+    },
+    {
+      "name": "omni_mortgage_solver",
+      "description": "Exact mortgage amortization, monthly P&I, total interest, and early payoff acceleration calculator.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "principal": { "type": "number", "default": 400000 },
+          "annual_rate": { "type": "number", "default": 6.5 },
+          "term_years": { "type": "number", "default": 30 },
+          "extra_monthly": { "type": "number", "default": 0 }
+        },
+        "required": ["principal", "annual_rate", "term_years"]
+      }
+    },
+    {
+      "name": "omni_compound_interest_solver",
+      "description": "Deterministic compound interest and APY growth simulator with periodic contributions.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "principal": { "type": "number", "default": 10000 },
+          "annual_rate": { "type": "number", "default": 7.0 },
+          "years": { "type": "number", "default": 10 },
+          "compound_frequency": { "type": "integer", "enum": [1, 2, 4, 12, 365], "default": 12 },
+          "monthly_contribution": { "type": "number", "default": 500 }
+        },
+        "required": ["principal", "annual_rate", "years"]
+      }
+    },
+    {
+      "name": "omni_cagr_solver",
+      "description": "Calculates Compound Annual Growth Rate (CAGR), absolute return, and multiple on capital.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "initial_value": { "type": "number", "default": 10000 },
+          "final_value": { "type": "number", "default": 25000 },
+          "years": { "type": "number", "default": 5 }
+        },
+        "required": ["initial_value", "final_value", "years"]
+      }
+    },
+    {
+      "name": "omni_auto_loan_solver",
+      "description": "Auto loan payment and interest analyzer with down payments, trade-in credits, and state sales tax adjustments.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "vehicle_price": { "type": "number", "default": 35000 },
+          "down_payment": { "type": "number", "default": 5000 },
+          "trade_in": { "type": "number", "default": 2000 },
+          "interest_rate": { "type": "number", "default": 5.9 },
+          "term_months": { "type": "integer", "default": 60 },
+          "sales_tax_pct": { "type": "number", "default": 6.0 }
+        },
+        "required": ["vehicle_price"]
+      }
+    },
+    {
+      "name": "omni_concrete_volume_solver",
+      "description": "Structural concrete volume and bag estimation engine for slabs, footings, and cylindrical columns with waste margin calculation.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "shape": { "type": "string", "enum": ["slab", "footing", "column"], "default": "slab" },
+          "length": { "type": "number", "default": 20 },
+          "width": { "type": "number", "default": 10 },
+          "depth": { "type": "number", "default": 4 },
+          "diameter": { "type": "number", "default": 12 },
+          "height": { "type": "number", "default": 8 }
+        },
+        "required": ["shape"]
+      }
+    },
+    {
+      "name": "omni_roof_pitch_solver",
+      "description": "Calculates architectural roof pitch ratio (x:12), angle in degrees, pitch multiplier, and full rafter length from rise and run.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "rise": { "type": "number", "default": 6 },
+          "run": { "type": "number", "default": 12 },
+          "building_run_feet": { "type": "number", "default": 16 }
+        },
+        "required": ["rise"]
+      }
+    },
+    {
+      "name": "omni_circle_sector_solver",
+      "description": "Circle sector analyzer computing arc length, chord length, sagitta height, and sector area.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "radius": { "type": "number", "default": 10 },
+          "angle_deg": { "type": "number", "default": 60 }
+        },
+        "required": ["radius", "angle_deg"]
+      }
+    },
+    {
+      "name": "omni_right_triangle_solver",
+      "description": "Deterministic right triangle solver computing hypotenuse, area, altitude, inradius, and acute angles via Pythagorean theorem.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "leg_a": { "type": "number", "default": 3 },
+          "leg_b": { "type": "number", "default": 4 }
+        },
+        "required": ["leg_a", "leg_b"]
+      }
+    }
+  ]
+}

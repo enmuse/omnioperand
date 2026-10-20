@@ -874,3 +874,180 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ========================================================
+   Contextual Affiliate Recommendation & CLS-Safe Ad Engine
+   ======================================================== */
+
+.omni-affiliate-card {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.4), 0 0 15px rgba(56, 189, 248, 0.1);
+  animation: omniFadeIn 0.3s ease;
+}
+
+@keyframes omniFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.omni-affiliate-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.omni-affiliate-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(56, 189, 248, 0.18);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.omni-affiliate-partner-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted, #94a3b8);
+}
+
+.omni-affiliate-headline {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary, #f8fafc);
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+}
+
+.omni-affiliate-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.omni-affiliate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.6rem 1.25rem;
+  background: linear-gradient(135deg, #0284c7, #2563eb);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.omni-affiliate-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.5);
+  filter: brightness(1.08);
+}
+
+.omni-affiliate-disclosure {
+  font-size: 0.75rem;
+  color: var(--text-muted, #94a3b8);
+  max-width: 420px;
+  line-height: 1.35;
+}
+
+/* CLS-Prevented Ad Containers (Zero Cumulative Layout Shift) */
+.omni-ad-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  border-radius: 10px;
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Skeleton shimmer when loading */
+.omni-ad-slot:not([data-ad-filled]) {
+  background: linear-gradient(90deg, rgba(30,41,59,0.3) 25%, rgba(51,65,85,0.4) 50%, rgba(30,41,59,0.3) 75%);
+  background-size: 200% 100%;
+  animation: omni-skeleton-shimmer 2s infinite;
+}
+
+@keyframes omni-skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.omni-ad-leaderboard {
+  width: 100%;
+  max-width: 728px;
+  min-height: 90px;
+  aspect-ratio: 728 / 90;
+}
+
+@media (max-width: 768px) {
+  .omni-ad-leaderboard {
+    max-width: 320px;
+    min-height: 50px;
+    aspect-ratio: 320 / 50;
+  }
+}
+
+.omni-ad-rectangle {
+  width: 300px;
+  min-height: 250px;
+  aspect-ratio: 300 / 250;
+}
+
+.omni-ad-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  text-align: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.omni-ad-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--text-muted, #94a3b8);
+  opacity: 0.7;
+}
+
+.omni-ad-fallback-content {
+  font-size: 0.88rem;
+  color: var(--text-primary, #f8fafc);
+  max-width: 480px;
+}
+
+.omni-ad-fallback-cta {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #38bdf8;
+  text-decoration: none;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: rgba(56, 189, 248, 0.12);
+  transition: background 0.15s ease;
+}
+
+.omni-ad-fallback-cta:hover {
+  background: rgba(56, 189, 248, 0.22);
+}
+

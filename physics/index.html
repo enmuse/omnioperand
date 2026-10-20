@@ -4,88 +4,196 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Physics & Engineering Mechanics Hub | OmniOperand</title>
-  <meta name="description" content="Physics calculators for kinematics, Newtonian dynamics, thermodynamics, fluid flow, and electromagnetism with SI and imperial units.">
+  <meta name="description" content="Classical Newtonian kinematics, ballistics, electromagnetism, Ohm's law, fluid mechanics, and harmonic oscillation solvers.">
   <link rel="canonical" href="https://omnioperand.com/physics/">
+
+  <meta property="og:title" content="Physics & Engineering Mechanics Hub | OmniOperand">
+  <meta property="og:description" content="Classical Newtonian kinematics, ballistics, electromagnetism, Ohm's law, fluid mechanics, and harmonic oscillation solvers.">
+  <meta property="og:url" content="https://omnioperand.com/physics/">
+  <meta property="og:type" content="website">
+
   <link rel="stylesheet" href="/assets/css/omni-core.css">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.2">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://omnioperand.com/physics/#hub",
+      "name": "Physics & Engineering Mechanics Hub",
+      "url": "https://omnioperand.com/physics/",
+      "description": "Classical Newtonian kinematics, ballistics, electromagnetism, Ohm's law, fluid mechanics, and harmonic oscillation solvers."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/physics/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OmniOperand",
+          "item": "https://omnioperand.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Physics",
+          "item": "https://omnioperand.com/physics/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
-<body>
+<body class="omni-body">
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand-link">
         <div class="brand-icon">⨁</div>
         <span>OmniOperand</span>
-        <span class="brand-badge">Math Engine</span>
+        <span class="brand-badge">Physics Hub</span>
       </a>
       <nav class="header-nav">
         <a href="/geometry/" class="nav-link">Geometry</a>
         <a href="/calculus/" class="nav-link">Calculus</a>
         <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/construction/" class="nav-link">Construction</a>
+        <a href="/health/" class="nav-link">Health</a>
         <a href="/physics/" class="nav-link active">Physics</a>
         <a href="/statistics/" class="nav-link">Statistics</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
       </nav>
       <div class="header-actions">
-        <button class="search-btn-trigger"><kbd class="search-kbd">⌘K</kbd></button>
-        <button class="btn-icon" id="theme-toggle-btn">☀️</button>
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
       </div>
     </div>
   </header>
 
-  <nav class="breadcrumb-wrapper">
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
     <div class="container">
       <ol class="breadcrumbs">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
         <li class="breadcrumb-separator">/</li>
-        <li class="breadcrumb-item active">Physics</li>
+        <li class="breadcrumb-item active" aria-current="page">Physics</li>
       </ol>
     </div>
   </nav>
 
-  <main class="container" style="padding: 3rem 0;">
-    <div style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--accent-amber); background:rgba(245,158,11,0.1); padding:0.3rem 0.8rem; border-radius:999px; margin-bottom:0.75rem;">
-      Domain Hub • Physical Sciences & Engineering
+  <main class="container" style="padding: 2.5rem 0;">
+    <div style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--accent-blue); background:rgba(56,189,248,0.1); padding:0.3rem 0.8rem; border-radius:999px; margin-bottom:0.75rem;">
+      Domain Hub • Physics & Mechanics
     </div>
-    <h1>Physics & Mechanics</h1>
-    <p style="max-width:800px;">
-      Mathematical models for classical dynamics, energy conservation, fluid mechanics, and thermodynamics.
+    <h1>Physics & Engineering Mechanics Hub</h1>
+    <p style="max-width:800px; color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem; line-height:1.6;">
+      Classical Newtonian kinematics, ballistics, electromagnetism, Ohm's law, fluid mechanics, and harmonic oscillation solvers.
     </p>
 
-    <div class="hub-grid">
-      <div class="hub-card" style="--card-accent: var(--accent-amber);">
-        <div>
-          <div class="hub-card-header">
-            <div class="hub-card-icon" style="color:var(--accent-amber);">⚡</div>
-            <span class="hub-badge">Kinematics</span>
-          </div>
-          <h2 class="hub-card-title">Projectile Motion & Trajectory</h2>
-          <p class="hub-card-desc">Parabolic flight paths, drag resistance, maximum apogee, range, and impact velocity.</p>
-        </div>
-        <ul class="hub-card-links">
-          <li><a href="/geometry/2d/shapes/octagon/">Explore Active Solvers →</a></li>
-        </ul>
-      </div>
+    <!-- Top Leaderboard Ad Container with CLS Safeguard -->
+    <div class="omni-ad-slot omni-ad-leaderboard" data-ad-format="leaderboard"></div>
 
-      <div class="hub-card" style="--card-accent: var(--accent-cyan);">
-        <div>
-          <div class="hub-card-header">
-            <div class="hub-card-icon" style="color:var(--accent-cyan);">🔥</div>
-            <span class="hub-badge">Thermodynamics</span>
+    <div class="hub-grid" style="margin-top:2rem;">
+      
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
+              <span class="hub-badge">Classical Kinematics • Ballistic Vector Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Projectile Motion & Ballistic Trajectory Calculator</h2>
+            <p class="hub-card-desc">Calculate ballistic flight trajectory, maximum apogee height, total hang time, and horizontal ground range under gravitational acceleration.</p>
           </div>
-          <h2 class="hub-card-title">Heat Transfer & Carnot Engines</h2>
-          <p class="hub-card-desc">Thermal conductivity, convective boundary layers, Stefan-Boltzmann radiation, and Carnot limits.</p>
+          <ul class="hub-card-links">
+            <li><a href="/physics/projectile-motion/">Open Solver →</a></li>
+          </ul>
         </div>
-        <ul class="hub-card-links">
-          <li><a href="/geometry/2d/shapes/octagon/">Explore Active Solvers →</a></li>
-        </ul>
-      </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
+              <span class="hub-badge">Newtonian Mechanics • Kinetic Energy Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Kinetic Energy & Linear Momentum Calculator</h2>
+            <p class="hub-card-desc">Calculate translational kinetic energy (Joules, ft-lbs), linear momentum, and relativistic velocity inversions from mass and velocity.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/physics/kinetic-energy/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
+              <span class="hub-badge">Electromagnetism • Four-Quadrant Ohm's Wheel</span>
+            </div>
+            <h2 class="hub-card-title">Ohm's Law & Electrical Power (PIVR) Calculator</h2>
+            <p class="hub-card-desc">Calculate Voltage (V), Current (I), Resistance (R), and Electrical Power (P) with bidirectional four-quadrant PIVR inversions.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/physics/ohms-law/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
+              <span class="hub-badge">Continuum Mechanics • Density Invariant Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Density, Mass & Volume Calculator</h2>
+            <p class="hub-card-desc">Calculate material density (ρ), total mass, and displacement volume with bidirectional inversions and material reference library.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/physics/density-mass-volume/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
+              <span class="hub-badge">Harmonic Oscillations • Pendulum Dynamics Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Simple Pendulum Period & Harmonic Frequency Calculator</h2>
+            <p class="hub-card-desc">Calculate pendulum period (T), natural frequency (Hz), angular frequency (rad/s), and local gravitational acceleration (g).</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/physics/pendulum-period/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
     </div>
+
+    <!-- Mid-Page Rectangle Ad Slot with CLS Safeguard -->
+    <div class="omni-ad-slot omni-ad-rectangle" data-ad-format="rectangle"></div>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All rights reserved.</div>
-      <div>Hosted on Cloudflare Pages</div>
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
     </div>
   </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
   <script src="/assets/js/omni-search.js"></script>
 </body>
 </html>

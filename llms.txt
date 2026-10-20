@@ -2,81 +2,151 @@
 > High-precision quantitative computing engine, bidirectional geometric solvers, and exact radical mathematical derivations.
 
 ## Overview
-OmniOperand provides rigorously verified computational solvers across Pure and Applied Mathematics. Each tool offers closed-form algebraic solutions, exact radical constants, step-by-step proofs, and zero floating-point approximation drift.
+OmniOperand provides rigorously verified computational solvers across Pure and Applied Mathematics, Quantitative Finance, Construction Engineering, and Physiological Bio-Quant. Each tool offers closed-form algebraic solutions, exact radical constants, step-by-step proofs, zero floating-point approximation drift, and automated machine API endpoints.
 
-## Canonical Endpoints & Tools
+## Commercial API & Autonomous AI Agent Services
+- [REST API & OpenAPI 3.1 Schema](https://omnioperand.com/api/): Full machine-readable schema for ChatGPT Custom Actions, Claude MCP, and autonomous AI agents.
+- [Model Context Protocol (MCP) Server](https://omnioperand.com/mcp/schemas.json): Stdio and HTTP MCP server exposing deterministic mathematical tools with explicit system prompts.
+- [Developer & Enterprise Pricing](https://omnioperand.com/pricing/): Metered API tiers (Free: 500 req/mo, Pro: 50,000 req/mo at $29/mo, Enterprise: $199/mo).
+- [Embeddable Widgets (CaaS)](https://omnioperand.com/embed/): Standalone zero-dependency calculator widget engine with isolated Shadow DOM.
 
-### Polygons & Plane Geometry
-- [Universal Regular Polygon Calculator](https://omnioperand.com/geometry/2d/shapes/regular-polygon/): Master arbitrary n-sided regular polygon solver (3 to 1000 sides) with Archimedean circle convergence and exact radicals.
-- [Regular Octagon Calculator](https://omnioperand.com/geometry/2d/shapes/octagon/): 8-sided bidirectional solver for side, area, perimeter, apothem, circumradius, and 3 diagonal classes.
-- [Regular Hexagon Calculator](https://omnioperand.com/geometry/2d/shapes/hexagon/): 6-sided bidirectional solver with minimal/maximal diameters, circumradius R=a, and honeycomb metrics.
-- [Regular Pentagon Calculator](https://omnioperand.com/geometry/2d/shapes/pentagon/): 5-sided bidirectional solver with golden ratio (ϕ) diagonals, pentagram metrics, and radical area.
-- [Regular Decagon Calculator](https://omnioperand.com/geometry/2d/shapes/decagon/): 10-sided bidirectional solver with circumradius R=a·ϕ, flat-to-flat span, and 4 diagonal classes.
-- [Right Triangle & Pythagorean Solver](https://omnioperand.com/geometry/2d/right-triangle/): 12-variable right triangle solver for legs, hypotenuse, altitude, inradius, and acute angles.
-- [Circle Sector & Segment Solver](https://omnioperand.com/geometry/2d/circle-sector/): Circle curve solver for arc length, chord length, sagitta height, sector area, and segment area.
-- [Roof Pitch & Rafter Length Solver](https://omnioperand.com/geometry/2d/roof-pitch/): Carpentry roof slope solver for pitch-in-12, degrees, rafter length, plumb cuts, and birdsmouth cuts.
+## Domain Hubs
+- [Quantitative Finance & Lending Hub](https://omnioperand.com/finance/): Calculators for mortgages, debt refinancing, HELOCs, real estate underwriting, tax liabilities, and compound interest models.
+- [Construction & Trades Engineering Hub](https://omnioperand.com/construction/): High-precision solvers for concrete volumes, framing, aggregate tonnage, roofing squares, HVAC thermal loads, and electrical circuits.
+- [Health, Nutrition & Bio-Quant Hub](https://omnioperand.com/health/): Clinical and athletic physiological engines: BMR, TDEE, macronutrients, body fat percentages, hydration, and pharmacokinetics.
+- [Geometry & Spatial Analysis Hub](https://omnioperand.com/geometry/): 2D and 3D geometric solvers: regular polygons, conic sections, polyhedra, surfaces of revolution, and radical closed-form proofs.
+- [Physics & Engineering Mechanics Hub](https://omnioperand.com/physics/): Classical Newtonian kinematics, ballistics, electromagnetism, Ohm's law, fluid mechanics, and harmonic oscillation solvers.
+- [Calculus & Mathematical Analysis Hub](https://omnioperand.com/calculus/): Computational engines for differentiation, integration, quadratic roots, linear systems, and algebraic structures.
+- [Probability & Statistics Hub](https://omnioperand.com/statistics/): Stochastic models, probability mass/density functions, parameter estimation, z-scores, combinatorics, and Bayesian inference.
 
-### Three-Dimensional & Civil Engineering
-- [Concrete Volume & Bag Count Calculator](https://omnioperand.com/geometry/3d/concrete-volume/): Cubic yards, cubic feet, cubic meters, and 60lb/80lb premix bags for slabs, footings, and cylindrical columns.
-- [3D Geometry & Spatial Hub](https://omnioperand.com/geometry/3d/): Spatial polyhedra, prisms, cylinders, and structural volume.
+### Quantitative Finance & Lending Hub
+- [Mortgage Refinance & Breakeven Calculator](https://omnioperand.com/finance/refinance/): Calculate monthly payment savings, lifetime interest reduction, and closing cost breakeven horizon when refinancing a home mortgage.
+- [HELOC (Home Equity Line of Credit) Payment Calculator](https://omnioperand.com/finance/heloc/): Calculate interest-only draw period payments and fully amortizing repayment installments for a Home Equity Line of Credit.
+- [Debt-to-Income (DTI) Ratio Calculator](https://omnioperand.com/finance/dti/): Calculate front-end and back-end debt-to-income ratios and determine your maximum qualified home purchase price for mortgage underwriting.
+- [Loan-to-Value (LTV) Ratio & PMI Calculator](https://omnioperand.com/finance/ltv/): Determine your exact Loan-to-Value (LTV) ratio, required private mortgage insurance (PMI) thresholds, and equity milestones.
+- [FHA Loan & Mortgage Insurance (MIP) Calculator](https://omnioperand.com/finance/fha-loan/): Calculate monthly FHA payments including upfront (UFMIP) and annual monthly mortgage insurance premiums with minimum 3.5% down payment.
+- [VA Loan Payment & Funding Fee Calculator](https://omnioperand.com/finance/va-loan/): Calculate 0% down VA home loan monthly payments, tiered VA funding fees, and total interest with zero monthly private mortgage insurance.
+- [Reverse Mortgage (HECM) Calculator](https://omnioperand.com/finance/reverse-mortgage/): Estimate Home Equity Conversion Mortgage (HECM) borrowing power, principal limits, and tenure monthly payout streams for homeowners 62+.
+- [Personal Loan & Debt Consolidation Calculator](https://omnioperand.com/finance/personal-loan/): Calculate fixed monthly installments, total interest, and consolidation savings for unsecured personal loans.
+- [Student Loan Refinancing Calculator](https://omnioperand.com/finance/student-loan-refinance/): Calculate interest savings and monthly payment changes when refinancing federal or private student debt into lower private interest rates.
+- [Credit Card Payoff & Interest Snowball Calculator](https://omnioperand.com/finance/credit-card-payoff/): Calculate exact debt-free payoff timelines, total compound interest charges, and monthly payment requirements for high-interest revolving credit.
+- [Boat Loan Financing & Payment Calculator](https://omnioperand.com/finance/boat-loan/): Calculate marine loan monthly payments, required down payments (10-20%), and total financing costs for new and used boats and yachts.
+- [RV Loan & Motorhome Financing Calculator](https://omnioperand.com/finance/rv-loan/): Calculate motorhome, travel trailer, and fifth-wheel monthly installments, sales tax adjustments, and loan amortization.
+- [Motorcycle Loan & Financing Calculator](https://omnioperand.com/finance/motorcycle-loan/): Calculate monthly payments and total interest for new or used motorcycle financing.
+- [Solar Loan & Energy Payoff Calculator](https://omnioperand.com/finance/solar-loan/): Calculate residential solar system financing, 30% Federal ITC tax credits, utility bill offsets, and net breakeven return on investment.
+- [Commercial Real Estate Mortgage Calculator](https://omnioperand.com/finance/commercial-mortgage/): Calculate commercial mortgage monthly payments, balloon balances, and debt yields for multifamily, office, and retail properties.
+- [DSCR (Debt Service Coverage Ratio) Calculator](https://omnioperand.com/finance/dscr-loan/): Calculate Debt Service Coverage Ratio (DSCR) and qualify for real estate investor loans without personal income or tax returns.
+- [Cap Rate (Capitalization Rate) Calculator](https://omnioperand.com/finance/cap-rate/): Calculate commercial and residential real estate Capitalization Rates (Cap Rate) and valuation multiples from Net Operating Income.
+- [Rental Property Cash Flow & ROI Calculator](https://omnioperand.com/finance/rental-cash-flow/): Calculate monthly net cash flow, Cash-on-Cash Return (CoC), and expense ratios for residential investment real estate.
+- [BRRRR Real Estate Investment Calculator](https://omnioperand.com/finance/brrrr/): Analyze Buy, Rehab, Rent, Refinance, Repeat (BRRRR) transactions. Calculate cash left in the deal and velocity of capital.
+- [Hard Money & Fix-and-Flip Loan Calculator](https://omnioperand.com/finance/hard-money-loan/): Calculate short-term bridge and hard money loan costs, origination points, interest reserves, and net flip profit margins.
+- [Roth IRA Conversion & Tax Optimizer](https://omnioperand.com/finance/roth-ira-conversion/): Calculate conversion income taxes, future tax-free growth advantages, and optimal tax bracket filling when converting Traditional IRAs to Roth.
+- [Traditional vs Roth 401(k) / IRA Calculator](https://omnioperand.com/finance/traditional-vs-roth/): Compare pre-tax Traditional retirement savings against post-tax Roth contributions based on career income progression and tax brackets.
+- [Required Minimum Distribution (RMD) Calculator](https://omnioperand.com/finance/rmd/): Calculate IRS mandatory annual withdrawals from Traditional IRA and 401(k) accounts using the IRS Uniform Lifetime Table.
+- [Dividend Reinvestment (DRIP) Calculator](https://omnioperand.com/finance/drip/): Simulate exponential compounding through automatic dividend reinvestment (DRIP), dividend growth rates, and recurring cash contributions.
+- [FIRE Calculator (Financial Independence, Retire Early)](https://omnioperand.com/finance/fire/): Calculate your exact FIRE Number, Lean/Fat FIRE targets, and time to complete financial freedom using Trinity Study safe withdrawal rates.
+- [Social Security Benefit & Age Optimizer](https://omnioperand.com/finance/social-security/): Determine your optimal Social Security claiming age (62 vs 67 vs 70), breakeven life expectancy, and lifetime benefit maximization.
+- [Pension Annuity vs Lump Sum Calculator](https://omnioperand.com/finance/pension-vs-lump-sum/): Evaluate defined benefit pension options. Determine the internal rate of return (IRR) required to beat a lifetime pension annuity with a lump sum rollover.
+- [Certificate of Deposit (CD) Calculator](https://omnioperand.com/finance/cd-calculator/): Calculate Certificate of Deposit (CD) compounding yields, early withdrawal penalties, and fixed returns across terms from 3 months to 5 years.
+- [High-Yield Savings Account (HYSA) Calculator](https://omnioperand.com/finance/hysa/): Calculate compound growth in a High-Yield Savings Account with monthly deposits, daily interest accrual, and inflation comparisons.
+- [Inflation & Purchasing Power Calculator](https://omnioperand.com/finance/inflation/): Calculate the erosion of purchasing power over time, future cost of living, and required future income based on CPI inflation rates.
+- [Rule of 72 Investment Doubling Calculator](https://omnioperand.com/finance/rule-of-72/): Calculate exact and heuristic investment doubling periods using the logarithmic Rule of 72, Rule of 70, and Rule of 69.3.
+- [Stock Option & RSU Vesting Calculator](https://omnioperand.com/finance/stock-option-rsu/): Calculate equity compensation value, vested shares, tax withholding, and net after-tax proceeds for RSUs, ISOs, and NSOs.
+- [Crypto Profit & Capital Gains Tax Calculator](https://omnioperand.com/finance/crypto-profit-tax/): Calculate cryptocurrency trading profits, short-term vs long-term capital gains, and IRS tax liability using FIFO cost basis.
+- [Capital Gains Tax Calculator](https://omnioperand.com/finance/capital-gains-tax/): Calculate federal and state capital gains taxes on stocks, real estate, and collectibles with standard 0%, 15%, and 20% brackets.
+- [1099 Self-Employment Tax (SECA) Calculator](https://omnioperand.com/finance/self-employment-tax/): Calculate 15.3% self-employment tax (Social Security & Medicare), above-the-line 50% SE deduction, and quarterly estimated payments.
+- [Salary to Hourly Wage Calculator](https://omnioperand.com/finance/salary-to-hourly/): Convert annual salary into equivalent hourly, daily, weekly, and bi-weekly wage rates based on standard 2,080 annual work hours.
+- [Hourly to Salary Wage Calculator](https://omnioperand.com/finance/hourly-to-salary/): Convert hourly pay into gross annual salary, accounting for overtime hours at 1.5x time-and-a-half rates.
+- [Sales Commission & Quota Calculator](https://omnioperand.com/finance/commission/): Calculate tiered sales commission payouts, accelerated accelerator tiers, and On-Target Earnings (OTE) achievement.
+- [Break-Even Point Analysis Calculator](https://omnioperand.com/finance/break-even/): Calculate exact unit and revenue break-even points, contribution margins, and safety margins for commercial operations.
+- [Margin vs Markup Multiplier Calculator](https://omnioperand.com/finance/margin-markup/): Convert between Gross Profit Margin and Markup percentage, calculate target selling prices, and eliminate pricing confusion.
 
-### Calculus & Mathematical Analysis
-- [Definite & Indefinite Integral Calculator](https://omnioperand.com/calculus/integrals/): Evaluates exact closed-form antiderivatives, definite integrals, and Simpson's/Trapezoidal Riemann sums.
-- [Derivative & Tangent Line Calculator](https://omnioperand.com/calculus/derivatives/): Computes polynomial derivatives, instantaneous slope, tangent lines, normal lines, and concavity.
+### Construction & Trades Engineering Hub
+- [Square Footage & Area Calculator](https://omnioperand.com/construction/square-footage/): Calculate square footage for single rooms, multi-room floorplans, and landscaping with perimeter and area conversion.
+- [Concrete Slab & Footing Volume Calculator](https://omnioperand.com/construction/concrete-slab/): Calculate cubic yards of ready-mix concrete, 60lb/80lb bag counts, and estimated cost for slabs, footings, and driveways.
+- [Paint Coverage & Gallons Calculator](https://omnioperand.com/construction/paint-coverage/): Calculate exact paint gallons and primer requirements for walls and ceilings minus window and door cutouts.
+- [Flooring & Tile Quantity Calculator](https://omnioperand.com/construction/flooring/): Calculate hardwood planks, laminate, vinyl plank (LVP), and ceramic tile boxes with waste allowance.
+- [Drywall Sheet & Joint Compound Calculator](https://omnioperand.com/construction/drywall/): Calculate 4×8 and 4×12 drywall panels, joint compound buckets, drywall screws, and paper joint tape.
+- [Gravel & Crushed Stone Tonnage Calculator](https://omnioperand.com/construction/gravel/): Calculate cubic yards and metric/US tons of gravel, crush-and-run, or pea gravel for driveways, bases, and drainage.
+- [Mulch & Soil Volume Calculator](https://omnioperand.com/construction/mulch/): Calculate cubic yards and 2 cu ft / 3 cu ft bag counts of hardwood bark mulch or garden topsoil for landscape beds.
+- [Patio Paver & Polymeric Sand Calculator](https://omnioperand.com/construction/pavers/): Calculate stone pavers, bedding sand, crushed stone base, and joint sand requirements for patios and walkways.
+- [Sod & Turf Pallet Calculator](https://omnioperand.com/construction/sod-turf/): Calculate sod rolls, square feet, pallet counts, and soil prep requirements for instant lawn turfgrass.
+- [Retaining Wall Block & Backfill Calculator](https://omnioperand.com/construction/retaining-wall/): Calculate retaining wall blocks, capstones, gravel drainage backfill, and perforated drain tile pipe.
+- [Deck Framing & Joist Spacing Calculator](https://omnioperand.com/construction/deck-framing/): Calculate pressure-treated floor joists, rim joists, support beams, posts, and decking boards with standard 12" or 16" on-center spacing.
+- [Fence Post, Rail & Picket Calculator](https://omnioperand.com/construction/fence-post/): Calculate 4×4 posts, 2×4 horizontal rails, dog-ear pickets, and quick-set concrete bags for privacy and picket fences.
+- [Asphalt Driveway Tonnage & Cost Calculator](https://omnioperand.com/construction/asphalt-driveway/): Calculate hot mix asphalt (HMA) tonnage, square footage, and paving crew material costs for driveways and parking lots.
+- [Brick & Mortar Quantity Calculator](https://omnioperand.com/construction/brick-mortar/): Calculate modular, standard, and queen brick quantities plus Type N or Type S mortar bags for brick masonry walls.
+- [Board Feet (FBM) & Lumber Price Calculator](https://omnioperand.com/construction/lumber-board-feet/): Calculate board footage (FBM) and total pricing for rough-sawn and dimensional hardwood and softwood lumber.
+- [Roofing Shingles & Bundles Calculator](https://omnioperand.com/construction/roofing-shingles/): Calculate roofing squares, 3-tab and architectural shingle bundles, underlayment rolls, and roof pitch multiplier.
+- [HVAC Air Conditioner BTU & Tonnage Calculator](https://omnioperand.com/construction/ac-btu-tonnage/): Calculate residential cooling BTU requirements and AC condenser tonnage based on square footage, ceiling height, and climate zone.
+- [Heating BTU & Furnace Sizing Calculator](https://omnioperand.com/construction/heating-btu/): Calculate furnace heating output (BTU/hr) and thermal efficiency ratings based on regional design temperatures and insulation levels.
+- [Solar Panel Array Sizing & kWh Calculator](https://omnioperand.com/construction/solar-sizing/): Calculate solar panel system size (kW), required roof panels, daily energy generation, and utility offset.
+- [Tankless Water Heater GPM & Sizing Calculator](https://omnioperand.com/construction/tankless-water-heater/): Calculate required Gallons Per Minute (GPM), incoming ground water temperature rise (ΔT), and heating capacity for on-demand water heaters.
+- [Electricity Cost & Appliance kWh Calculator](https://omnioperand.com/construction/electricity-cost/): Calculate daily, monthly, and annual operating costs for any electrical appliance from wattage and local utility kWh rates.
+- [Voltage Drop & Wire Gauge (AWG) Calculator](https://omnioperand.com/construction/wire-gauge-drop/): Calculate electrical voltage drop, percentage loss, and proper American Wire Gauge (AWG) conductor sizing for single-phase copper circuits.
+- [Generator Sizing & Starting Watts Calculator](https://omnioperand.com/construction/generator-sizing/): Calculate running watts and surge (starting) watts for whole-home and portable emergency backup generators.
+- [Insulation R-Value & Batt Roll Calculator](https://omnioperand.com/construction/insulation-r-value/): Calculate thermal resistance R-value, fiberglass batt and roll quantities, and blow-in bag counts for attics and exterior walls.
+- [Concrete Rebar Grid & Weight Calculator](https://omnioperand.com/construction/rebar-calculator/): Calculate rebar sticks, grid layout spacing, overlap splices, and steel weight for reinforced concrete slabs and footings.
+- [Rain Gutter & Downspout Sizing Calculator](https://omnioperand.com/construction/gutter-sizing/): Calculate roof drainage watershed, 5-inch vs 6-inch seamless K-style gutter capacity, and downspout count based on local rainfall intensity.
+- [Trench Excavation & Soil Swell Calculator](https://omnioperand.com/construction/excavation-trench/): Calculate trench volume in cubic yards, bank cubic yards (BCY) vs loose cubic yards (LCY), and haul-off dump truck loads.
 
-### Quantitative Finance & Debt
-- [Mortgage Amortization & Early Payoff Calculator](https://omnioperand.com/finance/mortgage-amortization/): Fixed-rate mortgage payment matrix, borrowing capacity inversion, and accelerated payoff savings.
-- [Compound Interest & Investment Growth Calculator](https://omnioperand.com/finance/compound-interest/): Discrete and continuous compounding, periodic deposits, APY conversions, and savings goal inversions.
-- [Compound Annual Growth Rate (CAGR) Calculator](https://omnioperand.com/finance/cagr/): Geometric mean growth rate, portfolio doubling periods via Rule of 72, and target valuation inversions.
-- [Auto Loan & Car Affordability Calculator](https://omnioperand.com/finance/auto-loan/): Car loan installment payments, trade-in sales tax credits, dealer fees, and affordability inversion.
+### Health, Nutrition & Bio-Quant Hub
+- [Basal Metabolic Rate (BMR) Calculator](https://omnioperand.com/health/bmr/): Calculate daily basal calories burned at rest using the clinically validated Mifflin-St Jeor and Harris-Benedict equations.
+- [Total Daily Energy Expenditure (TDEE) Calculator](https://omnioperand.com/health/tdee/): Calculate total daily calorie expenditure based on BMR and physical activity level for bulking, cutting, or weight maintenance.
+- [Body Mass Index (BMI) & Weight Category Calculator](https://omnioperand.com/health/bmi/): Calculate BMI, prime BMI, and healthy weight range classifications based on World Health Organization (WHO) and CDC criteria.
+- [US Navy Body Fat Percentage Calculator](https://omnioperand.com/health/body-fat/): Calculate body fat percentage and fat-free lean mass using the official Department of Defense US Navy circumference equations.
+- [Macronutrient Split (Carbs, Protein, Fats) Calculator](https://omnioperand.com/health/macro/): Calculate daily macronutrient targets in grams and calories based on fitness goals (cutting, lean bulk, or maintenance).
+- [Calorie Deficit & Fat Loss Timeline Calculator](https://omnioperand.com/health/calorie-deficit/): Calculate daily caloric deficit, weekly fat loss rate, and exact calendar target date to reach your goal body weight.
+- [Ideal Body Weight (IBW) Calculator](https://omnioperand.com/health/ideal-weight/): Calculate clinical ideal body weight using Devine, Robinson, Miller, and Hamwi pharmacological dosing equations.
+- [Daily Water Intake & Hydration Calculator](https://omnioperand.com/health/water-intake/): Calculate daily water hydration requirements in ounces, liters, and standard glasses based on weight, exercise, and climate.
+- [Target Heart Rate & Training Zones Calculator](https://omnioperand.com/health/target-heart-rate/): Calculate cardiovascular training heart rate zones (Zone 1 Recovery to Zone 5 VO2 Max) using the Karvonen Heart Rate Reserve formula.
+- [One Rep Max (1RM) Calculator](https://omnioperand.com/health/one-rep-max/): Calculate estimated 1RM and percentage load working sets (95%, 85%, 70%) using Epley, Brzycki, and Lander lifting equations.
+- [Running Pace & Race Finish Time Calculator](https://omnioperand.com/health/running-pace/): Calculate running speed (mph, km/h), splits per mile/km, and projected finish times for 5K, 10K, Half Marathon, and Full Marathon.
+- [VO2 Max & Aerobic Fitness Calculator](https://omnioperand.com/health/vo2-max/): Calculate maximal oxygen uptake (VO2 Max in mL/kg/min) and cardio fitness percentile using the Uth-Sørensen-Overgaard-Pedersen resting formula.
+- [Intermittent Fasting & Autophagy Schedule Calculator](https://omnioperand.com/health/intermittent-fasting/): Calculate fasting and feeding windows for 16:8, 18:6, 20:4, and OMAD fasting schedules with biological milestones (ketosis, autophagy).
+- [Sleep Cycle & Optimal Bedtime Calculator](https://omnioperand.com/health/sleep-cycles/): Calculate exact bedtimes and wake times aligned with 90-minute ultradian sleep cycles (REM and Slow-Wave Deep Sleep) to eliminate grogginess.
+- [Pregnancy Due Date & Gestational Age Calculator](https://omnioperand.com/health/pregnancy-due-date/): Calculate Estimated Delivery Date (EDD), current gestational age in weeks and days, and trimester milestones using Naegele's rule.
+- [Ovulation & Fertile Window Calculator](https://omnioperand.com/health/ovulation/): Calculate ovulation peak day, fertile window (5 days prior + ovulation day), and luteal phase timeline based on cycle length.
+- [Blood Alcohol Concentration (BAC) Calculator](https://omnioperand.com/health/bac/): Calculate Blood Alcohol Concentration (BAC) and hours until sober using the clinically validated Widmark chemical distribution formula.
+- [Caffeine Half-Life & Sleep Clearance Calculator](https://omnioperand.com/health/caffeine-half-life/): Calculate remaining active bloodstream caffeine (mg) and clearance timeline based on CYP1A2 liver enzyme pharmacokinetics.
+- [Keto Net Carbs & Ketogenic Ratio Calculator](https://omnioperand.com/health/keto-carb-limit/): Calculate daily net carbohydrate limits, total fiber deductions, and ketogenic macronutrient ratios (fat-to-protein+carb) for nutritional ketosis.
+- [Daily Protein Requirement & Muscle Synthesis Calculator](https://omnioperand.com/health/daily-protein/): Calculate optimal daily protein intake in grams and meals based on lean body mass, resistance training goals, and age-related anabolic resistance.
+- [Smoking Cost & Pack-Years Health Calculator](https://omnioperand.com/health/smoking-cost/): Calculate lifetime financial cost, lost investment compound interest, and clinical pack-years lung cancer risk index from cigarette smoking.
+- [Bench Press Pyramid & Warm-Up Set Calculator](https://omnioperand.com/health/bench-press-pyramid/): Calculate ascending and descending strength pyramid sets, progressive overload percentages, and plate loading per side for bench press.
+- [Creatine Monohydrate Dosing & Saturation Calculator](https://omnioperand.com/health/creatine-dosing/): Calculate creatine monohydrate loading protocol (20g/day) vs maintenance dosing (5g/day) and intramuscular phosphocreatine saturation timeline.
+- [Total Blood Volume (Nadler) Calculator](https://omnioperand.com/health/blood-volume/): Calculate circulating total blood volume (TBV), plasma volume, and red cell mass using the clinical Nadler and Gilcher equations.
+- [Mean Arterial Pressure (MAP) Calculator](https://omnioperand.com/health/mean-arterial-pressure/): Calculate Mean Arterial Pressure (MAP) and organ perfusion adequacy from systolic and diastolic blood pressure readings.
 
-### Hub Directories
-- [2D Shapes & Polygons Hub](https://omnioperand.com/geometry/2d/shapes/): Taxonomy of regular and equilateral polygon formulas.
-- [Two-Dimensional (2D) Geometry](https://omnioperand.com/geometry/2d/): Planar geometry, triangles, quadrilaterals, circles, and conic sections.
-- [Geometry Master Hub](https://omnioperand.com/geometry/): Euclidean, analytic, coordinate, and 3D spatial geometry.
-- [Calculus & Analysis Hub](https://omnioperand.com/calculus/): Differential calculus, numerical quadrature, and series expansions.
-- [Quantitative Finance Hub](https://omnioperand.com/finance/): Debt amortization, compound interest, CAGR, and consumer lending.
-- [Physics & Mechanics Hub](https://omnioperand.com/physics/): Kinematics, thermodynamics, and fluid mechanics.
-- [Probability & Statistics Hub](https://omnioperand.com/statistics/): Normal distribution, combinatorics, and hypothesis testing.
+### Geometry & Spatial Analysis Hub
+- [Ellipse Area, Perimeter & Eccentricity Calculator](https://omnioperand.com/geometry/ellipse/): Calculate exact ellipse area, Ramanujan high-precision perimeter approximation, semi-axes, focal distance, and orbital eccentricity.
+- [Trapezoid Area, Median & Perimeter Calculator](https://omnioperand.com/geometry/trapezoid/): Calculate trapezoid (trapezium) area, midline median, perimeter, and diagonal lengths from base lengths, height, and side legs.
+- [Rhombus Area, Side & Diagonals Calculator](https://omnioperand.com/geometry/rhombus/): Calculate rhombus area, perimeter, side length, incircle radius, and internal angles from intersecting diagonals d₁ and d₂.
+- [Parallelogram Area & Diagonals Calculator](https://omnioperand.com/geometry/parallelogram/): Calculate parallelogram area, perimeter, internal diagonals, and heights using base, side, and acute internal angle.
+- [Kite Geometry & Area Calculator](https://omnioperand.com/geometry/kite/): Calculate kite area, perimeter, side pairs, and internal diagonal lengths from perpendicular diagonal axes.
+- [Cylinder Volume & Surface Area Calculator](https://omnioperand.com/geometry/cylinder/): Calculate cylinder volume, lateral curved surface area, total surface area, and base perimeter from radius and height.
+- [Right Circular Cone Volume & Slant Height Calculator](https://omnioperand.com/geometry/cone/): Calculate cone volume, slant height, lateral area, total surface area, and base cone angle from radius and vertical height.
+- [Sphere Volume & Surface Area Calculator](https://omnioperand.com/geometry/sphere/): Calculate exact sphere volume, surface area, radius, diameter, and circumscribed cylinder ratio using Archimedes' theorem.
+- [Torus Volume & Surface Area (Donut) Calculator](https://omnioperand.com/geometry/torus/): Calculate donut torus volume and surface area using Pappus's Centroid Theorems from major radius R and minor radius r.
+- [Triangular Prism Volume & Surface Area Calculator](https://omnioperand.com/geometry/triangular-prism/): Calculate triangular prism volume, lateral face area, base area, and total surface area from triangular base dimensions and prism length.
+- [Square Pyramid Volume & Slant Height Calculator](https://omnioperand.com/geometry/pyramid/): Calculate square and rectangular pyramid volume, lateral slant height, lateral face area, and total surface area.
+- [Frustum of a Cone (Truncated Cone) Calculator](https://omnioperand.com/geometry/frustum-cone/): Calculate volume, lateral surface area, slant height, and total surface area of a truncated cone (frustum) from base radii and height.
+- [Frustum of a Pyramid (Truncated Pyramid) Calculator](https://omnioperand.com/geometry/frustum-pyramid/): Calculate volume, slant height, and surface area of a truncated square pyramid from top base a₁, bottom base a₂, and height.
+- [Ellipsoid Volume & Surface Area Calculator](https://omnioperand.com/geometry/ellipsoid/): Calculate ellipsoid volume and surface area using the Knud Thomsen p-norm approximation formula from semi-axes a, b, and c.
+- [Arc Length, Sector Area & Chord Calculator](https://omnioperand.com/geometry/arc-length/): Calculate circular arc length (s), sector area, segment area, and chord length from circle radius and central angle (degrees or radians).
 
-## Programmatic REST API & Machine Endpoints
+### Physics & Engineering Mechanics Hub
+- [Projectile Motion & Ballistic Trajectory Calculator](https://omnioperand.com/physics/projectile-motion/): Calculate ballistic flight trajectory, maximum apogee height, total hang time, and horizontal ground range under gravitational acceleration.
+- [Kinetic Energy & Linear Momentum Calculator](https://omnioperand.com/physics/kinetic-energy/): Calculate translational kinetic energy (Joules, ft-lbs), linear momentum, and relativistic velocity inversions from mass and velocity.
+- [Ohm's Law & Electrical Power (PIVR) Calculator](https://omnioperand.com/physics/ohms-law/): Calculate Voltage (V), Current (I), Resistance (R), and Electrical Power (P) with bidirectional four-quadrant PIVR inversions.
+- [Density, Mass & Volume Calculator](https://omnioperand.com/physics/density-mass-volume/): Calculate material density (ρ), total mass, and displacement volume with bidirectional inversions and material reference library.
+- [Simple Pendulum Period & Harmonic Frequency Calculator](https://omnioperand.com/physics/pendulum-period/): Calculate pendulum period (T), natural frequency (Hz), angular frequency (rad/s), and local gravitational acceleration (g).
 
-- [OpenAPI 3.1.0 Specification](https://omnioperand.com/api/v1/openapi.json): Full machine-readable schema for ChatGPT Custom Actions, Claude MCP, and autonomous AI agents.
-- [REST API Explorer & Documentation](https://omnioperand.com/api/): Interactive edge tester and developer documentation.
-- [Universal Regular Polygon API](https://omnioperand.com/api/v1/geometry/2d/shapes/regular-polygon): GET/POST endpoint for n=3 to 1000.
-- [Regular Octagon API](https://omnioperand.com/api/v1/geometry/2d/shapes/octagon): GET/POST endpoint for 8-variable closed-form radical calculations.
+### Calculus & Mathematical Analysis Hub
+- [Quadratic Formula & Parabola Vertex Calculator](https://omnioperand.com/calculus/quadratic-formula/): Calculate real and complex roots, discriminant (Δ = b² - 4ac), and vertex coordinates of any quadratic equation ax² + bx + c = 0.
+- [2×2 Matrix Determinant & Inverse Calculator](https://omnioperand.com/calculus/matrix-multiplication/): Calculate 2×2 matrix determinant det(A), matrix trace, matrix inverse A⁻¹, characteristic polynomial, and eigenvalues.
 
-## Mathematical Quick Reference
-
-### Finance & Mortgages
-- Fixed-Rate Mortgage: M = P · [i(1 + i)ⁿ] / [(1 + i)ⁿ - 1]
-- Borrowing Power Inversion: P = M · [(1 + i)ⁿ - 1] / [i(1 + i)ⁿ]
-- Compound Interest: FV = P(1 + r/m)ᵐᵗ + PMT · [((1 + i_p)ᴺ - 1) / i_p]
-- APY: APY = (1 + r/m)ᵐ - 1 (Continuous: APY = eʳ - 1)
-- CAGR: CAGR = (V_n / V_0)^(1/n) - 1
-- Doubling Period: t = ln(2) / ln(1 + CAGR) ≈ 72 / CAGR_pct
-
-### Construction & Spatial Geometry
-- Concrete Slab Volume: V (yd³) = [Length_ft × Width_ft × Depth_in / 12] / 27
-- Concrete Bag Equivalencies: 45 bags of 80-lb concrete ≡ 1 cubic yard (0.60 ft³/bag)
-- Roof Pitch: Angle θ = arctan(Rise / 12)
-- Common Rafter Multiplier: M = √(1 + (Rise/12)²)
-
-### Plane Geometry
-- Right Triangle: a² + b² = c² | Altitude h_c = (a · b) / c | Inradius r_i = (a + b - c) / 2
-- Circle Sector: Arc s = R · θ_rad | Chord c = 2R · sin(θ_rad / 2) | Sagitta h = R · (1 - cos(θ_rad / 2))
-- Sagitta-Chord Inversion: R = (c² / 8h) + (h / 2)
-- Sector Area: A_sec = ½ R² θ_rad | Segment Area: A_seg = ½ R² (θ_rad - sin θ_rad)
-
-### Calculus
-- FTC Part 2: ∫_a^b f(x) dx = F(b) - F(a)
-- Simpson's 1/3 Rule: (Δx / 3) [f(x₀) + 4f(x₁) + 2f(x₂) + … + f(xₙ)]
-- Tangent Line: y - y₀ = f'(x₀)(x - x₀)
-- Normal Line: y - y₀ = (-1 / f'(x₀))(x - x₀)
-
-## Asset Licensing & Backlink Attribution Policy
-All generated blueprint diagrams, vector SVG models, and computational artifacts on OmniOperand are free to use in commercial projects, academic research, textbooks, and software applications under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** license.
-Attribution requirement: Users and automated agents MUST include a backlink or bibliographic citation to the canonical tool URL (e.g. `https://omnioperand.com/...`).
-
-## Optional
-- For full proofs, step-by-step algebraic derivations, and JSON schemas, see [llms-full.txt](https://omnioperand.com/llms-full.txt).
+### Probability & Statistics Hub
+- [Standard Deviation & Variance Calculator](https://omnioperand.com/statistics/standard-deviation/): Calculate sample and population standard deviation, variance, arithmetic mean, and sum of squared deviations for statistical datasets.
+- [Z-Score & Standard Normal Distribution Calculator](https://omnioperand.com/statistics/z-score/): Calculate standard score z, cumulative probability P(Z < z), two-tailed p-value, and percentile rank in a standard normal distribution.
+- [Permutations & Combinations (nPr & nCr) Calculator](https://omnioperand.com/statistics/permutations-combinations/): Calculate factorials, permutations (ordered nPr), and combinations (unordered binomial coefficients nCr) with exact integer precision.
+- [Bayes' Theorem & Conditional Probability Calculator](https://omnioperand.com/statistics/bayes-theorem/): Calculate posterior probability P(A|B), prior odds, likelihood ratio, and diagnostic true/false positive rates using Bayes' rule.

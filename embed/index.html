@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embeddable Calculator Widgets (CaaS) — OmniOperand</title>
+  <meta name="description" content="Embed high-precision mathematical and financial calculators directly onto your website with zero dependencies, isolated Shadow DOM styling, and white-label options.">
+  <link rel="canonical" href="https://omnioperand.com/embed/">
+  
+  <meta property="og:title" content="Embeddable Calculator Widgets — OmniOperand">
+  <meta property="og:description" content="Embed responsive, high-precision mathematical calculators with isolated Shadow DOM styling.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://omnioperand.com/embed/">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css">
+  <link rel="stylesheet" href="/assets/css/calculator.css">
+
+  <style>
+    .embed-demo-section {
+      margin: 48px 0;
+    }
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-top: 24px;
+    }
+    .demo-box {
+      background: var(--bg-surface, #1e293b);
+      border: 1px solid var(--border-color, #334155);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .demo-box-header {
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .demo-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+    }
+    .code-preview {
+      background: #090d16;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 14px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #7dd3fc;
+      overflow-x: auto;
+      margin-top: 14px;
+    }
+  </style>
+</head>
+<body class="omni-body">
+
+  <header class="omni-header">
+    <div class="omni-container omni-header-inner">
+      <a href="/" class="omni-logo">
+        <span class="omni-logo-mark">⨁</span>
+        <span class="omni-logo-text">Omni<strong>Operand</strong></span>
+      </a>
+      <nav class="omni-nav">
+        <a href="/api/">REST API</a>
+        <a href="/embed/" class="active">Embed Widgets</a>
+        <a href="/geometry/">Geometry</a>
+        <a href="/finance/">Finance</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="omni-container" style="padding-top: 40px; padding-bottom: 80px;">
+    <section class="omni-hero text-center">
+      <span class="omni-pill">Calculator-as-a-Service (CaaS)</span>
+      <h1 class="omni-title" style="font-size: 2.75rem; margin-top: 12px;">Embeddable Calculator Engine</h1>
+      <p class="omni-subtitle" style="max-width: 680px; margin: 12px auto 32px;">
+        Deploy high-precision interactive calculators directly onto your web property with a single line of script. 
+        Zero dependencies, isolated Shadow DOM styling, and customizable white-label branding.
+      </p>
+    </section>
+
+    <!-- Quick Start Integration -->
+    <section class="demo-box" style="margin-bottom: 40px;">
+      <h2 style="font-size: 1.35rem; margin-top: 0;">⚡ 1-Minute Quick Start</h2>
+      <p style="color: var(--text-muted); margin-bottom: 12px;">
+        Place the embed script in your document head or footer, then add a <code>&lt;div data-calculator="..."&gt;&lt;/div&gt;</code> anywhere on your page:
+      </p>
+      <pre class="code-preview">&lt;!-- 1. Include OmniOperand Embed Engine --&gt;
+&lt;script src="https://omnioperand.com/embed/embed.js" async&gt;&lt;/script&gt;
+
+&lt;!-- 2. Place Calculator Container --&gt;
+&lt;div data-calculator="mortgage" data-theme="auto"&gt;&lt;/div&gt;</pre>
+    </section>
+
+    <!-- Interactive Demos -->
+    <section class="embed-demo-section">
+      <h2 style="font-size: 1.75rem;">Live Widget Demos</h2>
+      <div class="demo-grid">
+
+        <!-- Demo 1: Free Tier Widget -->
+        <div class="demo-box">
+          <div class="demo-box-header">
+            <h3 style="margin: 0; font-size: 1.1rem;">Free Tier (Standard)</h3>
+            <span class="demo-tag">Attribution Enabled</span>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">
+            Features standard OmniOperand attribution link and automatic dark/light theme detection.
+          </p>
+          <div data-calculator="octagon" data-partner-id="free_publisher" data-theme="dark"></div>
+        </div>
+
+        <!-- Demo 2: Pro Tier White-Label Widget -->
+        <div class="demo-box">
+          <div class="demo-box-header">
+            <h3 style="margin: 0; font-size: 1.1rem;">Pro Tier (White-Label)</h3>
+            <span class="demo-tag" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">White-Label</span>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">
+            Suppresses default branding and applies custom branding colors (emerald accents).
+          </p>
+          <div 
+            data-calculator="compound-interest" 
+            data-partner-id="pro_partner" 
+            data-theme="dark"
+            data-primary-color="#10b981"
+            data-accent-color="#059669">
+          </div>
+        </div>
+
+        <!-- Demo 3: Lead Capture Enabled -->
+        <div class="demo-box" style="grid-column: 1 / -1;">
+          <div class="demo-box-header">
+            <h3 style="margin: 0; font-size: 1.1rem;">Lead Capture Mode (Gated Results)</h3>
+            <span class="demo-tag" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">Lead Hook</span>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">
+            Requires email submission before revealing detailed calculations, transmitting webhook leads to our API.
+          </p>
+          <div 
+            data-calculator="mortgage" 
+            data-partner-id="lender_demo" 
+            data-lead-capture="true" 
+            data-theme="dark">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Feature Matrix -->
+    <section class="demo-box" style="margin-top: 48px;">
+      <h3 style="margin-top: 0; font-size: 1.25rem;">Widget Configuration Attributes</h3>
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--border-color, #334155); color: var(--text-muted);">
+              <th style="padding: 10px 8px;">Attribute</th>
+              <th style="padding: 10px 8px;">Type</th>
+              <th style="padding: 10px 8px;">Default</th>
+              <th style="padding: 10px 8px;">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <td style="padding: 10px 8px;"><code>data-calculator</code></td>
+              <td style="padding: 10px 8px;">string</td>
+              <td style="padding: 10px 8px;"><code>"mortgage"</code></td>
+              <td style="padding: 10px 8px;">Calculator identifier: <code>mortgage</code>, <code>octagon</code>, <code>compound-interest</code>, <code>cagr</code>, <code>concrete-volume</code></td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <td style="padding: 10px 8px;"><code>data-partner-id</code></td>
+              <td style="padding: 10px 8px;">string</td>
+              <td style="padding: 10px 8px;"><code>"direct"</code></td>
+              <td style="padding: 10px 8px;">Your partner or affiliate ID for tracking and white-label access</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <td style="padding: 10px 8px;"><code>data-theme</code></td>
+              <td style="padding: 10px 8px;">string</td>
+              <td style="padding: 10px 8px;"><code>"auto"</code></td>
+              <td style="padding: 10px 8px;">Visual theme mode: <code>"dark"</code>, <code>"light"</code>, or <code>"auto"</code></td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <td style="padding: 10px 8px;"><code>data-lead-capture</code></td>
+              <td style="padding: 10px 8px;">boolean</td>
+              <td style="padding: 10px 8px;"><code>"false"</code></td>
+              <td style="padding: 10px 8px;">When <code>"true"</code>, renders an email gate before unlocking complete results</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 8px;"><code>data-primary-color</code></td>
+              <td style="padding: 10px 8px;">hex / css</td>
+              <td style="padding: 10px 8px;"><code>"#0284c7"</code></td>
+              <td style="padding: 10px 8px;">Pro tier custom primary brand color</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="omni-footer">
+    <div class="omni-container omni-footer-inner">
+      <p>© 2026 OmniOperand. All mathematical derivations guaranteed.</p>
+      <div class="omni-footer-links">
+        <a href="/api/">REST API</a>
+        <a href="/embed/">Embeds</a>
+        <a href="/llms.txt">llms.txt</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Include Embed Script -->
+  <script src="/embed/embed.js"></script>
+</body>
+</html>

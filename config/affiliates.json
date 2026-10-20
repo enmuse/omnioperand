@@ -1,0 +1,146 @@
+{
+  "affiliate_engine_version": "1.0.0",
+  "disclosure_standard": "Sponsored Partner: OmniOperand may receive financial compensation when you click through or qualify via partner links at no additional cost to you.",
+  "partners": {
+    "mortgage": [
+      {
+        "id": "lending_tree_mortgage",
+        "name": "LendingTree",
+        "headline": "Compare Verified Mortgage Lenders & Lock Lower Rates",
+        "cta_text": "See My Rates (Free)",
+        "referral_url": "https://www.lendingtree.com/mortgage/?ref=omnioperand",
+        "badge": "Top Refinance Network",
+        "disclosure": "NMLS #1130. Rates updated daily across 500+ lending institutions.",
+        "threshold_rules": {
+          "field": "principal",
+          "operator": ">=",
+          "value": 150000
+        }
+      },
+      {
+        "id": "rocket_mortgage_refi",
+        "name": "Rocket Mortgage",
+        "headline": "High Monthly Interest Detected: Save Up to $340/Mo by Refinancing",
+        "cta_text": "Calculate Refi Savings",
+        "referral_url": "https://www.rocketmortgage.com/?ref=omnioperand",
+        "badge": "Refinance Specialist",
+        "disclosure": "Equal Housing Lender. Terms apply based on credit qualification.",
+        "threshold_rules": {
+          "field": "monthly_payment",
+          "operator": ">=",
+          "value": 1800
+        }
+      }
+    ],
+    "auto_loan": [
+      {
+        "id": "autopay_refi",
+        "name": "AutoPay",
+        "headline": "Lower Your Auto Interest Rate by Up to 3.5%",
+        "cta_text": "Check My Auto Rate",
+        "referral_url": "https://www.autopay.com/?ref=omnioperand",
+        "badge": "Auto Refinance Leader",
+        "disclosure": "Average customer saves $1,400 over the life of their auto loan.",
+        "threshold_rules": {
+          "field": "interest_rate",
+          "operator": ">=",
+          "value": 5.5
+        }
+      }
+    ],
+    "compound_interest": [
+      {
+        "id": "marcus_high_yield",
+        "name": "Marcus by Goldman Sachs",
+        "headline": "Earn 4.40% APY on Your Cash Reserves — 10x National Average",
+        "cta_text": "Open High-Yield Savings",
+        "referral_url": "https://www.marcus.com/?ref=omnioperand",
+        "badge": "High-Yield Cash",
+        "disclosure": "Member FDIC. Annual Percentage Yield as of current calendar quarter.",
+        "threshold_rules": {
+          "field": "principal",
+          "operator": ">=",
+          "value": 5000
+        }
+      },
+      {
+        "id": "vanguard_index_funds",
+        "name": "Vanguard",
+        "headline": "Put Compounding to Work with 0.03% Expense Ratio Index Funds",
+        "cta_text": "Explore Low-Cost ETFs",
+        "referral_url": "https://investor.vanguard.com/?ref=omnioperand",
+        "badge": "Index Investing",
+        "disclosure": "Investments are subject to market fluctuation and principal risk.",
+        "threshold_rules": {
+          "field": "future_value",
+          "operator": ">=",
+          "value": 25000
+        }
+      }
+    ],
+    "cagr": [
+      {
+        "id": "interactive_brokers",
+        "name": "Interactive Brokers",
+        "headline": "Institutional-Grade Execution & 4.83% APY on Idle Cash Balances",
+        "cta_text": "Open Pro Account",
+        "referral_url": "https://www.interactivebrokers.com/?ref=omnioperand",
+        "badge": "Global Markets",
+        "disclosure": "Member SIPC. Lowest published margin rates and zero transaction fees on US stocks.",
+        "threshold_rules": {
+          "field": "final_value",
+          "operator": ">=",
+          "value": 20000
+        }
+      }
+    ],
+    "concrete_volume": [
+      {
+        "id": "ready_mix_delivery",
+        "name": "Local Ready-Mix Dispatch",
+        "headline": "Large Pour Detected (>3 cu yds): Order Ready-Mix Delivery Instead of 150+ Bags",
+        "cta_text": "Get Instant Concrete Truck Quote",
+        "referral_url": "https://www.homedepot.com/c/concrete_supplies?ref=omnioperand",
+        "badge": "Pro Contractor Tip",
+        "disclosure": "Hand-mixing more than 50 bags causes cold joints. Ready-mix saves 12+ hours of labor.",
+        "threshold_rules": {
+          "field": "volume_cubic_yards",
+          "operator": ">=",
+          "value": 3.0
+        }
+      }
+    ],
+    "roof_pitch": [
+      {
+        "id": "modernize_roofing",
+        "name": "Modernize Home Services",
+        "headline": "Compare Top Local Roofing Contractors & Material Warranties",
+        "cta_text": "Get 3 Free Estimates",
+        "referral_url": "https://modernize.com/roofing?ref=omnioperand",
+        "badge": "Vetted Roofers",
+        "disclosure": "Free estimates with no obligation. All pros are licensed and insured.",
+        "threshold_rules": {
+          "field": "pitch_multiplier",
+          "operator": ">=",
+          "value": 1.10
+        }
+      }
+    ],
+    "geometry": [
+      {
+        "id": "rockler_woodworking",
+        "name": "Rockler Woodworking & Hardware",
+        "headline": "Precision Miter Gauges & Digital Angle Finders for Polygonal Joinery",
+        "cta_text": "Shop Precision Tools",
+        "referral_url": "https://www.rockler.com/?ref=omnioperand",
+        "badge": "Carpentry Specialist",
+        "disclosure": "Engineered for 22.5° octagon and 30° hexagon seamless joints.",
+        "threshold_rules": {
+          "field": "side_length",
+          "operator": ">=",
+          "value": 1
+        }
+      }
+    ]
+  }
+}

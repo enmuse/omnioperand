@@ -285,17 +285,41 @@ console.log(`Area: ${data.result.area}, Apothem: ${data.result.apothem}`);</pre>
         </div>
       </div>
 
-      <div class="proof-card open">
+      <div class="proof-card open" style="margin-bottom:1rem;">
         <div class="proof-header">
-          <h3><span>4. OpenAI Custom GPT Action / Claude Tool Configuration</span></h3>
+          <h3><span>4. API Authentication, Tiers & Rate Limiting</span></h3>
         </div>
         <div class="proof-body">
           <p style="font-size:0.875rem; color:var(--text-secondary); margin-bottom:0.75rem;">
-            Import this OpenAPI 3.1 endpoint into OpenAI's GPT Builder or your agent tool runner:
+            Authenticate requests using <code>Authorization: Bearer &lt;API_KEY&gt;</code> or <code>x-api-key: &lt;API_KEY&gt;</code>. Generate instant keys at <code>POST /api/v1/auth/keys</code> or use demo keys for testing:
           </p>
-          <pre class="llm-prompt-code" style="margin:0;">URL for GPT Action Schema: https://omnioperand.com/api/v1/openapi.json
-Authentication: None (Public Anonymous Allowed)
-Rate Limit: 60 requests per minute</pre>
+          <pre class="llm-prompt-code" style="margin:0 0 1rem 0;"># Pre-configured Test Keys:
+Free Tier:       omni_live_free_demo_key_123       (5 req/min, 500 req/mo)
+Pro Tier:        omni_live_pro_demo_key_456        (60 req/min, 50,000 req/mo)
+Enterprise Tier: omni_live_enterprise_demo_key_789 (300 req/min, 1,000,000 req/mo)</pre>
+          <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">
+            All endpoints return standard headers: <code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining</code>, and <code>X-RateLimit-Reset</code>.
+          </p>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3><span>5. Model Context Protocol (MCP) & Agent Tooling</span></h3>
+        </div>
+        <div class="proof-body">
+          <p style="font-size:0.875rem; color:var(--text-secondary); margin-bottom:0.75rem;">
+            Run our compliant Model Context Protocol (MCP) server for Claude Desktop, Cursor, and autonomous agent swarms:
+          </p>
+          <pre class="llm-prompt-code" style="margin:0 0 0.75rem 0;"># Run via Node stdio:
+node mcp/server.js
+
+# Or curl tool schemas directly:
+curl https://omnioperand.com/mcp/schemas.json
+curl https://omnioperand.com/api/v1/prompts</pre>
+          <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">
+            Looking to embed interactive calculators on your website? Explore <a href="/embed/" style="color:var(--accent-cyan); font-weight:600;">Embeddable Widgets (CaaS)</a>.
+          </p>
         </div>
       </div>
     </section>
