@@ -11,12 +11,14 @@ const DEFAULT_STRIPE_SECRET_KEY = "";
 
 const TIER_PRICING = {
   pro: {
+    price_id: "price_1USi9QR7kBc65bwPLfPEuImG",
     name: "OmniOperand Pro Tier (API, MCP & White-Label CaaS)",
     unit_amount: 2900, // $29.00
     currency: "usd",
     description: "50,000 requests/mo, 60 req/min, Model Context Protocol (MCP) server access, white-label widget embedding, and commercial license."
   },
   enterprise: {
+    price_id: "price_1USi9UR7kBc65bwPXjROhFd3",
     name: "OmniOperand Enterprise Tier (AI Clusters & Custom SLA)",
     unit_amount: 19900, // $199.00
     currency: "usd",
@@ -57,13 +59,19 @@ export async function onRequestPost(context) {
       params.append('customer_email', email);
     }
 
-    // Line item configuration
-    params.append('line_items[0][price_data][currency]', pricing.currency);
-    params.append('line_items[0][price_data][unit_amount]', String(pricing.unit_amount));
-    params.append('line_items[0][price_data][recurring][interval]', 'month');
-    params.append('line_items[0][price_data][product_data][name]', pricing.name);
-    params.append('line_items[0][price_data][product_data][description]', pricing.description);
-    params.append('line_items[0][quantity]', '1');
+    // Line item configuration: use dedicated price ID if configured, else dynamic price_data
+    const activePriceId = (tier === 'enterprise' ? context.env?.STRIPE_ENTERPRISE_PRICE_ID : context.env?.STRIPE_PRO_PRICE_ID) || pricing.price_id;
+    if (activePriceId) {
+      params.append('line_items[0][price]', activePriceId);
+      params.append('line_items[0][quantity]', '1');
+    } else {
+      params.append('line_items[0][price_data][currency]', pricing.currency);
+      params.append('line_items[0][price_data][unit_amount]', String(pricing.unit_amount));
+      params.append('line_items[0][price_data][recurring][interval]', 'month');
+      params.append('line_items[0][price_data][product_data][name]', pricing.name);
+      params.append('line_items[0][price_data][product_data][description]', pricing.description);
+      params.append('line_items[0][quantity]', '1');
+    }
 
     // Metadata
     params.append('metadata[tier]', tier);

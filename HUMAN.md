@@ -56,9 +56,10 @@
 ┌──────────────────────────────────────────────────────────────┐
 │                      REMAINING WORK                          │
 │                                                              │
-│  1. Check Cloudflare SSL Certificate Status (~1 min)         │
+│  1. Check Cloudflare SSL Certificate Status (~1 min) [Done]  │
 │  2. Review Initial Live Deployment on Cloudflare (~1 min)    │
-│  3. Plan Next Batch of Calculators to Scale (~2 mins)        │
+│  3. Sign Up for Affiliate Networks (~45-60 mins)             │
+│  4. Set Up Dedicated Stripe Profile for OmniOperand (~2 mins)│
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -111,4 +112,21 @@ The contextual recommendation engine (`assets/js/affiliate-engine.js`) is fully 
 2. **Update Tracking Links**:
    - Once approved, open `config/affiliates.json` and replace the placeholder `tracking_url` values with your unique affiliate tracking links.
    - The engine automatically routes clicks through your tracking codes with zero layout shift (CLS).
+
+---
+
+### Task 4: Dedicated Stripe Business Profile / Account for OmniOperand (~2 mins)
+
+**Status:** The current live Stripe key has already provisioned the official **OmniOperand Developer Platform (API & MCP)** product (`prod_VTfU6ZCDeAONJq`) with live Pro ($29/mo) and Enterprise ($199/mo) prices, and checkout sessions work out-of-the-box.
+
+**Recommended Separation Step:** To ensure customer bank statements specifically display **`OMNIOPERAND`** (instead of sharing `WNC Trade Network` branding or 1099-K reporting):
+1. Go to [dashboard.stripe.com](https://dashboard.stripe.com/).
+2. Click your business name dropdown in the top-left corner (`WNC Trade Network`) and click **"+ Add new account"** (or **"Create new account"**).
+3. Set the account name to **"OmniOperand"**.
+4. Set the Business Profile settings:
+   - **Business website:** `https://omnioperand.com`
+   - **Statement descriptor:** `OMNIOPERAND`
+   - **Support email:** `support@omnioperand.com`
+5. Under **Developers** → **API keys**, generate a restricted key (with Products, Prices, and Checkout Sessions write permissions) or copy the Secret key.
+6. Replace `STRIPE_SECRET_KEY` in `.env` and in your Cloudflare Pages dashboard under **Settings** → **Environment variables**.
 
