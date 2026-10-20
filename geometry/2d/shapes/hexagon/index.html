@@ -54,10 +54,10 @@
           },
           {
             "@type": "Question",
-            "name": "Why is the circumradius of a regular hexagon equal to its side length?",
+            "name": "Why is the circumradius equal to the side length?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Each of the 6 triangles formed by the center and two adjacent vertices has a central angle of 360° / 6 = 60°. Because the two radii legs are equal, the base angles are also (180° - 60°) / 2 = 60°, making all 6 central triangles equilateral. Therefore, Circumradius R strictly equals side length a."
+              "text": "A regular hexagon is formed by 6 congruent equilateral triangles meeting at the center. Because all sides of an equilateral triangle are equal, the distance from the center to any vertex (Circumradius R) is always strictly equal to the outer side length a."
             }
           },
           {
@@ -66,6 +66,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "A regular hexagon has 9 total diagonals in 2 distinct classes: (1) 6 Short diagonals d_S = a√3 ≈ 1.73205a connecting vertices separated by one vertex; (2) 3 Long diagonals d_L = 2a connecting directly opposite vertices through the center."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the socket and wrench sizes for a hex bolt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wrench and socket sizes measure the flat-to-flat span (S), which equals 2r_i = a√3. For example, a bolt with a side length of 10 mm requires a socket size of 10√3 ≈ 17.32 mm (typically a standard 17mm or 18mm socket)."
             }
           }
         ]
@@ -627,7 +635,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <div class="faq-question">
           <span>Why is the circumradius equal to the side length?</span>
           <span class="faq-icon">+</span>
@@ -637,7 +645,19 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What are the two diagonal lengths of a regular hexagon?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          A regular hexagon has 9 total diagonals in 2 distinct classes:
+          1. <strong>Short diagonals (<span class="math-tex">d<sub>S</sub></span>)</strong>: <span class="math-tex">d<sub>S</sub> = a√3 ≈ 1.73205a</span> (6 diagonals connecting vertices separated by one vertex)
+          2. <strong>Long diagonals (<span class="math-tex">d<sub>L</sub></span>)</strong>: <span class="math-tex">d<sub>L</sub> = 2a</span> (3 diagonals passing through the center connecting opposite vertices)
+        </div>
+      </div>
+
+      <div class="faq-item open">
         <div class="faq-question">
           <span>What are the socket and wrench sizes for a hex bolt?</span>
           <span class="faq-icon">+</span>

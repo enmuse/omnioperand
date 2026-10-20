@@ -52,18 +52,26 @@
           },
           {
             "@type": "Question",
-            "name": "How does extra monthly principal accelerate mortgage payoff?",
+            "name": "What is the difference between APR and interest rate?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Because monthly interest is calculated strictly on the remaining principal balance (Balance × i), any extra payment directly reduces principal. This creates an exponential compounding effect that reduces future interest charges and shaves years off the loan term."
+              "text": "The interest rate is the pure percentage charged on the principal balance each year. The Annual Percentage Rate (APR) includes the interest rate plus lender origination fees, discount points, closing costs, and private mortgage insurance (PMI), reflecting the true annual cost of credit."
             }
           },
           {
             "@type": "Question",
-            "name": "How do you invert the mortgage formula to find borrowing power?",
+            "name": "How does extra monthly principal accelerate mortgage payoff?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "To find the maximum loan amount P you can afford given a target monthly payment M, invert the annuity formula: P = M · [(1 + i)ⁿ - 1] / [i(1 + i)ⁿ]."
+              "text": "Because monthly interest is calculated strictly on the remaining principal balance (Balance × i), any extra payment directly reduces principal. Making one additional monthly payment each year typically shortens a 30-year mortgage by 4 to 6 years and saves tens of thousands in compounding interest."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can this calculator determine how much home I can afford?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! By typing your desired monthly payment directly into the Base Monthly Payment (M) field, OmniOperand immediately inverts the annuity formula to show the maximum loan principal P your payment can support: P = M · [(1 + i)ⁿ - 1] / [i(1 + i)ⁿ]."
             }
           }
         ]
@@ -394,6 +402,18 @@
 
       <div class="faq-item open">
         <div class="faq-question">
+          <span>What is the mathematical formula for a fixed-rate mortgage payment?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The monthly payment <span class="math-tex">M</span> is derived from the ordinary annuity present value formula:
+          <div class="math-display">M = P · [i(1 + i)ⁿ] / [(1 + i)ⁿ - 1]</div>
+          where <span class="math-tex">P</span> is loan principal, <span class="math-tex">i</span> is monthly interest rate (<span class="math-tex">APR / 12</span>), and <span class="math-tex">n</span> is total payment periods (<span class="math-tex">Years × 12</span>).
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
           <span>What is the difference between APR and interest rate?</span>
           <span class="faq-icon">+</span>
         </div>
@@ -402,23 +422,23 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <div class="faq-question">
-          <span>How does making one extra mortgage payment per year help?</span>
+          <span>How does extra monthly principal accelerate mortgage payoff?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          Making one additional monthly payment each year (or dividing one payment by 12 and adding it each month) typically shortens a 30-year mortgage by 4 to 6 years and saves tens of thousands of dollars in compounding interest, depending on the loan's interest rate.
+          Because monthly interest is calculated strictly on the remaining principal balance (<span class="math-tex">Balance × i</span>), any extra payment directly reduces principal. Making one additional monthly payment each year typically shortens a 30-year mortgage by 4 to 6 years and saves tens of thousands in compounding interest.
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <div class="faq-question">
           <span>Can this calculator determine how much home I can afford?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          Yes! By typing your desired monthly payment directly into the "Base Monthly Payment (M)" field, OmniOperand immediately inverts the annuity formula to show the maximum loan principal <span class="math-tex">P</span> your payment can support at current interest rates.
+          Yes! By typing your desired monthly payment directly into the "Base Monthly Payment (M)" field, OmniOperand immediately inverts the annuity formula to show the maximum loan principal <span class="math-tex">P</span> your payment can support: <span class="math-tex">P = M · [(1 + i)ⁿ - 1] / [i(1 + i)ⁿ]</span>.
         </div>
       </div>
     </section>

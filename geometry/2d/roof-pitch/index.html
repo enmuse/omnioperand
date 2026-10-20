@@ -61,10 +61,18 @@
           },
           {
             "@type": "Question",
-            "name": "What is the difference between a low-slope and steep-slope roof?",
+            "name": "What is the most popular residential roof pitch?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Building codes define low-slope roofs as less than 3:12 (approx. 14°), which require waterproof membrane systems (EPDM, TPO, PVC) rather than standard asphalt shingles. Standard asphalt architectural shingles require a minimum pitch of 4:12 (approx. 18.43°) for normal installation."
+              "text": "In contemporary residential construction, 6:12 (approx. 26.57°) is the most common pitch. It sheds rain and snow effectively, provides comfortable attic headroom, and is safe for experienced roofers to walk without toe boards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does roof pitch impact roofing material costs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Steeper pitches increase the actual roof surface area relative to the building's ground footprint. For example, a 12:12 roof (45°) requires 41.4% more shingles, underlayment, and labor than a flat roof covering the same floor plan (Rafter Multiplier = 1.414)."
             }
           }
         ]
@@ -347,6 +355,26 @@
 
       <div class="faq-item open">
         <div class="faq-question">
+          <span>What does a 6:12 roof pitch mean?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          A 6:12 roof pitch means the roof rises <strong>6 vertical inches</strong> for every <strong>12 horizontal inches</strong> (1 foot) of run. This corresponds to an incline angle of <span class="math-tex">arctan(6/12) ≈ 26.57°</span> and a 50% grade.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>How do you calculate rafter length from roof pitch?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Using the Pythagorean theorem, find the rafter multiplier <span class="math-tex">M = √(1 + (Rise/12)²)</span>. Multiply the building half-span (run) by <span class="math-tex">M</span>. For example, for a 6:12 pitch, <span class="math-tex">M = √(1 + 0.25) ≈ 1.1180</span>. If the run is 15 feet, rafter line length is <span class="math-tex">15 × 1.1180 = 16.77</span> feet (16' 9-¼").
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
           <span>What is the most popular residential roof pitch?</span>
           <span class="faq-icon">+</span>
         </div>
@@ -355,7 +383,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <div class="faq-question">
           <span>How does roof pitch impact roofing material costs?</span>
           <span class="faq-icon">+</span>

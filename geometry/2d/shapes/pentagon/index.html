@@ -54,10 +54,10 @@
           },
           {
             "@type": "Question",
-            "name": "Why is the diagonal of a regular pentagon equal to the golden ratio times the side length?",
+            "name": "What is the diagonal length of a regular pentagon?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "By applying the Law of Cosines to the triangle formed by two adjacent sides of length a and the 108° interior angle: d² = 2a²(1 - cos(108°)) = 2a²(1 + (√5 - 1)/4) = a² · [(3 + √5)/2] = a² · ϕ², where ϕ = (1 + √5)/2 is the Golden Ratio. Therefore, d = a · ϕ ≈ 1.618034a."
+              "text": "The diagonal of a regular pentagon is directly proportional to its side length by the Golden Ratio ϕ: d = a · ϕ = a · (1 + √5) / 2 ≈ 1.618034 · a."
             }
           },
           {
@@ -65,7 +65,15 @@
             "name": "How many diagonals does a regular pentagon have?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A regular pentagon has exactly 5 diagonals, and all 5 are congruent with length d = a · ϕ. When all 5 diagonals are drawn, they form a pentagram (five-pointed star) enclosing a smaller inverted regular pentagon in the center."
+              "text": "A regular pentagon has exactly 5 diagonals, and all 5 are equal in length. Connecting all 5 diagonals forms a pentagram (five-pointed star) which encloses an inverted smaller regular pentagon in the center."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the interior and exterior angles of a regular pentagon?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each interior angle of a regular pentagon is (5 - 2) · 180° / 5 = 108°. Each exterior angle is 360° / 5 = 72°. The central angle subtended by any side at the center is also 360° / 5 = 72°."
             }
           }
         ]
@@ -576,24 +584,34 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <div class="faq-question">
           <span>What is the diagonal length of a regular pentagon?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
           The diagonal of a regular pentagon is directly proportional to its side length by the Golden Ratio (<span class="math-tex">ϕ</span>):
-          <span class="math-tex">d = a · ϕ = a · (1 + √5) / 2 ≈ 1.618034 · a</span>.
+          <div class="math-display">d = a · ϕ = a · (1 + √5) / 2 ≈ 1.618034 · a</div>
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <div class="faq-question">
-          <span>How many diagonals does a pentagon have?</span>
+          <span>How many diagonals does a regular pentagon have?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          A pentagon has exactly 5 diagonals, and all 5 are equal in length. Connecting all 5 diagonals forms a pentagram (five-pointed star) which encloses an inverted smaller regular pentagon in the center.
+          A regular pentagon has exactly 5 diagonals, and all 5 are equal in length. Connecting all 5 diagonals forms a pentagram (five-pointed star) which encloses an inverted smaller regular pentagon in the center.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What are the interior and exterior angles of a regular pentagon?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Each interior angle of a regular pentagon is <span class="math-tex">(5 - 2) · 180° / 5 = 108°</span>. Each exterior angle is <span class="math-tex">360° / 5 = 72°</span>. The central angle subtended by any side at the center is also <span class="math-tex">360° / 5 = 72°</span>.
         </div>
       </div>
     </section>

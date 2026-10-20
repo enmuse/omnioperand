@@ -78,6 +78,7 @@
       },
       {
         "@type": "FAQPage",
+        "@id": "https://omnioperand.com/geometry/2d/shapes/regular-polygon/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -89,18 +90,26 @@
           },
           {
             "@type": "Question",
-            "name": "How do you calculate the number of diagonals in an n-sided polygon?",
+            "name": "How many diagonals does an n-gon have?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The total number of diagonals in an n-gon is Nd = n(n - 3) / 2. This arises because each of the n vertices can connect to (n - 3) non-adjacent vertices, and dividing by 2 prevents double-counting identical endpoints."
+              "text": "An n-sided polygon has Nd = n(n - 3) / 2 diagonals. For example, a triangle has 0 diagonals, a square has 2, a pentagon has 5, a hexagon has 9, an octagon has 20, and a decagon has 35 diagonals."
             }
           },
           {
             "@type": "Question",
-            "name": "How does Archimedes' method relate to regular polygons?",
+            "name": "What is the difference between an apothem and a circumradius?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Archimedes calculated upper and lower bounds for π by inscribing and circumscribing regular 96-sided polygons around a circle. As the number of sides n approaches infinity, the perimeter approaches the circle circumference 2πR and the area approaches πR²."
+              "text": "The apothem (inradius ri) is the perpendicular distance from the center to the midpoint of any flat edge. It is the radius of the inscribed circle. The circumradius (R) is the distance from the center to any vertex corner. It is the radius of the circumscribed circle passing through all vertices. The two are related by ri = R · cos(π/n)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which regular polygons can be constructed with compass and straightedge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By the Gauss-Wantzel Theorem, a regular n-gon is constructible with compass and straightedge if and only if n is the product of a power of 2 and any number of distinct Fermat primes (3, 5, 17, 257, 65537). Constructible polygons include n = 3, 4, 5, 6, 8, 10, 12, 15, 16, 17, 20, 24, 30. Non-constructible regular polygons include n = 7, 9, 11, 13, 14, 18, 19."
             }
           }
         ]
@@ -750,7 +759,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <div class="faq-question">
           <span>How many diagonals does an n-gon have?</span>
           <span class="faq-icon">+</span>
@@ -768,7 +777,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <div class="faq-question">
           <span>What is the difference between an apothem and a circumradius?</span>
           <span class="faq-icon">+</span>
@@ -778,7 +787,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <div class="faq-question">
           <span>Which regular polygons can be constructed with compass and straightedge?</span>
           <span class="faq-icon">+</span>

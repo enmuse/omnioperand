@@ -47,7 +47,7 @@
             "name": "What is the geometric meaning of the first derivative?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The derivative f'(x₀) represents the slope of the unique tangent line touching the curve at the point (x₀, f(x₀)). It measures the instantaneous rate of change of y with respect to x at that exact instant."
+              "text": "The derivative f'(x₀) represents the instantaneous rate of change of y with respect to x at point (x₀, f(x₀)), which geometrically equals the exact slope m of the unique tangent line touching the curve."
             }
           },
           {
@@ -55,15 +55,23 @@
             "name": "How do you find the equation of a tangent line?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Compute slope m = f'(x₀) and point y₀ = f(x₀). Then substitute into point-slope form: y - y₀ = m(x - x₀), which rearranges to slope-intercept form y = m·x + (y₀ - m·x₀)."
+              "text": "Compute slope m = f'(x₀) and point y₀ = f(x₀). Substitute into point-slope form y - y₀ = m(x - x₀), which simplifies to slope-intercept form y = mx + (y₀ - m·x₀)."
             }
           },
           {
             "@type": "Question",
-            "name": "What is a normal line in calculus?",
+            "name": "What is a normal line and how is its slope calculated?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The normal line is perpendicular to the tangent line at the point of tangency (x₀, y₀). Its slope is the negative reciprocal of the tangent slope: m_normal = -1 / f'(x₀)."
+              "text": "The normal line is perpendicular to the tangent line at the point of tangency (x₀, y₀). Its slope is the negative reciprocal of the tangent slope: m_normal = -1 / f'(x₀) (for f'(x₀) ≠ 0)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens when f'(x) = 0 and what is an inflection point?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When f'(x₀) = 0, the tangent line is completely horizontal with equation y = y₀, signifying a stationary point (local minimum, maximum, or horizontal plateau). An inflection point occurs where the curve changes concavity, where f''(x) crosses zero."
             }
           }
         ]
@@ -357,21 +365,41 @@
 
       <div class="faq-item open">
         <div class="faq-question">
-          <span>What happens to the tangent line when f'(x) = 0?</span>
+          <span>What is the geometric meaning of the first derivative?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          When <span class="math-tex">f'(x₀) = 0</span>, the tangent line is completely horizontal with equation <span class="math-tex">y = y₀</span>. This occurs at stationary points: local maxima, local minima, or horizontal inflection points.
+          The derivative <span class="math-tex">f'(x₀)</span> represents the instantaneous rate of change of <span class="math-tex">y</span> with respect to <span class="math-tex">x</span> at point <span class="math-tex">(x₀, f(x₀))</span>, which geometrically equals the exact slope <span class="math-tex">m</span> of the unique tangent line touching the curve.
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <div class="faq-question">
-          <span>What is an inflection point?</span>
+          <span>How do you find the equation of a tangent line?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          An inflection point is a location on the curve where the concavity changes from upward to downward (or vice versa), which occurs when the second derivative <span class="math-tex">f''(x)</span> crosses through zero.
+          Compute slope <span class="math-tex">m = f'(x₀)</span> and point <span class="math-tex">y₀ = f(x₀)</span>. Substitute into point-slope form <span class="math-tex">y - y₀ = m(x - x₀)</span>, which simplifies to slope-intercept form <span class="math-tex">y = mx + (y₀ - m · x₀)</span>.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is a normal line and how is its slope calculated?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The normal line is perpendicular to the tangent line at the point of tangency <span class="math-tex">(x₀, y₀)</span>. Its slope is the negative reciprocal of the tangent slope: <span class="math-tex">m<sub>⟂</sub> = -1 / f'(x₀)</span> (for <span class="math-tex">f'(x₀) ≠ 0</span>).
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What happens when f'(x) = 0 and what is an inflection point?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          When <span class="math-tex">f'(x₀) = 0</span>, the tangent line is completely horizontal with equation <span class="math-tex">y = y₀</span>, signifying a stationary point (local minimum, maximum, or horizontal plateau). An inflection point occurs where the curve changes concavity, where <span class="math-tex">f''(x)</span> crosses zero.
         </div>
       </div>
     </section>

@@ -44,10 +44,18 @@
         "mainEntity": [
           {
             "@type": "Question",
+            "name": "What is the difference between definite and indefinite integrals?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An indefinite integral ∫ f(x) dx = F(x) + C represents the entire family of antiderivatives of f(x). A definite integral ∫_a^b f(x) dx evaluates the antiderivative between numerical limits [a, b], yielding a single real scalar value representing the net signed area under the curve."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "What is the Fundamental Theorem of Calculus?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The Fundamental Theorem of Calculus links differentiation and integration. Part 2 states that if f is continuous on [a, b] and F is any antiderivative of f (so F'(x) = f(x)), then the definite integral equals F(b) - F(a)."
+              "text": "The Fundamental Theorem of Calculus connects differentiation and integration. Part 2 states that if f is continuous on [a, b] and F is any antiderivative of f (so F'(x) = f(x)), then the definite integral equals F(b) - F(a)."
             }
           },
           {
@@ -55,15 +63,15 @@
             "name": "Why is Simpson's Rule more accurate than the Trapezoidal Rule?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The Trapezoidal Rule connects discrete partition points with linear line segments (1st-degree polynomials), giving an error proportional to Δx². Simpson's Rule fits parabolic arcs (2nd-degree quadratics) across successive trios of points, yielding an error proportional to Δx⁴."
+              "text": "The Trapezoidal Rule connects partition points with straight line segments (degree 1), giving an error proportional to Δx². Simpson's Rule fits parabolic arcs (degree 2) across successive trios of points, yielding an error proportional to Δx⁴."
             }
           },
           {
             "@type": "Question",
-            "name": "What does the average value of a function represent geometrically?",
+            "name": "Can a definite integral produce a negative value?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The average value f_avg = [1 / (b - a)] · ∫_a^b f(x) dx represents the constant height of a rectangle with base (b - a) whose area exactly equals the area under the curve f(x)."
+              "text": "Yes! Definite integrals calculate net signed area. Regions of the curve lying below the horizontal x-axis have negative function values (f(x) < 0) and contribute negative signed area to the total integral sum."
             }
           }
         ]
@@ -366,7 +374,27 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the Fundamental Theorem of Calculus?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The Fundamental Theorem of Calculus connects differentiation and integration. Part 2 states that if <span class="math-tex">f</span> is continuous on <span class="math-tex">[a, b]</span> and <span class="math-tex">F</span> is any antiderivative of <span class="math-tex">f</span> (so <span class="math-tex">F'(x) = f(x)</span>), then the definite integral equals <span class="math-tex">F(b) - F(a)</span>.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>Why is Simpson's Rule more accurate than the Trapezoidal Rule?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The Trapezoidal Rule connects discrete partition points with linear segments, giving an error proportional to <span class="math-tex">Δx²</span>. Simpson's Rule fits parabolic arcs across successive trios of points, yielding an error proportional to <span class="math-tex">Δx⁴</span>, which converges substantially faster.
+        </div>
+      </div>
+
+      <div class="faq-item open">
         <div class="faq-question">
           <span>Can an integral produce a negative area?</span>
           <span class="faq-icon">+</span>

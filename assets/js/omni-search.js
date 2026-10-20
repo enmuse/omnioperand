@@ -243,9 +243,23 @@
     }
   }
 
+  // Global FAQ Accordion Toggle Delegation
+  function initFaqToggles() {
+    document.addEventListener('click', (e) => {
+      const question = e.target.closest('.faq-question');
+      if (question) {
+        const item = question.closest('.faq-item');
+        if (item) {
+          item.classList.toggle('open');
+        }
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initSearch();
+    initFaqToggles();
   });
 
 })();

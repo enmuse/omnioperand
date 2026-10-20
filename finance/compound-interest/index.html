@@ -52,6 +52,14 @@
           },
           {
             "@type": "Question",
+            "name": "How does compounding frequency impact returns?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The more frequently interest is added to principal (daily vs monthly vs annually), the faster interest begins earning interest on itself. For an 8% return on $10,000 over 20 years, annual compounding yields $46,610, monthly yields $49,268, and continuous compounding yields $49,530."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "What is the difference between APR and APY?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -60,10 +68,10 @@
           },
           {
             "@type": "Question",
-            "name": "How does continuous compounding work mathematically?",
+            "name": "What is the Rule of 72?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "As the compounding frequency m approaches infinity (lim m ➔ ∞), Euler's constant e emerges: FV = P · eʳᵗ. For continuous contributions, FV = P · eʳᵗ + PMT_annual · (eʳᵗ - 1) / r."
+              "text": "The Rule of 72 is an analytical shortcut to estimate how many years it takes for an investment to double at a constant annual rate: Years to Double ≈ 72 / Interest Rate. For example, at an 8% return, your money doubles in approximately 72 / 8 = 9 years."
             }
           }
         ]
@@ -380,6 +388,18 @@
 
       <div class="faq-item open">
         <div class="faq-question">
+          <span>What is the formula for compound interest with regular deposits?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The total future value combines lump-sum compounding and ordinary annuity compounding:
+          <div class="math-display">FV = P(1 + r/m)ᵐᵗ + PMT · [((1 + i<sub>p</sub>)ᴺ - 1) / i<sub>p</sub>]</div>
+          where <span class="math-tex">P</span> is principal, <span class="math-tex">r</span> is nominal APR, <span class="math-tex">m</span> is annual compounding frequency, <span class="math-tex">t</span> is years, <span class="math-tex">PMT</span> is periodic contribution, and <span class="math-tex">i<sub>p</sub></span> is interest rate per deposit interval.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
           <span>How does compounding frequency impact returns?</span>
           <span class="faq-icon">+</span>
         </div>
@@ -388,23 +408,23 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the difference between APR and APY?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <strong>APR (Annual Percentage Rate)</strong> is the nominal stated rate without intra-year compounding. <strong>APY (Annual Percentage Yield)</strong> reflects the true effective annual yield: <span class="math-tex">APY = (1 + r/m)ᵐ - 1</span>. For 7% compounded daily, APY is 7.25%.
+        </div>
+      </div>
+
+      <div class="faq-item open">
         <div class="faq-question">
           <span>What is the Rule of 72?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          The Rule of 72 is an analytical shortcut to estimate how many years it takes for an investment to double at a constant annual rate: Years to Double ≈ 72 / Interest Rate. For example, at an 8% return, your money doubles in approximately 72 / 8 = 9 years.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Can I calculate withdrawals instead of deposits?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          While this tool models positive wealth accumulation and target goal inversion, entering negative cash flows transforms the annuity equation into a retirement drawdown (decumulation) model, showing how long a nest egg lasts under sustained withdrawals.
+          The Rule of 72 is an analytical shortcut to estimate how many years it takes for an investment to double at a constant annual rate: <span class="math-tex">Years to Double ≈ 72 / Interest Rate</span>. For example, at an 8% return, your money doubles in approximately <span class="math-tex">72 / 8 = 9</span> years.
         </div>
       </div>
     </section>

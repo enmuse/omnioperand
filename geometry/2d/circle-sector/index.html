@@ -61,10 +61,18 @@
           },
           {
             "@type": "Question",
-            "name": "What is the formula for circular segment area?",
+            "name": "What is the origin of the word sagitta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "When central angle θ is in radians: A_seg = ½ R² (θ - sin θ). If θ is in degrees: A_seg = ½ R² [(π · θ / 180) - sin(θ · π / 180)]."
+              "text": "Sagitta is Latin for arrow. In classical geometry, the chord represents an archer's bowstring, the curved arc represents the bow, and the perpendicular height line from chord to arc resembles an arrow nocked and ready to fire."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you calculate circular tank liquid volume?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When a horizontal cylindrical tank (like an oil or fuel tank) is partially full, the cross-sectional shape of the liquid is a circular segment. Multiplying the segment area by the tank's horizontal length yields the exact liquid volume in the tank."
             }
           }
         ]
@@ -366,6 +374,28 @@
 
       <div class="faq-item open">
         <div class="faq-question">
+          <span>What is the difference between a circle sector and a circle segment?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          A <strong>circle sector</strong> is a pie-shaped region bounded by two radii and an arc (like a slice of pizza). A <strong>circle segment</strong> is the region bounded by an arc and the straight chord connecting the arc's two endpoints. The segment area equals the sector area minus the central triangle area: <span class="math-tex">A<sub>seg</sub> = ½ R²(θ - sin θ)</span>.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>How do you calculate circle radius from chord and sagitta height?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          By applying the Intersecting Chords Theorem, radius <span class="math-tex">R</span> can be derived from chord length <span class="math-tex">c</span> and sagitta height <span class="math-tex">h</span>:
+          <div class="math-display">R = (c² / (8h)) + (h / 2)</div>
+          This is widely used in machining, surveying, and arch masonry when only the chord and depth are accessible.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
           <span>What is the origin of the word "sagitta"?</span>
           <span class="faq-icon">+</span>
         </div>
@@ -374,7 +404,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <div class="faq-question">
           <span>How do you calculate circular tank liquid volume?</span>
           <span class="faq-icon">+</span>

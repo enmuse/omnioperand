@@ -54,7 +54,7 @@
           },
           {
             "@type": "Question",
-            "name": "Why is the circumradius of a regular decagon equal to side length times the golden ratio?",
+            "name": "Why is the circumradius related to the golden ratio?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Each of the 10 central triangles has a central angle of 360° / 10 = 36°, meaning the half central angle is 18°. By definition, sin(18°) = (√5 - 1) / 4 = 1 / (2ϕ), where ϕ = (1 + √5)/2 is the Golden Ratio. Because R = a / [2 sin(18°)], substituting yields R = a · ϕ ≈ 1.618034a."
@@ -62,10 +62,18 @@
           },
           {
             "@type": "Question",
-            "name": "How many diagonals does a regular decagon have?",
+            "name": "What are the 4 diagonal lengths of a regular decagon?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "A regular decagon has 35 total diagonals distributed into 4 distinct congruence classes: 10 short diagonals d1 ≈ 1.9021a, 10 medium diagonals d2 = a·ϕ² ≈ 2.6180a, 10 long diagonals d3 = a√(5+2√5) ≈ 3.0777a, and 5 main diameters d4 = 2R = a(1+√5) ≈ 3.2361a."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the interior and exterior angles of a regular decagon?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each interior angle of a regular decagon is (10 - 2) · 180° / 10 = 144°. Each exterior angle is 360° / 10 = 36°. The sum of all 10 interior angles is 1,440°."
             }
           }
         ]
@@ -663,7 +671,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <div class="faq-question">
           <span>Why is the circumradius related to the golden ratio?</span>
           <span class="faq-icon">+</span>
@@ -673,17 +681,29 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <div class="faq-question">
           <span>What are the 4 diagonal lengths of a regular decagon?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
           A regular decagon has 35 diagonals in 4 distinct lengths:
-          1. <strong>Short diagonal (<span class="math-tex">d<sub>1</sub></span>)</strong>: <span class="math-tex">d<sub>1</sub> = a√[(5 + √5)/2] ≈ 1.90211a</span>
-          2. <strong>Medium diagonal (<span class="math-tex">d<sub>2</sub></span>)</strong>: <span class="math-tex">d<sub>2</sub> = a · ϕ² ≈ 2.61803a</span>
-          3. <strong>Long diagonal (<span class="math-tex">d<sub>3</sub></span>)</strong>: <span class="math-tex">d<sub>3</sub> = a√(5 + 2√5) ≈ 3.07768a</span> (equal to flat-to-flat span <span class="math-tex">S</span>)
-          4. <strong>Main diameter (<span class="math-tex">d<sub>4</sub></span>)</strong>: <span class="math-tex">d<sub>4</sub> = 2R = a(1 + √5) ≈ 3.23607a</span>
+          <ol>
+            <li><strong>Short diagonal (<span class="math-tex">d<sub>1</sub></span>)</strong>: <span class="math-tex">d<sub>1</sub> = a√[(5 + √5)/2] ≈ 1.90211a</span></li>
+            <li><strong>Medium diagonal (<span class="math-tex">d<sub>2</sub></span>)</strong>: <span class="math-tex">d<sub>2</sub> = a · ϕ² ≈ 2.61803a</span></li>
+            <li><strong>Long diagonal (<span class="math-tex">d<sub>3</sub></span>)</strong>: <span class="math-tex">d<sub>3</sub> = a√(5 + 2√5) ≈ 3.07768a</span> (equal to flat-to-flat span <span class="math-tex">S</span>)</li>
+            <li><strong>Main diameter (<span class="math-tex">d<sub>4</sub></span>)</strong>: <span class="math-tex">d<sub>4</sub> = 2R = a(1 + √5) ≈ 3.23607a</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What are the interior and exterior angles of a regular decagon?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Each interior angle of a regular decagon is <span class="math-tex">(10 - 2) · 180° / 10 = 144°</span>. Each exterior angle is <span class="math-tex">360° / 10 = 36°</span>. The sum of all 10 interior angles is <span class="math-tex">1,440°</span>.
         </div>
       </div>
     </section>

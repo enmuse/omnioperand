@@ -60,10 +60,18 @@
           },
           {
             "@type": "Question",
-            "name": "How do you calculate the time required to double your money with CAGR?",
+            "name": "Can CAGR be negative?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The exact doubling time is t = ln(2) / ln(1 + CAGR). For quick heuristics, the Rule of 72 provides an approximation: t ≈ 72 / CAGR_percentage."
+              "text": "Yes! If ending valuation V_n is less than beginning value V_0, the ratio V_n / V_0 is less than 1, producing a negative CAGR that represents the constant annual rate of depreciation or loss."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does CAGR account for intermediate cash inflows or withdrawals?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Standard CAGR measures point-to-point geometric growth assuming no intermediate capital inflows or outflows. When deposits or withdrawals occur throughout the period, the Internal Rate of Return (IRR) or Money-Weighted Return should be computed instead."
             }
           }
         ]
@@ -324,15 +332,37 @@
 
       <div class="faq-item open">
         <div class="faq-question">
+          <span>What is the formula for Compound Annual Growth Rate (CAGR)?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The CAGR formula calculates the constant annual rate of geometric growth over <span class="math-tex">n</span> years:
+          <div class="math-display">CAGR = (V<sub>n</sub> / V₀)<sup>1/n</sup> - 1</div>
+          where <span class="math-tex">V₀</span> is beginning valuation and <span class="math-tex">V<sub>n</sub></span> is ending valuation.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>Why is CAGR superior to the simple arithmetic average return?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Arithmetic averages ignore volatility drag. For instance, if a portfolio gains 100% in Year 1 ($10,000 ➔ $20,000) and drops 50% in Year 2 ($20,000 ➔ $10,000), the arithmetic average is +25%, but your real wealth gained nothing (0%). CAGR accurately computes <strong>0.00%</strong> as the true geometric mean return.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
           <span>Can CAGR be negative?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          Yes! If the ending valuation <span class="math-tex">Vₙ</span> is less than the beginning value <span class="math-tex">V₀</span>, the ratio <span class="math-tex">Vₙ / V₀</span> is less than 1, resulting in a negative CAGR that represents the constant annual rate of depreciation or loss.
+          Yes! If the ending valuation <span class="math-tex">V<sub>n</sub></span> is less than the beginning value <span class="math-tex">V₀</span>, the ratio <span class="math-tex">V<sub>n</sub> / V₀</span> is less than 1, resulting in a negative CAGR that represents the constant annual rate of depreciation or loss.
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item open">
         <div class="faq-question">
           <span>Does CAGR account for cash infusions or withdrawals?</span>
           <span class="faq-icon">+</span>
