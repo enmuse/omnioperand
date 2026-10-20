@@ -45,6 +45,72 @@
       keywords: ["decagon", "polygon", "10-sided", "golden ratio", "phi", "apothem", "circumradius", "diagonal", "area"]
     },
     {
+      title: "Mortgage Amortization & Early Payoff Calculator",
+      category: "Finance > Debt & Real Estate",
+      url: "/finance/mortgage-amortization/",
+      keywords: ["mortgage", "amortization", "loan", "home loan", "interest", "monthly payment", "early payoff", "principal", "extra payment", "borrowing power", "interest savings", "fixed rate"]
+    },
+    {
+      title: "Compound Interest & Investment Growth Calculator",
+      category: "Finance > Wealth Growth",
+      url: "/finance/compound-interest/",
+      keywords: ["compound interest", "interest", "apy", "future value", "investing", "stocks", "savings", "monthly contribution", "continuous compounding", "annuity", "rule of 72"]
+    },
+    {
+      title: "Compound Annual Growth Rate (CAGR) Calculator",
+      category: "Finance > Valuation",
+      url: "/finance/cagr/",
+      keywords: ["cagr", "compound annual growth rate", "growth rate", "portfolio return", "doubling time", "geometric mean", "valuation", "investment return", "annualized"]
+    },
+    {
+      title: "Auto Loan & Car Affordability Calculator",
+      category: "Finance > Consumer Lending",
+      url: "/finance/auto-loan/",
+      keywords: ["auto loan", "car loan", "car payment", "car affordability", "trade-in", "sales tax", "vehicle price", "apr", "financing", "monthly car payment"]
+    },
+    {
+      title: "Concrete Volume & Bag Count Calculator",
+      category: "Geometry > 3D Geometry > Civil Engineering",
+      url: "/geometry/3d/concrete-volume/",
+      keywords: ["concrete", "cubic yards", "quikrete", "bag count", "80lb bag", "60lb bag", "slab", "footing", "column", "pier", "patio", "driveway", "cement", "ready mix"]
+    },
+    {
+      title: "Roof Pitch, Rafter Length & Slope Calculator",
+      category: "Geometry > 2D Geometry > Carpentry",
+      url: "/geometry/2d/roof-pitch/",
+      keywords: ["roof pitch", "pitch in 12", "rafter length", "slope", "degrees", "roof angle", "carpentry", "framing", "plumb cut", "birdsmouth", "truss", "overhang"]
+    },
+    {
+      title: "Circle Sector, Arc Length & Segment Area Calculator",
+      category: "Geometry > 2D Geometry > Curves",
+      url: "/geometry/2d/circle-sector/",
+      keywords: ["circle sector", "sector area", "arc length", "chord length", "sagitta", "segment area", "circular segment", "radius", "central angle"]
+    },
+    {
+      title: "Right Triangle & Pythagorean Theorem Calculator",
+      category: "Geometry > 2D Geometry > Triangles",
+      url: "/geometry/2d/right-triangle/",
+      keywords: ["right triangle", "pythagorean theorem", "hypotenuse", "altitude", "inradius", "circumradius", "cathetus", "triangle area", "trigonometry", "sine", "cosine", "tangent"]
+    },
+    {
+      title: "Definite & Indefinite Integral Calculator",
+      category: "Calculus > Integrals",
+      url: "/calculus/integrals/",
+      keywords: ["integral", "antiderivative", "definite integral", "indefinite integral", "riemann sum", "simpsons rule", "trapezoidal rule", "area under curve", "fundamental theorem of calculus"]
+    },
+    {
+      title: "Derivative & Tangent Line Equation Calculator",
+      category: "Calculus > Derivatives",
+      url: "/calculus/derivatives/",
+      keywords: ["derivative", "tangent line", "normal line", "slope", "instantaneous rate of change", "concavity", "second derivative", "inflection point", "differentiation"]
+    },
+    {
+      title: "3D Geometry Hub",
+      category: "Geometry",
+      url: "/geometry/3d/",
+      keywords: ["3d", "three dimensional", "spatial", "volume", "concrete", "polyhedra", "prisms", "cylinders"]
+    },
+    {
       title: "2D Geometry Hub",
       category: "Geometry",
       url: "/geometry/2d/",
@@ -72,7 +138,7 @@
       title: "Finance & Quantitative Hub",
       category: "Applied Math",
       url: "/finance/",
-      keywords: ["finance", "compound interest", "amortization", "loan", "present value", "black scholes", "annuity"]
+      keywords: ["finance", "mortgage", "compound interest", "cagr", "auto loan", "amortization", "loan", "present value"]
     },
     {
       title: "Physics & Engineering Hub",

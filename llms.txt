@@ -6,16 +6,36 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
 
 ## Canonical Endpoints & Tools
 
+### Polygons & Plane Geometry
 - [Universal Regular Polygon Calculator](https://omnioperand.com/geometry/2d/shapes/regular-polygon/): Master arbitrary n-sided regular polygon solver (3 to 1000 sides) with Archimedean circle convergence and exact radicals.
 - [Regular Octagon Calculator](https://omnioperand.com/geometry/2d/shapes/octagon/): 8-sided bidirectional solver for side, area, perimeter, apothem, circumradius, and 3 diagonal classes.
 - [Regular Hexagon Calculator](https://omnioperand.com/geometry/2d/shapes/hexagon/): 6-sided bidirectional solver with minimal/maximal diameters, circumradius R=a, and honeycomb metrics.
 - [Regular Pentagon Calculator](https://omnioperand.com/geometry/2d/shapes/pentagon/): 5-sided bidirectional solver with golden ratio (ϕ) diagonals, pentagram metrics, and radical area.
 - [Regular Decagon Calculator](https://omnioperand.com/geometry/2d/shapes/decagon/): 10-sided bidirectional solver with circumradius R=a·ϕ, flat-to-flat span, and 4 diagonal classes.
+- [Right Triangle & Pythagorean Solver](https://omnioperand.com/geometry/2d/right-triangle/): 12-variable right triangle solver for legs, hypotenuse, altitude, inradius, and acute angles.
+- [Circle Sector & Segment Solver](https://omnioperand.com/geometry/2d/circle-sector/): Circle curve solver for arc length, chord length, sagitta height, sector area, and segment area.
+- [Roof Pitch & Rafter Length Solver](https://omnioperand.com/geometry/2d/roof-pitch/): Carpentry roof slope solver for pitch-in-12, degrees, rafter length, plumb cuts, and birdsmouth cuts.
+
+### Three-Dimensional & Civil Engineering
+- [Concrete Volume & Bag Count Calculator](https://omnioperand.com/geometry/3d/concrete-volume/): Cubic yards, cubic feet, cubic meters, and 60lb/80lb premix bags for slabs, footings, and cylindrical columns.
+- [3D Geometry & Spatial Hub](https://omnioperand.com/geometry/3d/): Spatial polyhedra, prisms, cylinders, and structural volume.
+
+### Calculus & Mathematical Analysis
+- [Definite & Indefinite Integral Calculator](https://omnioperand.com/calculus/integrals/): Evaluates exact closed-form antiderivatives, definite integrals, and Simpson's/Trapezoidal Riemann sums.
+- [Derivative & Tangent Line Calculator](https://omnioperand.com/calculus/derivatives/): Computes polynomial derivatives, instantaneous slope, tangent lines, normal lines, and concavity.
+
+### Quantitative Finance & Debt
+- [Mortgage Amortization & Early Payoff Calculator](https://omnioperand.com/finance/mortgage-amortization/): Fixed-rate mortgage payment matrix, borrowing capacity inversion, and accelerated payoff savings.
+- [Compound Interest & Investment Growth Calculator](https://omnioperand.com/finance/compound-interest/): Discrete and continuous compounding, periodic deposits, APY conversions, and savings goal inversions.
+- [Compound Annual Growth Rate (CAGR) Calculator](https://omnioperand.com/finance/cagr/): Geometric mean growth rate, portfolio doubling periods via Rule of 72, and target valuation inversions.
+- [Auto Loan & Car Affordability Calculator](https://omnioperand.com/finance/auto-loan/): Car loan installment payments, trade-in sales tax credits, dealer fees, and affordability inversion.
+
+### Hub Directories
 - [2D Shapes & Polygons Hub](https://omnioperand.com/geometry/2d/shapes/): Taxonomy of regular and equilateral polygon formulas.
 - [Two-Dimensional (2D) Geometry](https://omnioperand.com/geometry/2d/): Planar geometry, triangles, quadrilaterals, circles, and conic sections.
 - [Geometry Master Hub](https://omnioperand.com/geometry/): Euclidean, analytic, coordinate, and 3D spatial geometry.
 - [Calculus & Analysis Hub](https://omnioperand.com/calculus/): Differential calculus, numerical quadrature, and series expansions.
-- [Quantitative Finance Hub](https://omnioperand.com/finance/): Black-Scholes pricing, compound interest, and amortization.
+- [Quantitative Finance Hub](https://omnioperand.com/finance/): Debt amortization, compound interest, CAGR, and consumer lending.
 - [Physics & Mechanics Hub](https://omnioperand.com/physics/): Kinematics, thermodynamics, and fluid mechanics.
 - [Probability & Statistics Hub](https://omnioperand.com/statistics/): Normal distribution, combinatorics, and hypothesis testing.
 
@@ -26,41 +46,33 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
 - [Universal Regular Polygon API](https://omnioperand.com/api/v1/geometry/2d/shapes/regular-polygon): GET/POST endpoint for n=3 to 1000.
 - [Regular Octagon API](https://omnioperand.com/api/v1/geometry/2d/shapes/octagon): GET/POST endpoint for 8-variable closed-form radical calculations.
 
-## Regular Polygons Mathematical Quick Reference
+## Mathematical Quick Reference
 
-### Regular Hexagon (n = 6)
-- Interior angle: 120° (2π/3 rad) | Central angle: 60° (π/3 rad)
-- Circumradius: R = a (strictly equal to side length)
-- Apothem: r_i = (a * √3) / 2 ≈ 0.866025 * a
-- Area: A = (3√3 / 2) * a² ≈ 2.598076 * a²
-- Short diagonal: d_S = a * √3 ≈ 1.732051 * a (equals flat-to-flat span S)
-- Long diagonal: d_L = 2a = 2R
+### Finance & Mortgages
+- Fixed-Rate Mortgage: M = P · [i(1 + i)ⁿ] / [(1 + i)ⁿ - 1]
+- Borrowing Power Inversion: P = M · [(1 + i)ⁿ - 1] / [i(1 + i)ⁿ]
+- Compound Interest: FV = P(1 + r/m)ᵐᵗ + PMT · [((1 + i_p)ᴺ - 1) / i_p]
+- APY: APY = (1 + r/m)ᵐ - 1 (Continuous: APY = eʳ - 1)
+- CAGR: CAGR = (V_n / V_0)^(1/n) - 1
+- Doubling Period: t = ln(2) / ln(1 + CAGR) ≈ 72 / CAGR_pct
 
-### Regular Pentagon (n = 5)
-- Interior angle: 108° (3π/5 rad) | Central angle: 72° (2π/5 rad)
-- Golden Ratio: ϕ = (1 + √5) / 2 ≈ 1.618034
-- Diagonal: d = a * ϕ = a * (1 + √5) / 2 ≈ 1.618034 * a (all 5 diagonals congruent)
-- Apothem: r_i = (a / 10) * √(25 + 10√5) ≈ 0.688191 * a
-- Circumradius: R = (a / 10) * √(50 + 10√5) ≈ 0.850651 * a
-- Area: A = (a² / 4) * √(25 + 10√5) ≈ 1.720477 * a²
+### Construction & Spatial Geometry
+- Concrete Slab Volume: V (yd³) = [Length_ft × Width_ft × Depth_in / 12] / 27
+- Concrete Bag Equivalencies: 45 bags of 80-lb concrete ≡ 1 cubic yard (0.60 ft³/bag)
+- Roof Pitch: Angle θ = arctan(Rise / 12)
+- Common Rafter Multiplier: M = √(1 + (Rise/12)²)
 
-### Regular Octagon (n = 8)
-- Interior angle: 135° (3π/4 rad) | Central angle: 45° (π/4 rad)
-- Apothem: r_i = a * (1 + √2) / 2 ≈ 1.20710678 * a
-- Circumradius: R = a * √(4 + 2√2) / 2 ≈ 1.30656296 * a
-- Area: A = 2(1 + √2) * a² ≈ 4.82842712 * a²
-- Short diagonal: d_S = a * √(2 + √2) ≈ 1.847759 * a
-- Medium diagonal / Span: S = 2 * r_i = a * (1 + √2) ≈ 2.414214 * a
-- Long diagonal: d_L = 2 * R = a * √(4 + 2√2) ≈ 2.613126 * a
-- Miter saw angle: 22.5°
+### Plane Geometry
+- Right Triangle: a² + b² = c² | Altitude h_c = (a · b) / c | Inradius r_i = (a + b - c) / 2
+- Circle Sector: Arc s = R · θ_rad | Chord c = 2R · sin(θ_rad / 2) | Sagitta h = R · (1 - cos(θ_rad / 2))
+- Sagitta-Chord Inversion: R = (c² / 8h) + (h / 2)
+- Sector Area: A_sec = ½ R² θ_rad | Segment Area: A_seg = ½ R² (θ_rad - sin θ_rad)
 
-### Regular Decagon (n = 10)
-- Interior angle: 144° (4π/5 rad) | Central angle: 36° (π/5 rad)
-- Circumradius: R = a * ϕ = a * (1 + √5) / 2 ≈ 1.618034 * a
-- Apothem: r_i = (a / 2) * √(5 + 2√5) ≈ 1.538842 * a
-- Area: A = (5/2) * a² * √(5 + 2√5) ≈ 7.694209 * a²
-- Flat-to-flat span: S = 2 * r_i = a * √(5 + 2√5) ≈ 3.077684 * a
-- Main diameter: d_4 = 2R = a * (1 + √5) ≈ 3.236068 * a
+### Calculus
+- FTC Part 2: ∫_a^b f(x) dx = F(b) - F(a)
+- Simpson's 1/3 Rule: (Δx / 3) [f(x₀) + 4f(x₁) + 2f(x₂) + … + f(xₙ)]
+- Tangent Line: y - y₀ = f'(x₀)(x - x₀)
+- Normal Line: y - y₀ = (-1 / f'(x₀))(x - x₀)
 
 ## Asset Licensing & Backlink Attribution Policy
 All generated blueprint diagrams, vector SVG models, and computational artifacts on OmniOperand are free to use in commercial projects, academic research, textbooks, and software applications under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** license.

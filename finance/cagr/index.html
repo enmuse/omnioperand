@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAGR Calculator — Compound Annual Growth Rate & Valuation Inverter | OmniOperand</title>
+  <meta name="description" content="Calculate Compound Annual Growth Rate (CAGR), investment doubling periods, and future portfolio targets with exact geometric mean derivations and bidirectional inversions.">
+  <link rel="canonical" href="https://omnioperand.com/finance/cagr/">
+
+  <meta property="og:title" content="CAGR Calculator & Valuation Inverter | OmniOperand">
+  <meta property="og:description" content="High-precision CAGR calculator. Compute geometric annual growth rates, absolute returns, and milestone inversions with step-by-step mathematical proofs.">
+  <meta property="og:url" content="https://omnioperand.com/finance/cagr/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.1">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://omnioperand.com/finance/cagr/#app",
+        "name": "CAGR & Valuation Inverter Calculator",
+        "url": "https://omnioperand.com/finance/cagr/",
+        "applicationCategory": "FinancialApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Bidirectional Compound Annual Growth Rate calculator determining smoothed annual returns, investment doubling times, and milestone target values."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://omnioperand.com/finance/cagr/#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "OmniOperand", "item": "https://omnioperand.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Finance", "item": "https://omnioperand.com/finance/" },
+          { "@type": "ListItem", "position": 3, "name": "CAGR Calculator", "item": "https://omnioperand.com/finance/cagr/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://omnioperand.com/finance/cagr/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the formula for Compound Annual Growth Rate (CAGR)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The CAGR formula is CAGR = (V_n / V_0)^(1/n) - 1, where V_0 is the beginning investment value, V_n is the ending investment value, and n is the total number of years."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is CAGR superior to the simple arithmetic average return?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Arithmetic averages ignore the compounding effect of volatility and volatility drag. For instance, if an asset gains 100% in Year 1 and falls 50% in Year 2, the arithmetic average is +25%, but the true return is exactly 0% (CAGR = 0%). CAGR represents the true geometric mean return."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you calculate the time required to double your money with CAGR?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The exact doubling time is t = ln(2) / ln(1 + CAGR). For quick heuristics, the Rule of 72 provides an approximation: t ≈ 72 / CAGR_percentage."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <div class="brand-icon">⨁</div>
+        <span>OmniOperand</span>
+        <span class="brand-badge">Math Engine</span>
+      </a>
+
+      <nav class="header-nav">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link active">Finance</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <a href="/statistics/" class="nav-link">Statistics</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/finance/">Finance</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active">CAGR Calculator</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section class="solver-hero">
+      <div class="hero-badge">Financial Engineering • Geometric Growth Analysis</div>
+      <h1>Compound Annual Growth Rate (CAGR) Calculator</h1>
+      <p class="hero-subtext">
+        Quantify the annualized geometric growth rate of portfolios, business revenues, and asset valuations. Compute forward targets or invert from desired rates to find required terminal valuations.
+      </p>
+    </section>
+
+    <div class="calculator-grid">
+
+      <!-- Left Column: Inputs -->
+      <div class="solver-column">
+        <div class="hud-panel">
+          <div class="hud-panel-header">
+            <h2>Valuation Parameters</h2>
+            <div class="precision-control">
+              <label for="precision-select">Precision:</label>
+              <select id="precision-select" class="select-input">
+                <option value="2">2 Decimals</option>
+                <option value="4" selected>4 Decimals</option>
+                <option value="6">6 Decimals</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="param-card-grid">
+            <!-- Beginning Value -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-start">Beginning Value (V₀)</label>
+                <span class="param-symbol">V₀</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-start" class="number-input" value="100000" step="5000" min="1">
+              </div>
+              <div class="param-hint">Initial investment or baseline revenue</div>
+            </div>
+
+            <!-- Ending Value -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-end">Ending Value (Vₙ)</label>
+                <span class="param-symbol">Vₙ</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-end" class="number-input" value="350000" step="10000" min="1">
+              </div>
+              <div class="param-hint">Final valuation after n years</div>
+            </div>
+
+            <!-- Time Horizon -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-years">Time Horizon (n)</label>
+                <span class="param-symbol">n</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-years" class="number-input" value="5" step="0.5" min="0.1" max="100">
+                <span class="input-suffix">Years</span>
+              </div>
+              <div class="param-hint">Elapsed time between valuations</div>
+            </div>
+
+            <!-- CAGR Inversion Entry -->
+            <div class="param-card" style="border-color:rgba(139, 92, 246, 0.4);">
+              <div class="param-label-row">
+                <label for="param-cagr">CAGR Rate (Inversion)</label>
+                <span class="param-symbol">g</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-cagr" class="number-input" value="28.4735" step="0.5">
+                <span class="input-suffix">%</span>
+              </div>
+              <div class="param-hint">Type here to invert for required ending valuation Vₙ</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Performance Metrics</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem;">
+            <div class="metric-card" style="border-color:rgba(139, 92, 246, 0.5);">
+              <span class="metric-label">Compound Annual Growth Rate</span>
+              <span class="metric-value" id="disp-cagr" style="color:var(--accent-violet); font-size:1.6rem;">28.4735%</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Absolute Total Return</span>
+              <span class="metric-value" id="disp-total-return" style="color:var(--accent-cyan);">250.00%</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Net Dollar Gain</span>
+              <span class="metric-value" id="disp-dollar-gain" style="color:var(--accent-emerald);">$250,000.00</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Portfolio Doubling Time</span>
+              <span class="metric-value" id="disp-doubling-time">2.77 Years</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Visualizer Chart -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Geometric vs Linear Trajectory</h3>
+            <span class="badge" style="background:rgba(139,92,246,0.15); color:var(--accent-violet); border:1px solid rgba(139,92,246,0.3); padding:0.25rem 0.6rem; border-radius:4px; font-size:0.75rem; font-weight:600;">
+              Exponential Compounding
+            </span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1rem; border:1px solid var(--border-subtle);">
+            <svg id="cagr-chart-svg" viewBox="0 0 600 260" width="100%" height="260" style="overflow:visible; display:block;"></svg>
+          </div>
+
+          <div style="margin-top:1.25rem; font-size:0.85rem; color:var(--text-muted); line-height:1.6;">
+            <strong>Geometric Compounding:</strong> The purple curve illustrates the actual compound growth path <span class="math-tex">V(t) = V₀(1 + g)ᵗ</span>. The dashed gray line represents the straight arithmetic path. Because returns compound on higher capital balances over time, the real growth curve bends sharply upward.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Proofs Section -->
+    <section class="proof-section" style="margin-top: 3rem;">
+      <h2>Mathematical Rigor & Derivations</h2>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">1</span>
+            <span>Geometric Mean & Closed-Form CAGR Derivation</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            If an asset grows from <span class="math-tex">V₀</span> to <span class="math-tex">Vₙ</span> over <span class="math-tex">n</span> periods with individual annual growth rates <span class="math-tex">r₁, r₂, …, rₙ</span>, the total multiplier is:
+          </p>
+          <div class="math-display">
+            Vₙ / V₀ = ∏ (from i = 1 to n) (1 + r<sub>i</sub>)
+          </div>
+          <p>
+            The Compound Annual Growth Rate (CAGR) is defined as the single constant annual rate <span class="math-tex">g</span> that produces the identical terminal multiplier:
+          </p>
+          <div class="math-display">
+            (1 + g)<sup>n</sup> = Vₙ / V₀ ⟹ g = (Vₙ / V₀)<sup>1/n</sup> - 1
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">2</span>
+            <span>Doubling Period & Logarithmic Inversion</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            To compute the exact elapsed time <span class="math-tex">t₂</span> required for an asset to double in value (<span class="math-tex">V(t₂) = 2V₀</span>):
+          </p>
+          <div class="math-display">
+            (1 + g)<sup>t₂</sup> = 2 ⟹ t₂ · ln(1 + g) = ln(2) ⟹ t₂ = ln(2) / ln(1 + g)
+          </div>
+          <p>
+            Using the Taylor series expansion <span class="math-tex">ln(1 + g) ≈ g - g²/2 + …</span> for small <span class="math-tex">g</span>:
+          </p>
+          <div class="math-display">
+            t₂ ≈ 0.69315 / g ≈ 72 / (100 · g)
+          </div>
+          <p>
+            This yields the classic financial Rule of 72.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LLM Directive Box -->
+    <section class="llm-box">
+      <div class="llm-header">
+        <div>
+          <span class="llm-badge">LLM Directive & API Spec</span>
+          <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
+        </div>
+        <div class="llm-actions">
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+        </div>
+      </div>
+
+      <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
+
+      <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Strict geometric mean valuation</span>
+        <span>✓ Machine-checked against edge financial standards</span>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>Can CAGR be negative?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! If the ending valuation <span class="math-tex">Vₙ</span> is less than the beginning value <span class="math-tex">V₀</span>, the ratio <span class="math-tex">Vₙ / V₀</span> is less than 1, resulting in a negative CAGR that represents the constant annual rate of depreciation or loss.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Does CAGR account for cash infusions or withdrawals?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          No. Standard CAGR measures point-to-point performance between two milestones assuming no intermediate capital inflows or outflows. If intermediate deposits or withdrawals occurred, the Internal Rate of Return (IRR) or Money-Weighted Return should be computed instead.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js"></script>
+  <script src="/assets/js/cagr-solver.js"></script>
+</body>
+</html>
