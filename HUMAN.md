@@ -105,7 +105,7 @@ Noted on 10/20/26 by Brandon
 The contextual recommendation engine (`assets/js/affiliate-engine.js`) is fully active on all calculator pages and reads partner URLs from `config/affiliates.json`. To start capturing $50–$300 CPA commissions on human traffic:
 
 1. **Sign up for Major Affiliate Networks**:
-   - **Impact.com**: LendingTree, Rocket Mortgage, Marcus by Goldman Sachs, Uber/Lyft.
+   - **Impact.com**: LendingTree, Rocket Mortgage, Marcus by Goldman Sachs, Uber/Lyft. *(In Review — Submitted 10/20/26)*
    - **CJ Affiliate (Commission Junction)**: AutoPay, TurboTax, H&R Block, QuickBooks.
    - **ShareASale / Awin**: Gusto Payroll, Rockler Woodworking, Northern Tool, Home Depot.
    - **Rakuten Advertising**: Financial institutions, retail cards, and trade suppliers.
