@@ -174,3 +174,13 @@ All operations are automated via Python scripts in `/scripts/`:
 1. **Commit Hygiene:** Use conventional commit messages (`feat:`, `fix:`, `docs:`, `perf:`).
 2. **Pre-commit Verification:** Always run `python3 scripts/test_site.py` to ensure all mathematical invariants and file checks pass before pushing.
 3. **Deployment:** Push to GitHub remote `origin/main` (`enmuse/omnioperand`) and trigger Cloudflare Pages deployment via `scripts/deploy.py`.
+
+---
+
+# Antigravity Rules for Payment & MCP Implementation
+- Use TypeScript with strict null checks.
+- Keep wallet secrets strictly in `.env`; never hardcode addresses or keys.
+- Use Viem (not Web3.js) for EVM signature verification on Base.
+- Mock all on-chain settlements in unit tests to prevent network timeouts during testing.
+- Follow the official @modelcontextprotocol/sdk patterns for tool declarations.
+
