@@ -8456,10 +8456,51 @@
     });
   }
 
+  // Mobile Navigation & Header Dropdown Management
+  function initHeaderNav() {
+    const mobileBtn = document.getElementById('mobile-menu-toggle');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.body.classList.toggle('mobile-nav-open');
+      });
+    }
+
+    // Close mobile nav when clicking outside or clicking a link
+    document.addEventListener('click', (e) => {
+      if (document.body.classList.contains('mobile-nav-open')) {
+        if (!e.target.closest('.header-nav') && !e.target.closest('#mobile-menu-toggle')) {
+          document.body.classList.remove('mobile-nav-open');
+        } else if (e.target.closest('.nav-link') || e.target.closest('.nav-dropdown-item')) {
+          document.body.classList.remove('mobile-nav-open');
+        }
+      }
+    });
+
+    // Touch support for Disciplines dropdown
+    const dropdownTriggers = document.querySelectorAll('.nav-dropdown-trigger');
+    dropdownTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', (e) => {
+        const parent = trigger.closest('.nav-dropdown');
+        if (parent) {
+          e.stopPropagation();
+          parent.classList.toggle('is-open');
+        }
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown.is-open').forEach((d) => d.classList.remove('is-open'));
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initSearch();
     initFaqToggles();
+    initHeaderNav();
   });
 
 })();

@@ -17,6 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 
 # Load the comprehensive calculator database
 from calculator_data import CALCULATORS_DATA, HUB_DATA
+from unify_headers import build_uniform_header
 
 def generate_calculator_page(calc):
     slug = calc["slug"]
@@ -177,36 +178,7 @@ def generate_calculator_page(calc):
 </head>
 <body class="omni-body">
 
-  <!-- Site Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="brand-link">
-        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
-        <span>OmniOperand</span>
-        <span class="brand-badge">{cat_title}</span>
-      </a>
-
-      <nav class="header-nav">
-        <a href="/geometry/" class="nav-link">Geometry</a>
-        <a href="/calculus/" class="nav-link">Calculus</a>
-        <a href="/finance/" class="nav-link">Finance</a>
-        <a href="/construction/" class="nav-link">Construction</a>
-        <a href="/health/" class="nav-link">Health</a>
-        <a href="/physics/" class="nav-link">Physics</a>
-        <a href="/statistics/" class="nav-link">Statistics</a>
-        <a href="/pricing/" class="nav-link">Pricing</a>
-      </nav>
-
-      <div class="header-actions">
-        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
-        </button>
-        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
-      </div>
-    </div>
-  </header>
+{build_uniform_header(f"{cat}/{slug}/index.html")}
 
   <!-- Breadcrumbs -->
   <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
@@ -472,33 +444,7 @@ def generate_hub_page(cat, hub_info, calcs_in_cat):
   </script>
 </head>
 <body class="omni-body">
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="brand-link">
-        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
-        <span>OmniOperand</span>
-        <span class="brand-badge">{cat_title} Hub</span>
-      </a>
-      <nav class="header-nav">
-        <a href="/geometry/" class="nav-link{' active' if cat == 'geometry' else ''}">Geometry</a>
-        <a href="/calculus/" class="nav-link{' active' if cat == 'calculus' else ''}">Calculus</a>
-        <a href="/finance/" class="nav-link{' active' if cat == 'finance' else ''}">Finance</a>
-        <a href="/construction/" class="nav-link{' active' if cat == 'construction' else ''}">Construction</a>
-        <a href="/health/" class="nav-link{' active' if cat == 'health' else ''}">Health</a>
-        <a href="/physics/" class="nav-link{' active' if cat == 'physics' else ''}">Physics</a>
-        <a href="/statistics/" class="nav-link{' active' if cat == 'statistics' else ''}">Statistics</a>
-        <a href="/pricing/" class="nav-link">Pricing</a>
-      </nav>
-      <div class="header-actions">
-        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
-        </button>
-        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
-      </div>
-    </div>
-  </header>
+{build_uniform_header(f"{cat}/index.html")}
 
   <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
     <div class="container">
