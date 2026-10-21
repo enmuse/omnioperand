@@ -12,6 +12,10 @@ Provides consistent, uniform navigation choices everywhere:
 - MCP Server
 - REST API
 - Pricing
+
+Inlines critical dropdown CSS alongside the header to guarantee 0ms render
+and 100% protection against CDN or browser CSS cache staleness.
+Also cache-busts /assets/css/omni-core.css?v=2.1 and /assets/js/omni-search.js?v=2.1.
 """
 
 import os
@@ -69,7 +73,26 @@ def build_uniform_header(rel_path_str: str) -> str:
     }
     disc_active = ' active' if active_cat in other_disciplines else ''
 
-    header_html = f'''  <!-- Site Header -->
+    header_html = f'''  <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown {{ position: relative; display: inline-flex; align-items: center; }}
+    .nav-dropdown-trigger {{ display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }}
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger {{ color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }}
+    .nav-dropdown-trigger svg {{ transition: transform 0.2s ease; }}
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg {{ transform: rotate(180deg); }}
+    .nav-dropdown-menu {{ display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }}
+    .nav-dropdown-menu::before {{ content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }}
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu {{ display: grid; }}
+    .nav-dropdown-item {{ display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }}
+    .nav-dropdown-item:hover {{ color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }}
+    .nav-dropdown-item .item-icon {{ font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }}
+    @media (max-width: 768px) {{
+      body.mobile-nav-open .nav-dropdown {{ flex-direction: column; align-items: stretch; width: 100%; }}
+      body.mobile-nav-open .nav-dropdown-menu {{ position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }}
+    }}
+  </style>
+
+  <!-- Site Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand-link">
@@ -129,7 +152,13 @@ def build_uniform_header(rel_path_str: str) -> str:
     return header_html
 
 def unify_all_headers():
-    header_pattern = re.compile(r'(?:<!--\s*(?:Master\s+)?Site\s+Header\s*-->\s*)?<header\s+class=[\"\'](?:site-header|omni-header)[\"\']>.*?</header>', re.DOTALL)
+    header_pattern = re.compile(
+        r'(?:<!--\s*Critical\s+Navigation\s+Dropdown\s+CSS[^>]*-->\s*)?'
+        r'(?:<style id=[\"\']omni-nav-dropdown-css[\"\']>.*?</style>\s*)?'
+        r'(?:<!--\s*(?:Master\s+)?Site\s+Header\s*-->\s*)?'
+        r'<header\s+class=[\"\'](?:site-header|omni-header)[\"\']>.*?</header>',
+        re.DOTALL
+    )
     
     count = 0
     updated_files = []
@@ -147,9 +176,13 @@ def unify_all_headers():
             with open(full_path, 'r', encoding='utf-8') as f:
                 content = f.read()
             
-            if header_pattern.search(content):
+            # Cache bust omni-core.css and omni-search.js
+            new_content = re.sub(r'href=([\"\'])/assets/css/omni-core\.css(?:\?v=[^\"\']*)?([\"\'])', r'href=\1/assets/css/omni-core.css?v=2.1\2', content)
+            new_content = re.sub(r'src=([\"\'])/assets/js/omni-search\.js(?:\?v=[^\"\']*)?([\"\'])', r'src=\1/assets/js/omni-search.js?v=2.1\2', new_content)
+
+            if header_pattern.search(new_content):
                 new_header = build_uniform_header(rel_path)
-                new_content = header_pattern.sub(new_header, content, count=1)
+                new_content = header_pattern.sub(new_header, new_content, count=1)
                 
                 if new_content != content:
                     with open(full_path, 'w', encoding='utf-8') as f:
@@ -157,9 +190,14 @@ def unify_all_headers():
                     count += 1
                     updated_files.append(rel_path)
             else:
+                if new_content != content:
+                    with open(full_path, 'w', encoding='utf-8') as f:
+                        f.write(new_content)
+                    count += 1
+                    updated_files.append(rel_path)
                 print(f"⚠️ Header pattern not found in {rel_path}")
 
-    print(f"✅ Successfully unified headers across {count} HTML files!")
+    print(f"✅ Successfully unified headers and cache-busted CSS across {count} HTML files!")
 
 if __name__ == '__main__':
     unify_all_headers()
