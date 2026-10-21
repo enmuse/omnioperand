@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniOperand Model Context Protocol (MCP) Server | AI Math Ground Truth</title>
+  <meta name="description" content="Official Model Context Protocol (MCP) server for Claude Desktop, Cursor, and autonomous AI agents. Deterministic mathematical calculation tools with zero hallucination.">
+  <link rel="canonical" href="https://omnioperand.com/mcp/">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="OmniOperand Model Context Protocol (MCP) Server | AI Math Ground Truth">
+  <meta property="og:description" content="Connect Claude Desktop, Cursor, and AI agents directly to OmniOperand's deterministic mathematical solvers with zero arithmetic hallucination.">
+  <meta property="og:url" content="https://omnioperand.com/mcp/">
+  <meta property="og:type" content="website">
+
+  <!-- Core Math CSS -->
+  <link rel="stylesheet" href="/assets/css/omni-core.css">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.2">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "OmniOperand MCP Server",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "All",
+        "description": "Deterministic calculation tools and closed-form radical mathematical derivations for Model Context Protocol (MCP) clients.",
+        "url": "https://omnioperand.com/mcp/",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://omnioperand.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Model Context Protocol (MCP)",
+            "item": "https://omnioperand.com/mcp/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <div class="brand-icon">⨁</div>
+        <span>OmniOperand</span>
+        <span class="brand-badge">MCP Server</span>
+      </a>
+
+      <nav class="header-nav">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/geometry/2d/shapes/regular-polygon/" class="nav-link">Universal N-Gon</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/mcp/" class="nav-link active">MCP Server</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active" aria-current="page">Model Context Protocol (MCP) Server</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="container" style="padding-bottom: 4rem;">
+
+    <!-- Hero Header -->
+    <header class="calc-header-section" style="padding-top:2.5rem;">
+      <div class="calc-tag-row">
+        <span class="calc-category-tag">AI Agent Protocols</span>
+        <span class="calc-spec-tag">MCP Spec: 2024-11-05</span>
+        <span class="calc-spec-tag">JSON-RPC 2.0</span>
+        <span class="calc-spec-tag">Zero Hallucination</span>
+      </div>
+      <h1 class="calc-main-title">OmniOperand Model Context Protocol (MCP) Server</h1>
+      <p class="calc-intro-description">
+        LLMs consistently hallucinate multi-step algebraic inversions, compounding interest, and irrational polygon radicals. OmniOperand's official MCP server equips Claude Desktop, Cursor, Windsurf, and autonomous AI agents with deterministic, machine-precision mathematical calculation tools.
+      </p>
+
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
+        <a href="#quickstart" class="btn btn-primary">
+          <span>Quickstart Setup Guide ↓</span>
+        </a>
+        <a href="/api/v1/mcp" class="btn btn-secondary" target="_blank" rel="noopener">
+          <span>Live MCP Endpoint (JSON)</span>
+        </a>
+        <a href="/mcp/schemas.json" class="btn btn-secondary" target="_blank" rel="noopener">
+          <span>Tool Schemas (JSON)</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Value Proposition Cards -->
+    <section class="hub-grid" style="margin: 2.5rem 0;">
+      <div class="hub-card" style="--card-accent: var(--accent-cyan);">
+        <div>
+          <div class="hub-card-header">
+            <span style="font-size:1.5rem;">🎯</span>
+            <span class="hub-badge">Ground Truth</span>
+          </div>
+          <h2 class="hub-card-title">Zero Arithmetic Drift</h2>
+          <p class="hub-card-desc">
+            Replaces probabilistic token prediction with closed-form algebraic inversions, exact radical constants (√2, √3, π, ϕ), and verified loan cashflow formulas.
+          </p>
+        </div>
+      </div>
+
+      <div class="hub-card" style="--card-accent: var(--accent-emerald);">
+        <div>
+          <div class="hub-card-header">
+            <span style="font-size:1.5rem;">⚡</span>
+            <span class="hub-badge">Sub-Millisecond</span>
+          </div>
+          <h2 class="hub-card-title">Dual Transport Architecture</h2>
+          <p class="hub-card-desc">
+            Use standard stdio transport locally via <code>npx</code> or connect remotely to our global Cloudflare Pages V8 edge endpoint over HTTP JSON-RPC 2.0.
+          </p>
+        </div>
+      </div>
+
+      <div class="hub-card" style="--card-accent: var(--accent-indigo);">
+        <div>
+          <div class="hub-card-header">
+            <span style="font-size:1.5rem;">🧠</span>
+            <span class="hub-badge">Prompt Directives</span>
+          </div>
+          <h2 class="hub-card-title">Embedded System Rubrics</h2>
+          <p class="hub-card-desc">
+            Each tool includes strict LLM trigger directives and verification checks to instruct the model when and how to call deterministic solvers.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quickstart Section -->
+    <section id="quickstart" style="margin: 3rem 0;">
+      <div style="border: 1px solid var(--border-color); background: var(--card-bg); border-radius: 12px; padding: 2rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">🚀 1-Click Client Configuration</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+          Add OmniOperand to your favorite AI agent client to immediately enable mathematical ground truth.
+        </p>
+
+        <!-- Tabs -->
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+          <button class="param-preset-btn active" id="tab-claude" onclick="switchMcpTab('claude')">Claude Desktop</button>
+          <button class="param-preset-btn" id="tab-cursor" onclick="switchMcpTab('cursor')">Cursor IDE</button>
+          <button class="param-preset-btn" id="tab-http" onclick="switchMcpTab('http')">Remote HTTP (Cloudflare Edge)</button>
+        </div>
+
+        <!-- Claude Config Block -->
+        <div id="content-claude">
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+            Add to your <code>claude_desktop_config.json</code>:
+          </p>
+          <pre style="background: var(--bg-surface); padding: 1.25rem; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 0.85rem; border: 1px solid var(--border-color);"><code>{
+  "mcpServers": {
+    "omnioperand": {
+      "command": "npx",
+      "args": ["-y", "omnioperand-mcp@latest"]
+    }
+  }
+}</code></pre>
+        </div>
+
+        <!-- Cursor Config Block -->
+        <div id="content-cursor" style="display: none;">
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+            Add to your project's <code>.cursor/mcp.json</code>:
+          </p>
+          <pre style="background: var(--bg-surface); padding: 1.25rem; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 0.85rem; border: 1px solid var(--border-color);"><code>{
+  "mcpServers": {
+    "omnioperand": {
+      "command": "npx",
+      "args": ["-y", "omnioperand-mcp@latest"]
+    }
+  }
+}</code></pre>
+        </div>
+
+        <!-- HTTP Config Block -->
+        <div id="content-http" style="display: none;">
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+            Direct HTTP JSON-RPC 2.0 endpoint for web agents and LangChain / LlamaIndex tools:
+          </p>
+          <pre style="background: var(--bg-surface); padding: 1.25rem; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 0.85rem; border: 1px solid var(--border-color);"><code>POST https://omnioperand.com/api/v1/mcp
+Content-Type: application/json
+
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "tools/call",
+  "params": {
+    "name": "omni_mortgage_solver",
+    "arguments": {
+      "principal": 400000,
+      "annual_rate": 6.5,
+      "term_years": 30
+    }
+  }
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Available Tools Directory -->
+    <section style="margin: 3rem 0;">
+      <h2 style="font-size: 1.5rem; margin-bottom: 1.25rem;">🛠️ Active Deterministic Tools (10 Solvers)</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem;">
+        
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem;">
+          <code style="color: var(--accent-cyan); font-weight: 600;">omni_octagon_solver</code>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Exact 8-variable regular octagon solver with radical closed-form geometry and bidirectional inversion across all parameters.
+          </p>
+        </div>
+
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem;">
+          <code style="color: var(--accent-cyan); font-weight: 600;">omni_regular_polygon_solver</code>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Universal regular n-sided polygon solver for any arbitrary n (3 to 1000). Resolves apothem, circumradius, area, and internal angles.
+          </p>
+        </div>
+
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem;">
+          <code style="color: var(--accent-cyan); font-weight: 600;">omni_mortgage_solver</code>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Exact mortgage amortization, monthly P&I, total interest, and early payoff acceleration simulation.
+          </p>
+        </div>
+
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem;">
+          <code style="color: var(--accent-cyan); font-weight: 600;">omni_compound_interest_solver</code>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Multi-period compound interest growth, effective APY, and recurring contribution modeling.
+          </p>
+        </div>
+
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem;">
+          <code style="color: var(--accent-cyan); font-weight: 600;">omni_cagr_solver</code>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Compound Annual Growth Rate (CAGR) and annualized investment performance metric engine.
+          </p>
+        </div>
+
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem;">
+          <code style="color: var(--accent-cyan); font-weight: 600;">omni_auto_loan_solver</code>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Automotive loan amortization with sales tax, down payment, trade-in equity, and dealership fees.
+          </p>
+        </div>
+
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem;">
+          <code style="color: var(--accent-cyan); font-weight: 600;">omni_concrete_volume_solver</code>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Structural concrete slab and footing cubic yardage with commercial 60lb/80lb pre-mix bag yields.
+          </p>
+        </div>
+
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem;">
+          <code style="color: var(--accent-cyan); font-weight: 600;">omni_roof_pitch_solver</code>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Roof slope ratio, rise/run pitch angle in degrees, and rafter hypotenuse length calculator.
+          </p>
+        </div>
+
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem;">
+          <code style="color: var(--accent-cyan); font-weight: 600;">omni_circle_sector_solver</code>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Circular sector area, arc length, chord length, and sagitta with bidirectional radius inversions.
+          </p>
+        </div>
+
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem;">
+          <code style="color: var(--accent-cyan); font-weight: 600;">omni_right_triangle_solver</code>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Pythagorean right triangle solver with inradius, circumradius, and altitude derivations.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Commercial CTA -->
+    <section style="margin-top: 4rem; text-align: center; background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%); border: 1px solid var(--border-color); border-radius: 12px; padding: 3rem 1.5rem;">
+      <h2 style="font-size: 1.75rem; margin-bottom: 0.75rem;">Scale Your AI Agents with OmniOperand Pro</h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem;">
+        Get 50,000 monthly high-speed API & MCP requests, dedicated prompt engineering assistance, and commercial white-label calculator embedding.
+      </p>
+      <a href="/pricing/" class="btn btn-primary" style="font-size: 1rem; padding: 0.75rem 1.75rem;">
+        <span>View Plans ($29/mo) →</span>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <div class="brand-icon">⨁</div>
+          <span>OmniOperand</span>
+        </div>
+        <p class="footer-desc">
+          Universal mathematical authority platform providing exact radical closed forms, interactive blueprints, and deterministic AI protocols.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Machine Protocols</h3>
+        <ul class="footer-links">
+          <li><a href="/mcp/">Model Context Protocol (MCP)</a></li>
+          <li><a href="/api/">REST API Documentation</a></li>
+          <li><a href="/api/v1/openapi.json">OpenAPI 3.1 Schema</a></li>
+          <li><a href="/llms.txt">llms.txt Manifest</a></li>
+          <li><a href="/pricing/">Commercial API Pricing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Disciplines</h3>
+        <ul class="footer-links">
+          <li><a href="/geometry/">Geometry & Spatial</a></li>
+          <li><a href="/finance/">Quantitative Finance</a></li>
+          <li><a href="/construction/">Construction & Trades</a></li>
+          <li><a href="/health/">Health & Biometrics</a></li>
+          <li><a href="/physics/">Physics & Kinematics</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 OmniOperand. Built for human researchers and autonomous AI agents.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/omni-search.js"></script>
+  <script>
+    function switchMcpTab(tabName) {
+      document.getElementById('content-claude').style.display = tabName === 'claude' ? 'block' : 'none';
+      document.getElementById('content-cursor').style.display = tabName === 'cursor' ? 'block' : 'none';
+      document.getElementById('content-http').style.display = tabName === 'http' ? 'block' : 'none';
+
+      document.getElementById('tab-claude').classList.toggle('active', tabName === 'claude');
+      document.getElementById('tab-cursor').classList.toggle('active', tabName === 'cursor');
+      document.getElementById('tab-http').classList.toggle('active', tabName === 'http');
+    }
+  </script>
+</body>
+</html>

@@ -39,6 +39,22 @@
     ]
   },
   {
+    "title": "OmniOperand Model Context Protocol (MCP) Server",
+    "category": "Developer & Machine Protocols",
+    "url": "/mcp/",
+    "keywords": [
+      "mcp",
+      "model context protocol",
+      "claude desktop",
+      "cursor",
+      "windsurf",
+      "ai agent",
+      "json-rpc",
+      "llm tools",
+      "deterministic"
+    ]
+  },
+  {
     "title": "Embeddable Calculator Widgets (CaaS)",
     "category": "Developer & Webmasters",
     "url": "/embed/",
