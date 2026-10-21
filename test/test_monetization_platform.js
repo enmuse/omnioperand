@@ -293,6 +293,35 @@ const mcpServer = createOmniOperandMcpServer();
 assert.ok(mcpServer !== null, "MCP Server failed to instantiate");
 pass("MCP Server: Initialized successfully with all registered tools and resources");
 
+// 6.4 Serverless Edge MCP JSON-RPC 2.0 Protocol Verification
+const mcpEdgeModule = await import('../functions/api/v1/mcp.js');
+const mcpGetRes = await mcpEdgeModule.onRequestGet({ request: new Request('http://localhost/api/v1/mcp') });
+assert.strictEqual(mcpGetRes.status, 200, "MCP GET endpoint failed");
+const mcpGetData = await mcpGetRes.json();
+assert.strictEqual(mcpGetData.tools_count, 10, "MCP GET should report 10 tools");
+
+const mcpCallRes = await mcpEdgeModule.onRequestPost({
+  request: new Request('http://localhost/api/v1/mcp', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      jsonrpc: '2.0',
+      id: 42,
+      method: 'tools/call',
+      params: {
+        name: 'omni_octagon_solver',
+        arguments: { driver: 'side', value: 10 }
+      }
+    })
+  })
+});
+assert.strictEqual(mcpCallRes.status, 200, "MCP tools/call failed");
+const mcpCallData = await mcpCallRes.json();
+assert.strictEqual(mcpCallData.id, 42);
+const octResult = JSON.parse(mcpCallData.result.content[0].text);
+assert.strictEqual(octResult.result.area, 482.842712);
+pass("MCP Edge Endpoint: JSON-RPC 2.0 protocol and remote tool calling verified");
+
 console.log("\nTesting Embeddable Widget Engine (CaaS) & Monetization...");
 
 // ========================================================
