@@ -4,8 +4,10 @@
   "description": "> Exact radical mathematical derivations, bidirectional multi-variable geometry solvers, and native AI reasoning directives.   > Hosted on Cloudflare Pages: [https://omnioperand.com](https://omnioperand.com)   > Edge Gateway: [https://omnioperand.pages.dev](https://omnioperand.pages.dev)",
   "type": "module",
   "scripts": {
-    "test": "node test/test_monetization_platform.js && python3 scripts/test_site.py",
-    "mcp": "node mcp/server.js"
+    "test": "node test/test_monetization_platform.js && node --experimental-strip-types tests/payment402.test.ts && python3 scripts/test_site.py",
+    "test:payment": "node --experimental-strip-types tests/payment402.test.ts",
+    "mcp": "node mcp/server.js",
+    "mcp:remote": "node --experimental-strip-types src/mcp/server.ts"
   },
   "bugs": {
     "url": "https://github.com/enmuse/omnioperand/issues"
@@ -13,6 +15,12 @@
   "homepage": "https://github.com/enmuse/omnioperand#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.1",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "express": "^5.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "viem": "^2.57.7",
     "zod": "^4.6.7"
   }
 }
