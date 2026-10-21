@@ -237,7 +237,7 @@ export async function onRequestPost(context) {
             {
               uri: "omnioperand://api/openapi.json",
               name: "OpenAPI 3.1.0 Full Specification",
-              description: "Machine-readable API definitions for all 438 calculators",
+              description: "Machine-readable API definitions for all 428 calculators",
               mimeType: "application/json"
             }
           ]

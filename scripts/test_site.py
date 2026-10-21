@@ -389,6 +389,36 @@ def test_zero_raw_latex_in_html():
 
     print("  ✅ Zero raw LaTeX backslash commands found across all HTML files!")
 
+def test_calculator_count_invariants():
+    print("Testing Master Calculator Count & Metric Invariants...")
+    import json
+    metrics_path = REPO_ROOT / "config" / "metrics.json"
+    assert metrics_path.exists(), "Missing config/metrics.json master source of truth"
+
+    with open(metrics_path, "r", encoding="utf-8") as f:
+        metrics = json.load(f)
+
+    reg_path = REPO_ROOT / "api" / "solvers" / "calculator_registry.json"
+    with open(reg_path, "r", encoding="utf-8") as f:
+        registry = json.load(f)
+
+    assert metrics["solvers_count"] == len(registry), f"Solvers count mismatch: {metrics['solvers_count']} vs registry {len(registry)}"
+    assert metrics["mcp_tools_count"] == len(registry) + 1, "MCP tools count mismatch"
+
+    # Verify mcp/index.html does not contain stale (10 Solvers)
+    mcp_html = (REPO_ROOT / "mcp" / "index.html").read_text(encoding="utf-8")
+    assert "(10 Solvers)" not in mcp_html, "mcp/index.html contains stale '(10 Solvers)' string!"
+    assert f"({metrics['solvers_count']} Solvers" in mcp_html, f"mcp/index.html missing current ({metrics['solvers_count']} Solvers"
+
+    # Verify mcp/schemas.json has full toolset
+    schemas_path = REPO_ROOT / "mcp" / "schemas.json"
+    assert schemas_path.exists(), "Missing mcp/schemas.json"
+    with open(schemas_path, "r", encoding="utf-8") as f:
+        schemas = json.load(f)
+    assert len(schemas["tools"]) == metrics["mcp_tools_count"], f"mcp/schemas.json tool count mismatch: {len(schemas['tools'])} vs {metrics['mcp_tools_count']}"
+
+    print(f"  ✅ Master metrics verified: {metrics['solvers_count']} solvers, {metrics['mcp_tools_count']} MCP tools across {metrics['categories_count']} disciplines!")
+
 def main():
     print("=========================================================")
     print("🧪 Running OmniOperand Integrity Test Suite")
@@ -397,6 +427,7 @@ def main():
         test_mathematical_precision()
         test_file_integrity()
         test_zero_raw_latex_in_html()
+        test_calculator_count_invariants()
         print("\n🎉 ALL TESTS PASSED! Site is 100% compliant.")
         return 0
     except AssertionError as e:

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 scripts/build_full_calculator_suite.py
-High-performance generator for 118+ commercial-grade, high-profit calculators.
+High-performance generator for commercial-grade, high-precision calculators.
 Zero raw LaTeX in HTML, clean Unicode math notation, 100/100 PageSpeed compliant,
 interactive client-side JavaScript solvers, schema.org JSON-LD, affiliate hooks,
 and CLS-prevented ad containers.
@@ -596,6 +596,14 @@ def build_all():
 
     # Generate Sitemap
     build_sitemap()
+
+    # Automatically sync master metrics and calculator counts
+    try:
+        sys.path.insert(0, str(REPO_ROOT / "scripts"))
+        from sync_calculator_counts import sync_all
+        sync_all()
+    except Exception as e:
+        print(f"⚠️ Metrics sync notice: {e}")
 
 if __name__ == "__main__":
     build_all()

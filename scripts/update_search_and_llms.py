@@ -2,7 +2,7 @@
 """
 scripts/update_search_and_llms.py
 Updates:
-1. assets/js/omni-search.js with full searchable index of all 118+ calculators
+1. assets/js/omni-search.js with full searchable index of all calculators
 2. llms.txt and llms-full.txt with complete directory of endpoints and mathematical references
 3. index.html with Construction, Health, and API/Pricing cards
 """
@@ -438,3 +438,8 @@ if __name__ == "__main__":
     update_search_js()
     update_llms_manifests()
     update_homepage()
+    try:
+        from sync_calculator_counts import sync_all
+        sync_all()
+    except Exception as e:
+        print(f"⚠️ Metrics sync notice: {e}")

@@ -21,6 +21,7 @@ import {
   solveRightTriangle
 } from "../api/solvers/index.js";
 import { AI_PROMPTS } from "../functions/api/v1/prompts.js";
+import { CALCULATOR_REGISTRY } from "../api/solvers/calculator_registry.js";
 
 export function createOmniOperandMcpServer() {
   const server = new McpServer({
@@ -227,8 +228,8 @@ export function createOmniOperandMcpServer() {
         text: JSON.stringify({
           platform: "OmniOperand",
           domain: "https://omnioperand.com",
-          solvers_count: 10,
-          categories: ["geometry", "finance", "structural", "trigonometry"],
+          solvers_count: Object.keys(CALCULATOR_REGISTRY).length,
+          categories: [...new Set(Object.values(CALCULATOR_REGISTRY).map(c => c.category))],
           prompts_endpoint: "https://omnioperand.com/api/v1/prompts",
           openapi_endpoint: "https://omnioperand.com/api/v1/openapi.json"
         }, null, 2)

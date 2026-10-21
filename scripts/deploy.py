@@ -69,6 +69,15 @@ def deploy_pages():
     print(f"Deploy Directory: {REPO_ROOT}")
     print("=========================================================\n")
 
+    # 0. Automatically sync master calculator counts, MCP schemas, and documentation
+    print("🔄 Synchronizing master calculator metrics and schemas pre-deployment...")
+    try:
+        sys.path.insert(0, str(REPO_ROOT / "scripts"))
+        from sync_calculator_counts import sync_all
+        sync_all()
+    except Exception as e:
+        print(f"⚠️ Pre-deploy metrics sync notice: {e}")
+
     env = os.environ.copy()
     env["CLOUDFLARE_API_TOKEN"] = token
     env["CLOUDFLARE_ACCOUNT_ID"] = account_id

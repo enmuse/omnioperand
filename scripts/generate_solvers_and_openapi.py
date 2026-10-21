@@ -3,9 +3,9 @@
 scripts/generate_solvers_and_openapi.py
 Compiles:
 1. api/solvers/calculator_registry.json & api/solvers/calculator_registry.js
-2. api/v1/openapi.json (OpenAPI 3.1.0 documenting all 438 calculators + MCP + Auth)
+2. api/v1/openapi.json (OpenAPI 3.1.0 documenting all calculators + MCP + Auth)
 3. functions/api/v1/solve/[[path]].js (Cloudflare Pages Functions universal edge solver router)
-4. functions/api/v1/mcp.js (Full MCP JSON-RPC 2.0 server supporting all 438 tools)
+4. functions/api/v1/mcp.js (Full MCP JSON-RPC 2.0 server supporting all tools)
 """
 
 import os
@@ -358,7 +358,7 @@ def generate_openapi_spec(all_calcs):
             "/mcp": {
                 "post": {
                     "summary": "Model Context Protocol (MCP) JSON-RPC 2.0 Endpoint",
-                    "description": "Native Model Context Protocol (MCP) endpoint for Claude Desktop, Cursor, and autonomous AI agents. Supports initialize, tools/list, tools/call, resources/list, prompts/list, and ping across all 438 tools.",
+                    "description": f"Native Model Context Protocol (MCP) endpoint for Claude Desktop, Cursor, and autonomous AI agents. Supports initialize, tools/list, tools/call, resources/list, prompts/list, and ping across all {len(all_calcs) + 1} tools.",
                     "operationId": "handleMcpJsonRpc",
                     "requestBody": {
                         "required": True,
@@ -962,7 +962,7 @@ export async function onRequestPost(context) {{
             {{
               uri: "omnioperand://api/openapi.json",
               name: "OpenAPI 3.1.0 Full Specification",
-              description: "Machine-readable API definitions for all 438 calculators",
+              description: "Machine-readable API definitions for all {len(all_calcs)} calculators",
               mimeType: "application/json"
             }}
           ]
@@ -1005,6 +1005,11 @@ def main():
     generate_edge_solver_function()
     generate_full_mcp_endpoint(all_calcs)
     print("\nSUCCESS: All calculators compiled into JSON/JS registries, OpenAPI 3.1.0, edge routes, and MCP server!")
+    try:
+        from sync_calculator_counts import sync_all
+        sync_all()
+    except Exception as e:
+        print(f"⚠️ Metrics sync notice: {e}")
 
 if __name__ == "__main__":
     main()

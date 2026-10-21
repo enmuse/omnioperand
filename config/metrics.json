@@ -1,0 +1,26 @@
+{
+  "solvers_count": 428,
+  "mcp_tools_count": 429,
+  "calculators_count": 438,
+  "categories_count": 15,
+  "total_html_pages": 462,
+  "sitemap_urls_count": 460,
+  "category_breakdown": {
+    "finance": 125,
+    "ecommerce": 30,
+    "construction": 27,
+    "health": 25,
+    "energy": 25,
+    "logistics": 25,
+    "crypto": 25,
+    "legal": 25,
+    "agriculture": 25,
+    "engineering": 25,
+    "biotech": 25,
+    "physics": 23,
+    "geometry": 17,
+    "statistics": 4,
+    "calculus": 2
+  },
+  "last_updated": "2026-10-21T17:15:03Z"
+}
