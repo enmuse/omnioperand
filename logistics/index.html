@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logistics, Supply Chain & Freight Operations Hub | OmniOperand</title>
+  <meta name="description" content="Calculators for ocean container TEUs, dimensional freight weight, truckload ton-miles, customs demurrage, route fuel consumption, and warehouse pallet geometry.">
+  <link rel="canonical" href="https://omnioperand.com/logistics/">
+
+  <meta property="og:title" content="Logistics, Supply Chain & Freight Operations Hub | OmniOperand">
+  <meta property="og:description" content="Calculators for ocean container TEUs, dimensional freight weight, truckload ton-miles, customs demurrage, route fuel consumption, and warehouse pallet geometry.">
+  <meta property="og:url" content="https://omnioperand.com/logistics/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.2">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://omnioperand.com/logistics/#hub",
+      "name": "Logistics, Supply Chain & Freight Operations Hub",
+      "url": "https://omnioperand.com/logistics/",
+      "description": "Calculators for ocean container TEUs, dimensional freight weight, truckload ton-miles, customs demurrage, route fuel consumption, and warehouse pallet geometry."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/logistics/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OmniOperand",
+          "item": "https://omnioperand.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Logistics",
+          "item": "https://omnioperand.com/logistics/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="omni-body">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Logistics Hub</span>
+      </a>
+      <nav class="header-nav">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/construction/" class="nav-link">Construction</a>
+        <a href="/health/" class="nav-link">Health</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <a href="/statistics/" class="nav-link">Statistics</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+      <div class="header-actions">
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active" aria-current="page">Logistics</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container" style="padding: 2.5rem 0;">
+    <div style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--accent-blue); background:rgba(56,189,248,0.1); padding:0.3rem 0.8rem; border-radius:999px; margin-bottom:0.75rem;">
+      Domain Hub • Logistics & Freight
+    </div>
+    <h1>Logistics, Supply Chain & Freight Operations Hub</h1>
+    <p style="max-width:800px; color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem; line-height:1.6;">
+      Calculators for ocean container TEUs, dimensional freight weight, truckload ton-miles, customs demurrage, route fuel consumption, and warehouse pallet geometry.
+    </p>
+
+    <!-- Top Leaderboard Ad Container with CLS Safeguard -->
+    <div class="omni-ad-slot omni-ad-leaderboard" data-ad-format="leaderboard"></div>
+
+    <div class="hub-grid" style="margin-top:2rem;">
+      
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Parcel Logistics • Volumetric Rating</span>
+            </div>
+            <h2 class="hub-card-title">Dimensional Weight (DIM Factor 139 / 166) Calculator</h2>
+            <p class="hub-card-desc">Calculate volumetric dimensional weight, billable weight, and carrier rate adjustments for FedEx, UPS, DHL, and USPS domestic and international parcels.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/dim-weight-calculator/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Warehousing • Palletization Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Pallet Ti-Hi & Carton Stacking Pattern Calculator</h2>
+            <p class="hub-card-desc">Calculate optimal Tie (cases per layer) and High (layers per pallet) for standard GMA 48x40 pallets, maximizing cube utilization without overhang.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/pallet-ti-hi-optimizer/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">LTL Freight • NMFC Classification</span>
+            </div>
+            <h2 class="hub-card-title">Freight Density & NMFC Freight Class Calculator</h2>
+            <p class="hub-card-desc">Calculate shipment density in pounds per cubic foot (PCF) and determine the National Motor Freight Classification (NMFC) freight class for LTL shipping.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/freight-density-nmfc/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Freight Procurement • Breakeven Analysis</span>
+            </div>
+            <h2 class="hub-card-title">Full Truckload (FTL) vs Less-Than-Truckload (LTL) Cost Breakeven</h2>
+            <p class="hub-card-desc">Calculate whether shipping high-volume palletized freight is cheaper via Less-Than-Truckload (LTL) or dedicated Full Truckload (FTL) dry van.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/ftl-vs-ltl-freight/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Ocean Freight • Container Utilization</span>
+            </div>
+            <h2 class="hub-card-title">Ocean Shipping Container CBM Volume & Payload Calculator</h2>
+            <p class="hub-card-desc">Calculate cubic meter (CBM) volume, metric ton payload capacity, and container utilization percentage for 20ft, 40ft, and 40ft High Cube (HC) ocean containers.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/container-cbm-utilization/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Inventory Science • Demand Volatility</span>
+            </div>
+            <h2 class="hub-card-title">Reorder Point (ROP) & Safety Stock Volatility Calculator</h2>
+            <p class="hub-card-desc">Calculate statistical reorder point (ROP) and safety stock inventory buffers using Z-score service levels, daily demand variation, and supplier lead time.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/reorder-point-safety-stock/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Inventory Optimization • EOQ Formulation</span>
+            </div>
+            <h2 class="hub-card-title">Economic Order Quantity (EOQ) & Annual Holding Cost Calculator</h2>
+            <p class="hub-card-desc">Calculate optimal purchasing batch size (EOQ), annual ordering frequency, and minimized total inventory holding costs (Ford W. Harris formula).</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/economic-order-quantity-eoq/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Facility Engineering • Aisle Clearances</span>
+            </div>
+            <h2 class="hub-card-title">Warehouse Aisle Width & Forklift Turning Radius Calculator</h2>
+            <p class="hub-card-desc">Calculate minimum clear rack-to-rack aisle width for counterbalance, reach trucks, and turret VNA forklifts compliant with OSHA safety clearances.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/forklift-aisle-turning-radius/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Aviation Logistics • IATA Standards</span>
+            </div>
+            <h2 class="hub-card-title">Air Freight Volumetric vs Gross Chargeable Weight Calculator</h2>
+            <p class="hub-card-desc">Calculate IATA international air freight volumetric chargeable weight (1:6000 ratio = 167 kg/m³) and avoid costly airline volume surcharges.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/air-freight-chargeable-weight/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Maritime Logistics • Supply Chain Penalties</span>
+            </div>
+            <h2 class="hub-card-title">Shipping Port Demurrage & Container Detention Fee Calculator</h2>
+            <p class="hub-card-desc">Calculate daily escalating demurrage (inside terminal) and detention / per diem (outside terminal) penalties for delayed ocean shipping containers.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/demurrage-detention-fees/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Highway Transport • DOT Axle Compliance</span>
+            </div>
+            <h2 class="hub-card-title">Semi-Truck Axle Weight Distribution & DOT Bridge Formula Calculator</h2>
+            <p class="hub-card-desc">Calculate individual axle group loadings (steer, drive tandem, trailer tandem) and verify compliance with Federal Bridge Formula B limits.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/truck-axle-weight-distribution/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Trucking Economics • Lane Profitability</span>
+            </div>
+            <h2 class="hub-card-title">Deadhead Trucking Mileage Cost & Lane Profitability Calculator</h2>
+            <p class="hub-card-desc">Calculate true cost per loaded mile, deadhead uncompensated empty mileage impact, and minimum required freight rate for motor carriers and owner-operators.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/deadhead-trucking-cost/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Supply Chain Dynamics • Demand Amplification</span>
+            </div>
+            <h2 class="hub-card-title">Supply Chain Bullwhip Effect Variance Amplification Calculator</h2>
+            <p class="hub-card-desc">Calculate order variance amplification ratio across supply chain echelons (retailer, distributor, manufacturer) to measure the Bullwhip Effect.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/inventory-bullwhip-effect/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Facility Optimization • Cubic Utilization</span>
+            </div>
+            <h2 class="hub-card-title">Warehouse Cubic Storage Density & Floor Space Utilization Calculator</h2>
+            <p class="hub-card-desc">Calculate cubic space utilization, honeycombing storage loss, and maximum pallet storage capacity for high-bay warehouse facilities.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/warehouse-storage-density/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Trucking Tariffs • Fuel Surcharge</span>
+            </div>
+            <h2 class="hub-card-title">Freight Fuel Surcharge (FSC) Sliding Scale Calculator</h2>
+            <p class="hub-card-desc">Calculate carrier fuel surcharge percentage and per-mile surcharge amounts based on the National Average Diesel Fuel Price peg.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/freight-fuel-surcharge/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Fleet Management • Operating Cost Per Mile</span>
+            </div>
+            <h2 class="hub-card-title">Fleet Total Cost of Ownership (TCO) & Operating Cost Per Mile</h2>
+            <p class="hub-card-desc">Calculate total cost of ownership (TCO) and marginal cost per mile (MCPM) for commercial Class 8 tractors (fuel, driver, lease, maintenance, tires, insurance).</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/fleet-tco-per-mile/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Intermodal Freight • Modal Conversion</span>
+            </div>
+            <h2 class="hub-card-title">Intermodal Rail vs Over-The-Road (OTR) Trucking Breakeven</h2>
+            <p class="hub-card-desc">Compare cost per container, transit lead time, and carbon emission (CO₂e) reductions between domestic intermodal rail and long-haul OTR trucking.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/intermodal-rail-vs-truck/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Last-Mile Logistics • Route Density</span>
+            </div>
+            <h2 class="hub-card-title">Last-Mile Delivery Route Stop Density & Cost Per Drop Calculator</h2>
+            <p class="hub-card-desc">Calculate driver cost per stop, route density metrics, fuel burn, and parcel delivery margins for e-commerce last-mile parcel networks.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/last-mile-route-stop-density/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Fulfillment Operations • Labor Engineering</span>
+            </div>
+            <h2 class="hub-card-title">Warehouse Pick-and-Pack Labor Productivity Rate Calculator</h2>
+            <p class="hub-card-desc">Calculate order picker units-per-hour (UPH), labor cost per pick, and fulfillment staffing requirements for e-commerce fulfillment centers.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/pick-and-pack-productivity/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Distribution Networks • Cross-Docking</span>
+            </div>
+            <h2 class="hub-card-title">Cross-Dock Logistics Throughput & Staging Transfer Time Calculator</h2>
+            <p class="hub-card-desc">Calculate daily pallet staging capacity, dock door utilization, and dwell turnaround time for inbound-to-outbound cross-docking distribution facilities.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/cross-dock-throughput/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Global Trade • Customs Compliance</span>
+            </div>
+            <h2 class="hub-card-title">Import Customs Duty, Ad Valorem Tariff & De Minimis Calculator</h2>
+            <p class="hub-card-desc">Calculate commercial import customs duties, Section 301 tariffs, Merchandise Processing Fee (MPF), and harbor maintenance fees (HMF).</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/customs-duty-tariff/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Packaging Engineering • Load Containment</span>
+            </div>
+            <h2 class="hub-card-title">Pallet Stretch Wrap Film Yield & Containment Force Calculator</h2>
+            <p class="hub-card-desc">Calculate film weight per pallet, pre-stretch yield percentage (up to 300%), containment force in pounds, and cost per wrapped skid.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/pallet-stretch-wrap-yield/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Cold Chain Logistics • FDA/USP Compliance</span>
+            </div>
+            <h2 class="hub-card-title">Cold Chain Mean Kinetic Temperature (MKT) Shelf-Life Calculator</h2>
+            <p class="hub-card-desc">Calculate Mean Kinetic Temperature (MKT) across temperature excursion logs for pharmaceutical, vaccine, and perishable cold-chain logistics (USP <1150>).</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/cold-chain-mkt/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">Cold Chain • Cryogenic Logistics</span>
+            </div>
+            <h2 class="hub-card-title">Dry Ice Sublimation Rate & Cold Box Duration Calculator</h2>
+            <p class="hub-card-desc">Calculate dry ice sublimation loss rate (lbs/day), required initial refrigerant charge, and safe transit duration for frozen biological shipments (-78.5°C).</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/dry-ice-sublimation-shipping/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">🚢</div>
+              <span class="hub-badge">E-Commerce Logistics • Reverse Logistics</span>
+            </div>
+            <h2 class="hub-card-title">Reverse Logistics Return Rate & Restocking Recovery Margin Calculator</h2>
+            <p class="hub-card-desc">Calculate true financial cost of e-commerce product returns, reverse freight, grading/refurbishing labor, liquidation depreciation, and net recovery rate.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/reverse-logistics-recovery/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+    </div>
+
+    <!-- Mid-Page Rectangle Ad Slot with CLS Safeguard -->
+    <div class="omni-ad-slot omni-ad-rectangle" data-ad-format="rectangle"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js"></script>
+</body>
+</html>

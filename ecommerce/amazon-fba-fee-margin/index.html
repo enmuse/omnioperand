@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon FBA Fulfillment Fee & Net Profit Margin Calculator — High-Precision Solver | OmniOperand</title>
+  <meta name="description" content="Calculate exact Amazon Seller Central net unit profits after deducting category referral fees, FBA pick-and-pack fulfillment fees, and landed COGS.">
+  <link rel="canonical" href="https://omnioperand.com/ecommerce/amazon-fba-fee-margin/">
+
+  <meta property="og:title" content="Amazon FBA Fulfillment Fee & Net Profit Margin Calculator | OmniOperand">
+  <meta property="og:description" content="Calculate exact Amazon Seller Central net unit profits after deducting category referral fees, FBA pick-and-pack fulfillment fees, and landed COGS.">
+  <meta property="og:url" content="https://omnioperand.com/ecommerce/amazon-fba-fee-margin/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.2">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/ecommerce/amazon-fba-fee-margin/#app",
+      "name": "Amazon FBA Fulfillment Fee & Net Profit Margin Calculator",
+      "url": "https://omnioperand.com/ecommerce/amazon-fba-fee-margin/",
+      "applicationCategory": "EcommerceApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Calculate exact Amazon Seller Central net unit profits after deducting category referral fees, FBA pick-and-pack fulfillment fees, and landed COGS."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/ecommerce/amazon-fba-fee-margin/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OmniOperand",
+          "item": "https://omnioperand.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ecommerce",
+          "item": "https://omnioperand.com/ecommerce/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Amazon FBA Fulfillment Fee & Net Profit Margin Calculator",
+          "item": "https://omnioperand.com/ecommerce/amazon-fba-fee-margin/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/ecommerce/amazon-fba-fee-margin/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between standard-size and oversize on Amazon FBA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard size items are under 20 lbs and within 18 × 14 × 8 inches. Any item exceeding any of these thresholds moves into oversized tiers, where FBA fulfillment fees jump significantly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Amazon refund referral fees when a customer returns an item?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Amazon refunds 80% of the referral fee upon return, retaining an administrative fee of 20% of the original referral fee (up to $5.00)."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="omni-body">
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Ecommerce</span>
+      </a>
+
+      <nav class="header-nav">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/construction/" class="nav-link">Construction</a>
+        <a href="/health/" class="nav-link">Health</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <a href="/statistics/" class="nav-link">Statistics</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/ecommerce/">Ecommerce</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active" aria-current="page">Amazon FBA Fulfillment Fee & Net Profit Margin Calculator</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- Hero Header -->
+    <section class="solver-hero">
+      <div class="hero-badge">Amazon Marketplace • Seller Economics</div>
+      <h1>Amazon FBA Fulfillment Fee & Net Profit Margin Calculator</h1>
+      <p class="hero-subtext">
+        Calculate exact Amazon Seller Central net unit profits after deducting category referral fees, FBA pick-and-pack fulfillment fees, and landed COGS.
+      </p>
+    </section>
+
+    <!-- Top Leaderboard Ad Container with CLS Safeguard -->
+    <div class="omni-ad-slot omni-ad-leaderboard" data-ad-format="leaderboard"></div>
+
+    <!-- Master Solver Grid -->
+    <div class="calculator-grid">
+
+      <!-- Left Column: Input Parameters -->
+      <div class="solver-column">
+        <div class="hud-panel">
+          <div class="hud-panel-header">
+            <h2>Parameters & Inversions</h2>
+            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Deterministic Engine</span>
+          </div>
+
+          <div class="param-card-grid">
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-amazon_retail_price">Amazon Listing Price ($)</label>
+                <span class="param-symbol">amazon_retail_price</span>
+              </div>
+              <div class="input-unit-group">
+                
+                <input type="number" id="param-amazon_retail_price" class="number-input omni-calc-input" data-id="amazon_retail_price" value="29.99" step="0.5" min="1">
+                <span class="input-suffix">$</span>
+              </div>
+              <input type="range" id="slider-amazon_retail_price" class="param-slider omni-calc-slider" data-id="amazon_retail_price" min="1" max="1000" step="0.5" value="29.99">
+              <div class="param-hint">Buy Box sales price on Amazon</div>
+            </div>
+        
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-landed_unit_cogs">Landed Unit Cost (COGS)</label>
+                <span class="param-symbol">landed_unit_cogs</span>
+              </div>
+              <div class="input-unit-group">
+                
+                <input type="number" id="param-landed_unit_cogs" class="number-input omni-calc-input" data-id="landed_unit_cogs" value="6.8" step="0.25" min="0.25">
+                <span class="input-suffix">$</span>
+              </div>
+              <input type="range" id="slider-landed_unit_cogs" class="param-slider omni-calc-slider" data-id="landed_unit_cogs" min="0.25" max="500" step="0.25" value="6.8">
+              <div class="param-hint">Manufactured cost + freight into Amazon fulfillment center</div>
+            </div>
+        
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-item_shipping_weight_oz">Shipping Weight (Ounces)</label>
+                <span class="param-symbol">item_shipping_weight_oz</span>
+              </div>
+              <div class="input-unit-group">
+                
+                <input type="number" id="param-item_shipping_weight_oz" class="number-input omni-calc-input" data-id="item_shipping_weight_oz" value="14.0" step="1" min="1">
+                <span class="input-suffix">oz</span>
+              </div>
+              <input type="range" id="slider-item_shipping_weight_oz" class="param-slider omni-calc-slider" data-id="item_shipping_weight_oz" min="1" max="800" step="1" value="14.0">
+              <div class="param-hint">Unit weight including primary packaging</div>
+            </div>
+        
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-amazon_referral_pct">Amazon Referral Commission (%)</label>
+                <span class="param-symbol">amazon_referral_pct</span>
+              </div>
+              <div class="input-unit-group">
+                
+                <input type="number" id="param-amazon_referral_pct" class="number-input omni-calc-input" data-id="amazon_referral_pct" value="15.0" step="0.5" min="6">
+                <span class="input-suffix">%</span>
+              </div>
+              <input type="range" id="slider-amazon_referral_pct" class="param-slider omni-calc-slider" data-id="amazon_referral_pct" min="6" max="45" step="0.5" value="15.0">
+              <div class="param-hint">Standard referral fee is 15% for most product categories</div>
+            </div>
+        
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-monthly_storage_per_unit">Estimated Monthly Storage Fee</label>
+                <span class="param-symbol">monthly_storage_per_unit</span>
+              </div>
+              <div class="input-unit-group">
+                
+                <input type="number" id="param-monthly_storage_per_unit" class="number-input omni-calc-input" data-id="monthly_storage_per_unit" value="0.35" step="0.05" min="0">
+                <span class="input-suffix">$</span>
+              </div>
+              <input type="range" id="slider-monthly_storage_per_unit" class="param-slider omni-calc-slider" data-id="monthly_storage_per_unit" min="0" max="10" step="0.05" value="0.35">
+              <div class="param-hint">FBA monthly cubic foot storage fee allocated per unit</div>
+            </div>
+        
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
+            
+            <div class="metric-card">
+              <span class="metric-label">Net Profit Per Unit</span>
+              <span class="metric-value" id="disp-net_unit_profit" style="color:var(--accent-cyan);">$13.09 / unit</span>
+            </div>
+        
+            <div class="metric-card">
+              <span class="metric-label">Net Margin (%)</span>
+              <span class="metric-value" id="disp-net_profit_margin_pct" style="color:var(--accent-cyan);">43.6%</span>
+            </div>
+        
+            <div class="metric-card">
+              <span class="metric-label">Total Amazon Fees (Referral + FBA)</span>
+              <span class="metric-value" id="disp-total_amazon_fees" style="color:var(--accent-cyan);">$10.10</span>
+            </div>
+        
+            <div class="metric-card">
+              <span class="metric-label">Return on Investment (ROI on COGS)</span>
+              <span class="metric-value" id="disp-roi_on_cogs" >192.5%</span>
+            </div>
+        
+          </div>
+
+          <!-- Contextual Result-Driven Recommendation Target -->
+          <div id="affiliate-recommendation-target"></div>
+        </div>
+      </div>
+
+      <!-- Right Column: Formula & Proof Panel -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Analytical Proof & Invariants</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);">Machine Precision</span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">Governing Mathematical Formula:</div>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0;">Net Profit = Retail Price - Landed COGS - Amazon Referral Fee - FBA Fulfillment Fee</code>
+          </div>
+
+          <!-- Step-by-Step Proof -->
+          <div class="proof-card open">
+            <div class="proof-header">
+              <h3><span>Step-by-Step Mathematical Derivation</span></h3>
+            </div>
+            <div class="proof-body" style="display:block;">
+              
+          <div class="proof-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <strong>Amazon Referral Commission</strong>
+              <p>Referral Fee = Listing Price × Referral % = $29.99 × 15% = $4.50.</p>
+            </div>
+          </div>
+        
+          <div class="proof-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <strong>FBA Pick & Pack Tier Estimation</strong>
+              <p>For 14 oz standard-size tier: Amazon FBA fee ≈ $5.25. Total fees = $4.50 + $5.25 + $0.35 storage = $10.10.</p>
+            </div>
+          </div>
+        
+          <div class="proof-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <strong>Net Unit Margin Calculation</strong>
+              <p>Net Profit = $29.99 - $6.80 (COGS) - $10.10 (Amazon Fees) = $13.09 per unit.</p>
+            </div>
+          </div>
+        
+          <div class="proof-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <strong>Net Margin Percentage & ROI</strong>
+              <p>Net Margin = ($13.09 / $29.99) × 100 = 43.6%. ROI on Inventory = ($13.09 / $6.80) × 100 = 192.5%.</p>
+            </div>
+          </div>
+        
+            </div>
+          </div>
+
+          <!-- AI Agent Invocation Directive -->
+          <div class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header">
+              <span class="llm-badge">LLM Directive</span>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Zero-Hallucination Protocol</span>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin:8px 0;">
+              Autonomous agents: Invoke <code>https://omnioperand.com/api/v1/ecommerce/amazon-fba-fee-margin</code> or the OmniOperand MCP server for verified calculations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Mid-Page Rectangle Ad Slot with CLS Safeguard -->
+    <div class="omni-ad-slot omni-ad-rectangle" data-ad-format="rectangle"></div>
+
+    <!-- High-Intent FAQ Section -->
+    <section class="calc-faq-section" style="margin-top:3rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is the difference between standard-size and oversize on Amazon FBA?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Standard size items are under 20 lbs and within 18 × 14 × 8 inches. Any item exceeding any of these thresholds moves into oversized tiers, where FBA fulfillment fees jump significantly.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Does Amazon refund referral fees when a customer returns an item?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Amazon refunds 80% of the referral fee upon return, retaining an administrative fee of 20% of the original referral fee (up to $5.00).
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js"></script>
+  <script src="/assets/js/affiliate-engine.js" defer></script>
+  <script>
+    (function () {
+      'use strict';
+
+      function sync(id, val) {
+        const inp = document.getElementById('param-' + id);
+        const sld = document.getElementById('slider-' + id);
+        if (inp && inp.value != val) inp.value = val;
+        if (sld && sld.value != val) sld.value = val;
+      }
+
+      function getNum(id) {
+        const el = document.getElementById('param-' + id);
+        return el ? (parseFloat(el.value) || 0) : 0;
+      }
+
+      function setDisp(id, text) {
+        const el = document.getElementById('disp-' + id);
+        if (el) el.innerText = text;
+      }
+
+      function setMetric(id, text) {
+        setDisp(id, text);
+      }
+
+      const fact = (n) => { let r = 1; for (let i = 2; i <= n; i++) r *= i; return r; };
+      const nPr = (n, r) => (r < 0 || r > n) ? 0 : fact(n) / fact(n - r);
+      const fmt = (num, dec = 2) => typeof num === 'number' ? num.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : num;
+      const acos = Math.acos;
+      const atan = Math.atan;
+      const cbrt = Math.cbrt;
+
+      function recalculate() {
+        
+          const price = getNum('amazon_retail_price');
+          const cogs = getNum('landed_unit_cogs');
+          const oz = getNum('item_shipping_weight_oz');
+          const refPct = getNum('amazon_referral_pct');
+          const storage = getNum('monthly_storage_per_unit');
+
+          const refFee = price * (refPct / 100);
+          let fbaFee = 3.50;
+          if (oz <= 4) fbaFee = 3.22;
+          else if (oz <= 8) fbaFee = 3.40;
+          else if (oz <= 12) fbaFee = 3.75;
+          else if (oz <= 16) fbaFee = 5.25;
+          else {
+            const lbs = oz / 16;
+            fbaFee = 5.75 + Math.max(0, lbs - 1) * 0.45;
+          }
+
+          const totalFees = refFee + fbaFee + storage;
+          const netProfit = price - cogs - totalFees;
+          const netMarginPct = price > 0 ? (netProfit / price) * 100 : 0;
+          const roi = cogs > 0 ? (netProfit / cogs) * 100 : 0;
+
+          setMetric('net_unit_profit', '$' + netProfit.toFixed(2) + ' / unit');
+          setMetric('net_profit_margin_pct', netMarginPct.toFixed(1) + '%');
+          setMetric('total_amazon_fees', '$' + totalFees.toFixed(2));
+          setMetric('roi_on_cogs', roi.toFixed(1) + '%');
+        
+      }
+
+      // Bind input events
+      document.querySelectorAll('.omni-calc-input, .omni-calc-slider').forEach(el => {
+        const id = el.getAttribute('data-id');
+        el.addEventListener('input', (e) => {
+          sync(id, e.target.value);
+          recalculate();
+        });
+      });
+
+      // Accordion toggle
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+          q.parentElement.classList.toggle('open');
+        });
+      });
+
+      // Run on page load
+      recalculate();
+    })();
+  </script>
+</body>
+</html>

@@ -179,15 +179,18 @@ def update_homepage():
     index_file = REPO_ROOT / "index.html"
     content = index_file.read_text(encoding="utf-8")
 
-    # Update header nav to include all hubs + pricing
+    # Update header nav to include key hubs + MCP + API + Pricing
     new_nav = """      <nav class="header-nav">
         <a href="/geometry/" class="nav-link">Geometry</a>
-        <a href="/calculus/" class="nav-link">Calculus</a>
         <a href="/finance/" class="nav-link">Finance</a>
         <a href="/construction/" class="nav-link">Construction</a>
-        <a href="/health/" class="nav-link">Health</a>
-        <a href="/physics/" class="nav-link">Physics</a>
-        <a href="/statistics/" class="nav-link">Statistics</a>
+        <a href="/energy/" class="nav-link">Energy</a>
+        <a href="/logistics/" class="nav-link">Logistics</a>
+        <a href="/crypto/" class="nav-link">Crypto</a>
+        <a href="/ecommerce/" class="nav-link">E-Commerce</a>
+        <a href="/biotech/" class="nav-link">Biotech</a>
+        <a href="/mcp/" class="nav-link" style="color:var(--accent-purple); font-weight:700;">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
         <a href="/pricing/" class="nav-link">Pricing</a>
       </nav>"""
     
@@ -195,10 +198,8 @@ def update_homepage():
     if nav_pattern.search(content):
         content = nav_pattern.sub(new_nav, content)
 
-    # Check if Construction and Health cards are in hub-grid
-    if "/construction/" not in content:
-        # Insert Construction and Health cards before </div class="hub-grid">
-        construction_card = """
+    # Build comprehensive discipline hub cards
+    domain_cards = """
         <!-- Construction Hub Card -->
         <div class="hub-card" style="--card-accent: #f59e0b;">
           <div>
@@ -239,37 +240,196 @@ def update_homepage():
           </ul>
         </div>
 
-        <!-- Commercial API & MCP Card -->
+        <!-- Energy & Solar Clean Tech Hub -->
+        <div class="hub-card" style="--card-accent: #f59e0b;">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:#f59e0b;">☀️</div>
+              <span class="hub-badge">Clean Tech</span>
+            </div>
+            <h3 class="hub-card-title"><a href="/energy/">Energy, Solar & Clean Tech</a></h3>
+            <p class="hub-card-desc">
+              Solar PV array sizing, battery storage ESS capacity, heat pump seasonal COP, Levelized Cost of Energy (LCOE), and commercial grid peak demand shaving.
+            </p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/energy/solar-payback/"><strong>Solar PV Payback & ROI →</strong></a></li>
+            <li><a href="/energy/battery-backup-storage/">Battery Backup & Storage Sizing →</a></li>
+            <li><a href="/energy/levelized-cost-of-energy/">Levelized Cost of Energy (LCOE) →</a></li>
+            <li><a href="/energy/">Explore All 25 Energy Solvers →</a></li>
+          </ul>
+        </div>
+
+        <!-- Logistics & Freight Hub -->
+        <div class="hub-card" style="--card-accent: #0ea5e9;">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:#0ea5e9;">🚢</div>
+              <span class="hub-badge">Supply Chain</span>
+            </div>
+            <h3 class="hub-card-title"><a href="/logistics/">Logistics, Supply Chain & Freight</a></h3>
+            <p class="hub-card-desc">
+              Dimensional weight (DIM divisor), ocean container TEU load optimization, NMFC freight class density, drayage demurrage, and truckload ton-mile costs.
+            </p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/logistics/dim-weight-calculator/"><strong>Dimensional Weight (DIM 139/166) →</strong></a></li>
+            <li><a href="/logistics/pallet-ti-hi-optimizer/">Pallet Ti-Hi Unit Load Optimizer →</a></li>
+            <li><a href="/logistics/freight-density-nmfc/">NMFC Freight Density & Class →</a></li>
+            <li><a href="/logistics/">Explore All 25 Logistics Solvers →</a></li>
+          </ul>
+        </div>
+
+        <!-- Crypto & Fintech Hub -->
+        <div class="hub-card" style="--card-accent: #a855f7;">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:#a855f7;">🪙</div>
+              <span class="hub-badge">Web3 & DeFi</span>
+            </div>
+            <h3 class="hub-card-title"><a href="/crypto/">Cryptocurrency, DeFi & Fintech</a></h3>
+            <p class="hub-card-desc">
+              Automated Market Maker (AMM) impermanent loss, crypto staking APY/APR compounding, ASIC mining profitability, gas cost units, and futures liquidation prices.
+            </p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/crypto/crypto-mining-profitability/"><strong>Bitcoin ASIC Mining Profitability →</strong></a></li>
+            <li><a href="/crypto/staking-rewards-apr-apy/">Staking Rewards APR vs APY →</a></li>
+            <li><a href="/crypto/impermanent-loss-amm/">AMM Impermanent Loss Model →</a></li>
+            <li><a href="/crypto/">Explore All 25 Crypto Solvers →</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Insurance Hub -->
+        <div class="hub-card" style="--card-accent: #ef4444;">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:#ef4444;">⚖️</div>
+              <span class="hub-badge">Actuarial Risk</span>
+            </div>
+            <h3 class="hub-card-title"><a href="/legal/">Legal, Insurance & Actuarial Risk</a></h3>
+            <p class="hub-card-desc">
+              Personal injury settlement multipliers, pain and suffering valuations, structured settlement NPV discounting, lost future earning capacity, and contingency payouts.
+            </p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/legal/personal-injury-multiplier/"><strong>Personal Injury Settlement Multiplier →</strong></a></li>
+            <li><a href="/legal/structured-settlement-npv/">Structured Settlement Cash NPV →</a></li>
+            <li><a href="/legal/lost-earning-capacity/">Future Lost Earning Capacity →</a></li>
+            <li><a href="/legal/">Explore All 25 Legal Solvers →</a></li>
+          </ul>
+        </div>
+
+        <!-- Agricultural Science Hub -->
+        <div class="hub-card" style="--card-accent: #84cc16;">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:#84cc16;">🌾</div>
+              <span class="hub-badge">Agronomy</span>
+            </div>
+            <h3 class="hub-card-title"><a href="/agriculture/">Agricultural Science & Precision Farming</a></h3>
+            <p class="hub-card-desc">
+              Corn and soybean yield estimators, NPK commercial fertilizer blending, livestock stocking density AUM, grain bin bushel storage, and pesticide tank mixing.
+            </p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/agriculture/crop-yield-estimator/"><strong>Corn & Grain Crop Yield Estimator →</strong></a></li>
+            <li><a href="/agriculture/npk-fertilizer-blending/">NPK Fertilizer Blending & Ratio →</a></li>
+            <li><a href="/agriculture/grain-bin-volume-bushels/">Round Grain Bin Bushel Capacity →</a></li>
+            <li><a href="/agriculture/">Explore All 25 Ag Solvers →</a></li>
+          </ul>
+        </div>
+
+        <!-- Civil & Structural Engineering Hub -->
+        <div class="hub-card" style="--card-accent: #64748b;">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:#64748b;">🌉</div>
+              <span class="hub-badge">Structures</span>
+            </div>
+            <h3 class="hub-card-title"><a href="/engineering/">Civil, Structural & Geotechnical</a></h3>
+            <p class="hub-card-desc">
+              Beam elastic deflection and bending moments, Manning open channel gravity flow, reinforced concrete rebar ratios, Rankine retaining wall lateral pressure, and column buckling.
+            </p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/engineering/beam-deflection-bending-moment/"><strong>Beam Deflection & Bending Moment →</strong></a></li>
+            <li><a href="/engineering/manning-pipe-flow/">Manning Open Channel Gravity Flow →</a></li>
+            <li><a href="/engineering/retaining-wall-active-earth-pressure/">Rankine Retaining Wall Earth Pressure →</a></li>
+            <li><a href="/engineering/">Explore All 25 Engineering Solvers →</a></li>
+          </ul>
+        </div>
+
+        <!-- E-Commerce & Retail Hub -->
+        <div class="hub-card" style="--card-accent: #ec4899;">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:#ec4899;">🛒</div>
+              <span class="hub-badge">Unit Economics</span>
+            </div>
+            <h3 class="hub-card-title"><a href="/ecommerce/">E-Commerce & Retail Operations</a></h3>
+            <p class="hub-card-desc">
+              Total landed unit cost, inventory turnover days sales (DSI), checkout cart abandonment recovery, Amazon FBA fee margins, GMROI, and Customer LTV:CAC ratios.
+            </p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/ecommerce/landed-cost-unit-margin/"><strong>Total Landed Cost & Gross Margin →</strong></a></li>
+            <li><a href="/ecommerce/amazon-fba-fee-margin/">Amazon FBA Fee & Net Margin →</a></li>
+            <li><a href="/ecommerce/inventory-turnover-days-sales/">Inventory Turnover & DSI Days →</a></li>
+            <li><a href="/ecommerce/">Explore All 30 E-Commerce Solvers →</a></li>
+          </ul>
+        </div>
+
+        <!-- Biotechnology & Pharmacology Hub -->
+        <div class="hub-card" style="--card-accent: #06b6d4;">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:#06b6d4;">🧬</div>
+              <span class="hub-badge">Clinical Medicine</span>
+            </div>
+            <h3 class="hub-card-title"><a href="/biotech/">Biotechnology, Pharma & Lab Medicine</a></h3>
+            <p class="hub-card-desc">
+              Pharmacokinetics drug elimination half-life, Cockcroft-Gault CrCl renal dosing, PCR primer melting temperature (Tm), Michaelis-Menten enzyme kinetics, and qPCR 2^(-ΔΔCt).
+            </p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/biotech/drug-elimination-half-life/"><strong>Pharmacokinetics Elimination Half-Life (t½) →</strong></a></li>
+            <li><a href="/biotech/cockcroft-gault-crcl/">Cockcroft-Gault Creatinine Clearance →</a></li>
+            <li><a href="/biotech/pcr-primer-tm/">PCR Primer Melting Temp (Tm) →</a></li>
+            <li><a href="/biotech/">Explore All 25 Biotech Solvers →</a></li>
+          </ul>
+        </div>
+
+        <!-- Commercial API & Model Context Protocol Card -->
         <div class="hub-card" style="--card-accent: #8b5cf6;">
           <div>
             <div class="hub-card-header">
               <div class="hub-card-icon" style="color:#8b5cf6;">⚡</div>
-              <span class="hub-badge">Commercial API</span>
+              <span class="hub-badge">AI Protocols</span>
             </div>
-            <h3 class="hub-card-title"><a href="/pricing/">Developer API & Model Context Protocol</a></h3>
+            <h3 class="hub-card-title"><a href="/mcp/">Model Context Protocol (MCP) Server</a></h3>
             <p class="hub-card-desc">
-              Deterministic, sub-15ms mathematical edge endpoints and MCP server for Claude, ChatGPT, and AI agents. Self-service API keys, metered tiers, and embeddable widgets.
+              Direct connection for Claude Desktop, Cursor, and AI agents. Exposes all 438 deterministic solvers with zero hallucination and machine verification.
             </p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/pricing/"><strong>View API Subscription Tiers ($29/mo) →</strong></a></li>
-            <li><a href="/api/">REST API Documentation & OpenAPI →</a></li>
-            <li><a href="/embed/">Embeddable Widgets (CaaS) →</a></li>
+            <li><a href="/mcp/"><strong>Connect Claude Desktop & Cursor (1-Click) →</strong></a></li>
+            <li><a href="/api/">REST API Documentation & OpenAPI 3.1 →</a></li>
+            <li><a href="/pricing/">Commercial API Keys & Quotas →</a></li>
           </ul>
         </div>
-"""
-        # Find closing tag of hub-grid
-        # Replace the first instance of </div> that closes hub-grid
-        content = content.replace('<!-- 5. Statistics -->\n        <div class="hub-card"', '<!-- 5. Statistics -->\n        <div class="hub-card"')
-        # Insert before </section> that closes master disciplines
-        disc_end = content.find('</section>\n\n    <!-- PageSpeed & Architecture Mandates Section -->')
+    """
+
+    if "/energy/" not in content:
+        disc_end = content.find('</section>\n\n    <!-- Machine-Readable LLM Standards Callout -->')
+        if disc_end == -1:
+            disc_end = content.find('</section>\n\n    <!-- PageSpeed & Architecture Mandates Section -->')
         if disc_end != -1:
-            # find last </div> before this </section>
             last_div = content.rfind('</div>', 0, disc_end)
             if last_div != -1:
-                content = content[:last_div] + construction_card + content[last_div:]
+                content = content[:last_div] + domain_cards + content[last_div:]
         index_file.write_text(content, encoding="utf-8")
-        print("  ✅ Updated index.html with Construction, Health, and API cards!")
+        print("  ✅ Updated index.html with all 15 Domain Hubs and MCP Server card!")
     else:
         index_file.write_text(content, encoding="utf-8")
         print("  ✅ Updated index.html navigation links!")

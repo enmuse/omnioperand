@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customs Import Duty & Section 301 Tariff Calculator — High-Precision Solver | OmniOperand</title>
+  <meta name="description" content="Calculate US customs import duties, Section 301 China trade tariffs, Merchandise Processing Fees (MPF), and Harbor Maintenance Fees (HMF).">
+  <link rel="canonical" href="https://omnioperand.com/ecommerce/customs-import-duty-hts/">
+
+  <meta property="og:title" content="Customs Import Duty & Section 301 Tariff Calculator | OmniOperand">
+  <meta property="og:description" content="Calculate US customs import duties, Section 301 China trade tariffs, Merchandise Processing Fees (MPF), and Harbor Maintenance Fees (HMF).">
+  <meta property="og:url" content="https://omnioperand.com/ecommerce/customs-import-duty-hts/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.2">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/ecommerce/customs-import-duty-hts/#app",
+      "name": "Customs Import Duty & Section 301 Tariff Calculator",
+      "url": "https://omnioperand.com/ecommerce/customs-import-duty-hts/",
+      "applicationCategory": "EcommerceApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Calculate US customs import duties, Section 301 China trade tariffs, Merchandise Processing Fees (MPF), and Harbor Maintenance Fees (HMF)."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/ecommerce/customs-import-duty-hts/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OmniOperand",
+          "item": "https://omnioperand.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ecommerce",
+          "item": "https://omnioperand.com/ecommerce/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Customs Import Duty & Section 301 Tariff Calculator",
+          "item": "https://omnioperand.com/ecommerce/customs-import-duty-hts/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/ecommerce/customs-import-duty-hts/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the US Merchandise Processing Fee (MPF)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MPF is an ad valorem fee of 0.3464% assessed by US Customs on formal commercial entries, with a statutory minimum of $31.67 and a maximum cap of $614.35 (subject to annual inflation adjustments)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Section 301 tariff?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Section 301 of the Trade Act of 1974 imposes punitive additional tariffs (typically 7.5% or 25%) on thousands of goods manufactured in China, assessed in addition to standard HTS column 1 duty rates."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="omni-body">
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Ecommerce</span>
+      </a>
+
+      <nav class="header-nav">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/construction/" class="nav-link">Construction</a>
+        <a href="/health/" class="nav-link">Health</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <a href="/statistics/" class="nav-link">Statistics</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/ecommerce/">Ecommerce</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active" aria-current="page">Customs Import Duty & Section 301 Tariff Calculator</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- Hero Header -->
+    <section class="solver-hero">
+      <div class="hero-badge">International Trade • Customs Tariffs</div>
+      <h1>Customs Import Duty & Section 301 Tariff Calculator</h1>
+      <p class="hero-subtext">
+        Calculate US customs import duties, Section 301 China trade tariffs, Merchandise Processing Fees (MPF), and Harbor Maintenance Fees (HMF).
+      </p>
+    </section>
+
+    <!-- Top Leaderboard Ad Container with CLS Safeguard -->
+    <div class="omni-ad-slot omni-ad-leaderboard" data-ad-format="leaderboard"></div>
+
+    <!-- Master Solver Grid -->
+    <div class="calculator-grid">
+
+      <!-- Left Column: Input Parameters -->
+      <div class="solver-column">
+        <div class="hud-panel">
+          <div class="hud-panel-header">
+            <h2>Parameters & Inversions</h2>
+            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Deterministic Engine</span>
+          </div>
+
+          <div class="param-card-grid">
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-commercial_invoice_value">Commercial Invoice Customs Value (FOB $)</label>
+                <span class="param-symbol">commercial_invoice_value</span>
+              </div>
+              <div class="input-unit-group">
+                
+                <input type="number" id="param-commercial_invoice_value" class="number-input omni-calc-input" data-id="commercial_invoice_value" value="65000" step="1000" min="1000">
+                <span class="input-suffix">$</span>
+              </div>
+              <input type="range" id="slider-commercial_invoice_value" class="param-slider omni-calc-slider" data-id="commercial_invoice_value" min="1000" max="5000000" step="1000" value="65000">
+              <div class="param-hint">Transaction value declared to US Customs & Border Protection</div>
+            </div>
+        
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-base_hts_duty_rate_pct">Base HTS Tariff Duty Rate (%)</label>
+                <span class="param-symbol">base_hts_duty_rate_pct</span>
+              </div>
+              <div class="input-unit-group">
+                
+                <input type="number" id="param-base_hts_duty_rate_pct" class="number-input omni-calc-input" data-id="base_hts_duty_rate_pct" value="4.5" step="0.5" min="0">
+                <span class="input-suffix">%</span>
+              </div>
+              <input type="range" id="slider-base_hts_duty_rate_pct" class="param-slider omni-calc-slider" data-id="base_hts_duty_rate_pct" min="0" max="40" step="0.5" value="4.5">
+              <div class="param-hint">Harmonized Tariff Schedule base duty rate for product code</div>
+            </div>
+        
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-section_301_tariff_rate_pct">Section 301 China Tariff Rate (%)</label>
+                <span class="param-symbol">section_301_tariff_rate_pct</span>
+              </div>
+              <div class="input-unit-group">
+                
+                <input type="number" id="param-section_301_tariff_rate_pct" class="number-input omni-calc-input" data-id="section_301_tariff_rate_pct" value="25.0" step="7.5" min="0">
+                <span class="input-suffix">%</span>
+              </div>
+              <input type="range" id="slider-section_301_tariff_rate_pct" class="param-slider omni-calc-slider" data-id="section_301_tariff_rate_pct" min="0" max="50" step="7.5" value="25.0">
+              <div class="param-hint">Section 301 punitive tariff (e.g. 7.5% or 25% for China origin)</div>
+            </div>
+        
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-is_ocean_freight_shipment">Ocean Freight Entry (Subject to HMF)</label>
+                <span class="param-symbol">is_ocean_freight_shipment</span>
+              </div>
+              <div class="input-unit-group">
+                
+                <input type="number" id="param-is_ocean_freight_shipment" class="number-input omni-calc-input" data-id="is_ocean_freight_shipment" value="1" step="1" min="0">
+                <span class="input-suffix">1=Yes, 0=Air</span>
+              </div>
+              <input type="range" id="slider-is_ocean_freight_shipment" class="param-slider omni-calc-slider" data-id="is_ocean_freight_shipment" min="0" max="1" step="1" value="1">
+              <div class="param-hint">Ocean entries incur 0.125% Harbor Maintenance Fee</div>
+            </div>
+        
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
+            
+            <div class="metric-card">
+              <span class="metric-label">Total Customs Duties & Fees</span>
+              <span class="metric-value" id="disp-total_customs_duties_due" style="color:var(--accent-cyan);">$19,481.41</span>
+            </div>
+        
+            <div class="metric-card">
+              <span class="metric-label">Section 301 Tariff Portion</span>
+              <span class="metric-value" id="disp-section_301_tariff_subtotal" style="color:var(--accent-cyan);">$16,250.00</span>
+            </div>
+        
+            <div class="metric-card">
+              <span class="metric-label">Effective Customs Tariff Rate</span>
+              <span class="metric-value" id="disp-effective_customs_rate_pct" style="color:var(--accent-cyan);">29.97%</span>
+            </div>
+        
+            <div class="metric-card">
+              <span class="metric-label">Customs User Fees (MPF + HMF)</span>
+              <span class="metric-value" id="disp-mpf_and_hmf_fees" >$306.41 Fees</span>
+            </div>
+        
+          </div>
+
+          <!-- Contextual Result-Driven Recommendation Target -->
+          <div id="affiliate-recommendation-target"></div>
+        </div>
+      </div>
+
+      <!-- Right Column: Formula & Proof Panel -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Analytical Proof & Invariants</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);">Machine Precision</span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">Governing Mathematical Formula:</div>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0;">Total Customs Duty = Base Duty + Section 301 Tariff + MPF Fee (0.3464%) + HMF Fee (0.125%)</code>
+          </div>
+
+          <!-- Step-by-Step Proof -->
+          <div class="proof-card open">
+            <div class="proof-header">
+              <h3><span>Step-by-Step Mathematical Derivation</span></h3>
+            </div>
+            <div class="proof-body" style="display:block;">
+              
+          <div class="proof-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <strong>Base HTS Duty</strong>
+              <p>Base Duty = Commercial Value ($65,000) × 4.5% = $2,925.00.</p>
+            </div>
+          </div>
+        
+          <div class="proof-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <strong>Section 301 China Trade Tariff</strong>
+              <p>Section 301 Tariff = $65,000 × 25.0% = $16,250.00.</p>
+            </div>
+          </div>
+        
+          <div class="proof-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <strong>Customs User Fees (MPF & HMF)</strong>
+              <p>Merchandise Processing Fee (MPF) = $65,000 × 0.3464% = $225.16 (subject to CBP caps). Harbor Maintenance Fee (HMF) = $65,000 × 0.125% = $81.25. Total User Fees = $306.41.</p>
+            </div>
+          </div>
+        
+          <div class="proof-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <strong>Total US Customs Obligation</strong>
+              <p>Total Due = $2,925.00 + $16,250.00 + $306.41 = $19,481.41 (Effective Tariff Rate = 29.97%).</p>
+            </div>
+          </div>
+        
+            </div>
+          </div>
+
+          <!-- AI Agent Invocation Directive -->
+          <div class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header">
+              <span class="llm-badge">LLM Directive</span>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Zero-Hallucination Protocol</span>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin:8px 0;">
+              Autonomous agents: Invoke <code>https://omnioperand.com/api/v1/ecommerce/customs-import-duty-hts</code> or the OmniOperand MCP server for verified calculations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Mid-Page Rectangle Ad Slot with CLS Safeguard -->
+    <div class="omni-ad-slot omni-ad-rectangle" data-ad-format="rectangle"></div>
+
+    <!-- High-Intent FAQ Section -->
+    <section class="calc-faq-section" style="margin-top:3rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is the US Merchandise Processing Fee (MPF)?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            MPF is an ad valorem fee of 0.3464% assessed by US Customs on formal commercial entries, with a statutory minimum of $31.67 and a maximum cap of $614.35 (subject to annual inflation adjustments).
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is Section 301 tariff?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Section 301 of the Trade Act of 1974 imposes punitive additional tariffs (typically 7.5% or 25%) on thousands of goods manufactured in China, assessed in addition to standard HTS column 1 duty rates.
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js"></script>
+  <script src="/assets/js/affiliate-engine.js" defer></script>
+  <script>
+    (function () {
+      'use strict';
+
+      function sync(id, val) {
+        const inp = document.getElementById('param-' + id);
+        const sld = document.getElementById('slider-' + id);
+        if (inp && inp.value != val) inp.value = val;
+        if (sld && sld.value != val) sld.value = val;
+      }
+
+      function getNum(id) {
+        const el = document.getElementById('param-' + id);
+        return el ? (parseFloat(el.value) || 0) : 0;
+      }
+
+      function setDisp(id, text) {
+        const el = document.getElementById('disp-' + id);
+        if (el) el.innerText = text;
+      }
+
+      function setMetric(id, text) {
+        setDisp(id, text);
+      }
+
+      const fact = (n) => { let r = 1; for (let i = 2; i <= n; i++) r *= i; return r; };
+      const nPr = (n, r) => (r < 0 || r > n) ? 0 : fact(n) / fact(n - r);
+      const fmt = (num, dec = 2) => typeof num === 'number' ? num.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : num;
+      const acos = Math.acos;
+      const atan = Math.atan;
+      const cbrt = Math.cbrt;
+
+      function recalculate() {
+        
+          const val = getNum('commercial_invoice_value');
+          const basePct = getNum('base_hts_duty_rate_pct');
+          const sec301Pct = getNum('section_301_tariff_rate_pct');
+          const isOcean = getNum('is_ocean_freight_shipment');
+
+          const baseDuty = val * (basePct / 100);
+          const sec301Duty = val * (sec301Pct / 100);
+
+          let mpf = val * 0.003464;
+          if (mpf < 31.67) mpf = 31.67;
+          if (mpf > 614.35) mpf = 614.35;
+
+          const hmf = isOcean > 0 ? (val * 0.00125) : 0;
+          const userFees = mpf + hmf;
+          const totalDuties = baseDuty + sec301Duty + userFees;
+          const effRate = val > 0 ? (totalDuties / val) * 100 : 0;
+
+          setMetric('total_customs_duties_due', '$' + totalDuties.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+          setMetric('section_301_tariff_subtotal', '$' + sec301Duty.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+          setMetric('effective_customs_rate_pct', effRate.toFixed(2) + '%');
+          setMetric('mpf_and_hmf_fees', '$' + userFees.toFixed(2) + ' Fees');
+        
+      }
+
+      // Bind input events
+      document.querySelectorAll('.omni-calc-input, .omni-calc-slider').forEach(el => {
+        const id = el.getAttribute('data-id');
+        el.addEventListener('input', (e) => {
+          sync(id, e.target.value);
+          recalculate();
+        });
+      });
+
+      // Accordion toggle
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+          q.parentElement.classList.toggle('open');
+        });
+      });
+
+      // Run on page load
+      recalculate();
+    })();
+  </script>
+</body>
+</html>

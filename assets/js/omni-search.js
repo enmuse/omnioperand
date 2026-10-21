@@ -39,22 +39,6 @@
     ]
   },
   {
-    "title": "OmniOperand Model Context Protocol (MCP) Server",
-    "category": "Developer & Machine Protocols",
-    "url": "/mcp/",
-    "keywords": [
-      "mcp",
-      "model context protocol",
-      "claude desktop",
-      "cursor",
-      "windsurf",
-      "ai agent",
-      "json-rpc",
-      "llm tools",
-      "deterministic"
-    ]
-  },
-  {
     "title": "Embeddable Calculator Widgets (CaaS)",
     "category": "Developer & Webmasters",
     "url": "/embed/",
@@ -229,6 +213,102 @@
     "url": "/statistics/",
     "keywords": [
       "statistics",
+      "hub",
+      "calculators",
+      "overview",
+      "formulas"
+    ]
+  },
+  {
+    "title": "Energy, Solar & Clean Tech Engineering Hub",
+    "category": "Domain Hub > Energy",
+    "url": "/energy/",
+    "keywords": [
+      "energy",
+      "hub",
+      "calculators",
+      "overview",
+      "formulas"
+    ]
+  },
+  {
+    "title": "Logistics, Supply Chain & Freight Operations Hub",
+    "category": "Domain Hub > Logistics",
+    "url": "/logistics/",
+    "keywords": [
+      "logistics",
+      "hub",
+      "calculators",
+      "overview",
+      "formulas"
+    ]
+  },
+  {
+    "title": "Cryptocurrency, DeFi & Fintech Mechanics Hub",
+    "category": "Domain Hub > Crypto",
+    "url": "/crypto/",
+    "keywords": [
+      "crypto",
+      "hub",
+      "calculators",
+      "overview",
+      "formulas"
+    ]
+  },
+  {
+    "title": "Legal, Insurance & Actuarial Risk Hub",
+    "category": "Domain Hub > Legal",
+    "url": "/legal/",
+    "keywords": [
+      "legal",
+      "hub",
+      "calculators",
+      "overview",
+      "formulas"
+    ]
+  },
+  {
+    "title": "Agricultural Science, Crop & Precision Farming Hub",
+    "category": "Domain Hub > Agriculture",
+    "url": "/agriculture/",
+    "keywords": [
+      "agriculture",
+      "hub",
+      "calculators",
+      "overview",
+      "formulas"
+    ]
+  },
+  {
+    "title": "Civil, Structural, Geotechnical & Hydraulic Engineering Hub",
+    "category": "Domain Hub > Engineering",
+    "url": "/engineering/",
+    "keywords": [
+      "engineering",
+      "hub",
+      "calculators",
+      "overview",
+      "formulas"
+    ]
+  },
+  {
+    "title": "E-Commerce, Direct-to-Consumer & Retail Operations Hub",
+    "category": "Domain Hub > Ecommerce",
+    "url": "/ecommerce/",
+    "keywords": [
+      "ecommerce",
+      "hub",
+      "calculators",
+      "overview",
+      "formulas"
+    ]
+  },
+  {
+    "title": "Biotechnology, Pharmacology & Laboratory Medicine Hub",
+    "category": "Domain Hub > Biotech",
+    "url": "/biotech/",
+    "keywords": [
+      "biotech",
       "hub",
       "calculators",
       "overview",
@@ -4375,6 +4455,3901 @@
       "net",
       "and",
       "state"
+    ]
+  },
+  {
+    "title": "Solar PV System Payback & ROI Calculator",
+    "category": "Energy > Clean Energy • Solar Economics Matrix",
+    "url": "/energy/solar-payback/",
+    "keywords": [
+      "solar",
+      "system",
+      "payback",
+      "roi",
+      "calculator",
+      "calculate",
+      "exact",
+      "simple",
+      "period",
+      "net",
+      "present",
+      "value"
+    ]
+  },
+  {
+    "title": "Solar PV System Sizing & DC kW Array Calculator",
+    "category": "Energy > Photovoltaic Sizing • System Capacity",
+    "url": "/energy/solar-pv-sizing/",
+    "keywords": [
+      "solar",
+      "system",
+      "sizing",
+      "array",
+      "calculator",
+      "determine",
+      "the",
+      "exact",
+      "kilowatt",
+      "rating",
+      "and",
+      "number"
+    ]
+  },
+  {
+    "title": "Home Battery Backup Duration & Storage Calculator",
+    "category": "Energy > Energy Storage • Runtime Matrix",
+    "url": "/energy/battery-backup-storage/",
+    "keywords": [
+      "home",
+      "battery",
+      "backup",
+      "duration",
+      "storage",
+      "calculator",
+      "calculate",
+      "run-time",
+      "hours",
+      "and",
+      "days",
+      "for"
+    ]
+  },
+  {
+    "title": "Heat Pump Seasonal COP & HSPF2 Energy Savings Calculator",
+    "category": "Energy > Thermal Efficiency • Heat Pump Matrix",
+    "url": "/energy/heat-pump-cop-efficiency/",
+    "keywords": [
+      "heat",
+      "pump",
+      "seasonal",
+      "cop",
+      "hspf2",
+      "energy",
+      "savings",
+      "calculator",
+      "calculate",
+      "operating",
+      "electricity",
+      "cost"
+    ]
+  },
+  {
+    "title": "EV Charging Load, Time & Electrical Panel Capacity Calculator",
+    "category": "Energy > E-Mobility • Electrical Infrastructure",
+    "url": "/energy/ev-charging-load/",
+    "keywords": [
+      "charging",
+      "load",
+      "time",
+      "electrical",
+      "panel",
+      "capacity",
+      "calculator",
+      "calculate",
+      "speed",
+      "miles",
+      "per",
+      "hour"
+    ]
+  },
+  {
+    "title": "Solar Inverter Sizing & DC-to-AC Overload Clipping Ratio",
+    "category": "Energy > Power Electronics • Inverter Optimization",
+    "url": "/energy/solar-inverter-clipping/",
+    "keywords": [
+      "solar",
+      "inverter",
+      "sizing",
+      "dc-to-ac",
+      "overload",
+      "clipping",
+      "ratio",
+      "calculate",
+      "loading",
+      "ilr",
+      "annual",
+      "energy"
+    ]
+  },
+  {
+    "title": "Commercial HVAC Chiller Tonnage & Cooling Load Calculator",
+    "category": "Energy > Commercial HVAC • Hydronic Cooling",
+    "url": "/energy/chiller-tonnage-cooling/",
+    "keywords": [
+      "commercial",
+      "hvac",
+      "chiller",
+      "tonnage",
+      "cooling",
+      "load",
+      "calculator",
+      "calculate",
+      "chilled",
+      "water",
+      "capacity",
+      "refrigeration"
+    ]
+  },
+  {
+    "title": "3-Phase Power Factor Correction & Capacitor Sizing Calculator",
+    "category": "Energy > Industrial Power • Reactive Compensation",
+    "url": "/energy/power-factor-correction/",
+    "keywords": [
+      "3-phase",
+      "power",
+      "factor",
+      "correction",
+      "capacitor",
+      "sizing",
+      "calculator",
+      "calculate",
+      "required",
+      "kvar",
+      "bank",
+      "size"
+    ]
+  },
+  {
+    "title": "Solar Net Metering & Utility Feed-in Tariff Calculator",
+    "category": "Energy > Grid Economics • Solar Compensation",
+    "url": "/energy/net-metering-credits/",
+    "keywords": [
+      "solar",
+      "net",
+      "metering",
+      "utility",
+      "feed-in",
+      "tariff",
+      "calculator",
+      "calculate",
+      "annual",
+      "financial",
+      "compensation",
+      "under"
+    ]
+  },
+  {
+    "title": "Solar Panel Tilt & Azimuth Irradiance Optimizer",
+    "category": "Energy > Solar Geometry • Irradiance Optimization",
+    "url": "/energy/solar-tilt-azimuth/",
+    "keywords": [
+      "solar",
+      "panel",
+      "tilt",
+      "azimuth",
+      "irradiance",
+      "optimizer",
+      "calculate",
+      "optimal",
+      "fixed",
+      "angle",
+      "and",
+      "orientation"
+    ]
+  },
+  {
+    "title": "Wind Turbine Power Curve & Betz Limit Kinetic Yield Calculator",
+    "category": "Energy > Wind Energy • Fluid Dynamics",
+    "url": "/energy/wind-turbine-power/",
+    "keywords": [
+      "wind",
+      "turbine",
+      "power",
+      "curve",
+      "betz",
+      "limit",
+      "kinetic",
+      "yield",
+      "calculator",
+      "calculate",
+      "theoretical",
+      "and"
+    ]
+  },
+  {
+    "title": "3-Phase & Single-Phase Transformer kVA Rating Calculator",
+    "category": "Energy > Electrical Distribution • Transformer Sizing",
+    "url": "/energy/transformer-kva-rating/",
+    "keywords": [
+      "3-phase",
+      "single-phase",
+      "transformer",
+      "kva",
+      "rating",
+      "calculator",
+      "calculate",
+      "full-load",
+      "secondary",
+      "current",
+      "fla",
+      "primary"
+    ]
+  },
+  {
+    "title": "Electrical Wire Gauge & Voltage Drop Calculator (NEC)",
+    "category": "Energy > NEC Electrical Code • Conductor Sizing",
+    "url": "/energy/wire-gauge-voltage-drop/",
+    "keywords": [
+      "electrical",
+      "wire",
+      "gauge",
+      "voltage",
+      "drop",
+      "calculator",
+      "nec",
+      "calculate",
+      "conductor",
+      "percentage",
+      "terminal",
+      "and"
+    ]
+  },
+  {
+    "title": "Geothermal Heat Pump Ground Loop Borehole Length Calculator",
+    "category": "Energy > Geothermal Energy • Borehole Engineering",
+    "url": "/energy/geothermal-ground-loop/",
+    "keywords": [
+      "geothermal",
+      "heat",
+      "pump",
+      "ground",
+      "loop",
+      "borehole",
+      "length",
+      "calculator",
+      "calculate",
+      "required",
+      "vertical",
+      "depth"
+    ]
+  },
+  {
+    "title": "Compressed Air CFM Leak Cost & Pneumatic Audit Calculator",
+    "category": "Energy > Industrial Efficiency • Pneumatic Systems",
+    "url": "/energy/compressed-air-leak-cfm/",
+    "keywords": [
+      "compressed",
+      "air",
+      "cfm",
+      "leak",
+      "cost",
+      "pneumatic",
+      "audit",
+      "calculator",
+      "calculate",
+      "lost",
+      "flow",
+      "rate"
+    ]
+  },
+  {
+    "title": "Industrial Boiler Combustion Efficiency & Flue Heat Loss Calculator",
+    "category": "Energy > Thermal Systems • Combustion Diagnostics",
+    "url": "/energy/boiler-combustion-efficiency/",
+    "keywords": [
+      "industrial",
+      "boiler",
+      "combustion",
+      "efficiency",
+      "flue",
+      "heat",
+      "loss",
+      "calculator",
+      "calculate",
+      "thermal",
+      "dry",
+      "gas"
+    ]
+  },
+  {
+    "title": "Standby Generator kW vs Starting kVA Sizing Calculator",
+    "category": "Energy > Emergency Power • Standby Generation",
+    "url": "/energy/generator-kw-kva-sizing/",
+    "keywords": [
+      "standby",
+      "generator",
+      "starting",
+      "kva",
+      "sizing",
+      "calculator",
+      "calculate",
+      "emergency",
+      "accounting",
+      "for",
+      "locked",
+      "rotor"
+    ]
+  },
+  {
+    "title": "Commercial LED Lighting Lumen-to-Watt Retrofit ROI Calculator",
+    "category": "Energy > Energy Efficiency • Lighting Systems",
+    "url": "/energy/led-lighting-retrofit/",
+    "keywords": [
+      "commercial",
+      "led",
+      "lighting",
+      "lumen-to-watt",
+      "retrofit",
+      "roi",
+      "calculator",
+      "calculate",
+      "electrical",
+      "energy",
+      "savings",
+      "hvac"
+    ]
+  },
+  {
+    "title": "Variable Frequency Drive (VFD) Pump Affinity Law Savings Calculator",
+    "category": "Energy > Fluid Machinery • Affinity Laws",
+    "url": "/energy/vfd-pump-savings/",
+    "keywords": [
+      "variable",
+      "frequency",
+      "drive",
+      "vfd",
+      "pump",
+      "affinity",
+      "law",
+      "savings",
+      "calculator",
+      "calculate",
+      "electrical",
+      "energy"
+    ]
+  },
+  {
+    "title": "Solar Thermal Domestic Water Heating Collector BTU Sizing",
+    "category": "Energy > Solar Thermal • Hydronic Engineering",
+    "url": "/energy/solar-thermal-water-heater/",
+    "keywords": [
+      "solar",
+      "thermal",
+      "domestic",
+      "water",
+      "heating",
+      "collector",
+      "btu",
+      "sizing",
+      "calculate",
+      "required",
+      "flat",
+      "plate"
+    ]
+  },
+  {
+    "title": "Heating & Cooling Degree Days (HDD / CDD) Thermal Audit Calculator",
+    "category": "Energy > Building Physics • Climatological Modeling",
+    "url": "/energy/degree-days-energy-audit/",
+    "keywords": [
+      "heating",
+      "cooling",
+      "degree",
+      "days",
+      "hdd",
+      "cdd",
+      "thermal",
+      "audit",
+      "calculator",
+      "calculate",
+      "weather-normalized",
+      "annual"
+    ]
+  },
+  {
+    "title": "Battery Cycle Life vs Depth of Discharge (DoD) Degradation Calculator",
+    "category": "Energy > Battery Science • Degradation Modeling",
+    "url": "/energy/battery-cycle-life-dod/",
+    "keywords": [
+      "battery",
+      "cycle",
+      "life",
+      "depth",
+      "discharge",
+      "dod",
+      "degradation",
+      "calculator",
+      "calculate",
+      "total",
+      "lifetime",
+      "kilowatt-hour"
+    ]
+  },
+  {
+    "title": "Off-Grid Diesel & Propane Generator Fuel Consumption Calculator",
+    "category": "Energy > Off-Grid Power • Fuel Logistics",
+    "url": "/energy/offgrid-generator-fuel/",
+    "keywords": [
+      "off-grid",
+      "diesel",
+      "propane",
+      "generator",
+      "fuel",
+      "consumption",
+      "calculator",
+      "calculate",
+      "hourly",
+      "gallons",
+      "run-time",
+      "tank"
+    ]
+  },
+  {
+    "title": "Electrical Power Quality Total Harmonic Distortion (THD) Calculator",
+    "category": "Energy > Power Quality • IEEE 519 Standards",
+    "url": "/energy/harmonic-distortion-thd/",
+    "keywords": [
+      "electrical",
+      "power",
+      "quality",
+      "total",
+      "harmonic",
+      "distortion",
+      "thd",
+      "calculator",
+      "calculate",
+      "for",
+      "voltage",
+      "and"
+    ]
+  },
+  {
+    "title": "Data Center Power Usage Effectiveness (PUE) & Efficiency Calculator",
+    "category": "Energy > Cloud Infrastructure • Data Center Energy",
+    "url": "/energy/data-center-pue/",
+    "keywords": [
+      "data",
+      "center",
+      "power",
+      "usage",
+      "effectiveness",
+      "pue",
+      "efficiency",
+      "calculator",
+      "calculate",
+      "infrastructure",
+      "dcie",
+      "wasted"
+    ]
+  },
+  {
+    "title": "Dimensional Weight (DIM Factor 139 / 166) Calculator",
+    "category": "Logistics > Parcel Logistics • Volumetric Rating",
+    "url": "/logistics/dim-weight-calculator/",
+    "keywords": [
+      "dimensional",
+      "weight",
+      "dim",
+      "factor",
+      "139",
+      "166",
+      "calculator",
+      "calculate",
+      "volumetric",
+      "billable",
+      "and",
+      "carrier"
+    ]
+  },
+  {
+    "title": "Pallet Ti-Hi & Carton Stacking Pattern Calculator",
+    "category": "Logistics > Warehousing • Palletization Matrix",
+    "url": "/logistics/pallet-ti-hi-optimizer/",
+    "keywords": [
+      "pallet",
+      "ti-hi",
+      "carton",
+      "stacking",
+      "pattern",
+      "calculator",
+      "calculate",
+      "optimal",
+      "tie",
+      "cases",
+      "per",
+      "layer"
+    ]
+  },
+  {
+    "title": "Freight Density & NMFC Freight Class Calculator",
+    "category": "Logistics > LTL Freight • NMFC Classification",
+    "url": "/logistics/freight-density-nmfc/",
+    "keywords": [
+      "freight",
+      "density",
+      "nmfc",
+      "class",
+      "calculator",
+      "calculate",
+      "shipment",
+      "pounds",
+      "per",
+      "cubic",
+      "foot",
+      "pcf"
+    ]
+  },
+  {
+    "title": "Full Truckload (FTL) vs Less-Than-Truckload (LTL) Cost Breakeven",
+    "category": "Logistics > Freight Procurement • Breakeven Analysis",
+    "url": "/logistics/ftl-vs-ltl-freight/",
+    "keywords": [
+      "full",
+      "truckload",
+      "ftl",
+      "less-than-truckload",
+      "ltl",
+      "cost",
+      "breakeven",
+      "calculate",
+      "whether",
+      "shipping",
+      "high-volume",
+      "palletized"
+    ]
+  },
+  {
+    "title": "Ocean Shipping Container CBM Volume & Payload Calculator",
+    "category": "Logistics > Ocean Freight • Container Utilization",
+    "url": "/logistics/container-cbm-utilization/",
+    "keywords": [
+      "ocean",
+      "shipping",
+      "container",
+      "cbm",
+      "volume",
+      "payload",
+      "calculator",
+      "calculate",
+      "cubic",
+      "meter",
+      "metric",
+      "ton"
+    ]
+  },
+  {
+    "title": "Reorder Point (ROP) & Safety Stock Volatility Calculator",
+    "category": "Logistics > Inventory Science • Demand Volatility",
+    "url": "/logistics/reorder-point-safety-stock/",
+    "keywords": [
+      "reorder",
+      "point",
+      "rop",
+      "safety",
+      "stock",
+      "volatility",
+      "calculator",
+      "calculate",
+      "statistical",
+      "and",
+      "inventory",
+      "buffers"
+    ]
+  },
+  {
+    "title": "Economic Order Quantity (EOQ) & Annual Holding Cost Calculator",
+    "category": "Logistics > Inventory Optimization • EOQ Formulation",
+    "url": "/logistics/economic-order-quantity-eoq/",
+    "keywords": [
+      "economic",
+      "order",
+      "quantity",
+      "eoq",
+      "annual",
+      "holding",
+      "cost",
+      "calculator",
+      "calculate",
+      "optimal",
+      "purchasing",
+      "batch"
+    ]
+  },
+  {
+    "title": "Warehouse Aisle Width & Forklift Turning Radius Calculator",
+    "category": "Logistics > Facility Engineering • Aisle Clearances",
+    "url": "/logistics/forklift-aisle-turning-radius/",
+    "keywords": [
+      "warehouse",
+      "aisle",
+      "width",
+      "forklift",
+      "turning",
+      "radius",
+      "calculator",
+      "calculate",
+      "minimum",
+      "clear",
+      "rack-to-rack",
+      "for"
+    ]
+  },
+  {
+    "title": "Air Freight Volumetric vs Gross Chargeable Weight Calculator",
+    "category": "Logistics > Aviation Logistics • IATA Standards",
+    "url": "/logistics/air-freight-chargeable-weight/",
+    "keywords": [
+      "air",
+      "freight",
+      "volumetric",
+      "gross",
+      "chargeable",
+      "weight",
+      "calculator",
+      "calculate",
+      "iata",
+      "international",
+      "6000",
+      "ratio"
+    ]
+  },
+  {
+    "title": "Shipping Port Demurrage & Container Detention Fee Calculator",
+    "category": "Logistics > Maritime Logistics • Supply Chain Penalties",
+    "url": "/logistics/demurrage-detention-fees/",
+    "keywords": [
+      "shipping",
+      "port",
+      "demurrage",
+      "container",
+      "detention",
+      "fee",
+      "calculator",
+      "calculate",
+      "daily",
+      "escalating",
+      "inside",
+      "terminal"
+    ]
+  },
+  {
+    "title": "Semi-Truck Axle Weight Distribution & DOT Bridge Formula Calculator",
+    "category": "Logistics > Highway Transport • DOT Axle Compliance",
+    "url": "/logistics/truck-axle-weight-distribution/",
+    "keywords": [
+      "semi-truck",
+      "axle",
+      "weight",
+      "distribution",
+      "dot",
+      "bridge",
+      "formula",
+      "calculator",
+      "calculate",
+      "individual",
+      "group",
+      "loadings"
+    ]
+  },
+  {
+    "title": "Deadhead Trucking Mileage Cost & Lane Profitability Calculator",
+    "category": "Logistics > Trucking Economics • Lane Profitability",
+    "url": "/logistics/deadhead-trucking-cost/",
+    "keywords": [
+      "deadhead",
+      "trucking",
+      "mileage",
+      "cost",
+      "lane",
+      "profitability",
+      "calculator",
+      "calculate",
+      "true",
+      "per",
+      "loaded",
+      "mile"
+    ]
+  },
+  {
+    "title": "Supply Chain Bullwhip Effect Variance Amplification Calculator",
+    "category": "Logistics > Supply Chain Dynamics • Demand Amplification",
+    "url": "/logistics/inventory-bullwhip-effect/",
+    "keywords": [
+      "supply",
+      "chain",
+      "bullwhip",
+      "effect",
+      "variance",
+      "amplification",
+      "calculator",
+      "calculate",
+      "order",
+      "ratio",
+      "across",
+      "echelons"
+    ]
+  },
+  {
+    "title": "Warehouse Cubic Storage Density & Floor Space Utilization Calculator",
+    "category": "Logistics > Facility Optimization • Cubic Utilization",
+    "url": "/logistics/warehouse-storage-density/",
+    "keywords": [
+      "warehouse",
+      "cubic",
+      "storage",
+      "density",
+      "floor",
+      "space",
+      "utilization",
+      "calculator",
+      "calculate",
+      "honeycombing",
+      "loss",
+      "and"
+    ]
+  },
+  {
+    "title": "Freight Fuel Surcharge (FSC) Sliding Scale Calculator",
+    "category": "Logistics > Trucking Tariffs • Fuel Surcharge",
+    "url": "/logistics/freight-fuel-surcharge/",
+    "keywords": [
+      "freight",
+      "fuel",
+      "surcharge",
+      "fsc",
+      "sliding",
+      "scale",
+      "calculator",
+      "calculate",
+      "carrier",
+      "percentage",
+      "and",
+      "per-mile"
+    ]
+  },
+  {
+    "title": "Fleet Total Cost of Ownership (TCO) & Operating Cost Per Mile",
+    "category": "Logistics > Fleet Management • Operating Cost Per Mile",
+    "url": "/logistics/fleet-tco-per-mile/",
+    "keywords": [
+      "fleet",
+      "total",
+      "cost",
+      "ownership",
+      "tco",
+      "operating",
+      "per",
+      "mile",
+      "calculate",
+      "and",
+      "marginal",
+      "mcpm"
+    ]
+  },
+  {
+    "title": "Intermodal Rail vs Over-The-Road (OTR) Trucking Breakeven",
+    "category": "Logistics > Intermodal Freight • Modal Conversion",
+    "url": "/logistics/intermodal-rail-vs-truck/",
+    "keywords": [
+      "intermodal",
+      "rail",
+      "over-the-road",
+      "otr",
+      "trucking",
+      "breakeven",
+      "compare",
+      "cost",
+      "per",
+      "container",
+      "transit",
+      "lead"
+    ]
+  },
+  {
+    "title": "Last-Mile Delivery Route Stop Density & Cost Per Drop Calculator",
+    "category": "Logistics > Last-Mile Logistics • Route Density",
+    "url": "/logistics/last-mile-route-stop-density/",
+    "keywords": [
+      "last-mile",
+      "delivery",
+      "route",
+      "stop",
+      "density",
+      "cost",
+      "per",
+      "drop",
+      "calculator",
+      "calculate",
+      "driver",
+      "metrics"
+    ]
+  },
+  {
+    "title": "Warehouse Pick-and-Pack Labor Productivity Rate Calculator",
+    "category": "Logistics > Fulfillment Operations • Labor Engineering",
+    "url": "/logistics/pick-and-pack-productivity/",
+    "keywords": [
+      "warehouse",
+      "pick-and-pack",
+      "labor",
+      "productivity",
+      "rate",
+      "calculator",
+      "calculate",
+      "order",
+      "picker",
+      "units-per-hour",
+      "uph",
+      "cost"
+    ]
+  },
+  {
+    "title": "Cross-Dock Logistics Throughput & Staging Transfer Time Calculator",
+    "category": "Logistics > Distribution Networks • Cross-Docking",
+    "url": "/logistics/cross-dock-throughput/",
+    "keywords": [
+      "cross-dock",
+      "logistics",
+      "throughput",
+      "staging",
+      "transfer",
+      "time",
+      "calculator",
+      "calculate",
+      "daily",
+      "pallet",
+      "capacity",
+      "dock"
+    ]
+  },
+  {
+    "title": "Import Customs Duty, Ad Valorem Tariff & De Minimis Calculator",
+    "category": "Logistics > Global Trade • Customs Compliance",
+    "url": "/logistics/customs-duty-tariff/",
+    "keywords": [
+      "import",
+      "customs",
+      "duty",
+      "valorem",
+      "tariff",
+      "minimis",
+      "calculator",
+      "calculate",
+      "commercial",
+      "duties",
+      "section",
+      "301"
+    ]
+  },
+  {
+    "title": "Pallet Stretch Wrap Film Yield & Containment Force Calculator",
+    "category": "Logistics > Packaging Engineering • Load Containment",
+    "url": "/logistics/pallet-stretch-wrap-yield/",
+    "keywords": [
+      "pallet",
+      "stretch",
+      "wrap",
+      "film",
+      "yield",
+      "containment",
+      "force",
+      "calculator",
+      "calculate",
+      "weight",
+      "per",
+      "pre-stretch"
+    ]
+  },
+  {
+    "title": "Cold Chain Mean Kinetic Temperature (MKT) Shelf-Life Calculator",
+    "category": "Logistics > Cold Chain Logistics • FDA/USP Compliance",
+    "url": "/logistics/cold-chain-mkt/",
+    "keywords": [
+      "cold",
+      "chain",
+      "mean",
+      "kinetic",
+      "temperature",
+      "mkt",
+      "shelf-life",
+      "calculator",
+      "calculate",
+      "across",
+      "excursion",
+      "logs"
+    ]
+  },
+  {
+    "title": "Dry Ice Sublimation Rate & Cold Box Duration Calculator",
+    "category": "Logistics > Cold Chain • Cryogenic Logistics",
+    "url": "/logistics/dry-ice-sublimation-shipping/",
+    "keywords": [
+      "dry",
+      "ice",
+      "sublimation",
+      "rate",
+      "cold",
+      "box",
+      "duration",
+      "calculator",
+      "calculate",
+      "loss",
+      "lbs",
+      "day"
+    ]
+  },
+  {
+    "title": "Reverse Logistics Return Rate & Restocking Recovery Margin Calculator",
+    "category": "Logistics > E-Commerce Logistics • Reverse Logistics",
+    "url": "/logistics/reverse-logistics-recovery/",
+    "keywords": [
+      "reverse",
+      "logistics",
+      "return",
+      "rate",
+      "restocking",
+      "recovery",
+      "margin",
+      "calculator",
+      "calculate",
+      "true",
+      "financial",
+      "cost"
+    ]
+  },
+  {
+    "title": "Proof-of-Work Bitcoin Mining Profitability & Hash Rate Calculator",
+    "category": "Crypto > Proof of Work • Mining Economics",
+    "url": "/crypto/crypto-mining-profitability/",
+    "keywords": [
+      "proof-of-work",
+      "bitcoin",
+      "mining",
+      "profitability",
+      "hash",
+      "rate",
+      "calculator",
+      "calculate",
+      "daily",
+      "net",
+      "profit",
+      "break-even"
+    ]
+  },
+  {
+    "title": "Proof-of-Stake Validator Staking Yield (APR vs APY) Calculator",
+    "category": "Crypto > Proof of Stake • Validator Economics",
+    "url": "/crypto/staking-rewards-apr-apy/",
+    "keywords": [
+      "proof-of-stake",
+      "validator",
+      "staking",
+      "yield",
+      "apr",
+      "apy",
+      "calculator",
+      "calculate",
+      "annual",
+      "returns",
+      "commission",
+      "deduction"
+    ]
+  },
+  {
+    "title": "Automated Market Maker (AMM) Impermanent Loss Calculator",
+    "category": "Crypto > DeFi • AMM Mathematics",
+    "url": "/crypto/impermanent-loss-amm/",
+    "keywords": [
+      "automated",
+      "market",
+      "maker",
+      "amm",
+      "impermanent",
+      "loss",
+      "calculator",
+      "calculate",
+      "exact",
+      "for",
+      "liquidity",
+      "providers"
+    ]
+  },
+  {
+    "title": "Liquidity Pool Swap Fee APR & LP Capital Efficiency Calculator",
+    "category": "Crypto > DeFi • Fee Monetization",
+    "url": "/crypto/liquidity-pool-fee-yield/",
+    "keywords": [
+      "liquidity",
+      "pool",
+      "swap",
+      "fee",
+      "apr",
+      "capital",
+      "efficiency",
+      "calculator",
+      "calculate",
+      "annual",
+      "income",
+      "daily"
+    ]
+  },
+  {
+    "title": "Crypto Futures Liquidation Price & Maintenance Margin Calculator",
+    "category": "Crypto > Derivatives • Liquidation Risk",
+    "url": "/crypto/futures-liquidation-price/",
+    "keywords": [
+      "crypto",
+      "futures",
+      "liquidation",
+      "price",
+      "maintenance",
+      "margin",
+      "calculator",
+      "calculate",
+      "exact",
+      "call",
+      "threshold",
+      "and"
+    ]
+  },
+  {
+    "title": "Crypto Dollar-Cost Averaging (DCA) Accumulation Calculator",
+    "category": "Crypto > Wealth Building • Systematic DCA",
+    "url": "/crypto/dollar-cost-averaging-dca/",
+    "keywords": [
+      "crypto",
+      "dollar-cost",
+      "averaging",
+      "dca",
+      "accumulation",
+      "calculator",
+      "simulate",
+      "historical",
+      "and",
+      "projected",
+      "recurring",
+      "cryptocurrency"
+    ]
+  },
+  {
+    "title": "Ethereum Gas Fee Estimator (Gwei, EIP-1559 & USD Cost)",
+    "category": "Crypto > Ethereum • EIP-1559 Gas Economics",
+    "url": "/crypto/gas-fee-gwei-usd/",
+    "keywords": [
+      "ethereum",
+      "gas",
+      "fee",
+      "estimator",
+      "gwei",
+      "eip-1559",
+      "usd",
+      "cost",
+      "calculate",
+      "exact",
+      "dollar",
+      "transaction"
+    ]
+  },
+  {
+    "title": "Collateralized Debt Position (CDP) LTV & Liquidation Health Factor",
+    "category": "Crypto > DeFi Lending • Liquidation Health",
+    "url": "/crypto/cdp-health-factor-ltv/",
+    "keywords": [
+      "collateralized",
+      "debt",
+      "position",
+      "cdp",
+      "ltv",
+      "liquidation",
+      "health",
+      "factor",
+      "calculate",
+      "loan-to-value",
+      "and",
+      "collateral"
+    ]
+  },
+  {
+    "title": "Perpetual Swap Funding Rate Arbitrage Annualized Yield (Cash & Carry)",
+    "category": "Crypto > Quantitative Trading • Market-Neutral Alpha",
+    "url": "/crypto/funding-rate-arbitrage/",
+    "keywords": [
+      "perpetual",
+      "swap",
+      "funding",
+      "rate",
+      "arbitrage",
+      "annualized",
+      "yield",
+      "cash",
+      "carry",
+      "calculate",
+      "market-neutral",
+      "return"
+    ]
+  },
+  {
+    "title": "Token Vesting Cliff, Unlock Schedule & Circulating Inflation Model",
+    "category": "Crypto > Tokenomics • Supply Dilution",
+    "url": "/crypto/token-vesting-inflation/",
+    "keywords": [
+      "token",
+      "vesting",
+      "cliff",
+      "unlock",
+      "schedule",
+      "circulating",
+      "inflation",
+      "model",
+      "calculate",
+      "monthly",
+      "volume",
+      "supply"
+    ]
+  },
+  {
+    "title": "Crypto Capital Gains Tax Lot (FIFO vs LIFO vs HIFO) Calculator",
+    "category": "Crypto > Tax Optimization • Crypto Accounting",
+    "url": "/crypto/crypto-fifo-lifo-tax/",
+    "keywords": [
+      "crypto",
+      "capital",
+      "gains",
+      "tax",
+      "lot",
+      "fifo",
+      "lifo",
+      "hifo",
+      "calculator",
+      "calculate",
+      "realized",
+      "short-term"
+    ]
+  },
+  {
+    "title": "Zero-Knowledge (ZK) Rollup Calldata Compression & L2 Gas Savings",
+    "category": "Crypto > Layer 2 Scaling • ZK Compression",
+    "url": "/crypto/zk-rollup-gas-compression/",
+    "keywords": [
+      "zero-knowledge",
+      "rollup",
+      "calldata",
+      "compression",
+      "gas",
+      "savings",
+      "calculate",
+      "batch",
+      "ratios",
+      "state",
+      "diff",
+      "costs"
+    ]
+  },
+  {
+    "title": "DEX Slippage Tolerance & Price Impact Calculator",
+    "category": "Crypto > DEX Mechanics • Price Impact",
+    "url": "/crypto/slippage-tolerance-price-impact/",
+    "keywords": [
+      "dex",
+      "slippage",
+      "tolerance",
+      "price",
+      "impact",
+      "calculator",
+      "calculate",
+      "percentage",
+      "minimum",
+      "received",
+      "tokens",
+      "and"
+    ]
+  },
+  {
+    "title": "Continuous Token Bonding Curve Price & Minting Cost Model",
+    "category": "Crypto > Tokenomics • Automated Market Curves",
+    "url": "/crypto/bonding-curve-token-mint/",
+    "keywords": [
+      "continuous",
+      "token",
+      "bonding",
+      "curve",
+      "price",
+      "minting",
+      "cost",
+      "model",
+      "calculate",
+      "instantaneous",
+      "buy",
+      "sell"
+    ]
+  },
+  {
+    "title": "Stablecoin Peg Deviation & Mint/Redeem Arbitrage Spread Calculator",
+    "category": "Crypto > DeFi Arbitrage • Stablecoin Pegs",
+    "url": "/crypto/stablecoin-depeg-arbitrage/",
+    "keywords": [
+      "stablecoin",
+      "peg",
+      "deviation",
+      "mint",
+      "redeem",
+      "arbitrage",
+      "spread",
+      "calculator",
+      "calculate",
+      "net",
+      "profit",
+      "margin"
+    ]
+  },
+  {
+    "title": "Cross-Chain Token Bridge Fee & Gas Slippage Optimizer",
+    "category": "Crypto > Interoperability • Bridge Analytics",
+    "url": "/crypto/cross-chain-bridge-fee/",
+    "keywords": [
+      "cross-chain",
+      "token",
+      "bridge",
+      "fee",
+      "gas",
+      "slippage",
+      "optimizer",
+      "calculate",
+      "total",
+      "cost",
+      "operator",
+      "destination"
+    ]
+  },
+  {
+    "title": "NFT Marketplace Creator Royalty Split & Net Secondary Proceeds",
+    "category": "Crypto > Digital Collectibles • Creator Royalties",
+    "url": "/crypto/nft-royalty-split/",
+    "keywords": [
+      "nft",
+      "marketplace",
+      "creator",
+      "royalty",
+      "split",
+      "net",
+      "secondary",
+      "proceeds",
+      "calculate",
+      "splits",
+      "fees",
+      "opensea"
+    ]
+  },
+  {
+    "title": "Algorithmic Lending Supply & Borrow APY (Aave / Compound Model)",
+    "category": "Crypto > DeFi • Interest Rate Curves",
+    "url": "/crypto/algorithmic-lending-apy/",
+    "keywords": [
+      "algorithmic",
+      "lending",
+      "supply",
+      "borrow",
+      "apy",
+      "aave",
+      "compound",
+      "model",
+      "calculate",
+      "interest",
+      "rate",
+      "curves"
+    ]
+  },
+  {
+    "title": "Bitcoin Mining Difficulty Adjustment & Block Time Estimator",
+    "category": "Crypto > Consensus Dynamics • Difficulty Adjustment",
+    "url": "/crypto/mining-difficulty-adjustment/",
+    "keywords": [
+      "bitcoin",
+      "mining",
+      "difficulty",
+      "adjustment",
+      "block",
+      "time",
+      "estimator",
+      "calculate",
+      "upcoming",
+      "epoch",
+      "percentage",
+      "estimated"
+    ]
+  },
+  {
+    "title": "Crypto Payment Gateway vs Credit Card Interchange Processing Fees",
+    "category": "Crypto > Fintech • Merchant Processing",
+    "url": "/crypto/crypto-payment-processor-fees/",
+    "keywords": [
+      "crypto",
+      "payment",
+      "gateway",
+      "credit",
+      "card",
+      "interchange",
+      "processing",
+      "fees",
+      "calculate",
+      "annual",
+      "dollar",
+      "savings"
+    ]
+  },
+  {
+    "title": "Smart Contract EVM Opcode Gas Execution Cost Analyzer",
+    "category": "Crypto > Solidity Engineering • EVM Gas Optimization",
+    "url": "/crypto/smart-contract-gas-limit/",
+    "keywords": [
+      "smart",
+      "contract",
+      "evm",
+      "opcode",
+      "gas",
+      "execution",
+      "cost",
+      "analyzer",
+      "calculate",
+      "granular",
+      "sstore",
+      "sload"
+    ]
+  },
+  {
+    "title": "Optimal Compounding Frequency for DeFi Yield Farming Calculator",
+    "category": "Crypto > DeFi Yield Optimization • Game Theory",
+    "url": "/crypto/yield-farming-reinvest-frequency/",
+    "keywords": [
+      "optimal",
+      "compounding",
+      "frequency",
+      "for",
+      "defi",
+      "yield",
+      "farming",
+      "calculator",
+      "calculate",
+      "the",
+      "mathematically",
+      "reinvestment"
+    ]
+  },
+  {
+    "title": "DeFi Flash Loan Arbitrage Spread vs Net Profitability Calculator",
+    "category": "Crypto > DeFi Engineering • Flash Loans",
+    "url": "/crypto/flash-loan-arbitrage-net/",
+    "keywords": [
+      "defi",
+      "flash",
+      "loan",
+      "arbitrage",
+      "spread",
+      "net",
+      "profitability",
+      "calculator",
+      "calculate",
+      "uncollateralized",
+      "protocol",
+      "fees"
+    ]
+  },
+  {
+    "title": "Multi-Route DEX Aggregator Optimal Trade Split Calculator",
+    "category": "Crypto > DEX Aggregation • Split Routing",
+    "url": "/crypto/dex-aggregator-split-routing/",
+    "keywords": [
+      "multi-route",
+      "dex",
+      "aggregator",
+      "optimal",
+      "trade",
+      "split",
+      "calculator",
+      "calculate",
+      "splitting",
+      "across",
+      "multiple",
+      "liquidity"
+    ]
+  },
+  {
+    "title": "Crypto Portfolio Sharpe Ratio & Value at Risk (VaR 95%) Calculator",
+    "category": "Crypto > Quantitative Risk • Portfolio Analytics",
+    "url": "/crypto/crypto-portfolio-sharpe-ratio/",
+    "keywords": [
+      "crypto",
+      "portfolio",
+      "sharpe",
+      "ratio",
+      "value",
+      "risk",
+      "var",
+      "calculator",
+      "calculate",
+      "risk-adjusted",
+      "downside",
+      "sortino"
+    ]
+  },
+  {
+    "title": "Personal Injury Settlement Multiplier Calculator",
+    "category": "Legal > Personal Injury • Settlement Valuation",
+    "url": "/legal/personal-injury-multiplier/",
+    "keywords": [
+      "personal",
+      "injury",
+      "settlement",
+      "multiplier",
+      "calculator",
+      "calculate",
+      "estimated",
+      "car",
+      "accident",
+      "and",
+      "bodily",
+      "insurance"
+    ]
+  },
+  {
+    "title": "Pain and Suffering Damages Valuation Calculator (Per Diem vs Multiplier)",
+    "category": "Legal > Tort Law • Non-Economic Damages",
+    "url": "/legal/pain-and-suffering-valuation/",
+    "keywords": [
+      "pain",
+      "and",
+      "suffering",
+      "damages",
+      "valuation",
+      "calculator",
+      "per",
+      "diem",
+      "multiplier",
+      "calculate",
+      "non-economic",
+      "using"
+    ]
+  },
+  {
+    "title": "Structured Settlement Annuity Lump-Sum Present Value (NPV)",
+    "category": "Legal > Settlement Finance • Present Value",
+    "url": "/legal/structured-settlement-npv/",
+    "keywords": [
+      "structured",
+      "settlement",
+      "annuity",
+      "lump-sum",
+      "present",
+      "value",
+      "npv",
+      "calculate",
+      "fair",
+      "market",
+      "cash",
+      "and"
+    ]
+  },
+  {
+    "title": "Wrongful Death Economic Loss & Future Earning Capacity Calculator",
+    "category": "Legal > Forensic Economics • Wrongful Death",
+    "url": "/legal/wrongful-death-damages/",
+    "keywords": [
+      "wrongful",
+      "death",
+      "economic",
+      "loss",
+      "future",
+      "earning",
+      "capacity",
+      "calculator",
+      "calculate",
+      "present",
+      "value",
+      "decedent"
+    ]
+  },
+  {
+    "title": "Attorney Contingency Fee Net Payout & Medical Lien Deduction Calculator",
+    "category": "Legal > Legal Ethics • Client Settlement Distribution",
+    "url": "/legal/contingency-fee-net-payout/",
+    "keywords": [
+      "attorney",
+      "contingency",
+      "fee",
+      "net",
+      "payout",
+      "medical",
+      "lien",
+      "deduction",
+      "calculator",
+      "calculate",
+      "exact",
+      "client"
+    ]
+  },
+  {
+    "title": "Car Accident Diminished Value Formula (17c Rule) Calculator",
+    "category": "Legal > Auto Insurance • Diminished Value",
+    "url": "/legal/car-accident-diminished-value/",
+    "keywords": [
+      "car",
+      "accident",
+      "diminished",
+      "value",
+      "formula",
+      "17c",
+      "rule",
+      "calculator",
+      "calculate",
+      "inherent",
+      "for",
+      "repaired"
+    ]
+  },
+  {
+    "title": "Workers' Comp Permanent Partial Disability (PPD) Rating & Schedule",
+    "category": "Legal > Workers' Compensation • Scheduled Loss",
+    "url": "/legal/workers-comp-ppd-rating/",
+    "keywords": [
+      "workers",
+      "comp",
+      "permanent",
+      "partial",
+      "disability",
+      "ppd",
+      "rating",
+      "schedule",
+      "calculate",
+      "scheduled",
+      "body",
+      "member"
+    ]
+  },
+  {
+    "title": "Lost Wages, Overtime & Fringe Benefits Economic Loss Calculator",
+    "category": "Legal > Damages • Economic Compensation",
+    "url": "/legal/lost-wages-economic-loss/",
+    "keywords": [
+      "lost",
+      "wages",
+      "overtime",
+      "fringe",
+      "benefits",
+      "economic",
+      "loss",
+      "calculator",
+      "calculate",
+      "past",
+      "and",
+      "future"
+    ]
+  },
+  {
+    "title": "Bodily Injury Liability Umbrella Policy Limit Exhaustion Calculator",
+    "category": "Legal > Insurance Coverage • Layered Liability",
+    "url": "/legal/umbrella-policy-limit-exhaustion/",
+    "keywords": [
+      "bodily",
+      "injury",
+      "liability",
+      "umbrella",
+      "policy",
+      "limit",
+      "exhaustion",
+      "calculator",
+      "calculate",
+      "claim",
+      "allocation",
+      "across"
+    ]
+  },
+  {
+    "title": "Prejudgment Interest Statutory Damages Calculator",
+    "category": "Legal > Civil Procedure • Statutory Interest",
+    "url": "/legal/prejudgment-interest-statutory/",
+    "keywords": [
+      "prejudgment",
+      "interest",
+      "statutory",
+      "damages",
+      "calculator",
+      "calculate",
+      "accrued",
+      "from",
+      "the",
+      "date",
+      "injury",
+      "formal"
+    ]
+  },
+  {
+    "title": "Child Support Statutory Guidelines (Income Shares Model) Calculator",
+    "category": "Legal > Family Law • Income Shares Guidelines",
+    "url": "/legal/child-support-income-shares/",
+    "keywords": [
+      "child",
+      "support",
+      "statutory",
+      "guidelines",
+      "income",
+      "shares",
+      "model",
+      "calculator",
+      "calculate",
+      "monthly",
+      "obligation",
+      "using"
+    ]
+  },
+  {
+    "title": "Spousal Maintenance & Alimony Duration & Payment Formula Calculator",
+    "category": "Legal > Family Law • Alimony Guidelines",
+    "url": "/legal/spousal-maintenance-alimony/",
+    "keywords": [
+      "spousal",
+      "maintenance",
+      "alimony",
+      "duration",
+      "payment",
+      "formula",
+      "calculator",
+      "calculate",
+      "monthly",
+      "payments",
+      "and",
+      "support"
+    ]
+  },
+  {
+    "title": "Commercial General Liability (CGL) Audit Payroll Premium Adjustment",
+    "category": "Legal > Commercial Insurance • Premium Audit",
+    "url": "/legal/cgl-general-liability-audit/",
+    "keywords": [
+      "commercial",
+      "general",
+      "liability",
+      "cgl",
+      "audit",
+      "payroll",
+      "premium",
+      "adjustment",
+      "calculate",
+      "annual",
+      "insurance",
+      "adjustments"
+    ]
+  },
+  {
+    "title": "Business Interruption Loss & Gross Earnings Formula Calculator",
+    "category": "Legal > Commercial Property • Business Interruption",
+    "url": "/legal/business-interruption-insurance/",
+    "keywords": [
+      "business",
+      "interruption",
+      "loss",
+      "gross",
+      "earnings",
+      "formula",
+      "calculator",
+      "calculate",
+      "insurance",
+      "recovery",
+      "net",
+      "profit"
+    ]
+  },
+  {
+    "title": "Life Insurance Human Life Value (HLV) Capital Needs Calculator",
+    "category": "Legal > Actuarial Science • Human Life Value",
+    "url": "/legal/life-insurance-human-life-value/",
+    "keywords": [
+      "life",
+      "insurance",
+      "human",
+      "value",
+      "hlv",
+      "capital",
+      "needs",
+      "calculator",
+      "calculate",
+      "optimal",
+      "term",
+      "permanent"
+    ]
+  },
+  {
+    "title": "Long-Term Care Insurance Elimination Period & Benefit Pool Calculator",
+    "category": "Legal > Actuarial • Long-Term Care",
+    "url": "/legal/long-term-care-benefit-pool/",
+    "keywords": [
+      "long-term",
+      "care",
+      "insurance",
+      "elimination",
+      "period",
+      "benefit",
+      "pool",
+      "calculator",
+      "calculate",
+      "lifetime",
+      "out-of-pocket",
+      "costs"
+    ]
+  },
+  {
+    "title": "Property Casualty Co-Insurance Penalty (80% Rule) Calculator",
+    "category": "Legal > Property Insurance • Coinsurance Clause",
+    "url": "/legal/property-casualty-coinsurance/",
+    "keywords": [
+      "property",
+      "casualty",
+      "co-insurance",
+      "penalty",
+      "rule",
+      "calculator",
+      "calculate",
+      "insurance",
+      "payout",
+      "and",
+      "coinsurance",
+      "penalties"
+    ]
+  },
+  {
+    "title": "Title Insurance Premium & Refinance Reissue Rate Calculator",
+    "category": "Legal > Real Estate Law • Title Insurance",
+    "url": "/legal/title-insurance-reissue-rate/",
+    "keywords": [
+      "title",
+      "insurance",
+      "premium",
+      "refinance",
+      "reissue",
+      "rate",
+      "calculator",
+      "calculate",
+      "lender",
+      "and",
+      "owner",
+      "policy"
+    ]
+  },
+  {
+    "title": "Health Insurance Subrogation Lien Reduction (Common Fund Doctrine) Calculator",
+    "category": "Legal > Healthcare Subrogation • Lien Resolution",
+    "url": "/legal/subrogation-lien-reduction/",
+    "keywords": [
+      "health",
+      "insurance",
+      "subrogation",
+      "lien",
+      "reduction",
+      "common",
+      "fund",
+      "doctrine",
+      "calculator",
+      "calculate",
+      "mandatory",
+      "legal"
+    ]
+  },
+  {
+    "title": "Breach of Contract Expectation & Consequential Damages Calculator",
+    "category": "Legal > Contract Law • Commercial Litigation",
+    "url": "/legal/breach-of-contract-damages/",
+    "keywords": [
+      "breach",
+      "contract",
+      "expectation",
+      "consequential",
+      "damages",
+      "calculator",
+      "calculate",
+      "incidental",
+      "losses",
+      "lost",
+      "profits",
+      "hadley"
+    ]
+  },
+  {
+    "title": "Medical Malpractice Noneconomic Damages Cap Adjustment Calculator",
+    "category": "Legal > Health Law • Malpractice Tort Reform",
+    "url": "/legal/medical-malpractice-damages-cap/",
+    "keywords": [
+      "medical",
+      "malpractice",
+      "noneconomic",
+      "damages",
+      "cap",
+      "adjustment",
+      "calculator",
+      "calculate",
+      "verdict",
+      "reductions",
+      "applying",
+      "state"
+    ]
+  },
+  {
+    "title": "Law Firm Billing Realization & Collection Rate Productivity Calculator",
+    "category": "Legal > Law Firm Practice Management • Financial Metrics",
+    "url": "/legal/legal-billing-realization-rate/",
+    "keywords": [
+      "law",
+      "firm",
+      "billing",
+      "realization",
+      "collection",
+      "rate",
+      "productivity",
+      "calculator",
+      "calculate",
+      "write-down",
+      "write-off",
+      "leakage"
+    ]
+  },
+  {
+    "title": "Punitive-to-Compensatory Damages Ratio Compliance (SCOTUS Due Process)",
+    "category": "Legal > Constitutional Tort Law • SCOTUS Precedent",
+    "url": "/legal/punitive-compensatory-ratio/",
+    "keywords": [
+      "punitive-to-compensatory",
+      "damages",
+      "ratio",
+      "compliance",
+      "scotus",
+      "due",
+      "process",
+      "calculate",
+      "ratios",
+      "and",
+      "test",
+      "constitutional"
+    ]
+  },
+  {
+    "title": "USPTO Trademark Filing Fees & Multi-Class Madrid Protocol Calculator",
+    "category": "Legal > Intellectual Property • Trademark Filing",
+    "url": "/legal/trademark-registration-fees/",
+    "keywords": [
+      "uspto",
+      "trademark",
+      "filing",
+      "fees",
+      "multi-class",
+      "madrid",
+      "protocol",
+      "calculator",
+      "calculate",
+      "united",
+      "states",
+      "patent"
+    ]
+  },
+  {
+    "title": "Workers' Comp Experience Modification Rate (EMR) Premium Impact",
+    "category": "Legal > Risk Management • EMR Modifiers",
+    "url": "/legal/workers-comp-emr-modifier/",
+    "keywords": [
+      "workers",
+      "comp",
+      "experience",
+      "modification",
+      "rate",
+      "emr",
+      "premium",
+      "impact",
+      "calculate",
+      "mod",
+      "financial",
+      "compensation"
+    ]
+  },
+  {
+    "title": "Crop Yield Estimator (Corn, Soybeans & Wheat Bushels Per Acre)",
+    "category": "Agriculture > Agronomy • Yield Forecasting",
+    "url": "/agriculture/crop-yield-estimator/",
+    "keywords": [
+      "crop",
+      "yield",
+      "estimator",
+      "corn",
+      "soybeans",
+      "wheat",
+      "bushels",
+      "per",
+      "acre",
+      "calculate",
+      "pre-harvest",
+      "grain"
+    ]
+  },
+  {
+    "title": "N-P-K Fertilizer Application & Nutrient Blending Rate (lbs/acre)",
+    "category": "Agriculture > Soil Fertility • Nutrient Management",
+    "url": "/agriculture/npk-fertilizer-blending/",
+    "keywords": [
+      "n-p-k",
+      "fertilizer",
+      "application",
+      "nutrient",
+      "blending",
+      "rate",
+      "lbs",
+      "acre",
+      "calculate",
+      "commercial",
+      "rates",
+      "for"
+    ]
+  },
+  {
+    "title": "Cattle Stocking Rate & Animal Unit Months (AUM) Grazing Capacity",
+    "category": "Agriculture > Rangeland Ecology • Grazing Capacity",
+    "url": "/agriculture/cattle-stocking-rate-aum/",
+    "keywords": [
+      "cattle",
+      "stocking",
+      "rate",
+      "animal",
+      "unit",
+      "months",
+      "aum",
+      "grazing",
+      "capacity",
+      "calculate",
+      "pasture",
+      "allowable"
+    ]
+  },
+  {
+    "title": "Grain Silo & Cylindrical Grain Bin Bushel Capacity Calculator",
+    "category": "Agriculture > Grain Storage • Silo Engineering",
+    "url": "/agriculture/grain-bin-bushel-capacity/",
+    "keywords": [
+      "grain",
+      "silo",
+      "cylindrical",
+      "bin",
+      "bushel",
+      "capacity",
+      "calculator",
+      "calculate",
+      "struck",
+      "and",
+      "peaked",
+      "volume"
+    ]
+  },
+  {
+    "title": "Center Pivot Irrigation Flow Rate & Water Application Depth Calculator",
+    "category": "Agriculture > Irrigation Engineering • Center Pivot",
+    "url": "/agriculture/center-pivot-irrigation/",
+    "keywords": [
+      "center",
+      "pivot",
+      "irrigation",
+      "flow",
+      "rate",
+      "water",
+      "application",
+      "depth",
+      "calculator",
+      "calculate",
+      "system",
+      "pumping"
+    ]
+  },
+  {
+    "title": "Timber Board Foot Volume Estimator (Doyle, Scribner & International 1/4)",
+    "category": "Agriculture > Forestry • Timber Scaling",
+    "url": "/agriculture/timber-volume-doyle-scribner/",
+    "keywords": [
+      "timber",
+      "board",
+      "foot",
+      "volume",
+      "estimator",
+      "doyle",
+      "scribner",
+      "international",
+      "calculate",
+      "sawtimber",
+      "standing",
+      "trees"
+    ]
+  },
+  {
+    "title": "Round Hay Bale Weight & Winter Livestock Forage Requirement",
+    "category": "Agriculture > Livestock Management • Winter Forage",
+    "url": "/agriculture/hay-bale-livestock-forage/",
+    "keywords": [
+      "round",
+      "hay",
+      "bale",
+      "weight",
+      "winter",
+      "livestock",
+      "forage",
+      "requirement",
+      "calculate",
+      "estimated",
+      "from",
+      "diameter"
+    ]
+  },
+  {
+    "title": "Seed Planting Population & Row Spacing Seed Count Per Acre",
+    "category": "Agriculture > Planting Technology • Seeding Density",
+    "url": "/agriculture/seed-planting-population/",
+    "keywords": [
+      "seed",
+      "planting",
+      "population",
+      "row",
+      "spacing",
+      "count",
+      "per",
+      "acre",
+      "calculate",
+      "seeds",
+      "foot",
+      "bag"
+    ]
+  },
+  {
+    "title": "Livestock Feed Conversion Ratio (FCR) & Cost of Gain Calculator",
+    "category": "Agriculture > Animal Science • Feed Efficiency",
+    "url": "/agriculture/feed-conversion-ratio-fcr/",
+    "keywords": [
+      "livestock",
+      "feed",
+      "conversion",
+      "ratio",
+      "fcr",
+      "cost",
+      "gain",
+      "calculator",
+      "calculate",
+      "efficiency",
+      "lbs",
+      "per"
+    ]
+  },
+  {
+    "title": "Agricultural Soil Lime Requirement & CCE Neutralization Calculator",
+    "category": "Agriculture > Agronomy • Soil Chemistry",
+    "url": "/agriculture/soil-lime-requirement-cce/",
+    "keywords": [
+      "agricultural",
+      "soil",
+      "lime",
+      "requirement",
+      "cce",
+      "neutralization",
+      "calculator",
+      "calculate",
+      "tons",
+      "limestone",
+      "needed",
+      "per"
+    ]
+  },
+  {
+    "title": "Herbicide / Pesticide Tank Mix Spray Dilution Rate Calculator",
+    "category": "Agriculture > Crop Protection • Sprayer Calibration",
+    "url": "/agriculture/pesticide-tank-mix-dilution/",
+    "keywords": [
+      "herbicide",
+      "pesticide",
+      "tank",
+      "mix",
+      "spray",
+      "dilution",
+      "rate",
+      "calculator",
+      "calculate",
+      "chemical",
+      "ounces",
+      "add"
+    ]
+  },
+  {
+    "title": "Dairy Cow Fat-Corrected Milk (4% FCM) & Energy-Corrected Milk (ECM)",
+    "category": "Agriculture > Dairy Science • Milk Equivalency",
+    "url": "/agriculture/dairy-cow-fat-corrected-milk/",
+    "keywords": [
+      "dairy",
+      "cow",
+      "fat-corrected",
+      "milk",
+      "fcm",
+      "energy-corrected",
+      "ecm",
+      "calculate",
+      "and",
+      "from",
+      "bulk",
+      "tank"
+    ]
+  },
+  {
+    "title": "Combine Harvester Field Grain Loss & Bushel Dockage Rate Calculator",
+    "category": "Agriculture > Harvest Operations • Loss Quantification",
+    "url": "/agriculture/combine-harvester-grain-loss/",
+    "keywords": [
+      "combine",
+      "harvester",
+      "field",
+      "grain",
+      "loss",
+      "bushel",
+      "dockage",
+      "rate",
+      "calculator",
+      "calculate",
+      "harvesting",
+      "bushels"
+    ]
+  },
+  {
+    "title": "Agricultural Subsurface Drainage Tile Spacing & Sizing Calculator",
+    "category": "Agriculture > Agricultural Drainage • Water Management",
+    "url": "/agriculture/drainage-tile-spacing/",
+    "keywords": [
+      "agricultural",
+      "subsurface",
+      "drainage",
+      "tile",
+      "spacing",
+      "sizing",
+      "calculator",
+      "calculate",
+      "corrugated",
+      "hdpe",
+      "lateral",
+      "feet"
+    ]
+  },
+  {
+    "title": "Greenhouse Daily Light Integral (DLI) & Supplemental LED PPFD Calculator",
+    "category": "Agriculture > Controlled Environment Agriculture • Photobiology",
+    "url": "/agriculture/greenhouse-dli-lighting/",
+    "keywords": [
+      "greenhouse",
+      "daily",
+      "light",
+      "integral",
+      "dli",
+      "supplemental",
+      "led",
+      "ppfd",
+      "calculator",
+      "calculate",
+      "mol",
+      "day"
+    ]
+  },
+  {
+    "title": "Swine Nursery Feed Intake & Average Daily Gain (ADG) Calculator",
+    "category": "Agriculture > Swine Production • Growth Kinetics",
+    "url": "/agriculture/pig-average-daily-gain/",
+    "keywords": [
+      "swine",
+      "nursery",
+      "feed",
+      "intake",
+      "average",
+      "daily",
+      "gain",
+      "adg",
+      "calculator",
+      "calculate",
+      "days",
+      "market"
+    ]
+  },
+  {
+    "title": "Poultry Broiler Flock European Production Efficiency Factor (EPEF) Calculator",
+    "category": "Agriculture > Poultry Science • Broiler Performance",
+    "url": "/agriculture/broiler-flock-epef-efficiency/",
+    "keywords": [
+      "poultry",
+      "broiler",
+      "flock",
+      "european",
+      "production",
+      "efficiency",
+      "factor",
+      "epef",
+      "calculator",
+      "calculate",
+      "epi",
+      "index"
+    ]
+  },
+  {
+    "title": "Silage Bunker Trench Dry Matter Density & Packing Loss Calculator",
+    "category": "Agriculture > Forage Preservation • Silage Compaction",
+    "url": "/agriculture/silage-bunker-density/",
+    "keywords": [
+      "silage",
+      "bunker",
+      "trench",
+      "dry",
+      "matter",
+      "density",
+      "packing",
+      "loss",
+      "calculator",
+      "calculate",
+      "tractor",
+      "weight"
+    ]
+  },
+  {
+    "title": "Livestock Manure N-P-K Nutrient Fertilizer Value Credit Per Ton",
+    "category": "Agriculture > Nutrient Economics • Manure Valuation",
+    "url": "/agriculture/manure-nutrient-fertilizer-credit/",
+    "keywords": [
+      "livestock",
+      "manure",
+      "n-p-k",
+      "nutrient",
+      "fertilizer",
+      "value",
+      "credit",
+      "per",
+      "ton",
+      "calculate",
+      "commercial",
+      "dollar"
+    ]
+  },
+  {
+    "title": "Farm Tractor Diesel Fuel Consumption Per Acre (PTO Horsepower) Calculator",
+    "category": "Agriculture > Machinery Economics • Field Efficiency",
+    "url": "/agriculture/tractor-fuel-consumption-pto/",
+    "keywords": [
+      "farm",
+      "tractor",
+      "diesel",
+      "fuel",
+      "consumption",
+      "per",
+      "acre",
+      "pto",
+      "horsepower",
+      "calculator",
+      "calculate",
+      "hourly"
+    ]
+  },
+  {
+    "title": "Pasture Weed Eradication Herbicide Rate & Boom Sprayer Calibration",
+    "category": "Agriculture > Rangeland Management • Weed Control",
+    "url": "/agriculture/pasture-weed-herbicide-coverage/",
+    "keywords": [
+      "pasture",
+      "weed",
+      "eradication",
+      "herbicide",
+      "rate",
+      "boom",
+      "sprayer",
+      "calibration",
+      "calculate",
+      "nozzle",
+      "flow",
+      "gpm"
+    ]
+  },
+  {
+    "title": "Beehive Honey Harvest Yield & Fall Sugar Syrup Feeding Calculator",
+    "category": "Agriculture > Apiculture • Apiary Management",
+    "url": "/agriculture/beehive-honey-yield-feeding/",
+    "keywords": [
+      "beehive",
+      "honey",
+      "harvest",
+      "yield",
+      "fall",
+      "sugar",
+      "syrup",
+      "feeding",
+      "calculator",
+      "calculate",
+      "harvestable",
+      "surplus"
+    ]
+  },
+  {
+    "title": "Aquaponics Fish-to-Plant Biomass Ratio & Biofilter Media Sizing",
+    "category": "Agriculture > Aquaculture • Controlled Systems",
+    "url": "/agriculture/aquaponics-biofilter-fish-plant/",
+    "keywords": [
+      "aquaponics",
+      "fish-to-plant",
+      "biomass",
+      "ratio",
+      "biofilter",
+      "media",
+      "sizing",
+      "calculate",
+      "daily",
+      "fish",
+      "feed",
+      "rate"
+    ]
+  },
+  {
+    "title": "Vineyard Grape Yield to Finished Wine Gallons & Bottles Calculator",
+    "category": "Agriculture > Viticulture & Enology • Wine Yield",
+    "url": "/agriculture/vineyard-grape-yield-wine/",
+    "keywords": [
+      "vineyard",
+      "grape",
+      "yield",
+      "finished",
+      "wine",
+      "gallons",
+      "bottles",
+      "calculator",
+      "calculate",
+      "harvest",
+      "tonnage",
+      "per"
+    ]
+  },
+  {
+    "title": "Farmland Cash Rent Equivalent vs Crop Share Lease Calculator",
+    "category": "Agriculture > Agricultural Real Estate • Farm Leases",
+    "url": "/agriculture/farmland-cash-rent-equivalent/",
+    "keywords": [
+      "farmland",
+      "cash",
+      "rent",
+      "equivalent",
+      "crop",
+      "share",
+      "lease",
+      "calculator",
+      "compare",
+      "fixed",
+      "per",
+      "acre"
+    ]
+  },
+  {
+    "title": "Beam Deflection & Maximum Bending Moment Calculator",
+    "category": "Engineering > Structural Mechanics • Beam Analysis",
+    "url": "/engineering/beam-deflection-bending-moment/",
+    "keywords": [
+      "beam",
+      "deflection",
+      "maximum",
+      "bending",
+      "moment",
+      "calculator",
+      "calculate",
+      "shear",
+      "force",
+      "and",
+      "mid-span",
+      "elastic"
+    ]
+  },
+  {
+    "title": "Soil Compaction Dry Density & Optimum Moisture (Proctor Test)",
+    "category": "Engineering > Geotechnical Engineering • Soil Compaction",
+    "url": "/engineering/proctor-soil-compaction/",
+    "keywords": [
+      "soil",
+      "compaction",
+      "dry",
+      "density",
+      "optimum",
+      "moisture",
+      "proctor",
+      "test",
+      "calculate",
+      "from",
+      "wet",
+      "bulk"
+    ]
+  },
+  {
+    "title": "Darcy-Weisbach Pipe Friction Head Loss & Pressure Drop Calculator",
+    "category": "Engineering > Hydraulic Engineering • Pipe Networks",
+    "url": "/engineering/darcy-weisbach-head-loss/",
+    "keywords": [
+      "darcy-weisbach",
+      "pipe",
+      "friction",
+      "head",
+      "loss",
+      "pressure",
+      "drop",
+      "calculator",
+      "calculate",
+      "feet",
+      "psi",
+      "and"
+    ]
+  },
+  {
+    "title": "Manning's Open Channel Flow Velocity & Discharge Capacity Calculator",
+    "category": "Engineering > Hydraulics • Open Channel Flow",
+    "url": "/engineering/mannings-open-channel-flow/",
+    "keywords": [
+      "manning",
+      "open",
+      "channel",
+      "flow",
+      "velocity",
+      "discharge",
+      "capacity",
+      "calculator",
+      "calculate",
+      "cfs",
+      "fps",
+      "and"
+    ]
+  },
+  {
+    "title": "ASCE 7 Wind Load Velocity Pressure on Building Envelopes Calculator",
+    "category": "Engineering > Structural Engineering • ASCE 7 Standards",
+    "url": "/engineering/asce7-wind-load-pressure/",
+    "keywords": [
+      "asce",
+      "wind",
+      "load",
+      "velocity",
+      "pressure",
+      "building",
+      "envelopes",
+      "calculator",
+      "calculate",
+      "design",
+      "psf",
+      "based"
+    ]
+  },
+  {
+    "title": "Reinforced Concrete Slab One-Way & Two-Way Punching Shear Capacity (ACI 318)",
+    "category": "Engineering > Structural Concrete • ACI 318 Standard",
+    "url": "/engineering/concrete-slab-shear-capacity/",
+    "keywords": [
+      "reinforced",
+      "concrete",
+      "slab",
+      "one-way",
+      "two-way",
+      "punching",
+      "shear",
+      "capacity",
+      "aci",
+      "318",
+      "calculate",
+      "nominal"
+    ]
+  },
+  {
+    "title": "Earthwork Cut and Fill Volume Calculator (Average End Area Method)",
+    "category": "Engineering > Civil Site Design • Earthwork Volumes",
+    "url": "/engineering/earthwork-cut-and-fill/",
+    "keywords": [
+      "earthwork",
+      "cut",
+      "and",
+      "fill",
+      "volume",
+      "calculator",
+      "average",
+      "end",
+      "area",
+      "method",
+      "calculate",
+      "excavation"
+    ]
+  },
+  {
+    "title": "Retaining Wall Rankine Lateral Earth Pressure (Active & Passive) Calculator",
+    "category": "Engineering > Geotechnical • Retaining Wall Mechanics",
+    "url": "/engineering/retaining-wall-rankine-earth/",
+    "keywords": [
+      "retaining",
+      "wall",
+      "rankine",
+      "lateral",
+      "earth",
+      "pressure",
+      "active",
+      "passive",
+      "calculator",
+      "calculate",
+      "and",
+      "coefficients"
+    ]
+  },
+  {
+    "title": "Stormwater Runoff Peak Discharge Calculator (Rational Method Q = C·I·A)",
+    "category": "Engineering > Civil Hydrology • Stormwater Runoff",
+    "url": "/engineering/rational-method-stormwater/",
+    "keywords": [
+      "stormwater",
+      "runoff",
+      "peak",
+      "discharge",
+      "calculator",
+      "rational",
+      "method",
+      "calculate",
+      "watershed",
+      "cubic",
+      "feet",
+      "per"
+    ]
+  },
+  {
+    "title": "Asphalt Pavement Structural Number & AASHTO ESAL Design Life Calculator",
+    "category": "Engineering > Highway Engineering • AASHTO Pavement",
+    "url": "/engineering/pavement-structural-number-esal/",
+    "keywords": [
+      "asphalt",
+      "pavement",
+      "structural",
+      "number",
+      "aashto",
+      "esal",
+      "design",
+      "life",
+      "calculator",
+      "calculate",
+      "flexible",
+      "layer"
+    ]
+  },
+  {
+    "title": "Steel Column Euler Critical Buckling Load & Slenderness Ratio Calculator",
+    "category": "Engineering > Mechanics of Materials • Buckling",
+    "url": "/engineering/euler-column-buckling-load/",
+    "keywords": [
+      "steel",
+      "column",
+      "euler",
+      "critical",
+      "buckling",
+      "load",
+      "slenderness",
+      "ratio",
+      "calculator",
+      "calculate",
+      "elastic",
+      "kips"
+    ]
+  },
+  {
+    "title": "Shallow Foundation Bearing Capacity Calculator (Terzaghi Equation)",
+    "category": "Engineering > Geotechnical • Foundation Bearing",
+    "url": "/engineering/terzaghi-bearing-capacity/",
+    "keywords": [
+      "shallow",
+      "foundation",
+      "bearing",
+      "capacity",
+      "calculator",
+      "terzaghi",
+      "equation",
+      "calculate",
+      "ultimate",
+      "and",
+      "allowable",
+      "soil"
+    ]
+  },
+  {
+    "title": "Highway Culvert Hydraulics (Inlet vs Outlet Control Headwater Depth)",
+    "category": "Engineering > Highway Drainage • Culvert Hydraulics",
+    "url": "/engineering/culvert-headwater-inlet-outlet/",
+    "keywords": [
+      "highway",
+      "culvert",
+      "hydraulics",
+      "inlet",
+      "outlet",
+      "control",
+      "headwater",
+      "depth",
+      "calculate",
+      "ratio",
+      "flow",
+      "regime"
+    ]
+  },
+  {
+    "title": "Stormwater Detention Basin Storage Volume & Settling Inflow Calculator",
+    "category": "Engineering > Water Resources • Stormwater Detention",
+    "url": "/engineering/detention-pond-settling-volume/",
+    "keywords": [
+      "stormwater",
+      "detention",
+      "basin",
+      "storage",
+      "volume",
+      "settling",
+      "inflow",
+      "calculator",
+      "calculate",
+      "required",
+      "active",
+      "flood"
+    ]
+  },
+  {
+    "title": "Truss Member Axial Tension & Compression (Method of Joints) Calculator",
+    "category": "Engineering > Structural Mechanics • Truss Statics",
+    "url": "/engineering/truss-method-of-joints/",
+    "keywords": [
+      "truss",
+      "member",
+      "axial",
+      "tension",
+      "compression",
+      "method",
+      "joints",
+      "calculator",
+      "calculate",
+      "internal",
+      "forces",
+      "kips"
+    ]
+  },
+  {
+    "title": "Concrete Curing Compressive Strength Maturity Index (Nurse-Saul Method)",
+    "category": "Engineering > Materials Engineering • Concrete Maturity",
+    "url": "/engineering/concrete-maturity-index/",
+    "keywords": [
+      "concrete",
+      "curing",
+      "compressive",
+      "strength",
+      "maturity",
+      "index",
+      "nurse-saul",
+      "method",
+      "calculate",
+      "temperature-time",
+      "ttf",
+      "c-hours"
+    ]
+  },
+  {
+    "title": "Water Hammer Joukowsky Shockwave Pressure Surge & Wave Speed Calculator",
+    "category": "Engineering > Fluid Transient Dynamics • Water Hammer",
+    "url": "/engineering/water-hammer-joukowsky-surge/",
+    "keywords": [
+      "water",
+      "hammer",
+      "joukowsky",
+      "shockwave",
+      "pressure",
+      "surge",
+      "wave",
+      "speed",
+      "calculator",
+      "calculate",
+      "rapid",
+      "valve"
+    ]
+  },
+  {
+    "title": "Soil Slope Stability Safety Factor (Ordinary / Bishop Method)",
+    "category": "Engineering > Geotechnical • Slope Stability",
+    "url": "/engineering/slope-stability-safety-factor/",
+    "keywords": [
+      "soil",
+      "slope",
+      "stability",
+      "safety",
+      "factor",
+      "ordinary",
+      "bishop",
+      "method",
+      "calculate",
+      "against",
+      "deep",
+      "rotational"
+    ]
+  },
+  {
+    "title": "Geotextile Fabric Tensile Modulus for Subgrade Stabilization Calculator",
+    "category": "Engineering > Geosynthetics • Highway Subgrades",
+    "url": "/engineering/geotextile-roadbed-stabilization/",
+    "keywords": [
+      "geotextile",
+      "fabric",
+      "tensile",
+      "modulus",
+      "for",
+      "subgrade",
+      "stabilization",
+      "calculator",
+      "calculate",
+      "aggregate",
+      "base",
+      "reduction"
+    ]
+  },
+  {
+    "title": "Seismic Equivalent Lateral Force Base Shear Calculator (ASCE 7 / IBC)",
+    "category": "Engineering > Earthquake Engineering • Seismic Base Shear",
+    "url": "/engineering/seismic-base-shear-asce7/",
+    "keywords": [
+      "seismic",
+      "equivalent",
+      "lateral",
+      "force",
+      "base",
+      "shear",
+      "calculator",
+      "asce",
+      "ibc",
+      "calculate",
+      "total",
+      "design"
+    ]
+  },
+  {
+    "title": "Wastewater BOD Removal Efficiency & Aeration Tank Sizing Calculator",
+    "category": "Engineering > Environmental Engineering • Wastewater Treatment",
+    "url": "/engineering/wastewater-bod-aeration-tank/",
+    "keywords": [
+      "wastewater",
+      "bod",
+      "removal",
+      "efficiency",
+      "aeration",
+      "tank",
+      "sizing",
+      "calculator",
+      "calculate",
+      "municipal",
+      "and",
+      "industrial"
+    ]
+  },
+  {
+    "title": "Deep Foundation Driven Pile Static Axial Skin Friction & End Bearing Capacity",
+    "category": "Engineering > Deep Foundations • Pile Dynamics",
+    "url": "/engineering/pile-axial-capacity-bearing/",
+    "keywords": [
+      "deep",
+      "foundation",
+      "driven",
+      "pile",
+      "static",
+      "axial",
+      "skin",
+      "friction",
+      "end",
+      "bearing",
+      "capacity",
+      "calculate"
+    ]
+  },
+  {
+    "title": "Pre-Stressed Concrete Post-Tension Tendon Elongation & Friction Loss Calculator",
+    "category": "Engineering > Structural Concrete • Post-Tensioning",
+    "url": "/engineering/prestressed-concrete-elongation/",
+    "keywords": [
+      "pre-stressed",
+      "concrete",
+      "post-tension",
+      "tendon",
+      "elongation",
+      "friction",
+      "loss",
+      "calculator",
+      "calculate",
+      "theoretical",
+      "inches",
+      "jack"
+    ]
+  },
+  {
+    "title": "Bridge Superstructure Thermal Expansion & Expansion Joint Sizing Calculator",
+    "category": "Engineering > Bridge Engineering • Expansion Joints",
+    "url": "/engineering/thermal-expansion-bridge-joints/",
+    "keywords": [
+      "bridge",
+      "superstructure",
+      "thermal",
+      "expansion",
+      "joint",
+      "sizing",
+      "calculator",
+      "calculate",
+      "total",
+      "movement",
+      "and",
+      "contraction"
+    ]
+  },
+  {
+    "title": "Roadway Horizontal Alignment Minimum Curve Radius & Superelevation Calculator",
+    "category": "Engineering > Transportation • Highway Geometric Design",
+    "url": "/engineering/highway-horizontal-curve-radius/",
+    "keywords": [
+      "roadway",
+      "horizontal",
+      "alignment",
+      "minimum",
+      "curve",
+      "radius",
+      "superelevation",
+      "calculator",
+      "calculate",
+      "min",
+      "feet",
+      "maximum"
+    ]
+  },
+  {
+    "title": "Total Landed Cost & Gross Margin Calculator",
+    "category": "Ecommerce > DTC Supply Chain • Unit Economics",
+    "url": "/ecommerce/landed-cost-unit-margin/",
+    "keywords": [
+      "total",
+      "landed",
+      "cost",
+      "gross",
+      "margin",
+      "calculator",
+      "calculate",
+      "true",
+      "per-unit",
+      "factoring",
+      "fob",
+      "factory"
+    ]
+  },
+  {
+    "title": "Inventory Turnover Ratio & Days Sales of Inventory (DSI) Calculator",
+    "category": "Ecommerce > Working Capital • Inventory Velocity",
+    "url": "/ecommerce/inventory-turnover-days-sales/",
+    "keywords": [
+      "inventory",
+      "turnover",
+      "ratio",
+      "days",
+      "sales",
+      "dsi",
+      "calculator",
+      "evaluate",
+      "retail",
+      "merchandising",
+      "velocity",
+      "and"
+    ]
+  },
+  {
+    "title": "Shopping Cart Abandonment & Recovery Opportunity Calculator",
+    "category": "Ecommerce > Conversion Rate Optimization • Abandonment",
+    "url": "/ecommerce/cart-abandonment-revenue-loss/",
+    "keywords": [
+      "shopping",
+      "cart",
+      "abandonment",
+      "recovery",
+      "opportunity",
+      "calculator",
+      "quantify",
+      "uncaptured",
+      "revenue",
+      "lost",
+      "abandoned",
+      "online"
+    ]
+  },
+  {
+    "title": "Gross Margin Return on Investment (GMROI) Calculator",
+    "category": "Ecommerce > Merchandising Finance • Inventory ROI",
+    "url": "/ecommerce/gmroi-retail-merchandising/",
+    "keywords": [
+      "gross",
+      "margin",
+      "return",
+      "investment",
+      "gmroi",
+      "calculator",
+      "calculate",
+      "measure",
+      "how",
+      "many",
+      "profit",
+      "dollars"
+    ]
+  },
+  {
+    "title": "Amazon FBA Fulfillment Fee & Net Profit Margin Calculator",
+    "category": "Ecommerce > Amazon Marketplace • Seller Economics",
+    "url": "/ecommerce/amazon-fba-fee-margin/",
+    "keywords": [
+      "amazon",
+      "fba",
+      "fulfillment",
+      "fee",
+      "net",
+      "profit",
+      "margin",
+      "calculator",
+      "calculate",
+      "exact",
+      "seller",
+      "central"
+    ]
+  },
+  {
+    "title": "Safety Stock & Inventory Reorder Point (ROP) Calculator",
+    "category": "Ecommerce > Inventory Operations • Stockout Prevention",
+    "url": "/ecommerce/safety-stock-reorder-point/",
+    "keywords": [
+      "safety",
+      "stock",
+      "inventory",
+      "reorder",
+      "point",
+      "rop",
+      "calculator",
+      "calculate",
+      "optimal",
+      "buffer",
+      "units",
+      "and"
+    ]
+  },
+  {
+    "title": "Customer Lifetime Value (LTV) to CAC & Payback Calculator",
+    "category": "Ecommerce > Growth Analytics • Unit Economics",
+    "url": "/ecommerce/ltv-cac-payback-period/",
+    "keywords": [
+      "customer",
+      "lifetime",
+      "value",
+      "ltv",
+      "cac",
+      "payback",
+      "calculator",
+      "calculate",
+      "ratio",
+      "and",
+      "cash",
+      "period"
+    ]
+  },
+  {
+    "title": "Free Shipping Threshold & AOV Optimization Calculator",
+    "category": "Ecommerce > Cart Optimization • Shipping Economics",
+    "url": "/ecommerce/free-shipping-threshold-aov/",
+    "keywords": [
+      "free",
+      "shipping",
+      "threshold",
+      "aov",
+      "optimization",
+      "calculator",
+      "calculate",
+      "the",
+      "mathematically",
+      "optimal",
+      "lift",
+      "average"
+    ]
+  },
+  {
+    "title": "Retail Shrinkage & Loss Prevention Calculator",
+    "category": "Ecommerce > Store Operations • Loss Prevention",
+    "url": "/ecommerce/retail-shrinkage-loss/",
+    "keywords": [
+      "retail",
+      "shrinkage",
+      "loss",
+      "prevention",
+      "calculator",
+      "calculate",
+      "total",
+      "annual",
+      "inventory",
+      "analyze",
+      "root",
+      "causes"
+    ]
+  },
+  {
+    "title": "Customer Cohort Retention & Churn Rate Calculator",
+    "category": "Ecommerce > Subscription Analytics • Retention",
+    "url": "/ecommerce/cohort-retention-churn/",
+    "keywords": [
+      "customer",
+      "cohort",
+      "retention",
+      "churn",
+      "rate",
+      "calculator",
+      "analyze",
+      "multi-month",
+      "curves",
+      "across",
+      "acquisition",
+      "cohorts"
+    ]
+  },
+  {
+    "title": "Payment Gateway Processing Fee & Effective Merchant Discount Rate (MDR) Calculator",
+    "category": "Ecommerce > Fintech & Payments • Processing Overhead",
+    "url": "/ecommerce/merchant-discount-rate-stripe/",
+    "keywords": [
+      "payment",
+      "gateway",
+      "processing",
+      "fee",
+      "effective",
+      "merchant",
+      "discount",
+      "rate",
+      "mdr",
+      "calculator",
+      "calculate",
+      "total"
+    ]
+  },
+  {
+    "title": "Target ROAS & Break-Even Return on Ad Spend Calculator",
+    "category": "Ecommerce > Paid Media Strategy • ROAS Optimization",
+    "url": "/ecommerce/target-roas-break-even/",
+    "keywords": [
+      "target",
+      "roas",
+      "break-even",
+      "return",
+      "spend",
+      "calculator",
+      "calculate",
+      "exact",
+      "for",
+      "desired",
+      "profit",
+      "margins"
+    ]
+  },
+  {
+    "title": "Return Merchandise Authorization (RMA) & Reverse Logistics Cost Calculator",
+    "category": "Ecommerce > Reverse Logistics • Margin Protection",
+    "url": "/ecommerce/rma-reverse-logistics-cost/",
+    "keywords": [
+      "return",
+      "merchandise",
+      "authorization",
+      "rma",
+      "reverse",
+      "logistics",
+      "cost",
+      "calculator",
+      "calculate",
+      "total",
+      "true",
+      "financial"
+    ]
+  },
+  {
+    "title": "Product Bundle Pricing & Elasticity Calculator",
+    "category": "Ecommerce > Merchandising Strategy • Bundle Pricing",
+    "url": "/ecommerce/product-bundle-pricing-elasticity/",
+    "keywords": [
+      "product",
+      "bundle",
+      "pricing",
+      "elasticity",
+      "calculator",
+      "model",
+      "promotional",
+      "discounts",
+      "against",
+      "single-item",
+      "sales",
+      "forecast"
+    ]
+  },
+  {
+    "title": "Retail Markdown & Clearance Discount Optimization Calculator",
+    "category": "Ecommerce > Inventory Liquidation • Markdown Pricing",
+    "url": "/ecommerce/retail-markdown-optimization/",
+    "keywords": [
+      "retail",
+      "markdown",
+      "clearance",
+      "discount",
+      "optimization",
+      "calculator",
+      "calculate",
+      "optimal",
+      "tiers",
+      "clear",
+      "slow-moving",
+      "inventory"
+    ]
+  },
+  {
+    "title": "Open-to-Buy (OTB) Retail Inventory Budget Calculator",
+    "category": "Ecommerce > Merchandise Planning • OTB Budgeting",
+    "url": "/ecommerce/open-to-buy-otb-budget/",
+    "keywords": [
+      "open-to-buy",
+      "otb",
+      "retail",
+      "inventory",
+      "budget",
+      "calculator",
+      "calculate",
+      "exact",
+      "monthly",
+      "purchasing",
+      "budgets",
+      "and"
+    ]
+  },
+  {
+    "title": "Email Marketing Revenue Per Recipient (RPR) & Campaign ROI Calculator",
+    "category": "Ecommerce > Retention Marketing • Email Economics",
+    "url": "/ecommerce/email-revenue-per-recipient/",
+    "keywords": [
+      "email",
+      "marketing",
+      "revenue",
+      "per",
+      "recipient",
+      "rpr",
+      "campaign",
+      "roi",
+      "calculator",
+      "evaluate",
+      "broadcast",
+      "and"
+    ]
+  },
+  {
+    "title": "Average Order Value (AOV) Expansion & Cross-Sell Uplift Calculator",
+    "category": "Ecommerce > Conversion Rate Optimization • Cart Expansion",
+    "url": "/ecommerce/aov-expansion-elasticity/",
+    "keywords": [
+      "average",
+      "order",
+      "value",
+      "aov",
+      "expansion",
+      "cross-sell",
+      "uplift",
+      "calculator",
+      "calculate",
+      "incremental",
+      "top-line",
+      "and"
+    ]
+  },
+  {
+    "title": "Dropshipping vs 3PL Warehousing Profitability Calculator",
+    "category": "Ecommerce > Fulfillment Strategy • 3PL vs Dropship",
+    "url": "/ecommerce/dropshipping-vs-3pl-margin/",
+    "keywords": [
+      "dropshipping",
+      "3pl",
+      "warehousing",
+      "profitability",
+      "calculator",
+      "compare",
+      "net",
+      "profit",
+      "margins",
+      "between",
+      "direct",
+      "supplier"
+    ]
+  },
+  {
+    "title": "Net Promoter Score (NPS) & Customer Sentiment Index Calculator",
+    "category": "Ecommerce > Customer Loyalty • NPS Sentiment",
+    "url": "/ecommerce/nps-customer-satisfaction/",
+    "keywords": [
+      "net",
+      "promoter",
+      "score",
+      "nps",
+      "customer",
+      "sentiment",
+      "index",
+      "calculator",
+      "calculate",
+      "your",
+      "store",
+      "from"
+    ]
+  },
+  {
+    "title": "Tiered Affiliate Marketing Commission & Payout Calculator",
+    "category": "Ecommerce > Partner Marketing • Affiliate Economics",
+    "url": "/ecommerce/tiered-affiliate-commission/",
+    "keywords": [
+      "tiered",
+      "affiliate",
+      "marketing",
+      "commission",
+      "payout",
+      "calculator",
+      "calculate",
+      "blended",
+      "payouts",
+      "network",
+      "platform",
+      "tracking"
+    ]
+  },
+  {
+    "title": "Monthly Recurring Revenue (MRR) Net Expansion & Contraction Calculator",
+    "category": "Ecommerce > SaaS & Subscriptions • MRR Velocity",
+    "url": "/ecommerce/mrr-expansion-contraction/",
+    "keywords": [
+      "monthly",
+      "recurring",
+      "revenue",
+      "mrr",
+      "net",
+      "expansion",
+      "contraction",
+      "calculator",
+      "calculate",
+      "new",
+      "retention",
+      "nrr"
+    ]
+  },
+  {
+    "title": "BOGO (Buy One Get One) Promotional Profit Margin Calculator",
+    "category": "Ecommerce > Promotional Pricing • BOGO Economics",
+    "url": "/ecommerce/bogo-buy-one-get-one-margin/",
+    "keywords": [
+      "bogo",
+      "buy",
+      "one",
+      "get",
+      "promotional",
+      "profit",
+      "margin",
+      "calculator",
+      "calculate",
+      "the",
+      "real",
+      "dilution"
+    ]
+  },
+  {
+    "title": "E-Commerce Return Reserve & Allowance Fund Calculator",
+    "category": "Ecommerce > Financial Accounting • Return Reserves",
+    "url": "/ecommerce/ecommerce-return-reserve/",
+    "keywords": [
+      "e-commerce",
+      "return",
+      "reserve",
+      "allowance",
+      "fund",
+      "calculator",
+      "calculate",
+      "gaap",
+      "ifrs",
+      "compliant",
+      "reserves",
+      "prevent"
+    ]
+  },
+  {
+    "title": "Influencer Marketing Campaign ROAS & EMV Calculator",
+    "category": "Ecommerce > Influencer Partnerships • Campaign ROAS",
+    "url": "/ecommerce/influencer-marketing-roas/",
+    "keywords": [
+      "influencer",
+      "marketing",
+      "campaign",
+      "roas",
+      "emv",
+      "calculator",
+      "calculate",
+      "return",
+      "spend",
+      "customer",
+      "acquisition",
+      "cost"
+    ]
+  },
+  {
+    "title": "Deadstock Holding Cost & Liquidation Cashflow Calculator",
+    "category": "Ecommerce > Warehouse Operations • Deadstock Recovery",
+    "url": "/ecommerce/deadstock-liquidation-cashflow/",
+    "keywords": [
+      "deadstock",
+      "holding",
+      "cost",
+      "liquidation",
+      "cashflow",
+      "calculator",
+      "calculate",
+      "true",
+      "monthly",
+      "carrying",
+      "losses",
+      "inventory"
+    ]
+  },
+  {
+    "title": "Retail Store Sales Per Square Foot & Space Productivity Calculator",
+    "category": "Ecommerce > Brick & Mortar • Space Productivity",
+    "url": "/ecommerce/retail-sales-per-square-foot/",
+    "keywords": [
+      "retail",
+      "store",
+      "sales",
+      "per",
+      "square",
+      "foot",
+      "space",
+      "productivity",
+      "calculator",
+      "calculate",
+      "analyze",
+      "selling"
+    ]
+  },
+  {
+    "title": "Direct Mail Postcard & Catalog Campaign ROI Calculator",
+    "category": "Ecommerce > Offline Marketing • Direct Mail ROI",
+    "url": "/ecommerce/direct-mail-catalog-roi/",
+    "keywords": [
+      "direct",
+      "mail",
+      "postcard",
+      "catalog",
+      "campaign",
+      "roi",
+      "calculator",
+      "calculate",
+      "customer",
+      "acquisition",
+      "cost",
+      "cpa"
+    ]
+  },
+  {
+    "title": "Customs Import Duty & Section 301 Tariff Calculator",
+    "category": "Ecommerce > International Trade • Customs Tariffs",
+    "url": "/ecommerce/customs-import-duty-hts/",
+    "keywords": [
+      "customs",
+      "import",
+      "duty",
+      "section",
+      "301",
+      "tariff",
+      "calculator",
+      "calculate",
+      "duties",
+      "china",
+      "trade",
+      "tariffs"
+    ]
+  },
+  {
+    "title": "Economic Order Quantity (EOQ) & Total Cost of Inventory Calculator",
+    "category": "Ecommerce > Supply Chain Operations • EOQ Model",
+    "url": "/ecommerce/retail-replenishment-lead-time-eoq/",
+    "keywords": [
+      "economic",
+      "order",
+      "quantity",
+      "eoq",
+      "total",
+      "cost",
+      "inventory",
+      "calculator",
+      "calculate",
+      "the",
+      "mathematically",
+      "optimal"
+    ]
+  },
+  {
+    "title": "Pharmacokinetics Drug Elimination Half-Life (t½) & Clearance Calculator",
+    "category": "Biotech > Pharmacokinetics • Drug Metabolism",
+    "url": "/biotech/drug-elimination-half-life/",
+    "keywords": [
+      "pharmacokinetics",
+      "drug",
+      "elimination",
+      "half-life",
+      "clearance",
+      "calculator",
+      "calculate",
+      "rate",
+      "constant",
+      "systemic",
+      "and",
+      "time"
+    ]
+  },
+  {
+    "title": "Cockcroft-Gault Creatinine Clearance (CrCl) & Renal Dosing Calculator",
+    "category": "Biotech > Clinical Pharmacology • Renal Function",
+    "url": "/biotech/cockcroft-gault-crcl/",
+    "keywords": [
+      "cockcroft-gault",
+      "creatinine",
+      "clearance",
+      "crcl",
+      "renal",
+      "dosing",
+      "calculator",
+      "calculate",
+      "estimated",
+      "via",
+      "the",
+      "standard"
+    ]
+  },
+  {
+    "title": "IV Drip Rate & Infusion Velocity Calculator",
+    "category": "Biotech > Clinical Nursing • IV Pharmacology",
+    "url": "/biotech/iv-drip-infusion-rate/",
+    "keywords": [
+      "drip",
+      "rate",
+      "infusion",
+      "velocity",
+      "calculator",
+      "calculate",
+      "electronic",
+      "pump",
+      "rates",
+      "and",
+      "gravity",
+      "drops"
+    ]
+  },
+  {
+    "title": "PCR Primer Melting Temperature (Tm) & Annealing Calculator",
+    "category": "Biotech > Molecular Biology • PCR Design",
+    "url": "/biotech/pcr-primer-tm/",
+    "keywords": [
+      "pcr",
+      "primer",
+      "melting",
+      "temperature",
+      "annealing",
+      "calculator",
+      "calculate",
+      "dna",
+      "oligonucleotide",
+      "via",
+      "the",
+      "wallace"
+    ]
+  },
+  {
+    "title": "Michaelis-Menten Enzyme Kinetics & Lineweaver-Burk Calculator",
+    "category": "Biotech > Enzymology • Enzyme Kinetics",
+    "url": "/biotech/michaelis-menten-kinetics/",
+    "keywords": [
+      "michaelis-menten",
+      "enzyme",
+      "kinetics",
+      "lineweaver-burk",
+      "calculator",
+      "calculate",
+      "steady-state",
+      "reaction",
+      "velocity",
+      "maximum",
+      "vmax",
+      "michaelis"
+    ]
+  },
+  {
+    "title": "Body Surface Area (BSA) Calculator (Mosteller & Du Bois Formulas)",
+    "category": "Biotech > Clinical Oncology • BSA Dosing",
+    "url": "/biotech/body-surface-area-mosteller/",
+    "keywords": [
+      "body",
+      "surface",
+      "area",
+      "bsa",
+      "calculator",
+      "mosteller",
+      "bois",
+      "formulas",
+      "calculate",
+      "adult",
+      "and",
+      "pediatric"
+    ]
+  },
+  {
+    "title": "Laboratory Serial Dilution & Stock Solution Concentration (C₁V₁ = C₂V₂) Calculator",
+    "category": "Biotech > Wet Lab Chemistry • Dilution Math",
+    "url": "/biotech/serial-dilution-c1v1/",
+    "keywords": [
+      "laboratory",
+      "serial",
+      "dilution",
+      "stock",
+      "solution",
+      "concentration",
+      "calculator",
+      "calculate",
+      "volume",
+      "buffer",
+      "diluent",
+      "required"
+    ]
+  },
+  {
+    "title": "In Vitro Cell Culture Doubling Time & Specific Growth Rate Calculator",
+    "category": "Biotech > Cell Biology • Cell Proliferation",
+    "url": "/biotech/cell-culture-doubling-time/",
+    "keywords": [
+      "vitro",
+      "cell",
+      "culture",
+      "doubling",
+      "time",
+      "specific",
+      "growth",
+      "rate",
+      "calculator",
+      "calculate",
+      "mammalian",
+      "and"
+    ]
+  },
+  {
+    "title": "Beer-Lambert Law Spectrophotometry & Protein Concentration Calculator",
+    "category": "Biotech > Biochemistry • UV-Vis Spectroscopy",
+    "url": "/biotech/beer-lambert-spectrophotometry/",
+    "keywords": [
+      "beer-lambert",
+      "law",
+      "spectrophotometry",
+      "protein",
+      "concentration",
+      "calculator",
+      "calculate",
+      "solute",
+      "molar",
+      "absorbance",
+      "and",
+      "percent"
+    ]
+  },
+  {
+    "title": "Hemocytometer Cell Count & Trypan Blue Viability Calculator",
+    "category": "Biotech > Laboratory Protocols • Cell Counting",
+    "url": "/biotech/hemocytometer-cell-viability/",
+    "keywords": [
+      "hemocytometer",
+      "cell",
+      "count",
+      "trypan",
+      "blue",
+      "viability",
+      "calculator",
+      "calculate",
+      "total",
+      "concentration",
+      "cells",
+      "percentage"
+    ]
+  },
+  {
+    "title": "Henderson-Hasselbalch Buffer pH & Acid-Base Equilibrium Calculator",
+    "category": "Biotech > Physical Biochemistry • Buffer Systems",
+    "url": "/biotech/henderson-hasselbalch-ph/",
+    "keywords": [
+      "henderson-hasselbalch",
+      "buffer",
+      "acid-base",
+      "equilibrium",
+      "calculator",
+      "calculate",
+      "aqueous",
+      "solution",
+      "conjugate",
+      "ratios",
+      "and",
+      "capacity"
+    ]
+  },
+  {
+    "title": "Centrifuge Relative Centrifugal Force (RCF / g-Force) & RPM Calculator",
+    "category": "Biotech > Laboratory Centrifugation • RCF Math",
+    "url": "/biotech/centrifuge-rcf-g-force/",
+    "keywords": [
+      "centrifuge",
+      "relative",
+      "centrifugal",
+      "force",
+      "rcf",
+      "g-force",
+      "rpm",
+      "calculator",
+      "convert",
+      "between",
+      "rotational",
+      "speed"
+    ]
+  },
+  {
+    "title": "Clinical Trial Sample Size & Statistical Power Calculator",
+    "category": "Biotech > Biostatistics • Clinical Trial Design",
+    "url": "/biotech/clinical-trial-sample-size/",
+    "keywords": [
+      "clinical",
+      "trial",
+      "sample",
+      "size",
+      "statistical",
+      "power",
+      "calculator",
+      "calculate",
+      "required",
+      "patient",
+      "per",
+      "treatment"
+    ]
+  },
+  {
+    "title": "Hazard Ratio (HR), Relative Risk (RR) & Odds Ratio (OR) Calculator",
+    "category": "Biotech > Evidence-Based Medicine • Clinical Epidemiology",
+    "url": "/biotech/hazard-ratio-relative-risk/",
+    "keywords": [
+      "hazard",
+      "ratio",
+      "relative",
+      "risk",
+      "odds",
+      "calculator",
+      "calculate",
+      "clinical",
+      "evidence",
+      "metrics",
+      "including",
+      "reduction"
+    ]
+  },
+  {
+    "title": "Clinical Diagnostic Test Sensitivity, Specificity & Predictive Value (PPV/NPV) Calculator",
+    "category": "Biotech > Diagnostic Medicine • Test Performance",
+    "url": "/biotech/diagnostic-sensitivity-specificity/",
+    "keywords": [
+      "clinical",
+      "diagnostic",
+      "test",
+      "sensitivity",
+      "specificity",
+      "predictive",
+      "value",
+      "ppv",
+      "npv",
+      "calculator",
+      "calculate",
+      "positive"
+    ]
+  },
+  {
+    "title": "Solution Molarity, Molality & Normality Preparation Calculator",
+    "category": "Biotech > Analytical Chemistry • Solution Prep",
+    "url": "/biotech/molarity-normality-solution/",
+    "keywords": [
+      "solution",
+      "molarity",
+      "molality",
+      "normality",
+      "preparation",
+      "calculator",
+      "calculate",
+      "chemical",
+      "solute",
+      "mass",
+      "required",
+      "grams"
+    ]
+  },
+  {
+    "title": "Radioactive Isotope Exponential Decay & Specific Activity Calculator",
+    "category": "Biotech > Nuclear Medicine • Radiobiology",
+    "url": "/biotech/radioisotope-decay-law/",
+    "keywords": [
+      "radioactive",
+      "isotope",
+      "exponential",
+      "decay",
+      "specific",
+      "activity",
+      "calculator",
+      "calculate",
+      "residual",
+      "radioactivity",
+      "constants",
+      "remaining"
+    ]
+  },
+  {
+    "title": "Diabetes Insulin-to-Carb Ratio (ICR) & Insulin Sensitivity Factor (ISF) Calculator",
+    "category": "Biotech > Endocrinology • Diabetes Pharmacotherapy",
+    "url": "/biotech/insulin-carb-ratio-isf/",
+    "keywords": [
+      "diabetes",
+      "insulin-to-carb",
+      "ratio",
+      "icr",
+      "insulin",
+      "sensitivity",
+      "factor",
+      "isf",
+      "calculator",
+      "calculate",
+      "individualized",
+      "rapid-acting"
+    ]
+  },
+  {
+    "title": "Arterial Blood Gas (ABG) & Serum Anion Gap Calculator",
+    "category": "Biotech > Critical Care Medicine • ABG Diagnostics",
+    "url": "/biotech/arterial-blood-gas-anion-gap/",
+    "keywords": [
+      "arterial",
+      "blood",
+      "gas",
+      "abg",
+      "serum",
+      "anion",
+      "gap",
+      "calculator",
+      "interpret",
+      "acid-base",
+      "disorders",
+      "calculate"
+    ]
+  },
+  {
+    "title": "Quantitative Real-Time PCR (qPCR) 2^(-ΔΔCt) Relative Gene Expression Calculator",
+    "category": "Biotech > Genomics • qPCR Quantification",
+    "url": "/biotech/qpcr-delta-delta-ct/",
+    "keywords": [
+      "quantitative",
+      "real-time",
+      "pcr",
+      "qpcr",
+      "relative",
+      "gene",
+      "expression",
+      "calculator",
+      "calculate",
+      "fold",
+      "change",
+      "rt-qpcr"
+    ]
+  },
+  {
+    "title": "Recombinant Protein Fermentation Yield & Specific Productivity Calculator",
+    "category": "Biotech > Bioprocessing • Fermentation Scale-Up",
+    "url": "/biotech/recombinant-protein-yield/",
+    "keywords": [
+      "recombinant",
+      "protein",
+      "fermentation",
+      "yield",
+      "specific",
+      "productivity",
+      "calculator",
+      "calculate",
+      "total",
+      "cellular",
+      "volumetric",
+      "and"
+    ]
+  },
+  {
+    "title": "Maintenance IV Fluid Requirements (Holliday-Segar 4-2-1 Rule) Calculator",
+    "category": "Biotech > Pediatric Critical Care • Fluid Maintenance",
+    "url": "/biotech/maintenance-fluid-pediatric/",
+    "keywords": [
+      "maintenance",
+      "fluid",
+      "requirements",
+      "holliday-segar",
+      "4-2-1",
+      "rule",
+      "calculator",
+      "calculate",
+      "daily",
+      "and",
+      "hourly",
+      "for"
+    ]
+  },
+  {
+    "title": "Apparent Volume of Distribution (Vd) & Loading Dose Calculator",
+    "category": "Biotech > Clinical Pharmacokinetics • Loading Dose",
+    "url": "/biotech/drug-volume-of-distribution/",
+    "keywords": [
+      "apparent",
+      "volume",
+      "distribution",
+      "loading",
+      "dose",
+      "calculator",
+      "calculate",
+      "and",
+      "determine",
+      "exact",
+      "intravenous",
+      "oral"
+    ]
+  },
+  {
+    "title": "Biostatistical Cohen's d Effect Size & Standardized Mean Difference Calculator",
+    "category": "Biotech > Meta-Analysis • Statistical Effect Size",
+    "url": "/biotech/cohen-d-effect-size/",
+    "keywords": [
+      "biostatistical",
+      "cohen",
+      "effect",
+      "size",
+      "standardized",
+      "mean",
+      "difference",
+      "calculator",
+      "calculate",
+      "hedges",
+      "unbiased",
+      "small-sample"
+    ]
+  },
+  {
+    "title": "Toxicology Therapeutic Index (TI) & Margin of Safety (MOS) Calculator",
+    "category": "Biotech > Preclinical Toxicology • Drug Safety",
+    "url": "/biotech/ld50-therapeutic-index/",
+    "keywords": [
+      "toxicology",
+      "therapeutic",
+      "index",
+      "margin",
+      "safety",
+      "mos",
+      "calculator",
+      "calculate",
+      "certain",
+      "factor",
+      "and",
+      "drug"
     ]
   }
 ];

@@ -168,6 +168,8 @@ def generate_calculator_page(calc):
 
   <link rel="stylesheet" href="/assets/css/omni-core.css">
   <link rel="stylesheet" href="/assets/css/calculator.css?v=1.2">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
 
   <script type="application/ld+json">
   {json.dumps(json_ld, indent=2, ensure_ascii=False)}
@@ -179,7 +181,7 @@ def generate_calculator_page(calc):
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand-link">
-        <div class="brand-icon">⨁</div>
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
         <span class="brand-badge">{cat_title}</span>
       </a>
@@ -353,6 +355,17 @@ def generate_calculator_page(calc):
         if (el) el.innerText = text;
       }}
 
+      function setMetric(id, text) {{
+        setDisp(id, text);
+      }}
+
+      const fact = (n) => {{ let r = 1; for (let i = 2; i <= n; i++) r *= i; return r; }};
+      const nPr = (n, r) => (r < 0 || r > n) ? 0 : fact(n) / fact(n - r);
+      const fmt = (num, dec = 2) => typeof num === 'number' ? num.toLocaleString('en-US', {{ minimumFractionDigits: dec, maximumFractionDigits: dec }}) : num;
+      const acos = Math.acos;
+      const atan = Math.atan;
+      const cbrt = Math.cbrt;
+
       function recalculate() {{
         {js_logic}
       }}
@@ -451,6 +464,8 @@ def generate_hub_page(cat, hub_info, calcs_in_cat):
 
   <link rel="stylesheet" href="/assets/css/omni-core.css">
   <link rel="stylesheet" href="/assets/css/calculator.css?v=1.2">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
 
   <script type="application/ld+json">
   {json.dumps(json_ld, indent=2, ensure_ascii=False)}
@@ -460,7 +475,7 @@ def generate_hub_page(cat, hub_info, calcs_in_cat):
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand-link">
-        <div class="brand-icon">⨁</div>
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
         <span class="brand-badge">{cat_title} Hub</span>
       </a>
