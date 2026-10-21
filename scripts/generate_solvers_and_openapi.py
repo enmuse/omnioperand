@@ -223,14 +223,44 @@ def save_json_and_js_registry(all_calcs):
         json.dump(clean_registry, f, indent=2)
     print(f"Saved JSON registry ({len(clean_registry)} tools): {json_path}")
 
-    # 2. Universal JS Registry for Edge Isolates
+    # 2. Universal JS Registry for Edge Isolates (Precompiled Function Literals)
+    js_entries = []
+    for c in all_calcs:
+        slug = c["slug"]
+        cat = c["category"]
+        name = c["name"]
+        desc = c.get("description", "")
+        formula = c.get("formula_display", "")
+        fields_json = json.dumps(c.get("fields", []), indent=6)
+        metrics_json = json.dumps(c.get("metrics", []), indent=6)
+        js_code = c.get("js_logic", "").strip()
+
+        entry_str = f"""  {json.dumps(slug)}: {{
+    slug: {json.dumps(slug)},
+    category: {json.dumps(cat)},
+    name: {json.dumps(name)},
+    description: {json.dumps(desc)},
+    formula_display: {json.dumps(formula)},
+    fields: {fields_json},
+    metrics: {metrics_json},
+    calculate: function(getNum, setMetric, setDisp, fact, nPr, fmt, acos, atan, cbrt) {{
+{js_code}
+    }}
+  }}"""
+        js_entries.append(entry_str)
+
+    all_entries_str = ",\n".join(js_entries)
+
     js_content = f"""/**
  * api/solvers/calculator_registry.js
- * Auto-generated universal registry of all {len(all_calcs)} deterministic solvers.
+ * Precompiled universal registry of all {len(all_calcs)} deterministic solvers.
  * Generated for Cloudflare Pages Functions edge isolates and MCP server.
+ * Precompiled functions eliminate 'new Function' string evaluation for V8 edge isolates.
  */
 
-export const CALCULATOR_REGISTRY = {json.dumps(clean_registry, indent=2)};
+export const CALCULATOR_REGISTRY = {{
+{all_entries_str}
+}};
 
 export function executeCalculator(slug, inputParams = {{}}) {{
   const calc = CALCULATOR_REGISTRY[slug];
@@ -270,8 +300,7 @@ export function executeCalculator(slug, inputParams = {{}}) {{
 
   const startTime = Date.now();
   try {{
-    const fn = new Function('getNum', 'setMetric', 'setDisp', 'fact', 'nPr', 'fmt', 'acos', 'atan', 'cbrt', calc.js_logic);
-    fn(getNum, setMetric, setDisp, fact, nPr, fmt, acos, atan, cbrt);
+    calc.calculate(getNum, setMetric, setDisp, fact, nPr, fmt, acos, atan, cbrt);
   }} catch (err) {{
     return {{
       status: "error",

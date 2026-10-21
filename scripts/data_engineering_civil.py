@@ -302,7 +302,7 @@ ENGINEERING_CALCULATORS = [
 
           setDisp('two_way_punching_shear_kips', phiVc.toFixed(1) + ' Kips (Design phi*Vc)');
           setDisp('critical_shear_perimeter_b0', b0.toFixed(1) + ' Inches (at d/2)');
-          setDisp('nominal_shear_strength_psi', vcStress.toFixed(1) + ' PSI (4*sqrt[f\'c])');
+          setDisp('nominal_shear_strength_psi', vcStress.toFixed(1) + " PSI (4*sqrt[f'c])");
           setDisp('one_way_shear_per_foot', oneWayPerFt.toFixed(2) + ' Kips / Linear Foot');
         """
     },
