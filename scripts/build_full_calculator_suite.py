@@ -167,8 +167,8 @@ def generate_calculator_page(calc):
   <meta property="og:url" content="{canonical_url}">
   <meta property="og:type" content="website">
 
-  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.1">
-  <link rel="stylesheet" href="/assets/css/calculator.css?v=2.1">
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
   <link rel="icon" type="image/png" href="/assets/images/logo.png">
   <link rel="apple-touch-icon" href="/assets/images/logo.png">
 
@@ -428,8 +428,8 @@ def generate_hub_page(cat, hub_info, calcs_in_cat):
   <meta property="og:url" content="{canonical_url}">
   <meta property="og:type" content="website">
 
-  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.1">
-  <link rel="stylesheet" href="/assets/css/calculator.css?v=2.1">
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
   <link rel="icon" type="image/png" href="/assets/images/logo.png">
   <link rel="apple-touch-icon" href="/assets/images/logo.png">
 

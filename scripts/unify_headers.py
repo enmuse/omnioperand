@@ -15,7 +15,7 @@ Provides consistent, uniform navigation choices everywhere:
 
 Inlines critical dropdown CSS alongside the header to guarantee 0ms render
 and 100% protection against CDN or browser CSS cache staleness.
-Also cache-busts /assets/css/omni-core.css?v=2.1 and /assets/js/omni-search.js?v=2.1.
+Also cache-busts /assets/css/omni-core.css?v=2.2 and /assets/js/omni-search.js?v=2.1.
 """
 
 import os
@@ -176,8 +176,8 @@ def unify_all_headers():
             with open(full_path, 'r', encoding='utf-8') as f:
                 content = f.read()
             
-            # Cache bust omni-core.css and omni-search.js
-            new_content = re.sub(r'href=([\"\'])/assets/css/omni-core\.css(?:\?v=[^\"\']*)?([\"\'])', r'href=\1/assets/css/omni-core.css?v=2.1\2', content)
+            # Cache bust omni-core.css?v=2.2 and omni-search.js
+            new_content = re.sub(r'href=([\"\'])/assets/css/omni-core\.css(?:\?v=[^\"\']*)?([\"\'])', r'href=\1/assets/css/omni-core.css?v=2.2\2', content)
             new_content = re.sub(r'src=([\"\'])/assets/js/omni-search\.js(?:\?v=[^\"\']*)?([\"\'])', r'src=\1/assets/js/omni-search.js?v=2.1\2', new_content)
 
             if header_pattern.search(new_content):
