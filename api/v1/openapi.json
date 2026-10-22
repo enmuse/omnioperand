@@ -1,31 +1,18 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "OmniOperand High-Precision Mathematical REST API",
-    "version": "2.0.0",
-    "description": "Deterministic computational REST API engineered for autonomous AI agents, LLMs, researchers, and engineers. Resolves 428 multi-parameter systems across 15 domains with machine precision, radical closed forms, and zero arithmetic hallucination.",
+    "title": "OmniOperand High-Precision Mathematical & Statutory Compliance REST API",
+    "version": "2.2.0",
+    "description": "Zero-dependency deterministic computational engine and statutory compliance router spanning civil engineering, NEC electrical sizing, ACCA Manual J thermal mechanics, psychiatric clinical triage, and disaster restoration claim auditing.",
     "contact": {
-      "name": "OmniOperand Computational Systems",
-      "url": "https://omnioperand.com",
-      "email": "api@omnioperand.com"
-    },
-    "license": {
-      "name": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
-      "url": "https://creativecommons.org/licenses/by/4.0/"
+      "name": "OmniOperand Engineering & Compliance Architecture",
+      "url": "https://omnioperand.com/civil/"
     }
   },
   "servers": [
     {
-      "url": "https://omnioperand.com/api/v1",
-      "description": "Cloudflare Global Edge Production Server (<15ms latency)"
-    }
-  ],
-  "security": [
-    {
-      "bearerAuth": []
-    },
-    {
-      "apiKeyAuth": []
+      "url": "https://omnioperand.com",
+      "description": "Production Cloudflare Edge Network"
     }
   ],
   "paths": {
@@ -79335,51 +79322,656 @@
           }
         }
       }
-    }
-  },
-  "components": {
-    "schemas": {
-      "SolverResponse": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "example": "success"
-          },
-          "calculator": {
-            "type": "string"
-          },
-          "category": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "formula": {
-            "type": "string"
-          },
-          "inputs": {
-            "type": "object"
-          },
-          "metrics": {
-            "type": "object"
-          },
-          "execution_time_ms": {
-            "type": "number"
+    },
+    "/api/feasibility": {
+      "post": {
+        "summary": "Municipal Steep-Slope Feasibility & Earthwork Mass Balance Engine",
+        "description": "Calculates steep-slope grading constraints under NC Mountain Ridge Protection Act and County UDOs. Computes mass cut-and-fill balance, compaction shrink, impervious surface caps, engineered retaining walls, and rock breaker mobilization.",
+        "operationId": "calculateSteepSlopeFeasibility",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "parcel_acres",
+                  "slope_gradient_pct",
+                  "elevation_ft",
+                  "proposed_footprint_sqft"
+                ],
+                "properties": {
+                  "parcel_acres": {
+                    "type": "number",
+                    "minimum": 0.5,
+                    "maximum": 100.0,
+                    "description": "Total parcel area in acres (e.g. 2.5)"
+                  },
+                  "slope_gradient_pct": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 70,
+                    "description": "Average natural slope gradient percentage across structural envelope (e.g. 28)"
+                  },
+                  "elevation_ft": {
+                    "type": "number",
+                    "minimum": 1000,
+                    "maximum": 6684,
+                    "description": "Site elevation above sea level in feet (threshold: 3,000' triggers Mountain Ridge Protection Act)"
+                  },
+                  "soil_profile": {
+                    "type": "string",
+                    "enum": [
+                      "cecil_clay",
+                      "weathered_saprolite",
+                      "shallow_granite_ledge",
+                      "colluvial_boulders"
+                    ],
+                    "default": "shallow_granite_ledge",
+                    "description": "Subsurface soil and bedrock geology profile"
+                  },
+                  "proposed_footprint_sqft": {
+                    "type": "number",
+                    "minimum": 500,
+                    "maximum": 50000,
+                    "description": "Total structural footprint area in sq ft (residence, garage, terrace)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Deterministic civil development feasibility results, permit checklist, and budget",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "tool": {
+                      "type": "string"
+                    },
+                    "slope_category": {
+                      "type": "string"
+                    },
+                    "impervious_surface_cap_sqft": {
+                      "type": "integer"
+                    },
+                    "impervious_surface_cap_pct": {
+                      "type": "integer"
+                    },
+                    "mountain_ridge_protection_act": {
+                      "type": "object",
+                      "properties": {
+                        "applies": {
+                          "type": "boolean"
+                        },
+                        "max_structural_height_ft": {
+                          "type": "integer"
+                        },
+                        "clearing_buffer_ft": {
+                          "type": "integer"
+                        },
+                        "wind_exposure_category": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "cut_fill_mass_balance_yds": {
+                      "type": "object",
+                      "properties": {
+                        "cut_volume_raw": {
+                          "type": "integer"
+                        },
+                        "fill_volume_compacted": {
+                          "type": "integer"
+                        },
+                        "compaction_shrink_factor": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "retaining_wall": {
+                      "type": "object",
+                      "properties": {
+                        "required": {
+                          "type": "boolean"
+                        },
+                        "wall_face_sqft": {
+                          "type": "integer"
+                        },
+                        "cost_range_usd": {
+                          "type": "array",
+                          "items": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    },
+                    "rock_breaker_contingency_usd": {
+                      "type": "integer"
+                    },
+                    "estimated_civil_budget_usd": {
+                      "type": "object",
+                      "properties": {
+                        "low": {
+                          "type": "integer"
+                        },
+                        "high": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "mandatory_permits": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "regulatory_alerts": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "dispatch_endpoint": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
     },
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
-      },
-      "apiKeyAuth": {
-        "type": "apiKey",
-        "in": "header",
-        "name": "x-api-key"
+    "/api/nec-load": {
+      "post": {
+        "summary": "NEC 220 Residential Service Load Calculation Engine",
+        "description": "Calculates statutory single-phase 120/240V residential service entrance demand per NEC Article 220.82 optional method. Sizes main disconnect (100A, 150A, 200A, 300A, 400A) and Table 310.16 75\u00b0C copper/aluminum conductors.",
+        "operationId": "calculateNecResidentialLoad",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "home_sqft"
+                ],
+                "properties": {
+                  "home_sqft": {
+                    "type": "number",
+                    "minimum": 400,
+                    "maximum": 25000,
+                    "description": "Conditioned square footage (assessed at 3 VA/sq ft per NEC 220.12)"
+                  },
+                  "small_appliance_circuits": {
+                    "type": "integer",
+                    "minimum": 3,
+                    "maximum": 12,
+                    "default": 3,
+                    "description": "Number of 20A small appliance and laundry circuits (1,500 VA each)"
+                  },
+                  "hvac_type": {
+                    "type": "string",
+                    "enum": [
+                      "heat_pump_10kw",
+                      "heat_pump_15kw",
+                      "heat_pump_5kw",
+                      "electric_furnace_15kw",
+                      "ac_gas_heat"
+                    ],
+                    "default": "heat_pump_10kw",
+                    "description": "Primary HVAC heating/cooling configuration (assessed per NEC 220.82(C))"
+                  },
+                  "ev_charger_kw": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 30.0,
+                    "default": 9.6,
+                    "description": "Level 2 EVSE rating in kW (continuous duty assessed at 125% per NEC 625)"
+                  },
+                  "water_heater_type": {
+                    "type": "string",
+                    "enum": [
+                      "tank_4500",
+                      "hybrid_heatpump",
+                      "tankless_18kw",
+                      "tankless_27kw",
+                      "gas_tankless"
+                    ],
+                    "default": "tank_4500",
+                    "description": "Domestic water heating equipment type"
+                  },
+                  "has_range": {
+                    "type": "boolean",
+                    "default": true
+                  },
+                  "has_dryer": {
+                    "type": "boolean",
+                    "default": true
+                  },
+                  "has_hottub": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "has_wellpump": {
+                    "type": "boolean",
+                    "default": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "NEC calculated demand VA, amperes, recommended service breaker, and conductor gauges",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "tool": {
+                      "type": "string"
+                    },
+                    "calculated_demand_va": {
+                      "type": "integer"
+                    },
+                    "calculated_demand_amps": {
+                      "type": "number"
+                    },
+                    "recommended_service_rating_amps": {
+                      "type": "integer"
+                    },
+                    "minimum_conductors_75c": {
+                      "type": "object",
+                      "properties": {
+                        "copper": {
+                          "type": "string"
+                        },
+                        "aluminum": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "derating_breakdown": {
+                      "type": "object"
+                    },
+                    "dispatch_endpoint": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/hvac-manual-j": {
+      "post": {
+        "summary": "ACCA Manual J Heat Loss & Cold-Climate Heat Pump Sizing Engine",
+        "description": "Calculates heating and cooling design BTU/hr loads based on building envelope U-factors, ASHRAE 99% climatic design temperatures, cold-climate inverter low-temp derating, and supplemental electric strip balance points.",
+        "operationId": "calculateHvacManualJ",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "conditioned_sqft"
+                ],
+                "properties": {
+                  "conditioned_sqft": {
+                    "type": "number",
+                    "minimum": 400,
+                    "maximum": 20000
+                  },
+                  "ceiling_height_ft": {
+                    "type": "number",
+                    "minimum": 8,
+                    "maximum": 25,
+                    "default": 9
+                  },
+                  "insulation_grade": {
+                    "type": "string",
+                    "enum": [
+                      "historic_uninsulated",
+                      "standard_iecc",
+                      "high_performance_sprayfoam"
+                    ],
+                    "default": "standard_iecc"
+                  },
+                  "winter_design_temp_f": {
+                    "type": "number",
+                    "default": 14
+                  },
+                  "window_sqft": {
+                    "type": "number",
+                    "default": 280
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ACCA Manual J design loads, heat pump tonnage, and supplemental resistance strip sizing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "tool": {
+                      "type": "string"
+                    },
+                    "total_design_heat_loss_btu": {
+                      "type": "integer"
+                    },
+                    "recommended_heat_pump_tons": {
+                      "type": "number"
+                    },
+                    "auxiliary_strip_heat_kw": {
+                      "type": "integer"
+                    },
+                    "thermal_balance_point_f": {
+                      "type": "number"
+                    },
+                    "component_breakdown_btu": {
+                      "type": "object"
+                    },
+                    "dispatch_endpoint": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/clinical-triage": {
+      "post": {
+        "summary": "Psychiatric Clinical Decision Support & Telehealth Triage Router",
+        "description": "Standardized psychiatric intake screener scoring validated DSM-5 psychometrics (PHQ-9, GAD-7), Ryan Haight Act (21 U.S.C. \u00a7 829(e)) controlled substance compliance, and state APRN/PMHNP practice authority.",
+        "operationId": "triagePsychiatricIntake",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "patient_state",
+                  "primary_complaint"
+                ],
+                "properties": {
+                  "patient_state": {
+                    "type": "string",
+                    "description": "2-letter US state postal code (e.g. NC, VT, CA)"
+                  },
+                  "primary_complaint": {
+                    "type": "string",
+                    "enum": [
+                      "depression_mdd",
+                      "generalized_anxiety",
+                      "adhd_focus",
+                      "bipolar_mood",
+                      "insomnia_ptsd"
+                    ]
+                  },
+                  "phq9_scores": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 3
+                    },
+                    "description": "Array of 9 question scores (0 to 3 each). Question 9 represents self-harm/suicide screening."
+                  },
+                  "gad7_score": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 21,
+                    "default": 11
+                  },
+                  "current_medications": {
+                    "type": "string",
+                    "description": "Free text list of current medications"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Clinical triage psychometrics, emergency protocol status, and Ryan Haight Act compliance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "tool": {
+                      "type": "string"
+                    },
+                    "crisis_override": {
+                      "type": "boolean"
+                    },
+                    "emergency_protocol": {
+                      "type": "object"
+                    },
+                    "psychometrics": {
+                      "type": "object"
+                    },
+                    "statutory_compliance": {
+                      "type": "object"
+                    },
+                    "estimated_costs_usd": {
+                      "type": "object"
+                    },
+                    "dispatch_endpoint": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/restoration-scope": {
+      "post": {
+        "summary": "Insurance Disaster Restoration & Claim Supplement Auditor",
+        "description": "Deterministic property loss restoration estimator modeling regional Xactimate unit pricing, IICRC S500 Cat 3 water protocols, statutory 10/10 Overhead & Profit (O&P), and carrier scope shortfall variances.",
+        "operationId": "auditDisasterRestorationClaim",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "damage_peril",
+                  "affected_area_sqft",
+                  "carrier_initial_scope_usd"
+                ],
+                "properties": {
+                  "damage_peril": {
+                    "type": "string",
+                    "enum": [
+                      "tree_strike_structural",
+                      "flash_flood_crawlspace",
+                      "slope_failure_landslide",
+                      "standing_seam_wind_tear"
+                    ]
+                  },
+                  "affected_area_sqft": {
+                    "type": "number",
+                    "minimum": 50,
+                    "maximum": 50000
+                  },
+                  "carrier_initial_scope_usd": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1000000
+                  },
+                  "tree_caliper_inches": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 120,
+                    "default": 32
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Itemized Xactimate proof of loss, carrier scope variance, and statutory O&P breakdown",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "tool": {
+                      "type": "string"
+                    },
+                    "true_structural_restoration_cost_usd": {
+                      "type": "integer"
+                    },
+                    "direct_remediation_scope_usd": {
+                      "type": "integer"
+                    },
+                    "mandatory_overhead_and_profit": {
+                      "type": "object"
+                    },
+                    "carrier_underpayment_variance_usd": {
+                      "type": "integer"
+                    },
+                    "variance_percentage": {
+                      "type": "number"
+                    },
+                    "xactimate_proof_of_loss_line_items": {
+                      "type": "array"
+                    },
+                    "dispatch_endpoint": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/leads": {
+      "post": {
+        "summary": "Bifurcated Machine & Civil Lead Dispatch Webhook",
+        "description": "Ingests project parameters and performs deterministic geo-routing. Routes Western North Carolina / Core Licensure inquiries directly to on-call trade superintendents, and routes national inquiries to accredited affiliate partner bridges.",
+        "operationId": "dispatchTradeLead",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "zip",
+                  "name",
+                  "phone"
+                ],
+                "properties": {
+                  "zip": {
+                    "type": "string",
+                    "pattern": "^[0-9]{5}$"
+                  },
+                  "state": {
+                    "type": "string"
+                  },
+                  "county": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "scope": {
+                    "type": "string"
+                  },
+                  "notes": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Bifurcated dispatch confirmation with tier categorization and dispatch reference ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "tier": {
+                      "type": "integer",
+                      "enum": [
+                        1,
+                        2
+                      ]
+                    },
+                    "zone": {
+                      "type": "string"
+                    },
+                    "dispatch_id": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "referral_url": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

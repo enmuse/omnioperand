@@ -1,7 +1,7 @@
 /**
  * functions/api/leads.js
- * OmniOperand Machine & Trade Lead Dispatch Webhook
- * Performs two-tier geo-routing for Western North Carolina vs National inquiries.
+ * OmniOperand Multi-Engine Machine, Civil & Trade Lead Dispatch Webhook
+ * Performs two-tier geo-routing for Western North Carolina / Core Licensure vs National Inquiries.
  */
 
 const WNC_COUNTIES = new Set([
@@ -38,28 +38,34 @@ export async function onRequestPost(context) {
     const zip = body.zip || body.zipcode || "";
     const state = body.state || "";
     const county = body.county || "";
+    const scope = body.scope || body.tool || "General Machine / Civil Dispatch";
     const isWnc = isWncLocation(zip, state, county);
 
-    const leadId = `disp_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
+    const leadId = `lead_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
 
     if (isWnc) {
+      // Tier 1: Local Western North Carolina Core Network Dispatch
       return new Response(JSON.stringify({
         success: true,
         tier: 1,
         zone: "Western North Carolina",
         corridor: "Southern Plateau & Metro Asheville",
         dispatch_id: leadId,
-        message: "Project matched to on-call mountain crews in the Southern Plateau & Metro Asheville corridors."
+        scope: scope,
+        message: "Project matched to on-call mountain crews in the Southern Plateau & Metro Asheville corridors.",
+        sla: "Under 15 minutes direct on-call dispatch confirmation"
       }), {
         status: 200,
         headers: { "Content-Type": "application/json" }
       });
     } else {
+      // Tier 2: National Out-of-Market Capacity Referral
       return new Response(JSON.stringify({
         success: true,
         tier: 2,
         zone: "National / Out-of-Market",
         dispatch_id: leadId,
+        scope: scope,
         message: "OmniOperand Dispatch is currently at peak capacity for heavy civil machinery outside the Appalachian Southeastern corridor. Click below to view vetted regional contractors in your area.",
         referral_url: `https://www.networx.com/?ref=omnioperand&zip=${encodeURIComponent(zip)}`
       }), {

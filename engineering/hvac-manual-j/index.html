@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACCA Manual J Heat Pump & Cold-Climate Sizing Calculator — Thermal Heat Loss Solver | OmniOperand</title>
+  <meta name="description" content="Calculate heating and cooling BTU/hr design loads, cold-climate heat pump low-ambient derating, supplemental electric strip heat, and balance point temperature per ACCA Manual J principles.">
+  <link rel="canonical" href="https://omnioperand.com/engineering/hvac-manual-j/">
+
+  <meta property="og:title" content="Manual J Heat Pump & Cold-Climate Sizing Calculator | OmniOperand">
+  <meta property="og:description" content="Deterministic heat loss/gain calculation, inverter heat pump low-temp derating, and supplemental resistance strip sizing.">
+  <meta property="og:url" content="https://omnioperand.com/engineering/hvac-manual-j/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://omnioperand.com/engineering/hvac-manual-j/#app",
+        "name": "ACCA Manual J Residential Heat Load & Cold-Climate Heat Pump Sizing Engine",
+        "url": "https://omnioperand.com/engineering/hvac-manual-j/",
+        "applicationCategory": "MechanicalEngineeringApplication",
+        "operatingSystem": "All",
+        "description": "Deterministic heating/cooling load calculation engine with 99% ASHRAE winter design temperature derating and supplemental resistance balance point solver.",
+        "isBasedOn": "https://omnioperand.com/engineering/"
+      },
+      {
+        "@type": "TechnicalArticle",
+        "@id": "https://omnioperand.com/engineering/hvac-manual-j/#article",
+        "headline": "Cold-Climate Heat Pump Thermal Balance Point & Inverter COP Analysis",
+        "description": "Mathematical thermal load balance derivation for inverter-driven heat pumps operating in sub-freezing mountain climates.",
+        "author": {
+          "@type": "Organization",
+          "name": "OmniOperand Mechanical Engineering Division"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Mechanical & HVAC</span>
+      </a>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/engineering/">Engineering Hub</a>
+        <a href="/construction/">Construction</a>
+        <a href="/dispatch/">Dispatch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="max-width: 1200px; padding: 2rem 1rem;">
+    <section class="solver-hero">
+      <div class="calc-title-badge">ACCA Manual J &amp; Cold-Climate Heat Pump Standard</div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; color: #fff; margin: 0.5rem 0 1rem 0; line-height: 1.2;">
+        Manual J Heat Pump &amp; Cold-Climate Sizing Calculator
+      </h1>
+      <p style="font-size: 1.05rem; color: #94a3b8; max-width: 850px; line-height: 1.6;">
+        Deterministic residential heating and cooling load calculation based on <strong>ACCA Manual J 8th Edition</strong> and <strong>ASHRAE 99% climatic design temperatures</strong>. Evaluates building envelope U-values, cold-climate inverter compressor capacity retention, thermal balance point, and auxiliary electric strip requirements.
+      </p>
+    </section>
+
+    <div class="calculator-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      <div class="solver-column">
+        <div class="param-card-grid" style="display: flex; flex-direction: column; gap: 1.25rem;">
+          
+          <div class="param-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem;">
+            <div class="param-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <label for="param-conditioned_sqft" style="font-weight: 700; color: #f8fafc;">Conditioned Floor Area (Sq Ft)</label>
+              <span class="param-symbol" style="color: #38bdf8; font-family: monospace;">A_cond</span>
+            </div>
+            <input type="number" id="param-conditioned_sqft" class="number-input omni-calc-input" data-id="conditioned_sqft" value="2400" step="50" min="600" max="10000" style="width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 0.6rem; color: #fff; font-size: 1rem;">
+            <input type="range" id="slider-conditioned_sqft" class="param-slider omni-calc-slider" data-id="conditioned_sqft" min="800" max="5000" step="50" value="2400" style="width: 100%; margin-top: 0.75rem;">
+          </div>
+
+          <div class="param-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem;">
+            <div class="param-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <label for="param-ceiling_height_ft" style="font-weight: 700; color: #f8fafc;">Average Ceiling Height (Feet)</label>
+              <span class="param-symbol" style="color: #38bdf8; font-family: monospace;">H_ceil</span>
+            </div>
+            <input type="number" id="param-ceiling_height_ft" class="number-input omni-calc-input" data-id="ceiling_height_ft" value="9" step="1" min="8" max="18" style="width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 0.6rem; color: #fff; font-size: 1rem;">
+            <input type="range" id="slider-ceiling_height_ft" class="param-slider omni-calc-slider" data-id="ceiling_height_ft" min="8" max="16" step="1" value="9" style="width: 100%; margin-top: 0.75rem;">
+          </div>
+
+          <div class="param-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem;">
+            <div class="param-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <label for="param-insulation_grade" style="font-weight: 700; color: #f8fafc;">Building Envelope &amp; Insulation Grade</label>
+              <span class="param-symbol" style="color: #38bdf8; font-family: monospace;">U-factors</span>
+            </div>
+            <select id="param-insulation_grade" class="omni-calc-input" data-id="insulation_grade" style="width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 0.6rem; color: #fff; font-size: 0.95rem;">
+              <option value="historic_uninsulated">Historic / Poor (2x4 uninsulated walls, R-11 attic, leaky ACH50 ~7.5)</option>
+              <option value="standard_iecc" selected>Standard Modern IECC (R-15 walls, R-38 attic, ACH50 ~3.5)</option>
+              <option value="high_performance_sprayfoam">High-Performance Airtight / Spray Foam (R-24 walls, R-49 roof, ACH50 ~1.2)</option>
+            </select>
+          </div>
+
+          <div class="param-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem;">
+            <div class="param-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <label for="param-winter_design_temp_f" style="font-weight: 700; color: #f8fafc;">Regional 99% ASHRAE Winter Design Temp (°F)</label>
+              <span class="param-symbol" style="color: #38bdf8; font-family: monospace;">T_winter</span>
+            </div>
+            <select id="param-winter_design_temp_f" class="omni-calc-input" data-id="winter_design_temp_f" style="width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 0.6rem; color: #fff; font-size: 0.95rem;">
+              <option value="-10">Extreme Cold (-10°F — Northern Tier / High Rockies)</option>
+              <option value="0">Severe Cold (0°F — Upper Midwest / Northern New England)</option>
+              <option value="14" selected>Appalachian Mountain (14°F — Asheville / WNC / Blue Ridge)</option>
+              <option value="22">Moderate Cold (22°F — Piedmont / Mid-Atlantic / Nashville)</option>
+              <option value="30">Mild Winter (30°F — Deep South / Atlanta / Charlotte)</option>
+            </select>
+          </div>
+
+          <div class="param-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem;">
+            <div class="param-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <label for="param-window_sqft" style="font-weight: 700; color: #f8fafc;">Total Fenestration / Window Area (Sq Ft)</label>
+              <span class="param-symbol" style="color: #38bdf8; font-family: monospace;">A_win</span>
+            </div>
+            <input type="number" id="param-window_sqft" class="number-input omni-calc-input" data-id="window_sqft" value="280" step="10" min="50" max="1500" style="width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 0.6rem; color: #fff; font-size: 1rem;">
+            <input type="range" id="slider-window_sqft" class="param-slider omni-calc-slider" data-id="window_sqft" min="100" max="800" step="10" value="280" style="width: 100%; margin-top: 0.75rem;">
+          </div>
+        </div>
+
+        <!-- Calculated Output Box -->
+        <div class="result-display-grid" style="background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 14px; padding: 1.5rem; margin-top: 1.5rem;">
+          <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #38bdf8; font-weight: 700; margin-bottom: 0.5rem;">
+            Manual J Thermal Design Sizing Results
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+            <div>
+              <div style="font-size: 0.8rem; color: #94a3b8;">Total Design Heat Loss</div>
+              <div id="disp-heat_loss" style="font-size: 1.45rem; font-weight: 800; color: #34d399;">42,850 BTU/hr</div>
+            </div>
+            <div>
+              <div style="font-size: 0.8rem; color: #94a3b8;">Recommended Heat Pump</div>
+              <div id="disp-hp_tonnage" style="font-size: 1.45rem; font-weight: 800; color: #fff;">3.5 Tons (42k BTU)</div>
+            </div>
+            <div>
+              <div style="font-size: 0.8rem; color: #94a3b8;">Aux Electric Strip Heat</div>
+              <div id="disp-aux_strip" style="font-size: 1.15rem; font-weight: 700; color: #38bdf8;">10 kW Backup</div>
+            </div>
+            <div>
+              <div style="font-size: 0.8rem; color: #94a3b8;">Thermal Balance Point</div>
+              <div id="disp-balance_point" style="font-size: 1.15rem; font-weight: 700; color: #38bdf8;">23.5°F</div>
+            </div>
+          </div>
+
+          <div id="disp-thermal-notes" style="margin-top: 1.25rem; font-size: 0.82rem; background: #0f172a; padding: 0.85rem; border-radius: 8px; border: 1px solid #334155; line-height: 1.5; color: #cbd5e1;"></div>
+
+          <div class="contextual-action-card" style="background: rgba(56,189,248,0.06); border: 1px solid rgba(56,189,248,0.25); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
+              <div>
+                <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:#38bdf8; font-weight:700; margin-bottom:0.25rem;">NATE-Certified HVAC Installation</div>
+                <div style="font-size:0.95rem; font-weight:700; color:#fff;">Need Stamped Manual J, S &amp; D Engineering?</div>
+                <div style="font-size:0.8rem; color:#94a3b8; margin-top:0.2rem;">Connect with verified regional mechanical contractors specializing in cold-climate inverter heat pumps.</div>
+              </div>
+              <a href="/dispatch/" class="btn-primary" style="padding:0.6rem 1.25rem; font-size:0.88rem; text-decoration:none;">
+                Match with Mechanical Contractor →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Engineering Proofs -->
+      <div class="solver-column">
+        <div class="formula-proof-panel" style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.75rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 1rem;">Manual J Thermal Physics &amp; Inverter Derating</h3>
+
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="font-size: 0.95rem; color: #38bdf8; font-weight: 700; margin-bottom: 0.3rem;">1. Envelope Heat Loss Equation</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">
+              Heat transmission through each opaque assembly and fenestration is computed as:
+            </p>
+            <div style="font-size: 0.82rem; color: #38bdf8; background: #0f172a; padding: 0.75rem; border-radius: 6px; font-family: monospace;">
+              Q_loss = U × Area × (T_indoor - T_design_winter)<br>
+              Q_infil = 1.08 × CFM × (T_indoor - T_design_winter)
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="font-size: 0.95rem; color: #38bdf8; font-weight: 700; margin-bottom: 0.3rem;">2. Cold-Climate Inverter Low-Temp Derating</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">
+              Standard AHRI ratings are measured at 47°F. At sub-freezing design temps (14°F), compressor suction pressure drops, decreasing refrigerant mass flow. Modern cold-climate variable-speed inverter heat pumps retain <strong>75%–85% of rated capacity</strong> at 14°F before supplemental resistance strips are energized.
+            </p>
+          </div>
+
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="font-size: 0.95rem; color: #38bdf8; font-weight: 700; margin-bottom: 0.3rem;">3. Thermal Balance Point Mechanics</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">
+              The thermal balance point is the outdoor temperature where building heat loss exactly equals heat pump heating output. Below this threshold, supplemental electric resistance elements (1 kW = 3,412 BTU/hr) cycle on to bridge the thermal deficit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" style="margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem 0;">
+    <div class="container footer-bottom" style="text-align: center; font-size: 0.82rem; color: #64748b;">
+      <div>© 2026 OmniOperand. Rigorous mathematical and mechanical engineering solvers.</div>
+      <div>ACCA Manual J 8th Edition &amp; ASHRAE 99% Climatic Design Standards</div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      function getNum(id) {
+        return parseFloat(document.getElementById('param-' + id).value) || 0;
+      }
+      function setVal(id, val) {
+        const inp = document.getElementById('param-' + id);
+        const sld = document.getElementById('slider-' + id);
+        if (inp) inp.value = val;
+        if (sld) sld.value = val;
+      }
+
+      function recalculate() {
+        const sqft = getNum('conditioned_sqft');
+        const height = getNum('ceiling_height_ft');
+        const grade = document.getElementById('param-insulation_grade').value;
+        const winterTemp = parseFloat(document.getElementById('param-winter_design_temp_f').value) || 14;
+        const windowSqft = getNum('window_sqft');
+
+        const deltaT = 70 - winterTemp;
+
+        let uWall = 0.065;
+        let uCeil = 0.026;
+        let ach = 0.35;
+        let uWin = 0.30;
+
+        if (grade === 'historic_uninsulated') {
+          uWall = 0.14;
+          uCeil = 0.085;
+          ach = 0.65;
+          uWin = 0.65;
+        } else if (grade === 'high_performance_sprayfoam') {
+          uWall = 0.040;
+          uCeil = 0.020;
+          ach = 0.18;
+          uWin = 0.26;
+        }
+
+        const perimeter = Math.sqrt(sqft) * 4;
+        const grossWallArea = perimeter * height;
+        const netWallArea = Math.max(grossWallArea - windowSqft, grossWallArea * 0.7);
+        const volume = sqft * height;
+        const cfm = (volume * ach) / 60;
+
+        const qCeil = uCeil * sqft * deltaT;
+        const qWall = uWall * netWallArea * deltaT;
+        const qWin = uWin * windowSqft * deltaT;
+        const qInfil = 1.08 * cfm * deltaT;
+
+        const totalHeatLoss = Math.round(qCeil + qWall + qWin + qInfil);
+
+        // Cooling Load Estimate (Sensible + Latent)
+        const deltaTCool = Math.max(88 - 75, 5);
+        const qCool = Math.round((totalHeatLoss * 0.55) + 4000);
+        const rawTonnage = totalHeatLoss / 12000;
+        let recommendedTons = Math.round(rawTonnage * 2) / 2;
+        if (recommendedTons < 1.5) recommendedTons = 1.5;
+        if (recommendedTons > 5.0) recommendedTons = 5.0;
+
+        // Inverter low ambient retention at design temp
+        const lowTempFactor = winterTemp <= 0 ? 0.70 : (winterTemp <= 15 ? 0.78 : 0.85);
+        const hpOutputAtDesign = recommendedTons * 12000 * lowTempFactor;
+
+        const deficitBtu = Math.max(0, totalHeatLoss - hpOutputAtDesign);
+        const rawAuxKw = deficitBtu / 3412.14;
+        let auxKw = 5;
+        if (rawAuxKw > 10) auxKw = 15;
+        else if (rawAuxKw > 5) auxKw = 10;
+        else if (rawAuxKw <= 0) auxKw = 0;
+
+        // Balance point estimation
+        const balancePoint = Math.round(70 - (hpOutputAtDesign / (totalHeatLoss / deltaT)));
+
+        document.getElementById('disp-heat_loss').innerText = totalHeatLoss.toLocaleString() + ' BTU/hr';
+        document.getElementById('disp-hp_tonnage').innerText = recommendedTons.toFixed(1) + ' Tons (' + Math.round(recommendedTons * 12000).toLocaleString() + ' BTU)';
+        document.getElementById('disp-aux_strip').innerText = auxKw > 0 ? (auxKw + ' kW Backup') : 'None Required';
+        document.getElementById('disp-balance_point').innerText = balancePoint + '°F';
+
+        document.getElementById('disp-thermal-notes').innerHTML =
+          '<strong>ACCA Manual J Component Breakdown:</strong><br>' +
+          '• Ceiling Heat Loss: ' + Math.round(qCeil).toLocaleString() + ' BTU/hr<br>' +
+          '• Wall Assemblies: ' + Math.round(qWall).toLocaleString() + ' BTU/hr<br>' +
+          '• Window Fenestration: ' + Math.round(qWin).toLocaleString() + ' BTU/hr<br>' +
+          '• Infiltration (ACH ~' + ach + '): ' + Math.round(qInfil).toLocaleString() + ' BTU/hr<br>' +
+          '• Inverter Capacity at ' + winterTemp + '°F: ' + Math.round(hpOutputAtDesign).toLocaleString() + ' BTU/hr (' + Math.round(lowTempFactor * 100) + '% rated retention)';
+      }
+
+      document.querySelectorAll('.omni-calc-input, .omni-calc-slider').forEach(function(el) {
+        const id = el.getAttribute('data-id');
+        el.addEventListener('input', function(e) {
+          if (id) setVal(id, e.target.value);
+          recalculate();
+        });
+        el.addEventListener('change', recalculate);
+      });
+
+      recalculate();
+    })();
+  </script>
+</body>
+</html>

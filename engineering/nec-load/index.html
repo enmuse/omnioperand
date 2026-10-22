@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEC 220 Residential Service Load Calculator — 2023/2026 National Electrical Code | OmniOperand</title>
+  <meta name="description" content="Calculate statutory residential service entrance ampacity, minimum service panel disconnect rating, and conductor gauge using the standard optional calculation method in NEC 220.82.">
+  <link rel="canonical" href="https://omnioperand.com/engineering/nec-load/">
+
+  <meta property="og:title" content="NEC 220 Residential Service Load Calculator | OmniOperand">
+  <meta property="og:description" content="Deterministic electrical service load calculation per NEC Article 220.82 with EV continuous derating, heat pump auxiliary heat, and conductor sizing.">
+  <meta property="og:url" content="https://omnioperand.com/engineering/nec-load/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://omnioperand.com/engineering/nec-load/#app",
+        "name": "NEC 220 Residential Electrical Service Load Calculation Engine",
+        "url": "https://omnioperand.com/engineering/nec-load/",
+        "applicationCategory": "EngineeringApplication",
+        "operatingSystem": "All",
+        "description": "Deterministic National Electrical Code Article 220.82 residential service demand calculation engine with 125% EV charger continuous load derating and Table 310.16 conductor sizing.",
+        "isBasedOn": "https://omnioperand.com/engineering/"
+      },
+      {
+        "@type": "TechnicalArticle",
+        "@id": "https://omnioperand.com/engineering/nec-load/#article",
+        "headline": "Residential Service Entrance Calculation Rules Under NEC 220.82",
+        "description": "Standardized mathematical derivation for 100A, 200A, 300A, and 400A single-phase 120/240V residential services.",
+        "author": {
+          "@type": "Organization",
+          "name": "OmniOperand Electrical Engineering Division"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Electrical & NEC</span>
+      </a>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/engineering/">Engineering Hub</a>
+        <a href="/construction/">Construction</a>
+        <a href="/dispatch/">Dispatch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="max-width: 1200px; padding: 2rem 1rem;">
+    <section class="solver-hero">
+      <div class="calc-title-badge">NEC Article 220.82 Optional Method</div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; color: #fff; margin: 0.5rem 0 1rem 0; line-height: 1.2;">
+        NEC 220 Residential Service Load Calculator
+      </h1>
+      <p style="font-size: 1.05rem; color: #94a3b8; max-width: 850px; line-height: 1.6;">
+        Deterministic 120/240V single-phase electrical service load calculation per <strong>NEC Article 220.82</strong>. Computes general lighting (3 VA/sq ft), small appliance branch circuits, continuous EV supply equipment (125% per NEC 625), HVAC heat pump auxiliary strips, and <strong>NEC Table 310.16</strong> 75°C service conductor gauges.
+      </p>
+    </section>
+
+    <div class="calculator-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      <div class="solver-column">
+        <div class="param-card-grid" style="display: flex; flex-direction: column; gap: 1.25rem;">
+          
+          <div class="param-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem;">
+            <div class="param-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <label for="param-home_sqft" style="font-weight: 700; color: #f8fafc;">Conditioned Living Area (Sq Ft)</label>
+              <span class="param-symbol" style="color: #38bdf8; font-family: monospace;">A_home (3 VA/sqft)</span>
+            </div>
+            <input type="number" id="param-home_sqft" class="number-input omni-calc-input" data-id="home_sqft" value="2800" step="50" min="500" max="15000" style="width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 0.6rem; color: #fff; font-size: 1rem;">
+            <input type="range" id="slider-home_sqft" class="param-slider omni-calc-slider" data-id="home_sqft" min="800" max="6000" step="50" value="2800" style="width: 100%; margin-top: 0.75rem;">
+          </div>
+
+          <div class="param-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem;">
+            <div class="param-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <label for="param-small_appliance_circuits" style="font-weight: 700; color: #f8fafc;">20A Small Appliance & Laundry Circuits</label>
+              <span class="param-symbol" style="color: #38bdf8; font-family: monospace;">N_circ (1500 VA ea)</span>
+            </div>
+            <input type="number" id="param-small_appliance_circuits" class="number-input omni-calc-input" data-id="small_appliance_circuits" value="3" step="1" min="3" max="8" style="width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 0.6rem; color: #fff; font-size: 1rem;">
+            <input type="range" id="slider-small_appliance_circuits" class="param-slider omni-calc-slider" data-id="small_appliance_circuits" min="3" max="8" step="1" value="3" style="width: 100%; margin-top: 0.75rem;">
+          </div>
+
+          <div class="param-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem;">
+            <div class="param-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <label for="param-hvac_type" style="font-weight: 700; color: #f8fafc;">Primary Heating & Cooling System</label>
+              <span class="param-symbol" style="color: #38bdf8; font-family: monospace;">NEC 220.82(C)</span>
+            </div>
+            <select id="param-hvac_type" class="omni-calc-input" data-id="hvac_type" style="width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 0.6rem; color: #fff; font-size: 0.95rem;">
+              <option value="heat_pump_10kw" selected>Central Heat Pump + 10 kW Aux Electric Heat Strip (100% comp + 65% strip)</option>
+              <option value="heat_pump_15kw">Central Heat Pump + 15 kW Aux Electric Heat Strip</option>
+              <option value="heat_pump_5kw">Central Heat Pump + 5 kW Aux Electric Heat Strip</option>
+              <option value="electric_furnace_15kw">Electric Furnace (15 kW Strips @ 65% Demand)</option>
+              <option value="ac_gas_heat">Central A/C (4 Ton) + High-Efficiency Gas Furnace (Largest load)</option>
+            </select>
+          </div>
+
+          <div class="param-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem;">
+            <div class="param-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <label for="param-ev_charger_kw" style="font-weight: 700; color: #f8fafc;">Level 2 EV Charger Continuous Rating (kW)</label>
+              <span class="param-symbol" style="color: #38bdf8; font-family: monospace;">NEC 625 (125%)</span>
+            </div>
+            <select id="param-ev_charger_kw" class="omni-calc-input" data-id="ev_charger_kw" style="width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 0.6rem; color: #fff; font-size: 0.95rem;">
+              <option value="0">None / No Dedicated EV Charger</option>
+              <option value="7.7">7.7 kW (32A @ 240V -> 9,625 VA at 125%)</option>
+              <option value="9.6" selected>9.6 kW (40A @ 240V -> 12,000 VA at 125%)</option>
+              <option value="11.5">11.5 kW (48A @ 240V -> 14,375 VA at 125%)</option>
+              <option value="19.2">19.2 kW Dual EV Chargers (24,000 VA at 125%)</option>
+            </select>
+          </div>
+
+          <div class="param-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem;">
+            <div class="param-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <label for="param-water_heater_type" style="font-weight: 700; color: #f8fafc;">Water Heating Appliance</label>
+              <span class="param-symbol" style="color: #38bdf8; font-family: monospace;">VA</span>
+            </div>
+            <select id="param-water_heater_type" class="omni-calc-input" data-id="water_heater_type" style="width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 0.6rem; color: #fff; font-size: 0.95rem;">
+              <option value="tank_4500" selected>Standard Electric 50-Gal Storage Tank (4,500 VA)</option>
+              <option value="hybrid_heatpump">Hybrid Heat Pump Water Heater (1,200 VA)</option>
+              <option value="tankless_18kw">Whole-Home Tankless Electric (18 kW = 18,000 VA)</option>
+              <option value="tankless_27kw">Large Whole-Home Tankless Electric (27 kW = 27,000 VA)</option>
+              <option value="gas_tankless">Gas Tankless / Storage (300 VA blower)</option>
+            </select>
+          </div>
+
+          <div class="param-card" style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem;">
+            <div class="param-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <label style="font-weight: 700; color: #f8fafc;">Specialty High-Draw Appliances</label>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.85rem; color: #cbd5e1;">
+              <label style="display: flex; align-items: center; gap: 6px;">
+                <input type="checkbox" id="chk-electric_range" checked> Electric Range (8 kW demand)
+              </label>
+              <label style="display: flex; align-items: center; gap: 6px;">
+                <input type="checkbox" id="chk-electric_dryer" checked> Electric Dryer (5 kW)
+              </label>
+              <label style="display: flex; align-items: center; gap: 6px;">
+                <input type="checkbox" id="chk-hot_tub"> Outdoor Hot Tub (5.5 kW)
+              </label>
+              <label style="display: flex; align-items: center; gap: 6px;">
+                <input type="checkbox" id="chk-well_pump" checked> Submersible Well Pump (2.5 kW)
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calculated Service Result -->
+        <div class="result-display-grid" style="background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 14px; padding: 1.5rem; margin-top: 1.5rem;">
+          <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #38bdf8; font-weight: 700; margin-bottom: 0.5rem;">
+            NEC Article 220 Calculated Service Rating
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+            <div>
+              <div style="font-size: 0.8rem; color: #94a3b8;">Required Main Service</div>
+              <div id="disp-service_rating" style="font-size: 1.75rem; font-weight: 800; color: #34d399;">200 Amperes</div>
+            </div>
+            <div>
+              <div style="font-size: 0.8rem; color: #94a3b8;">Total Calculated Demand</div>
+              <div id="disp-total_demand" style="font-size: 1.45rem; font-weight: 800; color: #fff;">39,420 VA (164.3 A)</div>
+            </div>
+            <div>
+              <div style="font-size: 0.8rem; color: #94a3b8;">Min Copper Conductor (75°C)</div>
+              <div id="disp-copper_gauge" style="font-size: 1.15rem; font-weight: 700; color: #38bdf8;">2/0 AWG Cu</div>
+            </div>
+            <div>
+              <div style="font-size: 0.8rem; color: #94a3b8;">Min Aluminum Conductor (75°C)</div>
+              <div id="disp-alum_gauge" style="font-size: 1.15rem; font-weight: 700; color: #38bdf8;">4/0 AWG Al</div>
+            </div>
+          </div>
+
+          <div id="disp-derating-breakdown" style="margin-top: 1.25rem; font-size: 0.82rem; background: #0f172a; padding: 0.85rem; border-radius: 8px; border: 1px solid #334155; line-height: 1.5; color: #cbd5e1;"></div>
+
+          <div class="contextual-action-card" style="background: rgba(56,189,248,0.06); border: 1px solid rgba(56,189,248,0.25); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
+              <div>
+                <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:#38bdf8; font-weight:700; margin-bottom:0.25rem;">Building Dept Submission Ready</div>
+                <div style="font-size:0.95rem; font-weight:700; color:#fff;">Need Stamped Electrical Calculation Sheet?</div>
+                <div style="font-size:0.8rem; color:#94a3b8; margin-top:0.2rem;">Connect with licensed electrical contractors for 200A/400A panel upgrades and utility coordination.</div>
+              </div>
+              <a href="/dispatch/" class="btn-primary" style="padding:0.6rem 1.25rem; font-size:0.88rem; text-decoration:none;">
+                Dispatch Licensed Electrician →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Code Proofs & Demand Deratings -->
+      <div class="solver-column">
+        <div class="formula-proof-panel" style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.75rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 1rem;">NEC Calculation Principles & Statutory Code</h3>
+
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="font-size: 0.95rem; color: #38bdf8; font-weight: 700; margin-bottom: 0.3rem;">1. NEC 220.82(B) General Loads Demand Factor</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">
+              The optional method combines general lighting (3 VA/sq ft), small appliance circuits (1,500 VA each, min 3), and nameplate ratings of cooking, laundry, and water heating appliances. <strong>The first 10,000 VA is assessed at 100%; all remaining load is derated to 40%</strong> based on empirical residential non-coincidence factors.
+            </p>
+          </div>
+
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="font-size: 0.95rem; color: #38bdf8; font-weight: 700; margin-bottom: 0.3rem;">2. Continuous Duty Loads (NEC 625 &amp; 210.20)</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">
+              Electric vehicle supply equipment (EVSE) draws maximum rated current for 3 or more continuous hours. Under NEC 625.42 and 210.20, branch circuits and feeder sizing must apply a <strong>125% continuous duty multiplier</strong> (a 40A EVSE is calculated at 50A / 12,000 VA).
+            </p>
+          </div>
+
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="font-size: 0.95rem; color: #38bdf8; font-weight: 700; margin-bottom: 0.3rem;">3. HVAC Interlock &amp; Auxiliary Heat (NEC 220.82(C))</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">
+              For central heat pumps with supplemental electric strip heat, compressor rated load current (RLA) is assessed at 100%, and supplemental electric resistance heating is assessed at 65% demand factor under NEC 220.82(C)(3) when the compressor and strips operate concurrently.
+            </p>
+          </div>
+
+          <div style="margin-bottom: 1.25rem;">
+            <h4 style="font-size: 0.95rem; color: #38bdf8; font-weight: 700; margin-bottom: 0.3rem;">4. Service Conductor Table 310.16 (75°C Ampacity)</h4>
+            <div style="font-size: 0.82rem; color: #cbd5e1; background: #0f172a; padding: 0.75rem; border-radius: 6px; font-family: monospace;">
+              • 100A: #4 AWG Cu / #2 AWG Al<br>
+              • 150A: #1 AWG Cu / 2/0 AWG Al<br>
+              • 200A: 2/0 AWG Cu / 4/0 AWG Al<br>
+              • 300A: 350 kcmil Cu / 500 kcmil Al<br>
+              • 400A: Parallel 3/0 AWG Cu / Parallel 250 kcmil Al
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" style="margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem 0;">
+    <div class="container footer-bottom" style="text-align: center; font-size: 0.82rem; color: #64748b;">
+      <div>© 2026 OmniOperand. Rigorous mathematical and electrical engineering solvers.</div>
+      <div>National Electrical Code (NEC) Article 220.82 Calculation Standard</div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      function getNum(id) {
+        return parseFloat(document.getElementById('param-' + id).value) || 0;
+      }
+      function setVal(id, val) {
+        const inp = document.getElementById('param-' + id);
+        const sld = document.getElementById('slider-' + id);
+        if (inp) inp.value = val;
+        if (sld) sld.value = val;
+      }
+
+      function recalculate() {
+        const sqft = getNum('home_sqft');
+        const circuits = getNum('small_appliance_circuits');
+        const hvac = document.getElementById('param-hvac_type').value;
+        const evKw = parseFloat(document.getElementById('param-ev_charger_kw').value) || 0;
+        const waterType = document.getElementById('param-water_heater_type').value;
+
+        const hasRange = document.getElementById('chk-electric_range').checked;
+        const hasDryer = document.getElementById('chk-electric_dryer').checked;
+        const hasHotTub = document.getElementById('chk-hot_tub').checked;
+        const hasWellPump = document.getElementById('chk-well_pump').checked;
+
+        // 1. General Lighting & Receptacle: 3 VA/sqft
+        const generalLightingVa = sqft * 3;
+
+        // 2. Small Appliance & Laundry: 1,500 VA each
+        const smallApplianceVa = circuits * 1500;
+
+        // 3. Appliances
+        const rangeVa = hasRange ? 8000 : 0;
+        const dryerVa = hasDryer ? 5000 : 0;
+        const hotTubVa = hasHotTub ? 5500 : 0;
+        const wellPumpVa = hasWellPump ? 2500 : 0;
+
+        let waterVa = 4500;
+        if (waterType === 'hybrid_heatpump') waterVa = 1200;
+        else if (waterType === 'tankless_18kw') waterVa = 18000;
+        else if (waterType === 'tankless_27kw') waterVa = 27000;
+        else if (waterType === 'gas_tankless') waterVa = 300;
+
+        // Subtotal General Loads
+        const subtotalGeneral = generalLightingVa + smallApplianceVa + rangeVa + dryerVa + hotTubVa + wellPumpVa + waterVa;
+
+        // Derating per NEC 220.82(B)
+        const first10k = Math.min(subtotalGeneral, 10000);
+        const remainder = Math.max(0, subtotalGeneral - 10000);
+        const deratedRemainder = remainder * 0.40;
+        const netGeneralVa = first10k + deratedRemainder;
+
+        // 4. EV Continuous Load at 125% per NEC 625
+        const evVa = evKw * 1000 * 1.25;
+
+        // 5. HVAC Load per NEC 220.82(C)
+        let hvacVa = 0;
+        if (hvac === 'heat_pump_10kw') {
+          hvacVa = 4320 + (10000 * 0.65); // 10,820 VA
+        } else if (hvac === 'heat_pump_15kw') {
+          hvacVa = 4320 + (15000 * 0.65); // 14,070 VA
+        } else if (hvac === 'heat_pump_5kw') {
+          hvacVa = 4320 + (5000 * 0.65); // 7,570 VA
+        } else if (hvac === 'electric_furnace_15kw') {
+          hvacVa = 15000 * 0.65; // 9,750 VA
+        } else if (hvac === 'ac_gas_heat') {
+          hvacVa = 5000; // largest of A/C or furnace blower
+        }
+
+        const totalVa = Math.round(netGeneralVa + evVa + hvacVa);
+        const totalAmps = totalVa / 240;
+
+        // Determine Service Rating & Conductors
+        let serviceRating = 200;
+        let cuGauge = "2/0 AWG Cu";
+        let alGauge = "4/0 AWG Al";
+
+        if (totalAmps <= 100) {
+          serviceRating = 100;
+          cuGauge = "#4 AWG Cu";
+          alGauge = "#2 AWG Al";
+        } else if (totalAmps <= 150) {
+          serviceRating = 150;
+          cuGauge = "#1 AWG Cu";
+          alGauge = "2/0 AWG Al";
+        } else if (totalAmps <= 200) {
+          serviceRating = 200;
+          cuGauge = "2/0 AWG Cu";
+          alGauge = "4/0 AWG Al";
+        } else if (totalAmps <= 300) {
+          serviceRating = 300;
+          cuGauge = "350 kcmil Cu";
+          alGauge = "500 kcmil Al";
+        } else {
+          serviceRating = 400;
+          cuGauge = "Parallel 3/0 AWG Cu (x2)";
+          alGauge = "Parallel 250 kcmil Al (x2)";
+        }
+
+        document.getElementById('disp-service_rating').innerText = serviceRating + ' Amperes';
+        document.getElementById('disp-total_demand').innerText = totalVa.toLocaleString() + ' VA (' + totalAmps.toFixed(1) + ' A)';
+        document.getElementById('disp-copper_gauge').innerText = cuGauge;
+        document.getElementById('disp-alum_gauge').innerText = alGauge;
+
+        document.getElementById('disp-derating-breakdown').innerHTML =
+          '<strong>NEC 220.82 Step-by-Step Proof:</strong><br>' +
+          '• General Lighting &amp; Appliances: ' + subtotalGeneral.toLocaleString() + ' VA raw<br>' +
+          '• Derated General Load: 10,000 VA + (40% of ' + Math.round(remainder).toLocaleString() + ' VA) = ' + Math.round(netGeneralVa).toLocaleString() + ' VA<br>' +
+          '• EV Charger (125% continuous duty): ' + Math.round(evVa).toLocaleString() + ' VA<br>' +
+          '• HVAC System (NEC 220.82(C)): ' + Math.round(hvacVa).toLocaleString() + ' VA<br>' +
+          '• Total Connected Demand: ' + totalVa.toLocaleString() + ' VA &divide; 240V = ' + totalAmps.toFixed(1) + ' Amps';
+      }
+
+      document.querySelectorAll('.omni-calc-input, .omni-calc-slider').forEach(function(el) {
+        const id = el.getAttribute('data-id');
+        el.addEventListener('input', function(e) {
+          if (id) setVal(id, e.target.value);
+          recalculate();
+        });
+        el.addEventListener('change', recalculate);
+      });
+
+      document.querySelectorAll('input[type="checkbox"]').forEach(function(el) {
+        el.addEventListener('change', recalculate);
+      });
+
+      recalculate();
+    })();
+  </script>
+</body>
+</html>
