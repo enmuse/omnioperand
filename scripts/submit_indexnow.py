@@ -13,7 +13,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
-INDEXNOW_KEY = "c0e86b9789ab41029472304859a8571f"
+INDEXNOW_KEY = "8a2f3e4b5c6d7e8f9a0b1c2d3e4f5a6b"
 HOST = "omnioperand.com"
 KEY_LOCATION = f"https://{HOST}/{INDEXNOW_KEY}.txt"
 

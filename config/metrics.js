@@ -6,9 +6,9 @@
 export const METRICS = {
   "solvers_count": 428,
   "mcp_tools_count": 429,
-  "calculators_count": 438,
+  "calculators_count": 443,
   "categories_count": 15,
-  "total_html_pages": 462,
+  "total_html_pages": 469,
   "sitemap_urls_count": 460,
   "category_breakdown": {
     "finance": 125,
@@ -27,10 +27,10 @@ export const METRICS = {
     "statistics": 4,
     "calculus": 2
   },
-  "last_updated": "2026-10-21T21:39:09Z"
+  "last_updated": "2026-10-22T15:20:41Z"
 };
 
 export const SOLVERS_COUNT = 428;
 export const MCP_TOOLS_COUNT = 429;
-export const CALCULATORS_COUNT = 438;
+export const CALCULATORS_COUNT = 443;
 export const CATEGORIES_COUNT = 15;
