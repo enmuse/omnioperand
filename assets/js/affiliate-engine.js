@@ -1,15 +1,33 @@
 /**
  * assets/js/affiliate-engine.js
- * OmniOperand Contextual Monetization & Affiliate Recommendation Engine
+ * OmniOperand Contextual Monetization & High-Intent Conversion Engine
  * Evaluates live calculation thresholds and dynamically injects high-intent partner CTAs.
- * Safeguards Core Web Vitals with CLS-prevented responsive ad containers.
+ * Safeguards Core Web Vitals with zero layout shift and verified nofollow sponsored links.
  */
 
 (function () {
   'use strict';
 
-  // Fallback inline partner config (ensures zero external latency or blocking)
+  // Inline verified partner configuration (zero external latency or blocking)
   const AFFILIATE_DATA = {
+    heloc: [
+      {
+        id: "heloc_rates",
+        type: "heloc_card",
+        url: "https://omnioperand.com/go/heloc-rates",
+        check: () => true
+      }
+    ],
+
+    construction: [
+      {
+        id: "contractor_dispatch",
+        type: "construction_dispatch",
+        url: "/dispatch/",
+        check: () => true
+      }
+    ],
+
     mortgage: [
       {
         id: "lending_tree",
@@ -71,27 +89,19 @@
 
     concrete_volume: [
       {
-        id: "ready_mix",
-        name: "Ready-Mix Dispatch",
-        badge: "Pro Contractor Tip",
-        headline: "Large Pour (>3 cu yds): Order Ready-Mix Delivery Instead of 150+ Bags",
-        cta: "Get Instant Concrete Truck Quote",
-        url: "https://www.homedepot.com/c/concrete_supplies?ref=omnioperand",
-        disclosure: "Hand-mixing more than 50 bags risks cold joints and structural failure.",
-        check: (inputs, res) => (res.cu_yards >= 3.0) || (res.bags_80lb >= 120)
+        id: "contractor_dispatch",
+        type: "construction_dispatch",
+        url: "/dispatch/",
+        check: () => true
       }
     ],
 
     roof_pitch: [
       {
-        id: "modernize_roofing",
-        name: "Modernize Home Services",
-        badge: "Vetted Roofers",
-        headline: "Compare Top Local Roofing Contractors & Material Warranties",
-        cta: "Get 3 Free Estimates",
-        url: "https://modernize.com/roofing?ref=omnioperand",
-        disclosure: "Free estimates with no obligation. All contractors are verified.",
-        check: (inputs, res) => true
+        id: "contractor_dispatch",
+        type: "construction_dispatch",
+        url: "/dispatch/",
+        check: () => true
       }
     ],
 
@@ -111,7 +121,6 @@
 
   class AffiliateEngine {
     constructor() {
-      this.activePartner = null;
       this.init();
     }
 
@@ -124,16 +133,16 @@
     }
 
     setup() {
-      this.setupAdPlaceholders();
       this.bindCalculatorTarget();
     }
 
     getCategoryFromPage() {
       const path = window.location.pathname.toLowerCase();
+      if (path.includes('heloc')) return 'heloc';
       if (path.includes('mortgage')) return 'mortgage';
       if (path.includes('auto-loan')) return 'auto_loan';
       if (path.includes('compound-interest') || path.includes('cagr')) return 'compound_interest';
-      if (path.includes('concrete')) return 'concrete_volume';
+      if (path.includes('/construction/') || path.includes('concrete') || path.includes('excavation') || path.includes('grading') || path.includes('retaining-wall') || path.includes('asphalt') || path.includes('deck') || path.includes('roofing') || path.includes('gravel') || path.includes('mulch') || path.includes('pavers')) return 'construction';
       if (path.includes('roof-pitch')) return 'roof_pitch';
       if (path.includes('geometry') || path.includes('shape') || path.includes('octagon')) return 'geometry';
       return null;
@@ -150,14 +159,49 @@
           }
         } catch (_) {}
       }
-      return list[0]; // fallback to first partner in category
+      return list[0];
     }
 
     injectPartnerCard(container, partner) {
       if (!container || !partner) return;
-      if (container.getAttribute('data-active-partner') === partner.id) return;
+      if (container.getAttribute('data-active-partner') === partner.id && container.children.length > 0) return;
 
       container.setAttribute('data-active-partner', partner.id);
+
+      if (partner.type === 'heloc_card') {
+        container.innerHTML = `
+<div class="contextual-action-card" style="background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.25); border-radius:10px; padding:1.25rem; margin-top:1.25rem;">
+  <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
+    <div>
+      <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:#38bdf8; font-weight:700; margin-bottom:0.25rem;">Verified Rate Comparison</div>
+      <div style="font-size:0.95rem; font-weight:700; color:#fff;">Compare Live HELOC Rates for Your $<span id="rec-draw-balance">75,000</span> Balance</div>
+      <div style="font-size:0.8rem; color:#94a3b8; margin-top:0.2rem;">Lending partners offer fixed-rate draw conversions with zero closing costs.</div>
+    </div>
+    <a href="${partner.url}" rel="nofollow sponsored" target="_blank" class="btn-primary" style="padding:0.6rem 1.25rem; font-size:0.88rem;">
+      View Top Rates →
+    </a>
+  </div>
+</div>`;
+        return;
+      }
+
+      if (partner.type === 'construction_dispatch') {
+        container.innerHTML = `
+<div class="contractor-dispatch-callout" style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.25); border-radius:10px; padding:1.25rem; margin-top:1.25rem;">
+  <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
+    <div>
+      <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:#34d399; font-weight:700; margin-bottom:0.25rem;">Equipment & Crew Dispatch</div>
+      <div style="font-size:0.95rem; font-weight:700; color:#fff;">Need Machine Execution for This Project?</div>
+      <div style="font-size:0.8rem; color:#94a3b8; margin-top:0.2rem;">Connect with verified regional equipment operators and heavy civil crews.</div>
+    </div>
+    <a href="${partner.url}" class="btn-secondary" style="padding:0.6rem 1.25rem; font-size:0.88rem; border-color:rgba(16,185,129,0.4); color:#6ee7b7;">
+      Request Local Crew Dispatch →
+    </a>
+  </div>
+</div>`;
+        return;
+      }
+
       container.innerHTML = `
         <div class="omni-affiliate-card">
           <div class="omni-affiliate-top">
@@ -166,7 +210,7 @@
           </div>
           <h4 class="omni-affiliate-headline">${partner.headline}</h4>
           <div class="omni-affiliate-action-row">
-            <a href="${partner.url}" target="_blank" rel="noopener sponsored" class="omni-affiliate-btn">
+            <a href="${partner.url}" target="_blank" rel="nofollow sponsored" class="omni-affiliate-btn">
               <span>${partner.cta}</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -188,65 +232,32 @@
       const target = document.getElementById('affiliate-recommendation-target');
       if (target) {
         this.injectPartnerCard(target, partner);
+
+        // Update dynamic balance if present
+        const balanceEl = document.getElementById('rec-draw-balance');
+        if (balanceEl) {
+          const val = inputs.line_amount || inputs.principal || document.getElementById('param-line_amount')?.value;
+          if (val) {
+            const num = parseFloat(String(val).replace(/[^0-9.-]+/g, ''));
+            if (!isNaN(num)) {
+              balanceEl.innerText = Math.round(num).toLocaleString();
+            }
+          }
+        }
       }
     }
 
     bindCalculatorTarget() {
-      // Run initial check
       this.evaluate();
 
-      // Listen for custom calculation events if fired by solvers
       window.addEventListener('omni:calculated', (e) => {
         if (e.detail) {
           this.evaluate(e.detail.inputs || {}, e.detail.results || {});
         }
       });
     }
-
-    // CLS-Safe Ad Slot Placeholders
-    setupAdPlaceholders() {
-      const adSlots = document.querySelectorAll('.omni-ad-slot');
-      if (!adSlots || adSlots.length === 0) return;
-
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const slot = entry.target;
-              observer.unobserve(slot);
-              this.hydrateAdSlot(slot);
-            }
-          });
-        }, { rootMargin: '200px' });
-
-        adSlots.forEach(slot => observer.observe(slot));
-      } else {
-        adSlots.forEach(slot => this.hydrateAdSlot(slot));
-      }
-    }
-
-    hydrateAdSlot(slot) {
-      // If ad script is not present, fall back to house promo / affiliate partner
-      const cat = this.getCategoryFromPage() || 'geometry';
-      const partner = this.findMatchingPartner(cat) || AFFILIATE_DATA.geometry[0];
-
-      if (!slot.querySelector('.omni-affiliate-card') && !slot.hasAttribute('data-ad-filled')) {
-        slot.setAttribute('data-ad-filled', 'true');
-        slot.innerHTML = `
-          <div class="omni-ad-fallback">
-            <span class="omni-ad-tag">SPONSORED PARTNER</span>
-            <div class="omni-ad-fallback-content">
-              <strong>${partner.name}:</strong> ${partner.headline}
-            </div>
-            <a href="${partner.url}" target="_blank" rel="noopener sponsored" class="omni-ad-fallback-cta">
-              ${partner.cta} →
-            </a>
-          </div>
-        `;
-      }
-    }
   }
 
-  // Instantiate globally
+  // Global instantiate
   window.OmniAffiliateEngine = new AffiliateEngine();
 })();

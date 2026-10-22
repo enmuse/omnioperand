@@ -16,3 +16,4 @@ __pycache__/
 # OS metadata
 .DS_Store
 Thumbs.db
+*.code-workspace

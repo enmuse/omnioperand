@@ -1,0 +1,4 @@
+# OmniOperand Aliases & Affiliate Routing
+/construction/concrete    /construction/concrete-slab/    301
+/construction/grading     /construction/excavation-trench/ 301
+/go/heloc-rates           https://www.lendingtree.com/mortgage/home-equity/ 302

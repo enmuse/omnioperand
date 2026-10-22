@@ -184,10 +184,7 @@
       </p>
     </section>
 
-    <!-- Top Leaderboard Ad Container with CLS Safeguard -->
-    <div class="omni-ad-slot omni-ad-leaderboard" data-ad-format="leaderboard"></div>
-
-    <!-- Master Solver Grid -->
+<!-- Master Solver Grid -->
     <div class="calculator-grid">
 
       <!-- Left Column: Input Parameters -->
@@ -287,7 +284,20 @@
           </div>
 
           <!-- Contextual Result-Driven Recommendation Target -->
-          <div id="affiliate-recommendation-target"></div>
+          <div id="affiliate-recommendation-target">
+            <div class="contextual-action-card" style="background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.25); border-radius:10px; padding:1.25rem; margin-top:1.25rem;">
+  <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
+    <div>
+      <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:#38bdf8; font-weight:700; margin-bottom:0.25rem;">Verified Rate Comparison</div>
+      <div style="font-size:0.95rem; font-weight:700; color:#fff;">Compare Live HELOC Rates for Your $<span id="rec-draw-balance">75,000</span> Balance</div>
+      <div style="font-size:0.8rem; color:#94a3b8; margin-top:0.2rem;">Lending partners offer fixed-rate draw conversions with zero closing costs.</div>
+    </div>
+    <a href="https://omnioperand.com/go/heloc-rates" rel="nofollow sponsored" target="_blank" class="btn-primary" style="padding:0.6rem 1.25rem; font-size:0.88rem;">
+      View Top Rates →
+    </a>
+  </div>
+</div>
+          </div>
         </div>
       </div>
 
@@ -353,10 +363,7 @@
 
     </div>
 
-    <!-- Mid-Page Rectangle Ad Slot with CLS Safeguard -->
-    <div class="omni-ad-slot omni-ad-rectangle" data-ad-format="rectangle"></div>
-
-    <!-- High-Intent FAQ Section -->
+<!-- High-Intent FAQ Section -->
     <section class="calc-faq-section" style="margin-top:3rem;">
       <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
       <div class="faq-list">
@@ -451,7 +458,12 @@
           setDisp('draw_payment', '$' + drawM.toFixed(2));
           setDisp('repay_payment', '$' + repayM.toFixed(2));
           setDisp('total_interest_draw', '$' + Math.round(totalDrawInt).toLocaleString());
-          setDisp('total_cost', '$' + Math.round(totalDrawInt + totalRepay).toLocaleString());
+                    setDisp('total_cost', '$' + Math.round(totalDrawInt + totalRepay).toLocaleString());
+
+          const recBalance = document.getElementById('rec-draw-balance');
+          if (recBalance) {
+            recBalance.innerText = Math.round(B).toLocaleString();
+          }
         
       }
 

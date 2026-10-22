@@ -204,9 +204,6 @@ def generate_calculator_page(calc):
       </p>
     </section>
 
-    <!-- Top Leaderboard Ad Container with CLS Safeguard -->
-    <div class="omni-ad-slot omni-ad-leaderboard" data-ad-format="leaderboard"></div>
-
     <!-- Master Solver Grid -->
     <div class="calculator-grid">
 
@@ -272,9 +269,6 @@ def generate_calculator_page(calc):
       </div>
 
     </div>
-
-    <!-- Mid-Page Rectangle Ad Slot with CLS Safeguard -->
-    <div class="omni-ad-slot omni-ad-rectangle" data-ad-format="rectangle"></div>
 
     <!-- High-Intent FAQ Section -->
     <section class="calc-faq-section" style="margin-top:3rem;">
@@ -465,15 +459,9 @@ def generate_hub_page(cat, hub_info, calcs_in_cat):
       {description}
     </p>
 
-    <!-- Top Leaderboard Ad Container with CLS Safeguard -->
-    <div class="omni-ad-slot omni-ad-leaderboard" data-ad-format="leaderboard"></div>
-
     <div class="hub-grid" style="margin-top:2rem;">
       {"".join(cards_html)}
     </div>
-
-    <!-- Mid-Page Rectangle Ad Slot with CLS Safeguard -->
-    <div class="omni-ad-slot omni-ad-rectangle" data-ad-format="rectangle"></div>
   </main>
 
   <footer class="site-footer">
