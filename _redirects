@@ -1,4 +1,10 @@
 # OmniOperand Aliases & Affiliate Routing
-/construction/concrete    /construction/concrete-slab/    301
-/construction/grading     /construction/excavation-trench/ 301
-/go/heloc-rates           https://www.lendingtree.com/home-equity/heloc/  302!
+/it/ingegneria/dimensionamento-gruppo-elettrogeno/  /it/ingegneria/dimensionamento-gruppo-elettrogeno/index.html 200
+/it/ingegneria/dimensionamento-gruppo-elettrogeno   /it/ingegneria/dimensionamento-gruppo-elettrogeno/           301
+/construction/concrete-slab/                       /construction/concrete-volume/                               301
+/construction/concrete                             /construction/concrete-volume/                               301
+/construction/generator-sizing/                    /engineering/generator-sizing/                               301
+/energy/wire-gauge-voltage-drop/                    /engineering/wire-gauge-voltage-drop/                        301
+/energy/battery-backup-storage/                     /engineering/battery-backup-storage/                         301
+/construction/grading                              /construction/excavation-trench/                             301
+/go/heloc-rates                                    https://www.lendingtree.com/home-equity/heloc/               302!

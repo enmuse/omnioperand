@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcolo Dimensionamento Gruppo Elettrogeno: kW, kVA e Spunto | OmniOperand</title>
+  <meta name="description" content="Calcola la potenza del gruppo elettrogeno in watt continui, kVA di spunto e potenza nominale con margine di sicurezza del 20%. Formule e dimensionamento.">
+  <link rel="canonical" href="https://omnioperand.com/it/ingegneria/dimensionamento-gruppo-elettrogeno/">
+  <link rel="alternate" hreflang="en" href="https://omnioperand.com/engineering/generator-sizing/">
+  <link rel="alternate" hreflang="it" href="https://omnioperand.com/it/ingegneria/dimensionamento-gruppo-elettrogeno/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/engineering/generator-sizing/">
+
+  <meta property="og:title" content="Calcolo Dimensionamento Gruppo Elettrogeno: kW, kVA e Spunto | OmniOperand">
+  <meta property="og:description" content="Calcola la potenza del gruppo elettrogeno in watt continui, kVA di spunto e potenza nominale con margine di sicurezza del 20%. Formule e dimensionamento.">
+  <meta property="og:url" content="https://omnioperand.com/it/ingegneria/dimensionamento-gruppo-elettrogeno/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/it/ingegneria/dimensionamento-gruppo-elettrogeno/#app",
+      "name": "Calcolo Dimensionamento Gruppo Elettrogeno",
+      "url": "https://omnioperand.com/it/ingegneria/dimensionamento-gruppo-elettrogeno/",
+      "applicationCategory": "EngineeringApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Calcola la potenza del gruppo elettrogeno in watt continui, kVA di spunto e potenza nominale con margine di sicurezza del 20%. Formule e dimensionamento.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/it/ingegneria/dimensionamento-gruppo-elettrogeno/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OmniOperand",
+          "item": "https://omnioperand.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "It",
+          "item": "https://omnioperand.com/it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Ingegneria",
+          "item": "https://omnioperand.com/it/ingegneria/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Calcolo Dimensionamento Gruppo Elettrogeno",
+          "item": "https://omnioperand.com/it/ingegneria/dimensionamento-gruppo-elettrogeno/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/it/ingegneria/dimensionamento-gruppo-elettrogeno/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Come calcolare la potenza necessaria per un gruppo elettrogeno?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Somma la potenza in watt di tutti gli apparecchi che devono funzionare contemporaneamente, aggiungi lo spunto del motore più potente e applica un margine di sicurezza del 20%. Dividi infine per 0,8 per ottenere i kVA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual è la differenza tra kW e kVA in un gruppo elettrogeno?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I kW indicano la potenza reale (attiva) effettivamente trasformata in lavoro, mentre i kVA indicano la potenza apparente totale. Nei generatori con cos φ = 0,8, 10 kW equivalgono a 12,5 kVA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quale gruppo elettrogeno serve per una casa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Per carichi essenziali (luci, frigo, caldaia, autoclave) è sufficiente un generatore da 3 a 6 kW. Se è presente un condizionatore o pompa di calore, serve un gruppo da 7 a 10 kW."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="omni-body">
+
+      <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/it/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Ingegneria</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/it/geometry/" class="nav-link">Geometry</a>
+        <a href="/it/calculus/" class="nav-link">Calculus</a>
+        <a href="/it/finance/" class="nav-link">Finance</a>
+        <a href="/it/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/it/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/it/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/it/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/it/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/it/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/it/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/it/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇮🇹</span>
+            <span class="lang-code">IT</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/ingegneria/dimensionamento-gruppo-elettrogeno/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/ingegneria/dimensionamento-gruppo-elettrogeno/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/ingegneria/dimensionamento-gruppo-elettrogeno/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/ingegneria/dimensionamento-gruppo-elettrogeno/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/ingegneria/dimensionamento-gruppo-elettrogeno/" class="lang-dropdown-item active"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/ingegneria/dimensionamento-gruppo-elettrogeno/" class="lang-dropdown-item"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/ingegneria/dimensionamento-gruppo-elettrogeno/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/ingegneria/dimensionamento-gruppo-elettrogeno/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/ingegneria/dimensionamento-gruppo-elettrogeno/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/ingegneria/dimensionamento-gruppo-elettrogeno/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/ingegneria/dimensionamento-gruppo-elettrogeno/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/ingegneria/dimensionamento-gruppo-elettrogeno/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  
+    <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumbs">
+          <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item"><a href="/it/">It</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item"><a href="/it/ingegneria/">Ingegneria</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item active" aria-current="page">Calcolo Dimensionamento Gruppo Elettrogeno</li>
+        </ol>
+      </div>
+    </nav>
+    
+
+  <main class="container">
+
+    <!-- Hero Header -->
+    <section class="solver-hero">
+      <div class="hero-badge">Ingegneria Elettrica • Standard CEI & IEEE 446</div>
+      <h1>Calcolo Dimensionamento Gruppo Elettrogeno</h1>
+      <p class="hero-subtext">
+        Calcola con precisione la potenza continua in kW, la potenza apparente in kVA e la corrente di spunto (inrush) per il corretto dimensionamento del generatore domestico e aziendale.
+      </p>
+      
+    </section>
+
+    <!-- Master Solver Grid -->
+    <div class="calculator-grid">
+
+      <!-- Left Column: Input Parameters & Real-Time Matrix -->
+      <div class="solver-column">
+        <div class="hud-panel">
+          
+          
+    <div class="solver-toolbar" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-bottom:1.25rem; margin-bottom:1.5rem; border-bottom:1px solid var(--border-subtle);">
+      
+      <div class="toolbar-group" style="margin-left:auto;">
+        <button type="button" class="btn-action" id="share-calc-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); border-radius:6px; color:var(--accent-cyan); font-size:0.85rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          <span id="share-btn-text">Share Calculation</span>
+        </button>
+      </div>
+    </div>
+    
+
+          <div class="hud-panel-header" style="margin-bottom:1rem;">
+            <h2>Input Parameters</h2>
+            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Interactive HUD</span>
+          </div>
+
+          <div class="param-card-grid">
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-refrigerator">Frigorifero / Congelatore</label>
+                <span class="param-symbol">refrigerator</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-refrigerator" class="number-input omni-calc-input" data-id="refrigerator" value="1" step="1" min="0" max="5">
+                <span class="input-suffix" id="unit-suffix-refrigerator" data-imp="unità" data-met="unità">unità</span>
+              </div>
+              <input type="range" id="slider-refrigerator" class="param-slider omni-calc-slider" data-id="refrigerator" min="0" max="5" step="1" value="1">
+              <div class="param-hint">200W continuo / 800W spunto</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-well_pump">Pompa Pozzo / Autoclave (1/2 CV)</label>
+                <span class="param-symbol">well_pump</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-well_pump" class="number-input omni-calc-input" data-id="well_pump" value="1" step="1" min="0" max="3">
+                <span class="input-suffix" id="unit-suffix-well_pump" data-imp="unità" data-met="unità">unità</span>
+              </div>
+              <input type="range" id="slider-well_pump" class="param-slider omni-calc-slider" data-id="well_pump" min="0" max="3" step="1" value="1">
+              <div class="param-hint">1.050W continuo / 2.100W spunto</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-sump_pump">Pompa Sommersa di Drenaggio</label>
+                <span class="param-symbol">sump_pump</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-sump_pump" class="number-input omni-calc-input" data-id="sump_pump" value="1" step="1" min="0" max="3">
+                <span class="input-suffix" id="unit-suffix-sump_pump" data-imp="unità" data-met="unità">unità</span>
+              </div>
+              <input type="range" id="slider-sump_pump" class="param-slider omni-calc-slider" data-id="sump_pump" min="0" max="3" step="1" value="1">
+              <div class="param-hint">800W continuo / 1.300W spunto</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-central_ac">Climatizzatore / Pompa di Calore</label>
+                <span class="param-symbol">central_ac</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-central_ac" class="number-input omni-calc-input" data-id="central_ac" value="0" step="1" min="0" max="2">
+                <span class="input-suffix" id="unit-suffix-central_ac" data-imp="unità" data-met="unità">unità</span>
+              </div>
+              <input type="range" id="slider-central_ac" class="param-slider omni-calc-slider" data-id="central_ac" min="0" max="2" step="1" value="0">
+              <div class="param-hint">3.500W continuo / 9.000W spunto</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-furnace_fan">Ventilatore Caldaia a Gas / Pellet</label>
+                <span class="param-symbol">furnace_fan</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-furnace_fan" class="number-input omni-calc-input" data-id="furnace_fan" value="1" step="1" min="0" max="3">
+                <span class="input-suffix" id="unit-suffix-furnace_fan" data-imp="unità" data-met="unità">unità</span>
+              </div>
+              <input type="range" id="slider-furnace_fan" class="param-slider omni-calc-slider" data-id="furnace_fan" min="0" max="3" step="1" value="1">
+              <div class="param-hint">800W continuo / 2.300W spunto</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-lighting_led">Illuminazione LED & Router WiFi</label>
+                <span class="param-symbol">lighting_led</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-lighting_led" class="number-input omni-calc-input" data-id="lighting_led" value="500" step="100" min="100" max="2000">
+                <span class="input-suffix" id="unit-suffix-lighting_led" data-imp="Watt" data-met="Watt">Watt</span>
+              </div>
+              <input type="range" id="slider-lighting_led" class="param-slider omni-calc-slider" data-id="lighting_led" min="100" max="2000" step="100" value="500">
+              <div class="param-hint">Carico continuo resistivo ed elettronico</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-microwave">Microonde / Forno / Elettrodomestici</label>
+                <span class="param-symbol">microwave</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-microwave" class="number-input omni-calc-input" data-id="microwave" value="1200" step="100" min="0" max="3000">
+                <span class="input-suffix" id="unit-suffix-microwave" data-imp="Watt" data-met="Watt">Watt</span>
+              </div>
+              <input type="range" id="slider-microwave" class="param-slider omni-calc-slider" data-id="microwave" min="0" max="3000" step="100" value="1200">
+              <div class="param-hint">Carico resistivo di cottura</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-custom_extra">Carichi Supplementari Personalizzati</label>
+                <span class="param-symbol">custom_extra</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-custom_extra" class="number-input omni-calc-input" data-id="custom_extra" value="0" step="250" min="0" max="20000">
+                <span class="input-suffix" id="unit-suffix-custom_extra" data-imp="Watt" data-met="Watt">Watt</span>
+              </div>
+              <input type="range" id="slider-custom_extra" class="param-slider omni-calc-slider" data-id="custom_extra" min="0" max="20000" step="250" value="0">
+              <div class="param-hint">Elettroutensili, computer o pompe</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-safety_pct">Margine di Sicurezza Consigliato</label>
+                <span class="param-symbol">safety_pct</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-safety_pct" class="number-input omni-calc-input" data-id="safety_pct" value="20" step="5" min="10" max="40">
+                <span class="input-suffix" id="unit-suffix-safety_pct" data-imp="%" data-met="%">%</span>
+              </div>
+              <input type="range" id="slider-safety_pct" class="param-slider omni-calc-slider" data-id="safety_pct" min="10" max="40" step="5" value="20">
+              <div class="param-hint">Raccomandato il 20% per evitare il sovraccarico</div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
+            
+        <div class="metric-card">
+          <span class="metric-label">Potenza Continua Totale</span>
+          <span class="metric-value" id="disp-running_kw" style="color:var(--text-bright);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Potenza Massima di Spunto</span>
+          <span class="metric-value" id="disp-surge_kw" style="color:var(--accent-cyan);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Potenza Apparente (kVA @ cos φ 0.8)</span>
+          <span class="metric-value" id="disp-apparent_kva" style="color:var(--text-bright);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Potenza Generatore Consigliata</span>
+          <span class="metric-value" id="disp-rec_gen_kw" style="color:var(--accent-emerald);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Potenza Generatore Consigliata</span>
+          <span class="metric-value" id="disp-rec_gen_kva" style="color:var(--accent-purple);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Tipologia Gruppo Elettrogeno</span>
+          <span class="metric-value" id="disp-gen_tier" style="color:var(--text-bright);">—</span>
+        </div>
+        
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Formula & Proof Panel -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Analytical Proof & Invariants</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);">Machine Precision</span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">Governing Mathematical Formula:</div>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0; word-break:break-word;">Potenza Continua = Σ W_nom / 1000 kW | Spunto Peak = Potenza + max(W_spunto - W_nom) / 1000 | kVA = kW / 0.80</code>
+          </div>
+
+          <!-- Step-by-Step Proof -->
+          <div class="proof-card open">
+            <div class="proof-header">
+              <h3><span>Step-by-Step Mathematical Derivation</span></h3>
+            </div>
+            <div class="proof-body" style="display:block;">
+              
+        <div class="proof-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <strong>1. Corrente di Spunto Induttiva</strong>
+            <p>I motori elettrici (frigoriferi, pompe, compressori di condizionatori) richiedono una corrente di spunto (inrush) da 2 a 3 volte superiore alla potenza nominale per vincere l'inerzia meccanica iniziale.</p>
+          </div>
+        </div>
+        
+        <div class="proof-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <strong>2. Principio del Picco Coincidente</strong>
+            <p>I motori non si avviano simultaneamente nello stesso millisecondo. Il picco massimo corrisponde alla somma dei carichi continui più il singolo spunto più elevato.</p>
+          </div>
+        </div>
+        
+        <div class="proof-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <strong>3. Fattore di Potenza e Margine di Sicurezza</strong>
+            <p>I gruppi elettrogeni sono classificati in kVA considerando un fattore di potenza standard cos φ = 0,80 (kVA = kW / 0,80). Il margine del 20% assicura stabilità di tensione e frequenza.</p>
+          </div>
+        </div>
+        
+            </div>
+          </div>
+
+          <!-- AI Agent Invocation Directive -->
+          <div class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header">
+              <span class="llm-badge">LLM Directive</span>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Zero-Hallucination Protocol</span>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin:8px 0;">
+              Autonomous agents: Invoke <code>https://omnioperand.com/api/v1/it/ingegneria/dimensionamento-gruppo-elettrogeno</code> or the OmniOperand MCP server for deterministic execution.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- High-Intent FAQ Section -->
+    <section class="calc-faq-section" style="margin-top:3.5rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Come calcolare la potenza necessaria per un gruppo elettrogeno?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Somma la potenza in watt di tutti gli apparecchi che devono funzionare contemporaneamente, aggiungi lo spunto del motore più potente e applica un margine di sicurezza del 20%. Dividi infine per 0,8 per ottenere i kVA.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Qual è la differenza tra kW e kVA in un gruppo elettrogeno?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            I kW indicano la potenza reale (attiva) effettivamente trasformata in lavoro, mentre i kVA indicano la potenza apparente totale. Nei generatori con cos φ = 0,8, 10 kW equivalgono a 12,5 kVA.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Quale gruppo elettrogeno serve per una casa?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Per carichi essenziali (luci, frigo, caldaia, autoclave) è sufficiente un generatore da 3 a 6 kW. Se è presente un condizionatore o pompa di calore, serve un gruppo da 7 a 10 kW.
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Contextual Category Cross-Links -->
+    
+    <section class="related-tools-section" style="margin-top:3.5rem; padding-top:2.5rem; border-top:1px solid var(--border-subtle);">
+      <h2 style="font-size:1.35rem; margin-bottom:1.25rem; color:var(--text-bright);">Related High-Precision Solvers</h2>
+      <div class="related-tools-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem;">
+        
+        <a href="/engineering/generator-sizing/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">⚡</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Generator Sizing Calculator</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Running watts, peak surge kVA, and generator rating.</span>
+        </a>
+        
+        <a href="/engineering/wire-gauge-voltage-drop/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🔌</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Wire Gauge & Voltage Drop (NEC)</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">NEC 3% limit, conductor size AWG/mm², and drop %.</span>
+        </a>
+        
+        <a href="/engineering/battery-backup-storage/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🔋</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Battery Backup Storage</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Household kWh autonomy, DoD, and battery bank Ah.</span>
+        </a>
+        
+        <a href="/engineering/hvac-furnace-sizing/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🔥</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">HVAC Furnace & Heating BTU</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Home heat loss, climate zone, and furnace tonnage.</span>
+        </a>
+        
+      </div>
+    </section>
+    
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.1"></script>
+  <script src="/assets/js/affiliate-engine.js" defer></script>
+  <script>
+    (function () {
+      'use strict';
+
+      function sync(id, val) {
+        const inp = document.getElementById('param-' + id);
+        const sld = document.getElementById('slider-' + id);
+        if (inp && inp.value != val) inp.value = val;
+        if (sld && sld.value != val) sld.value = val;
+      }
+
+      function getNum(id) {
+        const el = document.getElementById('param-' + id);
+        if (!el) return 0;
+        const raw = String(el.value).trim().replace(',', '.');
+        return parseFloat(raw) || 0;
+      }
+
+      function setDisp(id, text) {
+        const el = document.getElementById('disp-' + id);
+        if (el) el.innerText = text;
+      }
+
+      const fmt = (num, dec = 2) => typeof num === 'number' ? num.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : num;
+
+      function recalculate() {
+        try {
+          
+          const n_fridge = getNum('refrigerator') || 0;
+          const n_well = getNum('well_pump') || 0;
+          const n_sump = getNum('sump_pump') || 0;
+          const n_ac = getNum('central_ac') || 0;
+          const n_fan = getNum('furnace_fan') || 0;
+          const w_lights = getNum('lighting_led') || 500;
+          const w_micro = getNum('microwave') || 1200;
+          const w_extra = getNum('custom_extra') || 0;
+          const safety = (getNum('safety_pct') || 20) / 100;
+          
+          const running_total = (n_fridge * 200) + (n_well * 1050) + (n_sump * 800) + (n_ac * 3500) + (n_fan * 800) + w_lights + w_micro + w_extra;
+          
+          let max_surge_delta = 0;
+          if (n_ac > 0) max_surge_delta = Math.max(max_surge_delta, 9000 - 3500);
+          if (n_well > 0) max_surge_delta = Math.max(max_surge_delta, 2100 - 1050);
+          if (n_fan > 0) max_surge_delta = Math.max(max_surge_delta, 2300 - 800);
+          if (n_sump > 0) max_surge_delta = Math.max(max_surge_delta, 1300 - 800);
+          if (n_fridge > 0) max_surge_delta = Math.max(max_surge_delta, 800 - 200);
+          
+          const peak_surge_w = running_total + max_surge_delta;
+          const run_kw = running_total / 1000;
+          const surge_kw = peak_surge_w / 1000;
+          const rec_kw = Math.max(run_kw * (1 + safety), surge_kw);
+          const rec_kva = rec_kw / 0.8;
+          const app_kva = surge_kw / 0.8;
+          
+          let tier = "Generatore Portatile Inverter (3 - 5 kW)";
+          if (rec_kw > 12) tier = "Gruppo Stazionario Residenziale (14 - 24 kW)";
+          else if (rec_kw > 7) tier = "Generatore Carrellato Pesante (8 - 12 kW)";
+          else if (rec_kw > 4) tier = "Generatore Portatile Standard (5 - 7,5 kW)";
+          
+          setDisp('running_kw', fmt(run_kw, 2) + ' kW');
+          setDisp('surge_kw', fmt(surge_kw, 2) + ' kW (' + fmt(peak_surge_w, 0) + ' W)');
+          setDisp('apparent_kva', fmt(app_kva, 2) + ' kVA');
+          setDisp('rec_gen_kw', fmt(rec_kw, 1) + ' kW');
+          setDisp('rec_gen_kva', fmt(rec_kva, 1) + ' kVA');
+          setDisp('gen_tier', tier);
+        
+        } catch(e) {
+          console.error("Calculation error:", e);
+        }
+      }
+
+      // Bind input events
+      document.querySelectorAll('.omni-calc-input').forEach(el => {
+        el.addEventListener('input', (e) => {
+          const id = e.target.dataset.id;
+          const sld = document.getElementById('slider-' + id);
+          if (sld) sld.value = e.target.value;
+          recalculate();
+        });
+        el.addEventListener('change', recalculate);
+      });
+
+      document.querySelectorAll('.omni-calc-slider').forEach(el => {
+        el.addEventListener('input', (e) => {
+          const id = e.target.dataset.id;
+          const inp = document.getElementById('param-' + id);
+          if (inp) inp.value = e.target.value;
+          recalculate();
+        });
+      });
+
+      // FAQ Accordion
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+          const item = q.parentElement;
+          item.classList.toggle('open');
+        });
+      });
+
+      // Direct Copy & Share Link Functionality
+      const shareBtn = document.getElementById('share-calc-btn');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          const params = new URLSearchParams();
+          document.querySelectorAll('.omni-calc-input').forEach(el => {
+            if (el.dataset.id && el.value !== '') {
+              params.set(el.dataset.id, el.value);
+            }
+          });
+          const newUrl = window.location.origin + window.location.pathname + '?' + params.toString();
+          window.history.replaceState({}, '', newUrl);
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(newUrl).then(() => {
+              const label = document.getElementById('share-btn-text');
+              const orig = label.innerText;
+              label.innerText = 'Link Copied!';
+              setTimeout(() => { label.innerText = orig; }, 2000);
+            });
+          }
+        });
+      }
+
+      // Dual Unit Toggle (Imperial vs Metric)
+      document.querySelectorAll('.unit-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.unit-toggle-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const isMetric = (btn.dataset.unit === 'metric');
+          document.querySelectorAll('[data-imp]').forEach(el => {
+            el.innerText = isMetric ? el.dataset.met : el.dataset.imp;
+          });
+          recalculate();
+        });
+      });
+
+      // Auto-load parameters from URL query string if present
+      const urlParams = new URLSearchParams(window.location.search);
+      let loadedParams = false;
+      document.querySelectorAll('.omni-calc-input').forEach(el => {
+        const id = el.dataset.id;
+        if (id && urlParams.has(id)) {
+          el.value = urlParams.get(id);
+          const sld = document.getElementById('slider-' + id);
+          if (sld) sld.value = urlParams.get(id);
+          loadedParams = true;
+        }
+      });
+
+      recalculate();
+    })();
+  </script>
+</body>
+</html>

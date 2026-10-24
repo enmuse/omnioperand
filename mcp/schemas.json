@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "OmniOperand Autonomous AI Tool Definitions",
-  "description": "Standardized tool definitions for all 429 deterministic calculators. Fully compatible with OpenAI Function Calling, Anthropic Claude Tool Use, and Model Context Protocol (MCP) clients.",
+  "description": "Standardized tool definitions for all 438 deterministic calculators. Fully compatible with OpenAI Function Calling, Anthropic Claude Tool Use, and Model Context Protocol (MCP) clients.",
   "version": "2.0.0",
-  "total_tools": 429,
+  "total_tools": 438,
   "tools": [
     {
       "name": "omni_octagon_solver",
@@ -13296,6 +13296,248 @@
         "required": [
           "median_lethal_dose_ld50",
           "median_effective_dose_ed50"
+        ]
+      }
+    },
+    {
+      "name": "omni_concrete_volume",
+      "description": "Concrete Volume Calculator. Calculate exact concrete volume in cubic yards and meters for slabs, footings, and columns with a 10% waste factor and bag yields. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "length_ft": {
+            "type": "number",
+            "default": 20,
+            "description": "Slab Length (ft) (ft). Length of slab"
+          },
+          "width_ft": {
+            "type": "number",
+            "default": 12,
+            "description": "Slab Width (ft) (ft). Width of slab"
+          },
+          "depth_in": {
+            "type": "number",
+            "default": 4,
+            "description": "Thickness / Depth (in) (in). Thickness of concrete slab"
+          }
+        },
+        "required": [
+          "length_ft",
+          "width_ft"
+        ]
+      }
+    },
+    {
+      "name": "omni_hvac_furnace_sizing",
+      "description": "HVAC Furnace & Heating BTU Calculator. Calculate required furnace heating capacity in BTUs and tons based on home square footage, climate zone, ceiling height, and insulation quality. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "home_sqft": {
+            "type": "number",
+            "default": 2000,
+            "description": "Conditioned Floor Area (sq ft) (sq ft). Heated square footage"
+          },
+          "ceil_height": {
+            "type": "number",
+            "default": 8,
+            "description": "Average Ceiling Height (ft) (ft). Ceiling height"
+          },
+          "base_btu": {
+            "type": "number",
+            "default": 40,
+            "description": "Climate Zone Base BTU (BTU/sqft). Climate heating factor"
+          }
+        },
+        "required": [
+          "home_sqft",
+          "ceil_height"
+        ]
+      }
+    },
+    {
+      "name": "omni_lean_to_roof_pitch",
+      "description": "Lean-To Roof Pitch & Rafter Calculator. Calculate lean-to shed roof pitch ratio (X:12), angle in degrees, true rafter length, plumb cuts, and total roof surface area. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "span_run": {
+            "type": "number",
+            "default": 12,
+            "description": "Horizontal Span (Run) (ft) (ft). Horizontal span"
+          },
+          "rise_h": {
+            "type": "number",
+            "default": 4,
+            "description": "Total Vertical Rise (ft) (ft). Vertical rise"
+          }
+        },
+        "required": [
+          "span_run",
+          "rise_h"
+        ]
+      }
+    },
+    {
+      "name": "omni_reverse_mortgage_hecm",
+      "description": "HECM Reverse Mortgage Calculator. Calculate FHA HECM reverse mortgage proceeds, Principal Limit Factors, and net line of credit without entering phone or email. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "borrower_age": {
+            "type": "number",
+            "default": 68,
+            "description": "Youngest Homeowner Age (62+) (years). Age of youngest borrower"
+          },
+          "home_value": {
+            "type": "number",
+            "default": 450000,
+            "description": "Appraised Home Value ($) ($). Home appraised value"
+          },
+          "current_mortgage": {
+            "type": "number",
+            "default": 65000,
+            "description": "Mortgage Balance to Pay Off ($) ($). Current mortgage balance"
+          }
+        },
+        "required": [
+          "borrower_age",
+          "home_value"
+        ]
+      }
+    },
+    {
+      "name": "omni_section_199a_qbi",
+      "description": "Section 199A QBI Calculator. Calculate your 20% IRS Section 199A QBI deduction, phase-out limits, W-2 wage caps, and SSTB limitations for pass-through entities. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "taxable_inc": {
+            "type": "number",
+            "default": 175000,
+            "description": "Taxable Income ($) ($). Line 15 of Form 1040"
+          },
+          "qbi_amount": {
+            "type": "number",
+            "default": 120000,
+            "description": "Qualified Business Income ($) ($). Net eligible business profit"
+          }
+        },
+        "required": [
+          "taxable_inc",
+          "qbi_amount"
+        ]
+      }
+    },
+    {
+      "name": "omni_equity_irr",
+      "description": "Equity IRR & Real Estate Return Calculator. Calculate levered equity Internal Rate of Return (IRR), Equity Multiple (MOIC), and Net Present Value for real estate syndications and private equity. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "init_equity": {
+            "type": "number",
+            "default": 250000,
+            "description": "Initial Equity Investment ($) ($). Initial equity contribution"
+          },
+          "cf_annual": {
+            "type": "number",
+            "default": 21000,
+            "description": "Average Annual Operating Cash Flow ($) ($). Annual cash distribution"
+          },
+          "exit_sale": {
+            "type": "number",
+            "default": 375000,
+            "description": "Net Exit Sale Capital Proceeds ($) ($). Net capital distribution upon sale"
+          }
+        },
+        "required": [
+          "init_equity",
+          "cf_annual"
+        ]
+      }
+    },
+    {
+      "name": "omni_qpcr_primer_tm",
+      "description": "qPCR Primer Tm & Annealing Calculator. Calculate exact qPCR and PCR primer melting temperature (Tm) using SantaLucia nearest-neighbor thermodynamics, salt correction, and GC content. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "primer_len": {
+            "type": "number",
+            "default": 20,
+            "description": "Primer Length (Nucleotides bp) (bp). Typical qPCR primer length is 18\u201322 bp"
+          },
+          "gc_count": {
+            "type": "number",
+            "default": 10,
+            "description": "Guanine & Cytosine (G+C) Count (bases). Number of G and C nucleotides in primer"
+          }
+        },
+        "required": [
+          "primer_len",
+          "gc_count"
+        ]
+      }
+    },
+    {
+      "name": "omni_navy_body_fat",
+      "description": "US Navy Body Fat Calculator. Calculate body fat percentage and lean mass using the official US Navy circumference formula (DoD standard). Free, instant calculation. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "height_in": {
+            "type": "number",
+            "default": 70,
+            "description": "Standing Height (in) (in). Height in inches"
+          },
+          "neck_in": {
+            "type": "number",
+            "default": 15.5,
+            "description": "Neck Circumference (in) (in). Below larynx"
+          },
+          "waist_in": {
+            "type": "number",
+            "default": 34,
+            "description": "Waist Circumference (in) (in). At navel level"
+          },
+          "weight_lbs": {
+            "type": "number",
+            "default": 185,
+            "description": "Total Body Weight (lbs) (lbs). Body scale weight"
+          }
+        },
+        "required": [
+          "height_in",
+          "neck_in"
+        ]
+      }
+    },
+    {
+      "name": "omni_cost_of_smoking",
+      "description": "Smoking Cost & Lifetime Wealth Calculator. Calculate annual smoking costs and lifetime compound investment wealth lost. Discover the 10, 20, and 30-year opportunity cost of smoking. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "packs_day": {
+            "type": "number",
+            "default": 1.0,
+            "description": "Packs Smoked Per Day (packs). 1 pack = 20 cigarettes"
+          },
+          "pack_cost": {
+            "type": "number",
+            "default": 9.5,
+            "description": "Price Per Pack ($) ($). Average pack price"
+          },
+          "return_pct": {
+            "type": "number",
+            "default": 7.5,
+            "description": "S&P 500 Expected Return (%) (%). Annual compounding rate"
+          }
+        },
+        "required": [
+          "packs_day",
+          "pack_cost"
         ]
       }
     }

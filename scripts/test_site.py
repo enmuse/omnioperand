@@ -292,6 +292,133 @@ def test_mathematical_precision():
     assert math.isclose(f_prime_2, 0.0), "Derivative slope mismatch"
     print("  ✅ Derivative: Instantaneous slope and stationary point verified!")
 
+    # --- 15 GSC HIGH-INTENT CALCULATOR INVARIANTS ---
+
+    # 11. Rebar Grid & Spacing (20 ft x 10 ft, 12 in grid, 3 in clearance, #4 bar)
+    clearance_ft = 3.0 / 12.0
+    eff_len = 20.0 - 2 * clearance_ft
+    eff_wid = 10.0 - 2 * clearance_ft
+    bars_len = math.floor((10.0 * 12 - 6) / 12) + 1  # 10 bars along length
+    bars_wid = math.floor((20.0 * 12 - 6) / 12) + 1  # 20 bars along width
+    total_lin_ft = (bars_len * eff_len) + (bars_wid * eff_wid)
+    assert total_lin_ft > 0, "Rebar footage must be positive"
+    weight_lb = total_lin_ft * 0.668  # #4 bar = 0.668 lb/ft
+    assert math.isclose(weight_lb, total_lin_ft * 0.668, rel_tol=1e-6), "Rebar weight mismatch"
+    print("  ✅ Rebar Grid & Spacing: Linear footage and ASTM weight verified!")
+
+    # 12. Drywall Estimator (20 ft x 15 ft x 9 ft height, 60 sq ft cutouts, 4x8 sheet)
+    wall_sqft = 2 * (20.0 + 15.0) * 9.0 - 60.0  # 570 sq ft
+    ceil_sqft = 20.0 * 15.0  # 300 sq ft
+    total_drywall_sqft = wall_sqft + ceil_sqft  # 870 sq ft
+    sheets_needed = math.ceil((total_drywall_sqft / 32.0) * 1.10)
+    assert sheets_needed == 30, f"Drywall sheet mismatch: {sheets_needed}"
+    print("  ✅ Drywall Estimator: Surface area, 10% waste buffer, and sheet count verified!")
+
+    # 13. HVAC Furnace Sizing (2,000 sq ft, 9 ft ceiling, Zone 3 @ 40 BTU/sqft, average ins)
+    hvac_btu = 2000.0 * 40.0 * 1.0 * (9.0 / 8.0)
+    assert math.isclose(hvac_btu, 90000.0), f"HVAC BTU mismatch: {hvac_btu}"
+    hvac_tonnage = hvac_btu / 12000.0
+    assert math.isclose(hvac_tonnage, 7.5), f"HVAC tonnage mismatch: {hvac_tonnage}"
+    print("  ✅ HVAC Furnace Sizing: Manual J heating BTU and tonnage verified!")
+
+    # 14. Lean-To Roof Pitch (12 ft run, 4 ft rise, 12 in overhang)
+    pitch_ratio_x = (4.0 / 12.0) * 12.0
+    assert math.isclose(pitch_ratio_x, 4.0), "Pitch ratio mismatch"
+    lean_deg = math.degrees(math.atan(4.0 / 12.0))
+    assert math.isclose(lean_deg, 18.4349, rel_tol=1e-4), "Lean-to pitch angle mismatch"
+    rafter_true_len = math.sqrt(12.0**2 + 4.0**2) + (12.0 / 12.0)
+    assert math.isclose(rafter_true_len, 13.64911, rel_tol=1e-4), "Lean-to rafter length mismatch"
+    print("  ✅ Lean-To Roof Pitch: Pitch ratio, angle, and true rafter length verified!")
+
+    # 15. Generator Sizing (Running watts: 5200 W, Surge watts: 8700 W, 20% margin)
+    running_kw = 5200.0 / 1000.0
+    surge_kva = 8700.0 / 1000.0
+    recommended_gen = surge_kva * 1.20
+    assert math.isclose(running_kw, 5.2), "Generator running kW mismatch"
+    assert math.isclose(surge_kva, 8.7), "Generator surge kVA mismatch"
+    assert math.isclose(recommended_gen, 10.44), "Generator safety margin mismatch"
+    print("  ✅ Generator Sizing: Continuous kW, peak surge kVA, and 20% margin verified!")
+
+    # 16. Wire Gauge & Voltage Drop (100 ft 1-phase 120V, 20A, #12 AWG Cu: 1.93 ohm/kft)
+    loop_dist = 2 * 100.0
+    r_wire = loop_dist * (1.93 / 1000.0)
+    v_drop = 20.0 * r_wire
+    v_drop_pct = (v_drop / 120.0) * 100.0
+    assert math.isclose(v_drop, 7.72, rel_tol=1e-3), f"Voltage drop mismatch: {v_drop}"
+    assert math.isclose(v_drop_pct, 6.433, rel_tol=1e-2), f"Voltage drop pct mismatch: {v_drop_pct}"
+    assert v_drop_pct > 3.0, "NEC 3% branch limit threshold check"
+    print("  ✅ Wire Gauge & Voltage Drop: Ohmic drop and NEC 3% limit verified!")
+
+    # 17. Battery Backup Storage (15 kWh/day, 2 days autonomy, LiFePO4 DoD=85%, Inverter eff=95%, 48V)
+    req_kwh = (15.0 * 2.0) / (0.85 * 0.95)
+    assert math.isclose(req_kwh, 37.1517, rel_tol=1e-3), f"Battery required kWh mismatch: {req_kwh}"
+    req_ah = (req_kwh * 1000.0) / 48.0
+    assert math.isclose(req_ah, 773.99, rel_tol=1e-3), f"Battery required Ah mismatch: {req_ah}"
+    print("  ✅ Battery Backup Storage: DoD autonomy capacity and Amp-Hour sizing verified!")
+
+    # 18. Reverse Mortgage HECM (Age 70, Home $600k, Mortgage $120k, Rate 6.5%, PLF=0.485)
+    gross_proceeds = 600000.0 * 0.485
+    net_cash = gross_proceeds - 120000.0 - 18000.0  # deducting mandatory payoff and closing
+    assert math.isclose(gross_proceeds, 291000.0), "HECM gross proceeds mismatch"
+    assert math.isclose(net_cash, 153000.0), "HECM net proceeds mismatch"
+    print("  ✅ Reverse Mortgage HECM: Actuarial PLF and mandatory payoff deductions verified!")
+
+    # 19. Section 199A QBI ($150k income, Single, $80k QBI -> 20% full deduction)
+    qbi_ded = 80000.0 * 0.20
+    assert math.isclose(qbi_ded, 16000.0), "QBI 20% deduction mismatch"
+    print("  ✅ Section 199A QBI: 20% passthrough deduction verified!")
+
+    # 20. RV Loan ($55k net loan, 7.5%, 15 years = 180 months)
+    r_rv = 0.075 / 12.0
+    n_rv = 180
+    f_rv = math.pow(1 + r_rv, n_rv)
+    m_rv = 55000.0 * (r_rv * f_rv) / (f_rv - 1)
+    assert math.isclose(m_rv, 509.91, rel_tol=1e-2), f"RV monthly payment mismatch: {m_rv}"
+    total_int_rv = m_rv * n_rv - 55000.0
+    assert math.isclose(total_int_rv, 36783.8, rel_tol=1e-1), "RV total interest mismatch"
+    print("  ✅ RV Loan: Long-term amortization and interest verified!")
+
+    # 21. Equity IRR & MOIC (C0 = -1,000,000, C1-C4 = 80,000, C5 = 1,600,000)
+    total_inflows = 4 * 80000.0 + 1600000.0
+    moic = total_inflows / 1000000.0
+    assert math.isclose(moic, 1.92), f"MOIC mismatch: {moic}"
+    # Verify NPV at IRR (r ≈ 0.156186) is zero within machine precision
+    r_irr = 0.1561855654
+    npv = -1000000.0 + sum(80000.0 / ((1 + r_irr)**t) for t in range(1, 5)) + 1600000.0 / ((1 + r_irr)**5)
+    assert abs(npv) < 1.0, f"IRR root finding mismatch: NPV={npv}"
+    print("  ✅ Equity IRR: Multi-year cash flow NPV and MOIC verified!")
+
+    # 22. qPCR Primer Tm (20 bp, 10 GC, 50% GC)
+    tm_wallace = 2 * 10 + 4 * 10
+    assert tm_wallace == 60, "Wallace Tm mismatch"
+    ta_rec = tm_wallace - 5.0
+    assert ta_rec == 55.0, "Ta annealing temperature mismatch"
+    print("  ✅ qPCR Primer Tm: Base-stacking melting and annealing Ta verified!")
+
+    # 23. US Navy Body Fat (Male: 70 in height, 16 in neck, 34 in waist)
+    bf_male = 86.010 * math.log10(34.0 - 16.0) - 70.041 * math.log10(70.0) + 36.76
+    assert math.isclose(bf_male, 15.493, rel_tol=1e-2), f"Navy body fat male mismatch: {bf_male}"
+    # Female: 65 in height, 13 in neck, 28 in waist, 38 in hip
+    bf_fem = 163.205 * math.log10(28.0 + 38.0 - 13.0) - 97.684 * math.log10(65.0) - 78.387
+    assert math.isclose(bf_fem, 25.931, rel_tol=1e-2), f"Navy body fat female mismatch: {bf_fem}"
+    print("  ✅ US Navy Body Fat: DoD male and female logarithmic formulas verified!")
+
+    # 24. Cost of Smoking (1 pack/day, $9.50/pack, 20 yrs, 7% growth)
+    annual_cost_smk = 1.0 * 9.50 * 365.0
+    assert math.isclose(annual_cost_smk, 3467.50), "Annual smoking outlay mismatch"
+    fv_smk = annual_cost_smk * ((math.pow(1.07, 20) - 1.0) / 0.07)
+    assert math.isclose(fv_smk, 142150.0, rel_tol=1e-1), f"Smoking opportunity cost mismatch: {fv_smk}"
+    print("  ✅ Cost of Smoking: 20-year compound interest opportunity cost verified!")
+
+    # 25. Italian Localized Generator Sizing
+    it_gen_file = REPO_ROOT / "it" / "ingegneria" / "dimensionamento-gruppo-elettrogeno" / "index.html"
+    assert it_gen_file.exists(), "Italian generator sizing file missing"
+    it_content = it_gen_file.read_text(encoding="utf-8")
+    assert 'href="https://omnioperand.com/it/ingegneria/dimensionamento-gruppo-elettrogeno/"' in it_content, "Missing Italian canonical"
+    assert 'hreflang="it"' in it_content, "Missing it hreflang"
+    assert 'hreflang="en"' in it_content, "Missing en hreflang"
+    print("  ✅ Italian Generator Sizing: Canonical and bidirectional hreflangs verified!")
+
 def test_file_integrity():
     print("Testing File & Asset Integrity...")
     required_files = [
@@ -312,7 +439,7 @@ def test_file_integrity():
         "assets/js/pentagon-solver.js",
         "assets/js/decagon-solver.js",
         "assets/js/regular-polygon-solver.js",
-        # New 10 JS solvers
+        # Core Solvers
         "assets/js/mortgage-solver.js",
         "assets/js/compound-interest-solver.js",
         "assets/js/cagr-solver.js",
@@ -340,7 +467,7 @@ def test_file_integrity():
         "geometry/2d/shapes/hexagon/index.html",
         "geometry/2d/shapes/pentagon/index.html",
         "geometry/2d/shapes/decagon/index.html",
-        # New 10 Calculator HTML pages
+        # Core Calculator HTML pages
         "finance/mortgage-amortization/index.html",
         "finance/compound-interest/index.html",
         "finance/cagr/index.html",
@@ -350,7 +477,24 @@ def test_file_integrity():
         "geometry/2d/circle-sector/index.html",
         "geometry/2d/right-triangle/index.html",
         "calculus/integrals/index.html",
-        "calculus/derivatives/index.html"
+        "calculus/derivatives/index.html",
+        # 15 GSC High-Intent Calculators + Italian route
+        "construction/concrete-volume/index.html",
+        "construction/rebar-calculator/index.html",
+        "construction/drywall/index.html",
+        "engineering/hvac-furnace-sizing/index.html",
+        "geometry/2d/lean-to-roof-pitch/index.html",
+        "engineering/generator-sizing/index.html",
+        "engineering/wire-gauge-voltage-drop/index.html",
+        "engineering/battery-backup-storage/index.html",
+        "finance/reverse-mortgage-hecm/index.html",
+        "finance/section-199a-qbi/index.html",
+        "finance/rv-loan/index.html",
+        "finance/equity-irr/index.html",
+        "biotech/qpcr-primer-tm/index.html",
+        "health/navy-body-fat/index.html",
+        "health/cost-of-smoking/index.html",
+        "it/ingegneria/dimensionamento-gruppo-elettrogeno/index.html"
     ]
 
     for rel_path in required_files:

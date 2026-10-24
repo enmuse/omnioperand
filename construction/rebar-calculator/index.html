@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Concrete Rebar Grid & Weight Calculator — High-Precision Solver | OmniOperand</title>
-  <meta name="description" content="Calculate rebar sticks, grid layout spacing, overlap splices, and steel weight for reinforced concrete slabs and footings.">
+  <title>Rebar Spacing & Weight Calculator: Slab Grid Estimator | OmniOperand</title>
+  <meta name="description" content="Calculate rebar grid spacing, total linear footage, bar count, total weight, and tie wire for concrete slabs. Supports #3 to #8 rebar sizes.">
   <link rel="canonical" href="https://omnioperand.com/construction/rebar-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/construction/rebar-calculator/">
 
-  <meta property="og:title" content="Concrete Rebar Grid & Weight Calculator | OmniOperand">
-  <meta property="og:description" content="Calculate rebar sticks, grid layout spacing, overlap splices, and steel weight for reinforced concrete slabs and footings.">
+  <meta property="og:title" content="Rebar Spacing & Weight Calculator: Slab Grid Estimator | OmniOperand">
+  <meta property="og:description" content="Calculate rebar grid spacing, total linear footage, bar count, total weight, and tie wire for concrete slabs. Supports #3 to #8 rebar sizes.">
   <meta property="og:url" content="https://omnioperand.com/construction/rebar-calculator/">
   <meta property="og:type" content="website">
 
@@ -24,12 +25,17 @@
     {
       "@type": "WebApplication",
       "@id": "https://omnioperand.com/construction/rebar-calculator/#app",
-      "name": "Concrete Rebar Grid & Weight Calculator",
+      "name": "Rebar Grid & Spacing Calculator",
       "url": "https://omnioperand.com/construction/rebar-calculator/",
       "applicationCategory": "ConstructionApplication",
       "operatingSystem": "All",
       "browserRequirements": "Requires JavaScript",
-      "description": "Calculate rebar sticks, grid layout spacing, overlap splices, and steel weight for reinforced concrete slabs and footings."
+      "description": "Calculate rebar grid spacing, total linear footage, bar count, total weight, and tie wire for concrete slabs. Supports #3 to #8 rebar sizes.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -50,7 +56,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Concrete Rebar Grid & Weight Calculator",
+          "name": "Rebar Grid & Spacing Calculator",
           "item": "https://omnioperand.com/construction/rebar-calculator/"
         }
       ]
@@ -61,18 +67,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What height should rebar be positioned inside a 4-inch concrete slab?",
+          "name": "What size rebar should be used for a 4-inch concrete slab?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Rebar must be positioned in the center or top third of the slab (approx. 2 inches off the subgrade) using plastic rebar chairs. Rebar laying flat on dirt provides zero structural reinforcement."
+            "text": "#4 rebar (1/2-inch nominal diameter, weighing 0.668 lbs per linear foot) spaced at 12 or 18 inches on center is the engineering gold standard for residential slabs and driveways."
           }
         },
         {
           "@type": "Question",
-          "name": "Why is rebar needed in a concrete slab?",
+          "name": "Why is 3 inches of edge clearance required for rebar?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Concrete has high compressive strength but poor tensile strength. Steel rebar resists bending and tensile loads, preventing slab cracking and separation during soil shifting or vehicle loads."
+            "text": "Concrete cover protects carbon steel rebar from water permeation and oxidation (rust). ACI 318 requires 3 inches of cover when concrete is poured directly against earth."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much tie wire do I need per ton of rebar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On average, tie wire usage is approximately 15 to 20 pounds of 16-gauge tie wire per ton of rebar, or roughly one 3-to-4 lb roll per 1,000 grid intersections."
           }
         }
       ]
@@ -83,7 +97,7 @@
 </head>
 <body class="omni-body">
 
-            <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+      <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
   <style id="omni-nav-dropdown-css">
     .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
     .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
@@ -201,99 +215,140 @@
     </div>
   </header>
 
-  <!-- Breadcrumbs -->
-  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
-    <div class="container">
-      <ol class="breadcrumbs">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-separator">/</li>
-        <li class="breadcrumb-item"><a href="/construction/">Construction</a></li>
-        <li class="breadcrumb-separator">/</li>
-        <li class="breadcrumb-item active" aria-current="page">Concrete Rebar Grid & Weight Calculator</li>
-      </ol>
-    </div>
-  </nav>
+  
+    <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumbs">
+          <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item"><a href="/construction/">Construction</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item active" aria-current="page">Rebar Grid & Spacing Calculator</li>
+        </ol>
+      </div>
+    </nav>
+    
 
   <main class="container">
 
     <!-- Hero Header -->
     <section class="solver-hero">
-      <div class="hero-badge">Reinforced Concrete • Rebar Grid Solver</div>
-      <h1>Concrete Rebar Grid & Weight Calculator</h1>
+      <div class="hero-badge">Structural Engineering • ACI 318 Standard</div>
+      <h1>Rebar Grid & Spacing Calculator</h1>
       <p class="hero-subtext">
-        Calculate rebar sticks, grid layout spacing, overlap splices, and steel weight for reinforced concrete slabs and footings.
+        Estimate reinforcement steel bar counts, total linear feet, total weight (lbs/kg), and tie-wire requirements across rectangular slab grids and mats.
       </p>
+      
     </section>
 
-<!-- Master Solver Grid -->
+    <!-- Master Solver Grid -->
     <div class="calculator-grid">
 
-      <!-- Left Column: Input Parameters -->
+      <!-- Left Column: Input Parameters & Real-Time Matrix -->
       <div class="solver-column">
         <div class="hud-panel">
-          <div class="hud-panel-header">
-            <h2>Parameters & Inversions</h2>
-            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Deterministic Engine</span>
+          
+          
+    <div class="solver-toolbar" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-bottom:1.25rem; margin-bottom:1.5rem; border-bottom:1px solid var(--border-subtle);">
+      
+        <div class="toolbar-group">
+          <span class="toolbar-label">Units:</span>
+          <div class="segmented-control" id="unit-toggle">
+            <button type="button" class="unit-toggle-btn active" data-unit="imperial">Imperial</button>
+            <button type="button" class="unit-toggle-btn" data-unit="metric">Metric (SI)</button>
+          </div>
+        </div>
+        
+      <div class="toolbar-group" style="margin-left:auto;">
+        <button type="button" class="btn-action" id="share-calc-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); border-radius:6px; color:var(--accent-cyan); font-size:0.85rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          <span id="share-btn-text">Share Calculation</span>
+        </button>
+      </div>
+    </div>
+    
+
+          <div class="hud-panel-header" style="margin-bottom:1rem;">
+            <h2>Input Parameters</h2>
+            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Interactive HUD</span>
           </div>
 
           <div class="param-card-grid">
             
             <div class="param-card">
               <div class="param-label-row">
-                <label for="param-slab_length">Slab Length</label>
-                <span class="param-symbol">slab_length</span>
+                <label for="param-slab_len">Slab Length</label>
+                <span class="param-symbol">slab_len</span>
               </div>
               <div class="input-unit-group">
-                
-                <input type="number" id="param-slab_length" class="number-input omni-calc-input" data-id="slab_length" value="30" step="1" min="2">
-                <span class="input-suffix">ft</span>
+                <input type="number" id="param-slab_len" class="number-input omni-calc-input" data-id="slab_len" value="24" step="1" min="2" max="200">
+                <span class="input-suffix" id="unit-suffix-slab_len" data-imp="ft" data-met="m">ft</span>
               </div>
-              <input type="range" id="slider-slab_length" class="param-slider omni-calc-slider" data-id="slab_length" min="2" max="200" step="1" value="30">
-              <div class="param-hint">Slab length in feet</div>
+              <input type="range" id="slider-slab_len" class="param-slider omni-calc-slider" data-id="slab_len" min="2" max="200" step="1" value="24">
+              <div class="param-hint">Long dimension of slab</div>
             </div>
-        
+            
             <div class="param-card">
               <div class="param-label-row">
-                <label for="param-slab_width">Slab Width</label>
-                <span class="param-symbol">slab_width</span>
+                <label for="param-slab_wid">Slab Width</label>
+                <span class="param-symbol">slab_wid</span>
               </div>
               <div class="input-unit-group">
-                
-                <input type="number" id="param-slab_width" class="number-input omni-calc-input" data-id="slab_width" value="20" step="1" min="2">
-                <span class="input-suffix">ft</span>
+                <input type="number" id="param-slab_wid" class="number-input omni-calc-input" data-id="slab_wid" value="24" step="1" min="2" max="200">
+                <span class="input-suffix" id="unit-suffix-slab_wid" data-imp="ft" data-met="m">ft</span>
               </div>
-              <input type="range" id="slider-slab_width" class="param-slider omni-calc-slider" data-id="slab_width" min="2" max="200" step="1" value="20">
-              <div class="param-hint">Slab width in feet</div>
+              <input type="range" id="slider-slab_wid" class="param-slider omni-calc-slider" data-id="slab_wid" min="2" max="200" step="1" value="24">
+              <div class="param-hint">Short dimension of slab</div>
             </div>
-        
+            
             <div class="param-card">
               <div class="param-label-row">
-                <label for="param-grid_spacing">Rebar Grid Spacing (On-Center)</label>
-                <span class="param-symbol">grid_spacing</span>
+                <label for="param-grid_space">Grid Center-to-Center Spacing</label>
+                <span class="param-symbol">grid_space</span>
               </div>
               <div class="input-unit-group">
-                
-                <input type="number" id="param-grid_spacing" class="number-input omni-calc-input" data-id="grid_spacing" value="18" step="2" min="6">
-                <span class="input-suffix">in</span>
+                <input type="number" id="param-grid_space" class="number-input omni-calc-input" data-id="grid_space" value="12" step="2" min="4" max="36">
+                <span class="input-suffix" id="unit-suffix-grid_space" data-imp="in" data-met="cm">in</span>
               </div>
-              <input type="range" id="slider-grid_spacing" class="param-slider omni-calc-slider" data-id="grid_spacing" min="6" max="36" step="2" value="18">
-              <div class="param-hint">12" to 18" typical for residential concrete slabs</div>
+              <input type="range" id="slider-grid_space" class="param-slider omni-calc-slider" data-id="grid_space" min="4" max="36" step="2" value="12">
+              <div class="param-hint">Common spacing is 12 in (30 cm) or 18 in (45 cm)</div>
             </div>
-        
+            
             <div class="param-card">
               <div class="param-label-row">
-                <label for="param-rebar_size">Rebar Bar Size (#3: 3/8", #4: 1/2", #5: 5/8")</label>
+                <label for="param-clearance">Edge Concrete Clearance</label>
+                <span class="param-symbol">clearance</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-clearance" class="number-input omni-calc-input" data-id="clearance" value="3" step="0.5" min="1" max="6">
+                <span class="input-suffix" id="unit-suffix-clearance" data-imp="in" data-met="cm">in</span>
+              </div>
+              <input type="range" id="slider-clearance" class="param-slider omni-calc-slider" data-id="clearance" min="1" max="6" step="0.5" value="3">
+              <div class="param-hint">Standard ACI edge clearance is 3 in (7.5 cm)</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-rebar_size">Rebar Bar Size</label>
                 <span class="param-symbol">rebar_size</span>
               </div>
               <div class="input-unit-group">
-                
-                <input type="number" id="param-rebar_size" class="number-input omni-calc-input" data-id="rebar_size" value="4" step="1" min="3">
-                
+                <select id="param-rebar_size" class="number-input omni-calc-input" data-id="rebar_size" style="width:100%; cursor:pointer;">
+                  <option value="3" >#3 (3/8 in • 0.376 lb/ft)</option><option value="4" selected>#4 (1/2 in • 0.668 lb/ft)</option><option value="5" >#5 (5/8 in • 1.043 lb/ft)</option><option value="6" >#6 (3/4 in • 1.502 lb/ft)</option><option value="8" >#8 (1 in • 2.670 lb/ft)</option>
+                </select>
               </div>
-              <input type="range" id="slider-rebar_size" class="param-slider omni-calc-slider" data-id="rebar_size" min="3" max="8" step="1" value="4">
-              <div class="param-hint">#4 rebar (1/2" diameter) is standard</div>
+              <div class="param-hint">Standard residential slabs use #4 rebar</div>
             </div>
-        
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-mats">Reinforcement Layers (Mats)</label>
+                <span class="param-symbol">mats</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-mats" class="number-input omni-calc-input" data-id="mats" value="1" step="1" min="1" max="2">
+                <span class="input-suffix" id="unit-suffix-mats" data-imp="mats" data-met="mats">mats</span>
+              </div>
+              <input type="range" id="slider-mats" class="param-slider omni-calc-slider" data-id="mats" min="1" max="2" step="1" value="1">
+              <div class="param-hint">1 for standard slabs, 2 for heavy commercial footings</div>
+            </div>
+            
           </div>
         </div>
 
@@ -302,42 +357,31 @@
           <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
           <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
             
-            <div class="metric-card">
-              <span class="metric-label">20-Foot Rebar Sticks</span>
-              <span class="metric-value" id="disp-rebar_sticks" style="color:var(--accent-cyan);">45 sticks (20 ft)</span>
-            </div>
+        <div class="metric-card">
+          <span class="metric-label">Total Rebar Linear Footage</span>
+          <span class="metric-value" id="disp-total_lin_ft" style="color:var(--accent-cyan);">—</span>
+        </div>
         
-            <div class="metric-card">
-              <span class="metric-label">Total Steel Linear Footage</span>
-              <span class="metric-value" id="disp-linear_feet" >880 linear ft</span>
-            </div>
+        <div class="metric-card">
+          <span class="metric-label">Standard 20-ft Rebar Stock Bars</span>
+          <span class="metric-value" id="disp-bars_20ft" style="color:var(--text-bright);">—</span>
+        </div>
         
-            <div class="metric-card">
-              <span class="metric-label">Total Steel Rebar Weight</span>
-              <span class="metric-value" id="disp-total_weight" >588 lbs (0.29 tons)</span>
-            </div>
+        <div class="metric-card">
+          <span class="metric-label">Total Reinforcement Weight</span>
+          <span class="metric-value" id="disp-total_weight" style="color:var(--accent-emerald);">—</span>
+        </div>
         
-            <div class="metric-card">
-              <span class="metric-label">Rebar Wire Ties Needed</span>
-              <span class="metric-value" id="disp-tie_wire" >308 intersection ties</span>
-            </div>
+        <div class="metric-card">
+          <span class="metric-label">Tie-Wire Intersections & Weight</span>
+          <span class="metric-value" id="disp-tie_wire" style="color:var(--text-bright);">—</span>
+        </div>
         
-          </div>
-
-          <!-- Contextual Result-Driven Recommendation Target -->
-          <div id="affiliate-recommendation-target">
-            <div class="contractor-dispatch-callout" style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.25); border-radius:10px; padding:1.25rem; margin-top:1.25rem;">
-  <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
-    <div>
-      <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:#34d399; font-weight:700; margin-bottom:0.25rem;">Equipment & Crew Dispatch</div>
-      <div style="font-size:0.95rem; font-weight:700; color:#fff;">Need Machine Execution for This Project?</div>
-      <div style="font-size:0.8rem; color:#94a3b8; margin-top:0.2rem;">Connect with verified regional equipment operators and heavy civil crews.</div>
-    </div>
-    <a href="/dispatch/" class="btn-secondary" style="padding:0.6rem 1.25rem; font-size:0.88rem; border-color:rgba(16,185,129,0.4); color:#6ee7b7;">
-      Request Local Crew Dispatch →
-    </a>
-  </div>
-</div>
+        <div class="metric-card">
+          <span class="metric-label">Recommended Lap Splice Length</span>
+          <span class="metric-value" id="disp-splice_len" style="color:var(--accent-purple);">—</span>
+        </div>
+        
           </div>
         </div>
       </div>
@@ -352,7 +396,7 @@
 
           <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
             <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">Governing Mathematical Formula:</div>
-            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0;">Linear Feet = [(Length / Spacing + 1) × Width] + [(Width / Spacing + 1) × Length]</code>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0; word-break:break-word;">N_bars = [ (Span - 2·Clearance) / Spacing ] + 1 | Weight = Total Linear Feet · (lb/ft)</code>
           </div>
 
           <!-- Step-by-Step Proof -->
@@ -362,29 +406,29 @@
             </div>
             <div class="proof-body" style="display:block;">
               
-          <div class="proof-step">
-            <div class="step-num">1</div>
-            <div class="step-content">
-              <strong>Bidirectional Orthogonal Grid Layout</strong>
-              <p>Number of lengthwise bars = ceil[(Width × 12) / Spacing] + 1. Number of widthwise bars = ceil[(Length × 12) / Spacing] + 1.</p>
-            </div>
+        <div class="proof-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <strong>1. Effective Grid Spans</strong>
+            <p>Subtract edge clearance from both sides: Clear Length = Length - 2·(Clearance/12), Clear Width = Width - 2·(Clearance/12).</p>
           </div>
+        </div>
         
-          <div class="proof-step">
-            <div class="step-num">2</div>
-            <div class="step-content">
-              <strong>Lap Splice and Edge Clearance Allowance</strong>
-              <p>ACI 318 requires a 30-bar-diameter lap splice (e.g. 15 inches for #4 rebar) whenever 20ft sticks are joined: Add 10% for lap splices.</p>
-            </div>
+        <div class="proof-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <strong>2. Bar Counts Along Axes</strong>
+            <p>Number of lengthwise bars = floor(Clear Width · 12 / Spacing) + 1. Number of crosswise bars = floor(Clear Length · 12 / Spacing) + 1.</p>
           </div>
+        </div>
         
-          <div class="proof-step">
-            <div class="step-num">3</div>
-            <div class="step-content">
-              <strong>ASTM Weight per Foot Specifications</strong>
-              <p>#3 rebar = 0.376 lbs/ft; #4 rebar = 0.668 lbs/ft; #5 rebar = 1.043 lbs/ft; #6 rebar = 1.502 lbs/ft.</p>
-            </div>
+        <div class="proof-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <strong>3. Splice Overlap & Unit Weights</strong>
+            <p>ACI 318 mandates a minimum lap splice of 30 to 40 bar diameters (typically 15 to 20 inches for #4 rebar). Add a 10% overlap allowance to total linear footage.</p>
           </div>
+        </div>
         
             </div>
           </div>
@@ -396,7 +440,7 @@
               <span style="font-size:0.75rem; color:var(--text-muted);">Zero-Hallucination Protocol</span>
             </div>
             <p style="font-size:0.85rem; color:var(--text-secondary); margin:8px 0;">
-              Autonomous agents: Invoke <code>https://omnioperand.com/api/v1/construction/rebar-calculator</code> or the OmniOperand MCP server for verified calculations.
+              Autonomous agents: Invoke <code>https://omnioperand.com/api/v1/construction/rebar-calculator</code> or the OmniOperand MCP server for deterministic execution.
             </p>
           </div>
         </div>
@@ -404,33 +448,77 @@
 
     </div>
 
-<!-- High-Intent FAQ Section -->
-    <section class="calc-faq-section" style="margin-top:3rem;">
+    <!-- High-Intent FAQ Section -->
+    <section class="calc-faq-section" style="margin-top:3.5rem;">
       <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
       <div class="faq-list">
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>What height should rebar be positioned inside a 4-inch concrete slab?</span>
+            <span>What size rebar should be used for a 4-inch concrete slab?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Rebar must be positioned in the center or top third of the slab (approx. 2 inches off the subgrade) using plastic rebar chairs. Rebar laying flat on dirt provides zero structural reinforcement.
+            #4 rebar (1/2-inch nominal diameter, weighing 0.668 lbs per linear foot) spaced at 12 or 18 inches on center is the engineering gold standard for residential slabs and driveways.
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>Why is rebar needed in a concrete slab?</span>
+            <span>Why is 3 inches of edge clearance required for rebar?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Concrete has high compressive strength but poor tensile strength. Steel rebar resists bending and tensile loads, preventing slab cracking and separation during soil shifting or vehicle loads.
+            Concrete cover protects carbon steel rebar from water permeation and oxidation (rust). ACI 318 requires 3 inches of cover when concrete is poured directly against earth.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How much tie wire do I need per ton of rebar?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            On average, tie wire usage is approximately 15 to 20 pounds of 16-gauge tie wire per ton of rebar, or roughly one 3-to-4 lb roll per 1,000 grid intersections.
           </div>
         </div>
         
       </div>
     </section>
+
+    <!-- Contextual Category Cross-Links -->
+    
+    <section class="related-tools-section" style="margin-top:3.5rem; padding-top:2.5rem; border-top:1px solid var(--border-subtle);">
+      <h2 style="font-size:1.35rem; margin-bottom:1.25rem; color:var(--text-bright);">Related High-Precision Solvers</h2>
+      <div class="related-tools-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem;">
+        
+        <a href="/construction/concrete-volume/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🧱</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Concrete Volume Calculator</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Slab, footing & column volume with 10% waste buffer.</span>
+        </a>
+        
+        <a href="/construction/drywall/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">📐</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Drywall & Mud Estimator</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Sheet count, joint compound buckets, and screws.</span>
+        </a>
+        
+        <a href="/geometry/2d/lean-to-roof-pitch/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🏠</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Lean-To Roof Pitch & Rafters</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">X:12 pitch ratio, rafter length, and plumb cuts.</span>
+        </a>
+        
+        <a href="/construction/paint-coverage/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🎨</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Paint Coverage Calculator</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Wall and ceiling surface area in gallons of paint.</span>
+        </a>
+        
+      </div>
+    </section>
+    
 
   </main>
 
@@ -467,7 +555,9 @@
 
       function getNum(id) {
         const el = document.getElementById('param-' + id);
-        return el ? (parseFloat(el.value) || 0) : 0;
+        if (!el) return 0;
+        const raw = String(el.value).trim().replace(',', '.');
+        return parseFloat(raw) || 0;
       }
 
       function setDisp(id, text) {
@@ -475,59 +565,124 @@
         if (el) el.innerText = text;
       }
 
-      function setMetric(id, text) {
-        setDisp(id, text);
-      }
-
-      const fact = (n) => { let r = 1; for (let i = 2; i <= n; i++) r *= i; return r; };
-      const nPr = (n, r) => (r < 0 || r > n) ? 0 : fact(n) / fact(n - r);
       const fmt = (num, dec = 2) => typeof num === 'number' ? num.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : num;
-      const acos = Math.acos;
-      const atan = Math.atan;
-      const cbrt = Math.cbrt;
 
       function recalculate() {
+        try {
+          
+          const l = getNum('slab_len') || 24;
+          const w = getNum('slab_wid') || 24;
+          const sp_in = getNum('grid_space') || 12;
+          const cl_in = getNum('clearance') || 3;
+          const mats = getNum('mats') || 1;
+          const size = document.getElementById('param-rebar_size').value;
+          
+          const weights = { "3": 0.376, "4": 0.668, "5": 1.043, "6": 1.502, "8": 2.670 };
+          const lb_ft = weights[size] || 0.668;
+          const bar_dia_in = (parseInt(size) || 4) / 8;
+          
+          const clear_l = Math.max(0, l - 2 * (cl_in / 12));
+          const clear_w = Math.max(0, w - 2 * (cl_in / 12));
+          
+          const n_l = Math.floor((clear_w * 12) / sp_in) + 1;
+          const n_w = Math.floor((clear_l * 12) / sp_in) + 1;
+          
+          const net_lin = (n_l * clear_l + n_w * clear_w) * mats;
+          const total_lin = net_lin * 1.10; // 10% splice buffer
+          const bars20 = Math.ceil(total_lin / 20);
+          const weight_lbs = total_lin * lb_ft;
+          const intersections = (n_l * n_w) * mats;
+          const wire_lbs = (intersections * 0.005);
+          const splice_in = Math.round(bar_dia_in * 36);
+          
+          setDisp('total_lin_ft', fmt(total_lin, 1) + ' ft');
+          setDisp('bars_20ft', bars20 + ' Bars (20 ft)');
+          setDisp('total_weight', fmt(weight_lbs, 1) + ' lbs (' + fmt(weight_lbs * 0.453592, 1) + ' kg)');
+          setDisp('tie_wire', intersections + ' Ties (~' + fmt(wire_lbs, 1) + ' lbs wire)');
+          setDisp('splice_len', splice_in + ' in (' + fmt(splice_in * 2.54, 0) + ' cm)');
         
-          const L = getNum('slab_length');
-          const W = getNum('slab_width');
-          const S = getNum('grid_spacing') || 18;
-          const bar = getNum('rebar_size') || 4;
-
-          const numLengthBars = Math.ceil((W * 12) / S) + 1;
-          const numWidthBars = Math.ceil((L * 12) / S) + 1;
-          const rawFeet = (numLengthBars * L) + (numWidthBars * W);
-          const totalFeet = rawFeet * 1.10; // 10% lap splice
-          const sticks = Math.ceil(totalFeet / 20);
-          const ties = numLengthBars * numWidthBars;
-
-          const weights = { 3: 0.376, 4: 0.668, 5: 1.043, 6: 1.502, 7: 2.044, 8: 2.670 };
-          const lbPerFt = weights[bar] || 0.668;
-          const totalLbs = totalFeet * lbPerFt;
-
-          setDisp('rebar_sticks', sticks + ' sticks (20 ft)');
-          setDisp('linear_feet', Math.round(totalFeet) + ' linear ft');
-          setDisp('total_weight', Math.round(totalLbs) + ' lbs (' + (totalLbs / 2000).toFixed(2) + ' tons)');
-          setDisp('tie_wire', ties + ' intersection ties');
-        
+        } catch(e) {
+          console.error("Calculation error:", e);
+        }
       }
 
       // Bind input events
-      document.querySelectorAll('.omni-calc-input, .omni-calc-slider').forEach(el => {
-        const id = el.getAttribute('data-id');
+      document.querySelectorAll('.omni-calc-input').forEach(el => {
         el.addEventListener('input', (e) => {
-          sync(id, e.target.value);
+          const id = e.target.dataset.id;
+          const sld = document.getElementById('slider-' + id);
+          if (sld) sld.value = e.target.value;
+          recalculate();
+        });
+        el.addEventListener('change', recalculate);
+      });
+
+      document.querySelectorAll('.omni-calc-slider').forEach(el => {
+        el.addEventListener('input', (e) => {
+          const id = e.target.dataset.id;
+          const inp = document.getElementById('param-' + id);
+          if (inp) inp.value = e.target.value;
           recalculate();
         });
       });
 
-      // Accordion toggle
+      // FAQ Accordion
       document.querySelectorAll('.faq-question').forEach(q => {
         q.addEventListener('click', () => {
-          q.parentElement.classList.toggle('open');
+          const item = q.parentElement;
+          item.classList.toggle('open');
         });
       });
 
-      // Run on page load
+      // Direct Copy & Share Link Functionality
+      const shareBtn = document.getElementById('share-calc-btn');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          const params = new URLSearchParams();
+          document.querySelectorAll('.omni-calc-input').forEach(el => {
+            if (el.dataset.id && el.value !== '') {
+              params.set(el.dataset.id, el.value);
+            }
+          });
+          const newUrl = window.location.origin + window.location.pathname + '?' + params.toString();
+          window.history.replaceState({}, '', newUrl);
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(newUrl).then(() => {
+              const label = document.getElementById('share-btn-text');
+              const orig = label.innerText;
+              label.innerText = 'Link Copied!';
+              setTimeout(() => { label.innerText = orig; }, 2000);
+            });
+          }
+        });
+      }
+
+      // Dual Unit Toggle (Imperial vs Metric)
+      document.querySelectorAll('.unit-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.unit-toggle-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const isMetric = (btn.dataset.unit === 'metric');
+          document.querySelectorAll('[data-imp]').forEach(el => {
+            el.innerText = isMetric ? el.dataset.met : el.dataset.imp;
+          });
+          recalculate();
+        });
+      });
+
+      // Auto-load parameters from URL query string if present
+      const urlParams = new URLSearchParams(window.location.search);
+      let loadedParams = false;
+      document.querySelectorAll('.omni-calc-input').forEach(el => {
+        const id = el.dataset.id;
+        if (id && urlParams.has(id)) {
+          el.value = urlParams.get(id);
+          const sld = document.getElementById('slider-' + id);
+          if (sld) sld.value = urlParams.get(id);
+          loadedParams = true;
+        }
+      });
+
       recalculate();
     })();
   </script>

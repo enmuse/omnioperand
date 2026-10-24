@@ -1,7 +1,7 @@
 /**
  * functions/api/v1/mcp.js
  * OmniOperand Official Model Context Protocol (MCP) JSON-RPC 2.0 Server
- * Exposes all 428 deterministic solvers to Claude Desktop, Cursor, and AI agents.
+ * Exposes all 437 deterministic solvers to Claude Desktop, Cursor, and AI agents.
  */
 
 import {
@@ -237,7 +237,7 @@ export async function onRequestPost(context) {
             {
               uri: "omnioperand://api/openapi.json",
               name: "OpenAPI 3.1.0 Full Specification",
-              description: "Machine-readable API definitions for all 428 calculators",
+              description: "Machine-readable API definitions for all 437 calculators",
               mimeType: "application/json"
             }
           ]

@@ -19,7 +19,7 @@
     "/mcp": {
       "post": {
         "summary": "Model Context Protocol (MCP) JSON-RPC 2.0 Endpoint",
-        "description": "Native Model Context Protocol (MCP) endpoint for Claude Desktop, Cursor, and autonomous AI agents. Supports initialize, tools/list, tools/call, resources/list, prompts/list, and ping across all 429 tools.",
+        "description": "Native Model Context Protocol (MCP) endpoint for Claude Desktop, Cursor, and autonomous AI agents. Supports initialize, tools/list, tools/call, resources/list, prompts/list, and ping across all 438 tools.",
         "operationId": "handleMcpJsonRpc",
         "requestBody": {
           "required": true,
@@ -89,7 +89,7 @@
     "/solve": {
       "get": {
         "summary": "Directory of All Computational Solvers",
-        "description": "Returns a complete index of all 428 mathematical solvers available on the OmniOperand edge network.",
+        "description": "Returns a complete index of all 437 mathematical solvers available on the OmniOperand edge network.",
         "operationId": "listAllSolvers",
         "responses": {
           "200": {

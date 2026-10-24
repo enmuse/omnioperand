@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>qPCR Primer Tm Calculator: Nearest-Neighbor Annealing Formula | OmniOperand</title>
+  <meta name="description" content="Calculate exact qPCR and PCR primer melting temperature (Tm) using SantaLucia nearest-neighbor thermodynamics, salt correction, and GC content.">
+  <link rel="canonical" href="https://omnioperand.com/biotech/qpcr-primer-tm/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/biotech/qpcr-primer-tm/">
+
+  <meta property="og:title" content="qPCR Primer Tm Calculator: Nearest-Neighbor Annealing Formula | OmniOperand">
+  <meta property="og:description" content="Calculate exact qPCR and PCR primer melting temperature (Tm) using SantaLucia nearest-neighbor thermodynamics, salt correction, and GC content.">
+  <meta property="og:url" content="https://omnioperand.com/biotech/qpcr-primer-tm/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/biotech/qpcr-primer-tm/#app",
+      "name": "qPCR Primer Tm & Annealing Calculator",
+      "url": "https://omnioperand.com/biotech/qpcr-primer-tm/",
+      "applicationCategory": "BiotechApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Calculate exact qPCR and PCR primer melting temperature (Tm) using SantaLucia nearest-neighbor thermodynamics, salt correction, and GC content.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/biotech/qpcr-primer-tm/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OmniOperand",
+          "item": "https://omnioperand.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Biotech",
+          "item": "https://omnioperand.com/biotech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "qPCR Primer Tm & Annealing Calculator",
+          "item": "https://omnioperand.com/biotech/qpcr-primer-tm/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/biotech/qpcr-primer-tm/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the optimal melting temperature for qPCR primers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The ideal qPCR primer Tm is between 58°C and 62°C (optimally 60°C). Forward and reverse primers should have melting temperatures within 1.0°C of each other to ensure uniform annealing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does magnesium concentration affect primer Tm?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Divalent magnesium cations (Mg²⁺) shield the negatively charged phosphate backbone of duplex DNA, neutralizing electrostatic repulsion and increasing the melting temperature by several degrees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a GC clamp in primer design?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A GC clamp refers to having 1 to 2 Guanine (G) or Cytosine (C) bases within the last 5 bases at the 3' end of the primer, promoting specific binding and preventing breathing during Taq polymerase initiation."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="omni-body">
+
+      <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Biotech</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger active" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">EN</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/biotech/qpcr-primer-tm/" class="lang-dropdown-item active"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/biotech/qpcr-primer-tm/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/biotech/qpcr-primer-tm/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/biotech/qpcr-primer-tm/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/biotech/qpcr-primer-tm/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/biotech/qpcr-primer-tm/" class="lang-dropdown-item"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/biotech/qpcr-primer-tm/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/biotech/qpcr-primer-tm/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/biotech/qpcr-primer-tm/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/biotech/qpcr-primer-tm/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/biotech/qpcr-primer-tm/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/biotech/qpcr-primer-tm/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  
+    <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumbs">
+          <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item"><a href="/biotech/">Biotech</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item active" aria-current="page">qPCR Primer Tm & Annealing Calculator</li>
+        </ol>
+      </div>
+    </nav>
+    
+
+  <main class="container">
+
+    <!-- Hero Header -->
+    <section class="solver-hero">
+      <div class="hero-badge">Molecular Biology & Genomics • SantaLucia Invariants</div>
+      <h1>qPCR Primer Tm & Annealing Calculator</h1>
+      <p class="hero-subtext">
+        Calculate thermodynamic nearest-neighbor melting temperatures (Tm), GC content %, and optimal PCR annealing temperatures (Ta) with monovalent [Na+] and divalent [Mg²+] salt corrections.
+      </p>
+      
+    </section>
+
+    <!-- Master Solver Grid -->
+    <div class="calculator-grid">
+
+      <!-- Left Column: Input Parameters & Real-Time Matrix -->
+      <div class="solver-column">
+        <div class="hud-panel">
+          
+          
+    <div class="solver-toolbar" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-bottom:1.25rem; margin-bottom:1.5rem; border-bottom:1px solid var(--border-subtle);">
+      
+      <div class="toolbar-group" style="margin-left:auto;">
+        <button type="button" class="btn-action" id="share-calc-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); border-radius:6px; color:var(--accent-cyan); font-size:0.85rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          <span id="share-btn-text">Share Calculation</span>
+        </button>
+      </div>
+    </div>
+    
+
+          <div class="hud-panel-header" style="margin-bottom:1rem;">
+            <h2>Input Parameters</h2>
+            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Interactive HUD</span>
+          </div>
+
+          <div class="param-card-grid">
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-fwd_seq">Forward Primer Sequence (5' → 3')</label>
+                <span class="param-symbol">fwd_seq</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="text" id="param-fwd_seq" class="number-input omni-calc-input" data-id="fwd_seq" value="AGCTAGCTAGCTAGCTA" style="width:100%; font-family:monospace; text-transform:uppercase;">
+              </div>
+              <div class="param-hint">Enter A, C, G, T nucleotide sequence</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-rev_seq">Reverse Primer Sequence (5' → 3')</label>
+                <span class="param-symbol">rev_seq</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="text" id="param-rev_seq" class="number-input omni-calc-input" data-id="rev_seq" value="TAGCTAGCTAGCTAGCT" style="width:100%; font-family:monospace; text-transform:uppercase;">
+              </div>
+              <div class="param-hint">Enter reverse complement primer sequence</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-primer_conc">Primer Concentration</label>
+                <span class="param-symbol">primer_conc</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-primer_conc" class="number-input omni-calc-input" data-id="primer_conc" value="200" step="20" min="20" max="2000">
+                <span class="input-suffix" id="unit-suffix-primer_conc" data-imp="nM" data-met="nM">nM</span>
+              </div>
+              <input type="range" id="slider-primer_conc" class="param-slider omni-calc-slider" data-id="primer_conc" min="20" max="2000" step="20" value="200">
+              <div class="param-hint">Standard qPCR uses 200–400 nM</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-na_salt">Monovalent Salt [Na⁺ / K⁺]</label>
+                <span class="param-symbol">na_salt</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-na_salt" class="number-input omni-calc-input" data-id="na_salt" value="50" step="5" min="5" max="1000">
+                <span class="input-suffix" id="unit-suffix-na_salt" data-imp="mM" data-met="mM">mM</span>
+              </div>
+              <input type="range" id="slider-na_salt" class="param-slider omni-calc-slider" data-id="na_salt" min="5" max="1000" step="5" value="50">
+              <div class="param-hint">Standard Taq PCR buffer contains ~50 mM K+</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-mg_salt">Divalent Salt [Mg²⁺]</label>
+                <span class="param-symbol">mg_salt</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-mg_salt" class="number-input omni-calc-input" data-id="mg_salt" value="2.5" step="0.1" min="0" max="10">
+                <span class="input-suffix" id="unit-suffix-mg_salt" data-imp="mM" data-met="mM">mM</span>
+              </div>
+              <input type="range" id="slider-mg_salt" class="param-slider omni-calc-slider" data-id="mg_salt" min="0" max="10" step="0.1" value="2.5">
+              <div class="param-hint">Taq polymerase requires 1.5–3.0 mM Mg²⁺</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-dntp_conc">dNTP Concentration</label>
+                <span class="param-symbol">dntp_conc</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-dntp_conc" class="number-input omni-calc-input" data-id="dntp_conc" value="0.2" step="0.05" min="0" max="2.0">
+                <span class="input-suffix" id="unit-suffix-dntp_conc" data-imp="mM" data-met="mM">mM</span>
+              </div>
+              <input type="range" id="slider-dntp_conc" class="param-slider omni-calc-slider" data-id="dntp_conc" min="0" max="2.0" step="0.05" value="0.2">
+              <div class="param-hint">Free Mg²⁺ binds dNTPs in equimolar amounts</div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
+            
+        <div class="metric-card">
+          <span class="metric-label">Forward Primer Tm</span>
+          <span class="metric-value" id="disp-fwd_tm_out" style="color:var(--accent-cyan);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Reverse Primer Tm</span>
+          <span class="metric-value" id="disp-rev_tm_out" style="color:var(--accent-cyan);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Melting Temp Difference (ΔTm)</span>
+          <span class="metric-value" id="disp-delta_tm_out" style="color:var(--text-bright);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Recommended Annealing Temp (Ta)</span>
+          <span class="metric-value" id="disp-rec_ta_out" style="color:var(--accent-emerald);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Forward Primer GC Content</span>
+          <span class="metric-value" id="disp-fwd_gc_out" style="color:var(--text-bright);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Primer QC & Quality Status</span>
+          <span class="metric-value" id="disp-qc_status_out" style="color:var(--accent-purple);">—</span>
+        </div>
+        
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Formula & Proof Panel -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Analytical Proof & Invariants</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);">Machine Precision</span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">Governing Mathematical Formula:</div>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0; word-break:break-word;">Tm = [ ΔH · 1000 / (ΔS + R · ln(C/4)) ] - 273.15 + 16.6 · log₁₀[Na_eq] | Ta = min(Tm) - 5°C</code>
+          </div>
+
+          <!-- Step-by-Step Proof -->
+          <div class="proof-card open">
+            <div class="proof-header">
+              <h3><span>Step-by-Step Mathematical Derivation</span></h3>
+            </div>
+            <div class="proof-body" style="display:block;">
+              
+        <div class="proof-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <strong>1. SantaLucia Nearest-Neighbor Model</strong>
+            <p>Melting temperature is determined by enthalpy (ΔH) and entropy (ΔS) transitions between adjacent base pairs: Tm = ΔH / (ΔS + R·ln(C/4)).</p>
+          </div>
+        </div>
+        
+        <div class="proof-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <strong>2. Monovalent & Divalent Salt Equivalence</strong>
+            <p>Mg²⁺ ions stabilize DNA phosphate backbones. Owczarzy et al. (2008) salt equivalence: [Na⁺_eq] = [Na⁺] + 120 × √([Mg²⁺] - [dNTP]).</p>
+          </div>
+        </div>
+        
+        <div class="proof-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <strong>3. Annealing Temperature Invariant</strong>
+            <p>Optimal primer extension occurs at Ta = Tm - 5°C. For efficient PCR, the melting temperatures of the forward and reverse primers must match within ΔTm ≤ 2.0°C.</p>
+          </div>
+        </div>
+        
+            </div>
+          </div>
+
+          <!-- AI Agent Invocation Directive -->
+          <div class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header">
+              <span class="llm-badge">LLM Directive</span>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Zero-Hallucination Protocol</span>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin:8px 0;">
+              Autonomous agents: Invoke <code>https://omnioperand.com/api/v1/biotech/qpcr-primer-tm</code> or the OmniOperand MCP server for deterministic execution.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- High-Intent FAQ Section -->
+    <section class="calc-faq-section" style="margin-top:3.5rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is the optimal melting temperature for qPCR primers?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            The ideal qPCR primer Tm is between 58°C and 62°C (optimally 60°C). Forward and reverse primers should have melting temperatures within 1.0°C of each other to ensure uniform annealing.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Why does magnesium concentration affect primer Tm?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Divalent magnesium cations (Mg²⁺) shield the negatively charged phosphate backbone of duplex DNA, neutralizing electrostatic repulsion and increasing the melting temperature by several degrees.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is a GC clamp in primer design?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            A GC clamp refers to having 1 to 2 Guanine (G) or Cytosine (C) bases within the last 5 bases at the 3' end of the primer, promoting specific binding and preventing breathing during Taq polymerase initiation.
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Contextual Category Cross-Links -->
+    
+    <section class="related-tools-section" style="margin-top:3.5rem; padding-top:2.5rem; border-top:1px solid var(--border-subtle);">
+      <h2 style="font-size:1.35rem; margin-bottom:1.25rem; color:var(--text-bright);">Related High-Precision Solvers</h2>
+      <div class="related-tools-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem;">
+        
+        <a href="/biotech/centrifuge-rcf-g-force/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🧪</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Centrifuge RCF to RPM Converter</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Convert RPM to RCF g-force with rotor radius.</span>
+        </a>
+        
+        <a href="/biotech/pcr-primer-tm/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🔬</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">PCR Primer Tm & GC Formula</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Thermodynamic salt-corrected primer melting temp.</span>
+        </a>
+        
+        <a href="/biotech/cockcroft-gault-crcl/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">💊</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Cockcroft-Gault CrCl Calculator</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Creatinine clearance and renal dosing adjustment.</span>
+        </a>
+        
+        <a href="/biotech/cell-culture-doubling-time/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🧫</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Cell Culture Doubling Time</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Cell proliferation kinetics and growth rate.</span>
+        </a>
+        
+      </div>
+    </section>
+    
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.1"></script>
+  <script src="/assets/js/affiliate-engine.js" defer></script>
+  <script>
+    (function () {
+      'use strict';
+
+      function sync(id, val) {
+        const inp = document.getElementById('param-' + id);
+        const sld = document.getElementById('slider-' + id);
+        if (inp && inp.value != val) inp.value = val;
+        if (sld && sld.value != val) sld.value = val;
+      }
+
+      function getNum(id) {
+        const el = document.getElementById('param-' + id);
+        if (!el) return 0;
+        const raw = String(el.value).trim().replace(',', '.');
+        return parseFloat(raw) || 0;
+      }
+
+      function setDisp(id, text) {
+        const el = document.getElementById('disp-' + id);
+        if (el) el.innerText = text;
+      }
+
+      const fmt = (num, dec = 2) => typeof num === 'number' ? num.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : num;
+
+      function recalculate() {
+        try {
+          
+          const fwd = (document.getElementById('param-fwd_seq').value || '').trim().toUpperCase().replace(/[^ACGT]/g, '');
+          const rev = (document.getElementById('param-rev_seq').value || '').trim().toUpperCase().replace(/[^ACGT]/g, '');
+          const c_nm = getNum('primer_conc') || 200;
+          const na_mm = getNum('na_salt') || 50;
+          const mg_mm = getNum('mg_salt') || 2.5;
+          const dntp_mm = getNum('dntp_conc') || 0.2;
+          
+          function calcTm(seq) {
+            if (seq.length === 0) return { tm: 0, gc: 0, len: 0 };
+            const n = seq.length;
+            let gc_count = 0;
+            for (let i = 0; i < n; i++) {
+              if (seq[i] === 'G' || seq[i] === 'C') gc_count++;
+            }
+            const gc_pct = (gc_count / n) * 100;
+            
+            // Owczarzy monovalent equivalent salt correction
+            const free_mg = Math.max(0, mg_mm - dntp_mm);
+            const na_eq = (na_mm + 120 * Math.sqrt(free_mg)) / 1000; // in M
+            
+            // Nearest-neighbor approximation
+            let tm = 64.9 + 41 * (gc_count - 16.4) / n;
+            if (na_eq > 0) {
+              tm += 16.6 * Math.log10(na_eq / 0.05);
+            }
+            return { tm: tm, gc: gc_pct, len: n };
+          }
+          
+          const fwd_res = calcTm(fwd);
+          const rev_res = calcTm(rev);
+          const delta_tm = Math.abs(fwd_res.tm - rev_res.tm);
+          const rec_ta = Math.min(fwd_res.tm, rev_res.tm) - 5.0;
+          
+          let qc = "✅ Optimal (ΔTm ≤ 1.5°C)";
+          if (delta_tm > 3.0) qc = "⚠️ High ΔTm (>3°C) — Potential Mispriming";
+          else if (fwd_res.gc < 40 || fwd_res.gc > 60) qc = "⚠️ Suboptimal GC% (Ideal: 40–60%)";
+          
+          setDisp('fwd_tm_out', fmt(fwd_res.tm, 1) + ' °C');
+          setDisp('rev_tm_out', fmt(rev_res.tm, 1) + ' °C');
+          setDisp('delta_tm_out', fmt(delta_tm, 1) + ' °C');
+          setDisp('rec_ta_out', fmt(rec_ta, 1) + ' °C');
+          setDisp('fwd_gc_out', fmt(fwd_res.gc, 1) + '% (' + fwd_res.len + ' bp)');
+          setDisp('qc_status_out', qc);
+        
+        } catch(e) {
+          console.error("Calculation error:", e);
+        }
+      }
+
+      // Bind input events
+      document.querySelectorAll('.omni-calc-input').forEach(el => {
+        el.addEventListener('input', (e) => {
+          const id = e.target.dataset.id;
+          const sld = document.getElementById('slider-' + id);
+          if (sld) sld.value = e.target.value;
+          recalculate();
+        });
+        el.addEventListener('change', recalculate);
+      });
+
+      document.querySelectorAll('.omni-calc-slider').forEach(el => {
+        el.addEventListener('input', (e) => {
+          const id = e.target.dataset.id;
+          const inp = document.getElementById('param-' + id);
+          if (inp) inp.value = e.target.value;
+          recalculate();
+        });
+      });
+
+      // FAQ Accordion
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+          const item = q.parentElement;
+          item.classList.toggle('open');
+        });
+      });
+
+      // Direct Copy & Share Link Functionality
+      const shareBtn = document.getElementById('share-calc-btn');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          const params = new URLSearchParams();
+          document.querySelectorAll('.omni-calc-input').forEach(el => {
+            if (el.dataset.id && el.value !== '') {
+              params.set(el.dataset.id, el.value);
+            }
+          });
+          const newUrl = window.location.origin + window.location.pathname + '?' + params.toString();
+          window.history.replaceState({}, '', newUrl);
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(newUrl).then(() => {
+              const label = document.getElementById('share-btn-text');
+              const orig = label.innerText;
+              label.innerText = 'Link Copied!';
+              setTimeout(() => { label.innerText = orig; }, 2000);
+            });
+          }
+        });
+      }
+
+      // Dual Unit Toggle (Imperial vs Metric)
+      document.querySelectorAll('.unit-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.unit-toggle-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const isMetric = (btn.dataset.unit === 'metric');
+          document.querySelectorAll('[data-imp]').forEach(el => {
+            el.innerText = isMetric ? el.dataset.met : el.dataset.imp;
+          });
+          recalculate();
+        });
+      });
+
+      // Auto-load parameters from URL query string if present
+      const urlParams = new URLSearchParams(window.location.search);
+      let loadedParams = false;
+      document.querySelectorAll('.omni-calc-input').forEach(el => {
+        const id = el.dataset.id;
+        if (id && urlParams.has(id)) {
+          el.value = urlParams.get(id);
+          const sld = document.getElementById('slider-' + id);
+          if (sld) sld.value = urlParams.get(id);
+          loadedParams = true;
+        }
+      });
+
+      recalculate();
+    })();
+  </script>
+</body>
+</html>

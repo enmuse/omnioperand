@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 199A QBI Calculator: 20% Pass-Through Deduction | OmniOperand</title>
+  <meta name="description" content="Calculate your 20% IRS Section 199A QBI deduction, phase-out limits, W-2 wage caps, and SSTB limitations for LLCs, S-Corporations, and sole proprietors.">
+  <link rel="canonical" href="https://omnioperand.com/finance/section-199a-qbi/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/finance/section-199a-qbi/">
+
+  <meta property="og:title" content="Section 199A QBI Calculator: 20% Pass-Through Deduction | OmniOperand">
+  <meta property="og:description" content="Calculate your 20% IRS Section 199A QBI deduction, phase-out limits, W-2 wage caps, and SSTB limitations for LLCs, S-Corporations, and sole proprietors.">
+  <meta property="og:url" content="https://omnioperand.com/finance/section-199a-qbi/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/finance/section-199a-qbi/#app",
+      "name": "Section 199A QBI Calculator",
+      "url": "https://omnioperand.com/finance/section-199a-qbi/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Calculate your 20% IRS Section 199A QBI deduction, phase-out limits, W-2 wage caps, and SSTB limitations for LLCs, S-Corporations, and sole proprietors.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/finance/section-199a-qbi/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OmniOperand",
+          "item": "https://omnioperand.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Finance",
+          "item": "https://omnioperand.com/finance/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Section 199A QBI Calculator",
+          "item": "https://omnioperand.com/finance/section-199a-qbi/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/finance/section-199a-qbi/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What businesses qualify for the 20% QBI deduction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sole proprietorships, partnerships, LLCs, and S-corporations generating domestic business profit qualify. C-corporations and employee wages do not qualify."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is an SSTB under Section 199A?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Specified Service Trade or Business (SSTB) is any business involving the performance of services in health, law, accounting, actuarial science, performing arts, consulting, athletics, financial services, or brokerage services."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the 2024/2026 QBI income thresholds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For Single filers, the phase-out range is $191,950 to $241,950. For Married Filing Jointly filers, the phase-out range is $383,900 to $483,900."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="omni-body">
+
+      <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Finance</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link active">Finance</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">EN</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/finance/section-199a-qbi/" class="lang-dropdown-item active"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/finance/section-199a-qbi/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/finance/section-199a-qbi/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/finance/section-199a-qbi/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/finance/section-199a-qbi/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/finance/section-199a-qbi/" class="lang-dropdown-item"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/finance/section-199a-qbi/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/finance/section-199a-qbi/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/finance/section-199a-qbi/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/finance/section-199a-qbi/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/finance/section-199a-qbi/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/finance/section-199a-qbi/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  
+    <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumbs">
+          <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item"><a href="/finance/">Finance</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item active" aria-current="page">Section 199A QBI Calculator</li>
+        </ol>
+      </div>
+    </nav>
+    
+
+  <main class="container">
+
+    <!-- Hero Header -->
+    <section class="solver-hero">
+      <div class="hero-badge">Tax Law & Quantitative Accounting • IRC § 199A Invariants</div>
+      <h1>Section 199A QBI Calculator</h1>
+      <p class="hero-subtext">
+        Model the 20% Qualified Business Income deduction under IRS Section 199A: test W-2 wage and UBIA capital limitation rules and phase-out thresholds for pass-through entities.
+      </p>
+      
+        <div class="jurisdiction-notice" style="display:inline-flex; align-items:center; gap:0.5rem; margin-top:0.75rem; padding:0.4rem 0.85rem; background:rgba(234,179,8,0.12); border:1px solid rgba(234,179,8,0.3); border-radius:8px; color:#facc15; font-size:0.8rem; font-weight:600;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Governed by US Internal Revenue Code Section 199A (Tax Cuts and Jobs Act)</span>
+        </div>
+        
+    </section>
+
+    <!-- Master Solver Grid -->
+    <div class="calculator-grid">
+
+      <!-- Left Column: Input Parameters & Real-Time Matrix -->
+      <div class="solver-column">
+        <div class="hud-panel">
+          
+          
+    <div class="solver-toolbar" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-bottom:1.25rem; margin-bottom:1.5rem; border-bottom:1px solid var(--border-subtle);">
+      
+      <div class="toolbar-group" style="margin-left:auto;">
+        <button type="button" class="btn-action" id="share-calc-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); border-radius:6px; color:var(--accent-cyan); font-size:0.85rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          <span id="share-btn-text">Share Calculation</span>
+        </button>
+      </div>
+    </div>
+    
+
+          <div class="hud-panel-header" style="margin-bottom:1rem;">
+            <h2>Input Parameters</h2>
+            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Interactive HUD</span>
+          </div>
+
+          <div class="param-card-grid">
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-taxable_inc">Total Taxable Income (Before QBI)</label>
+                <span class="param-symbol">taxable_inc</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-taxable_inc" class="number-input omni-calc-input" data-id="taxable_inc" value="175000" step="5000" min="20000" max="2000000">
+                <span class="input-suffix" id="unit-suffix-taxable_inc" data-imp="$" data-met="$">$</span>
+              </div>
+              <input type="range" id="slider-taxable_inc" class="param-slider omni-calc-slider" data-id="taxable_inc" min="20000" max="2000000" step="5000" value="175000">
+              <div class="param-hint">Line 15 of Form 1040 before Section 199A deduction</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-filing_status">Tax Filing Status</label>
+                <span class="param-symbol">filing_status</span>
+              </div>
+              <div class="input-unit-group">
+                <select id="param-filing_status" class="number-input omni-calc-input" data-id="filing_status" style="width:100%; cursor:pointer;">
+                  <option value="single" selected>Single / Head of Household ($191,950 Threshold)</option><option value="mfj" >Married Filing Jointly ($383,900 Threshold)</option>
+                </select>
+              </div>
+              <div class="param-hint">Determines phase-out threshold brackets</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-qbi_amount">Qualified Business Income (QBI)</label>
+                <span class="param-symbol">qbi_amount</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-qbi_amount" class="number-input omni-calc-input" data-id="qbi_amount" value="120000" step="5000" min="5000" max="2000000">
+                <span class="input-suffix" id="unit-suffix-qbi_amount" data-imp="$" data-met="$">$</span>
+              </div>
+              <input type="range" id="slider-qbi_amount" class="param-slider omni-calc-slider" data-id="qbi_amount" min="5000" max="2000000" step="5000" value="120000">
+              <div class="param-hint">Net domestic profit from eligible pass-through business (LLC, S-Corp, Sole Prop)</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-w2_wages">W-2 Wages Paid by Business</label>
+                <span class="param-symbol">w2_wages</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-w2_wages" class="number-input omni-calc-input" data-id="w2_wages" value="40000" step="2500" min="0" max="1000000">
+                <span class="input-suffix" id="unit-suffix-w2_wages" data-imp="$" data-met="$">$</span>
+              </div>
+              <input type="range" id="slider-w2_wages" class="param-slider omni-calc-slider" data-id="w2_wages" min="0" max="1000000" step="2500" value="40000">
+              <div class="param-hint">Total W-2 wages paid to employees (including officer compensation in S-Corps)</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-ubia_prop">UBIA of Qualified Property</label>
+                <span class="param-symbol">ubia_prop</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-ubia_prop" class="number-input omni-calc-input" data-id="ubia_prop" value="15000" step="5000" min="0" max="2000000">
+                <span class="input-suffix" id="unit-suffix-ubia_prop" data-imp="$" data-met="$">$</span>
+              </div>
+              <input type="range" id="slider-ubia_prop" class="param-slider omni-calc-slider" data-id="ubia_prop" min="0" max="2000000" step="5000" value="15000">
+              <div class="param-hint">Unadjusted Basis Immediately after Acquisition of depreciable business assets</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-is_sstb">Specified Service Trade / Business (SSTB)</label>
+                <span class="param-symbol">is_sstb</span>
+              </div>
+              <div class="input-unit-group">
+                <select id="param-is_sstb" class="number-input omni-calc-input" data-id="is_sstb" style="width:100%; cursor:pointer;">
+                  <option value="no" selected>Non-SSTB (Manufacturing, Construction, Real Estate, Retail)</option><option value="yes" >SSTB (Health, Law, Accounting, Consulting, Athletics, Financial)</option>
+                </select>
+              </div>
+              <div class="param-hint">SSTBs are completely phased out above the upper income threshold</div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
+            
+        <div class="metric-card">
+          <span class="metric-label">Tentative 20% QBI Amount</span>
+          <span class="metric-value" id="disp-tentative_qbi" style="color:var(--text-bright);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Income Phaseout Status</span>
+          <span class="metric-value" id="disp-phaseout_zone" style="color:var(--accent-cyan);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">W-2 Wage / Capital Limitation</span>
+          <span class="metric-value" id="disp-wage_cap" style="color:var(--text-bright);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Allowable Section 199A Deduction</span>
+          <span class="metric-value" id="disp-final_deduction" style="color:var(--accent-emerald);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Estimated Federal Tax Savings</span>
+          <span class="metric-value" id="disp-tax_savings" style="color:var(--accent-purple);">—</span>
+        </div>
+        
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Formula & Proof Panel -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Analytical Proof & Invariants</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);">Machine Precision</span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">Governing Mathematical Formula:</div>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0; word-break:break-word;">Deduction = min[ 20% · QBI, max(50% · W-2 Wages, 25% · W-2 + 2.5% · UBIA) ]</code>
+          </div>
+
+          <!-- Step-by-Step Proof -->
+          <div class="proof-card open">
+            <div class="proof-header">
+              <h3><span>Step-by-Step Mathematical Derivation</span></h3>
+            </div>
+            <div class="proof-body" style="display:block;">
+              
+        <div class="proof-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <strong>1. 20% Tentative Pass-Through Base</strong>
+            <p>The preliminary deduction equals 20% of net Qualified Business Income from eligible domestic trades or businesses.</p>
+          </div>
+        </div>
+        
+        <div class="proof-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <strong>2. Statutory Phaseout Brackets</strong>
+            <p>If taxable income is below $191,950 (Single) or $383,900 (MFJ), the full 20% deduction is allowed regardless of W-2 wages, UBIA property, or SSTB status.</p>
+          </div>
+        </div>
+        
+        <div class="proof-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <strong>3. Wage and Capital Limitation Tests</strong>
+            <p>Above the phase-out limit, the deduction is capped at the greater of: (a) 50% of W-2 wages, or (b) 25% of W-2 wages plus 2.5% of UBIA property. SSTBs receive $0 deduction above the upper threshold.</p>
+          </div>
+        </div>
+        
+            </div>
+          </div>
+
+          <!-- AI Agent Invocation Directive -->
+          <div class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header">
+              <span class="llm-badge">LLM Directive</span>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Zero-Hallucination Protocol</span>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin:8px 0;">
+              Autonomous agents: Invoke <code>https://omnioperand.com/api/v1/finance/section-199a-qbi</code> or the OmniOperand MCP server for deterministic execution.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- High-Intent FAQ Section -->
+    <section class="calc-faq-section" style="margin-top:3.5rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What businesses qualify for the 20% QBI deduction?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Sole proprietorships, partnerships, LLCs, and S-corporations generating domestic business profit qualify. C-corporations and employee wages do not qualify.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is an SSTB under Section 199A?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            A Specified Service Trade or Business (SSTB) is any business involving the performance of services in health, law, accounting, actuarial science, performing arts, consulting, athletics, financial services, or brokerage services.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What are the 2024/2026 QBI income thresholds?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            For Single filers, the phase-out range is $191,950 to $241,950. For Married Filing Jointly filers, the phase-out range is $383,900 to $483,900.
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Contextual Category Cross-Links -->
+    
+    <section class="related-tools-section" style="margin-top:3.5rem; padding-top:2.5rem; border-top:1px solid var(--border-subtle);">
+      <h2 style="font-size:1.35rem; margin-bottom:1.25rem; color:var(--text-bright);">Related High-Precision Solvers</h2>
+      <div class="related-tools-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem;">
+        
+        <a href="/finance/reverse-mortgage-hecm/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🏡</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">HECM Reverse Mortgage Calculator</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Principal Limit Factor (PLF) and net proceeds (no info required).</span>
+        </a>
+        
+        <a href="/finance/rv-loan/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🚐</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">RV & Camper Loan Calculator</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">10-20 year motorhome financing and amortization.</span>
+        </a>
+        
+        <a href="/finance/equity-irr/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">📈</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Equity IRR & Real Estate Return</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Levered IRR, Equity Multiple (MOIC), and Net Present Value.</span>
+        </a>
+        
+        <a href="/finance/sepp-72t-distribution/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">💰</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">SEPP 72(t) Early Distribution</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Penalty-free early retirement withdrawal methods.</span>
+        </a>
+        
+      </div>
+    </section>
+    
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.1"></script>
+  <script src="/assets/js/affiliate-engine.js" defer></script>
+  <script>
+    (function () {
+      'use strict';
+
+      function sync(id, val) {
+        const inp = document.getElementById('param-' + id);
+        const sld = document.getElementById('slider-' + id);
+        if (inp && inp.value != val) inp.value = val;
+        if (sld && sld.value != val) sld.value = val;
+      }
+
+      function getNum(id) {
+        const el = document.getElementById('param-' + id);
+        if (!el) return 0;
+        const raw = String(el.value).trim().replace(',', '.');
+        return parseFloat(raw) || 0;
+      }
+
+      function setDisp(id, text) {
+        const el = document.getElementById('disp-' + id);
+        if (el) el.innerText = text;
+      }
+
+      const fmt = (num, dec = 2) => typeof num === 'number' ? num.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : num;
+
+      function recalculate() {
+        try {
+          
+          const income = getNum('taxable_inc') || 175000;
+          const status = document.getElementById('param-filing_status').value;
+          const qbi = getNum('qbi_amount') || 120000;
+          const w2 = getNum('w2_wages') || 0;
+          const ubia = getNum('ubia_prop') || 0;
+          const is_sstb = (document.getElementById('param-is_sstb').value === 'yes');
+          
+          const lower = (status === 'single') ? 191950 : 383900;
+          const range = (status === 'single') ? 50000 : 100000;
+          const upper = lower + range;
+          
+          const tentative = 0.20 * qbi;
+          const wage_limit = Math.max(0.50 * w2, 0.25 * w2 + 0.025 * ubia);
+          
+          let final_ded = tentative;
+          let tier_str = "Below Threshold (Full 20%)";
+          
+          if (income <= lower) {
+            final_ded = tentative;
+            tier_str = "Below Threshold (Full 20%)";
+          } else if (income >= upper) {
+            if (is_sstb) {
+              final_ded = 0;
+              tier_str = "Above Upper Limit (SSTB Disallowed: $0)";
+            } else {
+              final_ded = Math.min(tentative, wage_limit);
+              tier_str = "Above Limit (Fully Subject to Wage/UBIA Cap)";
+            }
+          } else {
+            const phase_pct = (income - lower) / range;
+            tier_str = "Phase-Out Range (" + Math.round(phase_pct * 100) + "% phased)";
+            if (is_sstb) {
+              const sstb_qbi = qbi * (1 - phase_pct);
+              const sstb_w2 = w2 * (1 - phase_pct);
+              const sstb_ubia = ubia * (1 - phase_pct);
+              const sstb_tent = 0.20 * sstb_qbi;
+              const sstb_cap = Math.max(0.50 * sstb_w2, 0.25 * sstb_w2 + 0.025 * sstb_ubia);
+              const excess = Math.max(0, sstb_tent - sstb_cap);
+              final_ded = Math.max(0, sstb_tent - (excess * phase_pct));
+            } else {
+              const excess = Math.max(0, tentative - wage_limit);
+              final_ded = Math.max(0, tentative - (excess * phase_pct));
+            }
+          }
+          
+          const est_tax_rate = (income > 300000) ? 0.32 : 0.24;
+          const tax_savings = final_ded * est_tax_rate;
+          
+          setDisp('tentative_qbi', '$' + fmt(tentative, 0));
+          setDisp('phaseout_zone', tier_str);
+          setDisp('wage_cap', '$' + fmt(wage_limit, 0));
+          setDisp('final_deduction', '$' + fmt(final_ded, 0));
+          setDisp('tax_savings', '$' + fmt(tax_savings, 0));
+        
+        } catch(e) {
+          console.error("Calculation error:", e);
+        }
+      }
+
+      // Bind input events
+      document.querySelectorAll('.omni-calc-input').forEach(el => {
+        el.addEventListener('input', (e) => {
+          const id = e.target.dataset.id;
+          const sld = document.getElementById('slider-' + id);
+          if (sld) sld.value = e.target.value;
+          recalculate();
+        });
+        el.addEventListener('change', recalculate);
+      });
+
+      document.querySelectorAll('.omni-calc-slider').forEach(el => {
+        el.addEventListener('input', (e) => {
+          const id = e.target.dataset.id;
+          const inp = document.getElementById('param-' + id);
+          if (inp) inp.value = e.target.value;
+          recalculate();
+        });
+      });
+
+      // FAQ Accordion
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+          const item = q.parentElement;
+          item.classList.toggle('open');
+        });
+      });
+
+      // Direct Copy & Share Link Functionality
+      const shareBtn = document.getElementById('share-calc-btn');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          const params = new URLSearchParams();
+          document.querySelectorAll('.omni-calc-input').forEach(el => {
+            if (el.dataset.id && el.value !== '') {
+              params.set(el.dataset.id, el.value);
+            }
+          });
+          const newUrl = window.location.origin + window.location.pathname + '?' + params.toString();
+          window.history.replaceState({}, '', newUrl);
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(newUrl).then(() => {
+              const label = document.getElementById('share-btn-text');
+              const orig = label.innerText;
+              label.innerText = 'Link Copied!';
+              setTimeout(() => { label.innerText = orig; }, 2000);
+            });
+          }
+        });
+      }
+
+      // Dual Unit Toggle (Imperial vs Metric)
+      document.querySelectorAll('.unit-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.unit-toggle-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const isMetric = (btn.dataset.unit === 'metric');
+          document.querySelectorAll('[data-imp]').forEach(el => {
+            el.innerText = isMetric ? el.dataset.met : el.dataset.imp;
+          });
+          recalculate();
+        });
+      });
+
+      // Auto-load parameters from URL query string if present
+      const urlParams = new URLSearchParams(window.location.search);
+      let loadedParams = false;
+      document.querySelectorAll('.omni-calc-input').forEach(el => {
+        const id = el.dataset.id;
+        if (id && urlParams.has(id)) {
+          el.value = urlParams.get(id);
+          const sld = document.getElementById('slider-' + id);
+          if (sld) sld.value = urlParams.get(id);
+          loadedParams = true;
+        }
+      });
+
+      recalculate();
+    })();
+  </script>
+</body>
+</html>
