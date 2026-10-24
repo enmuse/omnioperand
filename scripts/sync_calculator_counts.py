@@ -83,6 +83,7 @@ def calculate_metrics():
         "categories_count": categories_count,
         "total_html_pages": total_html_pages,
         "sitemap_urls_count": sitemap_urls_count,
+        "supported_languages": ["en", "es", "fr", "de", "it", "pt", "nl", "pl", "sv", "no", "fi", "ro"],
         "category_breakdown": category_breakdown,
         "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     }

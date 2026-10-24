@@ -313,7 +313,7 @@ def generate_calculator_page(calc):
 
       function getNum(id) {{
         const el = document.getElementById('param-' + id);
-        return el ? (parseFloat(el.value) || 0) : 0;
+        return el ? (parseFloat(String(el.value).trim().replace(',', '.')) || 0) : 0;
       }}
 
       function setDisp(id, text) {{

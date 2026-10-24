@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regelmäßiges Sechseck Rechner — Formeln, Inkreisradius & Fläche | OmniOperand</title>
+  <meta name="description" content="Bidirektionaler Sechseck-Rechner. Berechnet Seitenlänge, Inkreisradius, Umkreisradius R=a, Fläche und Schlüsselweite.">
+  <link rel="canonical" href="https://omnioperand.com/de/geometry/2d/shapes/hexagon/">
+  <link rel="alternate" hreflang="en" href="https://omnioperand.com/geometry/2d/shapes/hexagon/">
+  <link rel="alternate" hreflang="es" href="https://omnioperand.com/es/geometry/2d/shapes/hexagon/">
+  <link rel="alternate" hreflang="fr" href="https://omnioperand.com/fr/geometry/2d/shapes/hexagon/">
+  <link rel="alternate" hreflang="de" href="https://omnioperand.com/de/geometry/2d/shapes/hexagon/">
+  <link rel="alternate" hreflang="it" href="https://omnioperand.com/it/geometry/2d/shapes/hexagon/">
+  <link rel="alternate" hreflang="pt" href="https://omnioperand.com/pt/geometry/2d/shapes/hexagon/">
+  <link rel="alternate" hreflang="nl" href="https://omnioperand.com/nl/geometry/2d/shapes/hexagon/">
+  <link rel="alternate" hreflang="pl" href="https://omnioperand.com/pl/geometry/2d/shapes/hexagon/">
+  <link rel="alternate" hreflang="sv" href="https://omnioperand.com/sv/geometry/2d/shapes/hexagon/">
+  <link rel="alternate" hreflang="no" href="https://omnioperand.com/no/geometry/2d/shapes/hexagon/">
+  <link rel="alternate" hreflang="fi" href="https://omnioperand.com/fi/geometry/2d/shapes/hexagon/">
+  <link rel="alternate" hreflang="ro" href="https://omnioperand.com/ro/geometry/2d/shapes/hexagon/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/geometry/2d/shapes/hexagon/">
+
+  <meta property="og:title" content="Regelmäßiges Sechseck Rechner — Formeln, Inkreisradius & Fläche | OmniOperand">
+  <meta property="og:description" content="Bidirektionaler Sechseck-Rechner. Berechnet Seitenlänge, Inkreisradius, Umkreisradius R=a, Fläche und Schlüsselweite.">
+  <meta property="og:url" content="https://omnioperand.com/de/geometry/2d/shapes/hexagon/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/de/geometry/2d/shapes/hexagon/#app",
+      "name": "Regelmäßiges Sechseck Rechner",
+      "url": "https://omnioperand.com/de/geometry/2d/shapes/hexagon/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Bidirektionaler Sechseck-Rechner. Berechnet Seitenlänge, Inkreisradius, Umkreisradius R=a, Fläche und Schlüsselweite."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/de/geometry/2d/shapes/hexagon/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://omnioperand.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Geometry",
+          "item": "https://omnioperand.com/geometry/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "2D Geometry",
+          "item": "https://omnioperand.com/geometry/2d/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Shapes & Polygons",
+          "item": "https://omnioperand.com/geometry/2d/shapes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Regular Hexagon",
+          "item": "https://omnioperand.com/geometry/2d/shapes/hexagon/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/geometry/2d/shapes/hexagon/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the formula for the area of a regular hexagon?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The area of a regular hexagon with side length a is A = (3√3 / 2)a² ≈ 2.598076a². This is because a regular hexagon divides into 6 equilateral triangles of area (a²√3)/4."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the circumradius equal to the side length?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A regular hexagon is formed by 6 congruent equilateral triangles meeting at the center. Because all sides of an equilateral triangle are equal, the distance from the center to any vertex (Circumradius R) is always strictly equal to the outer side length a."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the two diagonal lengths of a regular hexagon?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A regular hexagon has 9 total diagonals in 2 distinct classes: (1) 6 Short diagonals d_S = a√3 ≈ 1.73205a connecting vertices separated by one vertex; (2) 3 Long diagonals d_L = 2a connecting directly opposite vertices through the center."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the socket and wrench sizes for a hex bolt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wrench and socket sizes measure the flat-to-flat span (S), which equals 2r_i = a√3. For example, a bolt with a side length of 10 mm requires a socket size of 10√3 ≈ 17.32 mm (typically a standard 17mm or 18mm socket)."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+            <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/de/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Geometry</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/de/geometry/" class="nav-link active">Geometry</a>
+        <a href="/de/calculus/" class="nav-link">Calculus</a>
+        <a href="/de/finance/" class="nav-link">Finance</a>
+        <a href="/de/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/de/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/de/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/de/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/de/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/de/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/de/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/de/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇩🇪</span>
+            <span class="lang-code">DE</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/geometry/2d/shapes/hexagon/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/geometry/2d/shapes/hexagon/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/geometry/2d/shapes/hexagon/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/geometry/2d/shapes/hexagon/" class="lang-dropdown-item active"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/geometry/2d/shapes/hexagon/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/geometry/2d/shapes/hexagon/" class="lang-dropdown-item"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/geometry/2d/shapes/hexagon/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/geometry/2d/shapes/hexagon/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/geometry/2d/shapes/hexagon/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/geometry/2d/shapes/hexagon/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/geometry/2d/shapes/hexagon/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/geometry/2d/shapes/hexagon/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/de/">Startseite</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/de/geometry/">Geometrie</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/de/geometry/2d/">Zweidimensionale (2D) Geometrie</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/de/geometry/2d/shapes/">Polygone & Geometrische Formen</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active">Regular Hexagon Calculator</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Quick Shape Navigation Bar -->
+    <nav class="polygon-switcher-bar" aria-label="Polygon Selector">
+      <div class="switcher-label">
+        <span class="switcher-dot"></span>
+        <span>Polygon Solvers:</span>
+      </div>
+      <div class="switcher-pills">
+        <a href="/de/geometry/2d/shapes/regular-polygon/" class="switcher-pill featured">
+          <span>⨁</span> Universal N-Gon <span class="pill-badge">3–1000</span>
+        </a>
+        <a href="/geometry/2d/shapes/regular-polygon/?n=3" class="switcher-pill">▲ Dreieck (3)</a>
+        <a href="/geometry/2d/shapes/regular-polygon/?n=4" class="switcher-pill">■ Quadrat (4)</a>
+        <a href="/de/geometry/2d/shapes/pentagon/" class="switcher-pill">⬠ Fünfeck (5)</a>
+        <a href="/de/geometry/2d/shapes/hexagon/" class="switcher-pill active">⬡ Sechseck (6)</a>
+        <a href="/de/geometry/2d/shapes/octagon/" class="switcher-pill">🛑 Achteck (8)</a>
+        <a href="/de/geometry/2d/shapes/decagon/" class="switcher-pill">⯃ Zehneck (10)</a>
+        <a href="/de/geometry/2d/shapes/" class="switcher-pill switcher-more">📁 Alle Formen →</a>
+      </div>
+    </nav>
+
+    <section class="calculator-hero">
+      <div class="calc-title-badge">Polygon Geometry • 6-Sided Regular Polytope</div>
+      <h1>Regelmäßiges Sechseck Rechner</h1>
+      <p>
+        High-precision bidirectional analytic solver. Enter <strong>any single known variable</strong>—side length, area, perimeter, apothem (inradius), circumradius, flat-to-flat span, or diagonal—and all other 7 geometric parameters will compute instantaneously with exact radical derivations.
+      </p>
+    </section>
+
+    <section class="solver-container">
+      
+      <!-- Left Panel: Solver Matrix HUD -->
+      <div class="solver-panel">
+        
+        <div class="solver-toolbar">
+          <div class="toolbar-group">
+            <span class="toolbar-label">Einheiten:</span>
+            <div class="segmented-control" id="unit-selector">
+              <button class="unit-btn active" data-unit="cm">cm</button>
+              <button class="unit-btn" data-unit="mm">mm</button>
+              <button class="unit-btn" data-unit="m">m</button>
+              <button class="unit-btn" data-unit="in">in</button>
+              <button class="unit-btn" data-unit="ft">ft</button>
+              <button class="unit-btn" data-unit="yd">yd</button>
+            </div>
+          </div>
+
+          <div class="toolbar-group">
+            <span class="toolbar-label">Dezimalstellen:</span>
+            <div class="segmented-control" id="prec-selector">
+              <button class="prec-btn" data-prec="2">2</button>
+              <button class="prec-btn active" data-prec="4">4</button>
+              <button class="prec-btn" data-prec="6">6</button>
+              <button class="prec-btn" data-prec="8">8</button>
+              <button class="prec-btn" data-prec="10">10</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="driver-selector-bar">
+          <label for="driver-select">Select Known Input (Driver):</label>
+          <select id="driver-select" class="driver-dropdown">
+            <option value="side" selected>Side Length (a)</option>
+            <option value="area">Area (A)</option>
+            <option value="perimeter">Perimeter (P)</option>
+            <option value="apothem">Apothem / Inradius (r_i)</option>
+            <option value="circumradius">Circumradius (R)</option>
+            <option value="span">Span / Flat-to-Flat Width (S)</option>
+            <option value="long_diag">Long Diagonal / Vertex-to-Vertex (d_L)</option>
+            <option value="short_diag">Short Diagonal (d_S)</option>
+          </select>
+        </div>
+
+        <div class="parameter-grid">
+          
+          <!-- 1. Side Length -->
+          <div class="param-card is-driver" id="card-side">
+            <div class="param-header">
+              <span class="param-title">Side Length <span class="param-symbol">a</span></span>
+              <span class="param-status-tag input" id="status-side">Input (Driver)</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-side" class="param-input" value="10" step="any" min="0.0001" aria-label="Side Length">
+              <span class="param-unit" id="unit-side">cm</span>
+            </div>
+            <input type="range" id="slider-side" class="param-slider" min="1" max="100" value="10" step="0.1" aria-label="Side Length Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-side">a = 10</span>
+              <button class="copy-param-btn" id="copy-side">Copy</button>
+            </div>
+          </div>
+
+          <!-- 2. Area -->
+          <div class="param-card" id="card-area">
+            <div class="param-header">
+              <span class="param-title">Area <span class="param-symbol">A</span></span>
+              <span class="param-status-tag calculated" id="status-area">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-area" class="param-input" value="259.8076" step="any" min="0.0001" aria-label="Area">
+              <span class="param-unit" id="unit-area">cm²</span>
+            </div>
+            <input type="range" id="slider-area" class="param-slider" min="1" max="2500" value="259.8076" step="1" aria-label="Area Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-area">A = (3√3 / 2)a²</span>
+              <button class="copy-param-btn" id="copy-area">Copy</button>
+            </div>
+          </div>
+
+          <!-- 3. Perimeter -->
+          <div class="param-card" id="card-perimeter">
+            <div class="param-header">
+              <span class="param-title">Perimeter <span class="param-symbol">P</span></span>
+              <span class="param-status-tag calculated" id="status-perimeter">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-perimeter" class="param-input" value="60" step="any" min="0.0001" aria-label="Perimeter">
+              <span class="param-unit" id="unit-perimeter">cm</span>
+            </div>
+            <input type="range" id="slider-perimeter" class="param-slider" min="1" max="600" value="60" step="0.5" aria-label="Perimeter Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-perimeter">P = 6a</span>
+              <button class="copy-param-btn" id="copy-perimeter">Copy</button>
+            </div>
+          </div>
+
+          <!-- 4. Apothem / Inradius -->
+          <div class="param-card" id="card-apothem">
+            <div class="param-header">
+              <span class="param-title">Apothem (Inradius) <span class="param-symbol">r<sub>i</sub></span></span>
+              <span class="param-status-tag calculated" id="status-apothem">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-apothem" class="param-input" value="8.6603" step="any" min="0.0001" aria-label="Apothem">
+              <span class="param-unit" id="unit-apothem">cm</span>
+            </div>
+            <input type="range" id="slider-apothem" class="param-slider" min="1" max="100" value="8.6603" step="0.1" aria-label="Apothem Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-apothem">r<sub>i</sub> = (a√3) / 2</span>
+              <button class="copy-param-btn" id="copy-apothem">Copy</button>
+            </div>
+          </div>
+
+          <!-- 5. Circumradius -->
+          <div class="param-card" id="card-circumradius">
+            <div class="param-header">
+              <span class="param-title">Circumradius <span class="param-symbol">R</span></span>
+              <span class="param-status-tag calculated" id="status-circumradius">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-circumradius" class="param-input" value="10" step="any" min="0.0001" aria-label="Circumradius">
+              <span class="param-unit" id="unit-circumradius">cm</span>
+            </div>
+            <input type="range" id="slider-circumradius" class="param-slider" min="1" max="100" value="10" step="0.1" aria-label="Circumradius Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-circumradius">R = a</span>
+              <button class="copy-param-btn" id="copy-circumradius">Copy</button>
+            </div>
+          </div>
+
+          <!-- 6. Long Diagonal -->
+          <div class="param-card" id="card-long_diag">
+            <div class="param-header">
+              <span class="param-title">Long Diagonal <span class="param-symbol">d<sub>L</sub></span></span>
+              <span class="param-status-tag calculated" id="status-long_diag">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-long_diag" class="param-input" value="20" step="any" min="0.0001" aria-label="Long Diagonal">
+              <span class="param-unit" id="unit-long_diag">cm</span>
+            </div>
+            <input type="range" id="slider-long_diag" class="param-slider" min="1" max="200" value="20" step="0.2" aria-label="Long Diagonal Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-long_diag">d<sub>L</sub> = 2a = 2R</span>
+              <button class="copy-param-btn" id="copy-long_diag">Copy</button>
+            </div>
+          </div>
+
+          <!-- 7. Span (Flat to Flat) -->
+          <div class="param-card" id="card-span">
+            <div class="param-header">
+              <span class="param-title">Span / Flat-to-Flat <span class="param-symbol">S</span></span>
+              <span class="param-status-tag calculated" id="status-span">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-span" class="param-input" value="17.3205" step="any" min="0.0001" aria-label="Span">
+              <span class="param-unit" id="unit-span">cm</span>
+            </div>
+            <input type="range" id="slider-span" class="param-slider" min="1" max="200" value="17.3205" step="0.2" aria-label="Span Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-span">S = 2r<sub>i</sub> = a√3</span>
+              <button class="copy-param-btn" id="copy-span">Copy</button>
+            </div>
+          </div>
+
+          <!-- 8. Short Diagonal -->
+          <div class="param-card" id="card-short_diag">
+            <div class="param-header">
+              <span class="param-title">Short Diagonal <span class="param-symbol">d<sub>S</sub></span></span>
+              <span class="param-status-tag calculated" id="status-short_diag">Calculated</span>
+            </div>
+            <div class="param-input-wrap">
+              <input type="number" id="input-short_diag" class="param-input" value="17.3205" step="any" min="0.0001" aria-label="Short Diagonal">
+              <span class="param-unit" id="unit-short_diag">cm</span>
+            </div>
+            <input type="range" id="slider-short_diag" class="param-slider" min="1" max="200" value="17.3205" step="0.1" aria-label="Short Diagonal Slider">
+            <div class="param-footer">
+              <span class="param-exact" id="exact-short_diag">d<sub>S</sub> = a√3 = S</span>
+              <button class="copy-param-btn" id="copy-short_diag">Copy</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Panel: Live SVG Blueprint -->
+      <div class="canvas-panel">
+        <div class="canvas-header">
+          <div class="canvas-title">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 21.5 7.5 21.5 16.5 12 22 2.5 16.5 2.5 7.5 12 2"></polygon></svg>
+            <span>Interactive Analytic Blueprint</span>
+          </div>
+          <div class="canvas-hud-coords" id="blueprint-coord-display">Hover vertex for coordinates</div>
+        </div>
+
+        <!-- Blueprint Layer Toggles -->
+        <div class="blueprint-layer-bar">
+          <span class="layer-bar-label">Layers:</span>
+          <button class="layer-pill active" id="toggle-layer-grid" title="Toggle Coordinate Grid & Axes">Grid</button>
+          <button class="layer-pill active" id="toggle-layer-circles" title="Toggle Incircle & Circumcircle">Circles</button>
+          <button class="layer-pill active" id="toggle-layer-dims" title="Toggle Dimension Lines">Dimensions</button>
+          <button class="layer-pill active" id="toggle-layer-labels" title="Toggle Vertex Points">Vertices</button>
+          <button class="layer-pill" id="toggle-blueprint-theme" title="Toggle Blueprint Theme">Blueprint Mode</button>
+        </div>
+
+        <div class="canvas-wrapper" id="blueprint-canvas-wrapper">
+          <svg id="svg-hexagon-canvas" class="octagon-svg omni-blueprint-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="smallGridHex" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" />
+              </pattern>
+            </defs>
+            <rect width="400" height="400" fill="url(#smallGridHex)" />
+
+            <line x1="200" y1="20" x2="200" y2="380" class="svg-axis" />
+            <line x1="20" y1="200" x2="380" y2="200" class="svg-axis" />
+
+            <g id="svg-dimension-overlay"></g>
+            <polygon id="svg-hexagon-polygon" class="svg-polygon-shape" points="" />
+            <g id="svg-vertices-group"></g>
+
+            <!-- Technical Watermark & Scale Meta -->
+            <text x="14" y="22" class="svg-blueprint-meta">SCALE 1:1 • REGULAR HEXAGON BLUEPRINT</text>
+            <text x="386" y="388" text-anchor="end" class="svg-blueprint-watermark">OmniOperand • omnioperand.com</text>
+          </svg>
+        </div>
+
+        <!-- Blueprint Export Toolbar -->
+        <div class="blueprint-export-bar">
+          <button class="export-btn" id="btn-export-png" title="Download High-Resolution PNG (2000×2000)">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            High-Res PNG
+          </button>
+          <button class="export-btn" id="btn-export-svg" title="Download Vector SVG File">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            Vector SVG
+          </button>
+          <button class="export-btn" id="btn-export-tikz" title="Copy LaTeX TikZ Vector Code">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            LaTeX TikZ
+          </button>
+          <button class="export-btn highlight" id="btn-open-attribution" title="Citation & Backlink Attribution">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            Backlink / Cite
+          </button>
+        </div>
+
+        <div class="canvas-legend">
+          <div class="legend-item"><span class="legend-dot" style="background:#06b6d4;"></span> Side (a)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#10b981;"></span> Apothem (r<sub>i</sub>)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#a855f7;"></span> Circumradius (R)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#f59e0b;"></span> Long Diag (d<sub>L</sub>)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#38bdf8;"></span> Span (S)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#ec4899;"></span> Short Diag (d<sub>S</sub>)</div>
+        </div>
+
+        <!-- Commercial & Academic Attribution Notice -->
+        <div class="blueprint-license-box">
+          <div class="license-badge-row">
+            <span class="license-badge">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Free for Commerce & Academia
+            </span>
+            <span class="license-cc">CC BY 4.0 License</span>
+          </div>
+          <p class="license-desc">
+            All generated diagrams and blueprints are free to use in academic papers, websites, books, and software. <strong>Backlink attribution to omnioperand.com is requested.</strong>
+          </p>
+          <div class="attribution-snippet-group">
+            <div class="snippet-header">
+              <span>Web Backlink Attribution:</span>
+              <button class="copy-snippet-btn" id="copy-backlink-html">Copy HTML</button>
+            </div>
+            <code class="snippet-code" id="snippet-backlink-html">&lt;a href="https://omnioperand.com/geometry/2d/shapes/hexagon/" target="_blank" rel="noopener"&gt;Diagram courtesy of OmniOperand&lt;/a&gt;</code>
+          </div>
+          <div class="attribution-snippet-group" style="margin-top:0.45rem;">
+            <div class="snippet-header">
+              <span>Academic BibTeX Citation:</span>
+              <button class="copy-snippet-btn" id="copy-backlink-bibtex">Copy BibTeX</button>
+            </div>
+            <code class="snippet-code" id="snippet-backlink-bibtex">@misc{omnioperand_hexagon, title={Regular Hexagon Calculator & Blueprint}, author={OmniOperand}, url={https://omnioperand.com/geometry/2d/shapes/hexagon/}, year={2026}}</code>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Mathematical Foundations & Analytical Derivations -->
+    <section class="proofs-section">
+      <h2>Mathematical Foundations & Hexagonal Symmetries</h2>
+      <p>
+        The regular hexagon has 6 congruent sides and 6 congruent interior angles. It belongs to the dihedral symmetry group <strong>D<sub>6</sub></strong> with 6 reflection axes and 6-fold rotational symmetry (60° invariance). It is one of only three regular polygons capable of completely tessellating the 2D Euclidean plane without gaps.
+      </p>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">1</span>
+            <span>Interior, Exterior & Central Angles</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <div class="proof-step">
+            <div class="step-num">a</div>
+            <div class="step-content">
+              <strong>Sum of Interior Angles:</strong>
+              For <span class="math-tex">n = 6</span>:
+              <div class="math-display">
+                S = (6 - 2) × 180° = 4 × 180° = 720° &nbsp; (4π rad)
+              </div>
+            </div>
+          </div>
+          <div class="proof-step">
+            <div class="step-num">b</div>
+            <div class="step-content">
+              <strong>Individual Interior Angle (α):</strong>
+              <div class="math-display">
+                α = 720° / 6 = 120° &nbsp; (2π / 3 rad)
+              </div>
+            </div>
+          </div>
+          <div class="proof-step">
+            <div class="step-num">c</div>
+            <div class="step-content">
+              <strong>Central & Exterior Angle (β):</strong>
+              <div class="math-display">
+                β = 360° / 6 = 60° &nbsp; (π / 3 rad)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">2</span>
+            <span>Proof that Circumradius (R) Equals Side Length (a)</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            Connect the center <span class="math-tex">O</span> to any two adjacent vertices <span class="math-tex">V_1</span> and <span class="math-tex">V_2</span>. The central angle is <span class="math-tex">∠V_1OV_2 = 60°</span>. Since both radii legs are equal (<span class="math-tex">OV_1 = OV_2 = R</span>), the triangle <span class="math-tex">ΔOV_1V_2</span> is isosceles.
+          </p>
+          <div class="math-display">
+            Base angles = (180° - 60°) / 2 = 60°
+          </div>
+          <p>
+            Because all three angles are 60°, the triangle is <strong>equilateral</strong>. Therefore:
+          </p>
+          <div class="math-display">
+            R = a
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">3</span>
+            <span>Apothem (Inradius) Radical Derivation</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            The apothem <span class="math-tex">r<sub>i</sub></span> is the altitude of one of the 6 central equilateral triangles:
+          </p>
+          <div class="math-display">
+            r<sub>i</sub>² + (a / 2)² = a² ⟹ r<sub>i</sub>² = a² - a² / 4 = 3a² / 4
+          </div>
+          <div class="math-display">
+            r<sub>i</sub> = (a · √3) / 2 ≈ 0.86602540 · a
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">4</span>
+            <span>Area Exact Radical Derivations</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            A regular hexagon comprises exactly 6 equilateral triangles of side <span class="math-tex">a</span>:
+          </p>
+          <div class="math-display">
+            A = 6 × (a²√3 / 4) = (3√3 / 2)a² ≈ 2.59807621 · a²
+          </div>
+          <p>
+            In terms of the flat-to-flat span <span class="math-tex">S = 2r<sub>i</sub> = a√3 ⟹ a = S / √3</span>:
+          </p>
+          <div class="math-display">
+            A = (3√3 / 2) · (S / √3)² = (√3 / 2)S² ≈ 0.86602540 · S²
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">5</span>
+            <span>The 2 Distinct Diagonal Classes</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            An <span class="math-tex">n</span>-gon has <span class="math-tex">n(n - 3) / 2</span> diagonals. For <span class="math-tex">n = 6</span>, there are <span class="math-tex">6(3) / 2 = 9</span> diagonals in two congruence classes:
+          </p>
+          <div class="proof-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <strong>Short Diagonal (<span class="math-tex">d<sub>S</sub></span>, 6 total):</strong>
+              Connects alternate vertices across 2 sides. Applying the Law of Cosines with interior angle 120°:
+              <div class="math-display">
+                d<sub>S</sub>² = a² + a² - 2a² cos(120°) = 2a² - 2a²(-½) = 3a²
+              </div>
+              <div class="math-display">
+                d<sub>S</sub> = a√3 ≈ 1.73205081 · a
+              </div>
+            </div>
+          </div>
+          <div class="proof-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <strong>Long Diagonal (<span class="math-tex">d<sub>L</sub></span>, 3 total):</strong>
+              Connects directly opposite vertices through the center. It equals the circumcircle diameter:
+              <div class="math-display">
+                d<sub>L</sub> = 2R = 2a
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- LLM Prompt Box -->
+    <section class="llm-box">
+      <div class="llm-header">
+        <div>
+          <span class="llm-badge">LLM Directive & API Spec</span>
+          <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
+        </div>
+        <div class="llm-actions">
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+          <button class="btn btn-secondary btn-sm" id="copy-json-btn">Copy JSON Data</button>
+        </div>
+      </div>
+
+      <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
+
+      <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Precision verified up to 10 decimal digits</span>
+        <span>✓ Exact analytic radicals included</span>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Häufig Gestellte Fragen</h2>
+      
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the formula for the area of a regular hexagon?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The area of a regular hexagon with side length <span class="math-tex">a</span> is <span class="math-tex">A = (3√3 / 2)a² ≈ 2.598076a²</span>. If you know the inradius (apothem) <span class="math-tex">r<sub>i</sub></span>, the area is <span class="math-tex">A = 2√3 · r<sub>i</sub>² ≈ 3.464102r<sub>i</sub>²</span>. If you know the flat-to-flat span <span class="math-tex">S</span>, the area is <span class="math-tex">A = (√3 / 2)S² ≈ 0.866025S²</span>.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>Why is the circumradius equal to the side length?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          A regular hexagon is formed by 6 congruent equilateral triangles meeting at the center. Because all sides of an equilateral triangle are equal, the distance from the center to any vertex (Circumradius <span class="math-tex">R</span>) is always strictly equal to the outer side length <span class="math-tex">a</span>.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What are the two diagonal lengths of a regular hexagon?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          A regular hexagon has 9 total diagonals in 2 distinct classes:
+          1. <strong>Short diagonals (<span class="math-tex">d<sub>S</sub></span>)</strong>: <span class="math-tex">d<sub>S</sub> = a√3 ≈ 1.73205a</span> (6 diagonals connecting vertices separated by one vertex)
+          2. <strong>Long diagonals (<span class="math-tex">d<sub>L</sub></span>)</strong>: <span class="math-tex">d<sub>L</sub> = 2a</span> (3 diagonals passing through the center connecting opposite vertices)
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What are the socket and wrench sizes for a hex bolt?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Wrench and socket sizes measure the <strong>flat-to-flat span</strong> (<span class="math-tex">S</span>), which equals <span class="math-tex">2r<sub>i</sub> = a√3</span>. For example, a bolt with a side length of 10 mm requires a socket size of <span class="math-tex">10√3 ≈ 17.32 mm</span> (typically a standard 17mm or 18mm socket).
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Rechner suchen...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.1"></script>
+  <script src="/assets/js/hexagon-solver.js"></script>
+  <script src="/assets/js/blueprint-engine.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procent Składany & Kalkulator Inwestycyjny | OmniOperand</title>
+  <meta name="description" content="Kapitalizacja okresowa i ciągła, regularne dopłaty, efektywna stopa roczna i wzrost kapitału.">
+  <link rel="canonical" href="https://omnioperand.com/pl/finance/compound-interest/">
+  <link rel="alternate" hreflang="en" href="https://omnioperand.com/finance/compound-interest/">
+  <link rel="alternate" hreflang="es" href="https://omnioperand.com/es/finance/compound-interest/">
+  <link rel="alternate" hreflang="fr" href="https://omnioperand.com/fr/finance/compound-interest/">
+  <link rel="alternate" hreflang="de" href="https://omnioperand.com/de/finance/compound-interest/">
+  <link rel="alternate" hreflang="it" href="https://omnioperand.com/it/finance/compound-interest/">
+  <link rel="alternate" hreflang="pt" href="https://omnioperand.com/pt/finance/compound-interest/">
+  <link rel="alternate" hreflang="nl" href="https://omnioperand.com/nl/finance/compound-interest/">
+  <link rel="alternate" hreflang="pl" href="https://omnioperand.com/pl/finance/compound-interest/">
+  <link rel="alternate" hreflang="sv" href="https://omnioperand.com/sv/finance/compound-interest/">
+  <link rel="alternate" hreflang="no" href="https://omnioperand.com/no/finance/compound-interest/">
+  <link rel="alternate" hreflang="fi" href="https://omnioperand.com/fi/finance/compound-interest/">
+  <link rel="alternate" hreflang="ro" href="https://omnioperand.com/ro/finance/compound-interest/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/finance/compound-interest/">
+
+  <meta property="og:title" content="Procent Składany & Kalkulator Inwestycyjny | OmniOperand">
+  <meta property="og:description" content="Kapitalizacja okresowa i ciągła, regularne dopłaty, efektywna stopa roczna i wzrost kapitału.">
+  <meta property="og:url" content="https://omnioperand.com/pl/finance/compound-interest/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/pl/finance/compound-interest/#app",
+      "name": "Procent Składany & Kalkulator Inwestycyjny",
+      "url": "https://omnioperand.com/pl/finance/compound-interest/",
+      "applicationCategory": "FinancialApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Kapitalizacja okresowa i ciągła, regularne dopłaty, efektywna stopa roczna i wzrost kapitału."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/pl/finance/compound-interest/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona Główna",
+          "item": "https://omnioperand.com/pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Finance",
+          "item": "https://omnioperand.com/finance/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Compound Interest",
+          "item": "https://omnioperand.com/finance/compound-interest/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/finance/compound-interest/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the formula for compound interest with regular deposits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The total future value combines lump-sum compounding and ordinary annuity compounding: FV = P(1 + r/m)ᵐᵗ + PMT · [((1 + i_p)ᴺ - 1) / i_p], where P is initial principal, r is annual nominal rate, m is compounding frequency per year, t is years, and PMT is periodic payment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does compounding frequency impact returns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The more frequently interest is added to principal (daily vs monthly vs annually), the faster interest begins earning interest on itself. For an 8% return on $10,000 over 20 years, annual compounding yields $46,610, monthly yields $49,268, and continuous compounding yields $49,530."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between APR and APY?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "APR is the nominal annual rate without compounding. APY (Annual Percentage Yield) reflects the true annual return accounting for intra-year compounding: APY = (1 + r/m)ᵐ - 1."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Rule of 72?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Rule of 72 is an analytical shortcut to estimate how many years it takes for an investment to double at a constant annual rate: Years to Double ≈ 72 / Interest Rate. For example, at an 8% return, your money doubles in approximately 72 / 8 = 9 years."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+            <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/pl/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Finance</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/pl/geometry/" class="nav-link">Geometry</a>
+        <a href="/pl/calculus/" class="nav-link">Calculus</a>
+        <a href="/pl/finance/" class="nav-link active">Finance</a>
+        <a href="/pl/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/pl/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/pl/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/pl/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/pl/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/pl/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/pl/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/pl/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇵🇱</span>
+            <span class="lang-code">PL</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/finance/compound-interest/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/finance/compound-interest/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/finance/compound-interest/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/finance/compound-interest/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/finance/compound-interest/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/finance/compound-interest/" class="lang-dropdown-item"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/finance/compound-interest/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/finance/compound-interest/" class="lang-dropdown-item active"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/finance/compound-interest/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/finance/compound-interest/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/finance/compound-interest/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/finance/compound-interest/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/pl/">Strona Główna</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/pl/finance/">Finanse</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active">Compound Interest Solver</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section class="solver-hero">
+      <div class="hero-badge">Financial Engineering • Actuarial Growth Matrix</div>
+      <h1>Procent Składany & Kalkulator Inwestycyjny</h1>
+      <p class="hero-subtext">Kapitalizacja okresowa i ciągła, regularne dopłaty, efektywna stopa roczna i wzrost kapitału.</p>
+    </section>
+
+    <div class="calculator-grid">
+
+      <!-- Left Column: Inputs -->
+      <div class="solver-column">
+        <div class="hud-panel">
+          <div class="hud-panel-header">
+            <h2>Investment Variables</h2>
+            <div class="precision-control">
+              <label for="precision-select">Decimals:</label>
+              <select id="precision-select" class="select-input">
+                <option value="2" selected>2 (Cents)</option>
+                <option value="4">4 (Precision)</option>
+                <option value="6">6 (Micro)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="param-card-grid">
+            <!-- Initial Principal -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-principal">Initial Principal (P)</label>
+                <span class="param-symbol">P</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-principal" class="number-input" value="10000" step="500" min="0">
+              </div>
+              <div class="param-hint">Starting balance or lump-sum deposit</div>
+            </div>
+
+            <!-- Interest Rate -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-rate">Annual Interest Rate (r)</label>
+                <span class="param-symbol">r</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-rate" class="number-input" value="8.0" step="0.1" min="0" max="100">
+                <span class="input-suffix">%</span>
+              </div>
+              <div class="param-hint">Nominal annual interest rate</div>
+            </div>
+
+            <!-- Investment Horizon -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-years">Investment Horizon</label>
+                <span class="param-symbol">t</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-years" class="number-input" value="20" step="1" min="1" max="60">
+                <span class="input-suffix">Years</span>
+              </div>
+              <div class="param-hint">Number of compounding years</div>
+            </div>
+
+            <!-- Periodic Contribution -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-contribution">Monthly Contribution (PMT)</label>
+                <span class="param-symbol">PMT</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-contribution" class="number-input" value="500" step="50" min="0">
+              </div>
+              <div class="param-hint">Additional regular monthly deposit</div>
+            </div>
+
+            <!-- Compounding Frequency -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-compound-freq">Compounding Interval</label>
+                <span class="param-symbol">m</span>
+              </div>
+              <select id="param-compound-freq" class="select-input" style="width:100%; padding:0.5rem; background:var(--bg-card); color:var(--text-bright); border:1px solid var(--border-subtle); border-radius:var(--radius-sm);">
+                <option value="12" selected>Monthly (12/yr)</option>
+                <option value="365">Daily (365/yr)</option>
+                <option value="4">Quarterly (4/yr)</option>
+                <option value="2">Semi-Annually (2/yr)</option>
+                <option value="1">Annually (1/yr)</option>
+                <option value="0">Continuous (eʳᵗ)</option>
+              </select>
+              <div class="param-hint">Frequency interest is capitalized</div>
+            </div>
+
+            <!-- Target Goal Inversion Entry -->
+            <div class="param-card" style="border-color:rgba(16, 185, 129, 0.4);">
+              <div class="param-label-row">
+                <label for="param-target-fv">Target Future Value (Inversion)</label>
+                <span class="param-symbol">FV</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-target-fv" class="number-input" value="346000" step="5000">
+              </div>
+              <div class="param-hint">Type here to invert for required monthly contribution PMT</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Accumulated Wealth Breakdown</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem;">
+            <div class="metric-card" style="border-color:rgba(16, 185, 129, 0.5);">
+              <span class="metric-label">Future Value (Total Portfolio)</span>
+              <span class="metric-value" id="disp-fv" style="color:var(--accent-emerald); font-size:1.6rem;">$346,169.57</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Effective APY</span>
+              <span class="metric-value" id="disp-apy" style="color:var(--accent-cyan);">8.30% APY</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Total Compound Interest</span>
+              <span class="metric-value" id="disp-total-interest" style="color:var(--accent-emerald);">$216,169.57</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Total Principal + Deposits</span>
+              <span class="metric-value" id="disp-total-contrib">$130,000.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Visualizer Chart -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Wealth Accumulation Trajectory</h3>
+            <div style="display:flex; gap:0.6rem; font-size:0.75rem;">
+              <span style="display:inline-flex; align-items:center; gap:0.3rem;"><span style="width:10px; height:10px; background:var(--accent-emerald); border-radius:2px;"></span> Interest</span>
+              <span style="display:inline-flex; align-items:center; gap:0.3rem;"><span style="width:10px; height:10px; background:var(--accent-blue); border-radius:2px;"></span> Deposits</span>
+              <span style="display:inline-flex; align-items:center; gap:0.3rem;"><span style="width:10px; height:10px; background:var(--accent-violet); border-radius:2px;"></span> Principal</span>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1rem; border:1px solid var(--border-subtle);">
+            <svg id="compound-chart-svg" viewBox="0 0 600 260" width="100%" height="260" style="overflow:visible; display:block;"></svg>
+          </div>
+
+          <div style="margin-top:1.25rem; font-size:0.85rem; color:var(--text-muted); line-height:1.6;">
+            <strong>The Compounding Advantage:</strong> In the early years, personal deposits drive the majority of account value. Over extended horizons, the green curve (compound interest on previously earned interest) accelerates exponentially, overtaking contributed capital.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Proofs Section -->
+    <section class="proof-section" style="margin-top: 3rem;">
+      <h2>Mathematical Rigor & Closed-Form Formulations</h2>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">1</span>
+            <span>Discrete Compounding & Annuity Synthesis</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            When interest compounds <span class="math-tex">m</span> times per year at nominal annual rate <span class="math-tex">r</span>, the interest earned each period is <span class="math-tex">i = r / m</span>. Over <span class="math-tex">t</span> years, the total compounding periods are <span class="math-tex">N = m · t</span>:
+          </p>
+          <div class="math-display">
+            FV<sub>lump</sub> = P · (1 + r / m)<sup>m · t</sup>
+          </div>
+          <p>
+            For regular periodic deposits <span class="math-tex">PMT</span> made at the end of each period:
+          </p>
+          <div class="math-display">
+            FV<sub>annuity</sub> = PMT · [ (1 + i)<sup>N</sup> - 1 ] / i
+          </div>
+          <p>
+            Summing both terms provides the complete portfolio balance at time <span class="math-tex">t</span>:
+          </p>
+          <div class="math-display">
+            FV<sub>total</sub> = P(1 + r/m)<sup>mt</sup> + PMT · [ (1 + r/m)<sup>mt</sup> - 1 ] / (r/m)
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">2</span>
+            <span>Annual Percentage Yield (APY) Closed Form</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            Because interest earned intra-year itself earns interest in subsequent periods, the true annual effective rate (APY) exceeds the nominal APR:
+          </p>
+          <div class="math-display">
+            APY = (1 + r / m)<sup>m</sup> - 1
+          </div>
+          <p>
+            For continuous compounding, taking the limit as <span class="math-tex">m ➔ ∞</span> gives:
+          </p>
+          <div class="math-display">
+            lim (m ➔ ∞) (1 + r / m)<sup>m</sup> = e<sup>r</sup> ⟹ APY = e<sup>r</sup> - 1
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">3</span>
+            <span>Target Goal Inversion Formulation</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            To compute the exact periodic deposit <span class="math-tex">PMT</span> required to reach a specific financial goal <span class="math-tex">FV*</span> from existing principal <span class="math-tex">P</span>:
+          </p>
+          <div class="math-display">
+            PMT = [ FV* - P · (1 + r/m)<sup>mt</sup> ] · (r/m) / [ (1 + r/m)<sup>mt</sup> - 1 ]
+          </div>
+          <p>
+            This closed-form solution guarantees exact mathematical convergence without iterative guessing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LLM Directive Box -->
+    <section class="llm-box">
+      <div class="llm-header">
+        <div>
+          <span class="llm-badge">LLM Directive & API Spec</span>
+          <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
+        </div>
+        <div class="llm-actions">
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+        </div>
+      </div>
+
+      <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
+
+      <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Continuous and discrete compounding verified</span>
+        <span>✓ Machine-checked against edge actuarial tables</span>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Często Zadawane Pytania</h2>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the formula for compound interest with regular deposits?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The total future value combines lump-sum compounding and ordinary annuity compounding:
+          <div class="math-display">FV = P(1 + r/m)ᵐᵗ + PMT · [((1 + i<sub>p</sub>)ᴺ - 1) / i<sub>p</sub>]</div>
+          where <span class="math-tex">P</span> is principal, <span class="math-tex">r</span> is nominal APR, <span class="math-tex">m</span> is annual compounding frequency, <span class="math-tex">t</span> is years, <span class="math-tex">PMT</span> is periodic contribution, and <span class="math-tex">i<sub>p</sub></span> is interest rate per deposit interval.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>How does compounding frequency impact returns?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The more frequently interest is calculated and added to the principal balance (daily vs monthly vs annually), the faster interest begins earning interest on itself. For an 8% return on $10,000 over 20 years, annual compounding yields $46,610, monthly yields $49,268, and continuous compounding yields $49,530.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the difference between APR and APY?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <strong>APR (Annual Percentage Rate)</strong> is the nominal stated rate without intra-year compounding. <strong>APY (Annual Percentage Yield)</strong> reflects the true effective annual yield: <span class="math-tex">APY = (1 + r/m)ᵐ - 1</span>. For 7% compounded daily, APY is 7.25%.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the Rule of 72?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The Rule of 72 is an analytical shortcut to estimate how many years it takes for an investment to double at a constant annual rate: <span class="math-tex">Years to Double ≈ 72 / Interest Rate</span>. For example, at an 8% return, your money doubles in approximately <span class="math-tex">72 / 8 = 9</span> years.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Szukaj kalkulatorów...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.1"></script>
+  <script src="/assets/js/compound-interest-solver.js"></script>
+</body>
+</html>

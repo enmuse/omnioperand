@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ympyrän Sektori & Segmentti Laskuri | OmniOperand</title>
+  <meta name="description" content="Laske kaaren pituus, jänne, sagitta (korkeus), sektorin pinta-ala ja segmentin pinta-ala.">
+  <link rel="canonical" href="https://omnioperand.com/fi/geometry/2d/circle-sector/">
+  <link rel="alternate" hreflang="en" href="https://omnioperand.com/geometry/2d/circle-sector/">
+  <link rel="alternate" hreflang="es" href="https://omnioperand.com/es/geometry/2d/circle-sector/">
+  <link rel="alternate" hreflang="fr" href="https://omnioperand.com/fr/geometry/2d/circle-sector/">
+  <link rel="alternate" hreflang="de" href="https://omnioperand.com/de/geometry/2d/circle-sector/">
+  <link rel="alternate" hreflang="it" href="https://omnioperand.com/it/geometry/2d/circle-sector/">
+  <link rel="alternate" hreflang="pt" href="https://omnioperand.com/pt/geometry/2d/circle-sector/">
+  <link rel="alternate" hreflang="nl" href="https://omnioperand.com/nl/geometry/2d/circle-sector/">
+  <link rel="alternate" hreflang="pl" href="https://omnioperand.com/pl/geometry/2d/circle-sector/">
+  <link rel="alternate" hreflang="sv" href="https://omnioperand.com/sv/geometry/2d/circle-sector/">
+  <link rel="alternate" hreflang="no" href="https://omnioperand.com/no/geometry/2d/circle-sector/">
+  <link rel="alternate" hreflang="fi" href="https://omnioperand.com/fi/geometry/2d/circle-sector/">
+  <link rel="alternate" hreflang="ro" href="https://omnioperand.com/ro/geometry/2d/circle-sector/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/geometry/2d/circle-sector/">
+
+  <meta property="og:title" content="Ympyrän Sektori & Segmentti Laskuri | OmniOperand">
+  <meta property="og:description" content="Laske kaaren pituus, jänne, sagitta (korkeus), sektorin pinta-ala ja segmentin pinta-ala.">
+  <meta property="og:url" content="https://omnioperand.com/fi/geometry/2d/circle-sector/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/fi/geometry/2d/circle-sector/#app",
+      "name": "Ympyrän Sektori & Segmentti Laskuri",
+      "url": "https://omnioperand.com/fi/geometry/2d/circle-sector/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Laske kaaren pituus, jänne, sagitta (korkeus), sektorin pinta-ala ja segmentin pinta-ala."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/fi/geometry/2d/circle-sector/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Etusivu",
+          "item": "https://omnioperand.com/fi/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Geometry",
+          "item": "https://omnioperand.com/geometry/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "2D Geometry",
+          "item": "https://omnioperand.com/geometry/2d/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Circle Sector",
+          "item": "https://omnioperand.com/geometry/2d/circle-sector/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/geometry/2d/circle-sector/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between a circle sector and a circle segment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A circle sector is a pie-shaped region bounded by two radii and an arc (like a slice of pizza). A circle segment is the region bounded by an arc and the straight chord connecting the arc's two endpoints. The segment area equals the sector area minus the central triangle area."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you calculate circle radius from chord and sagitta height?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By applying the Intersecting Chords Theorem, the radius R can be derived exactly from chord length c and sagitta height h: R = (c² / (8h)) + (h / 2). This is widely used in machining, surveying, and arch masonry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the origin of the word sagitta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sagitta is Latin for arrow. In classical geometry, the chord represents an archer's bowstring, the curved arc represents the bow, and the perpendicular height line from chord to arc resembles an arrow nocked and ready to fire."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you calculate circular tank liquid volume?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When a horizontal cylindrical tank (like an oil or fuel tank) is partially full, the cross-sectional shape of the liquid is a circular segment. Multiplying the segment area by the tank's horizontal length yields the exact liquid volume in the tank."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+            <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/fi/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Geometry</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/fi/geometry/" class="nav-link active">Geometry</a>
+        <a href="/fi/calculus/" class="nav-link">Calculus</a>
+        <a href="/fi/finance/" class="nav-link">Finance</a>
+        <a href="/fi/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/fi/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/fi/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/fi/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/fi/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/fi/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/fi/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/fi/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇫🇮</span>
+            <span class="lang-code">FI</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/geometry/2d/circle-sector/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/geometry/2d/circle-sector/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/geometry/2d/circle-sector/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/geometry/2d/circle-sector/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/geometry/2d/circle-sector/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/geometry/2d/circle-sector/" class="lang-dropdown-item"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/geometry/2d/circle-sector/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/geometry/2d/circle-sector/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/geometry/2d/circle-sector/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/geometry/2d/circle-sector/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/geometry/2d/circle-sector/" class="lang-dropdown-item active"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/geometry/2d/circle-sector/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/fi/">Etusivu</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/fi/geometry/">Geometria</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/fi/geometry/2d/">Kaksiulotteinen (2D) Geometria</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active">Circle Sector & Segment Solver</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section class="solver-hero">
+      <div class="hero-badge">Planar Geometry • Trigonometric Curves</div>
+      <h1>Circle Sector, Arc Length & Segment Area Calculator</h1>
+      <p class="hero-subtext">Laske kaaren pituus, jänne, sagitta (korkeus), sektorin pinta-ala ja segmentin pinta-ala.</p>
+    </section>
+
+    <div class="calculator-grid">
+
+      <!-- Left Column: Inputs -->
+      <div class="solver-column">
+        <div class="hud-panel">
+          <div class="hud-panel-header">
+            <h2>Geometric Parameters</h2>
+            <div class="precision-control">
+              <label for="precision-select">Precision:</label>
+              <select id="precision-select" class="select-input">
+                <option value="2">2 Decimals</option>
+                <option value="4" selected>4 Decimals</option>
+                <option value="6">6 Decimals</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="param-card-grid">
+            <!-- Radius -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-radius">Radius (R)</label>
+                <span class="param-symbol">R</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-radius" class="number-input" value="10" step="0.5" min="0.1">
+              </div>
+              <div class="param-hint">Distance from center to curve</div>
+            </div>
+
+            <!-- Central Angle in Degrees -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-angle">Central Angle (θ)</label>
+                <span class="param-symbol">θ</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-angle" class="number-input" value="60" step="1" min="0.1" max="360">
+                <span class="input-suffix">Degrees</span>
+              </div>
+              <div class="param-hint">Subtended central angle</div>
+            </div>
+
+            <!-- Arc Length (Inversion) -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-arc">Arc Length (s)</label>
+                <span class="param-symbol">s</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-arc" class="number-input" value="10.472" step="0.5">
+              </div>
+              <div class="param-hint">Type here to invert for central angle θ</div>
+            </div>
+
+            <!-- Chord Length (Inversion) -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-chord">Chord Length (c)</label>
+                <span class="param-symbol">c</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-chord" class="number-input" value="10.0" step="0.5">
+              </div>
+              <div class="param-hint">Straight line connecting arc endpoints</div>
+            </div>
+
+            <!-- Sagitta Height (Inversion) -->
+            <div class="param-card" style="grid-column: 1 / -1; border-color:rgba(244, 63, 94, 0.4);">
+              <div class="param-label-row">
+                <label for="param-sagitta">Sagitta / Arch Height (h)</label>
+                <span class="param-symbol">h</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-sagitta" class="number-input" value="1.340" step="0.1">
+              </div>
+              <div class="param-hint">Inversion: Enter chord c and sagitta h to calculate unknown radius R</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Derived Metric Invariants</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem;">
+            <div class="metric-card" style="border-color:rgba(59, 130, 246, 0.5);">
+              <span class="metric-label">Sector Area (Pie Slice)</span>
+              <span class="metric-value" id="disp-sector-area" style="color:var(--accent-blue); font-size:1.4rem;">52.3599</span>
+            </div>
+            <div class="metric-card" style="border-color:rgba(16, 185, 129, 0.5);">
+              <span class="metric-label">Segment Area (Outer Cap)</span>
+              <span class="metric-value" id="disp-segment-area" style="color:var(--accent-emerald); font-size:1.4rem;">9.0590</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Angle in Radians</span>
+              <span class="metric-value" id="disp-angle-rad">1.0472 rad</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Sector Perimeter</span>
+              <span class="metric-value" id="disp-perimeter">30.4720</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Visualizer Blueprint -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Circle Sector & Segment Blueprint</h3>
+            <span class="badge" style="background:rgba(59,130,246,0.15); color:var(--accent-blue); border:1px solid rgba(59,130,246,0.3); padding:0.25rem 0.6rem; border-radius:4px; font-size:0.75rem; font-weight:600;">
+              Vector CAD Layout
+            </span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1rem; border:1px solid var(--border-subtle); display:flex; justify-content:center; align-items:center;">
+            <svg id="sector-blueprint-svg" viewBox="0 0 400 240" width="100%" height="240" style="overflow:visible; display:block;"></svg>
+          </div>
+
+          <div style="margin-top:1.25rem; font-size:0.85rem; color:var(--text-muted); line-height:1.6;">
+            <strong>Legend:</strong> The blue region represents the entire <strong>Sector</strong>. The green shaded area between the amber chord line and the outer curved arc represents the <strong>Circular Segment</strong>. The dashed red line is the <strong>Sagitta (h)</strong>.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Proofs Section -->
+    <section class="proof-section" style="margin-top: 3rem;">
+      <h2>Mathematical Rigor & Closed-Form Formulations</h2>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">1</span>
+            <span>Arc, Chord & Sagitta Closed-Form Derivations</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            For a circle of radius <span class="math-tex">R</span> and central angle <span class="math-tex">θ</span> in radians:
+          </p>
+          <div class="math-display">
+            Arc Length s = R · θ
+          </div>
+          <p>
+            The chord bisects the central angle into two right triangles with opposite sides <span class="math-tex">R sin(θ / 2)</span>:
+          </p>
+          <div class="math-display">
+            Chord Length c = 2R · sin(θ / 2)
+          </div>
+          <p>
+            The sagitta <span class="math-tex">h</span> is the maximum perpendicular distance from chord to arc:
+          </p>
+          <div class="math-display">
+            Sagitta h = R - R · cos(θ / 2) = R · [ 1 - cos(θ / 2) ]
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">2</span>
+            <span>The Chord-Sagitta Radius Inversion Theorem</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            By applying the Intersecting Chords Theorem across the complete circle diameter <span class="math-tex">2R</span>:
+          </p>
+          <div class="math-display">
+            (c / 2) · (c / 2) = h · (2R - h) ⟹ c² / 4 = 2Rh - h²
+          </div>
+          <p>
+            Rearranging to isolate radius <span class="math-tex">R</span>:
+          </p>
+          <div class="math-display">
+            2Rh = (c² / 4) + h² ⟹ R = (c² / 8h) + (h / 2)
+          </div>
+          <p>
+            This fundamental formula enables carpenters, fabricators, and stone masons to determine the exact radius of an existing arched doorway or curved wall simply by measuring its width and height.
+          </p>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">3</span>
+            <span>Sector & Segment Area Derivations</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            A sector is proportional to the total circle area <span class="math-tex">π R²</span> by the angle fraction <span class="math-tex">θ / 2π</span>:
+          </p>
+          <div class="math-display">
+            A<sub>sector</sub> = π R² · (θ / 2π) = ½ R² θ
+          </div>
+          <p>
+            The central triangle formed by the center and the chord has area <span class="math-tex">½ R² sin(θ)</span>. Subtracting this from the sector yields the circular segment area:
+          </p>
+          <div class="math-display">
+            A<sub>segment</sub> = ½ R² θ - ½ R² sin(θ) = ½ R² (θ - sin θ)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LLM Directive Box -->
+    <section class="llm-box">
+      <div class="llm-header">
+        <div>
+          <span class="llm-badge">LLM Directive & API Spec</span>
+          <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
+        </div>
+        <div class="llm-actions">
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+        </div>
+      </div>
+
+      <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
+
+      <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Closed-form chord and sagitta inversions</span>
+        <span>✓ Machine-checked against Euclidean analytical geometry</span>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Usein Kysytyt Kysymykset</h2>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the difference between a circle sector and a circle segment?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          A <strong>circle sector</strong> is a pie-shaped region bounded by two radii and an arc (like a slice of pizza). A <strong>circle segment</strong> is the region bounded by an arc and the straight chord connecting the arc's two endpoints. The segment area equals the sector area minus the central triangle area: <span class="math-tex">A<sub>seg</sub> = ½ R²(θ - sin θ)</span>.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>How do you calculate circle radius from chord and sagitta height?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          By applying the Intersecting Chords Theorem, radius <span class="math-tex">R</span> can be derived from chord length <span class="math-tex">c</span> and sagitta height <span class="math-tex">h</span>:
+          <div class="math-display">R = (c² / (8h)) + (h / 2)</div>
+          This is widely used in machining, surveying, and arch masonry when only the chord and depth are accessible.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the origin of the word "sagitta"?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          "Sagitta" is Latin for <strong>arrow</strong>. In classical geometry, the chord represents an archer's bowstring, the curved arc represents the bow, and the perpendicular height line from chord to arc resembles an arrow nocked and ready to fire.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>How do you calculate circular tank liquid volume?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          When a horizontal cylindrical tank (like an oil or fuel tank) is partially full, the cross-sectional shape of the liquid is a <strong>circular segment</strong>. Multiplying the segment area by the tank's horizontal length yields the exact liquid volume in the tank.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Etsi laskureita...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.1"></script>
+  <script src="/assets/js/circle-sector-solver.js"></script>
+</body>
+</html>

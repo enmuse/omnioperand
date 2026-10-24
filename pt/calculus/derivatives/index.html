@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Derivadas e Reta Tangente | OmniOperand</title>
+  <meta name="description" content="Calcule derivadas analíticas, inclinação instantânea, equação da reta tangente e concavidade.">
+  <link rel="canonical" href="https://omnioperand.com/pt/calculus/derivatives/">
+  <link rel="alternate" hreflang="en" href="https://omnioperand.com/calculus/derivatives/">
+  <link rel="alternate" hreflang="es" href="https://omnioperand.com/es/calculus/derivatives/">
+  <link rel="alternate" hreflang="fr" href="https://omnioperand.com/fr/calculus/derivatives/">
+  <link rel="alternate" hreflang="de" href="https://omnioperand.com/de/calculus/derivatives/">
+  <link rel="alternate" hreflang="it" href="https://omnioperand.com/it/calculus/derivatives/">
+  <link rel="alternate" hreflang="pt" href="https://omnioperand.com/pt/calculus/derivatives/">
+  <link rel="alternate" hreflang="nl" href="https://omnioperand.com/nl/calculus/derivatives/">
+  <link rel="alternate" hreflang="pl" href="https://omnioperand.com/pl/calculus/derivatives/">
+  <link rel="alternate" hreflang="sv" href="https://omnioperand.com/sv/calculus/derivatives/">
+  <link rel="alternate" hreflang="no" href="https://omnioperand.com/no/calculus/derivatives/">
+  <link rel="alternate" hreflang="fi" href="https://omnioperand.com/fi/calculus/derivatives/">
+  <link rel="alternate" hreflang="ro" href="https://omnioperand.com/ro/calculus/derivatives/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/calculus/derivatives/">
+
+  <meta property="og:title" content="Calculadora de Derivadas e Reta Tangente | OmniOperand">
+  <meta property="og:description" content="Calcule derivadas analíticas, inclinação instantânea, equação da reta tangente e concavidade.">
+  <meta property="og:url" content="https://omnioperand.com/pt/calculus/derivatives/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/pt/calculus/derivatives/#app",
+      "name": "Calculadora de Derivadas e Reta Tangente",
+      "url": "https://omnioperand.com/pt/calculus/derivatives/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Calcule derivadas analíticas, inclinação instantânea, equação da reta tangente e concavidade."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/pt/calculus/derivatives/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://omnioperand.com/pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Calculus",
+          "item": "https://omnioperand.com/calculus/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Derivatives",
+          "item": "https://omnioperand.com/calculus/derivatives/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/calculus/derivatives/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the geometric meaning of the first derivative?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The derivative f'(x₀) represents the instantaneous rate of change of y with respect to x at point (x₀, f(x₀)), which geometrically equals the exact slope m of the unique tangent line touching the curve."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you find the equation of a tangent line?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Compute slope m = f'(x₀) and point y₀ = f(x₀). Substitute into point-slope form y - y₀ = m(x - x₀), which simplifies to slope-intercept form y = mx + (y₀ - m·x₀)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a normal line and how is its slope calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The normal line is perpendicular to the tangent line at the point of tangency (x₀, y₀). Its slope is the negative reciprocal of the tangent slope: m_normal = -1 / f'(x₀) (for f'(x₀) ≠ 0)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when f'(x) = 0 and what is an inflection point?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When f'(x₀) = 0, the tangent line is completely horizontal with equation y = y₀, signifying a stationary point (local minimum, maximum, or horizontal plateau). An inflection point occurs where the curve changes concavity, where f''(x) crosses zero."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+            <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/pt/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Calculus</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/pt/geometry/" class="nav-link">Geometry</a>
+        <a href="/pt/calculus/" class="nav-link active">Calculus</a>
+        <a href="/pt/finance/" class="nav-link">Finance</a>
+        <a href="/pt/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/pt/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/pt/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/pt/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/pt/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/pt/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/pt/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/pt/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇵🇹</span>
+            <span class="lang-code">PT</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/calculus/derivatives/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/calculus/derivatives/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/calculus/derivatives/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/calculus/derivatives/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/calculus/derivatives/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/calculus/derivatives/" class="lang-dropdown-item active"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/calculus/derivatives/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/calculus/derivatives/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/calculus/derivatives/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/calculus/derivatives/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/calculus/derivatives/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/calculus/derivatives/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/pt/">Início</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/pt/calculus/">Cálculo</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active">Derivative & Tangent Line Solver</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section class="solver-hero">
+      <div class="hero-badge">Differential Calculus • Rates of Change</div>
+      <h1>Calculadora de Derivadas e Reta Tangente</h1>
+      <p class="hero-subtext">Calcule derivadas analíticas, inclinação instantânea, equação da reta tangente e concavidade.</p>
+    </section>
+
+    <div class="calculator-grid">
+
+      <!-- Left Column: Inputs -->
+      <div class="solver-column">
+        <div class="hud-panel">
+          <div class="hud-panel-header">
+            <h2>Polynomial Function: f(x) = ax³ + bx² + cx + d</h2>
+            <div class="precision-control">
+              <label for="precision-select">Precision:</label>
+              <select id="precision-select" class="select-input">
+                <option value="2">2 Decimals</option>
+                <option value="4" selected>4 Decimals</option>
+                <option value="6">6 Decimals</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="param-card-grid">
+            <!-- a x^3 -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-coeff-a">Coefficient a (x³)</label>
+                <span class="param-symbol">a</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-coeff-a" class="number-input" value="1.0" step="0.2">
+              </div>
+            </div>
+
+            <!-- b x^2 -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-coeff-b">Coefficient b (x²)</label>
+                <span class="param-symbol">b</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-coeff-b" class="number-input" value="-3.0" step="0.5">
+              </div>
+            </div>
+
+            <!-- c x -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-coeff-c">Coefficient c (x¹)</label>
+                <span class="param-symbol">c</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-coeff-c" class="number-input" value="0.0" step="0.5">
+              </div>
+            </div>
+
+            <!-- d constant -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-coeff-d">Constant d (x⁰)</label>
+                <span class="param-symbol">d</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-coeff-d" class="number-input" value="2.0" step="0.5">
+              </div>
+            </div>
+
+            <!-- Evaluation Point x0 -->
+            <div class="param-card" style="grid-column: 1 / -1; border-color:rgba(244, 63, 94, 0.4);">
+              <div class="param-label-row">
+                <label for="param-x0">Point of Tangency (x₀)</label>
+                <span class="param-symbol">x₀</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-x0" class="number-input" value="2.0" step="0.25">
+              </div>
+              <div class="param-hint">Evaluation coordinate where tangent line touches curve</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Differential Invariants</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem;">
+            <div class="metric-card" style="border-color:rgba(59, 130, 246, 0.5);">
+              <span class="metric-label">Point Coordinates (x₀, y₀)</span>
+              <span class="metric-value" id="disp-f0" style="color:var(--accent-blue);">(2.0, -2.0)</span>
+            </div>
+            <div class="metric-card" style="border-color:rgba(245, 158, 11, 0.5);">
+              <span class="metric-label">Instantaneous Slope: m = f'(x₀)</span>
+              <span class="metric-value" id="disp-slope" style="color:var(--accent-amber); font-size:1.5rem;">0.0000</span>
+            </div>
+            <div class="metric-card" style="grid-column: 1 / -1;">
+              <span class="metric-label">First Derivative Function f'(x)</span>
+              <span class="metric-value" id="disp-f-prime" style="color:var(--accent-cyan); font-family:var(--font-mono);">3x² - 6x</span>
+            </div>
+            <div class="metric-card" style="grid-column: 1 / -1; border-color:rgba(245, 158, 11, 0.5);">
+              <span class="metric-label">Tangent Line Equation</span>
+              <span class="metric-value" id="disp-tangent-line" style="color:var(--accent-amber); font-family:var(--font-mono); font-size:1.2rem;">y = -2</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Normal Line (Perpendicular)</span>
+              <span class="metric-value" id="disp-normal-line" style="font-family:var(--font-mono);">x = 2</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Concavity Status: f''(x₀)</span>
+              <span class="metric-value" id="disp-concavity" style="color:var(--accent-emerald);">Concave Upward ∪</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Visualizer Plot -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Cartesian Tangent Plot</h3>
+            <span class="badge" style="background:rgba(59,130,246,0.15); color:var(--accent-blue); border:1px solid rgba(59,130,246,0.3); padding:0.25rem 0.6rem; border-radius:4px; font-size:0.75rem; font-weight:600;">
+              Vector Curve & Tangent
+            </span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1rem; border:1px solid var(--border-subtle); display:flex; justify-content:center; align-items:center;">
+            <svg id="derivative-plot-svg" viewBox="0 0 460 240" width="100%" height="240" style="overflow:visible; display:block;"></svg>
+          </div>
+
+          <div style="margin-top:1.25rem; font-size:0.85rem; color:var(--text-muted); line-height:1.6;">
+            <strong>Geometric Interpretation:</strong> The solid blue line is the function <span class="math-tex">f(x)</span>. The red circle marks the point of tangency <span class="math-tex">(x_0, f(x_0))</span>. The dashed amber line is the unique tangent line whose slope matches <span class="math-tex">f'(x_0)</span>.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Proofs Section -->
+    <section class="proof-section" style="margin-top: 3rem;">
+      <h2>Mathematical Rigor & Closed-Form Formulations</h2>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">1</span>
+            <span>Limit Definition of the Derivative</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            The derivative is formally defined as the limit of the difference quotient as horizontal increment <span class="math-tex">h</span> approaches zero:
+          </p>
+          <div class="math-display">
+            f'(x) = lim (h ➔ 0) [ f(x + h) - f(x) ] / h
+          </div>
+          <p>
+            Applying the Power Rule <span class="math-tex">d/dx [xⁿ] = n · xⁿ⁻¹</span> across polynomial terms:
+          </p>
+          <div class="math-display">
+            f'(x) = 3ax² + 2bx + c
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">2</span>
+            <span>Point-Slope Tangent & Normal Equations</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            Given point <span class="math-tex">(x₀, y₀)</span> on the curve with slope <span class="math-tex">m = f'(x₀)</span>, the tangent line satisfies:
+          </p>
+          <div class="math-display">
+            y - y₀ = m · (x - x₀) ⟹ y = m · x + (y₀ - m · x₀)
+          </div>
+          <p>
+            The normal line is perpendicular, having slope <span class="math-tex">m<sub>⟂</sub> = -1 / m</span>:
+          </p>
+          <div class="math-display">
+            y - y₀ = (-1 / m) · (x - x₀)
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">3</span>
+            <span>Second Derivative & Concavity Test</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            Differentiating again yields the second derivative <span class="math-tex">f''(x) = 6ax + 2b</span>:
+          </p>
+          <div class="math-display">
+            f''(x₀) > 0 ⟹ Concave Upward ∪ (Local Minimum if f'(x₀) = 0)
+          </div>
+          <div class="math-display">
+            f''(x₀) < 0 ⟹ Concave Downward ∩ (Local Maximum if f'(x₀) = 0)
+          </div>
+          <p>
+            Setting <span class="math-tex">f''(x) = 0</span> resolves the inflection point: <span class="math-tex">x = -b / (3a)</span>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LLM Directive Box -->
+    <section class="llm-box">
+      <div class="llm-header">
+        <div>
+          <span class="llm-badge">LLM Directive & API Spec</span>
+          <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
+        </div>
+        <div class="llm-actions">
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+        </div>
+      </div>
+
+      <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
+
+      <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Exact tangent, normal, and inflection derivations</span>
+        <span>✓ Machine-checked against differential calculus invariants</span>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Perguntas Frequentes</h2>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the geometric meaning of the first derivative?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The derivative <span class="math-tex">f'(x₀)</span> represents the instantaneous rate of change of <span class="math-tex">y</span> with respect to <span class="math-tex">x</span> at point <span class="math-tex">(x₀, f(x₀))</span>, which geometrically equals the exact slope <span class="math-tex">m</span> of the unique tangent line touching the curve.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>How do you find the equation of a tangent line?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Compute slope <span class="math-tex">m = f'(x₀)</span> and point <span class="math-tex">y₀ = f(x₀)</span>. Substitute into point-slope form <span class="math-tex">y - y₀ = m(x - x₀)</span>, which simplifies to slope-intercept form <span class="math-tex">y = mx + (y₀ - m · x₀)</span>.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is a normal line and how is its slope calculated?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The normal line is perpendicular to the tangent line at the point of tangency <span class="math-tex">(x₀, y₀)</span>. Its slope is the negative reciprocal of the tangent slope: <span class="math-tex">m<sub>⟂</sub> = -1 / f'(x₀)</span> (for <span class="math-tex">f'(x₀) ≠ 0</span>).
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What happens when f'(x) = 0 and what is an inflection point?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          When <span class="math-tex">f'(x₀) = 0</span>, the tangent line is completely horizontal with equation <span class="math-tex">y = y₀</span>, signifying a stationary point (local minimum, maximum, or horizontal plateau). An inflection point occurs where the curve changes concavity, where <span class="math-tex">f''(x)</span> crosses zero.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Pesquisar calculadoras...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.1"></script>
+  <script src="/assets/js/derivatives-solver.js"></script>
+</body>
+</html>

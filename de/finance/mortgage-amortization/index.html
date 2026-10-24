@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baufinanzierung & Tilgungsplan Rechner | OmniOperand</title>
+  <meta name="description" content="Monatliche Annuität, Zins- und Tilgungsanteil sowie Zinsersparnis durch Sondertilgungen.">
+  <link rel="canonical" href="https://omnioperand.com/de/finance/mortgage-amortization/">
+  <link rel="alternate" hreflang="en" href="https://omnioperand.com/finance/mortgage-amortization/">
+  <link rel="alternate" hreflang="es" href="https://omnioperand.com/es/finance/mortgage-amortization/">
+  <link rel="alternate" hreflang="fr" href="https://omnioperand.com/fr/finance/mortgage-amortization/">
+  <link rel="alternate" hreflang="de" href="https://omnioperand.com/de/finance/mortgage-amortization/">
+  <link rel="alternate" hreflang="it" href="https://omnioperand.com/it/finance/mortgage-amortization/">
+  <link rel="alternate" hreflang="pt" href="https://omnioperand.com/pt/finance/mortgage-amortization/">
+  <link rel="alternate" hreflang="nl" href="https://omnioperand.com/nl/finance/mortgage-amortization/">
+  <link rel="alternate" hreflang="pl" href="https://omnioperand.com/pl/finance/mortgage-amortization/">
+  <link rel="alternate" hreflang="sv" href="https://omnioperand.com/sv/finance/mortgage-amortization/">
+  <link rel="alternate" hreflang="no" href="https://omnioperand.com/no/finance/mortgage-amortization/">
+  <link rel="alternate" hreflang="fi" href="https://omnioperand.com/fi/finance/mortgage-amortization/">
+  <link rel="alternate" hreflang="ro" href="https://omnioperand.com/ro/finance/mortgage-amortization/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/finance/mortgage-amortization/">
+
+  <meta property="og:title" content="Baufinanzierung & Tilgungsplan Rechner | OmniOperand">
+  <meta property="og:description" content="Monatliche Annuität, Zins- und Tilgungsanteil sowie Zinsersparnis durch Sondertilgungen.">
+  <meta property="og:url" content="https://omnioperand.com/de/finance/mortgage-amortization/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/de/finance/mortgage-amortization/#app",
+      "name": "Baufinanzierung & Tilgungsplan Rechner",
+      "url": "https://omnioperand.com/de/finance/mortgage-amortization/",
+      "applicationCategory": "FinancialApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Monatliche Annuität, Zins- und Tilgungsanteil sowie Zinsersparnis durch Sondertilgungen."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/de/finance/mortgage-amortization/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://omnioperand.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Finance",
+          "item": "https://omnioperand.com/finance/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mortgage Amortization",
+          "item": "https://omnioperand.com/finance/mortgage-amortization/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/finance/mortgage-amortization/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the mathematical formula for a fixed-rate mortgage payment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The monthly payment M is given by the formula M = P · [i(1 + i)ⁿ] / [(1 + i)ⁿ - 1], where P is the loan principal, i is the monthly interest rate (annual APR / 12), and n is the total number of monthly payments (years × 12)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between APR and interest rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The interest rate is the pure percentage charged on the principal balance each year. The Annual Percentage Rate (APR) includes the interest rate plus lender origination fees, discount points, closing costs, and private mortgage insurance (PMI), reflecting the true annual cost of credit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does extra monthly principal accelerate mortgage payoff?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because monthly interest is calculated strictly on the remaining principal balance (Balance × i), any extra payment directly reduces principal. Making one additional monthly payment each year typically shortens a 30-year mortgage by 4 to 6 years and saves tens of thousands in compounding interest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this calculator determine how much home I can afford?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! By typing your desired monthly payment directly into the Base Monthly Payment (M) field, OmniOperand immediately inverts the annuity formula to show the maximum loan principal P your payment can support: P = M · [(1 + i)ⁿ - 1] / [i(1 + i)ⁿ]."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+            <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/de/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Finance</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/de/geometry/" class="nav-link">Geometry</a>
+        <a href="/de/calculus/" class="nav-link">Calculus</a>
+        <a href="/de/finance/" class="nav-link active">Finance</a>
+        <a href="/de/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/de/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/de/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/de/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/de/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/de/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/de/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/de/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇩🇪</span>
+            <span class="lang-code">DE</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/finance/mortgage-amortization/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/finance/mortgage-amortization/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/finance/mortgage-amortization/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/finance/mortgage-amortization/" class="lang-dropdown-item active"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/finance/mortgage-amortization/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/finance/mortgage-amortization/" class="lang-dropdown-item"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/finance/mortgage-amortization/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/finance/mortgage-amortization/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/finance/mortgage-amortization/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/finance/mortgage-amortization/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/finance/mortgage-amortization/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/finance/mortgage-amortization/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/de/">Startseite</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/de/finance/">Finanzen</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active">Mortgage Amortization Solver</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- Header Section -->
+    <section class="solver-hero">
+      <div class="hero-badge">Financial Engineering • Fixed-Rate Debt Engine</div>
+      <h1>Baufinanzierung & Tilgungsplan Rechner</h1>
+      <p class="hero-subtext">Monatliche Annuität, Zins- und Tilgungsanteil sowie Zinsersparnis durch Sondertilgungen.</p>
+    </section>
+
+<!-- Master Solver Matrix HUD -->
+    <div class="calculator-grid">
+
+      <!-- Left Column: Bidirectional Inputs -->
+      <div class="solver-column">
+        <div class="hud-panel">
+          <div class="hud-panel-header">
+            <h2>Loan Parameters & Inversions</h2>
+            <div class="precision-control">
+              <label for="precision-select">Decimals:</label>
+              <select id="precision-select" class="select-input">
+                <option value="2" selected>2 (Standard Cents)</option>
+                <option value="4">4 (High Precision)</option>
+                <option value="6">6 (Micro)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="param-card-grid">
+            <!-- Principal P -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-principal">Loan Principal (P)</label>
+                <span class="param-symbol">P</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-principal" class="number-input" value="400000" step="1000" min="1000">
+              </div>
+              <div class="param-hint">Home loan balance to be financed</div>
+            </div>
+
+            <!-- Interest Rate r -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-rate">Annual Interest Rate (APR)</label>
+                <span class="param-symbol">r</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-rate" class="number-input" value="6.5" step="0.05" min="0.1" max="30">
+                <span class="input-suffix">%</span>
+              </div>
+              <div class="param-hint">Nominal annual rate compounded monthly</div>
+            </div>
+
+            <!-- Term Years -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-term">Loan Term</label>
+                <span class="param-symbol">t</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-term" class="number-input" value="30" step="1" min="1" max="50">
+                <span class="input-suffix">Years</span>
+              </div>
+              <div style="display:flex; gap:0.4rem; margin-top:0.4rem;">
+                <button type="button" class="btn btn-secondary btn-sm" data-preset-term="15">15 Yr</button>
+                <button type="button" class="btn btn-secondary btn-sm" data-preset-term="20">20 Yr</button>
+                <button type="button" class="btn btn-secondary btn-sm" data-preset-term="30">30 Yr</button>
+              </div>
+            </div>
+
+            <!-- Target Monthly Payment (Inversion Entry) -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-payment">Base Monthly Payment (M)</label>
+                <span class="param-symbol">M</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-payment" class="number-input" value="2528.27" step="10">
+              </div>
+              <div class="param-hint">Type here to invert for affordable loan principal P</div>
+            </div>
+
+            <!-- Extra Monthly Principal -->
+            <div class="param-card" style="grid-column: 1 / -1; border-color: rgba(59, 130, 246, 0.4);">
+              <div class="param-label-row">
+                <label for="param-extra">Extra Monthly Principal Payment</label>
+                <span class="param-symbol">+E</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-extra" class="number-input" value="200" step="25" min="0">
+              </div>
+              <div class="param-hint">Optional accelerated paydown applied directly to outstanding principal</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Debt Metrics</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem;">
+            <div class="metric-card">
+              <span class="metric-label">Base P&I Payment</span>
+              <span class="metric-value" id="disp-base-payment">$2,528.27</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Total Monthly Outlay</span>
+              <span class="metric-value" id="disp-total-payment" style="color:var(--accent-cyan);">$2,728.27</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Total Interest Paid</span>
+              <span class="metric-value" id="disp-total-interest" style="color:var(--accent-rose);">$422,185.00</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Total Payments (P+I)</span>
+              <span class="metric-value" id="disp-total-paid">$822,185.00</span>
+            </div>
+            <div class="metric-card" style="border-color:rgba(16, 185, 129, 0.4);">
+              <span class="metric-label">Actual Payoff Time</span>
+              <span class="metric-value" id="disp-payoff-months" style="color:var(--accent-emerald);">25 yrs, 2 mos</span>
+            </div>
+            <div class="metric-card" style="border-color:rgba(16, 185, 129, 0.4);">
+              <span class="metric-label">Total Interest Saved</span>
+              <span class="metric-value" id="disp-interest-saved" style="color:var(--accent-emerald);">$87,992.00</span>
+            </div>
+          </div>
+
+          <!-- Contextual Result-Driven Recommendation Target -->
+          <div id="affiliate-recommendation-target"></div>
+        </div>
+      </div>
+
+      <!-- Right Column: Balance Curve & Visualizer -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Principal Balance Trajectory</h3>
+            <span class="badge" id="disp-time-saved" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:4px; font-size:0.75rem; font-weight:600;">
+              Accelerated Schedule
+            </span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1rem; border:1px solid var(--border-subtle);">
+            <svg id="mortgage-chart-svg" viewBox="0 0 600 260" width="100%" height="240" style="overflow:visible; display:block;"></svg>
+          </div>
+
+          <!-- Schedule Sample Table -->
+          <div style="margin-top:1.5rem;">
+            <h4 style="font-size:0.95rem; margin-bottom:0.75rem; color:var(--text-bright);">Amortization Milestone Samples</h4>
+            <div style="overflow-x:auto;">
+              <table style="width:100%; border-collapse:collapse; font-size:0.8rem; text-align:left;">
+                <thead>
+                  <tr style="border-bottom:1px solid var(--border-subtle); color:var(--text-muted);">
+                    <th style="padding:0.4rem;">Period</th>
+                    <th style="padding:0.4rem;">Payment</th>
+                    <th style="padding:0.4rem;">Principal</th>
+                    <th style="padding:0.4rem;">Interest</th>
+                    <th style="padding:0.4rem;">Cum. Interest</th>
+                    <th style="padding:0.4rem;">Balance</th>
+                  </tr>
+                </thead>
+                <tbody id="amortization-schedule-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Step-by-Step Proofs & Algebraic Identities -->
+    <section class="proof-section" style="margin-top: 3rem;">
+      <h2>Mathematical Rigor & Closed-Form Proofs</h2>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">1</span>
+            <span>Standard Fixed-Rate Amortization Derivation</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            A mortgage is an ordinary annuity where the present value of all future monthly payments equals the original loan principal <span class="math-tex">P</span> discounted at monthly interest rate <span class="math-tex">i = r / 12</span>:
+          </p>
+          <div class="math-display">
+            P = ∑ (from k = 1 to n) [ M / (1 + i)<sup>k</sup> ]
+          </div>
+          <p>
+            Using the finite geometric series formula <span class="math-tex">∑<sub>k=1</sub>ⁿ x<sup>k</sup> = x(1 - xⁿ) / (1 - x)</span> with <span class="math-tex">x = (1 + i)⁻¹</span>:
+          </p>
+          <div class="math-display">
+            P = M · [ 1 - (1 + i)<sup>-n</sup> ] / i = M · [ (1 + i)<sup>n</sup> - 1 ] / [ i · (1 + i)<sup>n</sup> ]
+          </div>
+          <p>
+            Solving for the monthly payment <span class="math-tex">M</span> yields the classical fixed-rate payment formula:
+          </p>
+          <div class="math-display">
+            M = P · [ i · (1 + i)<sup>n</sup> ] / [ (1 + i)<sup>n</sup> - 1 ]
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">2</span>
+            <span>Borrowing Power Inversion & Term Resolution</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            To compute how much home a buyer can finance for a given monthly budget <span class="math-tex">M</span>, we invert the payment equation directly:
+          </p>
+          <div class="math-display">
+            P = M · [ (1 + i)<sup>n</sup> - 1 ] / [ i · (1 + i)<sup>n</sup> ]
+          </div>
+          <p>
+            Similarly, if principal <span class="math-tex">P</span> and payment <span class="math-tex">M</span> are known, the remaining amortization horizon in months <span class="math-tex">n</span> is resolved via natural logarithms:
+          </p>
+          <div class="math-display">
+            n = -ln(1 - i · P / M) / ln(1 + i)
+          </div>
+          <p>
+            This ensures that our solver can run backward from any target constraint with machine precision.
+          </p>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">3</span>
+            <span>Accelerated Payoff & Compounding Interest Differential</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            For any given payment month <span class="math-tex">k</span>, the monthly interest charge is strictly determined by the preceding unpaid balance:
+          </p>
+          <div class="math-display">
+            I<sub>k</sub> = B<sub>k-1</sub> · i
+          </div>
+          <p>
+            When an extra principal payment <span class="math-tex">E</span> is added, the new balance reduces by <span class="math-tex">B<sub>k</sub> = B<sub>k-1</sub> - (M - I<sub>k</sub> + E)</span>. Because every dollar of extra principal permanently eliminates future interest accrual across all remaining months, the interest savings compound exponentially.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LLM Directive & AI Specification Box -->
+    <section class="llm-box">
+      <div class="llm-header">
+        <div>
+          <span class="llm-badge">LLM Directive & API Spec</span>
+          <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
+        </div>
+        <div class="llm-actions">
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+        </div>
+      </div>
+
+      <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
+
+      <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Verified closed-form financial equations</span>
+        <span>✓ Machine-checked against edge banking standards</span>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Häufig Gestellte Fragen</h2>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the mathematical formula for a fixed-rate mortgage payment?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The monthly payment <span class="math-tex">M</span> is derived from the ordinary annuity present value formula:
+          <div class="math-display">M = P · [i(1 + i)ⁿ] / [(1 + i)ⁿ - 1]</div>
+          where <span class="math-tex">P</span> is loan principal, <span class="math-tex">i</span> is monthly interest rate (<span class="math-tex">APR / 12</span>), and <span class="math-tex">n</span> is total payment periods (<span class="math-tex">Years × 12</span>).
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the difference between APR and interest rate?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The <strong>interest rate</strong> is the pure percentage charged on the principal balance each year. The <strong>Annual Percentage Rate (APR)</strong> includes the interest rate plus lender origination fees, discount points, closing costs, and private mortgage insurance (PMI), reflecting the true annual cost of credit.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>How does extra monthly principal accelerate mortgage payoff?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Because monthly interest is calculated strictly on the remaining principal balance (<span class="math-tex">Balance × i</span>), any extra payment directly reduces principal. Making one additional monthly payment each year typically shortens a 30-year mortgage by 4 to 6 years and saves tens of thousands in compounding interest.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>Can this calculator determine how much home I can afford?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! By typing your desired monthly payment directly into the "Base Monthly Payment (M)" field, OmniOperand immediately inverts the annuity formula to show the maximum loan principal <span class="math-tex">P</span> your payment can support: <span class="math-tex">P = M · [(1 + i)ⁿ - 1] / [i(1 + i)ⁿ]</span>.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Rechner suchen...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.1"></script>
+  <script src="/assets/js/mortgage-solver.js"></script>
+  <script src="/assets/js/affiliate-engine.js" defer></script>
+</body>
+</html>

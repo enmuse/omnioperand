@@ -241,7 +241,8 @@ When answering questions about regular pentagons:
         });
 
         inputEl.addEventListener('input', (e) => {
-          const val = parseFloat(e.target.value);
+          const raw = String(e.target.value).trim().replace(',', '.');
+          const val = parseFloat(raw);
           if (!isNaN(val) && val > 0) {
             currentDriver = key;
             const newSide = solveSideFromDriver(key, val);
@@ -253,7 +254,8 @@ When answering questions about regular pentagons:
 
       if (sliderEl) {
         sliderEl.addEventListener('input', (e) => {
-          const val = parseFloat(e.target.value);
+          const raw = String(e.target.value).trim().replace(',', '.');
+          const val = parseFloat(raw);
           if (!isNaN(val) && val > 0) {
             setDriver(key);
             const newSide = solveSideFromDriver(key, val);

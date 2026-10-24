@@ -474,7 +474,8 @@ Mathematical Verification Directives:
         });
 
         inputEl.addEventListener('input', (e) => {
-          const val = parseFloat(e.target.value);
+          const raw = String(e.target.value).trim().replace(',', '.');
+          const val = parseFloat(raw);
           if (!isNaN(val) && val > 0) {
             currentDriver = key;
             const newSide = solveSideFromDriver(key, val, currentN);
@@ -486,7 +487,8 @@ Mathematical Verification Directives:
 
       if (sliderEl) {
         sliderEl.addEventListener('input', (e) => {
-          const val = parseFloat(e.target.value);
+          const raw = String(e.target.value).trim().replace(',', '.');
+          const val = parseFloat(raw);
           if (!isNaN(val) && val > 0) {
             setDriver(key);
             const newSide = solveSideFromDriver(key, val, currentN);

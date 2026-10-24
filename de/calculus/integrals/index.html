@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bestimmtes Integral & Hauptsatz Rechner | OmniOperand</title>
+  <meta name="description" content="Berechnet exakte Stammfunktionen und bestimmte Integrale mit analytischer Präzision.">
+  <link rel="canonical" href="https://omnioperand.com/de/calculus/integrals/">
+  <link rel="alternate" hreflang="en" href="https://omnioperand.com/calculus/integrals/">
+  <link rel="alternate" hreflang="es" href="https://omnioperand.com/es/calculus/integrals/">
+  <link rel="alternate" hreflang="fr" href="https://omnioperand.com/fr/calculus/integrals/">
+  <link rel="alternate" hreflang="de" href="https://omnioperand.com/de/calculus/integrals/">
+  <link rel="alternate" hreflang="it" href="https://omnioperand.com/it/calculus/integrals/">
+  <link rel="alternate" hreflang="pt" href="https://omnioperand.com/pt/calculus/integrals/">
+  <link rel="alternate" hreflang="nl" href="https://omnioperand.com/nl/calculus/integrals/">
+  <link rel="alternate" hreflang="pl" href="https://omnioperand.com/pl/calculus/integrals/">
+  <link rel="alternate" hreflang="sv" href="https://omnioperand.com/sv/calculus/integrals/">
+  <link rel="alternate" hreflang="no" href="https://omnioperand.com/no/calculus/integrals/">
+  <link rel="alternate" hreflang="fi" href="https://omnioperand.com/fi/calculus/integrals/">
+  <link rel="alternate" hreflang="ro" href="https://omnioperand.com/ro/calculus/integrals/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/calculus/integrals/">
+
+  <meta property="og:title" content="Bestimmtes Integral & Hauptsatz Rechner | OmniOperand">
+  <meta property="og:description" content="Berechnet exakte Stammfunktionen und bestimmte Integrale mit analytischer Präzision.">
+  <meta property="og:url" content="https://omnioperand.com/de/calculus/integrals/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/de/calculus/integrals/#app",
+      "name": "Bestimmtes Integral & Hauptsatz Rechner",
+      "url": "https://omnioperand.com/de/calculus/integrals/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Berechnet exakte Stammfunktionen und bestimmte Integrale mit analytischer Präzision."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/de/calculus/integrals/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://omnioperand.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Calculus",
+          "item": "https://omnioperand.com/calculus/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Integrals",
+          "item": "https://omnioperand.com/calculus/integrals/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/calculus/integrals/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between definite and indefinite integrals?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An indefinite integral ∫ f(x) dx = F(x) + C represents the entire family of antiderivatives of f(x). A definite integral ∫_a^b f(x) dx evaluates the antiderivative between numerical limits [a, b], yielding a single real scalar value representing the net signed area under the curve."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Fundamental Theorem of Calculus?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Fundamental Theorem of Calculus connects differentiation and integration. Part 2 states that if f is continuous on [a, b] and F is any antiderivative of f (so F'(x) = f(x)), then the definite integral equals F(b) - F(a)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is Simpson's Rule more accurate than the Trapezoidal Rule?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Trapezoidal Rule connects partition points with straight line segments (degree 1), giving an error proportional to Δx². Simpson's Rule fits parabolic arcs (degree 2) across successive trios of points, yielding an error proportional to Δx⁴."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a definite integral produce a negative value?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Definite integrals calculate net signed area. Regions of the curve lying below the horizontal x-axis have negative function values (f(x) < 0) and contribute negative signed area to the total integral sum."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+            <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/de/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Calculus</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/de/geometry/" class="nav-link">Geometry</a>
+        <a href="/de/calculus/" class="nav-link active">Calculus</a>
+        <a href="/de/finance/" class="nav-link">Finance</a>
+        <a href="/de/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/de/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/de/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/de/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/de/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/de/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/de/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/de/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇩🇪</span>
+            <span class="lang-code">DE</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/calculus/integrals/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/calculus/integrals/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/calculus/integrals/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/calculus/integrals/" class="lang-dropdown-item active"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/calculus/integrals/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/calculus/integrals/" class="lang-dropdown-item"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/calculus/integrals/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/calculus/integrals/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/calculus/integrals/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/calculus/integrals/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/calculus/integrals/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/calculus/integrals/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/de/">Startseite</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/de/calculus/">Analysis</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active">Integral Evaluator</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section class="solver-hero">
+      <div class="hero-badge">Mathematical Analysis • Integral Calculus</div>
+      <h1>Bestimmtes Integral & Hauptsatz Rechner</h1>
+      <p class="hero-subtext">Berechnet exakte Stammfunktionen und bestimmte Integrale mit analytischer Präzision.</p>
+    </section>
+
+    <div class="calculator-grid">
+
+      <!-- Left Column: Inputs -->
+      <div class="solver-column">
+        <div class="hud-panel">
+          <div class="hud-panel-header">
+            <h2>Polynomial Integrand: f(x) = ax³ + bx² + cx + d</h2>
+            <div class="precision-control">
+              <label for="precision-select">Precision:</label>
+              <select id="precision-select" class="select-input">
+                <option value="4">4 Decimals</option>
+                <option value="5" selected>5 Decimals</option>
+                <option value="7">7 Decimals</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="param-card-grid">
+            <!-- a x^3 -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-coeff-a">Coefficient a (x³)</label>
+                <span class="param-symbol">a</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-coeff-a" class="number-input" value="0.5" step="0.1">
+              </div>
+            </div>
+
+            <!-- b x^2 -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-coeff-b">Coefficient b (x²)</label>
+                <span class="param-symbol">b</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-coeff-b" class="number-input" value="-1.5" step="0.1">
+              </div>
+            </div>
+
+            <!-- c x -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-coeff-c">Coefficient c (x¹)</label>
+                <span class="param-symbol">c</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-coeff-c" class="number-input" value="2.0" step="0.5">
+              </div>
+            </div>
+
+            <!-- d constant -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-coeff-d">Constant d (x⁰)</label>
+                <span class="param-symbol">d</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-coeff-d" class="number-input" value="3.0" step="0.5">
+              </div>
+            </div>
+
+            <!-- Lower Bound a -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-bound-lower">Lower Bound (a)</label>
+                <span class="param-symbol">a</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-bound-lower" class="number-input" value="0" step="0.5">
+              </div>
+            </div>
+
+            <!-- Upper Bound b -->
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-bound-upper">Upper Bound (b)</label>
+                <span class="param-symbol">b</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-bound-upper" class="number-input" value="4" step="0.5">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Integral Values</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem;">
+            <div class="metric-card" style="border-color:rgba(16, 185, 129, 0.5); grid-column: 1 / -1;">
+              <span class="metric-label">Exact Definite Integral: ∫_a^b f(x) dx</span>
+              <span class="metric-value" id="disp-exact-integral" style="color:var(--accent-emerald); font-size:1.6rem;">28.00000</span>
+            </div>
+            <div class="metric-card" style="grid-column: 1 / -1;">
+              <span class="metric-label">Indefinite Antiderivative F(x)</span>
+              <span class="metric-value" id="disp-antiderivative" style="color:var(--accent-cyan); font-size:1.1rem; font-family:var(--font-mono);">0.125x⁴ - 0.5x³ + 1x² + 3x + C</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Simpson's 1/3 Rule</span>
+              <span class="metric-value" id="disp-simpsons">28.00000</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Trapezoidal Rule</span>
+              <span class="metric-value" id="disp-trapezoid">28.08000</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Midpoint Rule</span>
+              <span class="metric-value" id="disp-midpoint">27.96000</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Mean Value of Function</span>
+              <span class="metric-value" id="disp-avg-value" style="color:var(--accent-violet);">7.00000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Visualizer Plot -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Area Under the Curve</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald); border:1px solid rgba(16,185,129,0.3); padding:0.25rem 0.6rem; border-radius:4px; font-size:0.75rem; font-weight:600;">
+              Definite Integral Region
+            </span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1rem; border:1px solid var(--border-subtle); display:flex; justify-content:center; align-items:center;">
+            <svg id="integral-plot-svg" viewBox="0 0 460 240" width="100%" height="240" style="overflow:visible; display:block;"></svg>
+          </div>
+
+          <div style="margin-top:1.25rem; font-size:0.85rem; color:var(--text-muted); line-height:1.6;">
+            <strong>Fundamental Theorem of Calculus:</strong> The green shaded area represents the accumulated net signed area between the curve and the horizontal x-axis from <span class="math-tex">x = a</span> to <span class="math-tex">x = b</span>.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Proofs Section -->
+    <section class="proof-section" style="margin-top: 3rem;">
+      <h2>Mathematical Rigor & Closed-Form Formulations</h2>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">1</span>
+            <span>Polynomial Power Rule for Integration</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            By the linearity of the Riemann integral, the antiderivative of a polynomial is the sum of the antiderivatives of its individual power terms:
+          </p>
+          <div class="math-display">
+            ∫ xⁿ dx = [ xⁿ⁺¹ / (n + 1) ] + C (for n ≠ -1)
+          </div>
+          <p>
+            Applying to <span class="math-tex">f(x) = ax³ + bx² + cx + d</span>:
+          </p>
+          <div class="math-display">
+            F(x) = (a / 4)x⁴ + (b / 3)x³ + (c / 2)x² + dx + C
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">2</span>
+            <span>Evaluation via Fundamental Theorem Part 2</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            Because polynomials are continuous everywhere on the real line, the definite integral over interval <span class="math-tex">[a, b]</span> is:
+          </p>
+          <div class="math-display">
+            ∫ (from a to b) f(x) dx = F(b) - F(a)
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card open">
+        <div class="proof-header">
+          <h3>
+            <span class="step-num">3</span>
+            <span>Simpson's 1/3 Rule Error Convergence</span>
+          </h3>
+          <span class="proof-toggle-icon">▼</span>
+        </div>
+        <div class="proof-body">
+          <p>
+            For <span class="math-tex">N</span> subintervals with step size <span class="math-tex">Δx = (b - a) / N</span>:
+          </p>
+          <div class="math-display">
+            ∫_a^b f(x) dx ≈ (Δx / 3) [ f(x₀) + 4f(x₁) + 2f(x₂) + 4f(x₃) + … + f(xₙ) ]
+          </div>
+          <p>
+            Remarkably, because Simpson's rule exacts polynomials up to degree 3, its theoretical approximation error on cubic polynomials is exactly 0.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LLM Directive Box -->
+    <section class="llm-box">
+      <div class="llm-header">
+        <div>
+          <span class="llm-badge">LLM Directive & API Spec</span>
+          <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
+        </div>
+        <div class="llm-actions">
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+        </div>
+      </div>
+
+      <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
+
+      <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Analytical and numerical Riemann invariants</span>
+        <span>✓ Machine-checked against FTC theorems</span>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Häufig Gestellte Fragen</h2>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the difference between definite and indefinite integrals?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          An <strong>indefinite integral</strong> <span class="math-tex">∫ f(x) dx = F(x) + C</span> is a family of functions representing all antiderivatives of <span class="math-tex">f(x)</span>. A <strong>definite integral</strong> <span class="math-tex">∫_a^b f(x) dx</span> evaluates the antiderivative between numerical limits, resulting in a single real number representing the net signed area under the curve.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>What is the Fundamental Theorem of Calculus?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The Fundamental Theorem of Calculus connects differentiation and integration. Part 2 states that if <span class="math-tex">f</span> is continuous on <span class="math-tex">[a, b]</span> and <span class="math-tex">F</span> is any antiderivative of <span class="math-tex">f</span> (so <span class="math-tex">F'(x) = f(x)</span>), then the definite integral equals <span class="math-tex">F(b) - F(a)</span>.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>Why is Simpson's Rule more accurate than the Trapezoidal Rule?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The Trapezoidal Rule connects discrete partition points with linear segments, giving an error proportional to <span class="math-tex">Δx²</span>. Simpson's Rule fits parabolic arcs across successive trios of points, yielding an error proportional to <span class="math-tex">Δx⁴</span>, which converges substantially faster.
+        </div>
+      </div>
+
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>Can an integral produce a negative area?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! Regions of the curve lying below the x-axis have negative function values (<span class="math-tex">f(x) < 0</span>) and thus contribute negative signed area to the definite integral.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Rechner suchen...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.1"></script>
+  <script src="/assets/js/integrals-solver.js"></script>
+</body>
+</html>

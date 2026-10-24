@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniOperand — Motor de Cálculo Matemático & Solvers Bidirecionais</title>
+  <meta name="description" content="Plataforma de computação de alta precisão para geometria, cálculo, finanças e física. Fórmulas exatas, plantas SVG e protocolos para agentes de IA.">
+  <link rel="canonical" href="https://omnioperand.com/pt/">
+  <link rel="alternate" hreflang="en" href="https://omnioperand.com/">
+  <link rel="alternate" hreflang="es" href="https://omnioperand.com/es/">
+  <link rel="alternate" hreflang="fr" href="https://omnioperand.com/fr/">
+  <link rel="alternate" hreflang="de" href="https://omnioperand.com/de/">
+  <link rel="alternate" hreflang="it" href="https://omnioperand.com/it/">
+  <link rel="alternate" hreflang="pt" href="https://omnioperand.com/pt/">
+  <link rel="alternate" hreflang="nl" href="https://omnioperand.com/nl/">
+  <link rel="alternate" hreflang="pl" href="https://omnioperand.com/pl/">
+  <link rel="alternate" hreflang="sv" href="https://omnioperand.com/sv/">
+  <link rel="alternate" hreflang="no" href="https://omnioperand.com/no/">
+  <link rel="alternate" hreflang="fi" href="https://omnioperand.com/fi/">
+  <link rel="alternate" hreflang="ro" href="https://omnioperand.com/ro/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/">
+  <meta name="impact-site-verification" value="e0aff3fa-54fa-4a77-be8c-5b2dc86efcde" content="e0aff3fa-54fa-4a77-be8c-5b2dc86efcde">
+
+  <!-- OpenGraph & Social Cards -->
+  <meta property="og:title" content="OmniOperand — Motor de Cálculo Matemático & Solvers Bidirecionais">
+  <meta property="og:description" content="Plataforma de computação de alta precisão para geometria, cálculo, finanças e física. Fórmulas exatas, plantas SVG e protocolos para agentes de IA.">
+  <meta property="og:url" content="https://omnioperand.com/pt/">
+  <meta property="og:type" content="website">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
+
+  <!-- Structured Data: WebSite & Organization -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://omnioperand.com/#website",
+      "url": "https://omnioperand.com/",
+      "name": "OmniOperand",
+      "description": "High-precision multidisciplinary mathematical computational engines and solvers.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://omnioperand.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://omnioperand.com/#organization",
+      "name": "OmniOperand",
+      "url": "https://omnioperand.com/",
+      "logo": "https://omnioperand.com/assets/images/logo.png"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+            <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/pt/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Math Engine</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/pt/geometry/" class="nav-link">Geometry</a>
+        <a href="/pt/calculus/" class="nav-link">Calculus</a>
+        <a href="/pt/finance/" class="nav-link">Finance</a>
+        <a href="/pt/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/pt/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/pt/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/pt/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/pt/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/pt/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/pt/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/pt/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇵🇹</span>
+            <span class="lang-code">PT</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/" class="lang-dropdown-item active"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- Hero Section -->
+    <section style="padding: 4rem 0 2rem; text-align: center; max-width: 860px; margin: 0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--accent-cyan); background:rgba(6,182,212,0.1); padding:0.35rem 0.9rem; border-radius:999px; border:1px solid rgba(6,182,212,0.25); margin-bottom:1.25rem;">
+        Multidisciplinary Quantitative Computing Engine
+      </div>
+      <h1 style="font-size:clamp(2.4rem, 5vw, 3.8rem); font-weight:800; line-height:1.15; margin-bottom:1.25rem; letter-spacing:-0.03em;">
+        Pure Mathematical Precision. <br>
+        <span style="background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Exact Radical Derivations.</span>
+      </h1>
+      <p style="font-size:1.15rem; color:var(--text-secondary); line-height:1.7; margin-bottom:2rem;">
+        OmniOperand is a next-generation mathematical computing platform. Explore hierarchical hubs from broad mathematical disciplines down to specialized single-function solvers featuring <strong>bidirectional dimension resolution</strong>, interactive SVG blueprints, and standardized <strong>LLM reasoning prompts</strong>.
+      </p>
+
+      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+        <a href="/pt/geometry/2d/shapes/regular-polygon/" class="btn btn-primary" style="font-size:1rem; padding:0.8rem 1.75rem;">
+          <span>Launch Universal N-Gon Solver (n=3–1000) →</span>
+        </a>
+        <button class="btn btn-secondary search-btn-trigger" style="font-size:1rem; padding:0.8rem 1.75rem;">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search All Calculators (⌘K)</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Featured Flagship Solver Showcase -->
+    <section style="margin: 2.5rem 0 4rem;">
+      <div style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(168, 85, 247, 0.06)); border: 1px solid rgba(6, 182, 212, 0.35); border-radius: var(--radius-xl); padding: 2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; position: relative; overflow: hidden; box-shadow: var(--shadow-glow);">
+        <div style="max-width: 620px;">
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--accent-cyan); background:rgba(6,182,212,0.15); padding:0.2rem 0.6rem; border-radius:4px; margin-bottom:0.75rem;">
+            ★ Flagship Engine • n = 3 to 1,000 Sides
+          </div>
+          <h2 style="margin:0 0 0.5rem; font-size:1.85rem;">Universal Regular N-Sided Polygon Solver</h2>
+          <p style="color:var(--text-secondary); font-size:1rem; line-height:1.6; margin-bottom:1.25rem;">
+            Universal bidirectional calculating engine for any regular polygon from triangles (n=3) to chiliagons (n=1000). Dynamically resolves side length, area, perimeter, inradius, circumradius, flat-to-flat span, and all diagonal classes with Archimedean circle exhaustion convergence and live dynamic blueprints.
+          </p>
+          <div style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+            <a href="/pt/geometry/2d/shapes/regular-polygon/" class="btn btn-primary btn-sm">Launch Universal N-Gon Solver →</a>
+            <a href="/pt/geometry/2d/shapes/octagon/" class="btn btn-secondary btn-sm">Octagon (8)</a>
+            <a href="/pt/geometry/2d/shapes/hexagon/" class="btn btn-secondary btn-sm">Hexagon (6)</a>
+            <a href="/pt/geometry/2d/shapes/pentagon/" class="btn btn-secondary btn-sm">Pentagon (5)</a>
+            <a href="/pt/geometry/2d/shapes/decagon/" class="btn btn-secondary btn-sm">Decagon (10)</a>
+          </div>
+        </div>
+        <div style="width:140px; height:140px; display:flex; align-items:center; justify-content:center; background:rgba(6,182,212,0.1); border-radius:var(--radius-lg); border:1px solid rgba(6,182,212,0.25);">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(168,85,247,0.3)" stroke-width="1.5" stroke-dasharray="3,3" />
+            <polygon points="50,8 71,13 87,27 94,46 91,67 78,83 60,92 40,92 22,83 9,67 6,46 13,27 29,13" fill="rgba(6,182,212,0.2)" stroke="#06b6d4" stroke-width="2.5" />
+            <circle cx="50" cy="50" r="3" fill="#fff" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Master Disciplines & Hub Hierarchy Grid -->
+    <section>
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:1.5rem;">
+        <div>
+          <h2 style="margin:0; font-size:1.85rem;">Mathematical Disciplines & Knowledge Hubs</h2>
+          <p style="margin:0.25rem 0 0; color:var(--text-muted);">Navigate from top-level fields down to specialized calculation engines.</p>
+        </div>
+      </div>
+
+      <div class="hub-grid">
+        
+        <!-- 1. Geometry -->
+        <div class="hub-card" style="--card-accent: var(--accent-cyan); border-color: rgba(6,182,212,0.3);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-cyan);">📐</div>
+              <span class="hub-badge">Active Domain</span>
+            </div>
+            <h3 class="hub-card-title"><a href="/geometry/">Geometry & Spatial Analysis</a></h3>
+            <p class="hub-card-desc">
+              Euclidean, analytic, and differential geometry. Multi-variable regular polygon solvers, spatial polyhedra, and trigonometric projections.
+            </p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/pt/geometry/2d/shapes/regular-polygon/"><strong>★ Universal Regular N-Gon Solver →</strong></a></li>
+            <li><a href="/geometry/2d/right-triangle/">Right Triangle & Pythagorean Solver →</a></li>
+            <li><a href="/geometry/3d/concrete-volume/">Concrete Volume (Cubic Yards) →</a></li>
+            <li><a href="/geometry/2d/roof-pitch/">Roof Pitch & Rafter Length →</a></li>
+          </ul>
+        </div>
+
+        <!-- 2. Calculus -->
+        <div class="hub-card" style="--card-accent: var(--accent-emerald);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-emerald);">∫</div>
+              <span class="hub-badge">Active Domain</span>
+            </div>
+            <h3 class="hub-card-title"><a href="/calculus/">Calculus & Analysis</a></h3>
+            <p class="hub-card-desc">
+              Differential and integral calculus. Symbolic derivatives, tangent line equations, closed-form antiderivatives, and Simpson's numerical quadrature.
+            </p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/calculus/integrals/"><strong>Definite & Indefinite Integrals →</strong></a></li>
+            <li><a href="/calculus/derivatives/"><strong>Derivative & Tangent Line Engine →</strong></a></li>
+            <li><a href="/calculus/">Explore Calculus Hub →</a></li>
+          </ul>
+        </div>
+
+        <!-- 3. Quantitative Finance -->
+        <div class="hub-card" style="--card-accent: var(--accent-violet);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-violet);">📈</div>
+              <span class="hub-badge">Active Domain</span>
+            </div>
+            <h3 class="hub-card-title"><a href="/finance/">Quantitative Finance</a></h3>
+            <p class="hub-card-desc">
+              Financial engineering algorithms. Fixed-rate debt amortization matrices, compound interest APY, geometric CAGR growth, and auto loans.
+            </p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/finance/mortgage-amortization/"><strong>Mortgage Amortization & Early Payoff →</strong></a></li>
+            <li><a href="/finance/compound-interest/">Compound Interest & Investment Yield →</a></li>
+            <li><a href="/finance/cagr/">Compound Annual Growth Rate (CAGR) →</a></li>
+            <li><a href="/finance/auto-loan/">Auto Loan & Affordability Inversion →</a></li>
+          </ul>
+        </div>
+
+        <!-- 4. Physics & Engineering -->
+        <div class="hub-card" style="--card-accent: var(--accent-amber);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-amber);">⚡</div>
+              <span class="hub-badge">Engineering</span>
+            </div>
+            <h3 class="hub-card-title"><a href="/physics/">Physics & Mechanics</a></h3>
+            <p class="hub-card-desc">
+              Classical kinematics, Newtonian mechanics, thermodynamic heat transfer, fluid dynamics, and electrical circuit analysis.
+            </p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/physics/">Kinematics & Trajectory Solver →</a></li>
+            <li><a href="/physics/">Thermodynamic Carnot Efficiency →</a></li>
+            <li><a href="/physics/">Fluid Reynolds Number & Flow →</a></li>
+            <li><a href="/physics/">Ohm's Law & AC Impedance →</a></li>
+          </ul>
+        </div>
+
+        <!-- 5. Statistics & Probability -->
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📊</div>
+              <span class="hub-badge">Stochastic</span>
+            </div>
+            <h3 class="hub-card-title"><a href="/statistics/">Probability & Statistics</a></h3>
+            <p class="hub-card-desc">
+              Probability distributions, statistical hypothesis testing, combinatorics, variance analysis, and ordinary least squares linear regression.
+            </p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/statistics/">Normal Distribution & Z-Score →</a></li>
+            <li><a href="/statistics/">Bayesian Posterior Probability →</a></li>
+            <li><a href="/statistics/">Combinations & Permutations (nCr) →</a></li>
+            <li><a href="/statistics/">Linear Regression & R² Metrics →</a></li>
+          </ul>
+        </div>
+
+        <!-- 6. Discrete Mathematics -->
+        <div class="hub-card" style="--card-accent: var(--accent-rose);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-rose);">🔢</div>
+              <span class="hub-badge">Discrete</span>
+            </div>
+            <h3 class="hub-card-title"><a href="/geometry/">Discrete Math & Number Theory</a></h3>
+            <p class="hub-card-desc">
+              Modular arithmetic, prime factorization, greatest common divisor (Euclidean algorithm), graph theory paths, and Boolean logic reduction.
+            </p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/pt/geometry/2d/shapes/octagon/">Prime Sieve & Factorization →</a></li>
+            <li><a href="/pt/geometry/2d/shapes/octagon/">Modular Exponentiation →</a></li>
+            <li><a href="/pt/geometry/2d/shapes/octagon/">GCD & LCM Extended Euclidean →</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Machine-Readable LLM Standards Callout -->
+    <section class="callout theory" style="margin-top: 3.5rem;">
+      <div class="callout-title">
+        <span>🤖 AI Agent & LLM Native Architecture</span>
+      </div>
+      <p>
+        OmniOperand is engineered for both human researchers and autonomous AI agents. Every calculator page incorporates structured mathematical proofs, exact radical formulas, copyable system prompts, and full compliance with the <strong>llms.txt</strong> protocol to eliminate AI hallucination on complex quantitative queries.
+      </p>
+      <div style="margin-top:0.75rem;">
+        <a href="/llms.txt" style="font-weight:600; text-decoration:underline;">View Standardized /llms.txt →</a> &nbsp;|&nbsp;
+        <a href="/llms-full.txt" style="font-weight:600; text-decoration:underline;">View Complete Knowledge Base /llms-full.txt →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>OmniOperand</h3>
+          <p style="font-size:0.875rem; line-height:1.6;">
+            Precision mathematical computation engines, verified geometric solvers, and quantitative algorithms designed for students, scientists, engineers, and autonomous AI agents.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3>Geometry Hub</h3>
+          <ul class="footer-links">
+            <li><a href="/pt/geometry/2d/shapes/octagon/">Regular Octagon</a></li>
+            <li><a href="/pt/geometry/2d/shapes/">Polygons & Shapes</a></li>
+            <li><a href="/pt/geometry/2d/">Geometria Bidimensional (2D)</a></li>
+            <li><a href="/geometry/">Geometry Directory</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Core Domains</h3>
+          <ul class="footer-links">
+            <li><a href="/calculus/">Calculus & Analysis</a></li>
+            <li><a href="/finance/">Quantitative Finance</a></li>
+            <li><a href="/physics/">Physics & Mechanics</a></li>
+            <li><a href="/statistics/">Probability & Statistics</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Machine Protocols & API</h3>
+          <ul class="footer-links">
+            <li><a href="/api/">Developer REST API</a></li>
+            <li><a href="/embed/">Embeddable Widgets (CaaS)</a></li>
+            <li><a href="/llms.txt">llms.txt Specification</a></li>
+            <li><a href="/llms-full.txt">Full AI Knowledge File</a></li>
+            <li><a href="/sitemap.xml">XML Sitemap</a></li>
+            <li><a href="/robots.txt">Robots Directives</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+        <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Modal Overlay -->
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators (e.g. octagon, apothem, calculus, finance)...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.1"></script>
+</body>
+</html>

@@ -6,10 +6,24 @@
 export const METRICS = {
   "solvers_count": 428,
   "mcp_tools_count": 429,
-  "calculators_count": 443,
+  "calculators_count": 707,
   "categories_count": 15,
-  "total_html_pages": 469,
-  "sitemap_urls_count": 460,
+  "total_html_pages": 744,
+  "sitemap_urls_count": 735,
+  "supported_languages": [
+    "en",
+    "es",
+    "fr",
+    "de",
+    "it",
+    "pt",
+    "nl",
+    "pl",
+    "sv",
+    "no",
+    "fi",
+    "ro"
+  ],
   "category_breakdown": {
     "finance": 125,
     "ecommerce": 30,
@@ -27,10 +41,10 @@ export const METRICS = {
     "statistics": 4,
     "calculus": 2
   },
-  "last_updated": "2026-10-22T15:20:41Z"
+  "last_updated": "2026-10-24T13:51:54Z"
 };
 
 export const SOLVERS_COUNT = 428;
 export const MCP_TOOLS_COUNT = 429;
-export const CALCULATORS_COUNT = 443;
+export const CALCULATORS_COUNT = 707;
 export const CATEGORIES_COUNT = 15;

@@ -43,8 +43,15 @@
   - Level 4: Shapes & Polygons Hub (`/geometry/2d/shapes/index.html`).
   - Level 5: Regular Octagon, Hexagon, Pentagon, and Decagon Calculators.
   - Level 2 Discipline Hubs for Calculus, Finance, Physics, and Statistics.
+- [x] **Native Multi-Language Internationalization Suite (12 Languages)**:
+  - Deployed native crawlable subdirectories for Spanish (`/es/`), French (`/fr/`), German (`/de/`), Italian (`/it/`), Portuguese (`/pt/`), Dutch (`/nl/`), Polish (`/pl/`), Swedish (`/sv/`), Norwegian (`/no/`), Finnish (`/fi/`), and Romanian (`/ro/`) covering 275 localized high-authority pages and discipline hubs (744 total HTML pages).
+  - Injected bidirectional reciprocal `hreflang` tags across all 12 language variants + `x-default` canonical English.
+  - Implemented interactive 2-column Language Switcher dropdown (`.lang-dropdown`) in site headers with 0ms FOUC inlined CSS.
+  - Added support for European comma decimal separators (e.g. `12,5` -> `12.5`) across all JS calculation engines.
+  - Updated XML sitemap to 735 URLs and extended automated test suite with `test_internationalization_and_hreflang()`.
 - [x] **Automated Tooling & Test Suite**:
-  - `scripts/test_site.py`: Automated testing suite passing with 1e-12 mathematical precision for all 4 polygon engines and 100% file integrity.
+  - `scripts/test_site.py`: Automated testing suite passing with 1e-12 mathematical precision for all polygon engines, zero raw LaTeX compliance, and i18n hreflang integrity.
+  - `scripts/generate_i18n.py`: Automated multilingual static compiler with native mathematical dictionaries.
   - `scripts/generate_calculators.py`: Scalable taxonomy builder and sitemap generator.
   - `scripts/deploy.py`: Programmatic Cloudflare Pages deployment script.
 

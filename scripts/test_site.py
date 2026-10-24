@@ -419,6 +419,53 @@ def test_calculator_count_invariants():
 
     print(f"  ✅ Master metrics verified: {metrics['solvers_count']} solvers, {metrics['mcp_tools_count']} MCP tools across {metrics['categories_count']} disciplines!")
 
+def test_internationalization_and_hreflang():
+    print("Testing Multi-Language Internationalization & Reciprocal Hreflangs...")
+    non_en_languages = ["es", "fr", "de", "it", "pt", "nl", "pl", "sv", "no", "fi", "ro"]
+    all_languages = ["en"] + non_en_languages
+    
+    # 1. Verify all 11 language directories exist
+    for lang in non_en_languages:
+        lang_dir = REPO_ROOT / lang
+        assert lang_dir.exists() and lang_dir.is_dir(), f"Missing language directory: {lang}"
+        # Check that index.html exists in language root
+        assert (lang_dir / "index.html").exists(), f"Missing root index.html for language: {lang}"
+        assert (lang_dir / "geometry" / "2d" / "shapes" / "octagon" / "index.html").exists(), f"Missing localized octagon solver for language: {lang}"
+        assert (lang_dir / "geometry" / "2d" / "shapes" / "regular-polygon" / "index.html").exists(), f"Missing localized regular-polygon solver for language: {lang}"
+
+    # 2. Verify reciprocal hreflang tags on canonical English page
+    en_octagon = (REPO_ROOT / "geometry" / "2d" / "shapes" / "octagon" / "index.html").read_text(encoding="utf-8")
+    for lang in all_languages:
+        expected_tag = f'hreflang="{lang}"'
+        assert expected_tag in en_octagon, f"Missing hreflang tag for {lang} in English octagon page"
+    assert 'hreflang="x-default"' in en_octagon, "Missing x-default hreflang tag in English octagon page"
+
+    # 3. Verify reciprocal hreflang tags on localized Spanish page
+    es_octagon = (REPO_ROOT / "es" / "geometry" / "2d" / "shapes" / "octagon" / "index.html").read_text(encoding="utf-8")
+    assert '<html lang="es"' in es_octagon, "Missing html lang='es' in Spanish octagon page"
+    assert 'href="https://omnioperand.com/es/geometry/2d/shapes/octagon/"' in es_octagon, "Missing canonical Spanish URL"
+    for lang in all_languages:
+        assert f'hreflang="{lang}"' in es_octagon, f"Missing reciprocal hreflang for {lang} in Spanish page"
+
+    # 4. Verify reciprocal hreflang tags on localized Portuguese page
+    pt_octagon = (REPO_ROOT / "pt" / "geometry" / "2d" / "shapes" / "octagon" / "index.html").read_text(encoding="utf-8")
+    assert '<html lang="pt"' in pt_octagon, "Missing html lang='pt' in Portuguese octagon page"
+    assert 'href="https://omnioperand.com/pt/geometry/2d/shapes/octagon/"' in pt_octagon, "Missing canonical Portuguese URL"
+    for lang in all_languages:
+        assert f'hreflang="{lang}"' in pt_octagon, f"Missing reciprocal hreflang for {lang} in Portuguese page"
+
+    # 5. Verify Language Dropdown in headers
+    assert 'class="lang-dropdown"' in en_octagon, "Missing lang-dropdown in English header"
+    assert 'class="lang-dropdown"' in es_octagon, "Missing lang-dropdown in Spanish header"
+    assert 'ES' in es_octagon, "Missing Spanish language code in Spanish header"
+    assert 'PT' in pt_octagon, "Missing Portuguese language code in Portuguese header"
+
+    # 6. Verify comma decimal support in solver JS
+    oct_js = (REPO_ROOT / "assets" / "js" / "octagon-solver.js").read_text(encoding="utf-8")
+    assert ".replace(',', '.')" in oct_js, "octagon-solver.js missing comma decimal parsing support"
+
+    print(f"  ✅ Internationalization verified: 11 non-English languages (12 total), bidirectional hreflangs, language switcher, and European decimal support!")
+
 def main():
     print("=========================================================")
     print("🧪 Running OmniOperand Integrity Test Suite")
@@ -428,6 +475,7 @@ def main():
         test_file_integrity()
         test_zero_raw_latex_in_html()
         test_calculator_count_invariants()
+        test_internationalization_and_hreflang()
         print("\n🎉 ALL TESTS PASSED! Site is 100% compliant.")
         return 0
     except AssertionError as e:

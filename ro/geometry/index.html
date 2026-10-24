@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ro" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometrie & Analiză Spațială | OmniOperand</title>
+  <meta name="description" content="Solvere geometrice 2D și 3D: poligoane regulate, secțiuni conice, poliedre și demonstrații exacte cu radicali.">
+  <link rel="canonical" href="https://omnioperand.com/ro/geometry/">
+  <link rel="alternate" hreflang="en" href="https://omnioperand.com/geometry/">
+  <link rel="alternate" hreflang="es" href="https://omnioperand.com/es/geometry/">
+  <link rel="alternate" hreflang="fr" href="https://omnioperand.com/fr/geometry/">
+  <link rel="alternate" hreflang="de" href="https://omnioperand.com/de/geometry/">
+  <link rel="alternate" hreflang="it" href="https://omnioperand.com/it/geometry/">
+  <link rel="alternate" hreflang="pt" href="https://omnioperand.com/pt/geometry/">
+  <link rel="alternate" hreflang="nl" href="https://omnioperand.com/nl/geometry/">
+  <link rel="alternate" hreflang="pl" href="https://omnioperand.com/pl/geometry/">
+  <link rel="alternate" hreflang="sv" href="https://omnioperand.com/sv/geometry/">
+  <link rel="alternate" hreflang="no" href="https://omnioperand.com/no/geometry/">
+  <link rel="alternate" hreflang="fi" href="https://omnioperand.com/fi/geometry/">
+  <link rel="alternate" hreflang="ro" href="https://omnioperand.com/ro/geometry/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/geometry/">
+
+  <meta property="og:title" content="Geometrie & Analiză Spațială | OmniOperand">
+  <meta property="og:description" content="Solvere geometrice 2D și 3D: poligoane regulate, secțiuni conice, poliedre și demonstrații exacte cu radicali.">
+  <meta property="og:url" content="https://omnioperand.com/ro/geometry/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://omnioperand.com/ro/geometry/#hub",
+      "name": "Geometrie & Analiză Spațială",
+      "url": "https://omnioperand.com/ro/geometry/",
+      "description": "Solvere geometrice 2D și 3D: poligoane regulate, secțiuni conice, poliedre și demonstrații exacte cu radicali."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/ro/geometry/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Acasă",
+          "item": "https://omnioperand.com/ro/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Geometry",
+          "item": "https://omnioperand.com/geometry/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="omni-body">
+            <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/ro/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Geometry</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/ro/geometry/" class="nav-link active">Geometry</a>
+        <a href="/ro/calculus/" class="nav-link">Calculus</a>
+        <a href="/ro/finance/" class="nav-link">Finance</a>
+        <a href="/ro/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/ro/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/ro/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/ro/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/ro/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/ro/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/ro/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/ro/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇷🇴</span>
+            <span class="lang-code">RO</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/geometry/" class="lang-dropdown-item active"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/ro/">Acasă</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active" aria-current="page">Geometrie & Analiză Spațială</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container" style="padding: 2.5rem 0;">
+    <div style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--accent-blue); background:rgba(56,189,248,0.1); padding:0.3rem 0.8rem; border-radius:999px; margin-bottom:0.75rem;">
+      Domain Hub • Geometry & Spatial Analysis
+    </div>
+    <h1>Geometrie & Analiză Spațială</h1>
+    <p style="max-width:800px; color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem; line-height:1.6;">
+      2D and 3D geometric solvers: regular polygons, conic sections, polyhedra, surfaces of revolution, and radical closed-form proofs.
+    </p>
+
+<div class="hub-grid" style="margin-top:2rem;">
+      
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Conic Sections • Ramanujan Elliptic Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Ellipse Area, Perimeter & Eccentricity Calculator</h2>
+            <p class="hub-card-desc">Calculate exact ellipse area, Ramanujan high-precision perimeter approximation, semi-axes, focal distance, and orbital eccentricity.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/ellipse/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Planar Geometry • Trapezoid Solver</span>
+            </div>
+            <h2 class="hub-card-title">Trapezoid Area, Median & Perimeter Calculator</h2>
+            <p class="hub-card-desc">Calculate trapezoid (trapezium) area, midline median, perimeter, and diagonal lengths from base lengths, height, and side legs.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/trapezoid/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Equilateral Quadrilateral • Rhombus Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Rhombus Area, Side & Diagonals Calculator</h2>
+            <p class="hub-card-desc">Calculate rhombus area, perimeter, side length, incircle radius, and internal angles from intersecting diagonals d₁ and d₂.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/rhombus/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Affine Geometry • Parallelogram Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Parallelogram Area & Diagonals Calculator</h2>
+            <p class="hub-card-desc">Calculate parallelogram area, perimeter, internal diagonals, and heights using base, side, and acute internal angle.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/parallelogram/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Deltoid Geometry • Kite Area Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Kite Geometry & Area Calculator</h2>
+            <p class="hub-card-desc">Calculate kite area, perimeter, side pairs, and internal diagonal lengths from perpendicular diagonal axes.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/kite/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Solid Geometry • Cylinder Volumetric Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Cylinder Volume & Surface Area Calculator</h2>
+            <p class="hub-card-desc">Calculate cylinder volume, lateral curved surface area, total surface area, and base perimeter from radius and height.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/cylinder/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Conical Geometry • Right Cone Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Right Circular Cone Volume & Slant Height Calculator</h2>
+            <p class="hub-card-desc">Calculate cone volume, slant height, lateral area, total surface area, and base cone angle from radius and vertical height.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/cone/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Spherical Geometry • Archimedean Sphere Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Sphere Volume & Surface Area Calculator</h2>
+            <p class="hub-card-desc">Calculate exact sphere volume, surface area, radius, diameter, and circumscribed cylinder ratio using Archimedes' theorem.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/sphere/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Topology & Solids • Pappus Toroid Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Torus Volume & Surface Area (Donut) Calculator</h2>
+            <p class="hub-card-desc">Calculate donut torus volume and surface area using Pappus's Centroid Theorems from major radius R and minor radius r.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/torus/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Polyhedral Geometry • Triangular Prism Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Triangular Prism Volume & Surface Area Calculator</h2>
+            <p class="hub-card-desc">Calculate triangular prism volume, lateral face area, base area, and total surface area from triangular base dimensions and prism length.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/triangular-prism/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Pyramidal Geometry • Square Pyramid Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Square Pyramid Volume & Slant Height Calculator</h2>
+            <p class="hub-card-desc">Calculate square and rectangular pyramid volume, lateral slant height, lateral face area, and total surface area.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/pyramid/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Truncated Solids • Conical Frustum Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Frustum of a Cone (Truncated Cone) Calculator</h2>
+            <p class="hub-card-desc">Calculate volume, lateral surface area, slant height, and total surface area of a truncated cone (frustum) from base radii and height.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/frustum-cone/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Ancient Egyptian Geometry • Moscow Papyrus Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Frustum of a Pyramid (Truncated Pyramid) Calculator</h2>
+            <p class="hub-card-desc">Calculate volume, slant height, and surface area of a truncated square pyramid from top base a₁, bottom base a₂, and height.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/frustum-pyramid/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Triaxial Geometry • Ellipsoid Volumetric Solver</span>
+            </div>
+            <h2 class="hub-card-title">Ellipsoid Volume & Surface Area Calculator</h2>
+            <p class="hub-card-desc">Calculate ellipsoid volume and surface area using the Knud Thomsen p-norm approximation formula from semi-axes a, b, and c.</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/ellipsoid/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+        <div class="hub-card" style="--card-accent: var(--accent-blue);">
+          <div>
+            <div class="hub-card-header">
+              <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
+              <span class="hub-badge">Trigonometry • Circular Arc & Sector Matrix</span>
+            </div>
+            <h2 class="hub-card-title">Arc Length, Sector Area & Chord Calculator</h2>
+            <p class="hub-card-desc">Calculate circular arc length (s), sector area, segment area, and chord length from circle radius and central angle (degrees or radians).</p>
+          </div>
+          <ul class="hub-card-links">
+            <li><a href="/geometry/arc-length/">Open Solver →</a></li>
+          </ul>
+        </div>
+        
+    </div>
+
+</main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Caută calculatoare...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.1"></script>
+</body>
+</html>
