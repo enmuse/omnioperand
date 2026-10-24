@@ -88,6 +88,8 @@
 │  2. Review Initial Live Deployment on Cloudflare (~1 min)    │
 │  3. Sign Up for Affiliate Networks (~45-60 mins)             │
 │  4. Dedicated Stripe Profile for OmniOperand (~2 mins) [Done]│
+│  5. Connect Lead Webhook (Zapier/Make/Phonexa) (~2 mins)     │
+│  6. Send Halal Lender Outreach Emails (~10 mins)             │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -158,3 +160,85 @@ The contextual recommendation engine (`assets/js/affiliate-engine.js`) is fully 
 5. Under **Developers** → **API keys**, generate a restricted key (with Products, Prices, and Checkout Sessions write permissions) or copy the Secret key.
 6. Replace `STRIPE_SECRET_KEY` in `.env` and in your Cloudflare Pages dashboard under **Settings** → **Environment variables**.
 Completed 10/20/26 by Brandon
+---
+
+### Task 5: Halal & Immigrant Lending Lead Webhook & Partner Outreach Protocol
+
+OmniOperand features an automated pre-qualification drawer with TCPA consent and RESPA Section 8 safe-harbor compliance across all faith-based and immigrant loan calculators (`/finance/islamic-*`, `/finance/itin-*`).
+
+#### A. Environment Configuration
+Add your webhook endpoint (from Zapier, Make, LeadExec, or Phonexa) to `.env` and Cloudflare Pages Environment Variables:
+```env
+# Add your webhook endpoint (from Zapier, Make, LeadExec, or Phonexa) to .env:
+LEAD_WEBHOOK_URL="https://hooks.zapier.com/hooks/catch/XXXXXX/YYYYYY/"
+```
+Whenever a prospective homebuyer completes the pre-qualification drawer, the payload is immediately dispatched to this webhook with property price, down payment, monthly budget, contact details, and TCPA consent verification.
+
+#### B. Partner Outreach & Affiliate Agreement Templates
+Copy and send the following pre-written emails to partner desks to establish Cost-Per-Lead (CPL: typically $75–$250 per verified inquiry) or monthly sponsorship arrangements:
+
+##### Template 1: Guidance Residential (Leading US Halal Home Financing)
+- **Target**: `businessdevelopment@guidanceresidential.com` / `partners@guidanceresidential.com`
+- **Subject**: Partnership / Digital Lead Referral Inquiry — OmniOperand Halal Financing Tools
+- **Body**:
+> Dear Guidance Residential Partnership Team,
+>
+> My name is Brandon, and I operate OmniOperand (https://omnioperand.com/finance/islamic-diminishing-musharaka/), an independent computational and educational platform providing faith-based home purchase calculators (Diminishing Musharaka, Murabaha, and Ijara).
+>
+> Our platform currently captures high-intent prospective Muslim homebuyers actively calculating property financing requirements across the United States. We collect qualified pre-qualification inquiries (property value, down payment, state, credit score tier, and TCPA-compliant contact details) and are looking to route these inquiries directly to an accredited Shariah-compliant financing partner.
+>
+> We would like to explore establishing a lead-referral or digital marketing arrangement (CPL or dedicated calculator sponsorship) with Guidance Residential.
+>
+> Could you please connect me with the appropriate representative on your business development or digital partnerships team?
+>
+> Best regards,  
+> Brandon  
+> Founder, OmniOperand  
+> brandon@omnioperand.com  
+
+##### Template 2: UIF Corporation (University Islamic Financial)
+- **Target**: `info@myuif.com` / `marketing@myuif.com`
+- **Subject**: Referral & Lead Routing Partnership — OmniOperand Islamic Finance
+- **Body**:
+> Dear UIF Business Development Team,
+>
+> I am reaching out regarding a prospective digital referral partnership between UIF Corporation and OmniOperand (https://omnioperand.com).
+>
+> We operate mathematical tools tailored to Islamic financing models (Musharaka and Murabaha), helping prospective buyers structure their budgets before reaching out to lenders. Through our compliant pre-qualification drawer, users submit their purchase scenarios and explicitly opt in to connect with licensed Halal financing specialists.
+>
+> We would like to discuss onboarding UIF as a featured financing partner to receive verified inquiries in your active lending states via webhook or secure lead feed.
+>
+> Who is the best person on your partnerships team to discuss lead integration and advertising parameters?
+>
+> Thank you,  
+> Brandon  
+> OmniOperand  
+> brandon@omnioperand.com  
+
+##### Template 3: Canadian & UK Providers (Manzil / StrideUp / Gatehouse)
+- **Target**: Partnership / Broker Desks at Manzil (Canada), StrideUp (UK), Gatehouse Bank (UK)
+- **Subject**: International Shariah Financing Inquiries — OmniOperand Partnership
+- **Body**:
+> Hello Partnership Team,
+>
+> OmniOperand (https://omnioperand.com) provides localized financial calculators and is experiencing growing search demand for Shariah-compliant home purchase plans across the UK and Canada.
+>
+> We are seeking an authorized financing partner to receive pre-qualified buyer inquiries originating from your jurisdiction. Please direct us to your affiliate or business development manager to discuss API/webhook lead routing.
+>
+> Sincerely,  
+> Brandon  
+> Founder, OmniOperand  
+
+#### C. Backup Lead Retrieval & Export
+If `LEAD_WEBHOOK_URL` is empty or temporarily unreachable, leads are automatically preserved in the local encrypted backup storage at `/data/leads/pending-leads.json`.
+
+To inspect pending leads in your terminal:
+```bash
+python3 scripts/export_pending_leads.py
+```
+
+To export all captured leads into a CSV file (`data/leads/exported-leads.csv`) for manual upload into your CRM or email to lenders:
+```bash
+python3 scripts/export_pending_leads.py --csv
+```
+

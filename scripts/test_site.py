@@ -737,7 +737,29 @@ def test_schema_and_distribution_engine():
     assert "itin_mortgage" in partners, "Missing itin_mortgage affiliate partner list"
     assert "credit_card_payoff" in partners, "Missing credit_card_payoff affiliate partner list"
 
-    print("  ✅ Semantic schemas (LoanOrCredit, FAQPage, Organization), Distribution Engine, & Partitioned Sitemaps verified!")
+    # 8. Verify Lead Capture Drawer & Cloudflare Pages Webhook Functions
+    assert (REPO_ROOT / "assets" / "js" / "lead-drawer.js").exists(), "Missing assets/js/lead-drawer.js"
+    assert (REPO_ROOT / "functions" / "api" / "leads" / "islamic-finance.js").exists(), "Missing functions/api/leads/islamic-finance.js"
+    assert (REPO_ROOT / "functions" / "api" / "leads" / "itin-mortgage.js").exists(), "Missing functions/api/leads/itin-mortgage.js"
+    assert (REPO_ROOT / "data" / "leads" / "pending-leads.json").exists(), "Missing data/leads/pending-leads.json"
+    assert (REPO_ROOT / "scripts" / "export_pending_leads.py").exists(), "Missing scripts/export_pending_leads.py"
+
+    # 9. Verify Lead Trigger CTA & script tag on authority calculators
+    assert 'id="btn-open-lead-drawer"' in musharaka_html, "Missing lead drawer trigger button in Diminishing Musharaka"
+    assert "lead-drawer.js" in musharaka_html, "Missing lead-drawer.js script tag in Diminishing Musharaka"
+    assert 'id="btn-open-lead-drawer"' in itin_html, "Missing lead drawer trigger button in ITIN Mortgage"
+    assert "lead-drawer.js" in itin_html, "Missing lead-drawer.js script tag in ITIN Mortgage"
+
+    # 10. Verify human.md protocol and outreach templates
+    human_md_path = REPO_ROOT / "HUMAN.md"
+    assert human_md_path.exists(), "Missing HUMAN.md / human.md"
+    human_content = human_md_path.read_text(encoding="utf-8")
+    assert "LEAD_WEBHOOK_URL" in human_content, "HUMAN.md missing LEAD_WEBHOOK_URL configuration"
+    assert "Guidance Residential" in human_content, "HUMAN.md missing Guidance Residential outreach template"
+    assert "UIF Corporation" in human_content, "HUMAN.md missing UIF Corporation outreach template"
+    assert "pending-leads.json" in human_content, "HUMAN.md missing pending-leads.json retrieval instructions"
+
+    print("  ✅ Semantic schemas, Distribution Engine, Lead Webhook Engine, & human.md Protocol verified!")
 
 def main():
     print("=========================================================")

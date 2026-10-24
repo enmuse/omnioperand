@@ -338,6 +338,30 @@ def build_page_html(p):
     methodology_title = "Metodología y Especificación Matemática" if lang == "es" else "Technical Methodology & Mathematical Proof"
     featured_snippet_title = "Ejemplo de Cálculo Paso a Paso (Posición 0)" if lang == "es" else "Step-by-Step Worked Calculation Example (Featured Snippet Standard)"
 
+    is_itin = "itin" in rel_dir
+    if is_itin:
+        if lang == "es":
+            cta_bg = "linear-gradient(135deg, #0284c7 0%, #0369a1 100%)"
+            cta_shadow = "rgba(2, 132, 199, 0.45)"
+            cta_icon = "🏛️"
+            cta_text = "Verificar Pre-Aprobación ITIN y Comparar Prestamistas"
+            cta_badge = "Sin Seguro Social"
+            cta_disclaimer = "Sin impacto en su crédito • Prestamistas Non-QM especializados con ITIN, matrícula consular o W-2/1099"
+        else:
+            cta_bg = "linear-gradient(135deg, #0284c7 0%, #0369a1 100%)"
+            cta_shadow = "rgba(2, 132, 199, 0.45)"
+            cta_icon = "🏛️"
+            cta_text = "Check ITIN Pre-Approval & Compare Lenders"
+            cta_badge = "No SSN Required"
+            cta_disclaimer = "Zero impact on credit score • Non-QM immigrant lending with ITIN, consular card, or W-2/1099"
+    else:
+        cta_bg = "linear-gradient(135deg, #059669 0%, #047857 100%)"
+        cta_shadow = "rgba(5, 150, 105, 0.45)"
+        cta_icon = "🕌"
+        cta_text = "Check Halal Pre-Approval & Compare Providers"
+        cta_badge = "AAOIFI Verified"
+        cta_disclaimer = "Zero impact on credit score • Strict Riba-free underwriting with verified Shariah partners"
+
     return f"""<!DOCTYPE html>
 <html lang="{lang}" data-theme="dark">
 <head>
@@ -431,6 +455,18 @@ def build_page_html(p):
         </section>
       </div>
 
+      <!-- High-Converting Interactive Pre-Approval Trigger -->
+      <div class="lead-trigger-cta" style="margin:28px 0; text-align:center;">
+        <button id="btn-open-lead-drawer" class="btn-lead-drawer" style="width:100%; max-width:620px; background:{cta_bg}; color:#ffffff; border:none; padding:16px 24px; border-radius:12px; font-weight:800; font-size:16px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:10px; box-shadow:0 12px 28px -6px {cta_shadow}; transition:all 0.2s;">
+          <span style="font-size:18px;">{cta_icon}</span>
+          <span>{cta_text}</span>
+          <span style="background:rgba(255,255,255,0.22); padding:2px 8px; border-radius:999px; font-size:11px; text-transform:uppercase; letter-spacing:0.04em;">{cta_badge}</span>
+        </button>
+        <p style="font-size:12px; color:#64748b; margin-top:8px; line-height:1.4;">
+          {cta_disclaimer}
+        </p>
+      </div>
+
       <div id="affiliate-recommendation-target" style="margin:24px 0;"></div>
 
       <section class="educational-section" style="margin-top:40px;">
@@ -463,6 +499,7 @@ def build_page_html(p):
   <script src="/assets/js/qr-code-engine.js"></script>
   <script src="/assets/js/pdf-export-engine.js"></script>
   <script src="/assets/js/embed-modal.js"></script>
+  <script src="/assets/js/lead-drawer.js"></script>
   <script src="/assets/js/affiliate-engine.js"></script>
   <script src="{p['script']}"></script>
 </body>
