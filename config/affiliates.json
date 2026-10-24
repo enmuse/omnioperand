@@ -261,6 +261,68 @@
           "value": 30000
         }
       }
+    ],
+    "islamic_finance": [
+      {
+        "id": "guidance_residential",
+        "name": "Guidance Residential",
+        "headline": "Pre-Qualify for AAOIFI-Compliant Declining Balance Home Financing",
+        "cta_text": "Check Shariah Rates",
+        "referral_url": "https://www.guidanceresidential.com/?ref=omnioperand",
+        "badge": "Shariah Leader",
+        "disclosure": "NMLS #8317. Strict Diminishing Musharaka co-ownership with zero compounding interest.",
+        "threshold_rules": {
+          "field": "home_price",
+          "operator": ">=",
+          "value": 150000
+        }
+      },
+      {
+        "id": "uif_corporation",
+        "name": "UIF Corporation",
+        "headline": "Nationwide Murabaha & Ijara Residential Financing",
+        "cta_text": "See UIF Financing Options",
+        "referral_url": "https://www.myuif.com/?ref=omnioperand",
+        "badge": "AAOIFI Compliant",
+        "disclosure": "Endorsed by leading North American Islamic Jurisprudence & Fatwa Councils.",
+        "threshold_rules": {
+          "field": "home_price",
+          "operator": ">=",
+          "value": 100000
+        }
+      }
+    ],
+    "itin_mortgage": [
+      {
+        "id": "new_american_funding_itin",
+        "name": "New American Funding",
+        "headline": "Check ITIN Mortgage Rates & Down Payment Options (No SSN Required)",
+        "cta_text": "View ITIN Lenders",
+        "referral_url": "https://www.newamericanfunding.com/mortgage-loans/itin-loans/?ref=omnioperand",
+        "badge": "Top ITIN Lender",
+        "disclosure": "Equal Housing Lender. NMLS #6606. Accepts consular cards, ITIN letters, and W-2/1099.",
+        "threshold_rules": {
+          "field": "home_price",
+          "operator": ">=",
+          "value": 100000
+        }
+      }
+    ],
+    "credit_card_payoff": [
+      {
+        "id": "consolidation_zero_apr",
+        "name": "LendingTree Balance Transfer",
+        "headline": "Warning: High Cumulative Interest Detected. Compare 0% APR Balance Transfer Cards",
+        "cta_text": "Compare 0% APR Cards",
+        "referral_url": "https://www.lendingtree.com/credit-cards/balance-transfer/?ref=omnioperand",
+        "badge": "Interest Elimination",
+        "disclosure": "Save hundreds in interest charges by consolidating high-rate balances at 0% intro APR.",
+        "threshold_rules": {
+          "field": "interest_rate",
+          "operator": ">=",
+          "value": 18.0
+        }
+      }
     ]
   }
 }

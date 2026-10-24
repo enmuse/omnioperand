@@ -116,6 +116,55 @@
         disclosure: "Engineered for 22.5° octagon and 30° hexagon airtight joints.",
         check: () => true
       }
+    ],
+
+    islamic_finance: [
+      {
+        id: "guidance_residential",
+        name: "Guidance Residential",
+        badge: "Shariah Leader",
+        headline: "Pre-Qualify for AAOIFI-Compliant Declining Balance Home Financing",
+        cta: "Check Shariah Rates",
+        url: "https://www.guidanceresidential.com/?ref=omnioperand",
+        disclosure: "NMLS #8317. Strict Diminishing Musharaka co-ownership with zero compounding interest.",
+        check: () => true
+      },
+      {
+        id: "uif_corp",
+        name: "UIF Corporation",
+        badge: "AAOIFI Compliant",
+        headline: "Nationwide Murabaha & Ijara Residential Financing",
+        cta: "See UIF Financing",
+        url: "https://www.myuif.com/?ref=omnioperand",
+        disclosure: "Endorsed by leading North American Islamic Jurisprudence & Fatwa Councils.",
+        check: () => true
+      }
+    ],
+
+    itin_mortgage: [
+      {
+        id: "new_american_funding_itin",
+        name: "New American Funding",
+        badge: "Top ITIN Lender",
+        headline: "Check ITIN Mortgage Rates & Down Payment Options (No SSN Required)",
+        cta: "View ITIN Rates",
+        url: "https://www.newamericanfunding.com/mortgage-loans/itin-loans/?ref=omnioperand",
+        disclosure: "Equal Housing Lender. NMLS #6606. Accepts consular cards, ITIN letters, and W-2/1099.",
+        check: () => true
+      }
+    ],
+
+    credit_card_payoff: [
+      {
+        id: "consolidation_zero_apr",
+        name: "LendingTree Balance Transfer",
+        badge: "Interest Elimination",
+        headline: "Warning: High Cumulative Interest Detected. Compare 0% APR Balance Transfer Cards",
+        cta: "Compare 0% APR Cards",
+        url: "https://www.lendingtree.com/credit-cards/balance-transfer/?ref=omnioperand",
+        disclosure: "Save hundreds in interest charges by consolidating high-rate balances at 0% intro APR.",
+        check: (inputs, res) => (inputs.interest_rate >= 18.0) || (res.total_interest >= 1000)
+      }
     ]
   };
 
@@ -138,6 +187,9 @@
 
     getCategoryFromPage() {
       const path = window.location.pathname.toLowerCase();
+      if (path.includes('islamic') || path.includes('musharaka') || path.includes('murabaha') || path.includes('ijara')) return 'islamic_finance';
+      if (path.includes('itin')) return 'itin_mortgage';
+      if (path.includes('credit-card') || path.includes('payoff') || path.includes('debt')) return 'credit_card_payoff';
       if (path.includes('heloc')) return 'heloc';
       if (path.includes('mortgage')) return 'mortgage';
       if (path.includes('auto-loan')) return 'auto_loan';

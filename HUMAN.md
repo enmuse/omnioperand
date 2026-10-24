@@ -49,8 +49,29 @@
   - Implemented interactive 2-column Language Switcher dropdown (`.lang-dropdown`) in site headers with 0ms FOUC inlined CSS.
   - Added support for European comma decimal separators (e.g. `12,5` -> `12.5`) across all JS calculation engines.
   - Updated XML sitemap to 735 URLs and extended automated test suite with `test_internationalization_and_hreflang()`.
+- [x] **Dynamic PDF Spec Sheet Export & Programmatic QR Code Engine**:
+  - `assets/js/qr-code-engine.js`: Pure client-side QR Code engine (Byte Mode, Error Correction Level M) dynamically serializing deep links with state parameters (`https://omnioperand.com/.../?param=val`) without external APIs.
+  - `assets/js/pdf-export-engine.js`: Client-side single-page branded PDF 1.4 spec sheet generator embedding QR codes, calculation summary tables, disclaimers, and regulatory citations.
+- [x] **Viral Embeddable Widget Distribution System**:
+  - `functions/embed/[[catchall]].js`: Cloudflare Pages universal edge function serving isolated iframe views, stripping outer layout chrome, handling bidirectional `postMessage` auto-resizing, and enforcing sticky attribution backlinks (`rel="noopener"`).
+  - `assets/js/embed-modal.js`: Interactive embed modal on calculation pages providing 1-click copyable responsive HTML iframe snippets.
+- [x] **E-E-A-T Authority & Underserved Financial/Lending Suites**:
+  - **Diminishing Musharaka Home Financing** (`/finance/islamic-diminishing-musharaka/`): Compliant with **AAOIFI Standard No. 12**, dual equity buyout/rental rates, Position 0 worked example, and `LoanOrCredit` structured data.
+  - **Murabaha Cost-Plus Financing** (`/finance/islamic-murabaha/`): Compliant with **AAOIFI Standard No. 8**, transparent profit markup, fixed installment schedule.
+  - **Ijara Lease-to-Own Financing** (`/finance/islamic-ijara/`): Compliant with **AAOIFI Standard No. 9**, variable rental index, buyout schedule.
+  - **ITIN Immigrant Non-QM Mortgage** (`/finance/itin-mortgage/` & Spanish `/es/finance/itin-mortgage/`): Fully aligned with **Fannie Mae Desktop Underwriter (DU)** guidelines for Non-Permanent Resident Aliens and **IRS Notice 2026-ITIN** standards, PITI and 6-month liquidity reserve calculations.
+  - Verification badges: `"Updated for 2026 Standards"` on all sensitive calculators.
+- [x] **Advanced Semantic Structured Data (JSON-LD)**:
+  - Rich `LoanOrCredit` & `FinancialProduct` schema injected across all debt and mortgage tools.
+  - Enhanced root `Organization` schema in `index.html` detailing `knowsAbout`, social profiles, and publishing principles.
+  - `FAQPage` schema on all calculators answering high-intent search queries.
+- [x] **Partitioned Sitemap Indexes & Crawl Budget Hygiene**:
+  - Partitioned monolithic sitemap into `sitemap-index.xml` + 14 sub-sitemaps (`sitemap-en.xml`, `sitemap-engineering.xml`, `sitemap-finance.xml`, and 11 language sub-sitemaps), indexing 970 URLs.
+  - Updated `robots.txt` pointing to `https://omnioperand.com/sitemap-index.xml`.
+- [x] **Autonomous Affiliate & Monetization Injection**:
+  - `config/affiliates.json` and `assets/js/affiliate-engine.js` enhanced with threshold rules for Islamic financing partners, ITIN mortgage networks, and high-interest credit card balance transfers (`rel="nofollow sponsored"`).
 - [x] **Automated Tooling & Test Suite**:
-  - `scripts/test_site.py`: Automated testing suite passing with 1e-12 mathematical precision for all polygon engines, zero raw LaTeX compliance, and i18n hreflang integrity.
+  - `scripts/test_site.py`: Automated testing suite passing with 34 mathematical precision tests, zero raw LaTeX compliance, i18n hreflang integrity, schema validation, and partitioned sitemap tests.
   - `scripts/generate_i18n.py`: Automated multilingual static compiler with native mathematical dictionaries.
   - `scripts/generate_calculators.py`: Scalable taxonomy builder and sitemap generator.
   - `scripts/deploy.py`: Programmatic Cloudflare Pages deployment script.

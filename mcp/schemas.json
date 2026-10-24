@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "OmniOperand Autonomous AI Tool Definitions",
-  "description": "Standardized tool definitions for all 438 deterministic calculators. Fully compatible with OpenAI Function Calling, Anthropic Claude Tool Use, and Model Context Protocol (MCP) clients.",
+  "description": "Standardized tool definitions for all 442 deterministic calculators. Fully compatible with OpenAI Function Calling, Anthropic Claude Tool Use, and Model Context Protocol (MCP) clients.",
   "version": "2.0.0",
-  "total_tools": 438,
+  "total_tools": 442,
   "tools": [
     {
       "name": "omni_octagon_solver",
@@ -13538,6 +13538,138 @@
         "required": [
           "packs_day",
           "pack_cost"
+        ]
+      }
+    },
+    {
+      "name": "omni_islamic_diminishing_musharaka",
+      "description": "Diminishing Musharaka Calculator (AAOIFI Standard No. 12). Calculate Shariah-compliant co-ownership financing with rental rates and progressive equity buyouts. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "home_price": {
+            "type": "number",
+            "default": 400000,
+            "description": "Property Purchase Price ($) ($). Agreed acquisition cost"
+          },
+          "down_payment_pct": {
+            "type": "number",
+            "default": 20,
+            "description": "Client Initial Equity (%) (%). Initial customer share"
+          },
+          "profit_rate": {
+            "type": "number",
+            "default": 6.5,
+            "description": "Agreed Annual Rental Rate (%) (%). Rental rate index"
+          },
+          "financing_term": {
+            "type": "number",
+            "default": 30,
+            "description": "Financing Term (Years) (years). Duration of contract"
+          }
+        },
+        "required": [
+          "home_price",
+          "down_payment_pct"
+        ]
+      }
+    },
+    {
+      "name": "omni_islamic_murabaha",
+      "description": "Murabaha Cost-Plus Financing Calculator (AAOIFI Standard No. 8). Calculate Shariah-compliant Murabaha cost-plus deferred sale financing with transparent fixed mark-up. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "purchase_price": {
+            "type": "number",
+            "default": 300000,
+            "description": "Asset Acquisition Cost ($) ($). Cost price paid to supplier"
+          },
+          "down_payment": {
+            "type": "number",
+            "default": 60000,
+            "description": "Customer Deposit ($) ($). Upfront commitment"
+          },
+          "profit_margin": {
+            "type": "number",
+            "default": 25,
+            "description": "Agreed Profit Mark-Up (%) (%). Total profit markup"
+          },
+          "term_years": {
+            "type": "number",
+            "default": 15,
+            "description": "Financing Term (Years) (years). Deferred installment term"
+          }
+        },
+        "required": [
+          "purchase_price",
+          "down_payment"
+        ]
+      }
+    },
+    {
+      "name": "omni_islamic_ijara",
+      "description": "Ijara Lease-to-Own Financing Calculator (AAOIFI Standard No. 9). Calculate Shariah-compliant lease-to-own (Ijara Muntahiya Bittamleek) financing with independent gift title transfer. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "property_value": {
+            "type": "number",
+            "default": 400000,
+            "description": "Property Valuation ($) ($). Property market value"
+          },
+          "security_deposit": {
+            "type": "number",
+            "default": 80000,
+            "description": "Security Deposit ($) ($). Client upfront security capital"
+          },
+          "lease_rate": {
+            "type": "number",
+            "default": 6.25,
+            "description": "Annual Lease Benchmark (%) (%). Annual lease index"
+          },
+          "lease_years": {
+            "type": "number",
+            "default": 30,
+            "description": "Lease Term (Years) (years). Lease-to-own duration"
+          }
+        },
+        "required": [
+          "property_value",
+          "security_deposit"
+        ]
+      }
+    },
+    {
+      "name": "omni_itin_mortgage",
+      "description": "ITIN Immigrant Home Mortgage Calculator. Calculate ITIN home loans for Non-Permanent Resident Aliens under Fannie Mae DU & IRS Notice 2026-ITIN standards. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "home_price": {
+            "type": "number",
+            "default": 350000,
+            "description": "Home Purchase Price ($) ($). Purchase contract price"
+          },
+          "down_payment_pct": {
+            "type": "number",
+            "default": 15,
+            "description": "Down Payment (%) (%). Typically 15% to 20%"
+          },
+          "interest_rate": {
+            "type": "number",
+            "default": 7.75,
+            "description": "Mortgage Interest Rate (%) (%). Non-QM ITIN rate tier"
+          },
+          "term_years": {
+            "type": "number",
+            "default": 30,
+            "description": "Loan Term (Years) (years). Amortization term"
+          }
+        },
+        "required": [
+          "home_price",
+          "down_payment_pct"
         ]
       }
     }

@@ -5,6 +5,7 @@ scripts/test_site.py — Automated Mathematical Integrity & SEO Compliance Test 
 
 import sys
 import math
+import json
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -419,6 +420,50 @@ def test_mathematical_precision():
     assert 'hreflang="en"' in it_content, "Missing en hreflang"
     print("  ✅ Italian Generator Sizing: Canonical and bidirectional hreflangs verified!")
 
+    # 26. Diminishing Musharaka (AAOIFI Standard 12: $400k property, 20% client, 6.5% rate, 30 yrs)
+    bank_musharaka = 400000.0 * 0.80  # $320,000
+    r_mush = 0.065 / 12.0
+    n_mush = 30 * 12
+    f_mush = math.pow(1 + r_mush, n_mush)
+    m_mush = bank_musharaka * (r_mush * f_mush) / (f_mush - 1)
+    assert math.isclose(m_mush, 2022.62, rel_tol=1e-3), f"Musharaka installment mismatch: {m_mush}"
+    m1_rent = bank_musharaka * r_mush
+    assert math.isclose(m1_rent, 1733.33, rel_tol=1e-3), f"Musharaka month 1 rent mismatch: {m1_rent}"
+    m1_equity = m_mush - m1_rent
+    assert math.isclose(m1_equity, 289.29, rel_tol=1e-2), f"Musharaka month 1 equity mismatch: {m1_equity}"
+    print("  ✅ Islamic Diminishing Musharaka: AAOIFI Standard 12 rental and equity buyout verified!")
+
+    # 27. Murabaha Cost-Plus (AAOIFI Standard 8: $300k cost, $60k down, 25% profit, 15 yrs)
+    financed_murabaha = 300000.0 - 60000.0  # $240,000
+    profit_murabaha = financed_murabaha * 0.25  # $60,000
+    total_sale_murabaha = financed_murabaha + profit_murabaha  # $300,000
+    m_murabaha = total_sale_murabaha / (15 * 12)
+    assert math.isclose(m_murabaha, 1666.67, rel_tol=1e-3), f"Murabaha installment mismatch: {m_murabaha}"
+    assert math.isclose(total_sale_murabaha, 300000.0), "Murabaha total contract price mismatch"
+    print("  ✅ Islamic Murabaha: AAOIFI Standard 8 fixed cost-plus profit contract verified!")
+
+    # 28. Ijara Lease-to-Own (AAOIFI Standard 9: $400k value, $80k deposit, 6.25% rate, 30 yrs)
+    net_ijara = 400000.0 - 80000.0  # $320,000
+    r_ijara = 0.0625 / 12.0
+    n_ijara = 30 * 12
+    f_ijara = math.pow(1 + r_ijara, n_ijara)
+    m_ijara = net_ijara * (r_ijara * f_ijara) / (f_ijara - 1)
+    assert math.isclose(m_ijara, 1970.36, rel_tol=1e-3), f"Ijara installment mismatch: {m_ijara}"
+    print("  ✅ Islamic Ijara: AAOIFI Standard 9 lease rental and buyout schedule verified!")
+
+    # 29. ITIN Immigrant Mortgage (Fannie Mae DU / IRS 2026: $350k, 15% down, 7.75%, 30 yrs)
+    loan_itin = 350000.0 * 0.85  # $297,500
+    r_itin = 0.0775 / 12.0
+    n_itin = 30 * 12
+    f_itin = math.pow(1 + r_itin, n_itin)
+    m_pi_itin = loan_itin * (r_itin * f_itin) / (f_itin - 1)
+    assert math.isclose(m_pi_itin, 2132.88, rel_tol=1e-3), f"ITIN monthly PI mismatch: {m_pi_itin}"
+    piti_itin = m_pi_itin + (350000.0 * 0.0125 / 12.0) + (1400.0 / 12.0)
+    assert math.isclose(piti_itin, 2614.13, rel_tol=1e-3), f"ITIN monthly PITI mismatch: {piti_itin}"
+    reserves_itin = piti_itin * 6  # 6 months required for LTV > 80%
+    assert math.isclose(reserves_itin, 15684.78, rel_tol=1e-1), f"ITIN reserves mismatch: {reserves_itin}"
+    print("  ✅ ITIN Immigrant Mortgage: Fannie Mae DU and IRS Notice 2026 underwriting verified!")
+
 def test_file_integrity():
     print("Testing File & Asset Integrity...")
     required_files = [
@@ -427,12 +472,25 @@ def test_file_integrity():
         "robots.txt",
         "_headers",
         "sitemap.xml",
+        "sitemap-index.xml",
+        "sitemap-en.xml",
+        "sitemap-engineering.xml",
+        "sitemap-finance.xml",
         "llms.txt",
         "llms-full.txt",
         "assets/css/omni-core.css",
         "assets/css/calculator.css",
         "assets/js/omni-search.js",
         "assets/js/blueprint-engine.js",
+        # PDF Export & QR Code Engines
+        "assets/js/qr-code-engine.js",
+        "assets/js/pdf-export-engine.js",
+        "assets/js/embed-modal.js",
+        "assets/js/islamic-finance-solver.js",
+        "assets/js/itin-mortgage-solver.js",
+        "assets/js/affiliate-engine.js",
+        # Cloudflare Pages Universal Embed Function
+        "functions/embed/[[catchall]].js",
         # Polygon JS solvers
         "assets/js/octagon-solver.js",
         "assets/js/hexagon-solver.js",
@@ -494,7 +552,13 @@ def test_file_integrity():
         "biotech/qpcr-primer-tm/index.html",
         "health/navy-body-fat/index.html",
         "health/cost-of-smoking/index.html",
-        "it/ingegneria/dimensionamento-gruppo-elettrogeno/index.html"
+        "it/ingegneria/dimensionamento-gruppo-elettrogeno/index.html",
+        # High-Authority Islamic Finance & ITIN Immigrant Suites
+        "finance/islamic-diminishing-musharaka/index.html",
+        "finance/islamic-murabaha/index.html",
+        "finance/islamic-ijara/index.html",
+        "finance/itin-mortgage/index.html",
+        "es/finance/itin-mortgage/index.html"
     ]
 
     for rel_path in required_files:
@@ -610,6 +674,71 @@ def test_internationalization_and_hreflang():
 
     print(f"  ✅ Internationalization verified: 11 non-English languages (12 total), bidirectional hreflangs, language switcher, and European decimal support!")
 
+def test_schema_and_distribution_engine():
+    print("Testing Semantic Schemas, Distribution Engine, & Partitioned Sitemaps...")
+    import xml.etree.ElementTree as ET
+
+    # 1. Verify QR and PDF client-side engines
+    assert (REPO_ROOT / "assets" / "js" / "qr-code-engine.js").exists(), "Missing qr-code-engine.js"
+    assert (REPO_ROOT / "assets" / "js" / "pdf-export-engine.js").exists(), "Missing pdf-export-engine.js"
+    assert (REPO_ROOT / "assets" / "js" / "embed-modal.js").exists(), "Missing embed-modal.js"
+    assert (REPO_ROOT / "functions" / "embed" / "[[catchall]].js").exists(), "Missing Cloudflare Pages embed function"
+
+    # 2. Verify sitemap index and sub-sitemaps
+    sitemap_index_path = REPO_ROOT / "sitemap-index.xml"
+    assert sitemap_index_path.exists(), "Missing sitemap-index.xml"
+    sitemap_index_content = sitemap_index_path.read_text(encoding="utf-8")
+    assert "<sitemapindex" in sitemap_index_content, "sitemap-index.xml must contain <sitemapindex>"
+    
+    expected_sitemaps = [
+        "sitemap-en.xml", "sitemap-engineering.xml", "sitemap-finance.xml",
+        "sitemap-es.xml", "sitemap-fr.xml", "sitemap-de.xml", "sitemap-it.xml",
+        "sitemap-pt.xml", "sitemap-nl.xml", "sitemap-pl.xml", "sitemap-sv.xml",
+        "sitemap-no.xml", "sitemap-fi.xml", "sitemap-ro.xml"
+    ]
+    for sm in expected_sitemaps:
+        assert f"https://omnioperand.com/{sm}" in sitemap_index_content, f"Missing {sm} in sitemap-index.xml"
+        assert (REPO_ROOT / sm).exists(), f"Sub-sitemap file {sm} missing on disk"
+
+    # 3. Verify robots.txt points to sitemap-index.xml
+    robots_txt = (REPO_ROOT / "robots.txt").read_text(encoding="utf-8")
+    assert "Sitemap: https://omnioperand.com/sitemap-index.xml" in robots_txt, "robots.txt does not point to sitemap-index.xml"
+
+    # 4. Verify Root Organization Schema has knowsAbout
+    root_index = (REPO_ROOT / "index.html").read_text(encoding="utf-8")
+    assert '"knowsAbout"' in root_index, "Root index.html missing knowsAbout in Organization schema"
+    assert "Islamic Finance" in root_index, "Root index.html missing Islamic Finance in knowsAbout"
+    assert "Underwriting Standards" in root_index, "Root index.html missing Underwriting Standards in knowsAbout"
+
+    # 5. Verify Islamic Diminishing Musharaka schema and authority elements
+    musharaka_html = (REPO_ROOT / "finance" / "islamic-diminishing-musharaka" / "index.html").read_text(encoding="utf-8")
+    assert '"@type": "LoanOrCredit"' in musharaka_html, "Missing LoanOrCredit schema in Diminishing Musharaka"
+    assert '"@type": "FAQPage"' in musharaka_html, "Missing FAQPage schema in Diminishing Musharaka"
+    assert "AAOIFI" in musharaka_html, "Missing AAOIFI citation in Diminishing Musharaka"
+    assert "Updated for 2026 Standards" in musharaka_html, "Missing 2026 Standards badge in Diminishing Musharaka"
+    assert 'id="btn-export-pdf"' in musharaka_html, "Missing PDF export button in Diminishing Musharaka"
+    assert 'id="btn-embed"' in musharaka_html, "Missing Embed tool button in Diminishing Musharaka"
+
+    # 6. Verify ITIN Mortgage schema and authority elements
+    itin_html = (REPO_ROOT / "finance" / "itin-mortgage" / "index.html").read_text(encoding="utf-8")
+    assert '"@type": "LoanOrCredit"' in itin_html, "Missing LoanOrCredit schema in ITIN Mortgage"
+    assert '"@type": "FAQPage"' in itin_html, "Missing FAQPage schema in ITIN Mortgage"
+    assert "Fannie Mae" in itin_html, "Missing Fannie Mae reference in ITIN Mortgage"
+    assert "IRS Notice 2026-ITIN" in itin_html, "Missing IRS Notice 2026 reference in ITIN Mortgage"
+
+    # 7. Verify Affiliates configuration has required triggers
+    affiliates_path = REPO_ROOT / "config" / "affiliates.json"
+    assert affiliates_path.exists(), "Missing config/affiliates.json"
+    with open(affiliates_path, "r", encoding="utf-8") as f:
+        aff_data = json.load(f)
+    assert "partners" in aff_data, "config/affiliates.json missing partners dictionary"
+    partners = aff_data["partners"]
+    assert "islamic_finance" in partners, "Missing islamic_finance affiliate partner list"
+    assert "itin_mortgage" in partners, "Missing itin_mortgage affiliate partner list"
+    assert "credit_card_payoff" in partners, "Missing credit_card_payoff affiliate partner list"
+
+    print("  ✅ Semantic schemas (LoanOrCredit, FAQPage, Organization), Distribution Engine, & Partitioned Sitemaps verified!")
+
 def main():
     print("=========================================================")
     print("🧪 Running OmniOperand Integrity Test Suite")
@@ -620,6 +749,7 @@ def main():
         test_zero_raw_latex_in_html()
         test_calculator_count_invariants()
         test_internationalization_and_hreflang()
+        test_schema_and_distribution_engine()
         print("\n🎉 ALL TESTS PASSED! Site is 100% compliant.")
         return 0
     except AssertionError as e:
@@ -628,3 +758,4 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+

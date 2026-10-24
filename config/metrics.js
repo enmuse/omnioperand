@@ -4,11 +4,11 @@
  */
 
 export const METRICS = {
-  "solvers_count": 437,
-  "mcp_tools_count": 438,
-  "calculators_count": 929,
+  "solvers_count": 441,
+  "mcp_tools_count": 442,
+  "calculators_count": 934,
   "categories_count": 15,
-  "total_html_pages": 966,
+  "total_html_pages": 971,
   "sitemap_urls_count": 965,
   "supported_languages": [
     "en",
@@ -25,7 +25,7 @@ export const METRICS = {
     "ro"
   ],
   "category_breakdown": {
-    "finance": 128,
+    "finance": 132,
     "ecommerce": 30,
     "construction": 28,
     "health": 27,
@@ -41,10 +41,10 @@ export const METRICS = {
     "statistics": 4,
     "calculus": 2
   },
-  "last_updated": "2026-10-24T16:16:11Z"
+  "last_updated": "2026-10-24T16:24:20Z"
 };
 
-export const SOLVERS_COUNT = 437;
-export const MCP_TOOLS_COUNT = 438;
-export const CALCULATORS_COUNT = 929;
+export const SOLVERS_COUNT = 441;
+export const MCP_TOOLS_COUNT = 442;
+export const CALCULATORS_COUNT = 934;
 export const CATEGORIES_COUNT = 15;
