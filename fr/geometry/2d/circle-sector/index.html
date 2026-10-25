@@ -77,38 +77,30 @@
       "@id": "https://omnioperand.com/geometry/2d/circle-sector/#faq",
       "mainEntity": [
         {
-          "@type": "Question",
-          "name": "What is the difference between a circle sector and a circle segment?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A circle sector is a pie-shaped region bounded by two radii and an arc (like a slice of pizza). A circle segment is the region bounded by an arc and the straight chord connecting the arc's two endpoints. The segment area equals the sector area minus the central triangle area."
-          }
+                "@type": "Question",
+                "name": "Wie berechnet man die Bogenlänge?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Die Bogenlänge s beträgt (θ / 360°) · 2πr."
+                }
         },
         {
-          "@type": "Question",
-          "name": "How do you calculate circle radius from chord and sagitta height?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "By applying the Intersecting Chords Theorem, the radius R can be derived exactly from chord length c and sagitta height h: R = (c² / (8h)) + (h / 2). This is widely used in machining, surveying, and arch masonry."
-          }
+                "@type": "Question",
+                "name": "Was ist der Unterschied zwischen Sektor und Segment?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Ein Sektor ist ein kuchenförmiges Stück vom Mittelpunkt zum Bogen. Ein Segment ist die Fläche zwischen Bogen und Sehne."
+                }
         },
         {
-          "@type": "Question",
-          "name": "What is the origin of the word sagitta?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sagitta is Latin for arrow. In classical geometry, the chord represents an archer's bowstring, the curved arc represents the bow, and the perpendicular height line from chord to arc resembles an arrow nocked and ready to fire."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you calculate circular tank liquid volume?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "When a horizontal cylindrical tank (like an oil or fuel tank) is partially full, the cross-sectional shape of the liquid is a circular segment. Multiplying the segment area by the tank's horizontal length yields the exact liquid volume in the tank."
-          }
+                "@type": "Question",
+                "name": "Wie berechnet man die Sagitta (Bogenhöhe)?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Die Bogenhöhe h berechnet sich nach h = r · (1 - cos(θ / 2))."
+                }
         }
-      ]
+]
     }
   ]
 }
@@ -159,7 +151,7 @@
       <a href="/fr/" class="brand-link">
         <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
-        <span class="brand-badge">Geometry</span>
+        <span class="brand-badge">Géométrie</span>
       </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
@@ -223,8 +215,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Rechercher</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -264,11 +255,11 @@
           <div class="hud-panel-header">
             <h2>Geometric Parameters</h2>
             <div class="precision-control">
-              <label for="precision-select">Precision:</label>
+              <label for="precision-select">Précision:</label>
               <select id="precision-select" class="select-input">
-                <option value="2">2 Decimals</option>
-                <option value="4" selected>4 Decimals</option>
-                <option value="6">6 Decimals</option>
+                <option value="2">2 Décimales</option>
+                <option value="4" selected>4 Décimales</option>
+                <option value="6">6 Décimales</option>
               </select>
             </div>
           </div>
@@ -385,87 +376,18 @@
 
     <!-- Proofs Section -->
     <section class="proof-section" style="margin-top: 3rem;">
-      <h2>Mathematical Rigor & Closed-Form Formulations</h2>
-
+      <h2>Analytische Geometrie: Kreissektor & Kreissegment</h2>
       <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">1</span>
-            <span>Arc, Chord & Sagitta Closed-Form Derivations</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            For a circle of radius <span class="math-tex">R</span> and central angle <span class="math-tex">θ</span> in radians:
-          </p>
-          <div class="math-display">
-            Arc Length s = R · θ
-          </div>
-          <p>
-            The chord bisects the central angle into two right triangles with opposite sides <span class="math-tex">R sin(θ / 2)</span>:
-          </p>
-          <div class="math-display">
-            Chord Length c = 2R · sin(θ / 2)
-          </div>
-          <p>
-            The sagitta <span class="math-tex">h</span> is the maximum perpendicular distance from chord to arc:
-          </p>
-          <div class="math-display">
-            Sagitta h = R - R · cos(θ / 2) = R · [ 1 - cos(θ / 2) ]
-          </div>
-        </div>
+        <div class="proof-header"><h3><span class="step-num">1</span><span>Bogenlänge & Zentriwinkel</span></h3></div>
+        <div class="proof-body"><p>Für den Zentriwinkel θ in Grad: s = (θ / 360°) · 2πr = r · θ_rad.</p></div>
       </div>
-
       <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">2</span>
-            <span>The Chord-Sagitta Radius Inversion Theorem</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            By applying the Intersecting Chords Theorem across the complete circle diameter <span class="math-tex">2R</span>:
-          </p>
-          <div class="math-display">
-            (c / 2) · (c / 2) = h · (2R - h) ⟹ c² / 4 = 2Rh - h²
-          </div>
-          <p>
-            Rearranging to isolate radius <span class="math-tex">R</span>:
-          </p>
-          <div class="math-display">
-            2Rh = (c² / 4) + h² ⟹ R = (c² / 8h) + (h / 2)
-          </div>
-          <p>
-            This fundamental formula enables carpenters, fabricators, and stone masons to determine the exact radius of an existing arched doorway or curved wall simply by measuring its width and height.
-          </p>
-        </div>
+        <div class="proof-header"><h3><span class="step-num">2</span><span>Sektorfläche & Segmentfläche</span></h3></div>
+        <div class="proof-body"><p>Sektorfläche: A_sektor = (θ / 360°) · πr² = ½ r² θ_rad. Segmentfläche: A_seg = ½ r² (θ_rad - sin θ_rad).</p></div>
       </div>
-
       <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">3</span>
-            <span>Sector & Segment Area Derivations</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            A sector is proportional to the total circle area <span class="math-tex">π R²</span> by the angle fraction <span class="math-tex">θ / 2π</span>:
-          </p>
-          <div class="math-display">
-            A<sub>sector</sub> = π R² · (θ / 2π) = ½ R² θ
-          </div>
-          <p>
-            The central triangle formed by the center and the chord has area <span class="math-tex">½ R² sin(θ)</span>. Subtracting this from the sector yields the circular segment area:
-          </p>
-          <div class="math-display">
-            A<sub>segment</sub> = ½ R² θ - ½ R² sin(θ) = ½ R² (θ - sin θ)
-          </div>
-        </div>
+        <div class="proof-header"><h3><span class="step-num">3</span><span>Sehnenlänge & Bogenhöhe (Sagitta)</span></h3></div>
+        <div class="proof-body"><p>Sehnenlänge: c = 2r · sin(θ / 2). Sagitta (Bogenhöhe): h = r · (1 - cos(θ / 2)).</p></div>
       </div>
     </section>
 
@@ -477,14 +399,14 @@
           <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
         </div>
         <div class="llm-actions">
-          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copier le Prompt Vérifié pour Agents IA</button>
         </div>
       </div>
 
       <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
 
       <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
-        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Standardisé pour <code>llms.txt</code></span>
         <span>✓ Closed-form chord and sagitta inversions</span>
         <span>✓ Machine-checked against Euclidean analytical geometry</span>
       </div>
@@ -492,48 +414,18 @@
 
     <!-- FAQ Section -->
     <section class="faq-section">
-      <h2>Foire Aux Questions</h2>
-
+      <h2>FAQ: Kreissektor</h2>
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the difference between a circle sector and a circle segment?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          A <strong>circle sector</strong> is a pie-shaped region bounded by two radii and an arc (like a slice of pizza). A <strong>circle segment</strong> is the region bounded by an arc and the straight chord connecting the arc's two endpoints. The segment area equals the sector area minus the central triangle area: <span class="math-tex">A<sub>seg</sub> = ½ R²(θ - sin θ)</span>.
-        </div>
+        <div class="faq-question"><span>Wie berechnet man die Bogenlänge?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Die Bogenlänge s beträgt (θ / 360°) · 2πr.</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>How do you calculate circle radius from chord and sagitta height?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          By applying the Intersecting Chords Theorem, radius <span class="math-tex">R</span> can be derived from chord length <span class="math-tex">c</span> and sagitta height <span class="math-tex">h</span>:
-          <div class="math-display">R = (c² / (8h)) + (h / 2)</div>
-          This is widely used in machining, surveying, and arch masonry when only the chord and depth are accessible.
-        </div>
+        <div class="faq-question"><span>Was ist der Unterschied zwischen Sektor und Segment?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Ein Sektor ist ein kuchenförmiges Stück vom Mittelpunkt zum Bogen. Ein Segment ist die Fläche zwischen Bogen und Sehne.</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the origin of the word "sagitta"?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          "Sagitta" is Latin for <strong>arrow</strong>. In classical geometry, the chord represents an archer's bowstring, the curved arc represents the bow, and the perpendicular height line from chord to arc resembles an arrow nocked and ready to fire.
-        </div>
-      </div>
-
-      <div class="faq-item open">
-        <div class="faq-question">
-          <span>How do you calculate circular tank liquid volume?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          When a horizontal cylindrical tank (like an oil or fuel tank) is partially full, the cross-sectional shape of the liquid is a <strong>circular segment</strong>. Multiplying the segment area by the tank's horizontal length yields the exact liquid volume in the tank.
-        </div>
+        <div class="faq-question"><span>Wie berechnet man die Sagitta (Bogenhöhe)?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Die Bogenhöhe h berechnet sich nach h = r · (1 - cos(θ / 2)).</div>
       </div>
     </section>
 
@@ -541,8 +433,8 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      <div>© 2026 OmniOperand. Toutes les démonstrations mathématiques et calculs rigoureusement vérifiés.</div>
+      <div>Hébergé sur le réseau Cloudflare Edge • Conçu sans dépendances externes</div>
     </div>
   </footer>
 

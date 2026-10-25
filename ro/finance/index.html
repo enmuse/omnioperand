@@ -87,7 +87,7 @@
     .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
     .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
     .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
-    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-între; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
     .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
     .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
     .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
@@ -107,7 +107,7 @@
       <a href="/ro/" class="brand-link">
         <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
-        <span class="brand-badge">Finance</span>
+        <span class="brand-badge">Finanțe</span>
       </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
@@ -154,7 +154,7 @@
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="lang-dropdown-menu">
-            <a href="/finance/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/ro/finance/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
             <a href="/es/finance/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
             <a href="/fr/finance/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
             <a href="/de/finance/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
@@ -171,8 +171,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Căutare</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -194,11 +193,11 @@
 
   <main class="container" style="padding: 2.5rem 0;">
     <div style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--accent-blue); background:rgba(56,189,248,0.1); padding:0.3rem 0.8rem; border-radius:999px; margin-bottom:0.75rem;">
-      Domain Hub • Quantitative Finance
+      Domain Hub • Finanțe
     </div>
     <h1>Finanțe Cantitative & Matematică Actuarială</h1>
     <p style="max-width:800px; color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem; line-height:1.6;">
-      Calculators for mortgages, debt refinancing, HELOCs, real estate underwriting, tax liabilities, and compound interest models.
+      Calculatoare pentru mortgages, debt refinancing, HELOCs, real estate underwriting, tax liabilities, și compound interest models.
     </p>
 
 <div class="hub-grid" style="margin-top:2rem;">
@@ -210,10 +209,10 @@
               <span class="hub-badge">Mortgage Refinancing • Breakeven Analysis</span>
             </div>
             <h2 class="hub-card-title">Mortgage Refinance & Breakeven Calculator</h2>
-            <p class="hub-card-desc">Calculate monthly payment savings, lifetime interest reduction, and closing cost breakeven horizon when refinancing a home mortgage.</p>
+            <p class="hub-card-desc">Calculează monthly payment savings, lifetime interest reduction, și closing cost breakeven horizon when refinancing a home mortgage.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/refinance/">Open Solver →</a></li>
+            <li><a href="/finance/refinance/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -223,11 +222,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
               <span class="hub-badge">Home Equity • Revolving Credit Matrix</span>
             </div>
-            <h2 class="hub-card-title">HELOC (Home Equity Line of Credit) Payment Calculator</h2>
-            <p class="hub-card-desc">Calculate interest-only draw period payments and fully amortizing repayment installments for a Home Equity Line of Credit.</p>
+            <h2 class="hub-card-title">HELOC (Home Equity Line de Credit) Payment Calculator</h2>
+            <p class="hub-card-desc">Calculează interest-only draw period payments și fully amortizing repayment installments pentru a Home Equity Line de Credit.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/heloc/">Open Solver →</a></li>
+            <li><a href="/finance/heloc/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -238,10 +237,10 @@
               <span class="hub-badge">Underwriting Invariants • DTI Matrix</span>
             </div>
             <h2 class="hub-card-title">Debt-to-Income (DTI) Ratio Calculator</h2>
-            <p class="hub-card-desc">Calculate front-end and back-end debt-to-income ratios and determine your maximum qualified home purchase price for mortgage underwriting.</p>
+            <p class="hub-card-desc">Calculează front-end și back-end debt-to-income ratios și determine your maximum qualified home purchase price pentru mortgage underwriting.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/dti/">Open Solver →</a></li>
+            <li><a href="/finance/dti/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -252,10 +251,10 @@
               <span class="hub-badge">Equity Analysis • PMI Invariants</span>
             </div>
             <h2 class="hub-card-title">Loan-to-Value (LTV) Ratio & PMI Calculator</h2>
-            <p class="hub-card-desc">Determine your exact Loan-to-Value (LTV) ratio, required private mortgage insurance (PMI) thresholds, and equity milestones.</p>
+            <p class="hub-card-desc">Determină your exact Loan-to-Value (LTV) ratio, required private mortgage insurance (PMI) thresholds, și equity milestones.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/ltv/">Open Solver →</a></li>
+            <li><a href="/finance/ltv/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -266,10 +265,10 @@
               <span class="hub-badge">Government Lending • FHA Formula</span>
             </div>
             <h2 class="hub-card-title">FHA Loan & Mortgage Insurance (MIP) Calculator</h2>
-            <p class="hub-card-desc">Calculate monthly FHA payments including upfront (UFMIP) and annual monthly mortgage insurance premiums with minimum 3.5% down payment.</p>
+            <p class="hub-card-desc">Calculează monthly FHA payments including upfront (UFMIP) și annual monthly mortgage insurance premiums cu minimum 3.5% down payment.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/fha-loan/">Open Solver →</a></li>
+            <li><a href="/finance/fha-loan/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -280,10 +279,10 @@
               <span class="hub-badge">Military Benefits • 0% Down Invariant</span>
             </div>
             <h2 class="hub-card-title">VA Loan Payment & Funding Fee Calculator</h2>
-            <p class="hub-card-desc">Calculate 0% down VA home loan monthly payments, tiered VA funding fees, and total interest with zero monthly private mortgage insurance.</p>
+            <p class="hub-card-desc">Calculează 0% down VA home loan monthly payments, tiered VA funding fees, și total interest cu zero monthly private mortgage insurance.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/va-loan/">Open Solver →</a></li>
+            <li><a href="/finance/va-loan/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -294,10 +293,10 @@
               <span class="hub-badge">Retirement Equity • HECM Formulas</span>
             </div>
             <h2 class="hub-card-title">Reverse Mortgage (HECM) Calculator</h2>
-            <p class="hub-card-desc">Estimate Home Equity Conversion Mortgage (HECM) borrowing power, principal limits, and tenure monthly payout streams for homeowners 62+.</p>
+            <p class="hub-card-desc">Estimate Home Equity Conversion Mortgage (HECM) borrowing power, principal limits, și tenure monthly payout streams pentru homeowners 62+.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/reverse-mortgage/">Open Solver →</a></li>
+            <li><a href="/finance/reverse-mortgage/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -308,10 +307,10 @@
               <span class="hub-badge">Unsecured Credit • Amortization Matrix</span>
             </div>
             <h2 class="hub-card-title">Personal Loan & Debt Consolidation Calculator</h2>
-            <p class="hub-card-desc">Calculate fixed monthly installments, total interest, and consolidation savings for unsecured personal loans.</p>
+            <p class="hub-card-desc">Calculează fixed monthly installments, total interest, și consolidation savings pentru unsecured personal loans.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/personal-loan/">Open Solver →</a></li>
+            <li><a href="/finance/personal-loan/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -322,10 +321,10 @@
               <span class="hub-badge">Education Debt • Refi Yields</span>
             </div>
             <h2 class="hub-card-title">Student Loan Refinancing Calculator</h2>
-            <p class="hub-card-desc">Calculate interest savings and monthly payment changes when refinancing federal or private student debt into lower private interest rates.</p>
+            <p class="hub-card-desc">Calculează interest savings și monthly payment changes when refinancing federal sau private student debt into lower private interest rates.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/student-loan-refinance/">Open Solver →</a></li>
+            <li><a href="/finance/student-loan-refinance/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -336,10 +335,10 @@
               <span class="hub-badge">Consumer Debt • Exponential Decay</span>
             </div>
             <h2 class="hub-card-title">Credit Card Payoff & Interest Snowball Calculator</h2>
-            <p class="hub-card-desc">Calculate exact debt-free payoff timelines, total compound interest charges, and monthly payment requirements for high-interest revolving credit.</p>
+            <p class="hub-card-desc">Calculează exact debt-free payoff timelines, total compound interest charges, și monthly payment requirements pentru high-interest revolving credit.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/credit-card-payoff/">Open Solver →</a></li>
+            <li><a href="/finance/credit-card-payoff/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -350,10 +349,10 @@
               <span class="hub-badge">Marine Lending • Fixed Installments</span>
             </div>
             <h2 class="hub-card-title">Boat Loan Financing & Payment Calculator</h2>
-            <p class="hub-card-desc">Calculate marine loan monthly payments, required down payments (10-20%), and total financing costs for new and used boats and yachts.</p>
+            <p class="hub-card-desc">Calculează marine loan monthly payments, required down payments (10-20%), și total financing costs pentru new și used boats și yachts.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/boat-loan/">Open Solver →</a></li>
+            <li><a href="/finance/boat-loan/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -364,10 +363,10 @@
               <span class="hub-badge">Recreational Vehicle • Amortization</span>
             </div>
             <h2 class="hub-card-title">RV Loan & Motorhome Financing Calculator</h2>
-            <p class="hub-card-desc">Calculate motorhome, travel trailer, and fifth-wheel monthly installments, sales tax adjustments, and loan amortization.</p>
+            <p class="hub-card-desc">Calculează motorhome, travel trailer, și fifth-wheel monthly installments, sales tax adjustments, și loan amortization.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/rv-loan/">Open Solver →</a></li>
+            <li><a href="/finance/rv-loan/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -378,10 +377,10 @@
               <span class="hub-badge">Powersports Lending • Fast Installments</span>
             </div>
             <h2 class="hub-card-title">Motorcycle Loan & Financing Calculator</h2>
-            <p class="hub-card-desc">Calculate monthly payments and total interest for new or used motorcycle financing.</p>
+            <p class="hub-card-desc">Calculează monthly payments și total interest pentru new sau used motorcycle financing.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/motorcycle-loan/">Open Solver →</a></li>
+            <li><a href="/finance/motorcycle-loan/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -392,10 +391,10 @@
               <span class="hub-badge">Clean Energy Finance • ITC Tax Credits</span>
             </div>
             <h2 class="hub-card-title">Solar Loan & Energy Payoff Calculator</h2>
-            <p class="hub-card-desc">Calculate residential solar system financing, 30% Federal ITC tax credits, utility bill offsets, and net breakeven return on investment.</p>
+            <p class="hub-card-desc">Calculează residential solar system financing, 30% Federal ITC tax credits, utility bill offsets, și net breakeven return on investment.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/solar-loan/">Open Solver →</a></li>
+            <li><a href="/finance/solar-loan/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -406,10 +405,10 @@
               <span class="hub-badge">CRE Financing • Balloon Invariants</span>
             </div>
             <h2 class="hub-card-title">Commercial Real Estate Mortgage Calculator</h2>
-            <p class="hub-card-desc">Calculate commercial mortgage monthly payments, balloon balances, and debt yields for multifamily, office, and retail properties.</p>
+            <p class="hub-card-desc">Calculează commercial mortgage monthly payments, balloon balances, și debt yields pentru multifamily, office, și retail properties.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/commercial-mortgage/">Open Solver →</a></li>
+            <li><a href="/finance/commercial-mortgage/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -420,10 +419,10 @@
               <span class="hub-badge">Investor Underwriting • DSCR Formula</span>
             </div>
             <h2 class="hub-card-title">DSCR (Debt Service Coverage Ratio) Calculator</h2>
-            <p class="hub-card-desc">Calculate Debt Service Coverage Ratio (DSCR) and qualify for real estate investor loans without personal income or tax returns.</p>
+            <p class="hub-card-desc">Calculează Debt Service Coverage Ratio (DSCR) și qualify pentru real estate investor loans without personal income sau tax returns.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/dscr-loan/">Open Solver →</a></li>
+            <li><a href="/finance/dscr-loan/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -434,10 +433,10 @@
               <span class="hub-badge">Real Estate Valuation • Cap Rate Matrix</span>
             </div>
             <h2 class="hub-card-title">Cap Rate (Capitalization Rate) Calculator</h2>
-            <p class="hub-card-desc">Calculate commercial and residential real estate Capitalization Rates (Cap Rate) and valuation multiples from Net Operating Income.</p>
+            <p class="hub-card-desc">Calculează commercial și residential real estate Capitalization Rates (Cap Rate) și valuation multiples de la Net Operating Income.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/cap-rate/">Open Solver →</a></li>
+            <li><a href="/finance/cap-rate/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -448,10 +447,10 @@
               <span class="hub-badge">Real Estate ROI • Cash-on-Cash</span>
             </div>
             <h2 class="hub-card-title">Rental Property Cash Flow & ROI Calculator</h2>
-            <p class="hub-card-desc">Calculate monthly net cash flow, Cash-on-Cash Return (CoC), and expense ratios for residential investment real estate.</p>
+            <p class="hub-card-desc">Calculează monthly net cash flow, Cash-on-Cash Return (CoC), și expense ratios pentru residential investment real estate.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/rental-cash-flow/">Open Solver →</a></li>
+            <li><a href="/finance/rental-cash-flow/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -462,10 +461,10 @@
               <span class="hub-badge">Real Estate Wealth • Capital Velocity</span>
             </div>
             <h2 class="hub-card-title">BRRRR Real Estate Investment Calculator</h2>
-            <p class="hub-card-desc">Analyze Buy, Rehab, Rent, Refinance, Repeat (BRRRR) transactions. Calculate cash left in the deal and velocity of capital.</p>
+            <p class="hub-card-desc">Analyze Buy, Rehab, Rent, Refinance, Repeat (BRRRR) transactions. Calculează cash left in the deal și velocity de capital.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/brrrr/">Open Solver →</a></li>
+            <li><a href="/finance/brrrr/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -473,13 +472,13 @@
           <div>
             <div class="hub-card-header">
               <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
-              <span class="hub-badge">Bridge Lending • Fix-and-Flip Math</span>
+              <span class="hub-badge">Bridge Lending • Fix-și-Flip Math</span>
             </div>
-            <h2 class="hub-card-title">Hard Money & Fix-and-Flip Loan Calculator</h2>
-            <p class="hub-card-desc">Calculate short-term bridge and hard money loan costs, origination points, interest reserves, and net flip profit margins.</p>
+            <h2 class="hub-card-title">Hard Money & Fix-și-Flip Loan Calculator</h2>
+            <p class="hub-card-desc">Calculează short-term bridge și hard money loan costs, origination points, interest reserves, și net flip profit margins.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/hard-money-loan/">Open Solver →</a></li>
+            <li><a href="/finance/hard-money-loan/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -490,10 +489,10 @@
               <span class="hub-badge">Tax Optimization • Compound Exemption</span>
             </div>
             <h2 class="hub-card-title">Roth IRA Conversion & Tax Optimizer</h2>
-            <p class="hub-card-desc">Calculate conversion income taxes, future tax-free growth advantages, and optimal tax bracket filling when converting Traditional IRAs to Roth.</p>
+            <p class="hub-card-desc">Calculează conversion income taxes, future tax-free growth advantages, și optimal tax bracket filling when converting Traditional IRAs to Roth.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/roth-ira-conversion/">Open Solver →</a></li>
+            <li><a href="/finance/roth-ira-conversion/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -504,10 +503,10 @@
               <span class="hub-badge">Retirement Taxation • Horizon Comparison</span>
             </div>
             <h2 class="hub-card-title">Traditional vs Roth 401(k) / IRA Calculator</h2>
-            <p class="hub-card-desc">Compare pre-tax Traditional retirement savings against post-tax Roth contributions based on career income progression and tax brackets.</p>
+            <p class="hub-card-desc">Compare pre-tax Traditional retirement savings against post-tax Roth contributions based on career income progression și tax brackets.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/traditional-vs-roth/">Open Solver →</a></li>
+            <li><a href="/finance/traditional-vs-roth/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -518,10 +517,10 @@
               <span class="hub-badge">IRS Mandates • Uniform Lifetime Table</span>
             </div>
             <h2 class="hub-card-title">Required Minimum Distribution (RMD) Calculator</h2>
-            <p class="hub-card-desc">Calculate IRS mandatory annual withdrawals from Traditional IRA and 401(k) accounts using the IRS Uniform Lifetime Table.</p>
+            <p class="hub-card-desc">Calculează IRS mandatory annual withdrawals de la Traditional IRA și 401(k) accounts using the IRS Uniform Lifetime Table.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/rmd/">Open Solver →</a></li>
+            <li><a href="/finance/rmd/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -532,10 +531,10 @@
               <span class="hub-badge">Equity Compounding • DRIP Engine</span>
             </div>
             <h2 class="hub-card-title">Dividend Reinvestment (DRIP) Calculator</h2>
-            <p class="hub-card-desc">Simulate exponential compounding through automatic dividend reinvestment (DRIP), dividend growth rates, and recurring cash contributions.</p>
+            <p class="hub-card-desc">Simulate exponential compounding through automatic dividend reinvestment (DRIP), dividend growth rates, și recurring cash contributions.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/drip/">Open Solver →</a></li>
+            <li><a href="/finance/drip/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -546,10 +545,10 @@
               <span class="hub-badge">Financial Independence • 4% Rule</span>
             </div>
             <h2 class="hub-card-title">FIRE Calculator (Financial Independence, Retire Early)</h2>
-            <p class="hub-card-desc">Calculate your exact FIRE Number, Lean/Fat FIRE targets, and time to complete financial freedom using Trinity Study safe withdrawal rates.</p>
+            <p class="hub-card-desc">Calculează your exact FIRE Number, Lean/Fat FIRE targets, și time to complete financial freedom using Trinity Study safe withdrawal rates.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/fire/">Open Solver →</a></li>
+            <li><a href="/finance/fire/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -560,10 +559,10 @@
               <span class="hub-badge">Actuarial Retirement • Social Security</span>
             </div>
             <h2 class="hub-card-title">Social Security Benefit & Age Optimizer</h2>
-            <p class="hub-card-desc">Determine your optimal Social Security claiming age (62 vs 67 vs 70), breakeven life expectancy, and lifetime benefit maximization.</p>
+            <p class="hub-card-desc">Determină your optimal Social Security claiming age (62 vs 67 vs 70), breakeven life expectancy, și lifetime benefit maximization.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/social-security/">Open Solver →</a></li>
+            <li><a href="/finance/social-security/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -574,10 +573,10 @@
               <span class="hub-badge">Actuarial Science • Pension Decisions</span>
             </div>
             <h2 class="hub-card-title">Pension Annuity vs Lump Sum Calculator</h2>
-            <p class="hub-card-desc">Evaluate defined benefit pension options. Determine the internal rate of return (IRR) required to beat a lifetime pension annuity with a lump sum rollover.</p>
+            <p class="hub-card-desc">Evaluează defined benefit pension options. Determină the internal rate de return (IRR) required to beat a lifetime pension annuity cu a lump sum rollover.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/pension-vs-lump-sum/">Open Solver →</a></li>
+            <li><a href="/finance/pension-vs-lump-sum/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -587,11 +586,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
               <span class="hub-badge">Fixed Income • Compound Yield</span>
             </div>
-            <h2 class="hub-card-title">Certificate of Deposit (CD) Calculator</h2>
-            <p class="hub-card-desc">Calculate Certificate of Deposit (CD) compounding yields, early withdrawal penalties, and fixed returns across terms from 3 months to 5 years.</p>
+            <h2 class="hub-card-title">Certificate de Deposit (CD) Calculator</h2>
+            <p class="hub-card-desc">Calculează Certificate de Deposit (CD) compounding yields, early withdrawal penalties, și fixed returns across terms de la 3 months to 5 years.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/cd-calculator/">Open Solver →</a></li>
+            <li><a href="/finance/cd-calculator/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -602,10 +601,10 @@
               <span class="hub-badge">Cash Management • Liquid Compounding</span>
             </div>
             <h2 class="hub-card-title">High-Yield Savings Account (HYSA) Calculator</h2>
-            <p class="hub-card-desc">Calculate compound growth in a High-Yield Savings Account with monthly deposits, daily interest accrual, and inflation comparisons.</p>
+            <p class="hub-card-desc">Calculează compound growth in a High-Yield Savings Account cu monthly deposits, daily interest accrual, și inflation comparisons.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/hysa/">Open Solver →</a></li>
+            <li><a href="/finance/hysa/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -616,10 +615,10 @@
               <span class="hub-badge">Monetary Economics • Purchasing Power</span>
             </div>
             <h2 class="hub-card-title">Inflation & Purchasing Power Calculator</h2>
-            <p class="hub-card-desc">Calculate the erosion of purchasing power over time, future cost of living, and required future income based on CPI inflation rates.</p>
+            <p class="hub-card-desc">Calculează the erosion de purchasing power over time, future cost de living, și required future income based on CPI inflation rates.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/inflation/">Open Solver →</a></li>
+            <li><a href="/finance/inflation/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -629,11 +628,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
               <span class="hub-badge">Mental Math • Logarithmic Approximation</span>
             </div>
-            <h2 class="hub-card-title">Rule of 72 Investment Doubling Calculator</h2>
-            <p class="hub-card-desc">Calculate exact and heuristic investment doubling periods using the logarithmic Rule of 72, Rule of 70, and Rule of 69.3.</p>
+            <h2 class="hub-card-title">Rule de 72 Investment Doubling Calculator</h2>
+            <p class="hub-card-desc">Calculează exact și heuristic investment doubling periods using the logarithmic Rule de 72, Rule de 70, și Rule de 69.3.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/rule-of-72/">Open Solver →</a></li>
+            <li><a href="/finance/rule-de-72/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -644,10 +643,10 @@
               <span class="hub-badge">Equity Compensation • Tax Withholding</span>
             </div>
             <h2 class="hub-card-title">Stock Option & RSU Vesting Calculator</h2>
-            <p class="hub-card-desc">Calculate equity compensation value, vested shares, tax withholding, and net after-tax proceeds for RSUs, ISOs, and NSOs.</p>
+            <p class="hub-card-desc">Calculează equity compensation value, vested shares, tax withholding, și net after-tax proceeds pentru RSUs, ISOs, și NSOs.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/stock-option-rsu/">Open Solver →</a></li>
+            <li><a href="/finance/stock-option-rsu/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -658,10 +657,10 @@
               <span class="hub-badge">Digital Assets • Tax Accounting</span>
             </div>
             <h2 class="hub-card-title">Crypto Profit & Capital Gains Tax Calculator</h2>
-            <p class="hub-card-desc">Calculate cryptocurrency trading profits, short-term vs long-term capital gains, and IRS tax liability using FIFO cost basis.</p>
+            <p class="hub-card-desc">Calculează cryptocurrency trading profits, short-term vs long-term capital gains, și IRS tax liability using FIFO cost basis.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/crypto-profit-tax/">Open Solver →</a></li>
+            <li><a href="/finance/crypto-profit-tax/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -672,10 +671,10 @@
               <span class="hub-badge">Tax Optimization • Statutory Brackets</span>
             </div>
             <h2 class="hub-card-title">Capital Gains Tax Calculator</h2>
-            <p class="hub-card-desc">Calculate federal and state capital gains taxes on stocks, real estate, and collectibles with standard 0%, 15%, and 20% brackets.</p>
+            <p class="hub-card-desc">Calculează federal și state capital gains taxes on stocks, real estate, și collectibles cu standard 0%, 15%, și 20% brackets.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/capital-gains-tax/">Open Solver →</a></li>
+            <li><a href="/finance/capital-gains-tax/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -686,10 +685,10 @@
               <span class="hub-badge">1099 Contracting • SECA Matrix</span>
             </div>
             <h2 class="hub-card-title">1099 Self-Employment Tax (SECA) Calculator</h2>
-            <p class="hub-card-desc">Calculate 15.3% self-employment tax (Social Security & Medicare), above-the-line 50% SE deduction, and quarterly estimated payments.</p>
+            <p class="hub-card-desc">Calculează 15.3% self-employment tax (Social Security & Medicare), above-the-line 50% SE deduction, și quarterly estimated payments.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/self-employment-tax/">Open Solver →</a></li>
+            <li><a href="/finance/self-employment-tax/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -700,10 +699,10 @@
               <span class="hub-badge">Compensation • Wage Conversion</span>
             </div>
             <h2 class="hub-card-title">Salary to Hourly Wage Calculator</h2>
-            <p class="hub-card-desc">Convert annual salary into equivalent hourly, daily, weekly, and bi-weekly wage rates based on standard 2,080 annual work hours.</p>
+            <p class="hub-card-desc">Convert annual salary into equivalent hourly, daily, weekly, și bi-weekly wage rates based on standard 2,080 annual work hours.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/salary-to-hourly/">Open Solver →</a></li>
+            <li><a href="/finance/salary-to-hourly/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -714,10 +713,10 @@
               <span class="hub-badge">Payroll Math • Overtime Invariant</span>
             </div>
             <h2 class="hub-card-title">Hourly to Salary Wage Calculator</h2>
-            <p class="hub-card-desc">Convert hourly pay into gross annual salary, accounting for overtime hours at 1.5x time-and-a-half rates.</p>
+            <p class="hub-card-desc">Convert hourly pay into gross annual salary, accounting pentru overtime hours at 1.5x time-și-a-half rates.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/hourly-to-salary/">Open Solver →</a></li>
+            <li><a href="/finance/hourly-to-salary/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -728,10 +727,10 @@
               <span class="hub-badge">Sales Compensation • Tier Accelerators</span>
             </div>
             <h2 class="hub-card-title">Sales Commission & Quota Calculator</h2>
-            <p class="hub-card-desc">Calculate tiered sales commission payouts, accelerated accelerator tiers, and On-Target Earnings (OTE) achievement.</p>
+            <p class="hub-card-desc">Calculează tiered sales commission payouts, accelerated accelerator tiers, și On-Target Earnings (OTE) achievement.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/commission/">Open Solver →</a></li>
+            <li><a href="/finance/commission/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -742,10 +741,10 @@
               <span class="hub-badge">Corporate Finance • Breakeven Invariant</span>
             </div>
             <h2 class="hub-card-title">Break-Even Point Analysis Calculator</h2>
-            <p class="hub-card-desc">Calculate exact unit and revenue break-even points, contribution margins, and safety margins for commercial operations.</p>
+            <p class="hub-card-desc">Calculează exact unit și revenue break-even points, contribution margins, și safety margins pentru commercial operations.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/break-even/">Open Solver →</a></li>
+            <li><a href="/finance/break-even/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -756,10 +755,10 @@
               <span class="hub-badge">Pricing Strategy • Margin-Markup Dual</span>
             </div>
             <h2 class="hub-card-title">Margin vs Markup Multiplier Calculator</h2>
-            <p class="hub-card-desc">Convert between Gross Profit Margin and Markup percentage, calculate target selling prices, and eliminate pricing confusion.</p>
+            <p class="hub-card-desc">Convert între Gross Profit Margin și Markup percentage, calculate target selling prices, și eliminate pricing confusion.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/margin-markup/">Open Solver →</a></li>
+            <li><a href="/finance/margin-markup/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -770,10 +769,10 @@
               <span class="hub-badge">B2B SaaS Metrics • CAC Unit Economics</span>
             </div>
             <h2 class="hub-card-title">Customer Acquisition Cost (CAC) Calculator</h2>
-            <p class="hub-card-desc">Calculate blended and paid Customer Acquisition Cost (CAC) from total sales and marketing expenditure divided by new acquired customers.</p>
+            <p class="hub-card-desc">Calculează blended și paid Customer Acquisition Cost (CAC) de la total sales și marketing expenditure divided by new acquired customers.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/cac/">Open Solver →</a></li>
+            <li><a href="/finance/cac/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -784,10 +783,10 @@
               <span class="hub-badge">SaaS Unit Economics • LTV Vector Matrix</span>
             </div>
             <h2 class="hub-card-title">Customer Lifetime Value (LTV / CLV) Calculator</h2>
-            <p class="hub-card-desc">Calculate Customer Lifetime Value (LTV) from Average Revenue Per Account (ARPA), gross margin percentage, and customer churn rate.</p>
+            <p class="hub-card-desc">Calculează Customer Lifetime Value (LTV) de la Average Revenue Per Account (ARPA), gross margin percentage, și customer churn rate.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/clv-ltv/">Open Solver →</a></li>
+            <li><a href="/finance/clv-ltv/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -798,10 +797,10 @@
               <span class="hub-badge">Venture Capital • Capital Efficiency Matrix</span>
             </div>
             <h2 class="hub-card-title">LTV:CAC Ratio & Payback Period Calculator</h2>
-            <p class="hub-card-desc">Calculate the gold-standard SaaS unit economics ratio (LTV:CAC) and months required to recover acquisition cash outflows.</p>
+            <p class="hub-card-desc">Calculează the gold-standard SaaS unit economics ratio (LTV:CAC) și months required to recover acquisition cash outflows.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/ltv-cac-ratio/">Open Solver →</a></li>
+            <li><a href="/finance/ltv-cac-ratio/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -812,10 +811,10 @@
               <span class="hub-badge">Retention Engineering • Churn Matrix</span>
             </div>
             <h2 class="hub-card-title">Customer & Revenue Churn Rate Calculator</h2>
-            <p class="hub-card-desc">Calculate logo churn, gross revenue churn, net revenue retention (NRR), and annualized churn compound curves.</p>
+            <p class="hub-card-desc">Calculează logo churn, gross revenue churn, net revenue retention (NRR), și annualized churn compound curves.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/churn-rate/">Open Solver →</a></li>
+            <li><a href="/finance/churn-rate/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -826,10 +825,10 @@
               <span class="hub-badge">Subscription Economics • Recurring Revenue Matrix</span>
             </div>
             <h2 class="hub-card-title">MRR to ARR & Net New MRR Calculator</h2>
-            <p class="hub-card-desc">Calculate Annual Recurring Revenue (ARR) run rate, Net New MRR, expansion rate, and contraction churn components.</p>
+            <p class="hub-card-desc">Calculează Annual Recurring Revenue (ARR) run rate, Net New MRR, expansion rate, și contraction churn components.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/mrr-arr/">Open Solver →</a></li>
+            <li><a href="/finance/mrr-arr/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -840,10 +839,10 @@
               <span class="hub-badge">Startup Treasury • Cash Runway Vector</span>
             </div>
             <h2 class="hub-card-title">Startup Cash Runway & Burn Rate Calculator</h2>
-            <p class="hub-card-desc">Calculate net monthly burn rate, gross cash outflows, and exact operational runway in months until zero cash date (ZCD).</p>
+            <p class="hub-card-desc">Calculează net monthly burn rate, gross cash outflows, și exact operational runway in months until zero cash date (ZCD).</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/runway-burn/">Open Solver →</a></li>
+            <li><a href="/finance/runway-burn/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -854,10 +853,10 @@
               <span class="hub-badge">Growth Engineering • Magic Number Matrix</span>
             </div>
             <h2 class="hub-card-title">SaaS Magic Number & Sales Efficiency Calculator</h2>
-            <p class="hub-card-desc">Calculate the SaaS Magic Number measuring Net New ARR generated per dollar spent on sales and marketing.</p>
+            <p class="hub-card-desc">Calculează the SaaS Magic Number measuring Net New ARR generated per dollar spent on sales și marketing.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/saas-magic-number/">Open Solver →</a></li>
+            <li><a href="/finance/saas-magic-number/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -865,13 +864,13 @@
           <div>
             <div class="hub-card-header">
               <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
-              <span class="hub-badge">Public SaaS Valuation • Rule of 40 Matrix</span>
+              <span class="hub-badge">Public SaaS Valuation • Rule de 40 Matrix</span>
             </div>
-            <h2 class="hub-card-title">SaaS Rule of 40 Calculator</h2>
-            <p class="hub-card-desc">Calculate the Rule of 40 score balancing YoY ARR revenue growth rate percentage and Free Cash Flow (FCF) margin percentage.</p>
+            <h2 class="hub-card-title">SaaS Rule de 40 Calculator</h2>
+            <p class="hub-card-desc">Calculează the Rule de 40 score balancing YoY ARR revenue growth rate percentage și Free Cash Flow (FCF) margin percentage.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/saas-rule-of-40/">Open Solver →</a></li>
+            <li><a href="/finance/saas-rule-de-40/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -882,10 +881,10 @@
               <span class="hub-badge">Customer Experience • NPS Matrix</span>
             </div>
             <h2 class="hub-card-title">Net Promoter Score (NPS) Calculator</h2>
-            <p class="hub-card-desc">Calculate Net Promoter Score (NPS), Promoters (9-10), Passives (7-8), Detractors (0-6), and statistical standard error margin.</p>
+            <p class="hub-card-desc">Calculează Net Promoter Score (NPS), Promoters (9-10), Passives (7-8), Detractors (0-6), și statistical standard error margin.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/net-promoter-score/">Open Solver →</a></li>
+            <li><a href="/finance/net-promoter-score/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -896,10 +895,10 @@
               <span class="hub-badge">Monetization Analytics • ARPU Solver</span>
             </div>
             <h2 class="hub-card-title">Average Revenue Per User (ARPU / ARPA) Calculator</h2>
-            <p class="hub-card-desc">Calculate Average Revenue Per User (ARPU) and Average Revenue Per Account (ARPA) across monthly, quarterly, and annual intervals.</p>
+            <p class="hub-card-desc">Calculează Average Revenue Per User (ARPU) și Average Revenue Per Account (ARPA) across monthly, quarterly, și annual intervals.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/arpu/">Open Solver →</a></li>
+            <li><a href="/finance/arpu/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -910,10 +909,10 @@
               <span class="hub-badge">Growth Loops • K-Factor Matrix</span>
             </div>
             <h2 class="hub-card-title">Viral Coefficient (K-Factor) & Growth Calculator</h2>
-            <p class="hub-card-desc">Calculate K-factor viral expansion, viral cycle time, customer compounding multiplier, and organic user generation.</p>
+            <p class="hub-card-desc">Calculează K-factor viral expansion, viral cycle time, customer compounding multiplier, și organic user generation.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/viral-coefficient/">Open Solver →</a></li>
+            <li><a href="/finance/viral-coefficient/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -924,10 +923,10 @@
               <span class="hub-badge">HR Economics • Turnover Cost Matrix</span>
             </div>
             <h2 class="hub-card-title">Employee Turnover & Replacement Cost Calculator</h2>
-            <p class="hub-card-desc">Calculate true financial and organizational cost of employee turnover, recruiting fees, onboarding lag, and lost institutional productivity.</p>
+            <p class="hub-card-desc">Calculează true financial și organizational cost de employee turnover, recruiting fees, onboarding lag, și lost institutional productivity.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/employee-turnover-cost/">Open Solver →</a></li>
+            <li><a href="/finance/employee-turnover-cost/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -938,10 +937,10 @@
               <span class="hub-badge">Performance Marketing • ROAS Matrix</span>
             </div>
             <h2 class="hub-card-title">Return on Ad Spend (ROAS) & Breakeven Calculator</h2>
-            <p class="hub-card-desc">Calculate ROAS, Breakeven ROAS from product profit margin, net advertising profit, and target ad budget scale.</p>
+            <p class="hub-card-desc">Calculează ROAS, Breakeven ROAS de la product profit margin, net advertising profit, și target ad budget scale.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/roas/">Open Solver →</a></li>
+            <li><a href="/finance/roas/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -951,11 +950,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
               <span class="hub-badge">Digital Advertising • CPA Unit Economics</span>
             </div>
-            <h2 class="hub-card-title">Cost Per Acquisition (CPA) from CPC Calculator</h2>
-            <p class="hub-card-desc">Calculate Cost Per Acquisition (CPA) from Cost Per Click (CPC) and Landing Page Conversion Rate (CVR).</p>
+            <h2 class="hub-card-title">Cost Per Acquisition (CPA) de la CPC Calculator</h2>
+            <p class="hub-card-desc">Calculează Cost Per Acquisition (CPA) de la Cost Per Click (CPC) și Landing Page Conversion Rate (CVR).</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/cpa-cpc/">Open Solver →</a></li>
+            <li><a href="/finance/cpa-cpc/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -966,10 +965,10 @@
               <span class="hub-badge">Direct Response • Email ROI Matrix</span>
             </div>
             <h2 class="hub-card-title">Email Marketing Campaign ROI Calculator</h2>
-            <p class="hub-card-desc">Calculate open rates, click-through rates (CTR), conversion yields, total campaign revenue, and net ROI percentage.</p>
+            <p class="hub-card-desc">Calculează open rates, click-through rates (CTR), conversion yields, total campaign revenue, și net ROI percentage.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/email-marketing-roi/">Open Solver →</a></li>
+            <li><a href="/finance/email-marketing-roi/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -980,10 +979,10 @@
               <span class="hub-badge">Enterprise Sales • Pipeline Velocity Matrix</span>
             </div>
             <h2 class="hub-card-title">Sales Pipeline Velocity Calculator</h2>
-            <p class="hub-card-desc">Calculate sales pipeline velocity (revenue generated per day) and forecast monthly deal flow from win rate, deal size, and sales cycle length.</p>
+            <p class="hub-card-desc">Calculează sales pipeline velocity (revenue generated per day) și forecast monthly deal flow de la win rate, deal size, și sales cycle length.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/sales-pipeline-velocity/">Open Solver →</a></li>
+            <li><a href="/finance/sales-pipeline-velocity/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -994,10 +993,10 @@
               <span class="hub-badge">Corporate Treasury • Liquidity Solvency Matrix</span>
             </div>
             <h2 class="hub-card-title">Working Capital & Current Ratio Calculator</h2>
-            <p class="hub-card-desc">Calculate Net Working Capital (NWC), Current Ratio, and short-term corporate liquidity solvency from current assets and liabilities.</p>
+            <p class="hub-card-desc">Calculează Net Working Capital (NWC), Current Ratio, și short-term corporate liquidity solvency de la current assets și liabilities.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/working-capital-ratio/">Open Solver →</a></li>
+            <li><a href="/finance/working-capital-ratio/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1008,10 +1007,10 @@
               <span class="hub-badge">Balance Sheet Analysis • Acid-Test Matrix</span>
             </div>
             <h2 class="hub-card-title">Quick Ratio (Acid-Test) Calculator</h2>
-            <p class="hub-card-desc">Calculate the Acid-Test Quick Ratio isolating liquid cash, marketable securities, and accounts receivable against current liabilities.</p>
+            <p class="hub-card-desc">Calculează the Acid-Test Quick Ratio isolating liquid cash, marketable securities, și accounts receivable against current liabilities.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/quick-ratio/">Open Solver →</a></li>
+            <li><a href="/finance/quick-ratio/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1022,10 +1021,10 @@
               <span class="hub-badge">Credit Underwriting • Commercial Debt Coverage</span>
             </div>
             <h2 class="hub-card-title">Corporate DSCR & Interest Coverage Calculator</h2>
-            <p class="hub-card-desc">Calculate Debt Service Coverage Ratio (DSCR) and Times Interest Earned (TIE) from Net Operating Income (NOI) / EBITDA and debt service obligations.</p>
+            <p class="hub-card-desc">Calculează Debt Service Coverage Ratio (DSCR) și Times Interest Earned (TIE) de la Net Operating Income (NOI) / EBITDA și debt service obligations.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/debt-service-coverage/">Open Solver →</a></li>
+            <li><a href="/finance/debt-service-coverage/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1036,10 +1035,10 @@
               <span class="hub-badge">Supply Chain & Operations • Ford-Harris EOQ Model</span>
             </div>
             <h2 class="hub-card-title">Economic Order Quantity (EOQ) & Reorder Point Calculator</h2>
-            <p class="hub-card-desc">Calculate optimal inventory order batch size (EOQ), annual carrying costs, ordering costs, and safety stock reorder point.</p>
+            <p class="hub-card-desc">Calculează optimal inventory order batch size (EOQ), annual carrying costs, ordering costs, și safety stock reorder point.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/economic-order-quantity/">Open Solver →</a></li>
+            <li><a href="/finance/economic-order-quantity/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1050,10 +1049,10 @@
               <span class="hub-badge">Venture Efficiency • Bessemer Burn Multiple</span>
             </div>
             <h2 class="hub-card-title">Bessemer Burn Multiple Calculator</h2>
-            <p class="hub-card-desc">Calculate the Bessemer Venture Partners Burn Multiple measuring net cash burned for each dollar of Net New ARR generated.</p>
+            <p class="hub-card-desc">Calculează the Bessemer Venture Partners Burn Multiple measuring net cash burned pentru each dollar de Net New ARR generated.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/burn-multiple/">Open Solver →</a></li>
+            <li><a href="/finance/burn-multiple/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1064,10 +1063,10 @@
               <span class="hub-badge">Product-Led Growth • PLG Funnel Matrix</span>
             </div>
             <h2 class="hub-card-title">Freemium to Paid Conversion Calculator</h2>
-            <p class="hub-card-desc">Calculate freemium user conversion rates, free-to-paid funnel velocity, monthly recurring revenue from free tier, and cohort monetization.</p>
+            <p class="hub-card-desc">Calculează freemium user conversion rates, free-to-paid funnel velocity, monthly recurring revenue de la free tier, și cohort monetization.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/freemium-conversion/">Open Solver →</a></li>
+            <li><a href="/finance/freemium-conversion/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1078,10 +1077,10 @@
               <span class="hub-badge">Retention Analytics • GRR Foundation Matrix</span>
             </div>
             <h2 class="hub-card-title">Gross Revenue Retention (GRR) vs NRR Calculator</h2>
-            <p class="hub-card-desc">Calculate Gross Revenue Retention (GRR), isolating core churn and contraction without obscuring losses behind expansion revenue.</p>
+            <p class="hub-card-desc">Calculează Gross Revenue Retention (GRR), isolating core churn și contraction without obscuring losses behind expansion revenue.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/gross-revenue-retention/">Open Solver →</a></li>
+            <li><a href="/finance/gross-revenue-retention/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1092,10 +1091,10 @@
               <span class="hub-badge">Unit Economics • Payback Horizon Matrix</span>
             </div>
             <h2 class="hub-card-title">SaaS CAC Payback Period Calculator</h2>
-            <p class="hub-card-desc">Calculate exact customer acquisition cost payback period in months accounting for gross margin and customer revenue churn drag.</p>
+            <p class="hub-card-desc">Calculează exact customer acquisition cost payback period in months accounting pentru gross margin și customer revenue churn drag.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/cac-payback/">Open Solver →</a></li>
+            <li><a href="/finance/cac-payback/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1105,11 +1104,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">💵</div>
               <span class="hub-badge">Working Capital • Inventory Velocity</span>
             </div>
-            <h2 class="hub-card-title">Inventory Turnover & Days Sales of Inventory (DSI) Calculator</h2>
-            <p class="hub-card-desc">Calculate inventory turnover ratio, Days Sales of Inventory (DSI / DIO), and capital tied up in warehouse stock.</p>
+            <h2 class="hub-card-title">Inventory Turnover & Days Sales de Inventory (DSI) Calculator</h2>
+            <p class="hub-card-desc">Calculează inventory turnover ratio, Days Sales de Inventory (DSI / DIO), și capital tied up in warehouse stock.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/inventory-turnover/">Open Solver →</a></li>
+            <li><a href="/finance/inventory-turnover/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1120,10 +1119,10 @@
               <span class="hub-badge">Automotive Finance • Lease vs Purchase Matrix</span>
             </div>
             <h2 class="hub-card-title">Car Lease vs Buy Financial Comparison Calculator</h2>
-            <p class="hub-card-desc">Compare the total multi-year financial cost of leasing versus purchasing a new vehicle, accounting for depreciation, money factor, and equity at lease end.</p>
+            <p class="hub-card-desc">Compare the total multi-year financial cost de leasing versus purchasing a new vehicle, accounting pentru depreciation, money factor, și equity at lease end.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/lease-vs-buy/">Open Solver →</a></li>
+            <li><a href="/finance/lease-vs-buy/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1134,10 +1133,10 @@
               <span class="hub-badge">Fleet Decarbonization • EV vs ICE Fuel Economics</span>
             </div>
             <h2 class="hub-card-title">Electric Vehicle vs Gas Savings Calculator</h2>
-            <p class="hub-card-desc">Calculate annual fuel, maintenance, and brake pad cost savings switching from an internal combustion engine (ICE) car to an EV.</p>
+            <p class="hub-card-desc">Calculează annual fuel, maintenance, și brake pad cost savings switching de la an internal combustion engine (ICE) car to an EV.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/ev-vs-gas-savings/">Open Solver →</a></li>
+            <li><a href="/finance/ev-vs-gas-savings/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1148,10 +1147,10 @@
               <span class="hub-badge">Automotive Asset Valuation • Depreciation Curve Matrix</span>
             </div>
             <h2 class="hub-card-title">Car Depreciation & Future Value Curve Calculator</h2>
-            <p class="hub-card-desc">Calculate multi-year vehicle depreciation curves, month-by-month residual value, dollar loss per mile driven, and optimal trade-in horizons.</p>
+            <p class="hub-card-desc">Calculează multi-year vehicle depreciation curves, month-by-month residual value, dollar loss per mile driven, și optimal trade-in horizons.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/car-depreciation/">Open Solver →</a></li>
+            <li><a href="/finance/car-depreciation/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1162,10 +1161,10 @@
               <span class="hub-badge">Fleet Economics • Full Vehicle TCO Matrix</span>
             </div>
             <h2 class="hub-card-title">5-Year True Cost to Own (TCO) Calculator</h2>
-            <p class="hub-card-desc">Calculate true full cost to own a vehicle over 5 years combining depreciation, financing interest, fuel, insurance, maintenance, and state taxes.</p>
+            <p class="hub-card-desc">Calculează true full cost to own a vehicle over 5 years combining depreciation, financing interest, fuel, insurance, maintenance, și state taxes.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/true-cost-to-own/">Open Solver →</a></li>
+            <li><a href="/finance/true-cost-to-own/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1176,10 +1175,10 @@
               <span class="hub-badge">Automotive Tax • Trade-In Deduction Matrix</span>
             </div>
             <h2 class="hub-card-title">Vehicle Sales Tax & Trade-In Credit Calculator</h2>
-            <p class="hub-card-desc">Calculate state, county, and local vehicle sales tax, registration fees, and tax credit savings from trading in an existing vehicle.</p>
+            <p class="hub-card-desc">Calculează state, county, și local vehicle sales tax, registration fees, și tax credit savings de la trading in an existing vehicle.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/car-sales-tax/">Open Solver →</a></li>
+            <li><a href="/finance/car-sales-tax/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1190,10 +1189,10 @@
               <span class="hub-badge">Consumer Lending • Auto Loan Refinance Matrix</span>
             </div>
             <h2 class="hub-card-title">Auto Loan Refinance Savings Calculator</h2>
-            <p class="hub-card-desc">Calculate monthly payment reduction and lifetime interest savings from refinancing an auto loan to a lower APR interest rate.</p>
+            <p class="hub-card-desc">Calculează monthly payment reduction și lifetime interest savings de la refinancing an auto loan to a lower APR interest rate.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/auto-refinance-savings/">Open Solver →</a></li>
+            <li><a href="/finance/auto-refinance-savings/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1204,10 +1203,10 @@
               <span class="hub-badge">Risk Underwriting • GAP Insurance Matrix</span>
             </div>
             <h2 class="hub-card-title">Auto GAP Insurance Need & Negative Equity Calculator</h2>
-            <p class="hub-card-desc">Calculate negative equity exposure ('underwater loan') comparing outstanding auto loan balance against actual cash value (ACV) after depreciation.</p>
+            <p class="hub-card-desc">Calculează negative equity exposure ('underwater loan') comparing outstanding auto loan balance against actual cash value (ACV) after depreciation.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/gap-insurance-need/">Open Solver →</a></li>
+            <li><a href="/finance/gap-insurance-need/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1218,10 +1217,10 @@
               <span class="hub-badge">Private Equity • Real Estate IRR Matrix</span>
             </div>
             <h2 class="hub-card-title">Commercial Real Estate IRR & Equity Multiple Calculator</h2>
-            <p class="hub-card-desc">Calculate commercial property Internal Rate of Return (IRR), Equity Multiple (EM), and multi-year cash flow yield including disposition sale proceeds.</p>
+            <p class="hub-card-desc">Calculează commercial property Internal Rate de Return (IRR), Equity Multiple (EM), și multi-year cash flow yield including disposition sale proceeds.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/internal-rate-of-return/">Open Solver →</a></li>
+            <li><a href="/finance/internal-rate-de-return/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1232,10 +1231,10 @@
               <span class="hub-badge">Institutional Underwriting • Real Estate DCF Matrix</span>
             </div>
             <h2 class="hub-card-title">Commercial Real Estate NPV & DCF Calculator</h2>
-            <p class="hub-card-desc">Calculate Net Present Value (NPV) and Discounted Cash Flow (DCF) valuation for commercial real estate properties at your required hurdle discount rate.</p>
+            <p class="hub-card-desc">Calculează Net Present Value (NPV) și Discounted Cash Flow (DCF) valuation pentru commercial real estate properties at your required hurdle discount rate.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/net-present-value/">Open Solver →</a></li>
+            <li><a href="/finance/net-present-value/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1246,10 +1245,10 @@
               <span class="hub-badge">Real Estate Investing • Cash-on-Cash Matrix</span>
             </div>
             <h2 class="hub-card-title">Cash-on-Cash Return & Pre-Tax Yield Calculator</h2>
-            <p class="hub-card-desc">Calculate Cash-on-Cash (CoC) return percentage measuring annual pre-tax cash flow divided by total out-of-pocket cash capital invested.</p>
+            <p class="hub-card-desc">Calculează Cash-on-Cash (CoC) return percentage measuring annual pre-tax cash flow divided by total out-de-pocket cash capital invested.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/cash-on-cash-return/">Open Solver →</a></li>
+            <li><a href="/finance/cash-on-cash-return/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1260,10 +1259,10 @@
               <span class="hub-badge">Multifamily Screening • GRM Metric Matrix</span>
             </div>
             <h2 class="hub-card-title">Gross Rent Multiplier (GRM) & Valuation Calculator</h2>
-            <p class="hub-card-desc">Calculate Gross Rent Multiplier (GRM) and estimate fair market multifamily property values from annual gross scheduled rents.</p>
+            <p class="hub-card-desc">Calculează Gross Rent Multiplier (GRM) și estimate fair market multifamily property values de la annual gross scheduled rents.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/gross-rent-multiplier/">Open Solver →</a></li>
+            <li><a href="/finance/gross-rent-multiplier/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1274,10 +1273,10 @@
               <span class="hub-badge">Tax Deferral • Section 1031 Matrix</span>
             </div>
             <h2 class="hub-card-title">Section 1031 Like-Kind Exchange & Tax Deferral Calculator</h2>
-            <p class="hub-card-desc">Calculate deferred federal capital gains tax, net boot, depreciation recapture tax, and replacement property equity requirements under IRS Section 1031.</p>
+            <p class="hub-card-desc">Calculează deferred federal capital gains tax, net boot, depreciation recapture tax, și replacement property equity requirements under IRS Section 1031.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/exchange-1031/">Open Solver →</a></li>
+            <li><a href="/finance/exchange-1031/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1288,10 +1287,10 @@
               <span class="hub-badge">Valuation Engineering • Cap Rate Sensitivity Matrix</span>
             </div>
             <h2 class="hub-card-title">Cap Rate Sensitivity & Valuation Matrix Calculator</h2>
-            <p class="hub-card-desc">Calculate commercial property asset valuation sensitivity across varying Net Operating Income (NOI) levels and exit capitalization rates.</p>
+            <p class="hub-card-desc">Calculează commercial property asset valuation sensitivity across varying Net Operating Income (NOI) levels și exit capitalization rates.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/cap-rate-sensitivity/">Open Solver →</a></li>
+            <li><a href="/finance/cap-rate-sensitivity/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1302,10 +1301,10 @@
               <span class="hub-badge">Property Management • Rent Roll Underwriting</span>
             </div>
             <h2 class="hub-card-title">Commercial Rent Roll & Economic Vacancy Calculator</h2>
-            <p class="hub-card-desc">Analyze commercial rent rolls, Gross Potential Rent (GPR), physical vacancy, economic concessions, and Effective Gross Income (EGI).</p>
+            <p class="hub-card-desc">Analyze commercial rent rolls, Gross Potential Rent (GPR), physical vacancy, economic concessions, și Effective Gross Income (EGI).</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/rent-roll-analysis/">Open Solver →</a></li>
+            <li><a href="/finance/rent-roll-analysis/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1316,10 +1315,10 @@
               <span class="hub-badge">Tax Engineering • Cost Segregation Shield</span>
             </div>
             <h2 class="hub-card-title">Cost Segregation & Accelerated Depreciation Calculator</h2>
-            <p class="hub-card-desc">Estimate year 1 bonus depreciation tax deductions segregating commercial or residential real estate into 5-year, 15-year, and 27.5/39-year property.</p>
+            <p class="hub-card-desc">Estimate year 1 bonus depreciation tax deductions segregating commercial sau residential real estate into 5-year, 15-year, și 27.5/39-year property.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/cost-segregation/">Open Solver →</a></li>
+            <li><a href="/finance/cost-segregation/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1330,10 +1329,10 @@
               <span class="hub-badge">Syndication Structuring • Equity Waterfall Matrix</span>
             </div>
             <h2 class="hub-card-title">Syndication Preferred Return & Waterfall Equity Calculator</h2>
-            <p class="hub-card-desc">Calculate private equity syndication waterfall distributions between General Partners (GP) and Limited Partners (LP) with preferred returns and promote hurdles.</p>
+            <p class="hub-card-desc">Calculează private equity syndication waterfall distributions între General Partners (GP) și Limited Partners (LP) cu preferred returns și promote hurdles.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/preferred-return-waterfall/">Open Solver →</a></li>
+            <li><a href="/finance/preferred-return-waterfall/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1344,10 +1343,10 @@
               <span class="hub-badge">Commercial Leasing • NNN vs Gross Matrix</span>
             </div>
             <h2 class="hub-card-title">Triple Net (NNN) vs Full Service Gross Lease Calculator</h2>
-            <p class="hub-card-desc">Compare commercial lease structures: Triple Net (NNN) versus Full Service Gross (FSG), converting CAM, property tax, and insurance into effective rates.</p>
+            <p class="hub-card-desc">Compare commercial lease structures: Triple Net (NNN) versus Full Service Gross (FSG), converting CAM, property tax, și insurance into effective rates.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/commercial-lease-nnn/">Open Solver →</a></li>
+            <li><a href="/finance/commercial-lease-nnn/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1358,10 +1357,10 @@
               <span class="hub-badge">Commercial Underwriting • TI Amortization Matrix</span>
             </div>
             <h2 class="hub-card-title">Tenant Improvement (TI) Allowance & Amortization Calculator</h2>
-            <p class="hub-card-desc">Calculate Tenant Improvement (TI) build-out costs, landlord allowances per square foot, leasing commissions, and effective net rent.</p>
+            <p class="hub-card-desc">Calculează Tenant Improvement (TI) build-out costs, landlord allowances per square foot, leasing commissions, și effective net rent.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/tenant-improvement/">Open Solver →</a></li>
+            <li><a href="/finance/tenant-improvement/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1372,10 +1371,10 @@
               <span class="hub-badge">Hospitality Economics • STR Cash Flow Matrix</span>
             </div>
             <h2 class="hub-card-title">Short-Term Rental (Airbnb) Cash Flow & ADR Calculator</h2>
-            <p class="hub-card-desc">Calculate Short-Term Rental (STR / VRBO) net monthly cash flow, Average Daily Rate (ADR), occupancy yields, cleaning fees, and platform commissions.</p>
+            <p class="hub-card-desc">Calculează Short-Term Rental (STR / VRBO) net monthly cash flow, Average Daily Rate (ADR), occupancy yields, cleaning fees, și platform commissions.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/str-airbnb-cashflow/">Open Solver →</a></li>
+            <li><a href="/finance/str-airbnb-cashflow/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1386,10 +1385,10 @@
               <span class="hub-badge">Closing Escrow • Tax Proration Matrix</span>
             </div>
             <h2 class="hub-card-title">Closing Day Property Tax Proration Calculator</h2>
-            <p class="hub-card-desc">Calculate exact real estate closing day property tax prorations, daily per diem tax rates, and buyer/seller credits using 365-day calendar year rules.</p>
+            <p class="hub-card-desc">Calculează exact real estate closing day property tax prorations, daily per diem tax rates, și buyer/seller credits using 365-day calendar year rules.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/property-tax-proration/">Open Solver →</a></li>
+            <li><a href="/finance/property-tax-proration/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1400,10 +1399,10 @@
               <span class="hub-badge">Real Estate Wholesaling • 70% Rule Matrix</span>
             </div>
             <h2 class="hub-card-title">House Flipping 70% Rule & MAO Calculator</h2>
-            <p class="hub-card-desc">Calculate Maximum Allowable Offer (MAO) for fix-and-flip real estate deals using the investor 70% rule, repair budgets, and holding costs.</p>
+            <p class="hub-card-desc">Calculează Maximum Allowable Offer (MAO) pentru fix-și-flip real estate deals using the investor 70% rule, repair budgets, și holding costs.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/house-flip-profit/">Open Solver →</a></li>
+            <li><a href="/finance/house-flip-profit/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1414,10 +1413,10 @@
               <span class="hub-badge">Civil Engineering • Land Subdivision Matrix</span>
             </div>
             <h2 class="hub-card-title">Land Subdivision & Development Lot Yield Calculator</h2>
-            <p class="hub-card-desc">Calculate residential subdivision lot yields, infrastructure loss deductions (roads, storm detention, wetlands), and residual land raw value.</p>
+            <p class="hub-card-desc">Calculează residential subdivision lot yields, infrastructure loss deductions (roads, storm detention, wetlands), și residual land raw value.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/land-development-yield/">Open Solver →</a></li>
+            <li><a href="/finance/land-development-yield/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1428,10 +1427,10 @@
               <span class="hub-badge">Commercial Feasibility • Self-Storage Matrix</span>
             </div>
             <h2 class="hub-card-title">Self-Storage Facility Feasibility & Revenue Calculator</h2>
-            <p class="hub-card-desc">Calculate self-storage facility rental revenue, Net Rentable Square Footage (NRSF), unit mix rent optimization, and commercial valuation.</p>
+            <p class="hub-card-desc">Calculează self-storage facility rental revenue, Net Rentable Square Footage (NRSF), unit mix rent optimization, și commercial valuation.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/self-storage-roi/">Open Solver →</a></li>
+            <li><a href="/finance/self-storage-roi/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1442,10 +1441,10 @@
               <span class="hub-badge">Affordable Housing • MHP Valuation Matrix</span>
             </div>
             <h2 class="hub-card-title">Mobile Home Park (MHP) Lot Rent & Cap Rate Calculator</h2>
-            <p class="hub-card-desc">Calculate Mobile Home Park (MHP / Manufactured Housing) Net Operating Income (NOI), tenant-owned home (TOH) lot rents, and commercial valuation.</p>
+            <p class="hub-card-desc">Calculează Mobile Home Park (MHP / Manufactured Housing) Net Operating Income (NOI), tenant-owned home (TOH) lot rents, și commercial valuation.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/mobile-home-park/">Open Solver →</a></li>
+            <li><a href="/finance/mobile-home-park/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1456,10 +1455,10 @@
               <span class="hub-badge">Capital Stack Structuring • Mezzanine Debt Matrix</span>
             </div>
             <h2 class="hub-card-title">Mezzanine Debt & Subordinated Financing Blended Cost Calculator</h2>
-            <p class="hub-card-desc">Calculate blended Weighted Average Cost of Capital (WACC) across senior mortgage debt, mezzanine subordinated debt, and sponsor equity.</p>
+            <p class="hub-card-desc">Calculează blended Weighted Average Cost de Capital (WACC) across senior mortgage debt, mezzanine subordinated debt, și sponsor equity.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/mezzanine-debt/">Open Solver →</a></li>
+            <li><a href="/finance/mezzanine-debt/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1470,10 +1469,10 @@
               <span class="hub-badge">Private Lending • Hard Money APR Matrix</span>
             </div>
             <h2 class="hub-card-title">Hard Money Loan Cost & Points Calculator</h2>
-            <p class="hub-card-desc">Calculate total financing fees, upfront origination points, monthly interest-only payments, and effective annualized APR on hard money bridge loans.</p>
+            <p class="hub-card-desc">Calculează total financing fees, upfront origination points, monthly interest-only payments, și effective annualized APR on hard money bridge loans.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/hard-money-points/">Open Solver →</a></li>
+            <li><a href="/finance/hard-money-points/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1484,10 +1483,10 @@
               <span class="hub-badge">Bridge Financing • Interest Reserve Matrix</span>
             </div>
             <h2 class="hub-card-title">Commercial Bridge Loan Interest Reserve Calculator</h2>
-            <p class="hub-card-desc">Calculate interest reserve escrows, floating SOFR spreads, and monthly carrying costs for commercial bridge loans during property repositioning.</p>
+            <p class="hub-card-desc">Calculează interest reserve escrows, floating SOFR spreads, și monthly carrying costs pentru commercial bridge loans during property repositioning.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/bridge-loan-interest/">Open Solver →</a></li>
+            <li><a href="/finance/bridge-loan-interest/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1498,10 +1497,10 @@
               <span class="hub-badge">Tax Policy • Opportunity Zone Matrix</span>
             </div>
             <h2 class="hub-card-title">Qualified Opportunity Zone (QOZ) Tax Incentive Calculator</h2>
-            <p class="hub-card-desc">Calculate capital gains tax deferral and complete 10-year tax-free gain elimination on Qualified Opportunity Zone Fund (QOF) investments.</p>
+            <p class="hub-card-desc">Calculează capital gains tax deferral și complete 10-year tax-free gain elimination on Qualified Opportunity Zone Fund (QOF) investments.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/opportunity-zone/">Open Solver →</a></li>
+            <li><a href="/finance/opportunity-zone/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1512,10 +1511,10 @@
               <span class="hub-badge">Condo Governance • Reserve Fund Matrix</span>
             </div>
             <h2 class="hub-card-title">HOA Reserve Fund Adequacy & Percent Funded Calculator</h2>
-            <p class="hub-card-desc">Calculate Homeowners Association (HOA) or Condominium Reserve Fund Percent Funded metric, Fully Funded Balance (FFB), and special assessment insolvency risk.</p>
+            <p class="hub-card-desc">Calculează Homeowners Association (HOA) sau Condominium Reserve Fund Percent Funded metric, Fully Funded Balance (FFB), și special assessment insolvency risk.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/hoa-reserve-fund/">Open Solver →</a></li>
+            <li><a href="/finance/hoa-reserve-fund/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1526,10 +1525,10 @@
               <span class="hub-badge">Tax Accounting • Section 1250 Matrix</span>
             </div>
             <h2 class="hub-card-title">Section 1250 Depreciation Recapture Tax Calculator</h2>
-            <p class="hub-card-desc">Calculate IRS Section 1250 unrecaptured depreciation tax (25% rate) versus long-term capital gains tax upon commercial or rental property sale.</p>
+            <p class="hub-card-desc">Calculează IRS Section 1250 unrecaptured depreciation tax (25% rate) versus long-term capital gains tax upon commercial sau rental property sale.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/depreciation-recapture/">Open Solver →</a></li>
+            <li><a href="/finance/depreciation-recapture/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1540,10 +1539,10 @@
               <span class="hub-badge">Private Equity Structuring • GP Promote Matrix</span>
             </div>
             <h2 class="hub-card-title">Real Estate GP Promoted Interest (Carried Interest) Calculator</h2>
-            <p class="hub-card-desc">Calculate General Partner (GP) carried interest promote compensation across multi-tier IRR hurdles and equity waterfall agreements.</p>
+            <p class="hub-card-desc">Calculează General Partner (GP) carried interest promote compensation across multi-tier IRR hurdles și equity waterfall agreements.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/promoted-interest-carry/">Open Solver →</a></li>
+            <li><a href="/finance/promoted-interest-carry/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1554,10 +1553,10 @@
               <span class="hub-badge">Debt Architecture • Blended APR Matrix</span>
             </div>
             <h2 class="hub-card-title">Blended Mortgage Interest Rate & Second Loan Calculator</h2>
-            <p class="hub-card-desc">Calculate effective blended interest rate combining a low-rate first mortgage with a Home Equity Loan, HELOC, or mezzanine second mortgage.</p>
+            <p class="hub-card-desc">Calculează effective blended interest rate combining a low-rate first mortgage cu a Home Equity Loan, HELOC, sau mezzanine second mortgage.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/blended-mortgage-rate/">Open Solver →</a></li>
+            <li><a href="/finance/blended-mortgage-rate/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1568,10 +1567,10 @@
               <span class="hub-badge">Tax Optimization • W-2 vs 1099 Matrix</span>
             </div>
             <h2 class="hub-card-title">W-2 Employee vs 1099 Contractor Net Pay Calculator</h2>
-            <p class="hub-card-desc">Compare net take-home pay between W-2 employment and 1099 independent contractor arrangements, factoring in 15.3% self-employment tax, benefits, and write-offs.</p>
+            <p class="hub-card-desc">Compare net take-home pay între W-2 employment și 1099 independent contractor arrangements, factoring in 15.3% self-employment tax, benefits, și write-offs.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/w2-vs-1099/">Open Solver →</a></li>
+            <li><a href="/finance/w2-vs-1099/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1582,10 +1581,10 @@
               <span class="hub-badge">Payroll Engineering • Net Paycheck Matrix</span>
             </div>
             <h2 class="hub-card-title">Federal Paycheck Withholding & Net Pay Calculator</h2>
-            <p class="hub-card-desc">Calculate exact net paycheck take-home pay after federal income tax, Social Security (6.2%), Medicare (1.45%), and pre-tax deductions.</p>
+            <p class="hub-card-desc">Calculează exact net paycheck take-home pay after federal income tax, Social Security (6.2%), Medicare (1.45%), și pre-tax deductions.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/paycheck-withholding/">Open Solver →</a></li>
+            <li><a href="/finance/paycheck-withholding/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1596,10 +1595,10 @@
               <span class="hub-badge">Corporate Tax Strategy • S-Corp FICA Matrix</span>
             </div>
             <h2 class="hub-card-title">S-Corporation Reasonable Salary & Tax Savings Calculator</h2>
-            <p class="hub-card-desc">Calculate annual FICA self-employment tax savings from electing S-Corp status, optimizing reasonable compensation salary versus shareholder distributions.</p>
+            <p class="hub-card-desc">Calculează annual FICA self-employment tax savings de la electing S-Corp status, optimizing reasonable compensation salary versus shareholder distributions.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/s-corp-reasonable-salary/">Open Solver →</a></li>
+            <li><a href="/finance/s-corp-reasonable-salary/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1610,10 +1609,10 @@
               <span class="hub-badge">Pass-Through Tax Policy • Section 199A Matrix</span>
             </div>
             <h2 class="hub-card-title">Section 199A Qualified Business Income (QBI) Calculator</h2>
-            <p class="hub-card-desc">Calculate the 20% Section 199A QBI deduction for pass-through entities (LLCs, S-Corps, partnerships), testing Specified Service Trade or Business (SSTB) thresholds.</p>
+            <p class="hub-card-desc">Calculează the 20% Section 199A QBI deduction pentru pass-through entities (LLCs, S-Corps, partnerships), testing Specified Service Trade sau Business (SSTB) thresholds.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/qbi-deduction/">Open Solver →</a></li>
+            <li><a href="/finance/qbi-deduction/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1624,10 +1623,10 @@
               <span class="hub-badge">Retirement Planning • 401(k) Match Matrix</span>
             </div>
             <h2 class="hub-card-title">401(k) Employer Match & True Compensation Calculator</h2>
-            <p class="hub-card-desc">Calculate employer 401(k) matching dollars, required employee contribution to maximize match, vesting schedules, and 30-year compound growth.</p>
+            <p class="hub-card-desc">Calculează employer 401(k) matching dollars, required employee contribution to maximize match, vesting schedules, și 30-year compound growth.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/401k-employer-match/">Open Solver →</a></li>
+            <li><a href="/finance/401k-employer-match/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1638,10 +1637,10 @@
               <span class="hub-badge">High Net Worth • Mega Backdoor Roth Matrix</span>
             </div>
             <h2 class="hub-card-title">Mega Backdoor Roth IRA Contribution Calculator</h2>
-            <p class="hub-card-desc">Calculate maximum allowable after-tax 401(k) contributions and Mega Backdoor Roth capacity under the Section 415(c) overall limit ($69,000 in 2024).</p>
+            <p class="hub-card-desc">Calculează maximum allowable after-tax 401(k) contributions și Mega Backdoor Roth capacity under the Section 415(c) overall limit ($69,000 in 2024).</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/mega-backdoor-roth/">Open Solver →</a></li>
+            <li><a href="/finance/mega-backdoor-roth/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1652,10 +1651,10 @@
               <span class="hub-badge">Tax Alpha • HSA Triple Tax Shield</span>
             </div>
             <h2 class="hub-card-title">Health Savings Account (HSA) Triple Tax Calculator</h2>
-            <p class="hub-card-desc">Calculate Health Savings Account (HSA) triple tax savings: tax-deductible contributions, tax-free investment growth, and tax-free medical withdrawals.</p>
+            <p class="hub-card-desc">Calculează Health Savings Account (HSA) triple tax savings: tax-deductible contributions, tax-free investment growth, și tax-free medical withdrawals.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/hsa-triple-tax/">Open Solver →</a></li>
+            <li><a href="/finance/hsa-triple-tax/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1666,10 +1665,10 @@
               <span class="hub-badge">Healthcare Benefits • FSA Optimization Matrix</span>
             </div>
             <h2 class="hub-card-title">Healthcare FSA Contribution & Forfeiture Calculator</h2>
-            <p class="hub-card-desc">Calculate Healthcare Flexible Spending Account (FSA) tax savings, optimal annual election, and avoid forfeiture under the IRS 'use-it-or-lose-it' rule.</p>
+            <p class="hub-card-desc">Calculează Healthcare Flexible Spending Account (FSA) tax savings, optimal annual election, și avoid forfeiture under the IRS 'use-it-sau-lose-it' rule.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/fsa-use-it-or-lose-it/">Open Solver →</a></li>
+            <li><a href="/finance/fsa-use-it-sau-lose-it/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1680,10 +1679,10 @@
               <span class="hub-badge">Family Tax Policy • CTC Phase-Out Matrix</span>
             </div>
             <h2 class="hub-card-title">Child Tax Credit (CTC) & Phase-Out Calculator</h2>
-            <p class="hub-card-desc">Calculate the federal Child Tax Credit ($2,000 per child), refundable Additional Child Tax Credit (ACTC), and high-income phase-outs.</p>
+            <p class="hub-card-desc">Calculează the federal Child Tax Credit ($2,000 per child), refundable Additional Child Tax Credit (ACTC), și high-income phase-outs.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/child-tax-credit/">Open Solver →</a></li>
+            <li><a href="/finance/child-tax-credit/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1694,10 +1693,10 @@
               <span class="hub-badge">Tax Optimization • Schedule A Matrix</span>
             </div>
             <h2 class="hub-card-title">Standard Deduction vs Itemized (Schedule A) Calculator</h2>
-            <p class="hub-card-desc">Compare the standard deduction against itemized Schedule A deductions: mortgage interest, $10k SALT cap, and charitable contributions.</p>
+            <p class="hub-card-desc">Compare the standard deduction against itemized Schedule A deductions: mortgage interest, $10k SALT cap, și charitable contributions.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/standard-vs-itemized/">Open Solver →</a></li>
+            <li><a href="/finance/standard-vs-itemized/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1708,10 +1707,10 @@
               <span class="hub-badge">Tax Literacy • Progressive Bracket Matrix</span>
             </div>
             <h2 class="hub-card-title">Marginal vs Effective Tax Rate Calculator</h2>
-            <p class="hub-card-desc">Calculate progressive federal tax bracket tiers, top marginal tax rate versus true effective (average) tax rate paid on total income.</p>
+            <p class="hub-card-desc">Calculează progressive federal tax bracket tiers, top marginal tax rate versus true effective (average) tax rate paid on total income.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/marginal-vs-effective-tax/">Open Solver →</a></li>
+            <li><a href="/finance/marginal-vs-effective-tax/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1722,10 +1721,10 @@
               <span class="hub-badge">Tax Migration • State Tax Arbitrage Matrix</span>
             </div>
             <h2 class="hub-card-title">State Income Tax Relocation Comparison Calculator</h2>
-            <p class="hub-card-desc">Compare annual state income tax liabilities between high-tax states (California, New York, New Jersey) and zero-income-tax states (Florida, Texas, Tennessee).</p>
+            <p class="hub-card-desc">Compare annual state income tax liabilities între high-tax states (California, New York, New Jersey) și zero-income-tax states (Florida, Texas, Tennessee).</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/state-income-tax-comparison/">Open Solver →</a></li>
+            <li><a href="/finance/state-income-tax-comparison/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1736,10 +1735,10 @@
               <span class="hub-badge">Tax Alpha • Loss Harvesting Matrix</span>
             </div>
             <h2 class="hub-card-title">Tax-Loss Harvesting & Capital Gains Offset Calculator</h2>
-            <p class="hub-card-desc">Calculate realized capital gains offsets using tax-loss harvesting, the IRS $3,000 ordinary income write-off limit, and net tax savings.</p>
+            <p class="hub-card-desc">Calculează realized capital gains offsets using tax-loss harvesting, the IRS $3,000 ordinary income write-off limit, și net tax savings.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/capital-gains-harvesting/">Open Solver →</a></li>
+            <li><a href="/finance/capital-gains-harvesting/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1750,10 +1749,10 @@
               <span class="hub-badge">Capital Expenditure • Section 179 Tax Shield</span>
             </div>
             <h2 class="hub-card-title">Section 179 Equipment Depreciation Calculator</h2>
-            <p class="hub-card-desc">Calculate immediate first-year Section 179 equipment expensing deductions ($1,220,000 limit in 2024), phase-out ceilings, and net equipment acquisition cost.</p>
+            <p class="hub-card-desc">Calculează immediate first-year Section 179 equipment expensing deductions ($1,220,000 limit in 2024), phase-out ceilings, și net equipment acquisition cost.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/section-179-deduction/">Open Solver →</a></li>
+            <li><a href="/finance/section-179-deduction/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1764,10 +1763,10 @@
               <span class="hub-badge">Tax Accounting • Bonus Depreciation Schedule</span>
             </div>
             <h2 class="hub-card-title">Section 168(k) Bonus Depreciation Phase-Down Calculator</h2>
-            <p class="hub-card-desc">Calculate Section 168(k) bonus depreciation under the TCJA phase-down schedule (60% in 2024, 40% in 2025, 20% in 2026, 0% in 2027).</p>
+            <p class="hub-card-desc">Calculează Section 168(k) bonus depreciation under the TCJA phase-down schedule (60% in 2024, 40% in 2025, 20% in 2026, 0% in 2027).</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/bonus-depreciation/">Open Solver →</a></li>
+            <li><a href="/finance/bonus-depreciation/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1778,10 +1777,10 @@
               <span class="hub-badge">Equity Compensation • RSU Vesting Matrix</span>
             </div>
             <h2 class="hub-card-title">Restricted Stock Unit (RSU) Vesting Tax Calculator</h2>
-            <p class="hub-card-desc">Calculate RSU vesting income, mandatory supplemental tax withholding (22% vs 37%), shares sold-to-cover taxes, and net shares delivered.</p>
+            <p class="hub-card-desc">Calculează RSU vesting income, mandatory supplemental tax withholding (22% vs 37%), shares sold-to-cover taxes, și net shares delivered.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/rsu-vesting-tax/">Open Solver →</a></li>
+            <li><a href="/finance/rsu-vesting-tax/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1792,10 +1791,10 @@
               <span class="hub-badge">Equity Compensation • ESPP Alpha Matrix</span>
             </div>
             <h2 class="hub-card-title">Employee Stock Purchase Plan (ESPP) Calculator</h2>
-            <p class="hub-card-desc">Calculate Employee Stock Purchase Plan (ESPP) returns with 15% discount and lookback provision, annualized IRR, and qualifying vs disqualifying dispositions.</p>
+            <p class="hub-card-desc">Calculează Employee Stock Purchase Plan (ESPP) returns cu 15% discount și lookback provision, annualized IRR, și qualifying vs disqualifying dispositions.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/espp-discount/">Open Solver →</a></li>
+            <li><a href="/finance/espp-discount/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1806,10 +1805,10 @@
               <span class="hub-badge">Retirement Distribution • NUA Strategy Matrix</span>
             </div>
             <h2 class="hub-card-title">Net Unrealized Appreciation (NUA) 401(k) Stock Calculator</h2>
-            <p class="hub-card-desc">Calculate Net Unrealized Appreciation (NUA) tax savings on employer stock inside a 401(k), converting 37% ordinary income tax into 20% capital gains tax.</p>
+            <p class="hub-card-desc">Calculează Net Unrealized Appreciation (NUA) tax savings on employer stock inside a 401(k), converting 37% ordinary income tax into 20% capital gains tax.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/nua-company-stock/">Open Solver →</a></li>
+            <li><a href="/finance/nua-company-stock/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1820,10 +1819,10 @@
               <span class="hub-badge">Early Retirement • Rule 72(t) SEPP Matrix</span>
             </div>
             <h2 class="hub-card-title">Rule 72(t) SEPP Early IRA Withdrawal Calculator</h2>
-            <p class="hub-card-desc">Calculate penalty-free early retirement withdrawals from traditional or Roth IRAs prior to age 59½ using IRS Rule 72(t) Substantially Equal Periodic Payments.</p>
+            <p class="hub-card-desc">Calculează penalty-free early retirement withdrawals de la traditional sau Roth IRAs prior to age 59½ using IRS Rule 72(t) Substantially Equal Periodic Payments.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/sepp-72t-distribution/">Open Solver →</a></li>
+            <li><a href="/finance/sepp-72t-distribution/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1834,10 +1833,10 @@
               <span class="hub-badge">High Net Worth • Philanthropic Tax Shield</span>
             </div>
             <h2 class="hub-card-title">Charitable Remainder Unitrust (CRUT) Tax Calculator</h2>
-            <p class="hub-card-desc">Calculate immediate upfront income tax deductions, tax-free appreciated asset sales, and annual annuity income streams using a Charitable Remainder Trust (CRUT).</p>
+            <p class="hub-card-desc">Calculează immediate upfront income tax deductions, tax-free appreciated asset sales, și annual annuity income streams using a Charitable Remainder Trust (CRUT).</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/charitable-remainder-trust/">Open Solver →</a></li>
+            <li><a href="/finance/charitable-remainder-trust/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1848,10 +1847,10 @@
               <span class="hub-badge">Wealth Preservation • Estate Tax Matrix</span>
             </div>
             <h2 class="hub-card-title">Federal Estate & Lifetime Gift Tax Exemption Calculator</h2>
-            <p class="hub-card-desc">Calculate federal estate and gift tax exposure (40% rate), lifetime unified credit ($13.61M individual / $27.22M married), and 2026 TCJA sunset impact.</p>
+            <p class="hub-card-desc">Calculează federal estate și gift tax exposure (40% rate), lifetime unified credit ($13.61M individual / $27.22M married), și 2026 TCJA sunset impact.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/estate-gift-tax/">Open Solver →</a></li>
+            <li><a href="/finance/estate-gift-tax/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1862,10 +1861,10 @@
               <span class="hub-badge">Estate Distribution • SECURE Act 10-Year Matrix</span>
             </div>
             <h2 class="hub-card-title">Inherited IRA 10-Year Rule & RMD Calculator</h2>
-            <p class="hub-card-desc">Calculate SECURE Act 10-year mandatory withdrawal schedules for inherited traditional and Roth IRAs, minimizing bracket creep and tax drag.</p>
+            <p class="hub-card-desc">Calculează SECURE Act 10-year mandatory withdrawal schedules pentru inherited traditional și Roth IRAs, minimizing bracket creep și tax drag.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/inherited-ira-10-year/">Open Solver →</a></li>
+            <li><a href="/finance/inherited-ira-10-year/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1876,10 +1875,10 @@
               <span class="hub-badge">Retirement Taxation • Social Security Matrix</span>
             </div>
             <h2 class="hub-card-title">Social Security Benefits Taxation Calculator</h2>
-            <p class="hub-card-desc">Calculate how much of your Social Security retirement benefit is subject to federal income tax (0%, 50%, or 85%) based on provisional combined income.</p>
+            <p class="hub-card-desc">Calculează how much de your Social Security retirement benefit is subject to federal income tax (0%, 50%, sau 85%) based on provisional combined income.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/social-security-taxation/">Open Solver →</a></li>
+            <li><a href="/finance/social-security-taxation/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1890,10 +1889,10 @@
               <span class="hub-badge">Healthcare Policy • Medicare IRMAA Matrix</span>
             </div>
             <h2 class="hub-card-title">Medicare IRMAA Surcharge & Surtax Calculator</h2>
-            <p class="hub-card-desc">Calculate Medicare Part B and Part D Income-Related Monthly Adjustment Amount (IRMAA) premium surcharges and cliff threshold triggers.</p>
+            <p class="hub-card-desc">Calculează Medicare Part B și Part D Income-Related Monthly Adjustment Amount (IRMAA) premium surcharges și cliff threshold triggers.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/medicare-irmaa-surcharge/">Open Solver →</a></li>
+            <li><a href="/finance/medicare-irmaa-surcharge/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1904,10 +1903,10 @@
               <span class="hub-badge">Employer Payroll • Unemployment Tax Matrix</span>
             </div>
             <h2 class="hub-card-title">Employer FUTA & SUTA Unemployment Tax Calculator</h2>
-            <p class="hub-card-desc">Calculate Federal Unemployment Tax Act (FUTA 0.6% net) and State Unemployment Tax (SUTA) employer liabilities across payroll wage bases.</p>
+            <p class="hub-card-desc">Calculează Federal Unemployment Tax Act (FUTA 0.6% net) și State Unemployment Tax (SUTA) employer liabilities across payroll wage bases.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/finance/futa-suta-payroll/">Open Solver →</a></li>
+            <li><a href="/finance/futa-suta-payroll/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -1917,8 +1916,8 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      <div>© 2026 OmniOperand. Toate demonstrațiile matematice și calculele sunt riguros verificate.</div>
+      <div>Găzduit pe rețeaua Cloudflare Edge • Construit fără dependențe externe</div>
     </div>
   </footer>
 

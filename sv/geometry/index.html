@@ -87,7 +87,7 @@
     .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
     .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
     .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
-    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-mellan; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
     .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
     .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
     .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
@@ -107,7 +107,7 @@
       <a href="/sv/" class="brand-link">
         <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
-        <span class="brand-badge">Geometry</span>
+        <span class="brand-badge">Geometri</span>
       </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
@@ -154,7 +154,7 @@
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="lang-dropdown-menu">
-            <a href="/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/sv/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
             <a href="/es/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
             <a href="/fr/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
             <a href="/de/geometry/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
@@ -171,8 +171,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Sök</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -194,11 +193,11 @@
 
   <main class="container" style="padding: 2.5rem 0;">
     <div style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--accent-blue); background:rgba(56,189,248,0.1); padding:0.3rem 0.8rem; border-radius:999px; margin-bottom:0.75rem;">
-      Domain Hub • Geometry & Spatial Analysis
+      Domain Hub • Geometri
     </div>
     <h1>Geometri & Rumsanalys</h1>
     <p style="max-width:800px; color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem; line-height:1.6;">
-      2D and 3D geometric solvers: regular polygons, conic sections, polyhedra, surfaces of revolution, and radical closed-form proofs.
+      2D och 3D geometric solvers: regular polygons, conic sections, polyhedra, surfaces av revolution, och radical closed-form proofs.
     </p>
 
 <div class="hub-grid" style="margin-top:2rem;">
@@ -209,11 +208,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Conic Sections • Ramanujan Elliptic Matrix</span>
             </div>
-            <h2 class="hub-card-title">Ellipse Area, Perimeter & Eccentricity Calculator</h2>
-            <p class="hub-card-desc">Calculate exact ellipse area, Ramanujan high-precision perimeter approximation, semi-axes, focal distance, and orbital eccentricity.</p>
+            <h2 class="hub-card-title">Ellipse Area, Perimeter & Eccentricity Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna exact ellipse area, Ramanujan high-precision perimeter approximation, semi-axes, focal distance, och orbital eccentricity.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/ellipse/">Open Solver →</a></li>
+            <li><a href="/geometry/ellipse/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -223,11 +222,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Planar Geometry • Trapezoid Solver</span>
             </div>
-            <h2 class="hub-card-title">Trapezoid Area, Median & Perimeter Calculator</h2>
-            <p class="hub-card-desc">Calculate trapezoid (trapezium) area, midline median, perimeter, and diagonal lengths from base lengths, height, and side legs.</p>
+            <h2 class="hub-card-title">Trapezoid Area, Median & Perimeter Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna trapezoid (trapezium) area, midline median, perimeter, och diagonal lengths från base lengths, height, och side legs.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/trapezoid/">Open Solver →</a></li>
+            <li><a href="/geometry/trapezoid/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -237,11 +236,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Equilateral Quadrilateral • Rhombus Matrix</span>
             </div>
-            <h2 class="hub-card-title">Rhombus Area, Side & Diagonals Calculator</h2>
-            <p class="hub-card-desc">Calculate rhombus area, perimeter, side length, incircle radius, and internal angles from intersecting diagonals d₁ and d₂.</p>
+            <h2 class="hub-card-title">Rhombus Area, Side & Diagonals Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna rhombus area, perimeter, side length, incircle radius, och internal angles från intersecting diagonals d₁ och d₂.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/rhombus/">Open Solver →</a></li>
+            <li><a href="/geometry/rhombus/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -251,11 +250,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Affine Geometry • Parallelogram Matrix</span>
             </div>
-            <h2 class="hub-card-title">Parallelogram Area & Diagonals Calculator</h2>
-            <p class="hub-card-desc">Calculate parallelogram area, perimeter, internal diagonals, and heights using base, side, and acute internal angle.</p>
+            <h2 class="hub-card-title">Parallelogram Area & Diagonals Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna parallelogram area, perimeter, internal diagonals, och heights using base, side, och acute internal angle.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/parallelogram/">Open Solver →</a></li>
+            <li><a href="/geometry/parallelogram/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -265,11 +264,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Deltoid Geometry • Kite Area Matrix</span>
             </div>
-            <h2 class="hub-card-title">Kite Geometry & Area Calculator</h2>
-            <p class="hub-card-desc">Calculate kite area, perimeter, side pairs, and internal diagonal lengths from perpendicular diagonal axes.</p>
+            <h2 class="hub-card-title">Kite Geometry & Area Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna kite area, perimeter, side pairs, och internal diagonal lengths från perpendicular diagonal axes.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/kite/">Open Solver →</a></li>
+            <li><a href="/geometry/kite/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -279,11 +278,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Solid Geometry • Cylinder Volumetric Matrix</span>
             </div>
-            <h2 class="hub-card-title">Cylinder Volume & Surface Area Calculator</h2>
-            <p class="hub-card-desc">Calculate cylinder volume, lateral curved surface area, total surface area, and base perimeter from radius and height.</p>
+            <h2 class="hub-card-title">Cylinder Volume & Surface Area Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna cylinder volume, lateral curved surface area, total surface area, och base perimeter från radius och height.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/cylinder/">Open Solver →</a></li>
+            <li><a href="/geometry/cylinder/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -293,11 +292,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Conical Geometry • Right Cone Matrix</span>
             </div>
-            <h2 class="hub-card-title">Right Circular Cone Volume & Slant Height Calculator</h2>
-            <p class="hub-card-desc">Calculate cone volume, slant height, lateral area, total surface area, and base cone angle from radius and vertical height.</p>
+            <h2 class="hub-card-title">Right Circular Cone Volume & Slant Height Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna cone volume, slant height, lateral area, total surface area, och base cone angle från radius och vertical height.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/cone/">Open Solver →</a></li>
+            <li><a href="/geometry/cone/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -307,11 +306,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Spherical Geometry • Archimedean Sphere Matrix</span>
             </div>
-            <h2 class="hub-card-title">Sphere Volume & Surface Area Calculator</h2>
-            <p class="hub-card-desc">Calculate exact sphere volume, surface area, radius, diameter, and circumscribed cylinder ratio using Archimedes' theorem.</p>
+            <h2 class="hub-card-title">Sphere Volume & Surface Area Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna exact sphere volume, surface area, radius, diameter, och circumscribed cylinder ratio using Archimedes' theorem.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/sphere/">Open Solver →</a></li>
+            <li><a href="/geometry/sphere/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -321,11 +320,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Topology & Solids • Pappus Toroid Matrix</span>
             </div>
-            <h2 class="hub-card-title">Torus Volume & Surface Area (Donut) Calculator</h2>
-            <p class="hub-card-desc">Calculate donut torus volume and surface area using Pappus's Centroid Theorems from major radius R and minor radius r.</p>
+            <h2 class="hub-card-title">Torus Volume & Surface Area (Donut) Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna donut torus volume och surface area using Pappus's Centroid Theorems från major radius R och minor radius r.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/torus/">Open Solver →</a></li>
+            <li><a href="/geometry/torus/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -335,11 +334,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Polyhedral Geometry • Triangular Prism Matrix</span>
             </div>
-            <h2 class="hub-card-title">Triangular Prism Volume & Surface Area Calculator</h2>
-            <p class="hub-card-desc">Calculate triangular prism volume, lateral face area, base area, and total surface area from triangular base dimensions and prism length.</p>
+            <h2 class="hub-card-title">Triangular Prism Volume & Surface Area Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna triangular prism volume, lateral face area, base area, och total surface area från triangular base dimensions och prism length.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/triangular-prism/">Open Solver →</a></li>
+            <li><a href="/geometry/triangular-prism/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -349,11 +348,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Pyramidal Geometry • Square Pyramid Matrix</span>
             </div>
-            <h2 class="hub-card-title">Square Pyramid Volume & Slant Height Calculator</h2>
-            <p class="hub-card-desc">Calculate square and rectangular pyramid volume, lateral slant height, lateral face area, and total surface area.</p>
+            <h2 class="hub-card-title">Square Pyramid Volume & Slant Height Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna square och rectangular pyramid volume, lateral slant height, lateral face area, och total surface area.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/pyramid/">Open Solver →</a></li>
+            <li><a href="/geometry/pyramid/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -363,11 +362,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Truncated Solids • Conical Frustum Matrix</span>
             </div>
-            <h2 class="hub-card-title">Frustum of a Cone (Truncated Cone) Calculator</h2>
-            <p class="hub-card-desc">Calculate volume, lateral surface area, slant height, and total surface area of a truncated cone (frustum) from base radii and height.</p>
+            <h2 class="hub-card-title">Frustum av a Cone (Truncated Cone) Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna volume, lateral surface area, slant height, och total surface area av a truncated cone (frustum) från base radii och height.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/frustum-cone/">Open Solver →</a></li>
+            <li><a href="/geometry/frustum-cone/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -377,11 +376,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Ancient Egyptian Geometry • Moscow Papyrus Matrix</span>
             </div>
-            <h2 class="hub-card-title">Frustum of a Pyramid (Truncated Pyramid) Calculator</h2>
-            <p class="hub-card-desc">Calculate volume, slant height, and surface area of a truncated square pyramid from top base a₁, bottom base a₂, and height.</p>
+            <h2 class="hub-card-title">Frustum av a Pyramid (Truncated Pyramid) Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna volume, slant height, och surface area av a truncated square pyramid från top base a₁, bottom base a₂, och height.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/frustum-pyramid/">Open Solver →</a></li>
+            <li><a href="/geometry/frustum-pyramid/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -391,11 +390,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Triaxial Geometry • Ellipsoid Volumetric Solver</span>
             </div>
-            <h2 class="hub-card-title">Ellipsoid Volume & Surface Area Calculator</h2>
-            <p class="hub-card-desc">Calculate ellipsoid volume and surface area using the Knud Thomsen p-norm approximation formula from semi-axes a, b, and c.</p>
+            <h2 class="hub-card-title">Ellipsoid Volume & Surface Area Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna ellipsoid volume och surface area using the Knud Thomsen p-norm approximation formula från semi-axes a, b, och c.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/ellipsoid/">Open Solver →</a></li>
+            <li><a href="/geometry/ellipsoid/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -405,11 +404,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📐</div>
               <span class="hub-badge">Trigonometry • Circular Arc & Sector Matrix</span>
             </div>
-            <h2 class="hub-card-title">Arc Length, Sector Area & Chord Calculator</h2>
-            <p class="hub-card-desc">Calculate circular arc length (s), sector area, segment area, and chord length from circle radius and central angle (degrees or radians).</p>
+            <h2 class="hub-card-title">Arc Length, Sector Area & Chord Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna circular arc length (s), sector area, segment area, och chord length från circle radius och central angle (degrees eller radians).</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/geometry/arc-length/">Open Solver →</a></li>
+            <li><a href="/geometry/arc-length/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -419,8 +418,8 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      <div>© 2026 OmniOperand. Alla matematiska bevis och beräkningar rigoröst verifierade.</div>
+      <div>Drift på Cloudflare Edge Network • Byggd utan externa beroenden</div>
     </div>
   </footer>
 

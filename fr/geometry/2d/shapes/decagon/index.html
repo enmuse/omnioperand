@@ -83,38 +83,38 @@
       "@id": "https://omnioperand.com/geometry/2d/shapes/decagon/#faq",
       "mainEntity": [
         {
-          "@type": "Question",
-          "name": "What is the formula for the area of a regular decagon?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The area of a regular decagon with side length a is A = (5/2)a² · √(5 + 2√5) ≈ 7.694209 · a². In terms of the inradius (apothem) r_i, the area is A = 2 · r_i² · √(25 - 10√5) ≈ 3.249197 · r_i²."
-          }
+                "@type": "Question",
+                "name": "Quelle est la formule de l'aire d'un Zehneck régulier ?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "L'aire d'un Zehneck régulier de côté a s'exprime par A = (5/2)a²√(5 + 2√5) ≈ 7,694209a²."
+                }
         },
         {
-          "@type": "Question",
-          "name": "Why is the circumradius related to the golden ratio?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Each of the 10 central triangles has a central angle of 360° / 10 = 36°, meaning the half central angle is 18°. By definition, sin(18°) = (√5 - 1) / 4 = 1 / (2ϕ), where ϕ = (1 + √5)/2 is the Golden Ratio. Because R = a / [2 sin(18°)], substituting yields R = a · ϕ ≈ 1.618034a."
-          }
+                "@type": "Question",
+                "name": "Comment calculer le côté à partir de l'aire ?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Pour déterminer le côté a à partir de l'aire A, divisez l'aire par le coefficient géométrique puis extrayez la racine carrée."
+                }
         },
         {
-          "@type": "Question",
-          "name": "What are the 4 diagonal lengths of a regular decagon?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A regular decagon has 35 total diagonals distributed into 4 distinct congruence classes: 10 short diagonals d1 ≈ 1.9021a, 10 medium diagonals d2 = a·ϕ² ≈ 2.6180a, 10 long diagonals d3 = a√(5+2√5) ≈ 3.0777a, and 5 main diameters d4 = 2R = a(1+√5) ≈ 3.2361a."
-          }
+                "@type": "Question",
+                "name": "Combien de diagonales possède un Zehneck ?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Le nombre total de diagonales est donné par n(n - 3) / 2 = 35 diagonales."
+                }
         },
         {
-          "@type": "Question",
-          "name": "What are the interior and exterior angles of a regular decagon?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Each interior angle of a regular decagon is (10 - 2) · 180° / 10 = 144°. Each exterior angle is 360° / 10 = 36°. The sum of all 10 interior angles is 1,440°."
-          }
+                "@type": "Question",
+                "name": "Quelles sont les applications architecturales et techniques ?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Cette géométrie est largement utilisée en architecture et mécanique de précision pour sa parfaite répartition des charges."
+                }
         }
-      ]
+]
     }
   ]
 }
@@ -165,7 +165,7 @@
       <a href="/fr/" class="brand-link">
         <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
-        <span class="brand-badge">Geometry</span>
+        <span class="brand-badge">Géométrie</span>
       </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
@@ -229,8 +229,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Rechercher</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -280,9 +279,7 @@
     <section class="calculator-hero">
       <div class="calc-title-badge">Polygon Geometry • 10-Sided Regular Polytope</div>
       <h1>Calculateur de Décagone Régulier</h1>
-      <p>
-        High-precision bidirectional analytic solver. Enter <strong>any single known variable</strong>—side length, area, perimeter, apothem (inradius), circumradius, flat-to-flat span, or any of the 4 diagonal classes—and all other 8 parameters will compute instantaneously with exact radical derivations.
-      </p>
+      <p>Solveur mathématique bidirectionnel universel. Saisissez n'importe quelle variable connue pour déterminer instantanément côtés, rayons, aires et diagonales avec une précision absolue.</p>
     </section>
 
     <section class="solver-container">
@@ -495,17 +492,17 @@
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 18 4 22 9 22 15 18 20 12 22 6 20 2 15 2 9 6 4 12 2"></polygon></svg>
             <span>Interactive Analytic Blueprint</span>
           </div>
-          <div class="canvas-hud-coords" id="blueprint-coord-display">Hover vertex for coordinates</div>
+          <div class="canvas-hud-coords" id="blueprint-coord-display">Survolez un sommet pour afficher les coordonnées</div>
         </div>
 
         <!-- Blueprint Layer Toggles -->
         <div class="blueprint-layer-bar">
-          <span class="layer-bar-label">Layers:</span>
-          <button class="layer-pill active" id="toggle-layer-grid" title="Toggle Coordinate Grid & Axes">Grid</button>
-          <button class="layer-pill active" id="toggle-layer-circles" title="Toggle Incircle & Circumcircle">Circles</button>
-          <button class="layer-pill active" id="toggle-layer-dims" title="Toggle Dimension Lines">Dimensions</button>
-          <button class="layer-pill active" id="toggle-layer-labels" title="Toggle Vertex Points">Vertices</button>
-          <button class="layer-pill" id="toggle-blueprint-theme" title="Toggle Blueprint Theme">Blueprint Mode</button>
+          <span class="layer-bar-label">Calques :</span>
+          <button class="layer-pill active" id="toggle-layer-grid" title="Toggle Coordinate Grid & Axes">Grille</button>
+          <button class="layer-pill active" id="toggle-layer-circles" title="Toggle Incircle & Circumcircle">Cercles</button>
+          <button class="layer-pill active" id="toggle-layer-dims" title="Toggle Dimension Lines">Cotes</button>
+          <button class="layer-pill active" id="toggle-layer-labels" title="Toggle Vertex Points">Sommets</button>
+          <button class="layer-pill" id="toggle-blueprint-theme" title="Toggle Blueprint Theme">Mode Plan</button>
         </div>
 
         <div class="canvas-wrapper" id="blueprint-canvas-wrapper">
@@ -564,7 +561,7 @@
           <div class="license-badge-row">
             <span class="license-badge">
               <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              Free for Commerce & Academia
+              Gratuit pour Commerce & Recherche
             </span>
             <span class="license-cc">CC BY 4.0 License</span>
           </div>
@@ -573,14 +570,14 @@
           </p>
           <div class="attribution-snippet-group">
             <div class="snippet-header">
-              <span>Web Backlink Attribution:</span>
+              <span>Attribution par lien web :</span>
               <button class="copy-snippet-btn" id="copy-backlink-html">Copy HTML</button>
             </div>
             <code class="snippet-code" id="snippet-backlink-html">&lt;a href="https://omnioperand.com/geometry/2d/shapes/decagon/" target="_blank" rel="noopener"&gt;Diagram courtesy of OmniOperand&lt;/a&gt;</code>
           </div>
           <div class="attribution-snippet-group" style="margin-top:0.45rem;">
             <div class="snippet-header">
-              <span>Academic BibTeX Citation:</span>
+              <span>Citation académique BibTeX :</span>
               <button class="copy-snippet-btn" id="copy-backlink-bibtex">Copy BibTeX</button>
             </div>
             <code class="snippet-code" id="snippet-backlink-bibtex">@misc{omnioperand_decagon, title={Regular Decagon Calculator & Blueprint}, author={OmniOperand}, url={https://omnioperand.com/geometry/2d/shapes/decagon/}, year={2026}}</code>
@@ -592,176 +589,47 @@
 
     <!-- Mathematical Foundations -->
     <section class="proofs-section">
-      <h2>Mathematical Foundations & Decagonal Symmetries</h2>
-      <p>
-        A regular decagon is a 10-sided regular polygon with 10 reflection axes and 10-fold rotational symmetry (dihedral group <strong>D<sub>10</sub></strong>). It is deeply intertwined with the <strong>Golden Ratio</strong> (<span class="math-tex">ϕ = (1 + √5) / 2</span>), with circumradius <span class="math-tex">R</span> strictly equal to <span class="math-tex">a · ϕ</span>.
-      </p>
-
+      <h2>Fondements Mathématiques & Démonstrations Analytiques</h2>
+      <p>Un Zehneck régulier est un polygone convexe bidimensionnel à 10 côtés égaux et 10 angles intérieurs congruents. Il appartient au groupe diédral D_10.</p>
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">1</span>
-            <span>Interior, Exterior & Central Angles</span>
-          </h3>
+          <h3><span class="step-num">1</span><span>Angles Intérieurs, Extérieurs et Centraux</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <div class="proof-step">
-            <div class="step-num">a</div>
-            <div class="step-content">
-              <strong>Sum of Interior Angles:</strong>
-              For <span class="math-tex">n = 10</span>:
-              <div class="math-display">
-                S = (10 - 2) × 180° = 8 × 180° = 1440° &nbsp; (8π rad)
-              </div>
-            </div>
-          </div>
-          <div class="proof-step">
-            <div class="step-num">b</div>
-            <div class="step-content">
-              <strong>Individual Interior Angle (α):</strong>
-              <div class="math-display">
-                α = 1440° / 10 = 144° &nbsp; (4π / 5 rad)
-              </div>
-            </div>
-          </div>
-          <div class="proof-step">
-            <div class="step-num">c</div>
-            <div class="step-content">
-              <strong>Central & Exterior Angle (β):</strong>
-              <div class="math-display">
-                β = 360° / 10 = 36° &nbsp; (π / 5 rad)
-              </div>
-              The half central angle is <span class="math-tex">θ = 36° / 2 = 18° &nbsp; (π / 10 rad)</span>.
-            </div>
-          </div>
+          <p>Somme des angles intérieurs : Pour n = 10, la somme vaut S = (10 - 2) × 180°.</p>
+          <p>Chaque angle intérieur mesure α = S / n.</p>
+          <p>L'angle central et l'angle extérieur valent β = 360° / n.</p>
         </div>
       </div>
-
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">2</span>
-            <span>Proof of Circumradius R = a · ϕ</span>
-          </h3>
+          <h3><span class="step-num">2</span><span>Apothème (Rayon Inscrit) & Rayon Circonscrit</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <p>
-            In the right triangle formed by the center, a vertex, and the side midpoint:
-          </p>
-          <div class="math-display">
-            sin(18°) = (a / 2) / R ⟹ R = a / [2 · sin(18°)]
-          </div>
-          <p>
-            Using the exact trigonometric radical <span class="math-tex">sin(18°) = (√5 - 1) / 4 = 1 / (2ϕ)</span>:
-          </p>
-          <div class="math-display">
-            R = a / [2 · (1 / (2ϕ))] = a · ϕ = a · (1 + √5) / 2 ≈ 1.61803399 · a
-          </div>
+          <p>L'apothème r_i est la distance orthogonale du centre à chaque côté : r_i = a / [2 tan(180° / 10)]. r_i = ½ a √(5 + 2√5)</p>
+          <p>Le rayon circonscrit R relie le centre aux sommets : R = a / [2 sin(180° / 10)].</p>
         </div>
       </div>
-
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">3</span>
-            <span>Apothem (r<sub>i</sub>) & Flat-to-Flat Span (S) Derivations</span>
-          </h3>
+          <h3><span class="step-num">3</span><span>Calcul Exact de l'Aire & Décomposition</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <p>
-            Applying the Pythagorean theorem to <span class="math-tex">r<sub>i</sub>² + (a / 2)² = R²</span>:
-          </p>
-          <div class="math-display">
-            r<sub>i</sub>² = a²ϕ² - a² / 4 = a² · [(3 + √5)/2 - ¼] = a² · [(5 + 2√5) / 4]
-          </div>
-          <div class="math-display">
-            r<sub>i</sub> = (a / 2) · √(5 + 2√5) ≈ 1.53884177 · a
-          </div>
-          <p>
-            The flat-to-flat span <span class="math-tex">S</span> between parallel opposite sides is twice the apothem:
-          </p>
-          <div class="math-display">
-            S = 2r<sub>i</sub> = a · √(5 + 2√5) ≈ 3.07768354 · a
-          </div>
+          <p>La décomposition en 10 triangles isocèles donne la formule fermée : A = (5/2)a²√(5 + 2√5) ≈ 7,694209a².</p>
         </div>
       </div>
-
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">4</span>
-            <span>Area Exact Radical Derivation</span>
-          </h3>
+          <h3><span class="step-num">4</span><span>Classes de Diagonales & Théorème d'Al-Kashi</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <p>
-            Partitioning into 10 central isosceles triangles:
-          </p>
-          <div class="math-display">
-            A = 10 × (½ · a · r<sub>i</sub>) = 5a · [(a / 2)√(5 + 2√5)] = (5a² / 2) · √(5 + 2√5) ≈ 7.69420884 · a²
-          </div>
+          <p>Un polygone régulier à 10 sommets possède 35 diagonales. 35 Diagonalen in 4 Längen</p>
         </div>
       </div>
-
-      <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">5</span>
-            <span>The 4 Distinct Diagonal Classes</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            A regular decagon has <span class="math-tex">10(7) / 2 = 35</span> total diagonals in 4 congruence classes:
-          </p>
-          <div class="proof-step">
-            <div class="step-num">1</div>
-            <div class="step-content">
-              <strong>Short Diagonal (<span class="math-tex">d<sub>1</sub></span>, 10 total):</strong>
-              Spans 2 sides across 1 vertex:
-              <div class="math-display">
-                d<sub>1</sub> = a · √[(5 + √5) / 2] ≈ 1.90211303 · a
-              </div>
-            </div>
-          </div>
-          <div class="proof-step">
-            <div class="step-num">2</div>
-            <div class="step-content">
-              <strong>Medium Diagonal (<span class="math-tex">d<sub>2</sub></span>, 10 total):</strong>
-              Spans 3 sides across 2 vertices:
-              <div class="math-display">
-                d<sub>2</sub> = a · ϕ² = a · (3 + √5) / 2 ≈ 2.61803399 · a
-              </div>
-            </div>
-          </div>
-          <div class="proof-step">
-            <div class="step-num">3</div>
-            <div class="step-content">
-              <strong>Long Diagonal (<span class="math-tex">d<sub>3</sub></span>, 10 total):</strong>
-              Spans 4 sides across 3 vertices (equals flat-to-flat span <span class="math-tex">S</span>):
-              <div class="math-display">
-                d<sub>3</sub> = S = a · √(5 + 2√5) ≈ 3.07768354 · a
-              </div>
-            </div>
-          </div>
-          <div class="proof-step">
-            <div class="step-num">4</div>
-            <div class="step-content">
-              <strong>Main Diameter (<span class="math-tex">d<sub>4</sub></span>, 5 total):</strong>
-              Passes directly through the center connecting opposite vertices:
-              <div class="math-display">
-                d<sub>4</sub> = 2R = a · (1 + √5) ≈ 3.23606798 · a
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </section>
 
     <!-- LLM Prompt Box -->
@@ -772,7 +640,7 @@
           <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
         </div>
         <div class="llm-actions">
-          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copier le Prompt Vérifié pour Agents IA</button>
           <button class="btn btn-secondary btn-sm" id="copy-json-btn">Copy JSON Data</button>
         </div>
       </div>
@@ -780,60 +648,30 @@
       <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
 
       <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
-        <span>✓ Standardized for <code>llms.txt</code></span>
-        <span>✓ Precision verified up to 10 decimal digits</span>
-        <span>✓ Exact analytic radicals included</span>
+        <span>✓ Standardisé pour <code>llms.txt</code></span>
+        <span>✓ Précision vérifiée jusqu'à 10 décimales</span>
+        <span>✓ Formes radicales exactes incluses</span>
       </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq-section">
-      <h2>Foire Aux Questions</h2>
-      
+      <h2>FAQ</h2>
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the formula for the area of a regular decagon?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          The area of a regular decagon with side length <span class="math-tex">a</span> is <span class="math-tex">A = (5/2)a² · √(5 + 2√5) ≈ 7.694209 · a²</span>. If you know the inradius (apothem) <span class="math-tex">r<sub>i</sub></span>, the area is <span class="math-tex">A = 2 · r<sub>i</sub>² · √(25 - 10√5) ≈ 3.249197 · r<sub>i</sub>²</span>.
-        </div>
+        <div class="faq-question"><span>Quelle est la formule de l'aire d'un Zehneck régulier ?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">L'aire d'un Zehneck régulier de côté a s'exprime par A = (5/2)a²√(5 + 2√5) ≈ 7,694209a².</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>Why is the circumradius related to the golden ratio?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          The central angle of a decagon is <span class="math-tex">36°</span>, and <span class="math-tex">sin(18°) = (√5 - 1) / 4 = 1 / (2ϕ)</span>. Since <span class="math-tex">R = a / [2 sin(18°)]</span>, the circumradius simplifies exactly to <span class="math-tex">R = a · ϕ = a(1 + √5) / 2 ≈ 1.618034a</span>.
-        </div>
+        <div class="faq-question"><span>Comment calculer le côté à partir de l'aire ?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Pour déterminer le côté a à partir de l'aire A, divisez l'aire par le coefficient géométrique puis extrayez la racine carrée.</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What are the 4 diagonal lengths of a regular decagon?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          A regular decagon has 35 diagonals in 4 distinct lengths:
-          <ol>
-            <li><strong>Short diagonal (<span class="math-tex">d<sub>1</sub></span>)</strong>: <span class="math-tex">d<sub>1</sub> = a√[(5 + √5)/2] ≈ 1.90211a</span></li>
-            <li><strong>Medium diagonal (<span class="math-tex">d<sub>2</sub></span>)</strong>: <span class="math-tex">d<sub>2</sub> = a · ϕ² ≈ 2.61803a</span></li>
-            <li><strong>Long diagonal (<span class="math-tex">d<sub>3</sub></span>)</strong>: <span class="math-tex">d<sub>3</sub> = a√(5 + 2√5) ≈ 3.07768a</span> (equal to flat-to-flat span <span class="math-tex">S</span>)</li>
-            <li><strong>Main diameter (<span class="math-tex">d<sub>4</sub></span>)</strong>: <span class="math-tex">d<sub>4</sub> = 2R = a(1 + √5) ≈ 3.23607a</span></li>
-          </ol>
-        </div>
+        <div class="faq-question"><span>Combien de diagonales possède un Zehneck ?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Le nombre total de diagonales est donné par n(n - 3) / 2 = 35 diagonales.</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What are the interior and exterior angles of a regular decagon?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          Each interior angle of a regular decagon is <span class="math-tex">(10 - 2) · 180° / 10 = 144°</span>. Each exterior angle is <span class="math-tex">360° / 10 = 36°</span>. The sum of all 10 interior angles is <span class="math-tex">1,440°</span>.
-        </div>
+        <div class="faq-question"><span>Quelles sont les applications architecturales et techniques ?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Cette géométrie est largement utilisée en architecture et mécanique de précision pour sa parfaite répartition des charges.</div>
       </div>
     </section>
 
@@ -841,8 +679,8 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      <div>© 2026 OmniOperand. Toutes les démonstrations mathématiques et calculs rigoureusement vérifiés.</div>
+      <div>Hébergé sur le réseau Cloudflare Edge • Conçu sans dépendances externes</div>
     </div>
   </footer>
 

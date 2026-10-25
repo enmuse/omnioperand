@@ -64,7 +64,23 @@
           "name": "How many square feet does 1 gallon of paint cover?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A standard gallon of latex interior paint covers between 350 and 400 square feet on smooth, primed walls. Textured or porous drywall may reduce coverage to 300 sq ft."
+            "text": "A standard gallon of latex interior paint covers between 350 and 400 square feet on smooth, primed walls. Textured or porous drywall may reduce coverage to 250 to 300 sq ft."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much paint do I need for a 12x14 room?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a standard 12x14 ft room with 9 ft ceilings, 2 doors, and 2 windows, the net paintable wall surface is approximately 396 sq ft. For two recommended coats (792 sq ft total coverage), you will need 2.3 gallons, requiring 3 one-gallon cans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much area does a door or window subtract?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard interior doors (3 ft by 7 ft) subtract 21 square feet each. Standard residential windows (3 ft by 5 ft) subtract approximately 15 square feet each from gross wall area."
           }
         },
         {
@@ -72,7 +88,7 @@
           "name": "Do I need primer if my paint includes primer?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For bare drywall, patched areas, or dramatic color shifts (e.g. dark red to white), a dedicated high-hide stain-blocking primer is strongly recommended."
+            "text": "For bare drywall, patched areas, stains, or dramatic color transitions (such as dark navy to off-white), a dedicated high-hide stain-blocking primer coat is strongly recommended before applying topcoats."
           }
         }
       ]
@@ -225,6 +241,16 @@
       </p>
     </section>
 
+    <!-- Position 0 Direct Answer Box -->
+    <div class="direct-answer-box" style="background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.25); border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:2rem;">
+      <div style="font-size:0.75rem; text-transform:uppercase; font-weight:700; letter-spacing:0.06em; color:var(--accent-cyan); margin-bottom:0.4rem;">Direct Trade Rule of Thumb • Paint Coverage Standard</div>
+      <p style="margin:0; font-size:1.025rem; line-height:1.6; color:var(--text-primary);">
+        As a standard industry rule, <strong>1 gallon of paint covers 350 to 400 square feet</strong> on smooth, pre-primed interior drywall. On textured surfaces, unprimed plaster, or exterior masonry, coverage drops to <strong>200 to 300 sq ft/gal</strong>. 
+        Formula: <code style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px; font-weight:600; color:var(--accent-cyan);">Net Area = [2 × (Length + Width) × Ceiling Height] - (Doors × 21 sq ft) - (Windows × 15 sq ft)</code>. 
+        For a typical <strong>12×14 ft room</strong> (9 ft ceilings, 2 doors, 2 windows), net wall area is <strong>396 sq ft</strong>: <strong>1 coat</strong> requires <strong>1.1 gallons</strong> (2 cans); <strong>2 coats</strong> require <strong>2.3 gallons</strong> (3 one-gallon cans).
+      </p>
+    </div>
+
 <!-- Master Solver Grid -->
     <div class="calculator-grid">
 
@@ -233,7 +259,12 @@
         <div class="hud-panel">
           <div class="hud-panel-header">
             <h2>Parameters & Inversions</h2>
-            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Deterministic Engine</span>
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <button id="btn-share-link" type="button" class="btn btn-secondary" style="font-size:0.75rem; padding:0.25rem 0.6rem; display:inline-flex; align-items:center; gap:0.3rem;">
+                <span>🔗 Share Link</span>
+              </button>
+              <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Deterministic Engine</span>
+            </div>
           </div>
 
           <div class="param-card-grid">
@@ -432,6 +463,78 @@
 
     </div>
 
+    <!-- Paint Coverage Reference Table -->
+    <section class="calc-table-section" style="margin-top:3rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:0.75rem;">Standard Room Paint & Gallons Reference Chart</h2>
+      <p style="color:var(--text-secondary); margin-bottom:1.5rem; font-size:0.95rem;">
+        Pre-calculated paint gallon requirements for typical residential room sizes (assuming standard 8–10 ft ceilings, 1–2 doors, and 1–2 windows at 350 sq ft/gal).
+      </p>
+      <div style="overflow-x:auto; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; padding:0.5rem;">
+        <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.9rem;">
+          <thead>
+            <tr style="border-bottom:1px solid var(--border-subtle); color:var(--text-bright);">
+              <th style="padding:0.75rem 1rem;">Room Type & Dimensions</th>
+              <th style="padding:0.75rem 1rem;">Ceiling Height</th>
+              <th style="padding:0.75rem 1rem;">Net Wall Area</th>
+              <th style="padding:0.75rem 1rem;">1 Coat (Primer)</th>
+              <th style="padding:0.75rem 1rem;">2 Coats (Finish)</th>
+              <th style="padding:0.75rem 1rem;">Recommended Purchase</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">Powder Room / Bath (6 × 8 ft)</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">8.0 ft</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">188.0 sq ft</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">0.5 gal</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:var(--accent-cyan);">1.1 gal</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">1–2 one-gallon cans (or 1 gal + 1 quart)</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">Small Bedroom (10 × 10 ft)</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">8.0 ft</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">284.0 sq ft</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">0.8 gal</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:var(--accent-cyan);">1.6 gal</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">2 one-gallon cans</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">Standard Bedroom (12 × 14 ft)</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">9.0 ft</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">396.0 sq ft</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">1.1 gal</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:var(--accent-cyan);">2.3 gal</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">3 one-gallon cans</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">Primary Suite (14 × 16 ft)</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">9.0 ft</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">468.0 sq ft</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">1.3 gal</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:var(--accent-cyan);">2.7 gal</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">3 one-gallon cans</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">Living Room (16 × 20 ft)</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">9.0 ft</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">576.0 sq ft</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">1.6 gal</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:var(--accent-cyan);">3.3 gal</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">4 one-gallon cans</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">Open Concept / Great Room (20 × 25 ft)</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">10.0 ft</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">828.0 sq ft</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">2.4 gal</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:var(--accent-cyan);">4.7 gal</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">1 five-gallon bucket (best value)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
 <!-- High-Intent FAQ Section -->
     <section class="calc-faq-section" style="margin-top:3rem;">
       <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
@@ -443,7 +546,27 @@
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            A standard gallon of latex interior paint covers between 350 and 400 square feet on smooth, primed walls. Textured or porous drywall may reduce coverage to 300 sq ft.
+            A standard gallon of latex interior paint covers between 350 and 400 square feet on smooth, primed walls. Textured or porous drywall may reduce coverage to 250 to 300 sq ft.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How much paint do I need for a 12x14 room?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            For a standard 12x14 ft room with 9 ft ceilings, 2 doors, and 2 windows, the net paintable wall surface is approximately 396 sq ft. For two recommended coats (792 sq ft total coverage), you will need 2.3 gallons, requiring 3 one-gallon cans.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How much area does a door or window subtract?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Standard interior doors (3 ft by 7 ft) subtract 21 square feet each. Standard residential windows (3 ft by 5 ft) subtract approximately 15 square feet each from gross wall area.
           </div>
         </div>
         
@@ -453,7 +576,7 @@
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            For bare drywall, patched areas, or dramatic color shifts (e.g. dark red to white), a dedicated high-hide stain-blocking primer is strongly recommended.
+            For bare drywall, patched areas, stains, or dramatic color transitions (such as dark navy to off-white), a dedicated high-hide stain-blocking primer coat is strongly recommended before applying topcoats.
           </div>
         </div>
         
@@ -503,40 +626,38 @@
         if (el) el.innerText = text;
       }
 
-      function setMetric(id, text) {
-        setDisp(id, text);
-      }
-
-      const fact = (n) => { let r = 1; for (let i = 2; i <= n; i++) r *= i; return r; };
-      const nPr = (n, r) => (r < 0 || r > n) ? 0 : fact(n) / fact(n - r);
-      const fmt = (num, dec = 2) => typeof num === 'number' ? num.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : num;
-      const acos = Math.acos;
-      const atan = Math.atan;
-      const cbrt = Math.cbrt;
-
       function recalculate() {
-        
-          const L = getNum('room_length');
-          const W = getNum('room_width');
-          const H = getNum('ceiling_height');
-          const doors = getNum('doors');
-          const windows = getNum('windows');
-          const coats = getNum('coats');
+        const L = getNum('room_length');
+        const W = getNum('room_width');
+        const H = getNum('ceiling_height');
+        const doors = getNum('doors');
+        const windows = getNum('windows');
+        const coats = getNum('coats');
 
-          const grossArea = 2 * (L + W) * H;
-          const cutoutArea = (doors * 21) + (windows * 15);
-          const netArea = Math.max(0, grossArea - cutoutArea);
-          const totalArea = netArea * coats;
-          const gallons = totalArea / 350;
-          const cans = Math.ceil(gallons);
-          const primer = netArea / 350;
+        const grossArea = 2 * (L + W) * H;
+        const cutoutArea = (doors * 21) + (windows * 15);
+        const netArea = Math.max(0, grossArea - cutoutArea);
+        const totalArea = netArea * coats;
+        const gallons = totalArea / 350;
+        const cans = Math.ceil(gallons);
+        const primer = netArea / 350;
 
-          setDisp('gallons_needed', gallons.toFixed(1) + ' gal (' + cans + ' cans)');
-          setDisp('net_wall_area', netArea.toFixed(1) + ' sq ft');
-          setDisp('primer_needed', primer.toFixed(1) + ' gal');
-          setDisp('total_coverage_area', totalArea.toFixed(1) + ' sq ft');
-        
+        setDisp('gallons_needed', gallons.toFixed(1) + ' gal (' + cans + ' cans)');
+        setDisp('net_wall_area', netArea.toFixed(1) + ' sq ft');
+        setDisp('primer_needed', primer.toFixed(1) + ' gal');
+        setDisp('total_coverage_area', totalArea.toFixed(1) + ' sq ft');
       }
+
+      // Preload from URL parameters if available
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        ['room_length', 'room_width', 'ceiling_height', 'doors', 'windows', 'coats'].forEach(param => {
+          if (urlParams.has(param)) {
+            const val = parseFloat(urlParams.get(param));
+            if (!isNaN(val)) sync(param, val);
+          }
+        });
+      } catch (e) {}
 
       // Bind input events
       document.querySelectorAll('.omni-calc-input, .omni-calc-slider').forEach(el => {
@@ -546,6 +667,27 @@
           recalculate();
         });
       });
+
+      // Share Link Handler
+      const shareBtn = document.getElementById('btn-share-link');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          const L = getNum('room_length');
+          const W = getNum('room_width');
+          const H = getNum('ceiling_height');
+          const doors = getNum('doors');
+          const windows = getNum('windows');
+          const coats = getNum('coats');
+          const shareUrl = `${window.location.origin}${window.location.pathname}?room_length=${L}&room_width=${W}&ceiling_height=${H}&doors=${doors}&windows=${windows}&coats=${coats}`;
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(shareUrl).then(() => {
+              const orig = shareBtn.innerHTML;
+              shareBtn.innerHTML = '<span>✓ Copied!</span>';
+              setTimeout(() => { shareBtn.innerHTML = orig; }, 2000);
+            });
+          }
+        });
+      }
 
       // Accordion toggle
       document.querySelectorAll('.faq-question').forEach(q => {

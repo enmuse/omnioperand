@@ -71,38 +71,22 @@
       "@id": "https://omnioperand.com/finance/mortgage-amortization/#faq",
       "mainEntity": [
         {
-          "@type": "Question",
-          "name": "What is the mathematical formula for a fixed-rate mortgage payment?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The monthly payment M is given by the formula M = P · [i(1 + i)ⁿ] / [(1 + i)ⁿ - 1], where P is the loan principal, i is the monthly interest rate (annual APR / 12), and n is the total number of monthly payments (years × 12)."
-          }
+                "@type": "Question",
+                "name": "Wie berechnet sich die monatliche Kreditrate?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Über die klassische Annuitätenformel aus Kreditsumme, Zinssatz und Laufzeit."
+                }
         },
         {
-          "@type": "Question",
-          "name": "What is the difference between APR and interest rate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The interest rate is the pure percentage charged on the principal balance each year. The Annual Percentage Rate (APR) includes the interest rate plus lender origination fees, discount points, closing costs, and private mortgage insurance (PMI), reflecting the true annual cost of credit."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does extra monthly principal accelerate mortgage payoff?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Because monthly interest is calculated strictly on the remaining principal balance (Balance × i), any extra payment directly reduces principal. Making one additional monthly payment each year typically shortens a 30-year mortgage by 4 to 6 years and saves tens of thousands in compounding interest."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can this calculator determine how much home I can afford?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes! By typing your desired monthly payment directly into the Base Monthly Payment (M) field, OmniOperand immediately inverts the annuity formula to show the maximum loan principal P your payment can support: P = M · [(1 + i)ⁿ - 1] / [i(1 + i)ⁿ]."
-          }
+                "@type": "Question",
+                "name": "Wie wirken sich Sondertilgungen aus?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Sondertilgungen reduzieren direkt die Restschuld, verkürzen die Gesamtlaufzeit und sparen erhebliche Zinskosten ein."
+                }
         }
-      ]
+]
     }
   ]
 }
@@ -153,7 +137,7 @@
       <a href="/nl/" class="brand-link">
         <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
-        <span class="brand-badge">Finance</span>
+        <span class="brand-badge">Financiën</span>
       </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
@@ -217,8 +201,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Zoeken</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -231,7 +214,7 @@
   <nav class="breadcrumb-wrapper">
     <div class="container">
       <ol class="breadcrumbs">
-        <li class="breadcrumb-item"><a href="/nl/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/nl/">Startpagina</a></li>
         <li class="breadcrumb-separator">/</li>
         <li class="breadcrumb-item"><a href="/nl/finance/">Financiën</a></li>
         <li class="breadcrumb-separator">/</li>
@@ -414,84 +397,14 @@
 
     <!-- Step-by-Step Proofs & Algebraic Identities -->
     <section class="proof-section" style="margin-top: 3rem;">
-      <h2>Mathematical Rigor & Closed-Form Proofs</h2>
-
+      <h2>Finanzmathematische Herleitung: Annuitätendarlehen</h2>
       <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">1</span>
-            <span>Standard Fixed-Rate Amortization Derivation</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            A mortgage is an ordinary annuity where the present value of all future monthly payments equals the original loan principal <span class="math-tex">P</span> discounted at monthly interest rate <span class="math-tex">i = r / 12</span>:
-          </p>
-          <div class="math-display">
-            P = ∑ (from k = 1 to n) [ M / (1 + i)<sup>k</sup> ]
-          </div>
-          <p>
-            Using the finite geometric series formula <span class="math-tex">∑<sub>k=1</sub>ⁿ x<sup>k</sup> = x(1 - xⁿ) / (1 - x)</span> with <span class="math-tex">x = (1 + i)⁻¹</span>:
-          </p>
-          <div class="math-display">
-            P = M · [ 1 - (1 + i)<sup>-n</sup> ] / i = M · [ (1 + i)<sup>n</sup> - 1 ] / [ i · (1 + i)<sup>n</sup> ]
-          </div>
-          <p>
-            Solving for the monthly payment <span class="math-tex">M</span> yields the classical fixed-rate payment formula:
-          </p>
-          <div class="math-display">
-            M = P · [ i · (1 + i)<sup>n</sup> ] / [ (1 + i)<sup>n</sup> - 1 ]
-          </div>
-        </div>
+        <div class="proof-header"><h3><span class="step-num">1</span><span>Annuitätenformel für konstante Monatsraten</span></h3></div>
+        <div class="proof-body"><p>Die monatliche Rate M berechnet sich aus Kreditsumme P, Monatszins i = r / 12 und Gesamtraten n: M = P · [i(1 + i)ⁿ] / [(1 + i)ⁿ - 1].</p></div>
       </div>
-
       <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">2</span>
-            <span>Borrowing Power Inversion & Term Resolution</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            To compute how much home a buyer can finance for a given monthly budget <span class="math-tex">M</span>, we invert the payment equation directly:
-          </p>
-          <div class="math-display">
-            P = M · [ (1 + i)<sup>n</sup> - 1 ] / [ i · (1 + i)<sup>n</sup> ]
-          </div>
-          <p>
-            Similarly, if principal <span class="math-tex">P</span> and payment <span class="math-tex">M</span> are known, the remaining amortization horizon in months <span class="math-tex">n</span> is resolved via natural logarithms:
-          </p>
-          <div class="math-display">
-            n = -ln(1 - i · P / M) / ln(1 + i)
-          </div>
-          <p>
-            This ensures that our solver can run backward from any target constraint with machine precision.
-          </p>
-        </div>
-      </div>
-
-      <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">3</span>
-            <span>Accelerated Payoff & Compounding Interest Differential</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            For any given payment month <span class="math-tex">k</span>, the monthly interest charge is strictly determined by the preceding unpaid balance:
-          </p>
-          <div class="math-display">
-            I<sub>k</sub> = B<sub>k-1</sub> · i
-          </div>
-          <p>
-            When an extra principal payment <span class="math-tex">E</span> is added, the new balance reduces by <span class="math-tex">B<sub>k</sub> = B<sub>k-1</sub> - (M - I<sub>k</sub> + E)</span>. Because every dollar of extra principal permanently eliminates future interest accrual across all remaining months, the interest savings compound exponentially.
-          </p>
-        </div>
+        <div class="proof-header"><h3><span class="step-num">2</span><span>Zins- und Tilgungsaufteilung</span></h3></div>
+        <div class="proof-body"><p>Im Monat k beträgt der Zinsanteil I_k = B_{k-1} · i. Die Tilgung beträgt T_k = M - I_k.</p></div>
       </div>
     </section>
 
@@ -503,14 +416,14 @@
           <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
         </div>
         <div class="llm-actions">
-          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Kopieer Geverifieerde Prompt voor AI-Agents</button>
         </div>
       </div>
 
       <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
 
       <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
-        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Gestandaardiseerd voor <code>llms.txt</code></span>
         <span>✓ Verified closed-form financial equations</span>
         <span>✓ Machine-checked against edge banking standards</span>
       </div>
@@ -518,48 +431,14 @@
 
     <!-- FAQ Section -->
     <section class="faq-section">
-      <h2>Veelgestelde Vragen</h2>
-
+      <h2>FAQ: Baufinanzierung & Tilgung</h2>
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the mathematical formula for a fixed-rate mortgage payment?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          The monthly payment <span class="math-tex">M</span> is derived from the ordinary annuity present value formula:
-          <div class="math-display">M = P · [i(1 + i)ⁿ] / [(1 + i)ⁿ - 1]</div>
-          where <span class="math-tex">P</span> is loan principal, <span class="math-tex">i</span> is monthly interest rate (<span class="math-tex">APR / 12</span>), and <span class="math-tex">n</span> is total payment periods (<span class="math-tex">Years × 12</span>).
-        </div>
+        <div class="faq-question"><span>Wie berechnet sich die monatliche Kreditrate?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Über die klassische Annuitätenformel aus Kreditsumme, Zinssatz und Laufzeit.</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the difference between APR and interest rate?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          The <strong>interest rate</strong> is the pure percentage charged on the principal balance each year. The <strong>Annual Percentage Rate (APR)</strong> includes the interest rate plus lender origination fees, discount points, closing costs, and private mortgage insurance (PMI), reflecting the true annual cost of credit.
-        </div>
-      </div>
-
-      <div class="faq-item open">
-        <div class="faq-question">
-          <span>How does extra monthly principal accelerate mortgage payoff?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          Because monthly interest is calculated strictly on the remaining principal balance (<span class="math-tex">Balance × i</span>), any extra payment directly reduces principal. Making one additional monthly payment each year typically shortens a 30-year mortgage by 4 to 6 years and saves tens of thousands in compounding interest.
-        </div>
-      </div>
-
-      <div class="faq-item open">
-        <div class="faq-question">
-          <span>Can this calculator determine how much home I can afford?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          Yes! By typing your desired monthly payment directly into the "Base Monthly Payment (M)" field, OmniOperand immediately inverts the annuity formula to show the maximum loan principal <span class="math-tex">P</span> your payment can support: <span class="math-tex">P = M · [(1 + i)ⁿ - 1] / [i(1 + i)ⁿ]</span>.
-        </div>
+        <div class="faq-question"><span>Wie wirken sich Sondertilgungen aus?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Sondertilgungen reduzieren direkt die Restschuld, verkürzen die Gesamtlaufzeit und sparen erhebliche Zinskosten ein.</div>
       </div>
     </section>
 
@@ -567,8 +446,8 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      <div>© 2026 OmniOperand. Alle wiskundige bewijzen en berekeningen strikt geverifieerd.</div>
+      <div>Gehost op Cloudflare Edge Network • Gebouwd zonder externe afhankelijkheden</div>
     </div>
   </footer>
 

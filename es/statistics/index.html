@@ -87,7 +87,7 @@
     .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
     .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
     .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
-    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-entre; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
     .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
     .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
     .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
@@ -107,7 +107,7 @@
       <a href="/es/" class="brand-link">
         <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
-        <span class="brand-badge">Statistics</span>
+        <span class="brand-badge">Estadística</span>
       </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
@@ -154,7 +154,7 @@
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="lang-dropdown-menu">
-            <a href="/statistics/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/statistics/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
             <a href="/es/statistics/" class="lang-dropdown-item active"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
             <a href="/fr/statistics/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
             <a href="/de/statistics/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
@@ -171,8 +171,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Buscar</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -194,11 +193,11 @@
 
   <main class="container" style="padding: 2.5rem 0;">
     <div style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--accent-blue); background:rgba(56,189,248,0.1); padding:0.3rem 0.8rem; border-radius:999px; margin-bottom:0.75rem;">
-      Domain Hub • Probability & Statistics
+      Domain Hub • Estadística
     </div>
     <h1>Probabilidad y Estadística Matemática</h1>
     <p style="max-width:800px; color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem; line-height:1.6;">
-      Stochastic models, probability mass/density functions, parameter estimation, z-scores, combinatorics, and Bayesian inference.
+      Stochastic models, probability mass/density functions, parameter estimation, z-scores, combinatorics, y Bayesian inference.
     </p>
 
 <div class="hub-grid" style="margin-top:2rem;">
@@ -209,11 +208,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📊</div>
               <span class="hub-badge">Statistical Inference • Variance & Dispersion Matrix</span>
             </div>
-            <h2 class="hub-card-title">Standard Deviation & Variance Calculator</h2>
-            <p class="hub-card-desc">Calculate sample and population standard deviation, variance, arithmetic mean, and sum of squared deviations for statistical datasets.</p>
+            <h2 class="hub-card-title">Standard Deviation & Variance Calculadora</h2>
+            <p class="hub-card-desc">Calcule sample y population standard deviation, variance, arithmetic mean, y sum de squared deviations para statistical datasets.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/statistics/standard-deviation/">Open Solver →</a></li>
+            <li><a href="/statistics/standard-deviation/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -223,11 +222,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📊</div>
               <span class="hub-badge">Gaussian Statistics • Standard Normal Matrix</span>
             </div>
-            <h2 class="hub-card-title">Z-Score & Standard Normal Distribution Calculator</h2>
-            <p class="hub-card-desc">Calculate standard score z, cumulative probability P(Z < z), two-tailed p-value, and percentile rank in a standard normal distribution.</p>
+            <h2 class="hub-card-title">Z-Score & Standard Normal Distribution Calculadora</h2>
+            <p class="hub-card-desc">Calcule standard score z, cumulative probability P(Z < z), two-tailed p-value, y percentile rank in a standard normal distribution.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/statistics/z-score/">Open Solver →</a></li>
+            <li><a href="/statistics/z-score/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -237,11 +236,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📊</div>
               <span class="hub-badge">Combinatorics • Discrete Math Matrix</span>
             </div>
-            <h2 class="hub-card-title">Permutations & Combinations (nPr & nCr) Calculator</h2>
-            <p class="hub-card-desc">Calculate factorials, permutations (ordered nPr), and combinations (unordered binomial coefficients nCr) with exact integer precision.</p>
+            <h2 class="hub-card-title">Permutations & Combinations (nPr & nCr) Calculadora</h2>
+            <p class="hub-card-desc">Calcule factorials, permutations (ordered nPr), y combinations (unordered binomial coefficients nCr) con exact integer precision.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/statistics/permutations-combinations/">Open Solver →</a></li>
+            <li><a href="/statistics/permutations-combinations/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -251,11 +250,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">📊</div>
               <span class="hub-badge">Epistemology & Probability • Bayesian Update Matrix</span>
             </div>
-            <h2 class="hub-card-title">Bayes' Theorem & Conditional Probability Calculator</h2>
-            <p class="hub-card-desc">Calculate posterior probability P(A|B), prior odds, likelihood ratio, and diagnostic true/false positive rates using Bayes' rule.</p>
+            <h2 class="hub-card-title">Bayes' Theorem & Conditional Probability Calculadora</h2>
+            <p class="hub-card-desc">Calcule posterior probability P(A|B), prior odds, likelihood ratio, y diagnostic true/false positive rates using Bayes' rule.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/statistics/bayes-theorem/">Open Solver →</a></li>
+            <li><a href="/statistics/bayes-theorem/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -265,8 +264,8 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      <div>© 2026 OmniOperand. Todas las demostraciones matemáticas y cálculos rigurosamente verificados.</div>
+      <div>Alojado en Cloudflare Edge Network • Construido sin dependencias externas</div>
     </div>
   </footer>
 

@@ -86,38 +86,38 @@
       "@id": "https://omnioperand.com/geometry/2d/shapes/octagon/#faq",
       "mainEntity": [
         {
-          "@type": "Question",
-          "name": "What is the formula for the area of a regular octagon?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The area of a regular octagon with side length a is given by A = 2(1 + √2)a² ≈ 4.828427a². In terms of the inradius (apothem) r_i, the area is A = 8(√2 - 1)r_i² ≈ 3.313708r_i². In terms of the span (flat-to-flat distance S = 2r_i), the area is A = 2(√2 - 1)S² ≈ 0.828427S²."
-          }
+                "@type": "Question",
+                "name": "Vad är formeln för arean av en Achteck?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Arean av en Achteck med sidolängd a är A = 2(1 + √2)a² ≈ 4,828427a²."
+                }
         },
         {
-          "@type": "Question",
-          "name": "How do you calculate the side length of an octagon from its area?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "To find the side length a from area A, divide the area by 2(1 + √2) and take the square root: a = √(A / [2(1 + √2)]) = √(A · (√2 - 1) / 2) ≈ 0.4550898 · √A."
-          }
+                "@type": "Question",
+                "name": "Hur beräknar man sidolängden från arean?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Dividera arean A med geometrifaktorn och ta kvadratroten för att erhålla sidolängden a."
+                }
         },
         {
-          "@type": "Question",
-          "name": "What are the three different diagonal lengths of a regular octagon?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A regular octagon has 20 total diagonals of 3 distinct lengths: (1) Short diagonal d_S = a√(2 + √2) ≈ 1.84776a connecting vertices separated by one vertex; (2) Medium diagonal (Span / Height) S = a(1 + √2) ≈ 2.41421a connecting opposite parallel sides; (3) Long diagonal d_L = a√(4 + 2√2) = 2R ≈ 2.61313a connecting opposite vertices passing through the center."
-          }
+                "@type": "Question",
+                "name": "Hur många diagonaler har en Achteck?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Totalt antal diagonaler ges av n(n - 3) / 2 = 20 diagonaler."
+                }
         },
         {
-          "@type": "Question",
-          "name": "What is the miter angle for building an octagon frame or gazebo?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Each corner of a regular octagon has an interior angle of 135°. When joining two pieces of wood to form this corner, each piece must be cut at a 22.5° miter angle (90° - 135°/2 = 22.5°)."
-          }
+                "@type": "Question",
+                "name": "Vilka tekniska tillämpningar finns det?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Används inom byggnadskonstruktion och formgivning där symmetri ger maximal vridstyvhet."
+                }
         }
-      ]
+]
     }
   ]
 }
@@ -168,7 +168,7 @@
       <a href="/sv/" class="brand-link">
         <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
-        <span class="brand-badge">Geometry</span>
+        <span class="brand-badge">Geometri</span>
       </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
@@ -232,8 +232,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Sök</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -285,9 +284,7 @@
     <section class="calculator-hero">
       <div class="calc-title-badge">Polygon Geometry • 8-Sided Regular Polytope</div>
       <h1>Regelbunden Åtahörning Kalkylator</h1>
-      <p>
-        High-precision bidirectional analytic solver. Enter <strong>any single known variable</strong>—such as side length, area, perimeter, apothem (inradius), circumradius, or any of the 3 diagonals—and all other 7 geometric parameters will compute instantaneously with exact radical derivations.
-      </p>
+      <p>Universell dubbelriktad matematisk kalkylator. Ange valfri känd variabel för att direkt beräkna sidor, radier, area och diagonaler med maskinprecision.</p>
     </section>
 
 <!-- Dual-Column Interactive Solver & SVG Blueprint -->
@@ -489,17 +486,17 @@
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon></svg>
             <span>Interactive Analytic Blueprint</span>
           </div>
-          <div class="canvas-hud-coords" id="blueprint-coord-display">Hover vertex for coordinates</div>
+          <div class="canvas-hud-coords" id="blueprint-coord-display">Håll muspekaren över hörn för koordinater</div>
         </div>
 
         <!-- Blueprint Layer Toggles -->
         <div class="blueprint-layer-bar">
-          <span class="layer-bar-label">Layers:</span>
-          <button class="layer-pill active" id="toggle-layer-grid" title="Toggle Coordinate Grid & Axes">Grid</button>
-          <button class="layer-pill active" id="toggle-layer-circles" title="Toggle Incircle & Circumcircle">Circles</button>
-          <button class="layer-pill active" id="toggle-layer-dims" title="Toggle Dimension Lines">Dimensions</button>
-          <button class="layer-pill active" id="toggle-layer-labels" title="Toggle Vertex Points">Vertices</button>
-          <button class="layer-pill" id="toggle-blueprint-theme" title="Toggle Blueprint Theme">Blueprint Mode</button>
+          <span class="layer-bar-label">Lager:</span>
+          <button class="layer-pill active" id="toggle-layer-grid" title="Toggle Coordinate Grid & Axes">Rutnät</button>
+          <button class="layer-pill active" id="toggle-layer-circles" title="Toggle Incircle & Circumcircle">Cirklar</button>
+          <button class="layer-pill active" id="toggle-layer-dims" title="Toggle Dimension Lines">Mått</button>
+          <button class="layer-pill active" id="toggle-layer-labels" title="Toggle Vertex Points">Hörn</button>
+          <button class="layer-pill" id="toggle-blueprint-theme" title="Toggle Blueprint Theme">Ritningsläge</button>
         </div>
 
         <div class="canvas-wrapper" id="blueprint-canvas-wrapper">
@@ -566,7 +563,7 @@
           <div class="license-badge-row">
             <span class="license-badge">
               <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              Free for Commerce & Academia
+              Gratis för Kommersiellt och Akademiskt Bruk
             </span>
             <span class="license-cc">CC BY 4.0 License</span>
           </div>
@@ -575,14 +572,14 @@
           </p>
           <div class="attribution-snippet-group">
             <div class="snippet-header">
-              <span>Web Backlink Attribution:</span>
+              <span>Webb-tillbakalänk:</span>
               <button class="copy-snippet-btn" id="copy-backlink-html">Copy HTML</button>
             </div>
             <code class="snippet-code" id="snippet-backlink-html">&lt;a href="https://omnioperand.com/geometry/2d/shapes/octagon/" target="_blank" rel="noopener"&gt;Diagram courtesy of OmniOperand&lt;/a&gt;</code>
           </div>
           <div class="attribution-snippet-group" style="margin-top:0.45rem;">
             <div class="snippet-header">
-              <span>Academic BibTeX Citation:</span>
+              <span>Akademisk BibTeX-citering:</span>
               <button class="copy-snippet-btn" id="copy-backlink-bibtex">Copy BibTeX</button>
             </div>
             <code class="snippet-code" id="snippet-backlink-bibtex">@misc{omnioperand_octagon, title={Regular Octagon Calculator & Blueprint}, author={OmniOperand}, url={https://omnioperand.com/geometry/2d/shapes/octagon/}, year={2026}}</code>
@@ -594,226 +591,47 @@
 
     <!-- Deep Mathematical Explanations & Step-by-Step Proofs -->
     <section class="proofs-section">
-      <h2>Mathematical Foundations & Analytical Derivations</h2>
-      <p>
-        A regular octagon is a two-dimensional convex regular polygon with 8 equal sides and 8 equal interior angles. It belongs to the dihedral symmetry group <strong>D<sub>8</sub></strong>, featuring 8 axes of reflective symmetry and 8-fold rotational symmetry (45° rotational invariance).
-      </p>
-
-      <!-- Proof Card 1: Angles & Invariants -->
+      <h2>Matematiska Grunder & Analytiska Härledningar</h2>
+      <p>En regelbunden Achteck är en plan konvex polygon med 8 lika långa sidor och 8 lika stora vinklar. Den tillhör den dihedrala symmetrigruppen D_8.</p>
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">1</span>
-            <span>Interior, Exterior & Central Angles</span>
-          </h3>
+          <h3><span class="step-num">1</span><span>Inre, Yttre och Centrala Vinklar</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <div class="proof-step">
-            <div class="step-num">a</div>
-            <div class="step-content">
-              <strong>Sum of Interior Angles:</strong>
-              For any convex <span class="math-tex">n</span>-gon, the sum of interior angles is given by <span class="math-tex">S = (n - 2) × 180°</span>. For an octagon (<span class="math-tex">n = 8</span>):
-              <div class="math-display">
-                S = (8 - 2) × 180° = 6 × 180° = 1080° &nbsp; (6π rad)
-              </div>
-            </div>
-          </div>
-          <div class="proof-step">
-            <div class="step-num">b</div>
-            <div class="step-content">
-              <strong>Individual Interior Angle (α):</strong>
-              Because the polygon is regular, all 8 angles are congruent:
-              <div class="math-display">
-                α = 1080° / 8 = 135° &nbsp; (3π / 4 rad)
-              </div>
-            </div>
-          </div>
-          <div class="proof-step">
-            <div class="step-num">c</div>
-            <div class="step-content">
-              <strong>Central & Exterior Angle (β):</strong>
-              Dividing a full revolution (360°) equally among 8 sectors yields:
-              <div class="math-display">
-                β = 360° / 8 = 45° &nbsp; (π / 4 rad)
-              </div>
-              The half-central angle subtending each right triangle is <span class="math-tex">θ = 45° / 2 = 22.5° &nbsp; (π / 8 rad)</span>.
-            </div>
-          </div>
+          <p>Summan av innerhörnens vinklar: För n = 8 är S = (8 - 2) × 180°.</p>
+          <p>Varje enskild inre vinkel är α = S / n.</p>
+          <p>Medelpunktsvinkeln och yttervinkeln är β = 360° / n.</p>
         </div>
       </div>
-
-      <!-- Proof Card 2: Apothem & Inradius -->
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">2</span>
-            <span>Apothem (Inradius) Exact Radical Derivation</span>
-          </h3>
+          <h3><span class="step-num">2</span><span>Apotem (Inskriven Radie) & Omskriven Radie</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <p>
-            The apothem <span class="math-tex">r<sub>i</sub></span> is the perpendicular distance from the geometric center to the midpoint of any side. In the right triangle formed by the center, a vertex, and the side midpoint:
-          </p>
-          <div class="math-display">
-            tan(22.5°) = (a / 2) / r<sub>i</sub> ⟹ r<sub>i</sub> = a / [2 · tan(22.5°)]
-          </div>
-          <p>
-            Using the tangent half-angle trigonometric identity <span class="math-tex">tan(θ / 2) = sin(θ) / [1 + cos(θ)]</span> with <span class="math-tex">θ = 45°</span>:
-          </p>
-          <div class="math-display">
-            tan(22.5°) = (√2 / 2) / (1 + √2 / 2) = √2 / (2 + √2) = [√2(2 - √2)] / (4 - 2) = √2 - 1
-          </div>
-          <p>
-            Substituting this into the apothem formula and rationalizing the denominator:
-          </p>
-          <div class="math-display">
-            r<sub>i</sub> = a / [2(√2 - 1)] = [a(√2 + 1)] / [2(2 - 1)] = [a(1 + √2)] / 2 ≈ 1.20710678 · a
-          </div>
+          <p>Apotemet r_i är det vinkelräta avståndet till kanten: r_i = a / [2 tan(180° / 8)]. r_i = ½(1 + √2)a</p>
+          <p>Den omskrivna radien R går från centrum till hörnen: R = a / [2 sin(180° / 8)].</p>
         </div>
       </div>
-
-      <!-- Proof Card 3: Circumradius -->
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">3</span>
-            <span>Circumradius Exact Radical Derivation</span>
-          </h3>
+          <h3><span class="step-num">3</span><span>Exakt Areaberäkning & Triangulering</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <p>
-            The circumradius <span class="math-tex">R</span> is the distance from the center to any vertex:
-          </p>
-          <div class="math-display">
-            sin(22.5°) = (a / 2) / R ⟹ R = a / [2 · sin(22.5°)]
-          </div>
-          <p>
-            Applying the sine half-angle identity <span class="math-tex">sin(22.5°) = √[(1 - cos(45°)) / 2] = √[(1 - √2/2) / 2] = √(2 - √2) / 2</span>:
-          </p>
-          <div class="math-display">
-            R = a / [2 · (√(2 - √2) / 2)] = a / √(2 - √2) = [a√(2 + √2)] / √(4 - 2) = [a√(4 + 2√2)] / 2 ≈ 1.30656296 · a
-          </div>
+          <p>Uppdelning i 8 kongruenta trianglar ger arean: A = 2(1 + √2)a² ≈ 4,828427a².</p>
         </div>
       </div>
-
-      <!-- Proof Card 4: Four Area Derivations -->
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">4</span>
-            <span>Area Derivation: Four Distinct Proof Methods</span>
-          </h3>
+          <h3><span class="step-num">4</span><span>Diagonalklasser & Cosinussatsen</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <div class="proof-step">
-            <div class="step-num">A</div>
-            <div class="step-content">
-              <strong>Method 1: Sum of 8 Isosceles Triangles</strong>
-              The octagon can be partitioned into 8 congruent isosceles triangles, each having base <span class="math-tex">a</span> and height equal to apothem <span class="math-tex">r<sub>i</sub></span>:
-              <div class="math-display">
-                A = 8 × (½ · a · r<sub>i</sub>) = 4a · [a(1 + √2) / 2] = 2(1 + √2)a² ≈ 4.82842712 · a²
-              </div>
-            </div>
-          </div>
-
-          <div class="proof-step">
-            <div class="step-num">B</div>
-            <div class="step-content">
-              <strong>Method 2: Bounding Square Subtraction (Carpentry Cut-Off Method)</strong>
-              Enclose the octagon in a tight bounding square. Each of the 4 corners is an isosceles right triangle with hypotenuse <span class="math-tex">a</span>.
-              The legs of each corner triangle are <span class="math-tex">x = a / √2</span>.
-              The total side length of the bounding square is:
-              <div class="math-display">
-                S = a + 2x = a + 2(a / √2) = a(1 + √2)
-              </div>
-              The area of the square is <span class="math-tex">S² = a²(1 + √2)² = a²(3 + 2√2)</span>.
-              The total area of the 4 corner triangles is <span class="math-tex">4 × (½ x²) = 2(a² / 2) = a²</span>.
-              Subtracting the 4 corners:
-              <div class="math-display">
-                A = S² - a² = a²(3 + 2√2) - a² = 2(1 + √2)a²
-              </div>
-            </div>
-          </div>
-
-          <div class="proof-step">
-            <div class="step-num">C</div>
-            <div class="step-content">
-              <strong>Method 3: From Flat-to-Flat Span (<span class="math-tex">S</span>)</strong>
-              Because <span class="math-tex">S = a(1 + √2) ⟹ a = S / (1 + √2) = S(√2 - 1)</span>:
-              <div class="math-display">
-                A = 2(1 + √2)[S(√2 - 1)]² = 2(1 + √2)(3 - 2√2)S² = 2(√2 - 1)S² ≈ 0.82842712 · S²
-              </div>
-            </div>
-          </div>
-
-          <div class="proof-step">
-            <div class="step-num">D</div>
-            <div class="step-content">
-              <strong>Method 4: From Circumradius (<span class="math-tex">R</span>)</strong>
-              Using the triangle area formula with central angle <span class="math-tex">β = 45°</span>:
-              <div class="math-display">
-                A = 8 × [½ R² sin(45°)] = 4R² · (√2 / 2) = 2√2 · R² ≈ 2.82842712 · R²
-              </div>
-            </div>
-          </div>
+          <p>En regelbunden polygon med 8 sidor har 20 diagonaler. 3 Diagonallängen</p>
         </div>
       </div>
-
-      <!-- Proof Card 5: Diagonals -->
-      <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">5</span>
-            <span>The 3 Distinct Diagonal Classes & Law of Cosines</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            An <span class="math-tex">n</span>-gon has <span class="math-tex">n(n - 3) / 2</span> diagonals. For <span class="math-tex">n = 8</span>, there are exactly <span class="math-tex">8(5) / 2 = 20</span> diagonals, grouped into three distinct congruence classes:
-          </p>
-          <div class="proof-step">
-            <div class="step-num">1</div>
-            <div class="step-content">
-              <strong>Short Diagonal (<span class="math-tex">d<sub>S</sub></span>, 8 total):</strong>
-              Connects vertices separated by 1 vertex. In the triangle formed by two adjacent sides of length <span class="math-tex">a</span> and interior angle 135°, apply the Law of Cosines:
-              <div class="math-display">
-                d<sub>S</sub>² = a² + a² - 2a² cos(135°) = 2a² - 2a²(-√2 / 2) = a²(2 + √2)
-              </div>
-              <div class="math-display">
-                d<sub>S</sub> = a · √(2 + √2) ≈ 1.84775907 · a
-              </div>
-            </div>
-          </div>
-
-          <div class="proof-step">
-            <div class="step-num">2</div>
-            <div class="step-content">
-              <strong>Medium Diagonal / Span (<span class="math-tex">S</span>, 8 total):</strong>
-              Connects vertices across two intervening sides. This equals the flat-to-flat height:
-              <div class="math-display">
-                S = 2r<sub>i</sub> = a(1 + √2) ≈ 2.41421356 · a
-              </div>
-            </div>
-          </div>
-
-          <div class="proof-step">
-            <div class="step-num">3</div>
-            <div class="step-content">
-              <strong>Long Diagonal / Diameter (<span class="math-tex">d<sub>L</sub></span>, 4 total):</strong>
-              Connects directly opposite vertices through the polygon center. This is the diameter of the circumcircle:
-              <div class="math-display">
-                d<sub>L</sub> = 2R = a · √(4 + 2√2) ≈ 2.61312593 · a
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </section>
 
     <!-- LLM Instructions & Agent Prompting Section -->
@@ -824,7 +642,7 @@
           <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
         </div>
         <div class="llm-actions">
-          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Kopiera Verifierad Prompt för AI-Agenter</button>
           <button class="btn btn-secondary btn-sm" id="copy-json-btn">Copy JSON Data</button>
         </div>
       </div>
@@ -836,60 +654,31 @@
       <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
 
       <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
-        <span>✓ Standardized for <code>llms.txt</code></span>
-        <span>✓ Precision verified up to 10 decimal digits</span>
-        <span>✓ Exact analytic radicals included</span>
+        <span>✓ Standardiserad för <code>llms.txt</code></span>
+        <span>✓ Precision verifierad upp till 10 decimaler</span>
+        <span>✓ Exakta analytiska rötter inkluderade</span>
       </div>
     </section>
 
     <!-- Frequently Asked Questions (FAQ) Section -->
     <section class="faq-section">
-      <h2>Vanliga Frågor</h2>
-      
+      <h2>FAQ</h2>
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the formula for the area of a regular octagon?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          The area of a regular octagon with side length <span class="math-tex">a</span> is <span class="math-tex">A = 2(1 + √2)a² ≈ 4.828427a²</span>. If you know the inradius (apothem) <span class="math-tex">r<sub>i</sub></span>, the area is <span class="math-tex">A = 8(√2 - 1)r<sub>i</sub>² ≈ 3.313708r<sub>i</sub>²</span>. If you know the flat-to-flat span <span class="math-tex">S</span>, the area is <span class="math-tex">A = 2(√2 - 1)S² ≈ 0.828427S²</span>.
-        </div>
+        <div class="faq-question"><span>Vad är formeln för arean av en Achteck?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Arean av en Achteck med sidolängd a är A = 2(1 + √2)a² ≈ 4,828427a².</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>How do you calculate the side length from the area of an octagon?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          To solve for side length <span class="math-tex">a</span> from area <span class="math-tex">A</span>, invert the formula:
-          <span class="math-tex">a = √[A / (2(1 + √2))] = √[A(√2 - 1) / 2] ≈ 0.4550898 · √A</span>.
-        </div>
+        <div class="faq-question"><span>Hur beräknar man sidolängden från arean?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Dividera arean A med geometrifaktorn och ta kvadratroten för att erhålla sidolängden a.</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>How do you find the three diagonal lengths of an octagon?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          A regular octagon has three distinct diagonal lengths:
-          1. <strong>Short diagonal (<span class="math-tex">d<sub>S</sub></span>)</strong>: <span class="math-tex">d<sub>S</sub> = a · √(2 + √2) ≈ 1.84776a</span>
-          2. <strong>Medium diagonal / Span (<span class="math-tex">S</span>)</strong>: <span class="math-tex">S = a(1 + √2) ≈ 2.41421a</span>
-          3. <strong>Long diagonal (<span class="math-tex">d<sub>L</sub></span>)</strong>: <span class="math-tex">d<sub>L</sub> = a · √(4 + 2√2) ≈ 2.61313a</span>
-        </div>
+        <div class="faq-question"><span>Hur många diagonaler har en Achteck?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Totalt antal diagonaler ges av n(n - 3) / 2 = 20 diagonaler.</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What miter angle should I cut on a miter saw to build an octagon?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          Each interior angle of a regular octagon is <span class="math-tex">135°</span>. Because two pieces of wood meet at each corner, divide the corner angle in half: <span class="math-tex">135° / 2 = 67.5°</span>. Since miter saws measure angles relative to a 90° square cut, set your saw to <strong>22.5°</strong> (<span class="math-tex">90° - 67.5° = 22.5°</span>).
-        </div>
+        <div class="faq-question"><span>Vilka tekniska tillämpningar finns det?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Används inom byggnadskonstruktion och formgivning där symmetri ger maximal vridstyvhet.</div>
       </div>
-
     </section>
 
   </main>
@@ -910,16 +699,16 @@
             <li><a href="/sv/geometry/2d/shapes/octagon/">Regular Octagon</a></li>
             <li><a href="/sv/geometry/2d/shapes/">Polygons & Shapes</a></li>
             <li><a href="/sv/geometry/2d/">Tvådimensionell (2D) Geometri</a></li>
-            <li><a href="/geometry/">Geometry Directory</a></li>
+            <li><a href="/sv/geometry/">Geometry Directory</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h3>Core Domains</h3>
           <ul class="footer-links">
-            <li><a href="/calculus/">Calculus & Analysis</a></li>
-            <li><a href="/finance/">Quantitative Finance</a></li>
-            <li><a href="/physics/">Physics & Mechanics</a></li>
-            <li><a href="/statistics/">Probability & Statistics</a></li>
+            <li><a href="/sv/calculus/">Calculus & Analysis</a></li>
+            <li><a href="/sv/finance/">Quantitative Finance</a></li>
+            <li><a href="/sv/physics/">Physics & Mechanics</a></li>
+            <li><a href="/sv/statistics/">Probability & Statistics</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -934,8 +723,8 @@
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-        <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+        <div>© 2026 OmniOperand. Alla matematiska bevis och beräkningar rigoröst verifierade.</div>
+        <div>Drift på Cloudflare Edge Network • Byggd utan externa beroenden</div>
       </div>
     </div>
   </footer>

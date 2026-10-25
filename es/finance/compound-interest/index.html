@@ -71,38 +71,22 @@
       "@id": "https://omnioperand.com/finance/compound-interest/#faq",
       "mainEntity": [
         {
-          "@type": "Question",
-          "name": "What is the formula for compound interest with regular deposits?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The total future value combines lump-sum compounding and ordinary annuity compounding: FV = P(1 + r/m)ᵐᵗ + PMT · [((1 + i_p)ᴺ - 1) / i_p], where P is initial principal, r is annual nominal rate, m is compounding frequency per year, t is years, and PMT is periodic payment."
-          }
+                "@type": "Question",
+                "name": "Was ist der Unterschied zwischen Nominalzins und Effektivzins?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Der Effektivzins (APY) berücksichtigt den Zinseszinseffekt unterjähriger Zinsgutschriften."
+                }
         },
         {
-          "@type": "Question",
-          "name": "How does compounding frequency impact returns?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The more frequently interest is added to principal (daily vs monthly vs annually), the faster interest begins earning interest on itself. For an 8% return on $10,000 over 20 years, annual compounding yields $46,610, monthly yields $49,268, and continuous compounding yields $49,530."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the difference between APR and APY?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "APR is the nominal annual rate without compounding. APY (Annual Percentage Yield) reflects the true annual return accounting for intra-year compounding: APY = (1 + r/m)ᵐ - 1."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the Rule of 72?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The Rule of 72 is an analytical shortcut to estimate how many years it takes for an investment to double at a constant annual rate: Years to Double ≈ 72 / Interest Rate. For example, at an 8% return, your money doubles in approximately 72 / 8 = 9 years."
-          }
+                "@type": "Question",
+                "name": "Was besagt die 72er-Regel?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Die Verdopplungszeit eines Kapitals in Jahren beträgt näherungsweise 72 dividiert durch den Zinssatz."
+                }
         }
-      ]
+]
     }
   ]
 }
@@ -153,7 +137,7 @@
       <a href="/es/" class="brand-link">
         <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
-        <span class="brand-badge">Finance</span>
+        <span class="brand-badge">Finanzas</span>
       </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
@@ -217,8 +201,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Buscar</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -400,81 +383,14 @@
 
     <!-- Proofs Section -->
     <section class="proof-section" style="margin-top: 3rem;">
-      <h2>Mathematical Rigor & Closed-Form Formulations</h2>
-
+      <h2>Finanzmathematik: Zinseszinsformel</h2>
       <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">1</span>
-            <span>Discrete Compounding & Annuity Synthesis</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            When interest compounds <span class="math-tex">m</span> times per year at nominal annual rate <span class="math-tex">r</span>, the interest earned each period is <span class="math-tex">i = r / m</span>. Over <span class="math-tex">t</span> years, the total compounding periods are <span class="math-tex">N = m · t</span>:
-          </p>
-          <div class="math-display">
-            FV<sub>lump</sub> = P · (1 + r / m)<sup>m · t</sup>
-          </div>
-          <p>
-            For regular periodic deposits <span class="math-tex">PMT</span> made at the end of each period:
-          </p>
-          <div class="math-display">
-            FV<sub>annuity</sub> = PMT · [ (1 + i)<sup>N</sup> - 1 ] / i
-          </div>
-          <p>
-            Summing both terms provides the complete portfolio balance at time <span class="math-tex">t</span>:
-          </p>
-          <div class="math-display">
-            FV<sub>total</sub> = P(1 + r/m)<sup>mt</sup> + PMT · [ (1 + r/m)<sup>mt</sup> - 1 ] / (r/m)
-          </div>
-        </div>
+        <div class="proof-header"><h3><span class="step-num">1</span><span>Diskrete & Kontinuierliche Verzinsung</span></h3></div>
+        <div class="proof-body"><p>Endkapital bei unterjähriger Verzinsung: FV = P · (1 + r / m)^(m · t). Bei kontinuierlicher Verzinsung: FV = P · e^(r · t).</p></div>
       </div>
-
       <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">2</span>
-            <span>Annual Percentage Yield (APY) Closed Form</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            Because interest earned intra-year itself earns interest in subsequent periods, the true annual effective rate (APY) exceeds the nominal APR:
-          </p>
-          <div class="math-display">
-            APY = (1 + r / m)<sup>m</sup> - 1
-          </div>
-          <p>
-            For continuous compounding, taking the limit as <span class="math-tex">m ➔ ∞</span> gives:
-          </p>
-          <div class="math-display">
-            lim (m ➔ ∞) (1 + r / m)<sup>m</sup> = e<sup>r</sup> ⟹ APY = e<sup>r</sup> - 1
-          </div>
-        </div>
-      </div>
-
-      <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">3</span>
-            <span>Target Goal Inversion Formulation</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            To compute the exact periodic deposit <span class="math-tex">PMT</span> required to reach a specific financial goal <span class="math-tex">FV*</span> from existing principal <span class="math-tex">P</span>:
-          </p>
-          <div class="math-display">
-            PMT = [ FV* - P · (1 + r/m)<sup>mt</sup> ] · (r/m) / [ (1 + r/m)<sup>mt</sup> - 1 ]
-          </div>
-          <p>
-            This closed-form solution guarantees exact mathematical convergence without iterative guessing.
-          </p>
-        </div>
+        <div class="proof-header"><h3><span class="step-num">2</span><span>Effektiver Jahreszins (APY)</span></h3></div>
+        <div class="proof-body"><p>Der effektive Jahreszins berücksichtigt unterjährige Zinseszinsen: APY = (1 + r / m)^m - 1.</p></div>
       </div>
     </section>
 
@@ -486,14 +402,14 @@
           <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
         </div>
         <div class="llm-actions">
-          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copiar Prompt Verificado para Agentes IA</button>
         </div>
       </div>
 
       <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
 
       <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
-        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Estandarizado para <code>llms.txt</code></span>
         <span>✓ Continuous and discrete compounding verified</span>
         <span>✓ Machine-checked against edge actuarial tables</span>
       </div>
@@ -501,48 +417,14 @@
 
     <!-- FAQ Section -->
     <section class="faq-section">
-      <h2>Preguntas Frecuentes</h2>
-
+      <h2>FAQ: Zinseszins</h2>
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the formula for compound interest with regular deposits?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          The total future value combines lump-sum compounding and ordinary annuity compounding:
-          <div class="math-display">FV = P(1 + r/m)ᵐᵗ + PMT · [((1 + i<sub>p</sub>)ᴺ - 1) / i<sub>p</sub>]</div>
-          where <span class="math-tex">P</span> is principal, <span class="math-tex">r</span> is nominal APR, <span class="math-tex">m</span> is annual compounding frequency, <span class="math-tex">t</span> is years, <span class="math-tex">PMT</span> is periodic contribution, and <span class="math-tex">i<sub>p</sub></span> is interest rate per deposit interval.
-        </div>
+        <div class="faq-question"><span>Was ist der Unterschied zwischen Nominalzins und Effektivzins?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Der Effektivzins (APY) berücksichtigt den Zinseszinseffekt unterjähriger Zinsgutschriften und fällt daher höher aus als der Nominalzins.</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>How does compounding frequency impact returns?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          The more frequently interest is calculated and added to the principal balance (daily vs monthly vs annually), the faster interest begins earning interest on itself. For an 8% return on $10,000 over 20 years, annual compounding yields $46,610, monthly yields $49,268, and continuous compounding yields $49,530.
-        </div>
-      </div>
-
-      <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the difference between APR and APY?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <strong>APR (Annual Percentage Rate)</strong> is the nominal stated rate without intra-year compounding. <strong>APY (Annual Percentage Yield)</strong> reflects the true effective annual yield: <span class="math-tex">APY = (1 + r/m)ᵐ - 1</span>. For 7% compounded daily, APY is 7.25%.
-        </div>
-      </div>
-
-      <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the Rule of 72?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          The Rule of 72 is an analytical shortcut to estimate how many years it takes for an investment to double at a constant annual rate: <span class="math-tex">Years to Double ≈ 72 / Interest Rate</span>. For example, at an 8% return, your money doubles in approximately <span class="math-tex">72 / 8 = 9</span> years.
-        </div>
+        <div class="faq-question"><span>Was besagt die 72er-Regel?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Die Verdopplungszeit eines Kapitals in Jahren beträgt näherungsweise 72 dividiert durch den jährlichen Zinssatz in Prozent.</div>
       </div>
     </section>
 
@@ -550,8 +432,8 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      <div>© 2026 OmniOperand. Todas las demostraciones matemáticas y cálculos rigurosamente verificados.</div>
+      <div>Alojado en Cloudflare Edge Network • Construido sin dependencias externas</div>
     </div>
   </footer>
 

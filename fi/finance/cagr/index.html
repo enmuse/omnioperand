@@ -71,38 +71,14 @@
       "@id": "https://omnioperand.com/finance/cagr/#faq",
       "mainEntity": [
         {
-          "@type": "Question",
-          "name": "What is the formula for Compound Annual Growth Rate (CAGR)?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The CAGR formula is CAGR = (V_n / V_0)^(1/n) - 1, where V_0 is the beginning investment value, V_n is the ending investment value, and n is the total number of years."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why is CAGR superior to the simple arithmetic average return?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Arithmetic averages ignore the compounding effect of volatility and volatility drag. For instance, if an asset gains 100% in Year 1 and falls 50% in Year 2, the arithmetic average is +25%, but the true return is exactly 0% (CAGR = 0%). CAGR represents the true geometric mean return."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can CAGR be negative?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes! If ending valuation V_n is less than beginning value V_0, the ratio V_n / V_0 is less than 1, producing a negative CAGR that represents the constant annual rate of depreciation or loss."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does CAGR account for intermediate cash inflows or withdrawals?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Standard CAGR measures point-to-point geometric growth assuming no intermediate capital inflows or outflows. When deposits or withdrawals occur throughout the period, the Internal Rate of Return (IRR) or Money-Weighted Return should be computed instead."
-          }
+                "@type": "Question",
+                "name": "Was misst die Kennzahl CAGR?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "CAGR gibt die jährliche Wachstumsrate einer Investition unter der Annahme eines stetigen Wachstums an."
+                }
         }
-      ]
+]
     }
   ]
 }
@@ -153,7 +129,7 @@
       <a href="/fi/" class="brand-link">
         <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
-        <span class="brand-badge">Finance</span>
+        <span class="brand-badge">Rahoitus</span>
       </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
@@ -217,8 +193,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Hae</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -256,11 +231,11 @@
           <div class="hud-panel-header">
             <h2>Valuation Parameters</h2>
             <div class="precision-control">
-              <label for="precision-select">Precision:</label>
+              <label for="precision-select">Tarkkuus:</label>
               <select id="precision-select" class="select-input">
-                <option value="2">2 Decimals</option>
-                <option value="4" selected>4 Decimals</option>
-                <option value="6">6 Decimals</option>
+                <option value="2">2 Desimaalit</option>
+                <option value="4" selected>4 Desimaalit</option>
+                <option value="6">6 Desimaalit</option>
               </select>
             </div>
           </div>
@@ -368,57 +343,10 @@
 
     <!-- Proofs Section -->
     <section class="proof-section" style="margin-top: 3rem;">
-      <h2>Mathematical Rigor & Derivations</h2>
-
+      <h2>Finanzanalytik: Jährliche Wachstumsrate (CAGR)</h2>
       <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">1</span>
-            <span>Geometric Mean & Closed-Form CAGR Derivation</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            If an asset grows from <span class="math-tex">V₀</span> to <span class="math-tex">Vₙ</span> over <span class="math-tex">n</span> periods with individual annual growth rates <span class="math-tex">r₁, r₂, …, rₙ</span>, the total multiplier is:
-          </p>
-          <div class="math-display">
-            Vₙ / V₀ = ∏ (from i = 1 to n) (1 + r<sub>i</sub>)
-          </div>
-          <p>
-            The Compound Annual Growth Rate (CAGR) is defined as the single constant annual rate <span class="math-tex">g</span> that produces the identical terminal multiplier:
-          </p>
-          <div class="math-display">
-            (1 + g)<sup>n</sup> = Vₙ / V₀ ⟹ g = (Vₙ / V₀)<sup>1/n</sup> - 1
-          </div>
-        </div>
-      </div>
-
-      <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">2</span>
-            <span>Doubling Period & Logarithmic Inversion</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            To compute the exact elapsed time <span class="math-tex">t₂</span> required for an asset to double in value (<span class="math-tex">V(t₂) = 2V₀</span>):
-          </p>
-          <div class="math-display">
-            (1 + g)<sup>t₂</sup> = 2 ⟹ t₂ · ln(1 + g) = ln(2) ⟹ t₂ = ln(2) / ln(1 + g)
-          </div>
-          <p>
-            Using the Taylor series expansion <span class="math-tex">ln(1 + g) ≈ g - g²/2 + …</span> for small <span class="math-tex">g</span>:
-          </p>
-          <div class="math-display">
-            t₂ ≈ 0.69315 / g ≈ 72 / (100 · g)
-          </div>
-          <p>
-            This yields the classic financial Rule of 72.
-          </p>
-        </div>
+        <div class="proof-header"><h3><span class="step-num">1</span><span>Geometrisches Mittel der Rendite</span></h3></div>
+        <div class="proof-body"><p>CAGR = (Endwert / Anfangswert)^(1 / t) - 1. Glättet Volatilität und berechnet die konstante Jahresrendite.</p></div>
       </div>
     </section>
 
@@ -430,14 +358,14 @@
           <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
         </div>
         <div class="llm-actions">
-          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Kopioi Varmennettu Prompti AI-Agenteille</button>
         </div>
       </div>
 
       <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
 
       <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
-        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Standardoitu kohteelle <code>llms.txt</code></span>
         <span>✓ Strict geometric mean valuation</span>
         <span>✓ Machine-checked against edge financial standards</span>
       </div>
@@ -445,48 +373,10 @@
 
     <!-- FAQ Section -->
     <section class="faq-section">
-      <h2>Usein Kysytyt Kysymykset</h2>
-
+      <h2>FAQ: CAGR</h2>
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the formula for Compound Annual Growth Rate (CAGR)?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          The CAGR formula calculates the constant annual rate of geometric growth over <span class="math-tex">n</span> years:
-          <div class="math-display">CAGR = (V<sub>n</sub> / V₀)<sup>1/n</sup> - 1</div>
-          where <span class="math-tex">V₀</span> is beginning valuation and <span class="math-tex">V<sub>n</sub></span> is ending valuation.
-        </div>
-      </div>
-
-      <div class="faq-item open">
-        <div class="faq-question">
-          <span>Why is CAGR superior to the simple arithmetic average return?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          Arithmetic averages ignore volatility drag. For instance, if a portfolio gains 100% in Year 1 ($10,000 ➔ $20,000) and drops 50% in Year 2 ($20,000 ➔ $10,000), the arithmetic average is +25%, but your real wealth gained nothing (0%). CAGR accurately computes <strong>0.00%</strong> as the true geometric mean return.
-        </div>
-      </div>
-
-      <div class="faq-item open">
-        <div class="faq-question">
-          <span>Can CAGR be negative?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          Yes! If the ending valuation <span class="math-tex">V<sub>n</sub></span> is less than the beginning value <span class="math-tex">V₀</span>, the ratio <span class="math-tex">V<sub>n</sub> / V₀</span> is less than 1, resulting in a negative CAGR that represents the constant annual rate of depreciation or loss.
-        </div>
-      </div>
-
-      <div class="faq-item open">
-        <div class="faq-question">
-          <span>Does CAGR account for cash infusions or withdrawals?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          No. Standard CAGR measures point-to-point performance between two milestones assuming no intermediate capital inflows or outflows. If intermediate deposits or withdrawals occurred, the Internal Rate of Return (IRR) or Money-Weighted Return should be computed instead.
-        </div>
+        <div class="faq-question"><span>Was misst die Kennzahl CAGR?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">CAGR gibt die jährliche Wachstumsrate einer Investition unter der Annahme eines stetigen Wachstums an.</div>
       </div>
     </section>
 
@@ -494,8 +384,8 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      <div>© 2026 OmniOperand. Kaikki matemaattiset todistukset ja laskelmat tarkasti vahvistettu.</div>
+      <div>Isännöity Cloudflare Edge -verkossa • Rakennettu ilman ulkoisia riippuvuuksia</div>
     </div>
   </footer>
 

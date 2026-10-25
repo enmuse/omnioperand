@@ -61,6 +61,30 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "What is the MAP for 110/80 blood pressure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a blood pressure reading of 110/80 mmHg, the Mean Arterial Pressure (MAP) is 90.0 mmHg. This falls within the optimal resting range of 70 to 100 mmHg."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the MAP for 100/51 blood pressure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a blood pressure reading of 100/51 mmHg, the Mean Arterial Pressure (MAP) is 67.3 mmHg. This provides adequate baseline organ perfusion, slightly above the 65 mmHg clinical threshold."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the MAP for 97/52 blood pressure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a blood pressure reading of 97/52 mmHg, the Mean Arterial Pressure (MAP) is 67.0 mmHg, which is above the 65 mmHg minimum threshold required for vital organ perfusion."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "What is considered a normal MAP range?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -225,6 +249,22 @@
       </p>
     </section>
 
+    <!-- Position 0 Direct Answer Box -->
+    <div class="direct-answer-box" style="background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.25); border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:2rem;">
+      <div style="font-size:0.75rem; text-transform:uppercase; font-weight:700; letter-spacing:0.06em; color:var(--accent-cyan); margin-bottom:0.4rem;">Direct Clinical Answer • Mean Arterial Pressure (MAP)</div>
+      <p style="margin:0; font-size:1.025rem; line-height:1.6; color:var(--text-primary);">
+        To calculate Mean Arterial Pressure, use the standard clinical perfusion formula: 
+        <code style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px; font-weight:600; color:var(--accent-cyan);">MAP = DBP + ⅓(SBP - DBP)</code> 
+        or 
+        <code style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px; font-weight:600; color:var(--accent-cyan);">MAP = [SBP + 2(DBP)] / 3</code>. 
+        Calculated readings for common blood pressures: 
+        For <strong>110/80 mmHg</strong>, your MAP is <strong>90.0 mmHg</strong> (Normal Perfusion). 
+        For <strong>100/51 mmHg</strong>, your MAP is <strong>67.3 mmHg</strong> (Low Normal). 
+        For <strong>97/52 mmHg</strong>, your MAP is <strong>67.0 mmHg</strong> (Low Normal). 
+        Target resting MAP is <strong>70 to 100 mmHg</strong>; a minimum MAP of <strong>65 mmHg</strong> is required to perfuse brain, kidneys, and coronary vascular beds.
+      </p>
+    </div>
+
 <!-- Master Solver Grid -->
     <div class="calculator-grid">
 
@@ -233,7 +273,12 @@
         <div class="hud-panel">
           <div class="hud-panel-header">
             <h2>Parameters & Inversions</h2>
-            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Deterministic Engine</span>
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <button id="btn-share-link" type="button" class="btn btn-secondary" style="font-size:0.75rem; padding:0.25rem 0.6rem; display:inline-flex; align-items:center; gap:0.3rem;">
+                <span>🔗 Share Link</span>
+              </button>
+              <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Deterministic Engine</span>
+            </div>
           </div>
 
           <div class="param-card-grid">
@@ -363,11 +408,127 @@
 
     </div>
 
+<!-- Clinical MAP Reference Table -->
+    <section class="calc-table-section" style="margin-top:3rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:0.75rem;">Clinical Blood Pressure & MAP Reference Chart</h2>
+      <p style="color:var(--text-secondary); margin-bottom:1.5rem; font-size:0.95rem;">
+        Pre-calculated Mean Arterial Pressure (MAP) and organ perfusion adequacy for common systolic and diastolic clinical readings.
+      </p>
+      <div style="overflow-x:auto; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; padding:0.5rem;">
+        <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.9rem;">
+          <thead>
+            <tr style="border-bottom:1px solid var(--border-subtle); color:var(--text-bright);">
+              <th style="padding:0.75rem 1rem;">Blood Pressure (SBP/DBP)</th>
+              <th style="padding:0.75rem 1rem;">Pulse Pressure (PP)</th>
+              <th style="padding:0.75rem 1rem;">Calculated MAP</th>
+              <th style="padding:0.75rem 1rem;">Perfusion Tier</th>
+              <th style="padding:0.75rem 1rem;">Clinical Guidance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">120 / 80 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">40.0 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:var(--accent-cyan);">93.3 mmHg</td>
+              <td style="padding:0.75rem 1rem; color:var(--accent-emerald);">Optimal Perfusion</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Standard textbook baseline; steady microvascular capillary delivery.</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">110 / 80 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">30.0 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:var(--accent-cyan);">90.0 mmHg</td>
+              <td style="padding:0.75rem 1rem; color:var(--accent-emerald);">Optimal Perfusion</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Healthy resting hemodynamics; well-preserved arterial elasticity.</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">110 / 70 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">40.0 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:var(--accent-cyan);">83.3 mmHg</td>
+              <td style="padding:0.75rem 1rem; color:var(--accent-emerald);">Optimal Perfusion</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Frequently seen in athletic or physically well-conditioned individuals.</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">100 / 51 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">49.0 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:var(--accent-cyan);">67.3 mmHg</td>
+              <td style="padding:0.75rem 1rem; color:#f59e0b;">Low-Normal Perfusion</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Above 65 mmHg shock threshold; evaluate fluid status if symptomatic.</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">97 / 52 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">45.0 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:var(--accent-cyan);">67.0 mmHg</td>
+              <td style="padding:0.75rem 1rem; color:#f59e0b;">Low-Normal Perfusion</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Borderline adequate driving pressure; check for orthostatic symptoms.</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">90 / 60 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">30.0 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:var(--accent-cyan);">70.0 mmHg</td>
+              <td style="padding:0.75rem 1rem; color:var(--accent-emerald);">Baseline Normal</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Common healthy baseline in young adults without orthostatic symptoms.</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">80 / 50 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">30.0 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:#ef4444;">60.0 mmHg</td>
+              <td style="padding:0.75rem 1rem; color:#ef4444; font-weight:700;">Critical Hypoperfusion</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Below 65 mmHg organ threshold; high risk of acute kidney injury & shock.</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">130 / 85 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">45.0 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:var(--accent-cyan);">100.0 mmHg</td>
+              <td style="padding:0.75rem 1rem; color:#f59e0b;">Pre-Hypertensive</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Upper limit of normal resting range; elevated arteriolar resistance.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">140 / 90 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">50.0 mmHg</td>
+              <td style="padding:0.75rem 1rem; font-weight:700; font-family:monospace; color:#ef4444;">106.7 mmHg</td>
+              <td style="padding:0.75rem 1rem; color:#ef4444;">Hypertensive Stress</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Stage 2 hypertension; increases myocardial work and vascular stress.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
 <!-- High-Intent FAQ Section -->
     <section class="calc-faq-section" style="margin-top:3rem;">
       <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
       <div class="faq-list">
         
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is the MAP for 110/80 blood pressure?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            For a blood pressure reading of 110/80 mmHg, your Mean Arterial Pressure (MAP) is <strong>90.0 mmHg</strong> with a pulse pressure of 30 mmHg. This is considered an optimal resting MAP (healthy target is 70 to 100 mmHg).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is the MAP for 100/51 blood pressure?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            For a blood pressure reading of 100/51 mmHg, your Mean Arterial Pressure (MAP) is <strong>67.3 mmHg</strong> with a pulse pressure of 49 mmHg. This is in the low-normal tier, safely above the 65 mmHg minimum threshold required for vital organ perfusion.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is the MAP for 97/52 blood pressure?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            For a blood pressure reading of 97/52 mmHg, your Mean Arterial Pressure (MAP) is <strong>67.0 mmHg</strong> with a pulse pressure of 45 mmHg. This is above the 65 mmHg minimum organ perfusion threshold.
+          </div>
+        </div>
+
         <div class="faq-item">
           <div class="faq-question">
             <span>What is considered a normal MAP range?</span>
@@ -438,30 +599,21 @@
         setDisp(id, text);
       }
 
-      const fact = (n) => { let r = 1; for (let i = 2; i <= n; i++) r *= i; return r; };
-      const nPr = (n, r) => (r < 0 || r > n) ? 0 : fact(n) / fact(n - r);
-      const fmt = (num, dec = 2) => typeof num === 'number' ? num.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : num;
-      const acos = Math.acos;
-      const atan = Math.atan;
-      const cbrt = Math.cbrt;
-
       function recalculate() {
-        
-          const sbp = getNum('systolic_bp');
-          const dbp = getNum('diastolic_bp');
+        const sbp = getNum('systolic_bp');
+        const dbp = getNum('diastolic_bp');
 
-          const pp = sbp - dbp;
-          const map = dbp + (pp / 3);
+        const pp = sbp - dbp;
+        const map = dbp + (pp / 3);
 
-          let status = 'Optimal Perfusion';
-          if (map < 65) status = 'Hypoperfusion Risk (< 65 mmHg)';
-          else if (map > 105) status = 'Hypertensive State (> 105 mmHg)';
+        let status = 'Optimal Perfusion';
+        if (map < 65) status = 'Hypoperfusion Risk (< 65 mmHg)';
+        else if (map > 105) status = 'Hypertensive State (> 105 mmHg)';
 
-          setDisp('map_value', map.toFixed(1) + ' mmHg');
-          setDisp('pulse_pressure', pp.toFixed(1) + ' mmHg');
-          setDisp('perfusion_status', status);
-          setDisp('cardiac_cycle_split', '67% Diastole / 33% Systole');
-        
+        setDisp('map_value', map.toFixed(1) + ' mmHg');
+        setDisp('pulse_pressure', pp.toFixed(1) + ' mmHg');
+        setDisp('perfusion_status', status);
+        setDisp('cardiac_cycle_split', '67% Diastole / 33% Systole');
       }
 
       // Bind input events
@@ -472,6 +624,35 @@
           recalculate();
         });
       });
+
+      // Share Link Handler
+      const shareBtn = document.getElementById('btn-share-link');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          const sbp = getNum('systolic_bp');
+          const dbp = getNum('diastolic_bp');
+          const url = new URL(window.location.href);
+          url.searchParams.set('sbp', sbp);
+          url.searchParams.set('dbp', dbp);
+          window.history.replaceState({}, '', url);
+          navigator.clipboard.writeText(url.href).then(() => {
+            const originalText = shareBtn.innerHTML;
+            shareBtn.innerHTML = '<span>✅ Copied!</span>';
+            setTimeout(() => { shareBtn.innerHTML = originalText; }, 2000);
+          });
+        });
+      }
+
+      // Parse URL parameters
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('sbp') || params.has('systolic_bp')) {
+        const sbpVal = parseFloat(params.get('sbp') || params.get('systolic_bp'));
+        if (sbpVal) sync('systolic_bp', sbpVal);
+      }
+      if (params.has('dbp') || params.has('diastolic_bp')) {
+        const dbpVal = parseFloat(params.get('dbp') || params.get('diastolic_bp'));
+        if (dbpVal) sync('diastolic_bp', dbpVal);
+      }
 
       // Accordion toggle
       document.querySelectorAll('.faq-question').forEach(q => {

@@ -83,38 +83,38 @@
       "@id": "https://omnioperand.com/geometry/2d/shapes/hexagon/#faq",
       "mainEntity": [
         {
-          "@type": "Question",
-          "name": "What is the formula for the area of a regular hexagon?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The area of a regular hexagon with side length a is A = (3√3 / 2)a² ≈ 2.598076a². This is because a regular hexagon divides into 6 equilateral triangles of area (a²√3)/4."
-          }
+                "@type": "Question",
+                "name": "Care este formula pentru aria unui Sechseck regulat?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Aria unui Sechseck regulat cu latura a se calculează prin A = (3√3 / 2)a² ≈ 2,598076a²."
+                }
         },
         {
-          "@type": "Question",
-          "name": "Why is the circumradius equal to the side length?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A regular hexagon is formed by 6 congruent equilateral triangles meeting at the center. Because all sides of an equilateral triangle are equal, the distance from the center to any vertex (Circumradius R) is always strictly equal to the outer side length a."
-          }
+                "@type": "Question",
+                "name": "Cum se calculează latura din arie?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Împărțiți aria A la coeficientul de formă și extrageți rădăcina pătrată pentru a găsi latura a."
+                }
         },
         {
-          "@type": "Question",
-          "name": "What are the two diagonal lengths of a regular hexagon?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A regular hexagon has 9 total diagonals in 2 distinct classes: (1) 6 Short diagonals d_S = a√3 ≈ 1.73205a connecting vertices separated by one vertex; (2) 3 Long diagonals d_L = 2a connecting directly opposite vertices through the center."
-          }
+                "@type": "Question",
+                "name": "Câte diagonale are un Sechseck?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Numărul total de diagonale este n(n - 3) / 2 = 9 diagonale."
+                }
         },
         {
-          "@type": "Question",
-          "name": "What are the socket and wrench sizes for a hex bolt?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Wrench and socket sizes measure the flat-to-flat span (S), which equals 2r_i = a√3. For example, a bolt with a side length of 10 mm requires a socket size of 10√3 ≈ 17.32 mm (typically a standard 17mm or 18mm socket)."
-          }
+                "@type": "Question",
+                "name": "Care sunt aplicațiile practice în inginerie?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "În construcții metalice și arhitectură, simetria radială garantează o distribuție optimă a forțelor mecanice."
+                }
         }
-      ]
+]
     }
   ]
 }
@@ -165,7 +165,7 @@
       <a href="/ro/" class="brand-link">
         <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
-        <span class="brand-badge">Geometry</span>
+        <span class="brand-badge">Geometrie</span>
       </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
@@ -229,8 +229,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Căutare</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -280,9 +279,7 @@
     <section class="calculator-hero">
       <div class="calc-title-badge">Polygon Geometry • 6-Sided Regular Polytope</div>
       <h1>Calculator Hexagon Regulat</h1>
-      <p>
-        High-precision bidirectional analytic solver. Enter <strong>any single known variable</strong>—side length, area, perimeter, apothem (inradius), circumradius, flat-to-flat span, or diagonal—and all other 7 geometric parameters will compute instantaneously with exact radical derivations.
-      </p>
+      <p>Rezolvitor matematic bidirecțional universal. Introduceți orice variabilă cunoscută pentru a calcula instantaneu laturile, razele, aria și diagonalele cu precizie de mașină.</p>
     </section>
 
     <section class="solver-container">
@@ -477,17 +474,17 @@
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 21.5 7.5 21.5 16.5 12 22 2.5 16.5 2.5 7.5 12 2"></polygon></svg>
             <span>Interactive Analytic Blueprint</span>
           </div>
-          <div class="canvas-hud-coords" id="blueprint-coord-display">Hover vertex for coordinates</div>
+          <div class="canvas-hud-coords" id="blueprint-coord-display">Treceți cursorul peste vârf pentru coordonate</div>
         </div>
 
         <!-- Blueprint Layer Toggles -->
         <div class="blueprint-layer-bar">
-          <span class="layer-bar-label">Layers:</span>
-          <button class="layer-pill active" id="toggle-layer-grid" title="Toggle Coordinate Grid & Axes">Grid</button>
-          <button class="layer-pill active" id="toggle-layer-circles" title="Toggle Incircle & Circumcircle">Circles</button>
-          <button class="layer-pill active" id="toggle-layer-dims" title="Toggle Dimension Lines">Dimensions</button>
-          <button class="layer-pill active" id="toggle-layer-labels" title="Toggle Vertex Points">Vertices</button>
-          <button class="layer-pill" id="toggle-blueprint-theme" title="Toggle Blueprint Theme">Blueprint Mode</button>
+          <span class="layer-bar-label">Straturi:</span>
+          <button class="layer-pill active" id="toggle-layer-grid" title="Toggle Coordinate Grid & Axes">Grilă</button>
+          <button class="layer-pill active" id="toggle-layer-circles" title="Toggle Incircle & Circumcircle">Cercuri</button>
+          <button class="layer-pill active" id="toggle-layer-dims" title="Toggle Dimension Lines">Cote</button>
+          <button class="layer-pill active" id="toggle-layer-labels" title="Toggle Vertex Points">Vârfuri</button>
+          <button class="layer-pill" id="toggle-blueprint-theme" title="Toggle Blueprint Theme">Mod Schiță</button>
         </div>
 
         <div class="canvas-wrapper" id="blueprint-canvas-wrapper">
@@ -546,7 +543,7 @@
           <div class="license-badge-row">
             <span class="license-badge">
               <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              Free for Commerce & Academia
+              Gratuit pentru Comerț și Mediu Academic
             </span>
             <span class="license-cc">CC BY 4.0 License</span>
           </div>
@@ -555,14 +552,14 @@
           </p>
           <div class="attribution-snippet-group">
             <div class="snippet-header">
-              <span>Web Backlink Attribution:</span>
+              <span>Atribuire link web:</span>
               <button class="copy-snippet-btn" id="copy-backlink-html">Copy HTML</button>
             </div>
             <code class="snippet-code" id="snippet-backlink-html">&lt;a href="https://omnioperand.com/geometry/2d/shapes/hexagon/" target="_blank" rel="noopener"&gt;Diagram courtesy of OmniOperand&lt;/a&gt;</code>
           </div>
           <div class="attribution-snippet-group" style="margin-top:0.45rem;">
             <div class="snippet-header">
-              <span>Academic BibTeX Citation:</span>
+              <span>Citare academică BibTeX:</span>
               <button class="copy-snippet-btn" id="copy-backlink-bibtex">Copy BibTeX</button>
             </div>
             <code class="snippet-code" id="snippet-backlink-bibtex">@misc{omnioperand_hexagon, title={Regular Hexagon Calculator & Blueprint}, author={OmniOperand}, url={https://omnioperand.com/geometry/2d/shapes/hexagon/}, year={2026}}</code>
@@ -574,158 +571,47 @@
 
     <!-- Mathematical Foundations & Analytical Derivations -->
     <section class="proofs-section">
-      <h2>Mathematical Foundations & Hexagonal Symmetries</h2>
-      <p>
-        The regular hexagon has 6 congruent sides and 6 congruent interior angles. It belongs to the dihedral symmetry group <strong>D<sub>6</sub></strong> with 6 reflection axes and 6-fold rotational symmetry (60° invariance). It is one of only three regular polygons capable of completely tessellating the 2D Euclidean plane without gaps.
-      </p>
-
+      <h2>Fundamente Matematice și Demonstrații Analitice</h2>
+      <p>Un Sechseck regulat este un poligon plan convex cu 6 laturi egale și 6 unghiuri congruente. Aparține grupului diedral D_6.</p>
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">1</span>
-            <span>Interior, Exterior & Central Angles</span>
-          </h3>
+          <h3><span class="step-num">1</span><span>Unghiuri Interioare, Exterioare și Centrale</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <div class="proof-step">
-            <div class="step-num">a</div>
-            <div class="step-content">
-              <strong>Sum of Interior Angles:</strong>
-              For <span class="math-tex">n = 6</span>:
-              <div class="math-display">
-                S = (6 - 2) × 180° = 4 × 180° = 720° &nbsp; (4π rad)
-              </div>
-            </div>
-          </div>
-          <div class="proof-step">
-            <div class="step-num">b</div>
-            <div class="step-content">
-              <strong>Individual Interior Angle (α):</strong>
-              <div class="math-display">
-                α = 720° / 6 = 120° &nbsp; (2π / 3 rad)
-              </div>
-            </div>
-          </div>
-          <div class="proof-step">
-            <div class="step-num">c</div>
-            <div class="step-content">
-              <strong>Central & Exterior Angle (β):</strong>
-              <div class="math-display">
-                β = 360° / 6 = 60° &nbsp; (π / 3 rad)
-              </div>
-            </div>
-          </div>
+          <p>Suma unghiurilor interioare: Pentru n = 6, suma este S = (6 - 2) × 180°.</p>
+          <p>Fiecare unghi interior măsoară α = S / n.</p>
+          <p>Unghiul la centru și unghiul exterior măsoară β = 360° / n.</p>
         </div>
       </div>
-
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">2</span>
-            <span>Proof that Circumradius (R) Equals Side Length (a)</span>
-          </h3>
+          <h3><span class="step-num">2</span><span>Apotema (Raza Înscrisă) și Raza Circumscrisă</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <p>
-            Connect the center <span class="math-tex">O</span> to any two adjacent vertices <span class="math-tex">V_1</span> and <span class="math-tex">V_2</span>. The central angle is <span class="math-tex">∠V_1OV_2 = 60°</span>. Since both radii legs are equal (<span class="math-tex">OV_1 = OV_2 = R</span>), the triangle <span class="math-tex">ΔOV_1V_2</span> is isosceles.
-          </p>
-          <div class="math-display">
-            Base angles = (180° - 60°) / 2 = 60°
-          </div>
-          <p>
-            Because all three angles are 60°, the triangle is <strong>equilateral</strong>. Therefore:
-          </p>
-          <div class="math-display">
-            R = a
-          </div>
+          <p>Apotema r_i este distanța perpendiculară de la centru la latură: r_i = a / [2 tan(180° / 6)]. r_i = (√3 / 2)a</p>
+          <p>Raza circumscrisă R unește centrul cu vârfurile: R = a / [2 sin(180° / 6)].</p>
         </div>
       </div>
-
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">3</span>
-            <span>Apothem (Inradius) Radical Derivation</span>
-          </h3>
+          <h3><span class="step-num">3</span><span>Calculul Exact al Ariei și Triangularea</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <p>
-            The apothem <span class="math-tex">r<sub>i</sub></span> is the altitude of one of the 6 central equilateral triangles:
-          </p>
-          <div class="math-display">
-            r<sub>i</sub>² + (a / 2)² = a² ⟹ r<sub>i</sub>² = a² - a² / 4 = 3a² / 4
-          </div>
-          <div class="math-display">
-            r<sub>i</sub> = (a · √3) / 2 ≈ 0.86602540 · a
-          </div>
+          <p>Descompunerea în 6 triunghiuri congruente oferă formula închisă: A = (3√3 / 2)a² ≈ 2,598076a².</p>
         </div>
       </div>
-
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">4</span>
-            <span>Area Exact Radical Derivations</span>
-          </h3>
+          <h3><span class="step-num">4</span><span>Clase de Diagonale și Teorema Cosinusului</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <p>
-            A regular hexagon comprises exactly 6 equilateral triangles of side <span class="math-tex">a</span>:
-          </p>
-          <div class="math-display">
-            A = 6 × (a²√3 / 4) = (3√3 / 2)a² ≈ 2.59807621 · a²
-          </div>
-          <p>
-            In terms of the flat-to-flat span <span class="math-tex">S = 2r<sub>i</sub> = a√3 ⟹ a = S / √3</span>:
-          </p>
-          <div class="math-display">
-            A = (3√3 / 2) · (S / √3)² = (√3 / 2)S² ≈ 0.86602540 · S²
-          </div>
+          <p>Un poligon regulat cu 6 vârfuri are 9 diagonale. d_S = √3 a, d_L = 2a</p>
         </div>
       </div>
-
-      <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">5</span>
-            <span>The 2 Distinct Diagonal Classes</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            An <span class="math-tex">n</span>-gon has <span class="math-tex">n(n - 3) / 2</span> diagonals. For <span class="math-tex">n = 6</span>, there are <span class="math-tex">6(3) / 2 = 9</span> diagonals in two congruence classes:
-          </p>
-          <div class="proof-step">
-            <div class="step-num">1</div>
-            <div class="step-content">
-              <strong>Short Diagonal (<span class="math-tex">d<sub>S</sub></span>, 6 total):</strong>
-              Connects alternate vertices across 2 sides. Applying the Law of Cosines with interior angle 120°:
-              <div class="math-display">
-                d<sub>S</sub>² = a² + a² - 2a² cos(120°) = 2a² - 2a²(-½) = 3a²
-              </div>
-              <div class="math-display">
-                d<sub>S</sub> = a√3 ≈ 1.73205081 · a
-              </div>
-            </div>
-          </div>
-          <div class="proof-step">
-            <div class="step-num">2</div>
-            <div class="step-content">
-              <strong>Long Diagonal (<span class="math-tex">d<sub>L</sub></span>, 3 total):</strong>
-              Connects directly opposite vertices through the center. It equals the circumcircle diameter:
-              <div class="math-display">
-                d<sub>L</sub> = 2R = 2a
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </section>
 
     <!-- LLM Prompt Box -->
@@ -736,7 +622,7 @@
           <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
         </div>
         <div class="llm-actions">
-          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copiază Promptul Verificat pentru Agenți AI</button>
           <button class="btn btn-secondary btn-sm" id="copy-json-btn">Copy JSON Data</button>
         </div>
       </div>
@@ -744,56 +630,30 @@
       <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
 
       <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
-        <span>✓ Standardized for <code>llms.txt</code></span>
-        <span>✓ Precision verified up to 10 decimal digits</span>
-        <span>✓ Exact analytic radicals included</span>
+        <span>✓ Standardizat pentru <code>llms.txt</code></span>
+        <span>✓ Precizie verificată până la 10 zecimale</span>
+        <span>✓ Radicali analitici exacți incluși</span>
       </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq-section">
-      <h2>Întrebări Frecvente</h2>
-      
+      <h2>FAQ</h2>
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the formula for the area of a regular hexagon?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          The area of a regular hexagon with side length <span class="math-tex">a</span> is <span class="math-tex">A = (3√3 / 2)a² ≈ 2.598076a²</span>. If you know the inradius (apothem) <span class="math-tex">r<sub>i</sub></span>, the area is <span class="math-tex">A = 2√3 · r<sub>i</sub>² ≈ 3.464102r<sub>i</sub>²</span>. If you know the flat-to-flat span <span class="math-tex">S</span>, the area is <span class="math-tex">A = (√3 / 2)S² ≈ 0.866025S²</span>.
-        </div>
+        <div class="faq-question"><span>Care este formula pentru aria unui Sechseck regulat?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Aria unui Sechseck regulat cu latura a se calculează prin A = (3√3 / 2)a² ≈ 2,598076a².</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>Why is the circumradius equal to the side length?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          A regular hexagon is formed by 6 congruent equilateral triangles meeting at the center. Because all sides of an equilateral triangle are equal, the distance from the center to any vertex (Circumradius <span class="math-tex">R</span>) is always strictly equal to the outer side length <span class="math-tex">a</span>.
-        </div>
+        <div class="faq-question"><span>Cum se calculează latura din arie?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Împărțiți aria A la coeficientul de formă și extrageți rădăcina pătrată pentru a găsi latura a.</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What are the two diagonal lengths of a regular hexagon?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          A regular hexagon has 9 total diagonals in 2 distinct classes:
-          1. <strong>Short diagonals (<span class="math-tex">d<sub>S</sub></span>)</strong>: <span class="math-tex">d<sub>S</sub> = a√3 ≈ 1.73205a</span> (6 diagonals connecting vertices separated by one vertex)
-          2. <strong>Long diagonals (<span class="math-tex">d<sub>L</sub></span>)</strong>: <span class="math-tex">d<sub>L</sub> = 2a</span> (3 diagonals passing through the center connecting opposite vertices)
-        </div>
+        <div class="faq-question"><span>Câte diagonale are un Sechseck?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Numărul total de diagonale este n(n - 3) / 2 = 9 diagonale.</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What are the socket and wrench sizes for a hex bolt?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          Wrench and socket sizes measure the <strong>flat-to-flat span</strong> (<span class="math-tex">S</span>), which equals <span class="math-tex">2r<sub>i</sub> = a√3</span>. For example, a bolt with a side length of 10 mm requires a socket size of <span class="math-tex">10√3 ≈ 17.32 mm</span> (typically a standard 17mm or 18mm socket).
-        </div>
+        <div class="faq-question"><span>Care sunt aplicațiile practice în inginerie?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">În construcții metalice și arhitectură, simetria radială garantează o distribuție optimă a forțelor mecanice.</div>
       </div>
     </section>
 
@@ -801,8 +661,8 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      <div>© 2026 OmniOperand. Toate demonstrațiile matematice și calculele sunt riguros verificate.</div>
+      <div>Găzduit pe rețeaua Cloudflare Edge • Construit fără dependențe externe</div>
     </div>
   </footer>
 

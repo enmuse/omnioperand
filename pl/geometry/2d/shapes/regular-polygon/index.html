@@ -94,38 +94,38 @@
       "@id": "https://omnioperand.com/geometry/2d/shapes/regular-polygon/#faq",
       "mainEntity": [
         {
-          "@type": "Question",
-          "name": "What is the formula for the area of any regular n-sided polygon?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "For a regular polygon with n sides of length a, the area is A = (n · a²) / [4 · tan(π/n)]. In terms of apothem (inradius ri), A = n · ri² · tan(π/n) = ½ · P · ri. In terms of circumradius R, A = (n · R² / 2) · sin(2π/n)."
-          }
+                "@type": "Question",
+                "name": "Jaki jest wzór na pole powierzchni (n-Eck)?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Pole powierzchni o boku a wyraża się wzorem A = (n / 4) · a² · cot(π / n)."
+                }
         },
         {
-          "@type": "Question",
-          "name": "How many diagonals does an n-gon have?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "An n-sided polygon has Nd = n(n - 3) / 2 diagonals. For example, a triangle has 0 diagonals, a square has 2, a pentagon has 5, a hexagon has 9, an octagon has 20, and a decagon has 35 diagonals."
-          }
+                "@type": "Question",
+                "name": "Jak wyznaczyć długość boku z pola?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Należy podzielić pole A przez współczynnik geometryczny i wyciągnąć pierwiastek kwadratowy."
+                }
         },
         {
-          "@type": "Question",
-          "name": "What is the difference between an apothem and a circumradius?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The apothem (inradius ri) is the perpendicular distance from the center to the midpoint of any flat edge. It is the radius of the inscribed circle. The circumradius (R) is the distance from the center to any vertex corner. It is the radius of the circumscribed circle passing through all vertices. The two are related by ri = R · cos(π/n)."
-          }
+                "@type": "Question",
+                "name": "Ile przekątnych ma n-Eck?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Liczba przekątnych wynosi n(n - 3) / 2 = 20."
+                }
         },
         {
-          "@type": "Question",
-          "name": "Which regular polygons can be constructed with compass and straightedge?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "By the Gauss-Wantzel Theorem, a regular n-gon is constructible with compass and straightedge if and only if n is the product of a power of 2 and any number of distinct Fermat primes (3, 5, 17, 257, 65537). Constructible polygons include n = 3, 4, 5, 6, 8, 10, 12, 15, 16, 17, 20, 24, 30. Non-constructible regular polygons include n = 7, 9, 11, 13, 14, 18, 19."
-          }
+                "@type": "Question",
+                "name": "Gdzie znajduje zastosowanie ta figura?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "W konstrukcjach inżynieryjnych i mechanice precyzyjnej dla równomiernego przenoszenia naprężeń."
+                }
         }
-      ]
+]
     }
   ]
 }
@@ -240,8 +240,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Szukaj</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -300,9 +299,7 @@
         <span class="calc-spec-tag">Archimedean Limit: n ➔ ∞</span>
       </div>
       <h1 class="calc-main-title" id="polygon-name-display">Regular Octagon</h1>
-      <p class="calc-intro-description">
-        Universal bidirectional mathematical solver for any regular <span class="math-tex">n</span>-sided polygon (<span class="math-tex">3 ≤ n ≤ 1000</span>). Adjust the number of sides and enter any known parameter to instantaneously resolve all side lengths, radii, areas, spans, and diagonal metrics with machine precision.
-      </p>
+      <p class="calc-intro-description">Uniwersalny dwukierunkowy kalkulator matematyczny. Wprowadź dowolną zmienną, aby natychmiast wyznaczyć boki, promienie, pole i przekątne.</p>
     </header>
 
     <!-- N-Selector & Presets Bar -->
@@ -566,17 +563,17 @@
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 19 6 22 13 17 21 7 21 2 13 5 6 12 2"></polygon></svg>
             <span>Universal Dynamic Blueprint</span>
           </div>
-          <div class="canvas-hud-coords" id="blueprint-coord-display">Hover vertex for coordinates</div>
+          <div class="canvas-hud-coords" id="blueprint-coord-display">Najedź na wierzchołek, aby zobaczyć współrzędne</div>
         </div>
 
         <!-- Blueprint Layer Toggles -->
         <div class="blueprint-layer-bar">
-          <span class="layer-bar-label">Layers:</span>
-          <button class="layer-pill active" id="toggle-layer-grid" title="Toggle Coordinate Grid & Axes">Grid</button>
-          <button class="layer-pill active" id="toggle-layer-circles" title="Toggle Incircle & Circumcircle">Circles</button>
-          <button class="layer-pill active" id="toggle-layer-dims" title="Toggle Dimension Lines">Dimensions</button>
-          <button class="layer-pill active" id="toggle-layer-labels" title="Toggle Vertex Points">Vertices</button>
-          <button class="layer-pill" id="toggle-blueprint-theme" title="Toggle Blueprint Theme">Blueprint Mode</button>
+          <span class="layer-bar-label">Warstwy:</span>
+          <button class="layer-pill active" id="toggle-layer-grid" title="Toggle Coordinate Grid & Axes">Siatka</button>
+          <button class="layer-pill active" id="toggle-layer-circles" title="Toggle Incircle & Circumcircle">Okręgi</button>
+          <button class="layer-pill active" id="toggle-layer-dims" title="Toggle Dimension Lines">Wymiary</button>
+          <button class="layer-pill active" id="toggle-layer-labels" title="Toggle Vertex Points">Wierzchołki</button>
+          <button class="layer-pill" id="toggle-blueprint-theme" title="Toggle Blueprint Theme">Tryb Schematu</button>
         </div>
 
         <div class="canvas-wrapper" id="blueprint-canvas-wrapper">
@@ -639,7 +636,7 @@
           <div class="license-badge-row">
             <span class="license-badge">
               <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              Free for Commerce & Academia
+              Darmowe do Użytku Komercyjnego i Naukowego
             </span>
             <span class="license-cc">CC BY 4.0 License</span>
           </div>
@@ -648,14 +645,14 @@
           </p>
           <div class="attribution-snippet-group">
             <div class="snippet-header">
-              <span>Web Backlink Attribution:</span>
+              <span>Atrybucja linku zwrotnego:</span>
               <button class="copy-snippet-btn" id="copy-backlink-html">Copy HTML</button>
             </div>
             <code class="snippet-code" id="snippet-backlink-html">&lt;a href="https://omnioperand.com/geometry/2d/shapes/regular-polygon/" target="_blank" rel="noopener"&gt;Diagram courtesy of OmniOperand&lt;/a&gt;</code>
           </div>
           <div class="attribution-snippet-group" style="margin-top:0.45rem;">
             <div class="snippet-header">
-              <span>Academic BibTeX Citation:</span>
+              <span>Cytowanie akademickie BibTeX:</span>
               <button class="copy-snippet-btn" id="copy-backlink-bibtex">Copy BibTeX</button>
             </div>
             <code class="snippet-code" id="snippet-backlink-bibtex">@misc{omnioperand_regular_polygon, title={Universal Regular Polygon Calculator & Blueprint}, author={OmniOperand}, url={https://omnioperand.com/geometry/2d/shapes/regular-polygon/}, year={2026}}</code>
@@ -668,158 +665,47 @@
 
     <!-- Mathematical Foundations & Analytical Derivations -->
     <section class="proofs-section">
-      <h2>Mathematical Foundations & Universal Proofs</h2>
-      <p>
-        A regular polygon is an equiangular and equilateral planar polygon. It belongs to the dihedral symmetry group <strong>D<sub>n</sub></strong> with <span class="math-tex">n</span> reflection axes and <span class="math-tex">n</span>-fold rotational symmetry (<span class="math-tex">360° / n</span> invariance). The following analytical proofs form the computational bedrock of the solver matrix.
-      </p>
-
-      <!-- Proof 1: Angles -->
+      <h2>Podstawy Matematyczne i Ścisłe Dowody Analityczne</h2>
+      <p>Wielokąt foremny (n-Eck) to figura płaska o 8 równych bokach i 8 przystających kątach wewnętrznych. Należy do grupy dihedralnej D_8.</p>
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">1</span>
-            <span>Interior, Exterior, and Central Angles</span>
-          </h3>
+          <h3><span class="step-num">1</span><span>Kąty Wewnętrzne, Zewnętrzne i Środkowe</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <p>
-            Any simple <span class="math-tex">n</span>-gon can be partitioned into <span class="math-tex">(n - 2)</span> non-overlapping triangles by drawing all non-intersecting diagonals from a single vertex. Because the interior angles of each triangle sum to 180°:
-          </p>
-          <div class="math-display">
-            ∑ (Interior Angles) = (n - 2) · 180° = (n - 2)π rad
-          </div>
-          <p>
-            Because all <span class="math-tex">n</span> interior angles are congruent:
-          </p>
-          <div class="math-display">
-            α = [(n - 2) · 180°] / n = (1 - 2/n) · 180°
-          </div>
-          <p>
-            The exterior angle <span class="math-tex">θ</span> is supplementary to the interior angle:
-          </p>
-          <div class="math-display">
-            θ = 180° - α = 180° - (180° - 360°/n) = 360° / n
-          </div>
-          <p>
-            The central angle <span class="math-tex">β</span> subtended by one side at the circumcenter equals the full circle divided by <span class="math-tex">n</span>:
-          </p>
-          <div class="math-display">
-            β = 360° / n = (2π / n) rad = θ
-          </div>
+          <p>Suma kątów wewnętrznych: Dla n = 8 wynosi S = (8 - 2) × 180°.</p>
+          <p>Każdy kąt wewnętrzny wynosi α = S / n.</p>
+          <p>Kąt środkowy oraz kąt zewnętrzny wynoszą β = 360° / n.</p>
         </div>
       </div>
-
-      <!-- Proof 2: Apothem & Circumradius -->
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">2</span>
-            <span>Right-Triangle Decomposition: Inradius (<span class="math-tex">r<sub>i</sub></span>) and Circumradius (<span class="math-tex">R</span>)</span>
-          </h3>
+          <h3><span class="step-num">2</span><span>Apotema (Promień Wpisany) i Promień Opisany</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <p>
-            Connecting the center of the polygon to any two adjacent vertices forms an isosceles triangle with vertex angle <span class="math-tex">β = 2π / n</span> and base length <span class="math-tex">a</span>. Dropping a perpendicular altitude from the center to the midpoint of the base bisects the triangle into two congruent right triangles:
-          </p>
-          <ul>
-            <li>Opposite leg = <span class="math-tex">a / 2</span></li>
-            <li>Adjacent leg = Apothem / Inradius <span class="math-tex">r<sub>i</sub></span></li>
-            <li>Hypotenuse = Circumradius <span class="math-tex">R</span></li>
-            <li>Angle at the center = <span class="math-tex">β / 2 = π / n</span> (or <span class="math-tex">180° / n</span>)</li>
-          </ul>
-          <p>Applying elementary trigonometry:</p>
-          <div class="math-display">
-            tan(π / n) = (a / 2) / r<sub>i</sub> ⟹ r<sub>i</sub> = a / [2 tan(π / n)]
-          </div>
-          <div class="math-display">
-            sin(π / n) = (a / 2) / R ⟹ R = a / [2 sin(π / n)]
-          </div>
-          <p>Furthermore, dividing the two equations gives the fundamental invariance:</p>
-          <div class="math-display">
-            r<sub>i</sub> / R = cos(π / n) ⟹ r<sub>i</sub> = R · cos(π / n)
-          </div>
+          <p>Apotema r_i to odległość od środka do boku: r_i = a / [2 tan(180° / 8)]. r_i = a / [2 tan(π / n)]</p>
+          <p>Promień okręgu opisanego R wynosi: R = a / [2 sin(180° / 8)].</p>
         </div>
       </div>
-
-      <!-- Proof 3: Area Derivations -->
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">3</span>
-            <span>Area from Triangulation, Apothem, and Circumradius</span>
-          </h3>
+          <h3><span class="step-num">3</span><span>Ścisłe Wzory na Pole i Triangulacja</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <p>
-            A regular <span class="math-tex">n</span>-gon is the union of <span class="math-tex">n</span> congruent isosceles triangles, each having base <span class="math-tex">a</span> and height <span class="math-tex">r<sub>i</sub></span>.
-          </p>
-          <div class="math-display">
-            A = n · (½ · a · r<sub>i</sub>) = ½ (n · a) · r<sub>i</sub> = ½ P · r<sub>i</sub>
-          </div>
-          <p>Substituting <span class="math-tex">r<sub>i</sub> = a / [2 tan(π / n)]</span>:</p>
-          <div class="math-display">
-            A = (n · a²) / [4 tan(π / n)]
-          </div>
-          <p>Expressing the area strictly in terms of circumradius <span class="math-tex">R</span> using <span class="math-tex">Area = ½ a b · sin(θ)</span> for each triangle:</p>
-          <div class="math-display">
-            A = n · [½ R² · sin(2π / n)] = ½ n R² · sin(2π / n)
-          </div>
+          <p>Podział na 8 trójkątów przystających daje ścisły wzór: A = (n / 4) · a² · cot(π / n).</p>
         </div>
       </div>
-
-      <!-- Proof 4: Diagonals -->
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">4</span>
-            <span>Total Diagonals Combinatorics & Diagonal Chord Lengths</span>
-          </h3>
+          <h3><span class="step-num">4</span><span>Klasy Przekątnych i Twierdzenie Cosinusów</span></h3>
           <span class="proof-toggle-icon">▼</span>
         </div>
         <div class="proof-body">
-          <p>
-            A diagonal is any line segment connecting two non-adjacent vertices. From any of the <span class="math-tex">n</span> vertices, we can draw line segments to all other vertices except itself and its two immediate neighbors, yielding <span class="math-tex">(n - 3)</span> diagonals per vertex. Multiplying by <span class="math-tex">n</span> and dividing by 2 (since segment <span class="math-tex">V<sub>i</sub>V<sub>j</sub> = V<sub>j</sub>V<sub>i</sub></span>):
-          </p>
-          <div class="math-display">
-            N<sub>d</sub> = n(n - 3) / 2
-          </div>
-          <p>
-            Diagonals fall into <span class="math-tex">⌊n/2⌋ - 1</span> distinct length congruence classes. The <span class="math-tex">k</span>-th diagonal <span class="math-tex">d<sub>k</sub></span> (skipping <span class="math-tex">k</span> edges along the perimeter) subtends an arc of <span class="math-tex">k · (2π / n)</span> on the circumscribed circle. Using the chord theorem:
-          </p>
-          <div class="math-display">
-            d<sub>k</sub> = 2R · sin(kπ / n) = a · [sin(kπ / n) / sin(π / n)]
-          </div>
+          <p>Wielokąt o 8 wierzchołkach ma 20 przekątnych. n(n - 3) / 2 Diagonalen</p>
         </div>
       </div>
-
-      <!-- Proof 5: Archimedes Limit -->
-      <div class="proof-card open">
-        <div class="proof-header">
-          <h3>
-            <span class="step-num">5</span>
-            <span>The Archimedean Limit as <span class="math-tex">n ➔ ∞</span> (Method of Exhaustion)</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
-        </div>
-        <div class="proof-body">
-          <p>
-            Around 250 BCE, Archimedes of Syracuse calculated the bounds of <span class="math-tex">π</span> by doubling polygon sides from hexagon (<span class="math-tex">n = 6</span>) to 12, 24, 48, and 96-gon. Taking the limit of perimeter and area as <span class="math-tex">n ➔ ∞</span> with fixed circumradius <span class="math-tex">R</span>:
-          </p>
-          <div class="math-display">
-            lim (n ➔ ∞) P = lim (n ➔ ∞) [2n R · sin(π/n)] = 2πR · lim (n ➔ ∞) [sin(π/n) / (π/n)] = 2πR
-          </div>
-          <div class="math-display">
-            lim (n ➔ ∞) A = lim (n ➔ ∞) [½ n R² · sin(2π/n)] = πR² · lim (n ➔ ∞) [sin(2π/n) / (2π/n)] = πR²
-          </div>
-          <p>
-            Similarly, <span class="math-tex">lim (n ➔ ∞) r<sub>i</sub> = lim (n ➔ ∞) [R · cos(π/n)] = R</span>, proving that the polygon converges to a circle of radius <span class="math-tex">R</span>.
-          </p>
-        </div>
-      </div>
-
     </section>
 
     <!-- LLM Instructions & Agent Prompting Section -->
@@ -842,64 +728,31 @@
       <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
 
       <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
-        <span>✓ Standardized for <code>llms.txt</code></span>
-        <span>✓ Precision verified up to 10 decimal digits</span>
+        <span>✓ Ustandaryzowane dla <code>llms.txt</code></span>
+        <span>✓ Precyzja zweryfikowana do 10 miejsc po przecinku</span>
         <span>✓ Exact analytic radicals & Archimedean limits included</span>
       </div>
     </section>
 
     <!-- Frequently Asked Questions -->
     <section class="faq-section">
-      <h2>Często Zadawane Pytania</h2>
-      
+      <h2>FAQ</h2>
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the formula for the area of any regular n-sided polygon?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          The area of any regular polygon with <span class="math-tex">n</span> sides of length <span class="math-tex">a</span> is <span class="math-tex">A = (n · a²) / [4 tan(π/n)]</span>. If you know the apothem (inradius) <span class="math-tex">r<sub>i</sub></span>, the area is <span class="math-tex">A = n · r<sub>i</sub>² · tan(π/n) = ½ P · r<sub>i</sub></span>. If you know the circumradius <span class="math-tex">R</span>, the area is <span class="math-tex">A = ½ n R² · sin(2π/n)</span>.
-        </div>
+        <div class="faq-question"><span>Jaki jest wzór na pole powierzchni (n-Eck)?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Pole powierzchni o boku a wyraża się wzorem A = (n / 4) · a² · cot(π / n).</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>How many diagonals does an n-gon have?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          An <span class="math-tex">n</span>-sided polygon has <span class="math-tex">N<sub>d</sub> = n(n - 3) / 2</span> diagonals. For example:
-          <ul>
-            <li>Triangle (<span class="math-tex">n = 3</span>): <span class="math-tex">3(0)/2 = 0</span> diagonals</li>
-            <li>Square (<span class="math-tex">n = 4</span>): <span class="math-tex">4(1)/2 = 2</span> diagonals</li>
-            <li>Pentagon (<span class="math-tex">n = 5</span>): <span class="math-tex">5(2)/2 = 5</span> diagonals</li>
-            <li>Hexagon (<span class="math-tex">n = 6</span>): <span class="math-tex">6(3)/2 = 9</span> diagonals</li>
-            <li>Octagon (<span class="math-tex">n = 8</span>): <span class="math-tex">8(5)/2 = 20</span> diagonals</li>
-            <li>Decagon (<span class="math-tex">n = 10</span>): <span class="math-tex">10(7)/2 = 35</span> diagonals</li>
-          </ul>
-        </div>
+        <div class="faq-question"><span>Jak wyznaczyć długość boku z pola?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Należy podzielić pole A przez współczynnik geometryczny i wyciągnąć pierwiastek kwadratowy.</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the difference between an apothem and a circumradius?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          The <strong>apothem (inradius <span class="math-tex">r<sub>i</sub></span>)</strong> is the perpendicular distance from the center to the midpoint of any flat edge. It is the radius of the inscribed circle. The <strong>circumradius (<span class="math-tex">R</span>)</strong> is the distance from the center to any vertex corner. It is the radius of the circumscribed circle passing through all vertices. The two are always related by <span class="math-tex">r<sub>i</sub> = R · cos(π / n)</span>.
-        </div>
+        <div class="faq-question"><span>Ile przekątnych ma n-Eck?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Liczba przekątnych wynosi n(n - 3) / 2 = 20.</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>Which regular polygons can be constructed with compass and straightedge?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          By the <strong>Gauss-Wantzel Theorem</strong>, a regular <span class="math-tex">n</span>-gon is constructible with compass and straightedge if and only if <span class="math-tex">n</span> is the product of a power of 2 and any number of distinct Fermat primes (<span class="math-tex">3, 5, 17, 257, 65537</span>). Constructible polygons include <span class="math-tex">n = 3, 4, 5, 6, 8, 10, 12, 15, 16, 17, 20, 24, 30</span>. Non-constructible regular polygons include <span class="math-tex">n = 7, 9, 11, 13, 14, 18, 19</span>.
-        </div>
+        <div class="faq-question"><span>Gdzie znajduje zastosowanie ta figura?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">W konstrukcjach inżynieryjnych i mechanice precyzyjnej dla równomiernego przenoszenia naprężeń.</div>
       </div>
-
     </section>
 
   </main>
@@ -928,10 +781,10 @@
         <div class="footer-col">
           <h3>Core Domains</h3>
           <ul class="footer-links">
-            <li><a href="/calculus/">Calculus & Analysis</a></li>
-            <li><a href="/finance/">Quantitative Finance</a></li>
-            <li><a href="/physics/">Physics & Mechanics</a></li>
-            <li><a href="/statistics/">Probability & Statistics</a></li>
+            <li><a href="/pl/calculus/">Calculus & Analysis</a></li>
+            <li><a href="/pl/finance/">Quantitative Finance</a></li>
+            <li><a href="/pl/physics/">Physics & Mechanics</a></li>
+            <li><a href="/pl/statistics/">Probability & Statistics</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -946,8 +799,8 @@
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-        <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+        <div>© 2026 OmniOperand. Wszystkie dowody matematyczne i obliczenia rygorystycznie zweryfikowane.</div>
+        <div>Hostowane w sieci Cloudflare Edge • Zbudowane bez zewnętrznych zależności</div>
       </div>
     </div>
   </footer>

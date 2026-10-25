@@ -66,6 +66,30 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "How do you convert RCF (xg) to RPM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To convert RCF (relative centrifugal force) to RPM, use the formula: RPM = √[RCF / (1.118 × 10⁻⁵ × r)], where r is the rotor radius in centimeters. For an 8.5 cm rotor, 300 ×g equals 1,777 RPM, 1,000 ×g equals 3,244 RPM, and 10,000 ×g equals 10,259 RPM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is 300 xg to RPM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a standard 8.5 cm benchtop rotor, 300 ×g corresponds to approximately 1,777 RPM. For a 10 cm rotor, 300 ×g is 1,638 RPM; for a 12 cm rotor, it is 1,496 RPM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is 1000 xg to RPM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a standard 8.5 cm benchtop rotor, 1,000 ×g corresponds to approximately 3,244 RPM. For a 10 cm rotor, 1,000 ×g is 2,991 RPM; for a 12 cm rotor, it is 2,731 RPM."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Why is it dangerous to report centrifugation speeds in RPM?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -223,12 +247,25 @@
 
     <!-- Hero Header -->
     <section class="solver-hero">
-      <div class="hero-badge">Laboratory Centrifugation • RCF Math</div>
-      <h1>Centrifuge Relative Centrifugal Force (RCF / g-Force) & RPM Calculator</h1>
+      <div class="hero-badge">Laboratory Centrifugation • RCF & RPM Inversions</div>
+      <h1>Centrifuge RCF (×g) & RPM Bidirectional Converter</h1>
       <p class="hero-subtext">
         Convert between rotational speed (RPM) and Relative Centrifugal Force (RCF in ×g) using exact rotor radius geometry to reproduce centrifugation protocols.
       </p>
     </section>
+
+    <!-- Position 0 Direct Answer Box -->
+    <div class="direct-answer-box" style="background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.25); border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:2rem;">
+      <div style="font-size:0.75rem; text-transform:uppercase; font-weight:700; letter-spacing:0.06em; color:var(--accent-cyan); margin-bottom:0.4rem;">Direct Answer • RCF (×g) to RPM Inversion</div>
+      <p style="margin:0; font-size:1.025rem; line-height:1.6; color:var(--text-primary);">
+        To convert between <strong>RCF (×g)</strong> and <strong>RPM</strong>, use the standard laboratory formula: 
+        <code style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px; font-weight:600; color:var(--accent-cyan);">RCF = 1.118 × 10⁻⁵ · r · RPM²</code> 
+        or solve for RPM: 
+        <code style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px; font-weight:600; color:var(--accent-cyan);">RPM = √[RCF / (1.118 × 10⁻⁵ · r)]</code>, 
+        where <strong>r</strong> is the rotor radius in centimeters. For an <strong>8.5 cm</strong> benchtop rotor: 
+        <strong>300 ×g = 1,777 RPM</strong>, <strong>1,000 ×g = 3,244 RPM</strong>, <strong>3,000 ×g = 5,619 RPM</strong>, and <strong>10,000 ×g = 10,259 RPM</strong>.
+      </p>
+    </div>
 
 <!-- Master Solver Grid -->
     <div class="calculator-grid">
@@ -238,7 +275,12 @@
         <div class="hud-panel">
           <div class="hud-panel-header">
             <h2>Parameters & Inversions</h2>
-            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Deterministic Engine</span>
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <button id="btn-share-link" type="button" class="btn btn-secondary" style="font-size:0.75rem; padding:0.25rem 0.6rem; display:inline-flex; align-items:center; gap:0.3rem;">
+                <span>🔗 Share Link</span>
+              </button>
+              <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Deterministic Engine</span>
+            </div>
           </div>
 
           <div class="param-card-grid">
@@ -246,29 +288,40 @@
             <div class="param-card">
               <div class="param-label-row">
                 <label for="param-centrifuge_rotor_speed_rpm">Rotational Speed (RPM)</label>
-                <span class="param-symbol">centrifuge_rotor_speed_rpm</span>
+                <span class="param-symbol">RPM</span>
               </div>
               <div class="input-unit-group">
-                
                 <input type="number" id="param-centrifuge_rotor_speed_rpm" class="number-input omni-calc-input" data-id="centrifuge_rotor_speed_rpm" value="14000" step="250" min="100">
                 <span class="input-suffix">RPM</span>
               </div>
               <input type="range" id="slider-centrifuge_rotor_speed_rpm" class="param-slider omni-calc-slider" data-id="centrifuge_rotor_speed_rpm" min="100" max="100000" step="250" value="14000">
               <div class="param-hint">Rotor revolutions per minute</div>
             </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-relative_centrifugal_force_input">Target RCF (g-Force)</label>
+                <span class="param-symbol">×g</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-relative_centrifugal_force_input" class="number-input omni-calc-input" data-id="relative_centrifugal_force_input" value="18625" step="50" min="10">
+                <span class="input-suffix">×g</span>
+              </div>
+              <input type="range" id="slider-relative_centrifugal_force_input" class="param-slider omni-calc-slider" data-id="relative_centrifugal_force_input" min="10" max="100000" step="50" value="18625">
+              <div class="param-hint">Enter target g-force to solve for RPM</div>
+            </div>
         
             <div class="param-card">
               <div class="param-label-row">
                 <label for="param-rotor_radius_centimeters">Rotor Radius (r in cm)</label>
-                <span class="param-symbol">rotor_radius_centimeters</span>
+                <span class="param-symbol">r_cm</span>
               </div>
               <div class="input-unit-group">
-                
                 <input type="number" id="param-rotor_radius_centimeters" class="number-input omni-calc-input" data-id="rotor_radius_centimeters" value="8.5" step="0.5" min="1.0">
                 <span class="input-suffix">cm</span>
               </div>
               <input type="range" id="slider-rotor_radius_centimeters" class="param-slider omni-calc-slider" data-id="rotor_radius_centimeters" min="1.0" max="50.0" step="0.5" value="8.5">
-              <div class="param-hint">Distance from center of centrifuge spindle to bottom of tube bucket</div>
+              <div class="param-hint">Spindle axis to bottom of tube (r_max)</div>
             </div>
         
           </div>
@@ -376,11 +429,120 @@
 
     </div>
 
+<!-- Quick Reference Lookup Table -->
+    <section class="calc-table-section" style="margin-top:3rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:0.75rem;">Centrifuge RCF (×g) to RPM Conversion Chart</h2>
+      <p style="color:var(--text-secondary); margin-bottom:1.5rem; font-size:0.95rem;">
+        Pre-calculated rotational speeds (RPM) required to achieve standard laboratory g-forces across common benchtop and microcentrifuge rotor radii.
+      </p>
+      <div style="overflow-x:auto; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; padding:0.5rem;">
+        <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.9rem;">
+          <thead>
+            <tr style="border-bottom:1px solid var(--border-subtle); color:var(--text-bright);">
+              <th style="padding:0.75rem 1rem;">Target Force (RCF)</th>
+              <th style="padding:0.75rem 1rem;">r = 8.5 cm (Standard)</th>
+              <th style="padding:0.75rem 1rem;">r = 10.0 cm (Benchtop)</th>
+              <th style="padding:0.75rem 1rem;">r = 12.0 cm (Large Rotor)</th>
+              <th style="padding:0.75rem 1rem;">Common Biological Application</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">300 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">1,777 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">1,638 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">1,496 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Whole blood separation, cell washing, gentle mammalian cells</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">500 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">2,294 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">2,115 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">1,931 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Yeast harvesting, intact tissue cultures</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">1,000 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">3,244 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">2,991 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">2,731 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Platelet-rich plasma (PRP), bacterial pelleting</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">2,000 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">4,588 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">4,230 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">3,862 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Clarifying cellular lysates, post-nuclear supernatants</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">3,000 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">5,619 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">5,180 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">4,729 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Membrane fractionation, dense cell homogenates</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">5,000 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">7,255 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">6,688 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">6,106 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Dense bacterial pellets, fungal spores, protein precipitates</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">10,000 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">10,259 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">9,458 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">8,635 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Mitochondria, chloroplasts, intact nuclei separation</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">14,000 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">12,139 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">11,190 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">10,217 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">DNA / RNA / Protein silica spin columns, ethanol precipitation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
 <!-- High-Intent FAQ Section -->
     <section class="calc-faq-section" style="margin-top:3rem;">
       <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
       <div class="faq-list">
         
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do you convert RCF (×g) to RPM?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            To convert RCF (relative centrifugal force) to RPM, use the inverted formula: <code>RPM = √[RCF / (1.118 × 10⁻⁵ × r)]</code>, where <code>r</code> is the rotor radius in centimeters. For an 8.5 cm rotor, 300 ×g equals 1,777 RPM, 1,000 ×g equals 3,244 RPM, and 10,000 ×g equals 10,259 RPM.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is 300 xg to RPM?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            For a standard 8.5 cm benchtop rotor, 300 ×g corresponds to approximately <strong>1,777 RPM</strong>. For a 10 cm rotor, 300 ×g is <strong>1,638 RPM</strong>; for a 12 cm rotor, it is <strong>1,496 RPM</strong>.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is 1000 xg to RPM?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            For a standard 8.5 cm benchtop rotor, 1,000 ×g corresponds to approximately <strong>3,244 RPM</strong>. For a 10 cm rotor, 1,000 ×g is <strong>2,991 RPM</strong>; for a 12 cm rotor, it is <strong>2,731 RPM</strong>.
+          </div>
+        </div>
+
         <div class="faq-item">
           <div class="faq-question">
             <span>Why is it dangerous to report centrifugation speeds in RPM?</span>
@@ -483,44 +645,93 @@
         setDisp(id, text);
       }
 
-      const fact = (n) => { let r = 1; for (let i = 2; i <= n; i++) r *= i; return r; };
-      const nPr = (n, r) => (r < 0 || r > n) ? 0 : fact(n) / fact(n - r);
-      const fmt = (num, dec = 2) => typeof num === 'number' ? num.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : num;
-      const acos = Math.acos;
-      const atan = Math.atan;
-      const cbrt = Math.cbrt;
+      let activeInput = 'rpm';
 
       function recalculate() {
-        
-          const rpm = getNum('centrifuge_rotor_speed_rpm');
-          const r = getNum('rotor_radius_centimeters');
+        const r = getNum('rotor_radius_centimeters');
+        if (r <= 0) return;
 
-          if (rpm > 0 && r > 0) {
-            const rcf = 0.00001118 * r * Math.pow(rpm, 2);
-            const vMs = (2 * Math.PI * (r / 100) * (rpm / 60));
-            const vKmh = vMs * 3.6;
+        let rpm = getNum('centrifuge_rotor_speed_rpm');
+        let rcf = getNum('relative_centrifugal_force_input');
 
-            let tier = 'Low-Speed Clinical (Blood / Cell Separation)';
-            if (rcf >= 10000 && rcf < 30000) tier = 'Microcentrifuge (DNA / RNA / Protein Pelleting)';
-            else if (rcf >= 30000 && rcf < 100000) tier = 'High-Speed Subcellular Fractionation';
-            else if (rcf >= 100000) tier = 'Ultracentrifugation (Ribosomes / Viruses)';
-
-            setMetric('relative_centrifugal_force_rcf', Math.round(rcf).toLocaleString() + ' ×g');
-            setMetric('tangential_linear_velocity', vMs.toFixed(1) + ' m/s (' + vKmh.toFixed(1) + ' km/h)');
-            setMetric('protocol_centrifugation_tier', tier);
-            setMetric('radius_variance_factor', (r * 10).toFixed(0) + ' mm Radius');
+        if (activeInput === 'rcf') {
+          if (rcf > 0) {
+            rpm = Math.round(Math.sqrt(rcf / (0.00001118 * r)));
+            sync('centrifuge_rotor_speed_rpm', rpm);
           }
-        
+        } else {
+          if (rpm > 0) {
+            rcf = Math.round(0.00001118 * r * Math.pow(rpm, 2));
+            sync('relative_centrifugal_force_input', rcf);
+          }
+        }
+
+        if (rpm > 0 && r > 0) {
+          const vMs = (2 * Math.PI * (r / 100) * (rpm / 60));
+          const vKmh = vMs * 3.6;
+
+          let tier = 'Low-Speed Clinical (Blood / Cell Separation)';
+          if (rcf >= 10000 && rcf < 30000) tier = 'Microcentrifuge (DNA / RNA / Protein Pelleting)';
+          else if (rcf >= 30000 && rcf < 100000) tier = 'High-Speed Subcellular Fractionation';
+          else if (rcf >= 100000) tier = 'Ultracentrifugation (Ribosomes / Viruses)';
+
+          setMetric('relative_centrifugal_force_rcf', rcf.toLocaleString() + ' ×g');
+          setMetric('tangential_linear_velocity', vMs.toFixed(1) + ' m/s (' + vKmh.toFixed(1) + ' km/h)');
+          setMetric('protocol_centrifugation_tier', tier);
+          setMetric('radius_variance_factor', (r * 10).toFixed(0) + ' mm Radius');
+        }
       }
 
       // Bind input events
       document.querySelectorAll('.omni-calc-input, .omni-calc-slider').forEach(el => {
         const id = el.getAttribute('data-id');
         el.addEventListener('input', (e) => {
+          if (id === 'relative_centrifugal_force_input') {
+            activeInput = 'rcf';
+          } else if (id === 'centrifuge_rotor_speed_rpm') {
+            activeInput = 'rpm';
+          }
           sync(id, e.target.value);
           recalculate();
         });
       });
+
+      // Share Link Handler
+      const shareBtn = document.getElementById('btn-share-link');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          const rpm = getNum('centrifuge_rotor_speed_rpm');
+          const r = getNum('rotor_radius_centimeters');
+          const rcf = getNum('relative_centrifugal_force_input');
+          const url = new URL(window.location.href);
+          url.searchParams.set('rpm', rpm);
+          url.searchParams.set('r', r);
+          url.searchParams.set('rcf', rcf);
+          window.history.replaceState({}, '', url);
+          navigator.clipboard.writeText(url.href).then(() => {
+            const originalText = shareBtn.innerHTML;
+            shareBtn.innerHTML = '<span>✅ Copied!</span>';
+            setTimeout(() => { shareBtn.innerHTML = originalText; }, 2000);
+          });
+        });
+      }
+
+      // Parse URL parameters
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('rcf')) {
+        activeInput = 'rcf';
+        const rcfVal = parseFloat(params.get('rcf'));
+        if (rcfVal) sync('relative_centrifugal_force_input', rcfVal);
+      }
+      if (params.has('rpm')) {
+        activeInput = 'rpm';
+        const rpmVal = parseFloat(params.get('rpm'));
+        if (rpmVal) sync('centrifuge_rotor_speed_rpm', rpmVal);
+      }
+      if (params.has('r')) {
+        const rVal = parseFloat(params.get('r'));
+        if (rVal) sync('rotor_radius_centimeters', rVal);
+      }
 
       // Accordion toggle
       document.querySelectorAll('.faq-question').forEach(q => {

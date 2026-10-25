@@ -87,7 +87,7 @@
     .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
     .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
     .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
-    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-mellan; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
     .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
     .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
     .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
@@ -107,7 +107,7 @@
       <a href="/sv/" class="brand-link">
         <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
-        <span class="brand-badge">Calculus</span>
+        <span class="brand-badge">Analys</span>
       </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
@@ -154,7 +154,7 @@
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="lang-dropdown-menu">
-            <a href="/calculus/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/sv/calculus/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
             <a href="/es/calculus/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
             <a href="/fr/calculus/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
             <a href="/de/calculus/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
@@ -171,8 +171,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Sök</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -198,7 +197,7 @@
     </div>
     <h1>Matematisk Analys & Kalkyl</h1>
     <p style="max-width:800px; color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem; line-height:1.6;">
-      Computational engines for differentiation, integration, quadratic roots, linear systems, and algebraic structures.
+      Computational engines för differentiation, integration, quadratic roots, linear systems, och algebraic structures.
     </p>
 
 <div class="hub-grid" style="margin-top:2rem;">
@@ -209,11 +208,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">∫</div>
               <span class="hub-badge">Algebraic Analysis • Quadratic Discriminant Matrix</span>
             </div>
-            <h2 class="hub-card-title">Quadratic Formula & Parabola Vertex Calculator</h2>
-            <p class="hub-card-desc">Calculate real and complex roots, discriminant (Δ = b² - 4ac), and vertex coordinates of any quadratic equation ax² + bx + c = 0.</p>
+            <h2 class="hub-card-title">Quadratic Formula & Parabola Vertex Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna real och complex roots, discriminant (Δ = b² - 4ac), och vertex coordinates av any quadratic equation ax² + bx + c = 0.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/calculus/quadratic-formula/">Open Solver →</a></li>
+            <li><a href="/calculus/quadratic-formula/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -223,11 +222,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">∫</div>
               <span class="hub-badge">Linear Algebra • Matrix Determinant Matrix</span>
             </div>
-            <h2 class="hub-card-title">2×2 Matrix Determinant & Inverse Calculator</h2>
-            <p class="hub-card-desc">Calculate 2×2 matrix determinant det(A), matrix trace, matrix inverse A⁻¹, characteristic polynomial, and eigenvalues.</p>
+            <h2 class="hub-card-title">2×2 Matrix Determinant & Inverse Kalkylator</h2>
+            <p class="hub-card-desc">Beräkna 2×2 matrix determinant det(A), matrix trace, matrix inverse A⁻¹, characteristic polynomial, och eigenvalues.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/calculus/matrix-multiplication/">Open Solver →</a></li>
+            <li><a href="/calculus/matrix-multiplication/">Öppna Räknare →</a></li>
           </ul>
         </div>
         
@@ -237,8 +236,8 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      <div>© 2026 OmniOperand. Alla matematiska bevis och beräkningar rigoröst verifierade.</div>
+      <div>Drift på Cloudflare Edge Network • Byggd utan externa beroenden</div>
     </div>
   </footer>
 

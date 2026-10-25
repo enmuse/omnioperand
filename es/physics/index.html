@@ -87,7 +87,7 @@
     .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
     .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
     .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
-    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-entre; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
     .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
     .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
     .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
@@ -107,7 +107,7 @@
       <a href="/es/" class="brand-link">
         <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
-        <span class="brand-badge">Physics</span>
+        <span class="brand-badge">Física</span>
       </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
@@ -154,7 +154,7 @@
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="lang-dropdown-menu">
-            <a href="/physics/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/physics/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
             <a href="/es/physics/" class="lang-dropdown-item active"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
             <a href="/fr/physics/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
             <a href="/de/physics/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
@@ -171,8 +171,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Buscar</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -194,11 +193,11 @@
 
   <main class="container" style="padding: 2.5rem 0;">
     <div style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--accent-blue); background:rgba(56,189,248,0.1); padding:0.3rem 0.8rem; border-radius:999px; margin-bottom:0.75rem;">
-      Domain Hub • Physics & Mechanics
+      Domain Hub • Física
     </div>
     <h1>Física y Mecánica Aplicada</h1>
     <p style="max-width:800px; color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem; line-height:1.6;">
-      Classical Newtonian kinematics, ballistics, electromagnetism, Ohm's law, fluid mechanics, and harmonic oscillation solvers.
+      Classical Newtonian kinematics, ballistics, electromagnetism, Ohm's law, fluid mechanics, y harmonic oscillation solvers.
     </p>
 
 <div class="hub-grid" style="margin-top:2rem;">
@@ -209,11 +208,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Classical Kinematics • Ballistic Vector Matrix</span>
             </div>
-            <h2 class="hub-card-title">Projectile Motion & Ballistic Trajectory Calculator</h2>
-            <p class="hub-card-desc">Calculate ballistic flight trajectory, maximum apogee height, total hang time, and horizontal ground range under gravitational acceleration.</p>
+            <h2 class="hub-card-title">Projectile Motion & Ballistic Trajectory Calculadora</h2>
+            <p class="hub-card-desc">Calcule ballistic flight trajectory, maximum apogee height, total hang time, y horizontal ground range under gravitational acceleration.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/projectile-motion/">Open Solver →</a></li>
+            <li><a href="/physics/projectile-motion/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -223,11 +222,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Newtonian Mechanics • Kinetic Energy Matrix</span>
             </div>
-            <h2 class="hub-card-title">Kinetic Energy & Linear Momentum Calculator</h2>
-            <p class="hub-card-desc">Calculate translational kinetic energy (Joules, ft-lbs), linear momentum, and relativistic velocity inversions from mass and velocity.</p>
+            <h2 class="hub-card-title">Kinetic Energy & Linear Momentum Calculadora</h2>
+            <p class="hub-card-desc">Calcule translational kinetic energy (Joules, ft-lbs), linear momentum, y relativistic velocity inversions de mass y velocity.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/kinetic-energy/">Open Solver →</a></li>
+            <li><a href="/physics/kinetic-energy/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -237,11 +236,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Electromagnetism • Four-Quadrant Ohm's Wheel</span>
             </div>
-            <h2 class="hub-card-title">Ohm's Law & Electrical Power (PIVR) Calculator</h2>
-            <p class="hub-card-desc">Calculate Voltage (V), Current (I), Resistance (R), and Electrical Power (P) with bidirectional four-quadrant PIVR inversions.</p>
+            <h2 class="hub-card-title">Ohm's Law & Electrical Power (PIVR) Calculadora</h2>
+            <p class="hub-card-desc">Calcule Voltage (V), Current (I), Resistance (R), y Electrical Power (P) con bidirectional four-quadrant PIVR inversions.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/ohms-law/">Open Solver →</a></li>
+            <li><a href="/physics/ohms-law/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -251,11 +250,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Continuum Mechanics • Density Invariant Matrix</span>
             </div>
-            <h2 class="hub-card-title">Density, Mass & Volume Calculator</h2>
-            <p class="hub-card-desc">Calculate material density (ρ), total mass, and displacement volume with bidirectional inversions and material reference library.</p>
+            <h2 class="hub-card-title">Density, Mass & Volume Calculadora</h2>
+            <p class="hub-card-desc">Calcule material density (ρ), total mass, y displacement volume con bidirectional inversions y material reference library.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/density-mass-volume/">Open Solver →</a></li>
+            <li><a href="/physics/density-mass-volume/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -265,11 +264,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Harmonic Oscillations • Pendulum Dynamics Matrix</span>
             </div>
-            <h2 class="hub-card-title">Simple Pendulum Period & Harmonic Frequency Calculator</h2>
-            <p class="hub-card-desc">Calculate pendulum period (T), natural frequency (Hz), angular frequency (rad/s), and local gravitational acceleration (g).</p>
+            <h2 class="hub-card-title">Simple Pendulum Period & Harmonic Frequency Calculadora</h2>
+            <p class="hub-card-desc">Calcule pendulum period (T), natural frequency (Hz), angular frequency (rad/s), y local gravitational acceleration (g).</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/pendulum-period/">Open Solver →</a></li>
+            <li><a href="/physics/pendulum-period/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -279,11 +278,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Electric Mobility • EV Energy Economics</span>
             </div>
-            <h2 class="hub-card-title">Electric Vehicle (EV) Charging Cost & Range Calculator</h2>
-            <p class="hub-card-desc">Calculate exact dollar cost to fully charge an electric car at home versus public DC fast chargers, cost per mile, and monthly charging expense.</p>
+            <h2 class="hub-card-title">Electric Vehicle (EV) Charging Cost & Range Calculadora</h2>
+            <p class="hub-card-desc">Calcule exact dollar cost to fully charge an electric car at home versus public DC fast chargers, cost per mile, y monthly charging expense.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/ev-charging-cost/">Open Solver →</a></li>
+            <li><a href="/physics/ev-charging-cost/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -293,11 +292,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Vehicle Dynamics • Safe Towing Matrix</span>
             </div>
-            <h2 class="hub-card-title">Vehicle Towing Capacity & Tongue Weight Calculator</h2>
-            <p class="hub-card-desc">Calculate safe legal towing capacity, Gross Combined Weight Rating (GCWR), allowable trailer weight, and mandatory 10-15% tongue weight.</p>
+            <h2 class="hub-card-title">Vehicle Towing Capacity & Tongue Weight Calculadora</h2>
+            <p class="hub-card-desc">Calcule safe legal towing capacity, Gross Combined Weight Rating (GCWR), allowable trailer weight, y mandatory 10-15% tongue weight.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/towing-capacity/">Open Solver →</a></li>
+            <li><a href="/physics/towing-capacity/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -307,11 +306,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Truck Engineering • Payload GVWR Matrix</span>
             </div>
-            <h2 class="hub-card-title">Truck Payload Capacity & Cargo Safety Margin Calculator</h2>
-            <p class="hub-card-desc">Calculate actual remaining payload capacity from Gross Vehicle Weight Rating (GVWR), curb weight, aftermarket accessories, and passenger weight.</p>
+            <h2 class="hub-card-title">Truck Payload Capacity & Cargo Safety Margin Calculadora</h2>
+            <p class="hub-card-desc">Calcule actual remaining payload capacity de Gross Vehicle Weight Rating (GVWR), curb weight, aftermarket accessories, y passenger weight.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/payload-capacity/">Open Solver →</a></li>
+            <li><a href="/physics/payload-capacity/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -321,11 +320,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Fuel Economy • Multi-Standard Metric Matrix</span>
             </div>
-            <h2 class="hub-card-title">Gas Mileage (MPG / L/100km) & Fuel Cost Calculator</h2>
-            <p class="hub-card-desc">Calculate exact gas mileage in US MPG, Imperial MPG, and Liters per 100km, cost per mile, and annual fuel expense.</p>
+            <h2 class="hub-card-title">Gas Mileage (MPG / L/100km) & Fuel Cost Calculadora</h2>
+            <p class="hub-card-desc">Calcule exact gas mileage in US MPG, Imperial MPG, y Liters per 100km, cost per mile, y annual fuel expense.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/gas-mileage-mpg/">Open Solver →</a></li>
+            <li><a href="/physics/gas-mileage-mpg/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -335,11 +334,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Tire Dynamics • Speedometer Calibration Matrix</span>
             </div>
-            <h2 class="hub-card-title">Tire Size Comparison & Speedometer Error Calculator</h2>
-            <p class="hub-card-desc">Calculate tire diameter, sidewall height, revolutions per mile, and exact speedometer error when changing tire sizes.</p>
+            <h2 class="hub-card-title">Tire Size Comparison & Speedometer Error Calculadora</h2>
+            <p class="hub-card-desc">Calcule tire diameter, sidewall height, revolutions per mile, y exact speedometer error when changing tire sizes.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/tire-size-speedometer/">Open Solver →</a></li>
+            <li><a href="/physics/tire-size-speedometer/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -349,11 +348,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Mechanical Power • Drivetrain Physics Matrix</span>
             </div>
-            <h2 class="hub-card-title">Horsepower & Torque Conversion Calculator</h2>
-            <p class="hub-card-desc">Convert between rotational Torque (lb-ft or N·m) and Mechanical Horsepower (HP / kW) at any engine RPM, proving the 5,252 RPM crossover law.</p>
+            <h2 class="hub-card-title">Horsepower & Torque Conversion Calculadora</h2>
+            <p class="hub-card-desc">Convert entre rotational Torque (lb-ft o N·m) y Mechanical Horsepower (HP / kW) at any engine RPM, proving the 5,252 RPM crossover law.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/horsepower-torque/">Open Solver →</a></li>
+            <li><a href="/physics/horsepower-torque/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -363,11 +362,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Motorsports Dynamics • 1/4 Mile ET Matrix</span>
             </div>
-            <h2 class="hub-card-title">Quarter-Mile Elapsed Time (ET) & Trap Speed Calculator</h2>
-            <p class="hub-card-desc">Calculate drag racing 1/4 mile elapsed time (ET) and finish trap speed from vehicle curb weight and wheel horsepower using the iconic Hale and Fox formulas.</p>
+            <h2 class="hub-card-title">Quarter-Mile Elapsed Time (ET) & Trap Speed Calculadora</h2>
+            <p class="hub-card-desc">Calcule drag racing 1/4 mile elapsed time (ET) y finish trap speed de vehicle curb weight y wheel horsepower using the iconic Hale y Fox formulas.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/quarter-mile-speed/">Open Solver →</a></li>
+            <li><a href="/physics/quarter-mile-speed/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -377,11 +376,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Engine Building • Displacement Geometry</span>
             </div>
-            <h2 class="hub-card-title">Engine Displacement & Cylinder Volume Calculator</h2>
-            <p class="hub-card-desc">Calculate total internal combustion engine displacement in Cubic Centimeters (cc), Liters (L), and Cubic Inches (CID) from bore, stroke, and cylinder count.</p>
+            <h2 class="hub-card-title">Engine Displacement & Cylinder Volume Calculadora</h2>
+            <p class="hub-card-desc">Calcule total internal combustion engine displacement in Cubic Centimeters (cc), Liters (L), y Cubic Inches (CID) de bore, stroke, y cylinder count.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/engine-displacement/">Open Solver →</a></li>
+            <li><a href="/physics/engine-displacement/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -391,11 +390,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Combustion Engineering • Static CR Matrix</span>
             </div>
-            <h2 class="hub-card-title">Engine Static Compression Ratio Calculator</h2>
-            <p class="hub-card-desc">Calculate static compression ratio (CR) from cylinder swept volume, combustion chamber cc, head gasket thickness/bore, and piston dome/dish volume.</p>
+            <h2 class="hub-card-title">Engine Static Compression Ratio Calculadora</h2>
+            <p class="hub-card-desc">Calcule static compression ratio (CR) de cylinder swept volume, combustion chamber cc, head gasket thickness/bore, y piston dome/dish volume.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/compression-ratio/">Open Solver →</a></li>
+            <li><a href="/physics/compression-ratio/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -405,11 +404,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Drivetrain Kinematics • Gear Speed Matrix</span>
             </div>
-            <h2 class="hub-card-title">Transmission Gear Ratio & Vehicle Speed at RPM Calculator</h2>
-            <p class="hub-card-desc">Calculate vehicle road speed (MPH / km/h) at any engine RPM for each transmission gear, axle final drive ratio, and tire diameter.</p>
+            <h2 class="hub-card-title">Transmission Gear Ratio & Vehicle Speed at RPM Calculadora</h2>
+            <p class="hub-card-desc">Calcule vehicle road speed (MPH / km/h) at any engine RPM para each transmission gear, axle final drive ratio, y tire diameter.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/gear-ratio-speed/">Open Solver →</a></li>
+            <li><a href="/physics/gear-ratio-speed/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -419,11 +418,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Marine Engineering • Boat Fuel Matrix</span>
             </div>
-            <h2 class="hub-card-title">Marine Boat Fuel Burn & Range Calculator</h2>
-            <p class="hub-card-desc">Calculate marine boat fuel burn rate in Gallons Per Hour (GPH), cruising range in nautical miles (NM), and fuel costs with safe reserves.</p>
+            <h2 class="hub-card-title">Marine Boat Fuel Burn & Range Calculadora</h2>
+            <p class="hub-card-desc">Calcule marine boat fuel burn rate in Gallons Per Hour (GPH), cruising range in nautical miles (NM), y fuel costs con safe reserves.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/boat-fuel-burn/">Open Solver →</a></li>
+            <li><a href="/physics/boat-fuel-burn/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -433,11 +432,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Flight Operations • Crosswind Component Matrix</span>
             </div>
-            <h2 class="hub-card-title">Aviation Crosswind & Headwind Component Calculator</h2>
-            <p class="hub-card-desc">Calculate exact runway crosswind component and headwind/tailwind component from wind speed, wind direction, and magnetic runway heading.</p>
+            <h2 class="hub-card-title">Aviation Crosswind & Headwind Component Calculadora</h2>
+            <p class="hub-card-desc">Calcule exact runway crosswind component y headwind/tailwind component de wind speed, wind direction, y magnetic runway heading.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/aviation-crosswind/">Open Solver →</a></li>
+            <li><a href="/physics/aviation-crosswind/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -447,11 +446,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Aviation Engineering • Climb Gradient Matrix</span>
             </div>
-            <h2 class="hub-card-title">Aircraft Rate of Climb & Climb Gradient Calculator</h2>
-            <p class="hub-card-desc">Convert between Vertical Speed Rate of Climb (Feet Per Minute - FPM) and Climb Gradient in feet per nautical mile (ft/NM) and percent slope.</p>
+            <h2 class="hub-card-title">Aircraft Rate de Climb & Climb Gradient Calculadora</h2>
+            <p class="hub-card-desc">Convert entre Vertical Speed Rate de Climb (Feet Per Minute - FPM) y Climb Gradient in feet per nautical mile (ft/NM) y percent slope.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/aircraft-climb-rate/">Open Solver →</a></li>
+            <li><a href="/physics/aircraft-climb-rate/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -461,11 +460,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Off-Grid Power • Battery Capacity Matrix</span>
             </div>
-            <h2 class="hub-card-title">RV & Marine Battery Amp Hour & Inverter Runtime Calculator</h2>
-            <p class="hub-card-desc">Calculate deep cycle battery runtime in hours from total appliance AC watt load, battery voltage, amp hour capacity, and depth of discharge (DoD).</p>
+            <h2 class="hub-card-title">RV & Marine Battery Amp Hour & Inverter Runtime Calculadora</h2>
+            <p class="hub-card-desc">Calcule deep cycle battery runtime in hours de total appliance AC watt load, battery voltage, amp hour capacity, y depth de discharge (DoD).</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/battery-amp-hours/">Open Solver →</a></li>
+            <li><a href="/physics/battery-amp-hours/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -475,11 +474,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Automotive Aesthetics • Vinyl Film Roll Matrix</span>
             </div>
-            <h2 class="hub-card-title">Vehicle Vinyl Wrap Material & Roll Calculator</h2>
-            <p class="hub-card-desc">Calculate exact linear feet and square feet of vinyl wrap film required for full vehicle wraps, accounting for bumpers, roof, and 20% waste margin.</p>
+            <h2 class="hub-card-title">Vehicle Vinyl Wrap Material & Roll Calculadora</h2>
+            <p class="hub-card-desc">Calcule exact linear feet y square feet de vinyl wrap film required para full vehicle wraps, accounting para bumpers, roof, y 20% waste margin.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/car-wrap-vinyl/">Open Solver →</a></li>
+            <li><a href="/physics/car-wrap-vinyl/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -489,11 +488,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Accident Reconstruction • Braking Distance Matrix</span>
             </div>
-            <h2 class="hub-card-title">Vehicle Braking & Stopping Distance Physics Calculator</h2>
-            <p class="hub-card-desc">Calculate total stopping distance in feet from initial speed, driver perception-reaction time, and road friction coefficient (dry, wet, snow, ice).</p>
+            <h2 class="hub-card-title">Vehicle Braking & Stopping Distance Physics Calculadora</h2>
+            <p class="hub-card-desc">Calcule total stopping distance in feet de initial speed, driver perception-reaction time, y road friction coefficient (dry, wet, snow, ice).</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/brake-stopping-distance/">Open Solver →</a></li>
+            <li><a href="/physics/brake-stopping-distance/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -503,11 +502,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">Fleet Maintenance • Lubrication Schedule Matrix</span>
             </div>
-            <h2 class="hub-card-title">Motor Oil Change Interval & Maintenance Cost Calculator</h2>
-            <p class="hub-card-desc">Calculate optimal motor oil change intervals based on mileage, synthetic vs conventional oil, operating duty cycle, and annual maintenance budget.</p>
+            <h2 class="hub-card-title">Motor Oil Change Interval & Maintenance Cost Calculadora</h2>
+            <p class="hub-card-desc">Calcule optimal motor oil change intervals based on mileage, synthetic vs conventional oil, operating duty cycle, y annual maintenance budget.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/oil-change-interval/">Open Solver →</a></li>
+            <li><a href="/physics/oil-change-interval/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -517,11 +516,11 @@
               <div class="hub-card-icon" style="color:var(--accent-blue);">⚡</div>
               <span class="hub-badge">RV Dynamics • Weight Distribution Matrix</span>
             </div>
-            <h2 class="hub-card-title">RV Travel Trailer Tongue & Hitch Distribution Calculator</h2>
-            <p class="hub-card-desc">Calculate travel trailer hitch weight distribution, weight transfer to front steer axles, and prevention of trailer fishtailing.</p>
+            <h2 class="hub-card-title">RV Travel Trailer Tongue & Hitch Distribution Calculadora</h2>
+            <p class="hub-card-desc">Calcule travel trailer hitch weight distribution, weight transfer to front steer axles, y prevention de trailer fishtailing.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/physics/rv-payload-hitch/">Open Solver →</a></li>
+            <li><a href="/physics/rv-payload-hitch/">Abrir Solucionador →</a></li>
           </ul>
         </div>
         
@@ -531,8 +530,8 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      <div>© 2026 OmniOperand. Todas las demostraciones matemáticas y cálculos rigurosamente verificados.</div>
+      <div>Alojado en Cloudflare Edge Network • Construido sin dependencias externas</div>
     </div>
   </footer>
 

@@ -77,38 +77,30 @@
       "@id": "https://omnioperand.com/geometry/2d/right-triangle/#faq",
       "mainEntity": [
         {
-          "@type": "Question",
-          "name": "What is the Pythagorean Theorem?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The Pythagorean Theorem states that in any right triangle with legs a and b and hypotenuse c, the sum of the squares of the legs equals the square of the hypotenuse: a² + b² = c²."
-          }
+                "@type": "Question",
+                "name": "Wie berechnet man die Hypotenuse?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Nach dem Satz des Pythagoras gilt c = √(a² + b²)."
+                }
         },
         {
-          "@type": "Question",
-          "name": "What is the formula for the altitude to the hypotenuse?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Equating two expressions for triangle area (Area = ½ a · b = ½ c · h_c) yields the altitude formula: h_c = (a · b) / c. Furthermore, by the Geometric Mean Theorem, h_c² = p · q, where p and q are the projections of legs a and b onto hypotenuse c."
-          }
+                "@type": "Question",
+                "name": "Wie berechnet man die Höhe auf die Hypotenuse?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Die Höhe h_c berechnet sich aus dem Produkt der Katheten dividiert durch die Hypotenuse: h_c = (a · b) / c."
+                }
         },
         {
-          "@type": "Question",
-          "name": "What is a special 30-60-90 right triangle?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A 30-60-90 triangle is formed by bisecting an equilateral triangle. Its side lengths are always in the exact radical ratio 1 : √3 : 2. If the short leg is x, the long leg is x√3, and the hypotenuse is 2x."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is an isosceles right triangle (45-45-90)?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A 45-45-90 triangle is formed by cutting a square along its diagonal. Both legs are equal (a = b), and the hypotenuse is always c = a√2."
-          }
+                "@type": "Question",
+                "name": "Wie lautet die Formel für den Inkreisradius?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Im rechtwinkligen Dreieck gilt exakt r = (a + b - c) / 2."
+                }
         }
-      ]
+]
     }
   ]
 }
@@ -159,7 +151,7 @@
       <a href="/pl/" class="brand-link">
         <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
-        <span class="brand-badge">Geometry</span>
+        <span class="brand-badge">Geometria</span>
       </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
@@ -223,8 +215,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Szukaj</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -264,11 +255,11 @@
           <div class="hud-panel-header">
             <h2>Triangle Parameters & Inversions</h2>
             <div class="precision-control">
-              <label for="precision-select">Precision:</label>
+              <label for="precision-select">Precyzja:</label>
               <select id="precision-select" class="select-input">
-                <option value="2">2 Decimals</option>
-                <option value="4" selected>4 Decimals</option>
-                <option value="6">6 Decimals</option>
+                <option value="2">2 Miejsca po przecinku</option>
+                <option value="4" selected>4 Miejsca po przecinku</option>
+                <option value="6">6 Miejsca po przecinku</option>
               </select>
             </div>
           </div>
@@ -408,77 +399,30 @@
 
     <!-- Proofs Section -->
     <section class="proof-section" style="margin-top: 3rem;">
-      <h2>Mathematical Rigor & Closed-Form Formulations</h2>
-
+      <h2>Mathematische Grundlagen: Trójkąt Prostokątny</h2>
+      <p>Przyprostokątne, przeciwprostokątna, wysokość i promień wpisany</p>
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">1</span>
-            <span>Pythagorean Theorem & Inversions</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
+          <h3><span class="step-num">1</span><span>Satz des Pythagoras (Pythagorean Theorem)</span></h3>
         </div>
         <div class="proof-body">
-          <p>
-            For any triangle with a 90° interior angle:
-          </p>
-          <div class="math-display">
-            a² + b² = c² ⟹ c = √(a² + b²)
-          </div>
-          <p>
-            Inversions for unknown legs:
-          </p>
-          <div class="math-display">
-            a = √(c² - b²) , b = √(c² - a²)
-          </div>
+          <p>Für jedes rechtwinklige Dreieck gilt: a² + b² = c² ⟹ c = √(a² + b²).</p>
         </div>
       </div>
-
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">2</span>
-            <span>Altitude to Hypotenuse & Geometric Mean Theorem</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
+          <h3><span class="step-num">2</span><span>Höhensatz & Dreieckshöhe</span></h3>
         </div>
         <div class="proof-body">
-          <p>
-            Equating two formulations for triangle area:
-          </p>
-          <div class="math-display">
-            Area = ½ · a · b = ½ · c · h<sub>c</sub> ⟹ h<sub>c</sub> = (a · b) / c
-          </div>
-          <p>
-            The altitude splits the hypotenuse into segments <span class="math-tex">p = a² / c</span> and <span class="math-tex">q = b² / c</span>, confirming Euclid's Geometric Mean Theorem:
-          </p>
-          <div class="math-display">
-            h<sub>c</sub>² = p · q
-          </div>
+          <p>Aus dem doppelten Flächeninhalt folgt: Area = ½ · a · b = ½ · c · h_c ⟹ h_c = (a · b) / c.</p>
         </div>
       </div>
-
       <div class="proof-card open">
         <div class="proof-header">
-          <h3>
-            <span class="step-num">3</span>
-            <span>Inradius & Circumradius Formulas</span>
-          </h3>
-          <span class="proof-toggle-icon">▼</span>
+          <h3><span class="step-num">3</span><span>Inkreisradius (Inradius)</span></h3>
         </div>
         <div class="proof-body">
-          <p>
-            By Thales's Theorem, the circumcenter of any right triangle lies exactly at the midpoint of the hypotenuse:
-          </p>
-          <div class="math-display">
-            R = c / 2
-          </div>
-          <p>
-            The inradius <span class="math-tex">r<sub>i</sub></span> is given by the ratio of area to semi-perimeter <span class="math-tex">s = (a + b + c) / 2</span>:
-          </p>
-          <div class="math-display">
-            r<sub>i</sub> = Area / s = (a · b) / (a + b + c) = (a + b - c) / 2
-          </div>
+          <p>Der Inkreisradius berechnet sich exakt durch: r = (a + b - c) / 2.</p>
         </div>
       </div>
     </section>
@@ -491,14 +435,14 @@
           <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
         </div>
         <div class="llm-actions">
-          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for LLM</button>
+          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Kopiuj Zweryfikowany Prompt dla Agentów AI</button>
         </div>
       </div>
 
       <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
 
       <div style="font-size:0.8rem; color:var(--text-muted); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
-        <span>✓ Standardized for <code>llms.txt</code></span>
+        <span>✓ Ustandaryzowane dla <code>llms.txt</code></span>
         <span>✓ Exact Pythagorean invariants</span>
         <span>✓ Machine-checked against Euclidean proofs</span>
       </div>
@@ -506,50 +450,18 @@
 
     <!-- FAQ Section -->
     <section class="faq-section">
-      <h2>Często Zadawane Pytania</h2>
-
+      <h2>FAQ: Trójkąt Prostokątny</h2>
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the Pythagorean Theorem?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          The Pythagorean Theorem states that in any right Euclidean triangle with perpendicular legs <span class="math-tex">a</span> and <span class="math-tex">b</span> and hypotenuse <span class="math-tex">c</span>:
-          <div class="math-display">a² + b² = c² ⟹ c = √(a² + b²)</div>
-          Subtracting yields the leg inversions: <span class="math-tex">a = √(c² - b²)</span> and <span class="math-tex">b = √(c² - a²)</span>.
-        </div>
+        <div class="faq-question"><span>Wie berechnet man die Hypotenuse?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Nach dem Satz des Pythagoras gilt c = √(a² + b²).</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is the formula for the altitude to the hypotenuse?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          Equating two expressions for triangle area (<span class="math-tex">Area = ½ a · b = ½ c · h<sub>c</sub></span>) yields the exact altitude:
-          <div class="math-display">h<sub>c</sub> = (a · b) / c</div>
-          Furthermore, by the Geometric Mean Theorem, <span class="math-tex">h<sub>c</sub>² = p · q</span>, where <span class="math-tex">p</span> and <span class="math-tex">q</span> are the segment projections onto the hypotenuse.
-        </div>
+        <div class="faq-question"><span>Wie berechnet man die Höhe auf die Hypotenuse?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Die Höhe h_c berechnet sich aus dem Produkt der Katheten dividiert durch die Hypotenuse: h_c = (a · b) / c.</div>
       </div>
-
       <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is a special 30-60-90 right triangle?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          A 30-60-90 triangle is formed by bisecting an equilateral triangle. Its side lengths are always in the exact radical ratio <strong>1 : √3 : 2</strong>. If the short leg is <span class="math-tex">x</span>, the long leg is <span class="math-tex">x√3</span>, and the hypotenuse is <span class="math-tex">2x</span>.
-        </div>
-      </div>
-
-      <div class="faq-item open">
-        <div class="faq-question">
-          <span>What is an isosceles right triangle (45-45-90)?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          A 45-45-90 triangle is formed by cutting a square along its diagonal. Both legs are equal (<span class="math-tex">a = b</span>), and the hypotenuse is always <span class="math-tex">c = a√2</span>.
-        </div>
+        <div class="faq-question"><span>Wie lautet die Formel für den Inkreisradius?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Im rechtwinkligen Dreieck gilt exakt r = (a + b - c) / 2.</div>
       </div>
     </section>
 
@@ -557,8 +469,8 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      <div>© 2026 OmniOperand. Wszystkie dowody matematyczne i obliczenia rygorystycznie zweryfikowane.</div>
+      <div>Hostowane w sieci Cloudflare Edge • Zbudowane bez zewnętrznych zależności</div>
     </div>
   </footer>
 

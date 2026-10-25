@@ -87,7 +87,7 @@
     .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
     .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
     .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
-    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-între; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
     .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
     .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
     .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
@@ -107,7 +107,7 @@
       <a href="/ro/" class="brand-link">
         <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
         <span>OmniOperand</span>
-        <span class="brand-badge">Construction</span>
+        <span class="brand-badge">Construcții</span>
       </a>
 
       <nav class="header-nav" aria-label="Main Navigation">
@@ -154,7 +154,7 @@
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="lang-dropdown-menu">
-            <a href="/construction/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/ro/construction/" class="lang-dropdown-item"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
             <a href="/es/construction/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
             <a href="/fr/construction/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
             <a href="/de/construction/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
@@ -171,8 +171,7 @@
 
         <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <span>Căutare</span> <kbd class="search-kbd">⌘K</kbd>
         </button>
         <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
         <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
@@ -194,11 +193,11 @@
 
   <main class="container" style="padding: 2.5rem 0;">
     <div style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--accent-blue); background:rgba(56,189,248,0.1); padding:0.3rem 0.8rem; border-radius:999px; margin-bottom:0.75rem;">
-      Domain Hub • Construction & Trades
+      Domain Hub • Construcții
     </div>
     <h1>Construcții & Inginerie Civilă</h1>
     <p style="max-width:800px; color:var(--text-secondary); margin-bottom:2rem; font-size:1.1rem; line-height:1.6;">
-      High-precision solvers for concrete volumes, framing, aggregate tonnage, roofing squares, HVAC thermal loads, and electrical circuits.
+      High-precision solvers pentru concrete volumes, framing, aggregate tonnage, roofing squares, HVAC thermal loads, și electrical circuits.
     </p>
 
 <div class="hub-grid" style="margin-top:2rem;">
@@ -210,10 +209,10 @@
               <span class="hub-badge">Construction Math • Precision Area Solver</span>
             </div>
             <h2 class="hub-card-title">Square Footage & Area Calculator</h2>
-            <p class="hub-card-desc">Calculate square footage for single rooms, multi-room floorplans, and landscaping with perimeter and area conversion.</p>
+            <p class="hub-card-desc">Calculează square footage pentru single rooms, multi-room floorplans, și landscaping cu perimeter și area conversion.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/square-footage/">Open Solver →</a></li>
+            <li><a href="/construction/square-footage/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -224,10 +223,10 @@
               <span class="hub-badge">Ready-Mix Concrete • Volume & Bag Matrix</span>
             </div>
             <h2 class="hub-card-title">Concrete Slab & Footing Volume Calculator</h2>
-            <p class="hub-card-desc">Calculate cubic yards of ready-mix concrete, 60lb/80lb bag counts, and estimated cost for slabs, footings, and driveways.</p>
+            <p class="hub-card-desc">Calculează cubic yards de ready-mix concrete, 60lb/80lb bag counts, și estimated cost pentru slabs, footings, și driveways.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/concrete-slab/">Open Solver →</a></li>
+            <li><a href="/construction/concrete-slab/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -238,10 +237,10 @@
               <span class="hub-badge">Painting & Coatings • Coverage Matrix</span>
             </div>
             <h2 class="hub-card-title">Paint Coverage & Gallons Calculator</h2>
-            <p class="hub-card-desc">Calculate exact paint gallons and primer requirements for walls and ceilings minus window and door cutouts.</p>
+            <p class="hub-card-desc">Calculează exact paint gallons și primer requirements pentru walls și ceilings minus window și door cutouts.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/paint-coverage/">Open Solver →</a></li>
+            <li><a href="/construction/paint-coverage/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -252,10 +251,10 @@
               <span class="hub-badge">Flooring Solutions • Waste & Box Matrix</span>
             </div>
             <h2 class="hub-card-title">Flooring & Tile Quantity Calculator</h2>
-            <p class="hub-card-desc">Calculate hardwood planks, laminate, vinyl plank (LVP), and ceramic tile boxes with waste allowance.</p>
+            <p class="hub-card-desc">Calculează hardwood planks, laminate, vinyl plank (LVP), și ceramic tile boxes cu waste allowance.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/flooring/">Open Solver →</a></li>
+            <li><a href="/construction/flooring/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -266,10 +265,10 @@
               <span class="hub-badge">Drywall & Sheetrock • Wall & Ceiling Matrix</span>
             </div>
             <h2 class="hub-card-title">Drywall Sheet & Joint Compound Calculator</h2>
-            <p class="hub-card-desc">Calculate 4×8 and 4×12 drywall panels, joint compound buckets, drywall screws, and paper joint tape.</p>
+            <p class="hub-card-desc">Calculează 4×8 și 4×12 drywall panels, joint compound buckets, drywall screws, și paper joint tape.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/drywall/">Open Solver →</a></li>
+            <li><a href="/construction/drywall/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -280,10 +279,10 @@
               <span class="hub-badge">Civil Engineering • Aggregate Tonnage Matrix</span>
             </div>
             <h2 class="hub-card-title">Gravel & Crushed Stone Tonnage Calculator</h2>
-            <p class="hub-card-desc">Calculate cubic yards and metric/US tons of gravel, crush-and-run, or pea gravel for driveways, bases, and drainage.</p>
+            <p class="hub-card-desc">Calculează cubic yards și metric/US tons de gravel, crush-și-run, sau pea gravel pentru driveways, bases, și drainage.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/gravel/">Open Solver →</a></li>
+            <li><a href="/construction/gravel/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -294,10 +293,10 @@
               <span class="hub-badge">Landscaping • Landscape Mulch Matrix</span>
             </div>
             <h2 class="hub-card-title">Mulch & Soil Volume Calculator</h2>
-            <p class="hub-card-desc">Calculate cubic yards and 2 cu ft / 3 cu ft bag counts of hardwood bark mulch or garden topsoil for landscape beds.</p>
+            <p class="hub-card-desc">Calculează cubic yards și 2 cu ft / 3 cu ft bag counts de hardwood bark mulch sau garden topsoil pentru landscape beds.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/mulch/">Open Solver →</a></li>
+            <li><a href="/construction/mulch/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -308,10 +307,10 @@
               <span class="hub-badge">Hardscaping • Paver & Base Solver</span>
             </div>
             <h2 class="hub-card-title">Patio Paver & Polymeric Sand Calculator</h2>
-            <p class="hub-card-desc">Calculate stone pavers, bedding sand, crushed stone base, and joint sand requirements for patios and walkways.</p>
+            <p class="hub-card-desc">Calculează stone pavers, bedding sand, crushed stone base, și joint sand requirements pentru patios și walkways.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/pavers/">Open Solver →</a></li>
+            <li><a href="/construction/pavers/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -322,10 +321,10 @@
               <span class="hub-badge">Turfgrass • Pallet & Roll Matrix</span>
             </div>
             <h2 class="hub-card-title">Sod & Turf Pallet Calculator</h2>
-            <p class="hub-card-desc">Calculate sod rolls, square feet, pallet counts, and soil prep requirements for instant lawn turfgrass.</p>
+            <p class="hub-card-desc">Calculează sod rolls, square feet, pallet counts, și soil prep requirements pentru instant lawn turfgrass.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/sod-turf/">Open Solver →</a></li>
+            <li><a href="/construction/sod-turf/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -336,10 +335,10 @@
               <span class="hub-badge">Structural Masonry • Block & Drainage Matrix</span>
             </div>
             <h2 class="hub-card-title">Retaining Wall Block & Backfill Calculator</h2>
-            <p class="hub-card-desc">Calculate retaining wall blocks, capstones, gravel drainage backfill, and perforated drain tile pipe.</p>
+            <p class="hub-card-desc">Calculează retaining wall blocks, capstones, gravel drainage backfill, și perforated drain tile pipe.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/retaining-wall/">Open Solver →</a></li>
+            <li><a href="/construction/retaining-wall/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -350,10 +349,10 @@
               <span class="hub-badge">Carpentry & Framing • Deck Structural Matrix</span>
             </div>
             <h2 class="hub-card-title">Deck Framing & Joist Spacing Calculator</h2>
-            <p class="hub-card-desc">Calculate pressure-treated floor joists, rim joists, support beams, posts, and decking boards with standard 12" or 16" on-center spacing.</p>
+            <p class="hub-card-desc">Calculează pressure-treated floor joists, rim joists, support beams, posts, și decking boards cu standard 12" sau 16" on-center spacing.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/deck-framing/">Open Solver →</a></li>
+            <li><a href="/construction/deck-framing/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -364,10 +363,10 @@
               <span class="hub-badge">Fencing Solutions • Post & Picket Matrix</span>
             </div>
             <h2 class="hub-card-title">Fence Post, Rail & Picket Calculator</h2>
-            <p class="hub-card-desc">Calculate 4×4 posts, 2×4 horizontal rails, dog-ear pickets, and quick-set concrete bags for privacy and picket fences.</p>
+            <p class="hub-card-desc">Calculează 4×4 posts, 2×4 horizontal rails, dog-ear pickets, și quick-set concrete bags pentru privacy și picket fences.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/fence-post/">Open Solver →</a></li>
+            <li><a href="/construction/fence-post/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -378,10 +377,10 @@
               <span class="hub-badge">Civil Paving • Hot Mix Asphalt Matrix</span>
             </div>
             <h2 class="hub-card-title">Asphalt Driveway Tonnage & Cost Calculator</h2>
-            <p class="hub-card-desc">Calculate hot mix asphalt (HMA) tonnage, square footage, and paving crew material costs for driveways and parking lots.</p>
+            <p class="hub-card-desc">Calculează hot mix asphalt (HMA) tonnage, square footage, și paving crew material costs pentru driveways și parking lots.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/asphalt-driveway/">Open Solver →</a></li>
+            <li><a href="/construction/asphalt-driveway/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -392,10 +391,10 @@
               <span class="hub-badge">Masonry Infrastructure • Brick & Mortar Matrix</span>
             </div>
             <h2 class="hub-card-title">Brick & Mortar Quantity Calculator</h2>
-            <p class="hub-card-desc">Calculate modular, standard, and queen brick quantities plus Type N or Type S mortar bags for brick masonry walls.</p>
+            <p class="hub-card-desc">Calculează modular, standard, și queen brick quantities plus Type N sau Type S mortar bags pentru brick masonry walls.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/brick-mortar/">Open Solver →</a></li>
+            <li><a href="/construction/brick-mortar/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -406,10 +405,10 @@
               <span class="hub-badge">Hardwood & Forestry • Board Foot Solver</span>
             </div>
             <h2 class="hub-card-title">Board Feet (FBM) & Lumber Price Calculator</h2>
-            <p class="hub-card-desc">Calculate board footage (FBM) and total pricing for rough-sawn and dimensional hardwood and softwood lumber.</p>
+            <p class="hub-card-desc">Calculează board footage (FBM) și total pricing pentru rough-sawn și dimensional hardwood și softwood lumber.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/lumber-board-feet/">Open Solver →</a></li>
+            <li><a href="/construction/lumber-board-feet/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -420,10 +419,10 @@
               <span class="hub-badge">Roofing Systems • Pitch & Shingle Matrix</span>
             </div>
             <h2 class="hub-card-title">Roofing Shingles & Bundles Calculator</h2>
-            <p class="hub-card-desc">Calculate roofing squares, 3-tab and architectural shingle bundles, underlayment rolls, and roof pitch multiplier.</p>
+            <p class="hub-card-desc">Calculează roofing squares, 3-tab și architectural shingle bundles, underlayment rolls, și roof pitch multiplier.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/roofing-shingles/">Open Solver →</a></li>
+            <li><a href="/construction/roofing-shingles/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -434,10 +433,10 @@
               <span class="hub-badge">HVAC Engineering • Manual J Sizing Solver</span>
             </div>
             <h2 class="hub-card-title">HVAC Air Conditioner BTU & Tonnage Calculator</h2>
-            <p class="hub-card-desc">Calculate residential cooling BTU requirements and AC condenser tonnage based on square footage, ceiling height, and climate zone.</p>
+            <p class="hub-card-desc">Calculează residential cooling BTU requirements și AC condenser tonnage based on square footage, ceiling height, și climate zone.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/ac-btu-tonnage/">Open Solver →</a></li>
+            <li><a href="/construction/ac-btu-tonnage/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -448,10 +447,10 @@
               <span class="hub-badge">Thermal Systems • Furnace Sizing Matrix</span>
             </div>
             <h2 class="hub-card-title">Heating BTU & Furnace Sizing Calculator</h2>
-            <p class="hub-card-desc">Calculate furnace heating output (BTU/hr) and thermal efficiency ratings based on regional design temperatures and insulation levels.</p>
+            <p class="hub-card-desc">Calculează furnace heating output (BTU/hr) și thermal efficiency ratings based on regional design temperatures și insulation levels.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/heating-btu/">Open Solver →</a></li>
+            <li><a href="/construction/heating-btu/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -462,10 +461,10 @@
               <span class="hub-badge">Renewable Energy • Photovoltaic Matrix</span>
             </div>
             <h2 class="hub-card-title">Solar Panel Array Sizing & kWh Calculator</h2>
-            <p class="hub-card-desc">Calculate solar panel system size (kW), required roof panels, daily energy generation, and utility offset.</p>
+            <p class="hub-card-desc">Calculează solar panel system size (kW), required roof panels, daily energy generation, și utility offset.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/solar-sizing/">Open Solver →</a></li>
+            <li><a href="/construction/solar-sizing/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -476,10 +475,10 @@
               <span class="hub-badge">Plumbing Engineering • Flow & Thermal Rise Matrix</span>
             </div>
             <h2 class="hub-card-title">Tankless Water Heater GPM & Sizing Calculator</h2>
-            <p class="hub-card-desc">Calculate required Gallons Per Minute (GPM), incoming ground water temperature rise (ΔT), and heating capacity for on-demand water heaters.</p>
+            <p class="hub-card-desc">Calculează required Gallons Per Minute (GPM), incoming ground water temperature rise (ΔT), și heating capacity pentru on-demand water heaters.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/tankless-water-heater/">Open Solver →</a></li>
+            <li><a href="/construction/tankless-water-heater/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -490,10 +489,10 @@
               <span class="hub-badge">Electrical Economics • kWh Cost Matrix</span>
             </div>
             <h2 class="hub-card-title">Electricity Cost & Appliance kWh Calculator</h2>
-            <p class="hub-card-desc">Calculate daily, monthly, and annual operating costs for any electrical appliance from wattage and local utility kWh rates.</p>
+            <p class="hub-card-desc">Calculează daily, monthly, și annual operating costs pentru any electrical appliance de la wattage și local utility kWh rates.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/electricity-cost/">Open Solver →</a></li>
+            <li><a href="/construction/electricity-cost/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -504,10 +503,10 @@
               <span class="hub-badge">Electrical Engineering • NEC Voltage Drop Matrix</span>
             </div>
             <h2 class="hub-card-title">Voltage Drop & Wire Gauge (AWG) Calculator</h2>
-            <p class="hub-card-desc">Calculate electrical voltage drop, percentage loss, and proper American Wire Gauge (AWG) conductor sizing for single-phase copper circuits.</p>
+            <p class="hub-card-desc">Calculează electrical voltage drop, percentage loss, și proper American Wire Gauge (AWG) conductor sizing pentru single-phase copper circuits.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/wire-gauge-drop/">Open Solver →</a></li>
+            <li><a href="/construction/wire-gauge-drop/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -518,10 +517,10 @@
               <span class="hub-badge">Emergency Power • Generator Sizing Matrix</span>
             </div>
             <h2 class="hub-card-title">Generator Sizing & Starting Watts Calculator</h2>
-            <p class="hub-card-desc">Calculate running watts and surge (starting) watts for whole-home and portable emergency backup generators.</p>
+            <p class="hub-card-desc">Calculează running watts și surge (starting) watts pentru whole-home și portable emergency backup generators.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/generator-sizing/">Open Solver →</a></li>
+            <li><a href="/construction/generator-sizing/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -532,10 +531,10 @@
               <span class="hub-badge">Thermal Envelope • R-Value & Batt Matrix</span>
             </div>
             <h2 class="hub-card-title">Insulation R-Value & Batt Roll Calculator</h2>
-            <p class="hub-card-desc">Calculate thermal resistance R-value, fiberglass batt and roll quantities, and blow-in bag counts for attics and exterior walls.</p>
+            <p class="hub-card-desc">Calculează thermal resistance R-value, fiberglass batt și roll quantities, și blow-in bag counts pentru attics și exterior walls.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/insulation-r-value/">Open Solver →</a></li>
+            <li><a href="/construction/insulation-r-value/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -546,10 +545,10 @@
               <span class="hub-badge">Reinforced Concrete • Rebar Grid Solver</span>
             </div>
             <h2 class="hub-card-title">Concrete Rebar Grid & Weight Calculator</h2>
-            <p class="hub-card-desc">Calculate rebar sticks, grid layout spacing, overlap splices, and steel weight for reinforced concrete slabs and footings.</p>
+            <p class="hub-card-desc">Calculează rebar sticks, grid layout spacing, overlap splices, și steel weight pentru reinforced concrete slabs și footings.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/rebar-calculator/">Open Solver →</a></li>
+            <li><a href="/construction/rebar-calculator/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -560,10 +559,10 @@
               <span class="hub-badge">Stormwater Engineering • Gutter Capacity Matrix</span>
             </div>
             <h2 class="hub-card-title">Rain Gutter & Downspout Sizing Calculator</h2>
-            <p class="hub-card-desc">Calculate roof drainage watershed, 5-inch vs 6-inch seamless K-style gutter capacity, and downspout count based on local rainfall intensity.</p>
+            <p class="hub-card-desc">Calculează roof drainage watershed, 5-inch vs 6-inch seamless K-style gutter capacity, și downspout count based on local rainfall intensity.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/gutter-sizing/">Open Solver →</a></li>
+            <li><a href="/construction/gutter-sizing/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -574,10 +573,10 @@
               <span class="hub-badge">Earthwork & Excavation • Soil Swell Matrix</span>
             </div>
             <h2 class="hub-card-title">Trench Excavation & Soil Swell Calculator</h2>
-            <p class="hub-card-desc">Calculate trench volume in cubic yards, bank cubic yards (BCY) vs loose cubic yards (LCY), and haul-off dump truck loads.</p>
+            <p class="hub-card-desc">Calculează trench volume in cubic yards, bank cubic yards (BCY) vs loose cubic yards (LCY), și haul-off dump truck loads.</p>
           </div>
           <ul class="hub-card-links">
-            <li><a href="/construction/excavation-trench/">Open Solver →</a></li>
+            <li><a href="/construction/excavation-trench/">Deschide Calculator →</a></li>
           </ul>
         </div>
         
@@ -587,8 +586,8 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+      <div>© 2026 OmniOperand. Toate demonstrațiile matematice și calculele sunt riguros verificate.</div>
+      <div>Găzduit pe rețeaua Cloudflare Edge • Construit fără dependențe externe</div>
     </div>
   </footer>
 
