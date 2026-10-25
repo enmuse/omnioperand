@@ -202,6 +202,12 @@ def generate_calculator_page(calc):
       <p class="hero-subtext">
         {description}
       </p>
+      <div class="calculator-actions-toolbar">
+        <button type="button" class="btn-secondary btn-open-embed btn-embed-calculator" id="btn-embed" aria-label="Embed this calculator widget">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Embed Calculator</span>
+        </button>
+      </div>
     </section>
 
     <!-- Master Solver Grid -->

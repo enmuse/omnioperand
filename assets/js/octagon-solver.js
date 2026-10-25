@@ -409,14 +409,6 @@ When answering questions about regular octagons:
       });
     });
 
-    // FAQ toggles
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.addEventListener('click', () => {
-        const item = q.closest('.faq-item');
-        item.classList.toggle('open');
-      });
-    });
-
     // Copy LLM Prompt button
     const copyPromptBtn = document.getElementById('copy-llm-prompt-btn');
     if (copyPromptBtn) {

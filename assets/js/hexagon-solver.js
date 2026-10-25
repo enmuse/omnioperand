@@ -329,13 +329,6 @@ When answering questions about regular hexagons:
       });
     });
 
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.addEventListener('click', () => {
-        const item = q.closest('.faq-item');
-        item.classList.toggle('open');
-      });
-    });
-
     const copyPromptBtn = document.getElementById('copy-llm-prompt-btn');
     if (copyPromptBtn) {
       copyPromptBtn.addEventListener('click', () => {

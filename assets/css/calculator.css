@@ -818,7 +818,7 @@
 }
 
 /* FAQ Accordion */
-.faq-section {
+.faq-section, .calc-faq-section {
   margin: 3.5rem 0;
 }
 
@@ -828,17 +828,26 @@
   border-radius: var(--radius-md);
   margin-bottom: 0.75rem;
   overflow: hidden;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.faq-item.open {
+  border-color: rgba(56, 189, 248, 0.35);
 }
 
 .faq-question {
   padding: 1.15rem 1.25rem;
   font-weight: 600;
-  cursor: pointer;
+  cursor: pointer !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   user-select: none;
+}
+
+.faq-question:hover {
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .faq-answer {
@@ -849,17 +858,23 @@
 }
 
 .faq-item.open .faq-answer {
-  display: block;
+  display: block !important;
 }
 
 .faq-item.open .faq-icon {
-  transform: rotate(45deg);
+  transform: rotate(45deg) !important;
+  color: #38bdf8 !important;
 }
 
 .faq-icon {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--accent-cyan);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
+  line-height: 1;
+  display: inline-block;
+  pointer-events: none;
+  flex-shrink: 0;
 }
 
 /* Responsive adjustments */
@@ -980,4 +995,117 @@
 .contractor-dispatch-callout:hover {
   transform: translateY(-1px);
   border-color: rgba(16, 185, 129, 0.4) !important;
+}
+
+/* Embed Calculator Button & Actions Toolbar */
+.calculator-actions-toolbar {
+  display: flex;
+  gap: 10px;
+  margin: 1.25rem 0 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-embed-calculator,
+.btn-open-embed {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--radius-sm, 8px);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: var(--text-primary, #f8fafc);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-embed-calculator:hover,
+.btn-open-embed:hover {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: var(--accent-cyan, #06b6d4);
+  color: var(--accent-cyan, #06b6d4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.18);
+}
+
+.btn-embed-calculator svg,
+.btn-open-embed svg {
+  stroke: var(--accent-cyan, #06b6d4);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-embed-calculator:hover svg,
+.btn-open-embed:hover svg {
+  transform: scale(1.1);
+}
+
+/* Embed Modal Styles */
+.omni-modal-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 7, 18, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.omni-modal-card {
+  background: var(--bg-surface-elevated, #101726);
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12));
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  padding: 1.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px rgba(6, 182, 212, 0.15);
+  color: var(--text-primary, #f8fafc);
+  animation: omniModalFadeIn 0.2s ease-out;
+}
+
+@keyframes omniModalFadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Clean Embed Mode (Inside iFrame) */
+html.is-embed body,
+body.is-embed {
+  background: transparent !important;
+}
+
+body.is-embed .site-header,
+body.is-embed .breadcrumb-wrapper,
+body.is-embed .site-footer,
+body.is-embed .proofs-section,
+body.is-embed .calc-faq-section,
+body.is-embed .faq-section,
+body.is-embed .polygon-switcher-bar,
+body.is-embed .search-modal,
+body.is-embed .calculator-actions-toolbar,
+body.is-embed .affiliate-disclosure,
+body.is-embed .affiliate-container,
+body.is-embed .contextual-action-card,
+body.is-embed .contractor-dispatch-callout {
+  display: none !important;
+}
+
+body.is-embed main,
+body.is-embed .container,
+body.is-embed .omni-container {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
 }

@@ -547,18 +547,11 @@ Mathematical Verification Directives:
       });
     });
 
-    // 6. Accordion Proof Cards & FAQs
+    // 6. Accordion Proof Cards
     document.querySelectorAll('.proof-header').forEach(header => {
       header.addEventListener('click', () => {
         const card = header.closest('.proof-card');
         card.classList.toggle('open');
-      });
-    });
-
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.addEventListener('click', () => {
-        const item = q.closest('.faq-item');
-        item.classList.toggle('open');
       });
     });
 
