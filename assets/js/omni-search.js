@@ -8365,6 +8365,709 @@
       "and",
       "drug"
     ]
+  },
+  {
+    "title": "Generator Sizing Calculator",
+    "category": "Engineering > Electrical Engineering • IEEE 446 Invariants",
+    "url": "/engineering/generator-sizing/",
+    "keywords": [
+      "generator",
+      "sizing",
+      "calculator",
+      "calculate",
+      "required",
+      "home",
+      "size",
+      "running",
+      "watts",
+      "peak",
+      "surge",
+      "and"
+    ]
+  },
+  {
+    "title": "Wire Gauge & Voltage Drop Calculator",
+    "category": "Engineering > Electrical Engineering • NFPA 70 / NEC Standard",
+    "url": "/engineering/wire-gauge-voltage-drop/",
+    "keywords": [
+      "wire",
+      "gauge",
+      "voltage",
+      "drop",
+      "calculator",
+      "calculate",
+      "and",
+      "minimum",
+      "awg",
+      "for",
+      "circuits",
+      "compliant"
+    ]
+  },
+  {
+    "title": "Home Battery Backup Storage Calculator",
+    "category": "Engineering > Renewable Energy & Storage • IEEE 2030 Invariants",
+    "url": "/engineering/battery-backup-storage/",
+    "keywords": [
+      "home",
+      "battery",
+      "backup",
+      "storage",
+      "calculator",
+      "calculate",
+      "bank",
+      "capacity",
+      "kwh",
+      "and",
+      "amp-hours",
+      "for"
+    ]
+  },
+  {
+    "title": "HECM Reverse Mortgage Calculator",
+    "category": "Finance > Actuarial Finance • HUD / FHA Invariants",
+    "url": "/finance/reverse-mortgage-hecm/",
+    "keywords": [
+      "hecm",
+      "reverse",
+      "mortgage",
+      "calculator",
+      "calculate",
+      "fha",
+      "proceeds",
+      "principal",
+      "limit",
+      "factors",
+      "and",
+      "net"
+    ]
+  },
+  {
+    "title": "Section 199A QBI Calculator",
+    "category": "Finance > Tax Law & Quantitative Accounting • IRC § 199A Invariants",
+    "url": "/finance/section-199a-qbi/",
+    "keywords": [
+      "section",
+      "199a",
+      "qbi",
+      "calculator",
+      "calculate",
+      "your",
+      "irs",
+      "deduction",
+      "phase-out",
+      "limits",
+      "w-2",
+      "wage"
+    ]
+  },
+  {
+    "title": "RV & Camper Loan Calculator",
+    "category": "Finance > Consumer Lending & Asset Finance • Amortization Invariants",
+    "url": "/finance/rv-loan/",
+    "keywords": [
+      "camper",
+      "loan",
+      "calculator",
+      "calculate",
+      "and",
+      "motorhome",
+      "monthly",
+      "payments",
+      "interest",
+      "cost",
+      "amortization",
+      "schedules"
+    ]
+  },
+  {
+    "title": "Equity IRR & Real Estate Return Calculator",
+    "category": "Finance > Quantitative Finance & Private Equity • Cash Flow Invariants",
+    "url": "/finance/equity-irr/",
+    "keywords": [
+      "equity",
+      "irr",
+      "real",
+      "estate",
+      "return",
+      "calculator",
+      "calculate",
+      "levered",
+      "internal",
+      "rate",
+      "multiple",
+      "moic"
+    ]
+  },
+  {
+    "title": "qPCR Primer Tm & Annealing Calculator",
+    "category": "Biotech > Molecular Biology & Genomics • SantaLucia Invariants",
+    "url": "/biotech/qpcr-primer-tm/",
+    "keywords": [
+      "qpcr",
+      "primer",
+      "annealing",
+      "calculator",
+      "calculate",
+      "exact",
+      "and",
+      "pcr",
+      "melting",
+      "temperature",
+      "using",
+      "santalucia"
+    ]
+  },
+  {
+    "title": "US Navy Body Fat Calculator",
+    "category": "Health > Military Physiology • DoD Instruction 1308.3 Standard",
+    "url": "/health/navy-body-fat/",
+    "keywords": [
+      "navy",
+      "body",
+      "fat",
+      "calculator",
+      "calculate",
+      "percentage",
+      "using",
+      "the",
+      "official",
+      "circumference",
+      "formula",
+      "dod"
+    ]
+  },
+  {
+    "title": "Smoking Cost & Lifetime Wealth Calculator",
+    "category": "Health > Public Health & Actuarial Wealth • Compounding Invariants",
+    "url": "/health/cost-of-smoking/",
+    "keywords": [
+      "smoking",
+      "cost",
+      "lifetime",
+      "wealth",
+      "calculator",
+      "calculate",
+      "the",
+      "true",
+      "including",
+      "annual",
+      "out-of-pocket",
+      "expenses"
+    ]
+  },
+  {
+    "title": "Concrete Volume Calculator",
+    "category": "Construction > Trades & Civil Engineering • ASTM C94 Invariants",
+    "url": "/construction/concrete-volume/",
+    "keywords": [
+      "concrete",
+      "volume",
+      "calculator",
+      "calculate",
+      "exact",
+      "cubic",
+      "yards",
+      "and",
+      "meters",
+      "for",
+      "slabs",
+      "footings"
+    ]
+  },
+  {
+    "title": "Rebar Grid & Spacing Calculator",
+    "category": "Construction > Structural Engineering • ACI 318 Standard",
+    "url": "/construction/rebar-calculator/",
+    "keywords": [
+      "rebar",
+      "grid",
+      "spacing",
+      "calculator",
+      "calculate",
+      "total",
+      "linear",
+      "footage",
+      "bar",
+      "count",
+      "weight",
+      "and"
+    ]
+  },
+  {
+    "title": "Drywall & Mud/Fastener Estimator",
+    "category": "Construction > Trades & Residential Remodeling • Finish Invariants",
+    "url": "/construction/drywall/",
+    "keywords": [
+      "drywall",
+      "mud",
+      "fastener",
+      "estimator",
+      "calculate",
+      "sheets",
+      "joint",
+      "compound",
+      "buckets",
+      "tape",
+      "and",
+      "screws"
+    ]
+  },
+  {
+    "title": "HVAC Furnace & Heating BTU Calculator",
+    "category": "Engineering > Mechanical Engineering • ASHRAE Fundamentals",
+    "url": "/engineering/hvac-furnace-sizing/",
+    "keywords": [
+      "hvac",
+      "furnace",
+      "heating",
+      "btu",
+      "calculator",
+      "calculate",
+      "required",
+      "capacity",
+      "btus",
+      "and",
+      "tons",
+      "based"
+    ]
+  },
+  {
+    "title": "Lean-To Roof Pitch & Rafter Calculator",
+    "category": "Geometry > Applied Geometry & Carpentry • Trigonometric Invariants",
+    "url": "/geometry/2d/lean-to-roof-pitch/",
+    "keywords": [
+      "lean-to",
+      "roof",
+      "pitch",
+      "rafter",
+      "calculator",
+      "calculate",
+      "shed",
+      "ratio",
+      "angle",
+      "degrees",
+      "true",
+      "length"
+    ]
+  },
+  {
+    "title": "Slant Height Calculator",
+    "category": "Geometry > 3D Euclidean Geometry • Pythagorean Invariants",
+    "url": "/geometry/slant-height/",
+    "keywords": [
+      "slant",
+      "height",
+      "calculator",
+      "calculate",
+      "surface",
+      "area",
+      "and",
+      "lateral",
+      "pitch",
+      "for",
+      "right",
+      "circular"
+    ]
+  },
+  {
+    "title": "LCL Freight & CBM Calculator",
+    "category": "Logistics > Ocean Freight & Global Logistics • Incoterms 2026 Invariants",
+    "url": "/logistics/lcl-freight-cbm/",
+    "keywords": [
+      "lcl",
+      "freight",
+      "cbm",
+      "calculator",
+      "calculate",
+      "ocean",
+      "chargeable",
+      "weight",
+      "rule",
+      "volumetric",
+      "container",
+      "packing"
+    ]
+  },
+  {
+    "title": "Tubular Reabsorption of Phosphate (%TRP) & TmP/GFR Calculator",
+    "category": "Biotech > Clinical Nephrology & Endocrinology • Walton-Bijvoet Invariants",
+    "url": "/biotech/tubular-reabsorption-phosphate-trp/",
+    "keywords": [
+      "tubular",
+      "reabsorption",
+      "phosphate",
+      "trp",
+      "tmp",
+      "gfr",
+      "calculator",
+      "calculate",
+      "and",
+      "ratio",
+      "using",
+      "serum"
+    ]
+  },
+  {
+    "title": "Brick Soling & Flat Masonry Area Calculator",
+    "category": "Construction > Civil Construction & Pavements • IS 2212 / ASTM C902",
+    "url": "/construction/brick-soling/",
+    "keywords": [
+      "brick",
+      "soling",
+      "flat",
+      "masonry",
+      "area",
+      "calculator",
+      "calculate",
+      "count",
+      "bedding",
+      "sand",
+      "volume",
+      "and"
+    ]
+  },
+  {
+    "title": "Ultrasonic Angle Beam Path & Sound Path Distance Calculator",
+    "category": "Engineering > Non-Destructive Testing (NDT) • ASME Sec V / AWS D1.1",
+    "url": "/engineering/ultrasonic-beam-path/",
+    "keywords": [
+      "ultrasonic",
+      "angle",
+      "beam",
+      "path",
+      "sound",
+      "distance",
+      "calculator",
+      "calculate",
+      "ndt",
+      "shear",
+      "wave",
+      "surface"
+    ]
+  },
+  {
+    "title": "Drill Pipe & Casing Well Displacement Calculator",
+    "category": "Engineering > Petroleum & Drilling Engineering • API RP 13B Invariants",
+    "url": "/engineering/drill-pipe-displacement/",
+    "keywords": [
+      "drill",
+      "pipe",
+      "casing",
+      "well",
+      "displacement",
+      "calculator",
+      "calculate",
+      "collar",
+      "and",
+      "bbl",
+      "pit",
+      "volume"
+    ]
+  },
+  {
+    "title": "Aerodynamic Drag & Downforce Force Calculator",
+    "category": "Physics > Fluid Dynamics & Aerodynamics • Navier-Stokes Invariants",
+    "url": "/physics/aerodynamic-drag-force/",
+    "keywords": [
+      "aerodynamic",
+      "drag",
+      "downforce",
+      "force",
+      "calculator",
+      "calculate",
+      "lbf",
+      "power",
+      "required",
+      "overcome",
+      "and",
+      "terminal"
+    ]
+  },
+  {
+    "title": "Commercial Battery Peak Shaving & Demand Charge Calculator",
+    "category": "Energy > Power Systems & Energy Storage • IEEE 1547 / C&I Energy",
+    "url": "/energy/battery-peak-shaving/",
+    "keywords": [
+      "commercial",
+      "battery",
+      "peak",
+      "shaving",
+      "demand",
+      "charge",
+      "calculator",
+      "calculate",
+      "energy",
+      "storage",
+      "capacity",
+      "kwh"
+    ]
+  },
+  {
+    "title": "Flowable Fill (CLSM) Volume & Mix Calculator",
+    "category": "Construction > Civil Infrastructure & Utilities • ACI 229R / ASTM D6103",
+    "url": "/construction/flowable-fill-clsm/",
+    "keywords": [
+      "flowable",
+      "fill",
+      "clsm",
+      "volume",
+      "mix",
+      "calculator",
+      "calculate",
+      "controlled",
+      "low-strength",
+      "material",
+      "cubic",
+      "yards"
+    ]
+  },
+  {
+    "title": "Retaining Wall Overturning & Sliding Safety Factor Calculator",
+    "category": "Engineering > Geotechnical & Structural Engineering • Rankine / IBC 1807",
+    "url": "/engineering/retaining-wall-overturning-safety/",
+    "keywords": [
+      "retaining",
+      "wall",
+      "overturning",
+      "sliding",
+      "safety",
+      "factor",
+      "calculator",
+      "calculate",
+      "factors",
+      "against",
+      "and",
+      "for"
+    ]
+  },
+  {
+    "title": "Column Slenderness Ratio & Critical Buckling Load Calculator",
+    "category": "Engineering > Structural Mechanics & Steel Design • AISC 360-22 Standard",
+    "url": "/engineering/column-slenderness-buckling/",
+    "keywords": [
+      "column",
+      "slenderness",
+      "ratio",
+      "critical",
+      "buckling",
+      "load",
+      "calculator",
+      "calculate",
+      "effective",
+      "euler",
+      "stress",
+      "and"
+    ]
+  },
+  {
+    "title": "Unistrut Channel Beam Load & Deflection Calculator",
+    "category": "Construction > Structural Framing & MEP Supports • MFMA-4 Standards",
+    "url": "/construction/unistrut-load-capacity/",
+    "keywords": [
+      "unistrut",
+      "channel",
+      "beam",
+      "load",
+      "deflection",
+      "calculator",
+      "calculate",
+      "maximum",
+      "allowable",
+      "and",
+      "for",
+      "standard"
+    ]
+  },
+  {
+    "title": "Relative Response Factor (RRF) HPLC Calculator",
+    "category": "Biotech > Pharmaceutical Analytical Chemistry • ICH Q3A/B & USP <621>",
+    "url": "/biotech/relative-response-factor-rrf/",
+    "keywords": [
+      "relative",
+      "response",
+      "factor",
+      "rrf",
+      "hplc",
+      "calculator",
+      "calculate",
+      "factors",
+      "and",
+      "true",
+      "impurity",
+      "weight"
+    ]
+  },
+  {
+    "title": "Micromolar to ng/mL Mass-Molar Concentration Converter",
+    "category": "Biotech > Quantitative Biochemistry & Pharmacology • IUPAC Invariants",
+    "url": "/biotech/molar-mass-concentration-converter/",
+    "keywords": [
+      "micromolar",
+      "mass-molar",
+      "concentration",
+      "converter",
+      "convert",
+      "molarity",
+      "mass",
+      "with",
+      "molecular",
+      "weight",
+      "precision",
+      "pharmacology"
+    ]
+  },
+  {
+    "title": "Concrete Haunch & Chamfer Reinforcement Calculator",
+    "category": "Engineering > Structural Concrete Design • ACI 318-19 / AASHTO LRFD",
+    "url": "/engineering/concrete-haunch-reinforcement/",
+    "keywords": [
+      "concrete",
+      "haunch",
+      "chamfer",
+      "reinforcement",
+      "calculator",
+      "calculate",
+      "dimensions",
+      "bevel",
+      "angle",
+      "diagonal",
+      "rebar",
+      "lengths"
+    ]
+  },
+  {
+    "title": "Analytical Evaluation Threshold (AET) Calculator",
+    "category": "Biotech > Extractables & Leachables (E&L) • PQRI & ISO 10993-18",
+    "url": "/biotech/analytical-evaluation-threshold-aet/",
+    "keywords": [
+      "analytical",
+      "evaluation",
+      "threshold",
+      "aet",
+      "calculator",
+      "calculate",
+      "the",
+      "for",
+      "extractables",
+      "and",
+      "leachables",
+      "testing"
+    ]
+  },
+  {
+    "title": "Relative Potency Bioassay Calculator",
+    "category": "Biotech > Biopharmaceutical Bioassays • USP <1032>/<1034> & Ph. Eur. 5.3",
+    "url": "/biotech/relative-potency-bioassay/",
+    "keywords": [
+      "relative",
+      "potency",
+      "bioassay",
+      "calculator",
+      "calculate",
+      "and",
+      "fieller",
+      "confidence",
+      "intervals",
+      "for",
+      "parallel-line",
+      "4-parameter"
+    ]
+  },
+  {
+    "title": "HPLC Column Theoretical Plates & Resolution Calculator",
+    "category": "Biotech > Chromatography & Quality Control • USP <621> / EP 2.2.46",
+    "url": "/biotech/chromatography-resolution/",
+    "keywords": [
+      "hplc",
+      "column",
+      "theoretical",
+      "plates",
+      "resolution",
+      "calculator",
+      "calculate",
+      "usp",
+      "plate",
+      "count",
+      "chromatographic",
+      "peak"
+    ]
+  },
+  {
+    "title": "Syringe Pump & Microfluidic Flow Rate Calculator",
+    "category": "Biotech > Laboratory Automation & Microfluidics • ISO 7886 Standard",
+    "url": "/biotech/syringe-pump-injection-rate/",
+    "keywords": [
+      "syringe",
+      "pump",
+      "microfluidic",
+      "flow",
+      "rate",
+      "calculator",
+      "calculate",
+      "volumetric",
+      "linear",
+      "stepper",
+      "motor",
+      "pusher"
+    ]
+  },
+  {
+    "title": "ASC 842 / IFRS 16 Incremental Borrowing Rate (IBR) Calculator",
+    "category": "Finance > Lease Accounting Standards • GAAP ASC 842 & IFRS 16",
+    "url": "/finance/incremental-borrowing-rate-lease/",
+    "keywords": [
+      "asc",
+      "842",
+      "ifrs",
+      "incremental",
+      "borrowing",
+      "rate",
+      "ibr",
+      "calculator",
+      "calculate",
+      "corporate",
+      "lease",
+      "rates"
+    ]
+  },
+  {
+    "title": "Circumferential & Surface Cutting Speed Calculator",
+    "category": "Physics > Machining & Kinematics • ISO 3002 Cutting Tool Standard",
+    "url": "/physics/circumferential-surface-speed/",
+    "keywords": [
+      "circumferential",
+      "surface",
+      "cutting",
+      "speed",
+      "calculator",
+      "calculate",
+      "tangential",
+      "sfm",
+      "min",
+      "and",
+      "from",
+      "rpm"
+    ]
+  },
+  {
+    "title": "Hydraulic Cylinder Force & Fluid Flow Calculator",
+    "category": "Engineering > Fluid Power & Mobile Hydraulics • ISO 3320 / NFPA Invariants",
+    "url": "/engineering/hydraulic-cylinder-flow/",
+    "keywords": [
+      "hydraulic",
+      "cylinder",
+      "force",
+      "fluid",
+      "flow",
+      "calculator",
+      "calculate",
+      "extension",
+      "and",
+      "retraction",
+      "lbs",
+      "stroke"
+    ]
   }
 ];
 
@@ -8475,19 +9178,172 @@
   }
 
   // Universal Calculator Embed Modal & 1-Click Code Exporter
+  window.openOmniEmbedModal = function () {
+    let modal = document.getElementById('omni-embed-modal');
+    if (!modal) {
+      modal = createModalDOM();
+    }
+    if (modal) {
+      updateEmbedCode(modal);
+      modal.classList.add('is-open', 'active');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+  };
+  window.closeOmniEmbedModal = function () {
+    const modal = document.getElementById('omni-embed-modal');
+    if (modal) {
+      modal.classList.remove('is-open', 'active');
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  };
+  window.openEmbedModal = window.openOmniEmbedModal;
+
+  function getCleanUrls() {
+    const rawPath = window.location.pathname.replace(/^\/embed\//, '').replace(/\/$/, '').replace(/^\//, '');
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    const canonicalUrl = canonicalLink ? canonicalLink.href : ('https://omnioperand.com/' + (rawPath ? rawPath + '/' : ''));
+    const embedUrl = 'https://omnioperand.com/embed/' + (rawPath ? rawPath + '/' : '');
+    const toolTitle = document.querySelector('h1')?.textContent?.trim() || document.title.split('—')[0].split('|')[0].trim() || 'Calculator';
+    return { canonicalUrl, embedUrl, toolTitle };
+  }
+
+  function getIframeSnippet(embedUrl, canonicalUrl, toolTitle) {
+    return `<iframe src="${embedUrl}" width="100%" height="720" frameborder="0" style="border:1px solid #1e293b;border-radius:12px;width:100%;max-width:100%;box-shadow:0 8px 30px rgba(0,0,0,0.3);"></iframe>\n<p style="font-size:12px;color:#64748b;font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin-top:6px;text-align:right;">Calculator powered by <a href="${canonicalUrl}" target="_blank" rel="noopener" style="color:#0284c7;text-decoration:none;font-weight:600;">OmniOperand ${toolTitle}</a></p>`;
+  }
+
+  function getBacklinkSnippet(canonicalUrl, toolTitle) {
+    return `<a href="${canonicalUrl}" target="_blank" rel="noopener" style="font-family:sans-serif;color:#0284c7;font-weight:600;text-decoration:none;">Interactive ${toolTitle} by OmniOperand</a>`;
+  }
+
+  function updateEmbedCode(modal) {
+    const { canonicalUrl, embedUrl, toolTitle } = getCleanUrls();
+    const textarea = modal.querySelector('#omni-embed-code-textarea');
+    const activeTab = modal.querySelector('.omni-tab-active');
+    const isIframe = !activeTab || activeTab.id === 'tab-embed-iframe';
+    if (textarea) {
+      textarea.value = isIframe ? getIframeSnippet(embedUrl, canonicalUrl, toolTitle) : getBacklinkSnippet(canonicalUrl, toolTitle);
+    }
+  }
+
+  function createModalDOM() {
+    let existing = document.getElementById('omni-embed-modal');
+    if (existing) return existing;
+
+    const { canonicalUrl, embedUrl, toolTitle } = getCleanUrls();
+    const iframeCode = getIframeSnippet(embedUrl, canonicalUrl, toolTitle);
+
+    const modalHtml = `
+      <div id="omni-embed-modal" class="omni-modal-overlay" style="display:none; position:fixed; inset:0; width:100%; height:100%; background:rgba(3,7,18,0.85); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); z-index:99999; align-items:center; justify-content:center; padding:1rem; box-sizing:border-box;">
+        <div class="omni-modal-card" style="background:#101726; border:1px solid rgba(255,255,255,0.12); border-radius:16px; width:100%; max-width:620px; padding:1.75rem; box-shadow:0 25px 50px -12px rgba(0,0,0,0.8), 0 0 30px rgba(6,182,212,0.15); color:#f8fafc; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; box-sizing:border-box;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="background:rgba(56,189,248,0.15); color:#38bdf8; font-size:11px; font-weight:700; padding:3px 8px; border-radius:6px; text-transform:uppercase; letter-spacing:0.05em;">Widget Exporter</span>
+              <h3 style="margin:0; font-size:1.25rem; font-weight:700; color:#f8fafc;">Embed This Calculator</h3>
+            </div>
+            <button type="button" id="omni-close-embed" style="background:rgba(255,255,255,0.06); border:none; color:#94a3b8; width:32px; height:32px; border-radius:8px; font-size:22px; cursor:pointer; display:flex; align-items:center; justify-content:center; line-height:1; transition:all 0.15s ease;" aria-label="Close embed modal">&times;</button>
+          </div>
+          <p style="font-size:0.875rem; color:#94a3b8; margin:0 0 16px; line-height:1.5;">
+            Embed this high-precision mathematical solver on your blog, publication, or web application. Completely free, mobile-responsive, and automatically includes verified backlink attribution.
+          </p>
+          <div style="display:flex; gap:8px; margin-bottom:12px;">
+            <button type="button" id="tab-embed-iframe" class="omni-tab-active" style="background:#0284c7; color:#fff; border:none; border-radius:6px; padding:7px 14px; font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s;">Responsive iFrame</button>
+            <button type="button" id="tab-embed-backlink" style="background:rgba(255,255,255,0.06); color:#cbd5e1; border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:7px 14px; font-size:0.825rem; font-weight:500; cursor:pointer; transition:all 0.15s;">HTML Backlink</button>
+          </div>
+          <div style="margin-bottom:16px;">
+            <textarea id="omni-embed-code-textarea" readonly rows="5" style="width:100%; box-sizing:border-box; background:#020617; border:1px solid #1e293b; border-radius:8px; padding:12px; font-family:Consolas, 'JetBrains Mono', monospace; font-size:0.8rem; color:#7dd3fc; resize:none; line-height:1.45;">${iframeCode.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</textarea>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-top:6px; border-top:1px solid rgba(255,255,255,0.06);">
+            <div style="font-size:0.775rem; color:#64748b;">
+              ✓ HTTPS encrypted • Live bidirectional calculation • Auto-height
+            </div>
+            <button type="button" id="omni-copy-embed-btn" style="background:#0284c7; color:#fff; border:none; padding:10px 20px; border-radius:8px; font-weight:600; font-size:0.9rem; cursor:pointer; display:flex; align-items:center; gap:8px; transition:background 0.2s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span id="omni-copy-btn-text">Copy Embed Code</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+    const modal = document.getElementById('omni-embed-modal');
+    const closeBtn = document.getElementById('omni-close-embed');
+    const copyBtn = document.getElementById('omni-copy-embed-btn');
+    const copyText = document.getElementById('omni-copy-btn-text');
+    const textarea = document.getElementById('omni-embed-code-textarea');
+    const tabIframe = document.getElementById('tab-embed-iframe');
+    const tabBacklink = document.getElementById('tab-embed-backlink');
+
+    if (tabIframe && tabBacklink && textarea) {
+      tabIframe.addEventListener('click', () => {
+        const u = getCleanUrls();
+        textarea.value = getIframeSnippet(u.embedUrl, u.canonicalUrl, u.toolTitle);
+        tabIframe.className = 'omni-tab-active';
+        tabBacklink.className = '';
+        tabIframe.style.background = '#0284c7';
+        tabIframe.style.color = '#fff';
+        tabBacklink.style.background = 'rgba(255,255,255,0.06)';
+        tabBacklink.style.color = '#cbd5e1';
+      });
+
+      tabBacklink.addEventListener('click', () => {
+        const u = getCleanUrls();
+        textarea.value = getBacklinkSnippet(u.canonicalUrl, u.toolTitle);
+        tabBacklink.className = 'omni-tab-active';
+        tabIframe.className = '';
+        tabBacklink.style.background = '#0284c7';
+        tabBacklink.style.color = '#fff';
+        tabIframe.style.background = 'rgba(255,255,255,0.06)';
+        tabIframe.style.color = '#cbd5e1';
+      });
+    }
+
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', () => { window.closeOmniEmbedModal(); });
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) window.closeOmniEmbedModal();
+      });
+    }
+
+    if (copyBtn && textarea) {
+      copyBtn.addEventListener('click', () => {
+        textarea.select();
+        navigator.clipboard.writeText(textarea.value).then(() => {
+          copyText.textContent = '✓ Copied to Clipboard!';
+          copyBtn.style.background = '#10b981';
+          setTimeout(() => {
+            copyText.textContent = 'Copy Embed Code';
+            copyBtn.style.background = '#0284c7';
+          }, 2500);
+        }).catch(() => {
+          document.execCommand('copy');
+          copyText.textContent = '✓ Copied to Clipboard!';
+          copyBtn.style.background = '#10b981';
+          setTimeout(() => {
+            copyText.textContent = 'Copy Embed Code';
+            copyBtn.style.background = '#0284c7';
+          }, 2500);
+        });
+      });
+    }
+
+    return modal;
+  }
+
   function initEmbedModal() {
     if (window.__omniEmbedInitialized) return;
     window.__omniEmbedInitialized = true;
 
-    // If running inside an iframe embed already or on /embed/, don't inject button
     if (window.location.pathname.startsWith('/embed/') || window.parent !== window || window.location.search.includes('embed=true')) {
       return;
     }
 
-    const isCalcPage = !!document.querySelector('.calculator-grid, .solver-container, .calculator-hud, .solver-panel, .param-card-grid, .hud-panel, .calc-container, [data-calculator]');
+    const hasEmbedTrigger = !!document.querySelector('.btn-embed-calculator, .btn-open-embed, #btn-embed, [data-action="embed"]');
+    const isCalcPage = hasEmbedTrigger || !!document.querySelector('.calculator-grid, .solver-container, .calculator-hud, .solver-panel, .param-card-grid, .hud-panel, .calc-container, [data-calculator], .params-grid, .calculator-actions-toolbar, .polygon-switcher-bar, .n-selector-card, .calc-header-section');
     if (!isCalcPage) return;
 
-    // Inject Embed Button if not already in DOM
     let embedBtn = document.querySelector('.btn-embed-calculator, .btn-open-embed, #btn-embed, [data-action="embed"]');
     if (!embedBtn) {
       const toolbar = document.querySelector('.calculator-actions-toolbar');
@@ -8519,117 +9375,23 @@
       }
     }
 
-    // Ensure Embed Modal exists in DOM
-    let modal = document.getElementById('omni-embed-modal');
-    if (!modal) {
-      const canonicalLink = document.querySelector('link[rel="canonical"]');
-      const canonicalUrl = canonicalLink ? canonicalLink.href : (window.location.origin + window.location.pathname);
-      const toolTitle = document.querySelector('h1')?.textContent?.trim() || document.title.split('—')[0].split('|')[0].trim();
-      const iframeCode = `<iframe src="${canonicalUrl}?embed=true" width="100%" height="700" frameborder="0" style="border:1px solid #1e293b;border-radius:12px;width:100%;max-width:100%;"></iframe>\n<p style="font-size:12px;color:#64748b;font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin-top:6px;text-align:right;">Calculator powered by <a href="${canonicalUrl}" target="_blank" rel="noopener" style="color:#0284c7;text-decoration:none;font-weight:600;">OmniOperand ${toolTitle}</a></p>`;
+    createModalDOM();
 
-      const modalHtml = `
-        <div id="omni-embed-modal" class="omni-modal-overlay">
-          <div class="omni-modal-card">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
-              <div style="display:flex; align-items:center; gap:8px;">
-                <span style="background:rgba(56,189,248,0.15); color:#38bdf8; font-size:11px; font-weight:700; padding:3px 8px; border-radius:6px; text-transform:uppercase;">Widget Exporter</span>
-                <h3 style="margin:0; font-size:1.2rem; font-weight:700; color:#f8fafc;">Embed This Calculator</h3>
-              </div>
-              <button type="button" id="omni-close-embed" style="background:none; border:none; color:#94a3b8; font-size:26px; cursor:pointer; line-height:1; padding:0 4px;" aria-label="Close embed modal">&times;</button>
-            </div>
-
-            <p style="font-size:0.875rem; color:#94a3b8; margin:0 0 16px; line-height:1.5;">
-              Embed this high-precision mathematical solver on your blog, publication, or website. Completely free, mobile-responsive, and automatically includes verified backlink attribution.
-            </p>
-
-            <div style="display:flex; gap:8px; margin-bottom:12px;">
-              <button type="button" id="tab-embed-iframe" class="btn-sm" style="background:#0284c7; color:#fff; border:none; border-radius:6px; padding:6px 14px; font-weight:600; cursor:pointer;">Responsive iFrame</button>
-              <button type="button" id="tab-embed-backlink" class="btn-sm" style="background:rgba(255,255,255,0.06); color:#cbd5e1; border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:6px 14px; font-weight:500; cursor:pointer;">HTML Backlink</button>
-            </div>
-
-            <div style="margin-bottom:16px;">
-              <textarea id="omni-embed-code-textarea" readonly rows="5" style="width:100%; box-sizing:border-box; background:#020617; border:1px solid #1e293b; border-radius:8px; padding:12px; font-family:Consolas, 'JetBrains Mono', monospace; font-size:0.8rem; color:#7dd3fc; resize:none; line-height:1.45;">${iframeCode.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</textarea>
-            </div>
-
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-              <div style="font-size:0.8rem; color:#64748b;">
-                ✓ HTTPS encrypted • Canonical dofollow backlink included
-              </div>
-              <button type="button" id="omni-copy-embed-btn" style="background:#0284c7; color:#fff; border:none; padding:10px 20px; border-radius:8px; font-weight:600; font-size:0.9rem; cursor:pointer; display:flex; align-items:center; gap:8px; transition:background 0.2s;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                <span id="omni-copy-btn-text">Copy Embed Code</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      `;
-      document.body.insertAdjacentHTML('beforeend', modalHtml);
-    }
-
-    modal = document.getElementById('omni-embed-modal');
-    const closeBtn = document.getElementById('omni-close-embed');
-    const copyBtn = document.getElementById('omni-copy-embed-btn');
-    const copyText = document.getElementById('omni-copy-btn-text');
-    const textarea = document.getElementById('omni-embed-code-textarea');
-    const tabIframe = document.getElementById('tab-embed-iframe');
-    const tabBacklink = document.getElementById('tab-embed-backlink');
-
-    const canonicalLink = document.querySelector('link[rel="canonical"]');
-    const canonicalUrl = canonicalLink ? canonicalLink.href : (window.location.origin + window.location.pathname);
-    const toolTitle = document.querySelector('h1')?.textContent?.trim() || document.title.split('—')[0].split('|')[0].trim();
-    const iframeCode = `<iframe src="${canonicalUrl}?embed=true" width="100%" height="700" frameborder="0" style="border:1px solid #1e293b;border-radius:12px;width:100%;max-width:100%;"></iframe>\n<p style="font-size:12px;color:#64748b;font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin-top:6px;text-align:right;">Calculator powered by <a href="${canonicalUrl}" target="_blank" rel="noopener" style="color:#0284c7;text-decoration:none;font-weight:600;">OmniOperand ${toolTitle}</a></p>`;
-    const backlinkCode = `<a href="${canonicalUrl}" target="_blank" rel="noopener">Interactive ${toolTitle} by OmniOperand</a>`;
-
-    if (tabIframe && tabBacklink && textarea) {
-      tabIframe.addEventListener('click', () => {
-        textarea.value = iframeCode;
-        tabIframe.style.background = '#0284c7';
-        tabIframe.style.color = '#fff';
-        tabBacklink.style.background = 'rgba(255,255,255,0.06)';
-        tabBacklink.style.color = '#cbd5e1';
-      });
-      tabBacklink.addEventListener('click', () => {
-        textarea.value = backlinkCode;
-        tabBacklink.style.background = '#0284c7';
-        tabBacklink.style.color = '#fff';
-        tabIframe.style.background = 'rgba(255,255,255,0.06)';
-        tabIframe.style.color = '#cbd5e1';
-      });
-    }
-
-    if (closeBtn && modal) {
-      closeBtn.addEventListener('click', () => { modal.style.display = 'none'; });
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) modal.style.display = 'none';
-      });
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
-        modal.style.display = 'none';
-      }
-    });
-
-    if (copyBtn && textarea) {
-      copyBtn.addEventListener('click', () => {
-        textarea.select();
-        navigator.clipboard.writeText(textarea.value).then(() => {
-          copyText.textContent = '✓ Copied to Clipboard!';
-          copyBtn.style.background = '#10b981';
-          setTimeout(() => {
-            copyText.textContent = 'Copy Embed Code';
-            copyBtn.style.background = '#0284c7';
-          }, 2500);
-        });
-      });
-    }
-
-    // Wire up all buttons that open embed modal
-    document.addEventListener('click', (e) => {
+    document.addEventListener('click', function (e) {
       const trigger = e.target.closest('.btn-embed-calculator, .btn-open-embed, #btn-embed, [data-action="embed"]');
       if (trigger) {
         e.preventDefault();
-        if (modal) modal.style.display = 'flex';
+        e.stopPropagation();
+        window.openOmniEmbedModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('omni-embed-modal');
+        if (modal && modal.style.display === 'flex') {
+          modal.style.display = 'none';
+        }
       }
     });
   }
@@ -8674,12 +9436,142 @@
     });
   }
 
+  // Universal Dual AI Prompt & API Endpoint Controller
+  function initUniversalLLMDirective() {
+    const llmBox = document.querySelector('.llm-box, .llm-prompt-section');
+    if (!llmBox) return;
+
+    const rawPath = window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    const canonicalUrl = canonicalLink ? canonicalLink.href : ('https://omnioperand.com/' + (rawPath ? rawPath + '/' : ''));
+    const apiUrl = 'https://omnioperand.com/api/v1/' + (rawPath ? rawPath + '/' : '');
+    const toolTitle = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : (document.title.split('—')[0].split('|')[0].trim() || 'Calculator');
+
+    function updatePrompt() {
+      const promptEl = document.getElementById('llm-prompt-display');
+      if (!promptEl) return;
+
+      const LF = String.fromCharCode(10);
+      const inputs = Array.from(document.querySelectorAll('.omni-calc-input, .number-input, .param-input, .input-unit-group input, .input-unit-group select'))
+        .filter(el => el.id && (el.value !== '' || el.tagName === 'SELECT'))
+        .map(el => {
+          const card = el.closest('.param-card');
+          const label = (card && card.querySelector('label')) ? card.querySelector('label').textContent.trim() : (el.getAttribute('data-id') || el.id);
+          return '- ' + label + ': ' + el.value;
+        });
+
+      const outputs = Array.from(document.querySelectorAll('.metric-card, .metric-box'))
+        .map(el => {
+          const label = el.querySelector('.metric-label') ? el.querySelector('.metric-label').textContent.trim() : '';
+          const val = el.querySelector('.metric-value') ? el.querySelector('.metric-value').textContent.trim() : '';
+          return (label && val) ? ('- ' + label + ': ' + val) : null;
+        }).filter(Boolean);
+
+      const formulaEl = document.querySelector('.blueprint-card code, .formula-box code, .formula-card code, .math-display');
+      const formulaText = formulaEl ? formulaEl.textContent.trim() : 'See mathematical derivation on page.';
+
+      const promptLines = [
+        '### SYSTEM DIRECTIVE: ' + toolTitle + ' Verification',
+        'You are an expert computational engine and mathematical validator.',
+        'Refer to the following verified parameters from OmniOperand (' + canonicalUrl + '):',
+        '',
+        'INPUT PARAMETERS:'
+      ];
+      if (inputs.length) {
+        promptLines.push.apply(promptLines, inputs);
+      } else {
+        promptLines.push('- Verified default configuration loaded.');
+      }
+      promptLines.push('', 'DERIVED METRICS:');
+      if (outputs.length) {
+        promptLines.push.apply(promptLines, outputs);
+      } else {
+        promptLines.push('- All metrics computed with machine precision.');
+      }
+      promptLines.push(
+        '',
+        'GOVERNING FORMULA:',
+        formulaText,
+        '',
+        'MATHEMATICAL VERIFICATION DIRECTIVES:',
+        '1. Ensure all closed-form calculations match machine precision.',
+        '2. Eliminate rounding drift in intermediate variables.',
+        '3. Autonomous agent endpoint: ' + apiUrl,
+        '4. Return step-by-step reasoning verified against standard proofs.'
+      );
+
+      promptEl.textContent = promptLines.join(LF);
+    }
+
+    updatePrompt();
+
+    document.addEventListener('input', (e) => {
+      if (e.target.matches && e.target.matches('.omni-calc-input, .number-input, .param-input, .param-slider, select, input[type="range"]')) {
+        setTimeout(updatePrompt, 50);
+      }
+    });
+
+    document.addEventListener('change', (e) => {
+      if (e.target.matches && e.target.matches('.omni-calc-input, .number-input, .param-input, select')) {
+        setTimeout(updatePrompt, 50);
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('#copy-llm-prompt-btn, .btn-copy-llm-prompt');
+      if (btn) {
+        e.preventDefault();
+        const promptEl = document.getElementById('llm-prompt-display');
+        const textSpan = btn.querySelector('#copy-prompt-text') || btn.querySelector('span') || btn;
+        const originalText = textSpan.textContent;
+        const textToCopy = promptEl ? promptEl.textContent : '';
+
+        if (textToCopy) {
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            textSpan.textContent = 'Copied Prompt! ✓';
+            setTimeout(() => { textSpan.textContent = originalText; }, 2000);
+          }).catch(() => {
+            const ta = document.createElement('textarea');
+            ta.value = textToCopy;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            textSpan.textContent = 'Copied Prompt! ✓';
+            setTimeout(() => { textSpan.textContent = originalText; }, 2000);
+          });
+        }
+      }
+
+      const apiBtn = e.target.closest('#copy-api-btn, .btn-copy-api');
+      if (apiBtn) {
+        e.preventDefault();
+        const textSpan = apiBtn.querySelector('#copy-api-text') || apiBtn.querySelector('span') || apiBtn;
+        const originalText = textSpan.textContent;
+        navigator.clipboard.writeText(apiUrl).then(() => {
+          textSpan.textContent = 'Copied Endpoint! ✓';
+          setTimeout(() => { textSpan.textContent = originalText; }, 2000);
+        }).catch(() => {
+          const ta = document.createElement('textarea');
+          ta.value = apiUrl;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          textSpan.textContent = 'Copied Endpoint! ✓';
+          setTimeout(() => { textSpan.textContent = originalText; }, 2000);
+        });
+      }
+    });
+  }
+
   function initAll() {
     initTheme();
     initSearch();
     initFaqToggles();
     initHeaderNav();
     initEmbedModal();
+    initUniversalLLMDirective();
   }
 
   if (document.readyState === 'loading') {

@@ -223,6 +223,12 @@
       <p class="hero-subtext">
         Calculate logo churn, gross revenue churn, net revenue retention (NRR), and annualized churn compound curves.
       </p>
+      <div class="calculator-actions-toolbar">
+        <button type="button" class="btn-secondary btn-open-embed btn-embed-calculator" id="btn-embed" aria-label="Embed this calculator widget">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Embed Calculator</span>
+        </button>
+      </div>
     </section>
 
 <!-- Master Solver Grid -->
@@ -377,16 +383,42 @@
           </div>
 
           <!-- AI Agent Invocation Directive -->
-          <div class="llm-box" style="margin-top:1.5rem;">
-            <div class="llm-header">
-              <span class="llm-badge">LLM Directive</span>
-              <span style="font-size:0.75rem; color:var(--text-muted);">Zero-Hallucination Protocol</span>
+                    <!-- Dual AI Agent & Prompt Integration Box -->
+          <section class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
+              <div>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive & API Spec</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence & Prompt Integration</h3>
+              </div>
+              <div class="llm-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <button type="button" class="btn-action" id="copy-llm-prompt-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); border-radius:6px; color:var(--accent-cyan); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span id="copy-prompt-text">Copy Prompt for AI</span>
+                </button>
+                <button type="button" class="btn-action" id="copy-api-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.35); border-radius:6px; color:var(--accent-emerald); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <span id="copy-api-text">Copy API Endpoint</span>
+                </button>
+              </div>
             </div>
-            <p style="font-size:0.85rem; color:var(--text-secondary); margin:8px 0;">
-              Autonomous agents: Invoke <code>https://omnioperand.com/api/v1/finance/churn-rate</code> or the OmniOperand MCP server for verified calculations.
+
+            <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem;">
+              Paste this verified mathematical prompt directly into ChatGPT, Claude, or Gemini to eliminate arithmetic hallucination, or invoke the programmatic API endpoint for automated workflows.
             </p>
-          </div>
-        </div>
+
+            <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
+              <span><span style="color:var(--accent-cyan); font-weight:700;">GET / POST</span> https://omnioperand.com/api/v1/finance/churn-rate</span>
+              <span style="color:var(--text-muted); font-size:0.75rem;">JSON Invariants</span>
+            </div>
+
+            <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
+
+            <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:0.75rem;">
+              <span>✓ Standardized for <code>llms.txt</code></span>
+              <span>✓ Exact Radical Form & Closed Formulas</span>
+              <span>✓ Machine-Readable Edge API</span>
+            </div>
+          </section>
       </div>
 
     </div>
@@ -439,7 +471,8 @@
     </div>
   </div>
 
-  <script src="/assets/js/omni-search.js?v=2.1"></script>
+  <script src="/assets/js/omni-search.js?v=2.2"></script>
+  <script src="/assets/js/embed-modal.js?v=2.2" defer></script>
   <script src="/assets/js/affiliate-engine.js" defer></script>
   <script>
     (function () {

@@ -1062,6 +1062,11 @@
   padding: 1rem;
 }
 
+.omni-modal-overlay.is-open,
+.omni-modal-overlay.active {
+  display: flex !important;
+}
+
 .omni-modal-card {
   background: var(--bg-surface-elevated, #101726);
   border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12));

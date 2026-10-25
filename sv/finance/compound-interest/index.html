@@ -229,6 +229,12 @@
       <div class="hero-badge">Financial Engineering • Actuarial Growth Matrix</div>
       <h1>Ränta på Ränta & Sparandekalkylator</h1>
       <p class="hero-subtext">Månadssparande, ränta-på-ränta-effekt, effektiv årsränta och kapitaltillväxt.</p>
+      <div class="calculator-actions-toolbar">
+        <button type="button" class="btn-secondary btn-open-embed btn-embed-calculator" id="btn-embed" aria-label="Embed this calculator widget">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Embed Calculator</span>
+        </button>
+      </div>
     </section>
 
     <div class="calculator-grid">
@@ -402,8 +408,14 @@
           <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
         </div>
         <div class="llm-actions">
-          <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Kopiera Verifierad Prompt för AI-Agenter</button>
+          <button type="button" class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Kopiera Verifierad Prompt för AI-Agenter</button>
+          <button type="button" class="btn btn-secondary btn-sm" id="copy-api-btn">Copy API Endpoint</button>
         </div>
+      </div>
+
+            <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin:0.75rem 0; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
+        <span><span style="color:var(--accent-cyan); font-weight:700;">GET / POST</span> https://omnioperand.com/api/v1/sv/finance/compound-interest</span>
+        <span style="color:var(--text-muted); font-size:0.75rem;">JSON Invariants</span>
       </div>
 
       <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
@@ -447,7 +459,8 @@
     </div>
   </div>
 
-  <script src="/assets/js/omni-search.js?v=2.1"></script>
+  <script src="/assets/js/omni-search.js?v=2.2"></script>
+  <script src="/assets/js/embed-modal.js?v=2.2" defer></script>
   <script src="/assets/js/compound-interest-solver.js"></script>
 </body>
 </html>

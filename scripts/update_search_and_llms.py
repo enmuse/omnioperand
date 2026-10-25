@@ -14,6 +14,17 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 from calculator_data import CALCULATORS_DATA, HUB_DATA
+try:
+    from gsc_calculator_data import GSC_CALCULATORS
+except ImportError:
+    GSC_CALCULATORS = []
+
+try:
+    from data_batch2_gsc import BATCH2_CALCULATORS
+    from data_batch2_part2_gsc import BATCH2_PART2_CALCULATORS
+    ALL_BATCH2 = BATCH2_CALCULATORS + BATCH2_PART2_CALCULATORS
+except ImportError:
+    ALL_BATCH2 = []
 
 def update_search_js():
     print("🔍 Updating assets/js/omni-search.js search index...")
@@ -80,7 +91,7 @@ def update_search_js():
             "keywords": [cat, "hub", "calculators", "overview", "formulas"]
         })
 
-    # Add all calculators
+    # Add all core calculators
     for c in CALCULATORS_DATA:
         cat = c["category"]
         slug = c["slug"]
@@ -95,6 +106,22 @@ def update_search_js():
             "title": name,
             "category": f"{cat.capitalize()} > {c.get('hero_badge', 'Calculators')}",
             "url": f"/{cat}/{slug}/",
+            "keywords": keywords
+        })
+
+    # Add GSC and Batch 2 calculators
+    extra_calcs = GSC_CALCULATORS + ALL_BATCH2
+    for c in extra_calcs:
+        slug = c["slug"]
+        cat = c.get("category", slug.split('/')[0])
+        name = c["name"]
+        desc = c["description"]
+        raw_words = re.findall(r"[A-Za-z0-9\-]+", f"{name} {desc} {slug}")
+        keywords = list(dict.fromkeys([w.lower() for w in raw_words if len(w) > 2]))[:12]
+        index_items.append({
+            "title": name,
+            "category": f"{cat.capitalize()} > {c.get('hero_badge', 'Calculators')}",
+            "url": f"/{slug}/",
             "keywords": keywords
         })
 
@@ -139,16 +166,20 @@ def update_llms_manifests():
         cat = c["category"]
         if cat not in cats:
             cats[cat] = []
-        cats[cat].append(c)
+        cats[cat].append((f"/{cat}/{c['slug']}/", c["name"], c["description"], c.get("formula_display", ""), c.get("proof_steps", [])))
+
+    for c in GSC_CALCULATORS + ALL_BATCH2:
+        slug = c["slug"]
+        cat = c.get("category", slug.split('/')[0])
+        if cat not in cats:
+            cats[cat] = []
+        cats[cat].append((f"/{slug}/", c["name"], c["description"], c.get("formula_display", ""), c.get("proof_steps", [])))
 
     for cat, calcs in cats.items():
         cat_title = HUB_DATA.get(cat, {}).get("title", cat.capitalize() + " Solvers")
         lines.append(f"\n### {cat_title}")
-        for c in calcs:
-            slug = c["slug"]
-            name = c["name"]
-            desc = c["description"]
-            lines.append(f"- [{name}](https://omnioperand.com/{cat}/{slug}/): {desc}")
+        for url, name, desc, formula, proofs in calcs:
+            lines.append(f"- [{name}](https://omnioperand.com{url}): {desc}")
 
     llms_path = REPO_ROOT / "llms.txt"
     llms_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -157,18 +188,13 @@ def update_llms_manifests():
     # Build llms-full.txt
     full_lines = list(lines)
     full_lines.append("\n## Mathematical Invariants & Analytical Formulas\n")
-    for c in CALCULATORS_DATA:
-        name = c["name"]
-        cat = c["category"]
-        slug = c["slug"]
-        formula = c.get("formula_display", "")
-        proofs = c.get("proof_steps", [])
-        
-        full_lines.append(f"### {name} (`https://omnioperand.com/{cat}/{slug}/`)")
-        full_lines.append(f"- Governing Formula: `{formula}`")
-        for p in proofs:
-            full_lines.append(f"  - **{p['step_title']}**: {p['step_text']}")
-        full_lines.append("")
+    for cat, calcs in cats.items():
+        for url, name, desc, formula, proofs in calcs:
+            full_lines.append(f"### {name} (`https://omnioperand.com{url}`)")
+            full_lines.append(f"- Governing Formula: `{formula}`")
+            for p in proofs:
+                full_lines.append(f"  - **{p['step_title']}**: {p['step_text']}")
+            full_lines.append("")
 
     full_path = REPO_ROOT / "llms-full.txt"
     full_path.write_text("\n".join(full_lines) + "\n", encoding="utf-8")

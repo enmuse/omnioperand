@@ -835,15 +835,21 @@
           <span class="llm-badge">LLM Directive & API Spec</span>
           <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
         </div>
-        <div class="llm-actions">
+        <div class="llm-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
           <button class="btn btn-primary btn-sm" id="copy-llm-prompt-btn">Copy Prompt for AI</button>
+          <button class="btn btn-secondary btn-sm" id="copy-api-btn">Copy API Endpoint</button>
           <button class="btn btn-secondary btn-sm" id="copy-json-btn">Copy JSON Data</button>
         </div>
       </div>
 
       <p style="color:var(--text-secondary); font-size:0.95rem;">
-        Large Language Models frequently make arithmetic hallucinations when calculating radical trigonometry for polygons. Use the verified prompt payload below when feeding polygon problems into ChatGPT, Claude, or Gemini to ensure zero hallucination and mathematically validated step-by-step reasoning.
+        Large Language Models frequently make arithmetic hallucinations when calculating radical trigonometry for polygons. Use the verified prompt payload below when feeding polygon problems into ChatGPT, Claude, or Gemini to ensure zero hallucination and mathematically validated step-by-step reasoning, or invoke the programmatic API endpoint for automated workflows.
       </p>
+
+      <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin:0.75rem 0; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
+        <span><span style="color:var(--accent-cyan); font-weight:700;">GET / POST</span> https://omnioperand.com/api/v1/geometry/2d/shapes/regular-polygon</span>
+        <span style="color:var(--text-muted); font-size:0.75rem;">JSON Invariants</span>
+      </div>
 
       <pre class="llm-prompt-code" id="llm-prompt-display">Generating dynamic prompt payload...</pre>
 
@@ -851,6 +857,7 @@
         <span>✓ Standardized for <code>llms.txt</code></span>
         <span>✓ Precision verified up to 10 decimal digits</span>
         <span>✓ Exact analytic radicals & Archimedean limits included</span>
+        <span>✓ Deterministic Edge API</span>
       </div>
     </section>
 
@@ -970,7 +977,8 @@
   </div>
 
   <!-- Scripts -->
-  <script src="/assets/js/omni-search.js?v=2.1"></script>
+  <script src="/assets/js/omni-search.js?v=2.2"></script>
+  <script src="/assets/js/embed-modal.js?v=2.2" defer></script>
   <script src="/assets/js/regular-polygon-solver.js"></script>
   <script src="/assets/js/blueprint-engine.js" defer></script>
 </body>

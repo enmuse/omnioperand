@@ -6,10 +6,10 @@
 export const METRICS = {
   "solvers_count": 441,
   "mcp_tools_count": 442,
-  "calculators_count": 934,
+  "calculators_count": 956,
   "categories_count": 15,
-  "total_html_pages": 971,
-  "sitemap_urls_count": 970,
+  "total_html_pages": 993,
+  "sitemap_urls_count": 992,
   "supported_languages": [
     "en",
     "es",
@@ -41,10 +41,10 @@ export const METRICS = {
     "statistics": 4,
     "calculus": 2
   },
-  "last_updated": "2026-10-25T05:24:25Z"
+  "last_updated": "2026-10-25T16:22:06Z"
 };
 
 export const SOLVERS_COUNT = 441;
 export const MCP_TOOLS_COUNT = 442;
-export const CALCULATORS_COUNT = 934;
+export const CALCULATORS_COUNT = 956;
 export const CATEGORIES_COUNT = 15;

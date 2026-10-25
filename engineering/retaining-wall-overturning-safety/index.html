@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retaining Wall Overturning & Sliding Safety Factor Calculator | OmniOperand</title>
+  <meta name="description" content="Calculate factors of safety against overturning and sliding for cantilever concrete retaining walls using Rankine earth pressure theory.">
+  <link rel="canonical" href="https://omnioperand.com/engineering/retaining-wall-overturning-safety/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/engineering/retaining-wall-overturning-safety/">
+  <link rel="alternate" hreflang="en" href="https://omnioperand.com/engineering/retaining-wall-overturning-safety/">
+
+  <meta property="og:title" content="Retaining Wall Overturning & Sliding Safety Factor Calculator | OmniOperand">
+  <meta property="og:description" content="Calculate factors of safety against overturning and sliding for cantilever concrete retaining walls using Rankine earth pressure theory.">
+  <meta property="og:url" content="https://omnioperand.com/engineering/retaining-wall-overturning-safety/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/engineering/retaining-wall-overturning-safety/#app",
+      "name": "Retaining Wall Overturning & Sliding Safety Factor Calculator",
+      "url": "https://omnioperand.com/engineering/retaining-wall-overturning-safety/",
+      "applicationCategory": "EngineeringApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Calculate factors of safety against overturning and sliding for cantilever concrete retaining walls using Rankine earth pressure theory.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/engineering/retaining-wall-overturning-safety/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OmniOperand",
+          "item": "https://omnioperand.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering",
+          "item": "https://omnioperand.com/engineering/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Retaining Wall Overturning & Sliding Safety Factor Calculator",
+          "item": "https://omnioperand.com/engineering/retaining-wall-overturning-safety/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/engineering/retaining-wall-overturning-safety/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a safe factor of safety against overturning for retaining walls?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The International Building Code (IBC Section 1807.2) requires a minimum Factor of Safety of 2.0 against overturning, and a minimum Factor of Safety of 1.5 against sliding."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the soil above the heel beneficial for retaining walls?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The heel extends backward into the backfill, using the massive vertical weight of the retained soil column to anchor the wall against overturning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if a retaining wall fails in sliding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If the lateral earth thrust exceeds the frictional resistance between the concrete footing and foundation subsoil (FS < 1.5), the entire wall will shift laterally, requiring a shear key."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="omni-body">
+
+    <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Engineering</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger active" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">EN</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/engineering/retaining-wall-overturning-safety/" class="lang-dropdown-item active"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/engineering/retaining-wall-overturning-safety/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/engineering/retaining-wall-overturning-safety/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/engineering/retaining-wall-overturning-safety/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/engineering/retaining-wall-overturning-safety/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/engineering/retaining-wall-overturning-safety/" class="lang-dropdown-item"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/engineering/retaining-wall-overturning-safety/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/engineering/retaining-wall-overturning-safety/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/engineering/retaining-wall-overturning-safety/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/engineering/retaining-wall-overturning-safety/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/engineering/retaining-wall-overturning-safety/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/engineering/retaining-wall-overturning-safety/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  
+    <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumbs">
+          <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item"><a href="/engineering/">Engineering</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item active" aria-current="page">Retaining Wall Overturning & Sliding Safety Factor Calculator</li>
+        </ol>
+      </div>
+    </nav>
+    
+
+  <main class="container">
+
+    <!-- Hero Header -->
+    <section class="solver-hero">
+      <div class="hero-badge">Geotechnical & Structural Engineering • Rankine / IBC 1807</div>
+      <h1>Retaining Wall Overturning & Sliding Safety Factor Calculator</h1>
+      <p class="hero-subtext">
+        Evaluate geotechnical stability: calculate active lateral earth pressure (Ka), overturning moment, resisting moment, and safety factors against overturning and sliding.
+      </p>
+      <div class="calculator-actions-toolbar">
+        <button type="button" class="btn-secondary btn-open-embed btn-embed-calculator" id="btn-embed" aria-label="Embed this calculator widget">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Embed Calculator</span>
+        </button>
+      </div></div>
+        
+      <div class="toolbar-group" style="margin-left:auto;">
+        <button type="button" class="btn-action" id="share-calc-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); border-radius:6px; color:var(--accent-cyan); font-size:0.85rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          <span id="share-btn-text">Share Calculation</span>
+        </button>
+      </div>
+    </div>
+    
+
+          <div class="hud-panel-header" style="margin-bottom:1rem;">
+            <h2>Input Parameters</h2>
+            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Interactive HUD</span>
+          </div>
+
+          <div class="param-card-grid">
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-wall_height_h">Total Retaining Wall Height (H)</label>
+                <span class="param-symbol">wall_height_h</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-wall_height_h" class="number-input omni-calc-input" data-id="wall_height_h" value="12" step="0.5" min="3" max="50">
+                <span class="input-suffix" id="unit-suffix-wall_height_h" data-imp="ft" data-met="m">ft</span>
+              </div>
+              <input type="range" id="slider-wall_height_h" class="param-slider omni-calc-slider" data-id="wall_height_h" min="3" max="50" step="0.5" value="12">
+              <div class="param-hint">Overall height from bottom of footing to top of stem</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-base_width_b">Base Footing Width (B)</label>
+                <span class="param-symbol">base_width_b</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-base_width_b" class="number-input omni-calc-input" data-id="base_width_b" value="7.5" step="0.25" min="2" max="35">
+                <span class="input-suffix" id="unit-suffix-base_width_b" data-imp="ft" data-met="m">ft</span>
+              </div>
+              <input type="range" id="slider-base_width_b" class="param-slider omni-calc-slider" data-id="base_width_b" min="2" max="35" step="0.25" value="7.5">
+              <div class="param-hint">Total width of foundation footing slab</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-toe_width_t">Toe Projection Width (T)</label>
+                <span class="param-symbol">toe_width_t</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-toe_width_t" class="number-input omni-calc-input" data-id="toe_width_t" value="2.0" step="0.25" min="0.5" max="15">
+                <span class="input-suffix" id="unit-suffix-toe_width_t" data-imp="ft" data-met="m">ft</span>
+              </div>
+              <input type="range" id="slider-toe_width_t" class="param-slider omni-calc-slider" data-id="toe_width_t" min="0.5" max="15" step="0.25" value="2.0">
+              <div class="param-hint">Distance from front toe edge to front face of stem</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-stem_thickness">Stem Average Thickness (t_s)</label>
+                <span class="param-symbol">stem_thickness</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-stem_thickness" class="number-input omni-calc-input" data-id="stem_thickness" value="1.0" step="0.1" min="0.67" max="5">
+                <span class="input-suffix" id="unit-suffix-stem_thickness" data-imp="ft" data-met="m">ft</span>
+              </div>
+              <input type="range" id="slider-stem_thickness" class="param-slider omni-calc-slider" data-id="stem_thickness" min="0.67" max="5" step="0.1" value="1.0">
+              <div class="param-hint">Concrete stem thickness</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-soil_gamma">Backfill Soil Unit Weight (γ)</label>
+                <span class="param-symbol">soil_gamma</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-soil_gamma" class="number-input omni-calc-input" data-id="soil_gamma" value="120" step="5" min="80" max="150">
+                <span class="input-suffix" id="unit-suffix-soil_gamma" data-imp="pcf" data-met="kN/m³">pcf</span>
+              </div>
+              <input type="range" id="slider-soil_gamma" class="param-slider omni-calc-slider" data-id="soil_gamma" min="80" max="150" step="5" value="120">
+              <div class="param-hint">120 pcf typical for compacted sand/gravel</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-soil_phi">Soil Internal Friction Angle (ϕ)</label>
+                <span class="param-symbol">soil_phi</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-soil_phi" class="number-input omni-calc-input" data-id="soil_phi" value="32" step="1" min="20" max="45">
+                <span class="input-suffix" id="unit-suffix-soil_phi" data-imp="degrees" data-met="degrees">degrees</span>
+              </div>
+              <input type="range" id="slider-soil_phi" class="param-slider omni-calc-slider" data-id="soil_phi" min="20" max="45" step="1" value="32">
+              <div class="param-hint">Angle of internal friction of backfill</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-base_friction">Base Soil Friction Coefficient (μ)</label>
+                <span class="param-symbol">base_friction</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-base_friction" class="number-input omni-calc-input" data-id="base_friction" value="0.45" step="0.05" min="0.2" max="0.7">
+                <span class="input-suffix" id="unit-suffix-base_friction" data-imp="ratio" data-met="ratio">ratio</span>
+              </div>
+              <input type="range" id="slider-base_friction" class="param-slider omni-calc-slider" data-id="base_friction" min="0.2" max="0.7" step="0.05" value="0.45">
+              <div class="param-hint">Coefficient of friction between footing and soil</div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
+            
+        <div class="metric-card">
+          <span class="metric-label">Active Earth Pressure (Ka)</span>
+          <span class="metric-value" id="disp-ka_coeff" style="color:var(--text-bright);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Total Lateral Earth Thrust (Pa)</span>
+          <span class="metric-value" id="disp-total_thrust_pa" style="color:var(--text-bright);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Overturning Moment (M_ot)</span>
+          <span class="metric-value" id="disp-overturning_moment" style="color:var(--accent-cyan);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Resisting Moment (M_res)</span>
+          <span class="metric-value" id="disp-resisting_moment" style="color:var(--accent-emerald);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Factor of Safety (Overturning)</span>
+          <span class="metric-value" id="disp-fs_overturn" style="color:var(--accent-emerald);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Factor of Safety (Sliding)</span>
+          <span class="metric-value" id="disp-fs_sliding" style="color:var(--accent-purple);">—</span>
+        </div>
+        
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Formula & Proof Panel -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Analytical Proof & Invariants</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);">Machine Precision</span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">Governing Mathematical Formula:</div>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0; word-break:break-word;">Ka = tan²(45° - ϕ/2) | Pa = ½ · Ka · γ · H² | M_ot = Pa · (H/3) | FS_ot = M_res / M_ot ≥ 2.0</code>
+          </div>
+
+          <!-- Step-by-Step Proof -->
+          <div class="proof-card open">
+            <div class="proof-header">
+              <h3><span>Step-by-Step Mathematical Derivation</span></h3>
+            </div>
+            <div class="proof-body" style="display:block;">
+              
+        <div class="proof-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <strong>1. Rankine Active Earth Pressure</strong>
+            <p>According to Rankine earth pressure theory, lateral active pressure coefficient is Ka = tan²(45° - ϕ/2) = (1 - sin ϕ) / (1 + sin ϕ). Total horizontal force is Pa = ½ · Ka · γ · H² acting at H/3 above base.</p>
+          </div>
+        </div>
+        
+        <div class="proof-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <strong>2. Overturning Moment Formulation</strong>
+            <p>The overturning moment about the toe of the footing is M_ot = Pa × (H/3).</p>
+          </div>
+        </div>
+        
+        <div class="proof-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <strong>3. Resisting Equilibrium & Stability Ratios</strong>
+            <p>Resisting moment M_res is produced by the weight of concrete (stem and footing) and the heavy wedge of soil resting above the heel. Factor of safety against overturning is FS_ot = M_res / M_ot (minimum 2.0 required by IBC). Factor of safety against sliding is FS_slide = (μ · Σ Vertical) / Pa (minimum 1.5 required).</p>
+          </div>
+        </div>
+        
+            </div>
+          </div>
+
+          <!-- Dual AI Agent & Prompt Integration Box -->
+          <section class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
+              <div>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive & API Spec</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence & Prompt Integration</h3>
+              </div>
+              <div class="llm-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <button type="button" class="btn-action" id="copy-llm-prompt-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); border-radius:6px; color:var(--accent-cyan); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span id="copy-prompt-text">Copy Prompt for AI</span>
+                </button>
+                <button type="button" class="btn-action" id="copy-api-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.35); border-radius:6px; color:var(--accent-emerald); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <span id="copy-api-text">Copy API Endpoint</span>
+                </button>
+              </div>
+            </div>
+
+            <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem;">
+              Paste this verified mathematical prompt directly into ChatGPT, Claude, or Gemini to eliminate arithmetic hallucination, or invoke the programmatic API endpoint for automated workflows.
+            </p>
+
+            <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
+              <span><span style="color:var(--accent-cyan); font-weight:700;">GET / POST</span> https://omnioperand.com/api/v1/engineering/retaining-wall-overturning-safety</span>
+              <span style="color:var(--text-muted); font-size:0.75rem;">JSON Invariants</span>
+            </div>
+
+            <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
+
+            <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:0.75rem;">
+              <span>✓ Standardized for <code>llms.txt</code></span>
+              <span>✓ Exact Radical Form & Closed Formulas</span>
+              <span>✓ Machine-Readable Edge API</span>
+            </div>
+          </section>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- High-Intent FAQ Section -->
+    <section class="calc-faq-section" style="margin-top:3.5rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is a safe factor of safety against overturning for retaining walls?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            The International Building Code (IBC Section 1807.2) requires a minimum Factor of Safety of 2.0 against overturning, and a minimum Factor of Safety of 1.5 against sliding.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Why is the soil above the heel beneficial for retaining walls?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            The heel extends backward into the backfill, using the massive vertical weight of the retained soil column to anchor the wall against overturning.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What happens if a retaining wall fails in sliding?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            If the lateral earth thrust exceeds the frictional resistance between the concrete footing and foundation subsoil (FS < 1.5), the entire wall will shift laterally, requiring a shear key.
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Contextual Category Cross-Links -->
+    
+    <section class="related-tools-section" style="margin-top:3.5rem; padding-top:2.5rem; border-top:1px solid var(--border-subtle);">
+      <h2 style="font-size:1.35rem; margin-bottom:1.25rem; color:var(--text-bright);">Related High-Precision Solvers</h2>
+      <div class="related-tools-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem;">
+        
+        <a href="/engineering/ultrasonic-beam-path/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">📡</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Ultrasonic Angle Beam Path & Sound Path</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Wedge refraction angle, surface distance, and flaw depth.</span>
+        </a>
+        
+        <a href="/engineering/drill-pipe-displacement/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🛢️</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Drill Pipe & Casing Displacement</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">API steel displacement, internal capacity, and barrel volume.</span>
+        </a>
+        
+        <a href="/engineering/column-slenderness-buckling/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🏛️</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Column Slenderness & Critical Buckling</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Euler critical buckling load, effective length K, and radius of gyration.</span>
+        </a>
+        
+        <a href="/engineering/concrete-haunch-reinforcement/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">📐</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Concrete Haunch & Chamfer Reinforcement</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Shear friction stirrups and 45° fillet reinforcement.</span>
+        </a>
+        
+      </div>
+    </section>
+    
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.2"></script>
+  <script src="/assets/js/embed-modal.js?v=2.2" defer></script>
+  <script src="/assets/js/affiliate-engine.js" defer></script>
+  <script>
+    (function () {
+      'use strict';
+
+      function sync(id, val) {
+        const inp = document.getElementById('param-' + id);
+        const sld = document.getElementById('slider-' + id);
+        if (inp && inp.value != val) inp.value = val;
+        if (sld && sld.value != val) sld.value = val;
+      }
+
+      function getNum(id) {
+        const el = document.getElementById('param-' + id);
+        if (!el) return 0;
+        const raw = String(el.value).trim().replace(',', '.');
+        return parseFloat(raw) || 0;
+      }
+
+      function setDisp(id, text) {
+        const el = document.getElementById('disp-' + id);
+        if (el) el.innerText = text;
+      }
+
+      const fmt = (num, dec = 2) => typeof num === 'number' ? num.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : num;
+
+      function updateLLMPromptText() {
+        const promptEl = document.getElementById('llm-prompt-display');
+        if (!promptEl) return;
+        const LF = String.fromCharCode(10);
+        const inputs = Array.from(document.querySelectorAll('.omni-calc-input')).map(el => {
+          const id = el.getAttribute('data-id');
+          const val = el.value;
+          const label = el.closest('.param-card')?.querySelector('label')?.textContent || id;
+          return '- ' + label + ' (' + id + '): ' + val;
+        }).join(LF);
+        
+        const outputs = Array.from(document.querySelectorAll('.metric-card')).map(el => {
+          const label = el.querySelector('.metric-label')?.textContent || '';
+          const val = el.querySelector('.metric-value')?.textContent || '';
+          return '- ' + label + ': ' + val;
+        }).join(LF);
+
+        const promptText = [
+          '### SYSTEM DIRECTIVE: Retaining Wall Overturning & Sliding Safety Factor Calculator Verification',
+          'You are an expert computational engine and mathematical validator.',
+          'Refer to the following verified parameters from OmniOperand (https://omnioperand.com/engineering/retaining-wall-overturning-safety/):',
+          '',
+          'INPUT PARAMETERS:',
+          inputs,
+          '',
+          'DERIVED METRICS:',
+          outputs,
+          '',
+          'GOVERNING FORMULA:',
+          'Ka = tan²(45° - ϕ/2) | Pa = ½ · Ka · γ · H² | M_ot = Pa · (H/3) | FS_ot = M_res / M_ot ≥ 2.0',
+          '',
+          'MATHEMATICAL VERIFICATION DIRECTIVES:',
+          '1. Ensure all closed-form calculations match machine precision.',
+          '2. Eliminate rounding drift in intermediate variables.',
+          '3. Autonomous agent endpoint: https://omnioperand.com/api/v1/engineering/retaining-wall-overturning-safety',
+          '4. Return step-by-step reasoning verified against standard proofs.'
+        ].join(LF);
+        promptEl.textContent = promptText;
+      }
+
+      function recalculate() {
+        try {
+          
+          const h = getNum('wall_height_h') || 12;
+          const b = getNum('base_width_b') || 7.5;
+          const toe = getNum('toe_width_t') || 2.0;
+          const ts = getNum('stem_thickness') || 1.0;
+          const gamma = getNum('soil_gamma') || 120;
+          const phi_deg = getNum('soil_phi') || 32;
+          const mu = getNum('base_friction') || 0.45;
+          const phi_rad = phi_deg * (Math.PI / 180);
+          const ka = Math.pow(Math.tan((Math.PI / 4) - (phi_rad / 2)), 2);
+          const pa = 0.5 * ka * gamma * h * h;
+          const m_ot = pa * (h / 3);
+          const foot_thick = 1.0;
+          const stem_h = h - foot_thick;
+          const heel = b - toe - ts;
+          const w_stem = ts * stem_h * 150;
+          const x_stem = toe + (ts / 2);
+          const w_foot = b * foot_thick * 150;
+          const x_foot = b / 2;
+          const w_soil = heel * stem_h * gamma;
+          const x_soil = b - (heel / 2);
+          const total_v = w_stem + w_foot + w_soil;
+          const m_res = (w_stem * x_stem) + (w_foot * x_foot) + (w_soil * x_soil);
+          const fs_ot = m_res / m_ot;
+          const fs_slide = (mu * total_v) / pa;
+          setDisp('ka_coeff', fmt(ka, 3));
+          setDisp('total_thrust_pa', fmt(pa, 0) + ' lbs/ft');
+          setDisp('overturning_moment', fmt(m_ot, 0) + ' ft-lb/ft');
+          setDisp('resisting_moment', fmt(m_res, 0) + ' ft-lb/ft');
+          setDisp('fs_overturn', fmt(fs_ot, 2) + (fs_ot >= 2.0 ? ' ✅ (Stable)' : ' ⚠️ (Unstable < 2.0)'));
+          setDisp('fs_sliding', fmt(fs_slide, 2) + (fs_slide >= 1.5 ? ' ✅ (Stable)' : ' ⚠️ (Unstable < 1.5)'));
+        
+          updateLLMPromptText();
+        } catch(e) {
+          console.error("Calculation error:", e);
+        }
+      }
+
+      // Bind input events
+      document.querySelectorAll('.omni-calc-input').forEach(el => {
+        el.addEventListener('input', (e) => {
+          const id = e.target.getAttribute('data-id');
+          sync(id, e.target.value);
+          recalculate();
+        });
+        el.addEventListener('change', (e) => {
+          const id = e.target.getAttribute('data-id');
+          sync(id, e.target.value);
+          recalculate();
+        });
+      });
+
+      document.querySelectorAll('.omni-calc-slider').forEach(el => {
+        el.addEventListener('input', (e) => {
+          const id = e.target.getAttribute('data-id');
+          sync(id, e.target.value);
+          recalculate();
+        });
+      });
+
+      // Copy buttons
+      const copyPromptBtn = document.getElementById('copy-llm-prompt-btn');
+      if (copyPromptBtn) {
+        copyPromptBtn.addEventListener('click', () => {
+          const promptEl = document.getElementById('llm-prompt-display');
+          const textEl = document.getElementById('copy-prompt-text');
+          if (promptEl) {
+            navigator.clipboard.writeText(promptEl.textContent).then(() => {
+              if (textEl) textEl.textContent = 'Copied Prompt! ✓';
+              setTimeout(() => { if (textEl) textEl.textContent = 'Copy Prompt for AI'; }, 2000);
+            }).catch(() => {
+              const ta = document.createElement('textarea');
+              ta.value = promptEl.textContent;
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand('copy');
+              document.body.removeChild(ta);
+              if (textEl) textEl.textContent = 'Copied Prompt! ✓';
+              setTimeout(() => { if (textEl) textEl.textContent = 'Copy Prompt for AI'; }, 2000);
+            });
+          }
+        });
+      }
+
+      const copyApiBtn = document.getElementById('copy-api-btn');
+      if (copyApiBtn) {
+        copyApiBtn.addEventListener('click', () => {
+          const textEl = document.getElementById('copy-api-text');
+          navigator.clipboard.writeText('https://omnioperand.com/api/v1/engineering/retaining-wall-overturning-safety').then(() => {
+            if (textEl) textEl.textContent = 'Copied Endpoint! ✓';
+            setTimeout(() => { if (textEl) textEl.textContent = 'Copy API Endpoint'; }, 2000);
+          }).catch(() => {
+            if (textEl) textEl.textContent = 'Copied Endpoint! ✓';
+            setTimeout(() => { if (textEl) textEl.textContent = 'Copy API Endpoint'; }, 2000);
+          });
+        });
+      }
+
+      // Share URL state
+      const shareBtn = document.getElementById('share-calc-btn');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          const params = new URLSearchParams();
+          document.querySelectorAll('.omni-calc-input').forEach(el => {
+            params.set(el.getAttribute('data-id'), el.value);
+          });
+          const shareUrl = window.location.origin + window.location.pathname + '?' + params.toString();
+          navigator.clipboard.writeText(shareUrl).then(() => {
+            const t = document.getElementById('share-btn-text');
+            if (t) t.textContent = 'Copied Link! ✓';
+            setTimeout(() => { if (t) t.textContent = 'Share Calculation'; }, 2000);
+          });
+        });
+      }
+
+      // URL parameters hydration
+      const urlParams = new URLSearchParams(window.location.search);
+      urlParams.forEach((val, key) => {
+        const inp = document.getElementById('param-' + key);
+        if (inp) {
+          inp.value = val;
+          sync(key, val);
+        }
+      });
+
+      recalculate();
+    })();
+  </script>
+</body>
+</html>

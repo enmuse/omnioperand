@@ -73,6 +73,38 @@
   - `scripts/submit_indexnow.js`: Dispatches all 970 canonical URLs to IndexNow global indexers (`api.indexnow.org`, `www.bing.com`, `yandex.com`, `search.seznam.cz`) using verified key `8a2f3e4b5c6d7e8f9a0b1c2d3e4f5a6b`.
 - [x] **Autonomous Affiliate & Monetization Injection**:
   - `config/affiliates.json` and `assets/js/affiliate-engine.js` enhanced with threshold rules for Islamic financing partners, ITIN mortgage networks, and high-interest credit card balance transfers (`rel="nofollow sponsored"`).
+- [x] **22 GSC High-Intent Missing Calculators Created**:
+  - Identified 22 query gaps from live Google Search Console analytics where high-intent search queries were landing on generic discipline hubs.
+  - Implemented all 22 calculators across Geometry, Logistics, Biotech/Pharma, Construction, Engineering, Physics, Energy, and Finance:
+    - `geometry/slant-height`: Cone, pyramid, and frustum slant height calculator
+    - `logistics/lcl-freight-cbm`: Ocean and air dimensional CBM & chargeable weight
+    - `biotech/tubular-reabsorption-phosphate-trp`: %TRP and Walton-Bijvoet TmP/GFR renal threshold
+    - `construction/brick-soling`: Flat and herringbone brick soling area & mortar
+    - `engineering/ultrasonic-beam-path`: Angle beam refraction, surface distance, and flaw depth
+    - `engineering/drill-pipe-displacement`: API casing/drill pipe displacement and barrel capacity
+    - `physics/aerodynamic-drag-force`: Aerodynamic drag, downforce, and power consumption
+    - `energy/battery-peak-shaving`: Commercial kW demand charge threshold and battery ROI
+    - `construction/flowable-fill-clsm`: Excavation trench backfill volume and mix design
+    - `engineering/retaining-wall-overturning-safety`: Rankine earth pressure, overturning & sliding FS
+    - `engineering/column-slenderness-buckling`: Euler critical buckling load & AISC slenderness
+    - `construction/unistrut-load-capacity`: MFMA-4 beam bending load & deflection limits
+    - `biotech/relative-response-factor-rrf`: HPLC detector response and true impurity %
+    - `biotech/molar-mass-concentration-converter`: Micromolar to ng/mL mass-molar converter
+    - `engineering/concrete-haunch-reinforcement`: ACI 318 shear friction and fillet reinforcement
+    - `biotech/analytical-evaluation-threshold-aet`: PQRI / ISO 10993 E&L safety concern threshold
+    - `biotech/relative-potency-bioassay`: Parallel line bioassay potency and 95% confidence intervals
+    - `biotech/chromatography-resolution`: USP <621> theoretical plates N and peak resolution Rs
+    - `biotech/syringe-pump-injection-rate`: Inner diameter, linear pusher velocity, and flow rate
+    - `finance/incremental-borrowing-rate-lease`: ASC 842 / IFRS 16 lease liability discount rate
+    - `physics/circumferential-surface-speed`: Machining surface feet per minute (SFM) and RPM
+    - `engineering/hydraulic-cylinder-flow`: Push/pull force, rod velocity, and pump flow GPM
+- [x] **Universal Embed Modal & Iframe Security Architecture Fixed**:
+  - Fixed root cause of embed modal failures: resolved `X-Frame-Options: SAMEORIGIN` block in `_headers` by designating `/embed/*` with `X-Frame-Options: ALLOWALL` and `Content-Security-Policy: frame-ancestors *`.
+  - Upgraded `assets/js/embed-modal.js` and `assets/js/omni-search.js` with responsive modal controller and iframe links pointing to `https://omnioperand.com/embed/{slug}/`.
+  - Injected prominent `Embed Calculator` button (`#btn-embed`) in actions toolbar across all calculator pages.
+- [x] **Dual AI Integration Architecture Enforced Across All Calculators**:
+  - Unified AI integration box across all calculators: provides **BOTH** copyable human chat prompt for ChatGPT, Claude, and Gemini with live parameters, AND programmatic REST API endpoint URL (`https://omnioperand.com/api/v1/{slug}`) aligned with `llms.txt`.
+  - Added real-time dynamic prompt updating on input change with 1-click clipboard copy feedback.
 - [x] **Automated Tooling & Test Suite**:
   - `scripts/test_site.py`: Automated testing suite passing with 34 mathematical precision tests, zero raw LaTeX compliance, i18n hreflang integrity, schema validation, and partitioned sitemap tests.
   - `scripts/generate_i18n.py`: Automated multilingual static compiler with native mathematical dictionaries.

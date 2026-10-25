@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incremental Borrowing Rate (IBR) Calculator: ASC 842 & IFRS 16 | OmniOperand</title>
+  <meta name="description" content="Calculate corporate lease incremental borrowing rates (IBR), synthetic credit rating spreads, and right-of-use (ROU) asset present value schedules.">
+  <link rel="canonical" href="https://omnioperand.com/finance/incremental-borrowing-rate-lease/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/finance/incremental-borrowing-rate-lease/">
+  <link rel="alternate" hreflang="en" href="https://omnioperand.com/finance/incremental-borrowing-rate-lease/">
+
+  <meta property="og:title" content="Incremental Borrowing Rate (IBR) Calculator: ASC 842 & IFRS 16 | OmniOperand">
+  <meta property="og:description" content="Calculate corporate lease incremental borrowing rates (IBR), synthetic credit rating spreads, and right-of-use (ROU) asset present value schedules.">
+  <meta property="og:url" content="https://omnioperand.com/finance/incremental-borrowing-rate-lease/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/finance/incremental-borrowing-rate-lease/#app",
+      "name": "ASC 842 / IFRS 16 Incremental Borrowing Rate (IBR) Calculator",
+      "url": "https://omnioperand.com/finance/incremental-borrowing-rate-lease/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Calculate corporate lease incremental borrowing rates (IBR), synthetic credit rating spreads, and right-of-use (ROU) asset present value schedules.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/finance/incremental-borrowing-rate-lease/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OmniOperand",
+          "item": "https://omnioperand.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Finance",
+          "item": "https://omnioperand.com/finance/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ASC 842 / IFRS 16 Incremental Borrowing Rate (IBR) Calculator",
+          "item": "https://omnioperand.com/finance/incremental-borrowing-rate-lease/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/finance/incremental-borrowing-rate-lease/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Incremental Borrowing Rate under ASC 842?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Under US GAAP ASC 842, if the rate implicit in the lease cannot be readily determined (which is true for >95% of real estate and equipment leases), the lessee must use its Incremental Borrowing Rate to discount lease payments onto the balance sheet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a private company use the risk-free rate for ASC 842?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. FASB allows private entities an accounting policy election to use the risk-free rate (US Treasury rate) by asset class, but doing so lowers the discount rate, which significantly inflates reported balance sheet lease liabilities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does collateral affect the IBR?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because the lease is collateralized by the leased asset itself, secure assets (like commercial real estate or standard vehicles) reduce credit risk and lower the IBR by 25 to 50 basis points relative to unsecured corporate bonds."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="omni-body">
+
+    <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Finance</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link active">Finance</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">EN</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/finance/incremental-borrowing-rate-lease/" class="lang-dropdown-item active"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/finance/incremental-borrowing-rate-lease/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/finance/incremental-borrowing-rate-lease/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/finance/incremental-borrowing-rate-lease/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/finance/incremental-borrowing-rate-lease/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/finance/incremental-borrowing-rate-lease/" class="lang-dropdown-item"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/finance/incremental-borrowing-rate-lease/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/finance/incremental-borrowing-rate-lease/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/finance/incremental-borrowing-rate-lease/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/finance/incremental-borrowing-rate-lease/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/finance/incremental-borrowing-rate-lease/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/finance/incremental-borrowing-rate-lease/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  
+    <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumbs">
+          <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item"><a href="/finance/">Finance</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item active" aria-current="page">ASC 842 / IFRS 16 Incremental Borrowing Rate (IBR) Calculator</li>
+        </ol>
+      </div>
+    </nav>
+    
+
+  <main class="container">
+
+    <!-- Hero Header -->
+    <section class="solver-hero">
+      <div class="hero-badge">Lease Accounting Standards • GAAP ASC 842 & IFRS 16</div>
+      <h1>ASC 842 / IFRS 16 Incremental Borrowing Rate (IBR) Calculator</h1>
+      <p class="hero-subtext">
+        Model synthetic Incremental Borrowing Rates (IBR) for lease liabilities and compute Right-of-Use (ROU) asset present values under ASC 842 / IFRS 16.
+      </p>
+      <div class="calculator-actions-toolbar">
+        <button type="button" class="btn-secondary btn-open-embed btn-embed-calculator" id="btn-embed" aria-label="Embed this calculator widget">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Embed Calculator</span>
+        </button>
+      </div>
+      
+        <div class="jurisdiction-notice" style="display:inline-flex; align-items:center; gap:0.5rem; margin-top:0.75rem; padding:0.4rem 0.85rem; background:rgba(234,179,8,0.12); border:1px solid rgba(234,179,8,0.3); border-radius:8px; color:#facc15; font-size:0.8rem; font-weight:600;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Governed by US GAAP ASC 842 and IFRS 16 Leases</span>
+        </div></div>
+    
+
+          <div class="hud-panel-header" style="margin-bottom:1rem;">
+            <h2>Input Parameters</h2>
+            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Interactive HUD</span>
+          </div>
+
+          <div class="param-card-grid">
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-risk_free_rate">Reference Risk-Free Rate (SOFR/Treasury)</label>
+                <span class="param-symbol">risk_free_rate</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-risk_free_rate" class="number-input omni-calc-input" data-id="risk_free_rate" value="4.25" step="0.05" min="0.1" max="15">
+                <span class="input-suffix" id="unit-suffix-risk_free_rate" data-imp="%" data-met="%">%</span>
+              </div>
+              <input type="range" id="slider-risk_free_rate" class="param-slider omni-calc-slider" data-id="risk_free_rate" min="0.1" max="15" step="0.05" value="4.25">
+              <div class="param-hint">Yield of benchmark government bond matching lease tenure</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-credit_tier">Entity Credit Rating Spread</label>
+                <span class="param-symbol">credit_tier</span>
+              </div>
+              <div class="input-unit-group">
+                <select id="param-credit_tier" class="number-input omni-calc-input" data-id="credit_tier" style="width:100%; cursor:pointer;">
+                  <option value="aaa" >AAA / AA (Prime • +0.75% Credit Spread)</option><option value="a" >A-Rated (High Grade • +1.20% Credit Spread)</option><option value="bbb" selected>BBB / Investment Grade (+1.85% Credit Spread)</option><option value="bb" >BB / High Yield (+3.10% Credit Spread)</option><option value="b" >B / Speculative (+4.75% Credit Spread)</option><option value="unrated" >Unrated Private Enterprise (+3.50% Typical Bank Spread)</option>
+                </select>
+              </div>
+              <div class="param-hint">Entity stand-alone credit profile</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-collateral_adj">Asset Collateralization Adjustment</label>
+                <span class="param-symbol">collateral_adj</span>
+              </div>
+              <div class="input-unit-group">
+                <select id="param-collateral_adj" class="number-input omni-calc-input" data-id="collateral_adj" style="width:100%; cursor:pointer;">
+                  <option value="re" selected>Real Estate / Prime Property (-0.40% Secured Discount)</option><option value="fleet" >Vehicles & Heavy Equipment (-0.25% Secured Discount)</option><option value="it" >IT & Specialized Assets (+0.30% Illiquid Penalty)</option><option value="unsecured" >Unsecured / General (+0.00% Baseline)</option>
+                </select>
+              </div>
+              <div class="param-hint">Collateral nature adjusts lender loss given default</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-lease_term_years">Lease Term Duration</label>
+                <span class="param-symbol">lease_term_years</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-lease_term_years" class="number-input omni-calc-input" data-id="lease_term_years" value="5" step="1" min="1" max="50">
+                <span class="input-suffix" id="unit-suffix-lease_term_years" data-imp="years" data-met="years">years</span>
+              </div>
+              <input type="range" id="slider-lease_term_years" class="param-slider omni-calc-slider" data-id="lease_term_years" min="1" max="50" step="1" value="5">
+              <div class="param-hint">Contractual non-cancellable lease term</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-monthly_rent">Monthly Lease Payment</label>
+                <span class="param-symbol">monthly_rent</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-monthly_rent" class="number-input omni-calc-input" data-id="monthly_rent" value="12500" step="250" min="100" max="5000000">
+                <span class="input-suffix" id="unit-suffix-monthly_rent" data-imp="$/month" data-met="$/month">$/month</span>
+              </div>
+              <input type="range" id="slider-monthly_rent" class="param-slider omni-calc-slider" data-id="monthly_rent" min="100" max="5000000" step="250" value="12500">
+              <div class="param-hint">Fixed periodic lease payment</div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
+            
+        <div class="metric-card">
+          <span class="metric-label">Derived Incremental Borrowing Rate (IBR)</span>
+          <span class="metric-value" id="disp-calc_ibr_pct" style="color:var(--accent-cyan);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Present Value of Lease Liability (ROU Asset)</span>
+          <span class="metric-value" id="disp-rou_asset_pv" style="color:var(--accent-emerald);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Total Undiscounted Cash Payments</span>
+          <span class="metric-value" id="disp-total_undiscounted" style="color:var(--text-bright);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Total Financing Interest Expense</span>
+          <span class="metric-value" id="disp-total_interest_exp" style="color:var(--accent-purple);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Year 1 ROU Asset Amortization</span>
+          <span class="metric-value" id="disp-yr1_amortization" style="color:var(--text-bright);">—</span>
+        </div>
+        
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Formula & Proof Panel -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Analytical Proof & Invariants</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);">Machine Precision</span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">Governing Mathematical Formula:</div>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0; word-break:break-word;">IBR = R_free + Spread + CollateralAdj | PV = Σ [ Rent_t / (1 + IBR/12)ᵗ ]</code>
+          </div>
+
+          <!-- Step-by-Step Proof -->
+          <div class="proof-card open">
+            <div class="proof-header">
+              <h3><span>Step-by-Step Mathematical Derivation</span></h3>
+            </div>
+            <div class="proof-body" style="display:block;">
+              
+        <div class="proof-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <strong>1. ASC 842 & IFRS 16 IBR Definition</strong>
+            <p>The Incremental Borrowing Rate is the rate of interest that a lessee would have to pay to borrow on a collateralized basis over a similar term an amount equal to the lease payments in a similar economic environment.</p>
+          </div>
+        </div>
+        
+        <div class="proof-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <strong>2. Synthetic Build-Up Method</strong>
+            <p>Auditors and Big 4 accounting firms require a 4-component synthetic derivation: IBR = Risk-Free Reference Rate + Financing Entity Credit Spread + Asset Collateral Adjustment + Term/Currency Adjustment.</p>
+          </div>
+        </div>
+        
+        <div class="proof-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <strong>3. Right-of-Use (ROU) Asset Balance Sheet Capitalization</strong>
+            <p>Lease payments discounted at the derived IBR create the initial lease liability recognized on the corporate balance sheet. Undiscounted payments minus present value equals total financing interest.</p>
+          </div>
+        </div>
+        
+            </div>
+          </div>
+
+          <!-- Dual AI Agent & Prompt Integration Box -->
+          <section class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
+              <div>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive & API Spec</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence & Prompt Integration</h3>
+              </div>
+              <div class="llm-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <button type="button" class="btn-action" id="copy-llm-prompt-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); border-radius:6px; color:var(--accent-cyan); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span id="copy-prompt-text">Copy Prompt for AI</span>
+                </button>
+                <button type="button" class="btn-action" id="copy-api-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.35); border-radius:6px; color:var(--accent-emerald); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <span id="copy-api-text">Copy API Endpoint</span>
+                </button>
+              </div>
+            </div>
+
+            <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem;">
+              Paste this verified mathematical prompt directly into ChatGPT, Claude, or Gemini to eliminate arithmetic hallucination, or invoke the programmatic API endpoint for automated workflows.
+            </p>
+
+            <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
+              <span><span style="color:var(--accent-cyan); font-weight:700;">GET / POST</span> https://omnioperand.com/api/v1/finance/incremental-borrowing-rate-lease</span>
+              <span style="color:var(--text-muted); font-size:0.75rem;">JSON Invariants</span>
+            </div>
+
+            <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
+
+            <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:0.75rem;">
+              <span>✓ Standardized for <code>llms.txt</code></span>
+              <span>✓ Exact Radical Form & Closed Formulas</span>
+              <span>✓ Machine-Readable Edge API</span>
+            </div>
+          </section>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- High-Intent FAQ Section -->
+    <section class="calc-faq-section" style="margin-top:3.5rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is the Incremental Borrowing Rate under ASC 842?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Under US GAAP ASC 842, if the rate implicit in the lease cannot be readily determined (which is true for >95% of real estate and equipment leases), the lessee must use its Incremental Borrowing Rate to discount lease payments onto the balance sheet.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can a private company use the risk-free rate for ASC 842?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes. FASB allows private entities an accounting policy election to use the risk-free rate (US Treasury rate) by asset class, but doing so lowers the discount rate, which significantly inflates reported balance sheet lease liabilities.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does collateral affect the IBR?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Because the lease is collateralized by the leased asset itself, secure assets (like commercial real estate or standard vehicles) reduce credit risk and lower the IBR by 25 to 50 basis points relative to unsecured corporate bonds.
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Contextual Category Cross-Links -->
+    
+    <section class="related-tools-section" style="margin-top:3.5rem; padding-top:2.5rem; border-top:1px solid var(--border-subtle);">
+      <h2 style="font-size:1.35rem; margin-bottom:1.25rem; color:var(--text-bright);">Related High-Precision Solvers</h2>
+      <div class="related-tools-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem;">
+        
+        <a href="/finance/reverse-mortgage-hecm/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🏡</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">HECM Reverse Mortgage Calculator</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Principal Limit Factor (PLF) and net proceeds.</span>
+        </a>
+        
+        <a href="/finance/section-199a-qbi/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">📊</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Section 199A QBI Deduction</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">20% pass-through tax deduction, phaseouts, and wage caps.</span>
+        </a>
+        
+        <a href="/finance/equity-irr/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">💰</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Equity IRR & Real Estate Return</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Levered IRR, Equity Multiple (MOIC), and Net Present Value.</span>
+        </a>
+        
+      </div>
+    </section>
+    
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.2"></script>
+  <script src="/assets/js/embed-modal.js?v=2.2" defer></script>
+  <script src="/assets/js/affiliate-engine.js" defer></script>
+  <script>
+    (function () {
+      'use strict';
+
+      function sync(id, val) {
+        const inp = document.getElementById('param-' + id);
+        const sld = document.getElementById('slider-' + id);
+        if (inp && inp.value != val) inp.value = val;
+        if (sld && sld.value != val) sld.value = val;
+      }
+
+      function getNum(id) {
+        const el = document.getElementById('param-' + id);
+        if (!el) return 0;
+        const raw = String(el.value).trim().replace(',', '.');
+        return parseFloat(raw) || 0;
+      }
+
+      function setDisp(id, text) {
+        const el = document.getElementById('disp-' + id);
+        if (el) el.innerText = text;
+      }
+
+      const fmt = (num, dec = 2) => typeof num === 'number' ? num.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : num;
+
+      function updateLLMPromptText() {
+        const promptEl = document.getElementById('llm-prompt-display');
+        if (!promptEl) return;
+        const LF = String.fromCharCode(10);
+        const inputs = Array.from(document.querySelectorAll('.omni-calc-input')).map(el => {
+          const id = el.getAttribute('data-id');
+          const val = el.value;
+          const label = el.closest('.param-card')?.querySelector('label')?.textContent || id;
+          return '- ' + label + ' (' + id + '): ' + val;
+        }).join(LF);
+        
+        const outputs = Array.from(document.querySelectorAll('.metric-card')).map(el => {
+          const label = el.querySelector('.metric-label')?.textContent || '';
+          const val = el.querySelector('.metric-value')?.textContent || '';
+          return '- ' + label + ': ' + val;
+        }).join(LF);
+
+        const promptText = [
+          '### SYSTEM DIRECTIVE: ASC 842 / IFRS 16 Incremental Borrowing Rate (IBR) Calculator Verification',
+          'You are an expert computational engine and mathematical validator.',
+          'Refer to the following verified parameters from OmniOperand (https://omnioperand.com/finance/incremental-borrowing-rate-lease/):',
+          '',
+          'INPUT PARAMETERS:',
+          inputs,
+          '',
+          'DERIVED METRICS:',
+          outputs,
+          '',
+          'GOVERNING FORMULA:',
+          'IBR = R_free + Spread + CollateralAdj | PV = Σ [ Rent_t / (1 + IBR/12)ᵗ ]',
+          '',
+          'MATHEMATICAL VERIFICATION DIRECTIVES:',
+          '1. Ensure all closed-form calculations match machine precision.',
+          '2. Eliminate rounding drift in intermediate variables.',
+          '3. Autonomous agent endpoint: https://omnioperand.com/api/v1/finance/incremental-borrowing-rate-lease',
+          '4. Return step-by-step reasoning verified against standard proofs.'
+        ].join(LF);
+        promptEl.textContent = promptText;
+      }
+
+      function recalculate() {
+        try {
+          
+          const r_free = getNum('risk_free_rate') || 4.25;
+          const tier = document.getElementById('param-credit_tier').value;
+          const col = document.getElementById('param-collateral_adj').value;
+          const yrs = getNum('lease_term_years') || 5;
+          const rent = getNum('monthly_rent') || 12500;
+          let spread = 1.85;
+          if (tier === 'aaa') spread = 0.75;
+          else if (tier === 'a') spread = 1.20;
+          else if (tier === 'bb') spread = 3.10;
+          else if (tier === 'b') spread = 4.75;
+          else if (tier === 'unrated') spread = 3.50;
+          let col_adj = -0.40;
+          if (col === 'fleet') col_adj = -0.25;
+          else if (col === 'it') col_adj = 0.30;
+          else if (col === 'unsecured') col_adj = 0.00;
+          const final_ibr = Math.max(0.5, r_free + spread + col_adj);
+          const n = yrs * 12;
+          const r_monthly = (final_ibr / 100) / 12;
+          let pv = 0;
+          for (let t = 1; t <= n; t++) {
+            pv += rent / Math.pow(1 + r_monthly, t);
+          }
+          const total_cash = rent * n;
+          const total_interest = total_cash - pv;
+          const yr1_deprec = pv / yrs;
+          setDisp('calc_ibr_pct', fmt(final_ibr, 2) + '%');
+          setDisp('rou_asset_pv', '$' + fmt(pv, 0));
+          setDisp('total_undiscounted', '$' + fmt(total_cash, 0));
+          setDisp('total_interest_exp', '$' + fmt(total_interest, 0));
+          setDisp('yr1_amortization', '$' + fmt(yr1_deprec, 0) + ' / yr');
+        
+          updateLLMPromptText();
+        } catch(e) {
+          console.error("Calculation error:", e);
+        }
+      }
+
+      // Bind input events
+      document.querySelectorAll('.omni-calc-input').forEach(el => {
+        el.addEventListener('input', (e) => {
+          const id = e.target.getAttribute('data-id');
+          sync(id, e.target.value);
+          recalculate();
+        });
+        el.addEventListener('change', (e) => {
+          const id = e.target.getAttribute('data-id');
+          sync(id, e.target.value);
+          recalculate();
+        });
+      });
+
+      document.querySelectorAll('.omni-calc-slider').forEach(el => {
+        el.addEventListener('input', (e) => {
+          const id = e.target.getAttribute('data-id');
+          sync(id, e.target.value);
+          recalculate();
+        });
+      });
+
+      // Copy buttons
+      const copyPromptBtn = document.getElementById('copy-llm-prompt-btn');
+      if (copyPromptBtn) {
+        copyPromptBtn.addEventListener('click', () => {
+          const promptEl = document.getElementById('llm-prompt-display');
+          const textEl = document.getElementById('copy-prompt-text');
+          if (promptEl) {
+            navigator.clipboard.writeText(promptEl.textContent).then(() => {
+              if (textEl) textEl.textContent = 'Copied Prompt! ✓';
+              setTimeout(() => { if (textEl) textEl.textContent = 'Copy Prompt for AI'; }, 2000);
+            }).catch(() => {
+              const ta = document.createElement('textarea');
+              ta.value = promptEl.textContent;
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand('copy');
+              document.body.removeChild(ta);
+              if (textEl) textEl.textContent = 'Copied Prompt! ✓';
+              setTimeout(() => { if (textEl) textEl.textContent = 'Copy Prompt for AI'; }, 2000);
+            });
+          }
+        });
+      }
+
+      const copyApiBtn = document.getElementById('copy-api-btn');
+      if (copyApiBtn) {
+        copyApiBtn.addEventListener('click', () => {
+          const textEl = document.getElementById('copy-api-text');
+          navigator.clipboard.writeText('https://omnioperand.com/api/v1/finance/incremental-borrowing-rate-lease').then(() => {
+            if (textEl) textEl.textContent = 'Copied Endpoint! ✓';
+            setTimeout(() => { if (textEl) textEl.textContent = 'Copy API Endpoint'; }, 2000);
+          }).catch(() => {
+            if (textEl) textEl.textContent = 'Copied Endpoint! ✓';
+            setTimeout(() => { if (textEl) textEl.textContent = 'Copy API Endpoint'; }, 2000);
+          });
+        });
+      }
+
+      // Share URL state
+      const shareBtn = document.getElementById('share-calc-btn');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          const params = new URLSearchParams();
+          document.querySelectorAll('.omni-calc-input').forEach(el => {
+            params.set(el.getAttribute('data-id'), el.value);
+          });
+          const shareUrl = window.location.origin + window.location.pathname + '?' + params.toString();
+          navigator.clipboard.writeText(shareUrl).then(() => {
+            const t = document.getElementById('share-btn-text');
+            if (t) t.textContent = 'Copied Link! ✓';
+            setTimeout(() => { if (t) t.textContent = 'Share Calculation'; }, 2000);
+          });
+        });
+      }
+
+      // URL parameters hydration
+      const urlParams = new URLSearchParams(window.location.search);
+      urlParams.forEach((val, key) => {
+        const inp = document.getElementById('param-' + key);
+        if (inp) {
+          inp.value = val;
+          sync(key, val);
+        }
+      });
+
+      recalculate();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relative Response Factor (RRF) HPLC Calculator: Impurity Assay | OmniOperand</title>
+  <meta name="description" content="Calculate HPLC/GC relative response factors (RRF) and true impurity weight percentages in pharmaceutical drug substances under ICH Q3A/B.">
+  <link rel="canonical" href="https://omnioperand.com/biotech/relative-response-factor-rrf/">
+  <link rel="alternate" hreflang="x-default" href="https://omnioperand.com/biotech/relative-response-factor-rrf/">
+  <link rel="alternate" hreflang="en" href="https://omnioperand.com/biotech/relative-response-factor-rrf/">
+
+  <meta property="og:title" content="Relative Response Factor (RRF) HPLC Calculator: Impurity Assay | OmniOperand">
+  <meta property="og:description" content="Calculate HPLC/GC relative response factors (RRF) and true impurity weight percentages in pharmaceutical drug substances under ICH Q3A/B.">
+  <meta property="og:url" content="https://omnioperand.com/biotech/relative-response-factor-rrf/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/biotech/relative-response-factor-rrf/#app",
+      "name": "Relative Response Factor (RRF) HPLC Calculator",
+      "url": "https://omnioperand.com/biotech/relative-response-factor-rrf/",
+      "applicationCategory": "BiotechApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Calculate HPLC/GC relative response factors (RRF) and true impurity weight percentages in pharmaceutical drug substances under ICH Q3A/B.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/biotech/relative-response-factor-rrf/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OmniOperand",
+          "item": "https://omnioperand.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Biotech",
+          "item": "https://omnioperand.com/biotech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Relative Response Factor (RRF) HPLC Calculator",
+          "item": "https://omnioperand.com/biotech/relative-response-factor-rrf/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/biotech/relative-response-factor-rrf/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does an RRF of 0.5 mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An RRF of 0.5 means the impurity responds half as strongly to the UV detector as the main drug substance. Therefore, the actual mass percentage of the impurity is double (1 / 0.5 = 2.0x) its raw area percent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is RRF required by the FDA and ICH?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Different chemical structures have different extinction coefficients (UV absorbance). Using uncorrected peak area percentages introduces significant analytical error in stability testing and toxicological impurity evaluation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the ICH reporting threshold for impurities?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For pharmaceuticals with a maximum daily dose ≤ 2g/day, the ICH Q3A reporting threshold is 0.05%, the identification threshold is 0.10%, and the qualification threshold is 0.15%."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="omni-body">
+
+    <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Biotech</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger active" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">EN</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/biotech/relative-response-factor-rrf/" class="lang-dropdown-item active"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/biotech/relative-response-factor-rrf/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/biotech/relative-response-factor-rrf/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/biotech/relative-response-factor-rrf/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/biotech/relative-response-factor-rrf/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/biotech/relative-response-factor-rrf/" class="lang-dropdown-item"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/biotech/relative-response-factor-rrf/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/biotech/relative-response-factor-rrf/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/biotech/relative-response-factor-rrf/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/biotech/relative-response-factor-rrf/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/biotech/relative-response-factor-rrf/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/biotech/relative-response-factor-rrf/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  
+    <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumbs">
+          <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item"><a href="/biotech/">Biotech</a></li><li class="breadcrumb-separator">/</li><li class="breadcrumb-item active" aria-current="page">Relative Response Factor (RRF) HPLC Calculator</li>
+        </ol>
+      </div>
+    </nav>
+    
+
+  <main class="container">
+
+    <!-- Hero Header -->
+    <section class="solver-hero">
+      <div class="hero-badge">Pharmaceutical Analytical Chemistry • ICH Q3A/B & USP <621></div>
+      <h1>Relative Response Factor (RRF) HPLC Calculator</h1>
+      <p class="hero-subtext">
+        Determine HPLC/GC Relative Response Factors (RRF), response factor corrections, and exact pharmaceutical impurity weight percentages.
+      </p>
+      <div class="calculator-actions-toolbar">
+        <button type="button" class="btn-secondary btn-open-embed btn-embed-calculator" id="btn-embed" aria-label="Embed this calculator widget">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Embed Calculator</span>
+        </button>
+      </div></div>
+    
+
+          <div class="hud-panel-header" style="margin-bottom:1rem;">
+            <h2>Input Parameters</h2>
+            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Interactive HUD</span>
+          </div>
+
+          <div class="param-card-grid">
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-area_imp">Impurity Peak Area (Standard)</label>
+                <span class="param-symbol">area_imp</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-area_imp" class="number-input omni-calc-input" data-id="area_imp" value="125000" step="1000" min="100" max="50000000">
+                <span class="input-suffix" id="unit-suffix-area_imp" data-imp="area counts" data-met="area counts">area counts</span>
+              </div>
+              <input type="range" id="slider-area_imp" class="param-slider omni-calc-slider" data-id="area_imp" min="100" max="50000000" step="1000" value="125000">
+              <div class="param-hint">Peak area of known impurity reference standard</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-conc_imp">Impurity Standard Concentration</label>
+                <span class="param-symbol">conc_imp</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-conc_imp" class="number-input omni-calc-input" data-id="conc_imp" value="0.005" step="0.0005" min="0.0001" max="10">
+                <span class="input-suffix" id="unit-suffix-conc_imp" data-imp="mg/mL" data-met="mg/mL">mg/mL</span>
+              </div>
+              <input type="range" id="slider-conc_imp" class="param-slider omni-calc-slider" data-id="conc_imp" min="0.0001" max="10" step="0.0005" value="0.005">
+              <div class="param-hint">Known concentration of impurity solution</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-area_api">Main API Peak Area (Standard)</label>
+                <span class="param-symbol">area_api</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-area_api" class="number-input omni-calc-input" data-id="area_api" value="2100000" step="10000" min="1000" max="100000000">
+                <span class="input-suffix" id="unit-suffix-area_api" data-imp="area counts" data-met="area counts">area counts</span>
+              </div>
+              <input type="range" id="slider-area_api" class="param-slider omni-calc-slider" data-id="area_api" min="1000" max="100000000" step="10000" value="2100000">
+              <div class="param-hint">Peak area of Active Pharmaceutical Ingredient standard</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-conc_api">Main API Standard Concentration</label>
+                <span class="param-symbol">conc_api</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-conc_api" class="number-input omni-calc-input" data-id="conc_api" value="0.1" step="0.005" min="0.001" max="50">
+                <span class="input-suffix" id="unit-suffix-conc_api" data-imp="mg/mL" data-met="mg/mL">mg/mL</span>
+              </div>
+              <input type="range" id="slider-conc_api" class="param-slider omni-calc-slider" data-id="conc_api" min="0.001" max="50" step="0.005" value="0.1">
+              <div class="param-hint">Known concentration of API standard solution</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-sample_imp_area">Sample Observed Impurity Area</label>
+                <span class="param-symbol">sample_imp_area</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-sample_imp_area" class="number-input omni-calc-input" data-id="sample_imp_area" value="4500" step="100" min="10" max="10000000">
+                <span class="input-suffix" id="unit-suffix-sample_imp_area" data-imp="area counts" data-met="area counts">area counts</span>
+              </div>
+              <input type="range" id="slider-sample_imp_area" class="param-slider omni-calc-slider" data-id="sample_imp_area" min="10" max="10000000" step="100" value="4500">
+              <div class="param-hint">Peak area of impurity in real stability/release sample</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-sample_total_conc">Test Sample Nominal Concentration</label>
+                <span class="param-symbol">sample_total_conc</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-sample_total_conc" class="number-input omni-calc-input" data-id="sample_total_conc" value="1.0" step="0.1" min="0.01" max="100">
+                <span class="input-suffix" id="unit-suffix-sample_total_conc" data-imp="mg/mL" data-met="mg/mL">mg/mL</span>
+              </div>
+              <input type="range" id="slider-sample_total_conc" class="param-slider omni-calc-slider" data-id="sample_total_conc" min="0.01" max="100" step="0.1" value="1.0">
+              <div class="param-hint">Total nominal sample concentration injected</div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
+            
+        <div class="metric-card">
+          <span class="metric-label">Relative Response Factor (RRF)</span>
+          <span class="metric-value" id="disp-rrf_value" style="color:var(--accent-cyan);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Multiplier Correction Factor (1 / RRF)</span>
+          <span class="metric-value" id="disp-correction_factor" style="color:var(--text-bright);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">True Corrected Impurity Level</span>
+          <span class="metric-value" id="disp-true_impurity_pct" style="color:var(--accent-emerald);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Uncorrected Area % (Raw)</span>
+          <span class="metric-value" id="disp-raw_area_pct" style="color:var(--text-bright);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">ICH Q3A Reporting Threshold Assessment</span>
+          <span class="metric-value" id="disp-ich_status" style="color:var(--accent-purple);">—</span>
+        </div>
+        
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Formula & Proof Panel -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Analytical Proof & Invariants</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);">Machine Precision</span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">Governing Mathematical Formula:</div>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0; word-break:break-word;">RRF = (Area_imp / Conc_imp) / (Area_std / Conc_std) | % Impurity = [ (Area_sample_imp · Conc_std) / (Area_std · Conc_sample · RRF) ] · 100</code>
+          </div>
+
+          <!-- Step-by-Step Proof -->
+          <div class="proof-card open">
+            <div class="proof-header">
+              <h3><span>Step-by-Step Mathematical Derivation</span></h3>
+            </div>
+            <div class="proof-body" style="display:block;">
+              
+        <div class="proof-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <strong>1. Response Factor (Slope) Derivation</strong>
+            <p>The detector response factor RF represents detector sensitivity (Peak Area / Concentration). Relative Response Factor is the sensitivity ratio: RRF = RF_impurity / RF_API.</p>
+          </div>
+        </div>
+        
+        <div class="proof-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <strong>2. Quantitative Impurity Concentration</strong>
+            <p>If an impurity has a weak chromophore (RRF < 1.0), it absorbs less UV light per mole than the API. Using raw area percent underestimates the impurity. Dividing by RRF scales it up to true mass balance.</p>
+          </div>
+        </div>
+        
+        <div class="proof-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <strong>3. Regulatory Thresholds</strong>
+            <p>ICH Q3A/B mandates that any RRF outside 0.8 to 1.2 MUST be explicitly applied. If RRF is between 0.9 and 1.1, a factor of 1.0 is sometimes acceptable.</p>
+          </div>
+        </div>
+        
+            </div>
+          </div>
+
+          <!-- Dual AI Agent & Prompt Integration Box -->
+          <section class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
+              <div>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive & API Spec</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence & Prompt Integration</h3>
+              </div>
+              <div class="llm-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <button type="button" class="btn-action" id="copy-llm-prompt-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); border-radius:6px; color:var(--accent-cyan); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span id="copy-prompt-text">Copy Prompt for AI</span>
+                </button>
+                <button type="button" class="btn-action" id="copy-api-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.35); border-radius:6px; color:var(--accent-emerald); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <span id="copy-api-text">Copy API Endpoint</span>
+                </button>
+              </div>
+            </div>
+
+            <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem;">
+              Paste this verified mathematical prompt directly into ChatGPT, Claude, or Gemini to eliminate arithmetic hallucination, or invoke the programmatic API endpoint for automated workflows.
+            </p>
+
+            <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
+              <span><span style="color:var(--accent-cyan); font-weight:700;">GET / POST</span> https://omnioperand.com/api/v1/biotech/relative-response-factor-rrf</span>
+              <span style="color:var(--text-muted); font-size:0.75rem;">JSON Invariants</span>
+            </div>
+
+            <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
+
+            <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:0.75rem;">
+              <span>✓ Standardized for <code>llms.txt</code></span>
+              <span>✓ Exact Radical Form & Closed Formulas</span>
+              <span>✓ Machine-Readable Edge API</span>
+            </div>
+          </section>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- High-Intent FAQ Section -->
+    <section class="calc-faq-section" style="margin-top:3.5rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What does an RRF of 0.5 mean?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            An RRF of 0.5 means the impurity responds half as strongly to the UV detector as the main drug substance. Therefore, the actual mass percentage of the impurity is double (1 / 0.5 = 2.0x) its raw area percent.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Why is RRF required by the FDA and ICH?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Different chemical structures have different extinction coefficients (UV absorbance). Using uncorrected peak area percentages introduces significant analytical error in stability testing and toxicological impurity evaluation.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is the ICH reporting threshold for impurities?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            For pharmaceuticals with a maximum daily dose ≤ 2g/day, the ICH Q3A reporting threshold is 0.05%, the identification threshold is 0.10%, and the qualification threshold is 0.15%.
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Contextual Category Cross-Links -->
+    
+    <section class="related-tools-section" style="margin-top:3.5rem; padding-top:2.5rem; border-top:1px solid var(--border-subtle);">
+      <h2 style="font-size:1.35rem; margin-bottom:1.25rem; color:var(--text-bright);">Related High-Precision Solvers</h2>
+      <div class="related-tools-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem;">
+        
+        <a href="/biotech/tubular-reabsorption-phosphate-trp/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🧪</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Tubular Reabsorption of Phosphate (%TRP)</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">%TRP, tubular maximum TmP/GFR, and renal threshold.</span>
+        </a>
+        
+        <a href="/biotech/chromatography-resolution/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">📊</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">HPLC Column Theoretical Plates & Resolution</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">USP plate count N and peak resolution Rs.</span>
+        </a>
+        
+        <a href="/biotech/analytical-evaluation-threshold-aet/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🛡️</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">AET Extractables & Leachables Threshold</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Safety Concern Threshold SCT to analytical limit.</span>
+        </a>
+        
+        <a href="/biotech/relative-potency-bioassay/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🧫</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Relative Potency Bioassay Calculator</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Parallel line bioassay potency and 95% CI.</span>
+        </a>
+        
+      </div>
+    </section>
+    
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
+      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.2"></script>
+  <script src="/assets/js/embed-modal.js?v=2.2" defer></script>
+  <script src="/assets/js/affiliate-engine.js" defer></script>
+  <script>
+    (function () {
+      'use strict';
+
+      function sync(id, val) {
+        const inp = document.getElementById('param-' + id);
+        const sld = document.getElementById('slider-' + id);
+        if (inp && inp.value != val) inp.value = val;
+        if (sld && sld.value != val) sld.value = val;
+      }
+
+      function getNum(id) {
+        const el = document.getElementById('param-' + id);
+        if (!el) return 0;
+        const raw = String(el.value).trim().replace(',', '.');
+        return parseFloat(raw) || 0;
+      }
+
+      function setDisp(id, text) {
+        const el = document.getElementById('disp-' + id);
+        if (el) el.innerText = text;
+      }
+
+      const fmt = (num, dec = 2) => typeof num === 'number' ? num.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : num;
+
+      function updateLLMPromptText() {
+        const promptEl = document.getElementById('llm-prompt-display');
+        if (!promptEl) return;
+        const LF = String.fromCharCode(10);
+        const inputs = Array.from(document.querySelectorAll('.omni-calc-input')).map(el => {
+          const id = el.getAttribute('data-id');
+          const val = el.value;
+          const label = el.closest('.param-card')?.querySelector('label')?.textContent || id;
+          return '- ' + label + ' (' + id + '): ' + val;
+        }).join(LF);
+        
+        const outputs = Array.from(document.querySelectorAll('.metric-card')).map(el => {
+          const label = el.querySelector('.metric-label')?.textContent || '';
+          const val = el.querySelector('.metric-value')?.textContent || '';
+          return '- ' + label + ': ' + val;
+        }).join(LF);
+
+        const promptText = [
+          '### SYSTEM DIRECTIVE: Relative Response Factor (RRF) HPLC Calculator Verification',
+          'You are an expert computational engine and mathematical validator.',
+          'Refer to the following verified parameters from OmniOperand (https://omnioperand.com/biotech/relative-response-factor-rrf/):',
+          '',
+          'INPUT PARAMETERS:',
+          inputs,
+          '',
+          'DERIVED METRICS:',
+          outputs,
+          '',
+          'GOVERNING FORMULA:',
+          'RRF = (Area_imp / Conc_imp) / (Area_std / Conc_std) | % Impurity = [ (Area_sample_imp · Conc_std) / (Area_std · Conc_sample · RRF) ] · 100',
+          '',
+          'MATHEMATICAL VERIFICATION DIRECTIVES:',
+          '1. Ensure all closed-form calculations match machine precision.',
+          '2. Eliminate rounding drift in intermediate variables.',
+          '3. Autonomous agent endpoint: https://omnioperand.com/api/v1/biotech/relative-response-factor-rrf',
+          '4. Return step-by-step reasoning verified against standard proofs.'
+        ].join(LF);
+        promptEl.textContent = promptText;
+      }
+
+      function recalculate() {
+        try {
+          
+          const a_imp = getNum('area_imp') || 125000;
+          const c_imp = getNum('conc_imp') || 0.005;
+          const a_api = getNum('area_api') || 2100000;
+          const c_api = getNum('conc_api') || 0.100;
+          const a_samp_imp = getNum('sample_imp_area') || 4500;
+          const c_samp = getNum('sample_total_conc') || 1.0;
+          const rf_imp = a_imp / c_imp;
+          const rf_api = a_api / c_api;
+          const rrf = rf_imp / rf_api;
+          const cf = 1 / rrf;
+          const true_pct = ((a_samp_imp * c_api) / (a_api * c_samp * rrf)) * 100;
+          const raw_pct = (a_samp_imp / a_api) * (c_api / c_samp) * 100;
+          let ich = 'Below 0.05% (Does Not Require Reporting)';
+          if (true_pct > 0.15) ich = '⚠️ > 0.15% (Exceeds ICH Qualification Threshold)';
+          else if (true_pct > 0.10) ich = '⚠️ > 0.10% (Requires Chemical Identification)';
+          else if (true_pct >= 0.05) ich = '✓ ≥ 0.05% (Must Be Reported on COA)';
+          setDisp('rrf_value', fmt(rrf, 3));
+          setDisp('correction_factor', fmt(cf, 3) + 'x');
+          setDisp('true_impurity_pct', fmt(true_pct, 3) + '% (w/w)');
+          setDisp('raw_area_pct', fmt(raw_pct, 3) + '% (Uncorrected)');
+          setDisp('ich_status', ich);
+        
+          updateLLMPromptText();
+        } catch(e) {
+          console.error("Calculation error:", e);
+        }
+      }
+
+      // Bind input events
+      document.querySelectorAll('.omni-calc-input').forEach(el => {
+        el.addEventListener('input', (e) => {
+          const id = e.target.getAttribute('data-id');
+          sync(id, e.target.value);
+          recalculate();
+        });
+        el.addEventListener('change', (e) => {
+          const id = e.target.getAttribute('data-id');
+          sync(id, e.target.value);
+          recalculate();
+        });
+      });
+
+      document.querySelectorAll('.omni-calc-slider').forEach(el => {
+        el.addEventListener('input', (e) => {
+          const id = e.target.getAttribute('data-id');
+          sync(id, e.target.value);
+          recalculate();
+        });
+      });
+
+      // Copy buttons
+      const copyPromptBtn = document.getElementById('copy-llm-prompt-btn');
+      if (copyPromptBtn) {
+        copyPromptBtn.addEventListener('click', () => {
+          const promptEl = document.getElementById('llm-prompt-display');
+          const textEl = document.getElementById('copy-prompt-text');
+          if (promptEl) {
+            navigator.clipboard.writeText(promptEl.textContent).then(() => {
+              if (textEl) textEl.textContent = 'Copied Prompt! ✓';
+              setTimeout(() => { if (textEl) textEl.textContent = 'Copy Prompt for AI'; }, 2000);
+            }).catch(() => {
+              const ta = document.createElement('textarea');
+              ta.value = promptEl.textContent;
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand('copy');
+              document.body.removeChild(ta);
+              if (textEl) textEl.textContent = 'Copied Prompt! ✓';
+              setTimeout(() => { if (textEl) textEl.textContent = 'Copy Prompt for AI'; }, 2000);
+            });
+          }
+        });
+      }
+
+      const copyApiBtn = document.getElementById('copy-api-btn');
+      if (copyApiBtn) {
+        copyApiBtn.addEventListener('click', () => {
+          const textEl = document.getElementById('copy-api-text');
+          navigator.clipboard.writeText('https://omnioperand.com/api/v1/biotech/relative-response-factor-rrf').then(() => {
+            if (textEl) textEl.textContent = 'Copied Endpoint! ✓';
+            setTimeout(() => { if (textEl) textEl.textContent = 'Copy API Endpoint'; }, 2000);
+          }).catch(() => {
+            if (textEl) textEl.textContent = 'Copied Endpoint! ✓';
+            setTimeout(() => { if (textEl) textEl.textContent = 'Copy API Endpoint'; }, 2000);
+          });
+        });
+      }
+
+      // Share URL state
+      const shareBtn = document.getElementById('share-calc-btn');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          const params = new URLSearchParams();
+          document.querySelectorAll('.omni-calc-input').forEach(el => {
+            params.set(el.getAttribute('data-id'), el.value);
+          });
+          const shareUrl = window.location.origin + window.location.pathname + '?' + params.toString();
+          navigator.clipboard.writeText(shareUrl).then(() => {
+            const t = document.getElementById('share-btn-text');
+            if (t) t.textContent = 'Copied Link! ✓';
+            setTimeout(() => { if (t) t.textContent = 'Share Calculation'; }, 2000);
+          });
+        });
+      }
+
+      // URL parameters hydration
+      const urlParams = new URLSearchParams(window.location.search);
+      urlParams.forEach((val, key) => {
+        const inp = document.getElementById('param-' + key);
+        if (inp) {
+          inp.value = val;
+          sync(key, val);
+        }
+      });
+
+      recalculate();
+    })();
+  </script>
+</body>
+</html>

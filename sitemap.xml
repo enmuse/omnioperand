@@ -175,6 +175,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/biotech/analytical-evaluation-threshold-aet/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/biotech/arterial-blood-gas-anion-gap/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -200,6 +206,12 @@
   </url>
   <url>
     <loc>https://omnioperand.com/biotech/centrifuge-rcf-g-force/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/biotech/chromatography-resolution/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -289,6 +301,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/biotech/molar-mass-concentration-converter/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/biotech/molarity-normality-solution/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -325,7 +343,31 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/biotech/relative-potency-bioassay/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/biotech/relative-response-factor-rrf/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/biotech/serial-dilution-c1v1/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/biotech/syringe-pump-injection-rate/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/biotech/tubular-reabsorption-phosphate-trp/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -403,6 +445,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/construction/brick-soling/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/construction/concrete-slab/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -446,6 +494,12 @@
   </url>
   <url>
     <loc>https://omnioperand.com/construction/flooring/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/construction/flowable-fill-clsm/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -542,6 +596,12 @@
   </url>
   <url>
     <loc>https://omnioperand.com/construction/tankless-water-heater/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/construction/unistrut-load-capacity/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -1189,6 +1249,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/energy/battery-peak-shaving/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/energy/boiler-combustion-efficiency/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -1351,6 +1417,18 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/engineering/column-slenderness-buckling/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/engineering/concrete-haunch-reinforcement/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/engineering/concrete-maturity-index/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -1376,6 +1454,12 @@
   </url>
   <url>
     <loc>https://omnioperand.com/engineering/detention-pond-settling-volume/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/engineering/drill-pipe-displacement/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -1423,6 +1507,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/engineering/hydraulic-cylinder-flow/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/engineering/mannings-open-channel-flow/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -1465,6 +1555,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/engineering/retaining-wall-overturning-safety/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/engineering/retaining-wall-rankine-earth/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -1496,6 +1592,12 @@
   </url>
   <url>
     <loc>https://omnioperand.com/engineering/truss-method-of-joints/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/engineering/ultrasonic-beam-path/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -2437,6 +2539,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/finance/incremental-borrowing-rate-lease/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/finance/inflation/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -3271,6 +3379,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/geometry/slant-height/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/geometry/sphere/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -4009,6 +4123,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/logistics/lcl-freight-cbm/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/logistics/pallet-stretch-wrap-yield/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -4591,6 +4711,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/physics/aerodynamic-drag-force/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/physics/aircraft-climb-rate/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -4622,6 +4748,12 @@
   </url>
   <url>
     <loc>https://omnioperand.com/physics/car-wrap-vinyl/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/physics/circumferential-surface-speed/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

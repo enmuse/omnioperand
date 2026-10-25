@@ -43,6 +43,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/construction/brick-soling/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/construction/concrete-slab/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -86,6 +92,12 @@
   </url>
   <url>
     <loc>https://omnioperand.com/construction/flooring/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/construction/flowable-fill-clsm/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -187,6 +199,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/construction/unistrut-load-capacity/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/construction/wire-gauge-drop/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -206,6 +224,12 @@
   </url>
   <url>
     <loc>https://omnioperand.com/energy/battery-cycle-life-dod/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/energy/battery-peak-shaving/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -373,6 +397,18 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/engineering/column-slenderness-buckling/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/engineering/concrete-haunch-reinforcement/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/engineering/concrete-maturity-index/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -398,6 +434,12 @@
   </url>
   <url>
     <loc>https://omnioperand.com/engineering/detention-pond-settling-volume/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/engineering/drill-pipe-displacement/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -445,6 +487,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/engineering/hydraulic-cylinder-flow/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/engineering/mannings-open-channel-flow/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -487,6 +535,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/engineering/retaining-wall-overturning-safety/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/engineering/retaining-wall-rankine-earth/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -518,6 +572,12 @@
   </url>
   <url>
     <loc>https://omnioperand.com/engineering/truss-method-of-joints/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/engineering/ultrasonic-beam-path/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

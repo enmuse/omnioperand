@@ -175,6 +175,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/biotech/analytical-evaluation-threshold-aet/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/biotech/arterial-blood-gas-anion-gap/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -200,6 +206,12 @@
   </url>
   <url>
     <loc>https://omnioperand.com/biotech/centrifuge-rcf-g-force/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/biotech/chromatography-resolution/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -289,6 +301,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/biotech/molar-mass-concentration-converter/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/biotech/molarity-normality-solution/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -325,7 +343,31 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/biotech/relative-potency-bioassay/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/biotech/relative-response-factor-rrf/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/biotech/serial-dilution-c1v1/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/biotech/syringe-pump-injection-rate/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/biotech/tubular-reabsorption-phosphate-trp/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -865,6 +907,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/geometry/slant-height/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/geometry/sphere/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -1333,6 +1381,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/logistics/lcl-freight-cbm/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/logistics/pallet-stretch-wrap-yield/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -1387,6 +1441,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omnioperand.com/physics/aerodynamic-drag-force/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omnioperand.com/physics/aircraft-climb-rate/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -1418,6 +1478,12 @@
   </url>
   <url>
     <loc>https://omnioperand.com/physics/car-wrap-vinyl/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omnioperand.com/physics/circumferential-surface-speed/</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
