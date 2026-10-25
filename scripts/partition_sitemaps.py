@@ -12,12 +12,15 @@ Splits monolithic sitemap into domain & language partitioned XML sitemaps:
 
 import os
 from pathlib import Path
+from datetime import datetime, timezone
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 LANG_CODES = ["es", "fr", "de", "it", "pt", "nl", "pl", "sv", "no", "fi", "ro"]
 
-def write_urlset_file(filepath: Path, urls: list):
+def write_urlset_file(filepath: Path, urls: list, lastmod: str = None):
+    if not lastmod:
+        lastmod = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
@@ -25,7 +28,7 @@ def write_urlset_file(filepath: Path, urls: list):
     for url, prio, freq in sorted(urls, key=lambda x: x[0]):
         lines.append("  <url>")
         lines.append(f"    <loc>{url}</loc>")
-        lines.append("    <lastmod>2026-10-24</lastmod>")
+        lines.append(f"    <lastmod>{lastmod}</lastmod>")
         lines.append(f"    <changefreq>{freq}</changefreq>")
         lines.append(f"    <priority>{prio}</priority>")
         lines.append("  </url>")
@@ -107,8 +110,18 @@ def main():
         sitemap_files.append(f"sitemap-{code}.xml")
         print(f"  ✅ sitemap-{code}.xml: {len(buckets[code])} URLs")
 
+    today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    # 5. Master monolithic sitemap.xml (all URLs across all partitions)
+    all_urls = []
+    for b_urls in buckets.values():
+        all_urls.extend(b_urls)
+    p_master = REPO_ROOT / "sitemap.xml"
+    write_urlset_file(p_master, all_urls, lastmod=today_str)
+    print(f"  ✅ sitemap.xml: {len(all_urls)} URLs (Monolithic Canonical)")
+
     # Total URLs
-    total_urls = sum(len(b) for b in buckets.values())
+    total_urls = len(all_urls)
     print(f"\n📊 Total indexed URLs across partitions: {total_urls}")
 
     # Build sitemap-index.xml
@@ -119,7 +132,7 @@ def main():
     for sm in sitemap_files:
         index_lines.append("  <sitemap>")
         index_lines.append(f"    <loc>https://omnioperand.com/{sm}</loc>")
-        index_lines.append("    <lastmod>2026-10-24</lastmod>")
+        index_lines.append(f"    <lastmod>{today_str}</lastmod>")
         index_lines.append("  </sitemap>")
     index_lines.append("</sitemapindex>\n")
     

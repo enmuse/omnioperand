@@ -9,7 +9,7 @@ export const METRICS = {
   "calculators_count": 934,
   "categories_count": 15,
   "total_html_pages": 971,
-  "sitemap_urls_count": 965,
+  "sitemap_urls_count": 970,
   "supported_languages": [
     "en",
     "es",
@@ -41,7 +41,7 @@ export const METRICS = {
     "statistics": 4,
     "calculus": 2
   },
-  "last_updated": "2026-10-24T16:30:00Z"
+  "last_updated": "2026-10-25T03:42:25Z"
 };
 
 export const SOLVERS_COUNT = 441;

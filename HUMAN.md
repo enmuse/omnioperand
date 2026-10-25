@@ -68,6 +68,9 @@
 - [x] **Partitioned Sitemap Indexes & Crawl Budget Hygiene**:
   - Partitioned monolithic sitemap into `sitemap-index.xml` + 14 sub-sitemaps (`sitemap-en.xml`, `sitemap-engineering.xml`, `sitemap-finance.xml`, and 11 language sub-sitemaps), indexing 970 URLs.
   - Updated `robots.txt` pointing to `https://omnioperand.com/sitemap-index.xml`.
+- [x] **Automated Search Engine Ingestion (Google Search Console & IndexNow)**:
+  - `scripts/submit_gsc.js`: Programmatically submits all 16 sitemaps (`sitemap-index.xml`, `sitemap.xml`, 3 domain sitemaps, and 11 localized language sitemaps) to Google Search Console Webmasters v3 API via Service Account RS256 JWT assertion for `sc-domain:omnioperand.com`.
+  - `scripts/submit_indexnow.js`: Dispatches all 970 canonical URLs to IndexNow global indexers (`api.indexnow.org`, `www.bing.com`, `yandex.com`, `search.seznam.cz`) using verified key `8a2f3e4b5c6d7e8f9a0b1c2d3e4f5a6b`.
 - [x] **Autonomous Affiliate & Monetization Injection**:
   - `config/affiliates.json` and `assets/js/affiliate-engine.js` enhanced with threshold rules for Islamic financing partners, ITIN mortgage networks, and high-interest credit card balance transfers (`rel="nofollow sponsored"`).
 - [x] **Automated Tooling & Test Suite**:
