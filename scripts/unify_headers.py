@@ -279,7 +279,7 @@ def unify_all_headers():
             
             # Cache bust omni-core.css?v=2.2 and omni-search.js
             new_content = re.sub(r'href=([\"\'])/assets/css/omni-core\.css(?:\?v=[^\"\']*)?([\"\'])', r'href=\1/assets/css/omni-core.css?v=2.2\2', content)
-            new_content = re.sub(r'src=([\"\'])/assets/js/omni-search\.js(?:\?v=[^\"\']*)?([\"\'])', r'src=\1/assets/js/omni-search.js?v=2.1\2', new_content)
+            new_content = re.sub(r'src=([\"\'])/assets/js/omni-search\.js(?:\?v=[^\"\']*)?([\"\'])', r'src=\1/assets/js/omni-search.js?v=2.4\2', new_content)
 
             if header_pattern.search(new_content):
                 new_header = build_uniform_header(rel_path)

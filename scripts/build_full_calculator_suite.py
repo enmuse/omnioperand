@@ -304,7 +304,7 @@ def generate_calculator_page(calc):
     </div>
   </div>
 
-  <script src="/assets/js/omni-search.js?v=2.1"></script>
+  <script src="/assets/js/omni-search.js?v=2.4"></script>
   <script src="/assets/js/affiliate-engine.js" defer></script>
   <script>
     (function () {{
@@ -348,13 +348,6 @@ def generate_calculator_page(calc):
         el.addEventListener('input', (e) => {{
           sync(id, e.target.value);
           recalculate();
-        }});
-      }});
-
-      // Accordion toggle
-      document.querySelectorAll('.faq-question').forEach(q => {{
-        q.addEventListener('click', () => {{
-          q.parentElement.classList.toggle('open');
         }});
       }});
 

@@ -9166,12 +9166,19 @@
       const question = e.target.closest('.faq-question');
       if (!question) return;
 
+      // Event deduplication guard
+      if (e._faqHandled) return;
+      e._faqHandled = true;
+
       // Stop propagation so legacy direct element click listeners do not execute and double-toggle!
       e.stopPropagation();
       e.stopImmediatePropagation();
 
       const item = question.closest('.faq-item') || question.parentElement;
       if (item) {
+        const now = Date.now();
+        if (item._lastFaqToggle && (now - item._lastFaqToggle < 150)) return;
+        item._lastFaqToggle = now;
         item.classList.toggle('open');
       }
     }, true); // true = Capturing phase!

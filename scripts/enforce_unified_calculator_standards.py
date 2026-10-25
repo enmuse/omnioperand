@@ -160,7 +160,10 @@ def process_file(html_path: Path):
     
     # Update script references
     if 'omni-search.js?v=2.1' in content:
-        content = content.replace('omni-search.js?v=2.1', 'omni-search.js?v=2.2')
+        content = content.replace('omni-search.js?v=2.1', 'omni-search.js?v=2.4')
+        modified = True
+    if 'omni-search.js?v=2.2' in content:
+        content = content.replace('omni-search.js?v=2.2', 'omni-search.js?v=2.4')
         modified = True
 
     if modified:

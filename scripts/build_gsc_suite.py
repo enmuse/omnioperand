@@ -483,7 +483,7 @@ def build_calculator_html(calc, custom_hreflangs=None, custom_header=None, lang=
     </div>
   </div>
 
-  <script src="/assets/js/omni-search.js?v=2.1"></script>
+  <script src="/assets/js/omni-search.js?v=2.4"></script>
   <script src="/assets/js/affiliate-engine.js" defer></script>
   <script>
     (function () {{
@@ -535,14 +535,6 @@ def build_calculator_html(calc, custom_hreflangs=None, custom_header=None, lang=
           const inp = document.getElementById('param-' + id);
           if (inp) inp.value = e.target.value;
           recalculate();
-        }});
-      }});
-
-      // FAQ Accordion
-      document.querySelectorAll('.faq-question').forEach(q => {{
-        q.addEventListener('click', () => {{
-          const item = q.parentElement;
-          item.classList.toggle('open');
         }});
       }});
 
