@@ -309,7 +309,7 @@ python3 scripts/export_pending_leads.py --csv
      - DNS MX records active: `route1.mx.cloudflare.net` (92), `route2.mx.cloudflare.net` (55), `route3.mx.cloudflare.net` (39).
      - SPF TXT record active: `v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all`
      - DMARC TXT record active: `v=DMARC1; p=none; sp=none; aspf=r;`
-   - [ ] **Pending Action**: Click Cloudflare verification link in `omnioperand@gmail.com` inbox, then run `python3 scripts/apply_email_rules.py`.
+   - [x] **Verified & Active**: Destination `omnioperand@gmail.com` verified with Cloudflare, and custom rules for `brandon@omnioperand.com` and `contact@omnioperand.com` are live.
 
 2. **Legal Entity / Jurisdiction**:
    - [x] Configured as **Bare Bones 3D, L.L.C.** (DBA **OmniOperand**), a North Carolina limited liability company. Updated across `/terms/`, `/privacy/`, `/about/`, and `/disclaimer/`.
