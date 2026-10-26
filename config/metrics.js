@@ -8,8 +8,8 @@ export const METRICS = {
   "mcp_tools_count": 442,
   "calculators_count": 956,
   "categories_count": 15,
-  "total_html_pages": 993,
-  "sitemap_urls_count": 992,
+  "total_html_pages": 997,
+  "sitemap_urls_count": 996,
   "supported_languages": [
     "en",
     "es",
@@ -41,7 +41,7 @@ export const METRICS = {
     "statistics": 4,
     "calculus": 2
   },
-  "last_updated": "2026-10-25T16:22:36Z"
+  "last_updated": "2026-10-26T13:08:49Z"
 };
 
 export const SOLVERS_COUNT = 441;
