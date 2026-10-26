@@ -141,11 +141,12 @@
 │                      REMAINING WORK                          │
 │                                                              │
 │  1. Check Cloudflare SSL Certificate Status (~1 min) [Done]  │
-│  2. Review Initial Live Deployment on Cloudflare (~1 min)    │
-│  3. Sign Up for Affiliate Networks (~45-60 mins)             │
-│  4. Dedicated Stripe Profile for OmniOperand (~2 mins) [Done]│
-│  5. Connect Lead Webhook (Make.com) (~2 mins) [Done]         │
-│  6. Send Halal Lender Outreach Emails (~10 mins)             │
+│  2. Review Initial Live Deployment on Cloudflare [Done]      │
+│  3. Sign Up for Affiliate Networks (Paused until ~3-5k views)│
+│  4. Dedicated Stripe Profile for OmniOperand [Done & Tested] │
+│  5. Connect Lead Webhook (Make.com) [Done & Verified]        │
+│  6. Cloudflare Email Routing (brand / contact) [Done & Live] │
+│  7. Send Halal Lender Outreach Emails (~10 mins) [Ready]     │
 └──────────────────────────────────────────────────────────────┘
 ```
 
