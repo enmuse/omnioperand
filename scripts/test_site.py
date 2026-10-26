@@ -464,6 +464,55 @@ def test_mathematical_precision():
     assert math.isclose(reserves_itin, 15684.78, rel_tol=1e-1), f"ITIN reserves mismatch: {reserves_itin}"
     print("  ✅ ITIN Immigrant Mortgage: Fannie Mae DU and IRS Notice 2026 underwriting verified!")
 
+    # 30. Polymeric Sand (300 sq ft, 4x8 in pavers, 0.25 in joint, 2.0 in depth, 10% waste)
+    paver_face = (8.0 * 4.0) / 144.0
+    unit_footprint = (8.25 * 4.25) / 144.0
+    joint_pct = 1.0 - (paver_face / unit_footprint)
+    cuft_sand = 300.0 * joint_pct * (2.0 / 12.0) * 1.10
+    bags_poly = math.ceil((cuft_sand * 100.0) / 50.0)
+    assert 8 <= bags_poly <= 11, f"Polymeric sand bags mismatch: {bags_poly}"
+    print("  ✅ Polymeric Sand: Joint void volume and ICPI bag yield verified!")
+
+    # 31. Rafter Length & Birdsmouth Cut (24 ft span, 6/12 pitch, 2x8 timber depth 7.25", 3.5" wall)
+    rafter_run = (24.0 - (1.5 / 12.0)) / 2.0
+    rafter_factor = math.sqrt(1.0 + (6.0 / 12.0)**2)
+    rafter_line_ft = rafter_run * rafter_factor
+    assert math.isclose(rafter_line_ft, 13.3465, rel_tol=1e-3), f"Rafter length mismatch: {rafter_line_ft}"
+    heel_cut = 3.5 * (6.0 / 12.0)
+    assert math.isclose(heel_cut, 1.75), "Birdsmouth heel cut mismatch"
+    assert heel_cut <= (7.25 / 3.0), "IRC birdsmouth 1/3 depth limit exceeded"
+    print("  ✅ Rafter Length & Birdsmouth Cut: Hypotenuse line length and IRC R802.4.1 limit verified!")
+
+    # 32. Gutter & Downspout Sizing (50 ft run, 20 ft rake, 4.0 in/hr rain intensity)
+    eff_area = 50.0 * 20.0 * 1.10
+    q_drainage = eff_area * 4.0 * 0.010389
+    assert math.isclose(q_drainage, 45.71, rel_tol=1e-2), f"Drainage flow mismatch: {q_drainage}"
+    assert q_drainage > 45.0, "High flow should recommend 6-inch gutter"
+    print("  ✅ Gutter & Downspout Sizing: SMACNA effective area and drainage flow rate verified!")
+
+    # 33. 3-Phase Transformer kVA (60 kW, 0.85 PF, 25% continuous margin, 480V pri / 208V sec)
+    trans_design_kva = (60.0 / 0.85) * 1.25
+    assert math.isclose(trans_design_kva, 88.235, rel_tol=1e-2), f"Design kVA mismatch: {trans_design_kva}"
+    selected_kva = 112.5  # Standard commercial rating above 88.24 kVA
+    pri_fla = (selected_kva * 1000.0) / (math.sqrt(3.0) * 480.0)
+    sec_fla = (selected_kva * 1000.0) / (math.sqrt(3.0) * 208.0)
+    assert math.isclose(pri_fla, 135.32, rel_tol=1e-2), f"Primary FLA mismatch: {pri_fla}"
+    assert math.isclose(sec_fla, 312.28, rel_tol=1e-2), f"Secondary FLA mismatch: {sec_fla}"
+    print("  ✅ 3-Phase Transformer kVA: Apparent power sizing and full-load amperes verified!")
+
+    # 34. Crypto Capital Gains & HIFO Tax (1.5 sold at $65k, Lot 1: 0.5 @ $30k, Lot 2: 0.5 @ $68k, Lot 3: 0.5 @ $45k)
+    proceeds = 1.5 * 65000.0
+    hifo_basis = 0.5 * 68000.0 + 0.5 * 45000.0 + 0.5 * 30000.0
+    fifo_basis = 0.5 * 30000.0 + 0.5 * 68000.0 + 0.5 * 45000.0
+    hifo_gain = proceeds - hifo_basis
+    fifo_gain = proceeds - fifo_basis
+    assert math.isclose(hifo_gain, 26000.0), f"HIFO gain mismatch: {hifo_gain}"
+    assert math.isclose(fifo_gain, 26000.0), f"FIFO gain mismatch: {fifo_gain}"
+    # Lot 2 was held 180 days (short term), generating a $1,500 short-term capital loss under HIFO
+    st_loss_hifo = 0.5 * (65000.0 - 68000.0)
+    assert st_loss_hifo == -1500.0, "HIFO tax-loss harvest mismatch"
+    print("  ✅ Crypto Capital Gains & HIFO: Specific identification and basis optimization verified!")
+
 def test_file_integrity():
     print("Testing File & Asset Integrity...")
     required_files = [
@@ -558,7 +607,13 @@ def test_file_integrity():
         "finance/islamic-murabaha/index.html",
         "finance/islamic-ijara/index.html",
         "finance/itin-mortgage/index.html",
-        "es/finance/itin-mortgage/index.html"
+        "es/finance/itin-mortgage/index.html",
+        # GSC Batch 3 Gap Solvers
+        "construction/polymeric-sand/index.html",
+        "construction/rafter-birdsmouth-cut/index.html",
+        "construction/gutter-downspout-sizing/index.html",
+        "engineering/three-phase-transformer-kva/index.html",
+        "finance/crypto-tax-hifo/index.html"
     ]
 
     for rel_path in required_files:

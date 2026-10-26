@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3-Phase Transformer kVA Calculator | Full-Load Current & Sizing | OmniOperand</title>
+  <meta name="description" content="Calculate 3-phase transformer apparent power (kVA), primary and secondary full-load amperes (FLA), and standard kVA ratings compliant with NEC 450.">
+  <link rel="canonical" href="https://omnioperand.com/engineering/three-phase-transformer-kva/">
+
+  <meta property="og:title" content="3-Phase Transformer kVA Calculator | Full-Load Current & Sizing | OmniOperand">
+  <meta property="og:description" content="Calculate 3-phase transformer apparent power (kVA), primary and secondary full-load amperes (FLA), and standard kVA ratings compliant with NEC 450.">
+  <meta property="og:url" content="https://omnioperand.com/engineering/three-phase-transformer-kva/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/engineering/three-phase-transformer-kva/#app",
+      "name": "3-Phase Transformer kVA & Amps Calculator",
+      "url": "https://omnioperand.com/engineering/three-phase-transformer-kva/",
+      "applicationCategory": "EngineeringApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Calculate 3-phase transformer apparent power (kVA), primary and secondary full-load amperes (FLA), and standard kVA ratings compliant with NEC 450.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/engineering/three-phase-transformer-kva/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OmniOperand",
+          "item": "https://omnioperand.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering",
+          "item": "https://omnioperand.com/engineering/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "3-Phase Transformer kVA & Amps Calculator",
+          "item": "https://omnioperand.com/engineering/three-phase-transformer-kva/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/engineering/three-phase-transformer-kva/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the formula to calculate 3-phase kVA to Amps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To find Amps from 3-phase kVA: Amps = (kVA × 1,000) / (1.732 × Voltage). For example, a 75 kVA transformer at 208V delivers: (75 × 1,000) / (1.732 × 208) = 208.2 Amperes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is square root of 3 (1.732) used in three-phase calculations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In a 3-phase system, the line-to-line voltage is vectorially 120° out of phase with line-to-neutral voltage. The geometric vector difference between any two phases is 2 × sin(60°) = √3 ≈ 1.732."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What size transformer do I need for a 100 kW load?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Assuming an 0.85 power factor, 100 kW equals 117.6 kVA. Adding a 25% continuous duty factor requires 147 kVA. The nearest standard commercial transformer rating is 150 kVA."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="calculator-page">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Engineering</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger active" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">EN</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/engineering/three-phase-transformer-kva/" class="lang-dropdown-item active"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/engineering/three-phase-transformer-kva/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/engineering/three-phase-transformer-kva/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/engineering/three-phase-transformer-kva/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/engineering/three-phase-transformer-kva/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/engineering/three-phase-transformer-kva/" class="lang-dropdown-item"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/engineering/three-phase-transformer-kva/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/engineering/three-phase-transformer-kva/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/engineering/three-phase-transformer-kva/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/engineering/three-phase-transformer-kva/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/engineering/three-phase-transformer-kva/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/engineering/three-phase-transformer-kva/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="calc-main">
+    <div class="container">
+      <header class="calc-header">
+        <div class="hero-badge">Electrical Power Systems • NEC 450 & IEEE C57.12 Standard</div>
+        <h1>3-Phase Transformer kVA & Amps Calculator</h1>
+        <p class="calc-subtext">Calculate 3-phase apparent power (kVA), primary/secondary full-load amperes (FLA), NEC 450 standard rating selection, and core/winding losses.</p>
+        <div class="authority-badge" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.6rem; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); border-radius:6px; font-size:0.75rem; color:var(--accent-emerald); font-weight:600; margin-top:0.5rem;"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Governed by NEC (NFPA 70)</div>
+      </header>
+
+      <section class="solver-interface" aria-label="Interactive Calculator HUD">
+        
+    <div class="solver-toolbar" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-bottom:1.25rem; margin-bottom:1.5rem; border-bottom:1px solid var(--border-subtle);">
+      
+      <div class="toolbar-group" style="display:flex; gap:0.5rem; margin-left:auto;">
+        <button type="button" class="btn-action" id="btn-embed" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(168,85,247,0.1); border:1px solid rgba(168,85,247,0.3); border-radius:6px; color:var(--accent-purple); font-size:0.85rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <span>Embed Calculator</span>
+        </button>
+        <button type="button" class="btn-action" id="share-calc-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); border-radius:6px; color:var(--accent-cyan); font-size:0.85rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          <span id="share-btn-text">Share</span>
+        </button>
+      </div>
+    </div>
+    
+        
+        <div class="solver-grid">
+          <div class="params-column">
+            <h2 class="section-title">Input Parameters</h2>
+            <div class="params-grid">
+              
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-primary_voltage_v">Primary Line-to-Line Voltage (V1)</label>
+                <span class="param-symbol">primary_voltage_v</span>
+              </div>
+              <div class="input-unit-group">
+                <select id="param-primary_voltage_v" class="number-input omni-calc-input" data-id="primary_voltage_v" style="width:100%; cursor:pointer;">
+                  <option value="208" >208 V (3-Phase Delta / Wye)</option><option value="240" >240 V (3-Phase Delta)</option><option value="480" selected>480 V (Standard Industrial High Voltage)</option><option value="600" >600 V (Canadian Industrial Standard)</option><option value="2400" >2,400 V (Medium Voltage Distribution)</option><option value="4160" >4,160 V (Medium Voltage Industrial)</option><option value="13800" >13,800 V (13.8 kV Substation Feed)</option>
+                </select>
+              </div>
+              <div class="param-hint">Primary utility or supply voltage</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-secondary_voltage_v">Secondary Line-to-Line Voltage (V2)</label>
+                <span class="param-symbol">secondary_voltage_v</span>
+              </div>
+              <div class="input-unit-group">
+                <select id="param-secondary_voltage_v" class="number-input omni-calc-input" data-id="secondary_voltage_v" style="width:100%; cursor:pointer;">
+                  <option value="208" selected>120/208 V (Commercial Lighting & Receptacle Wye)</option><option value="240" >240 V (Commercial / Industrial Delta)</option><option value="480" >277/480 V (Industrial Motor & High-Bay Wye)</option><option value="600" >600 V (Heavy Manufacturing Wye)</option>
+                </select>
+              </div>
+              <div class="param-hint">Secondary utilization voltage feeding the load panel</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-load_kw">Connected Active Load (kW)</label>
+                <span class="param-symbol">load_kw</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-load_kw" class="number-input omni-calc-input" data-id="load_kw" value="60" step="5" min="1" max="5000">
+                <span class="input-suffix" id="unit-suffix-load_kw" data-imp="kW" data-met="kW">kW</span>
+              </div>
+              <input type="range" id="slider-load_kw" class="param-slider omni-calc-slider" data-id="load_kw" min="1" max="5000" step="5" value="60">
+              <div class="param-hint">Total real power demand of connected equipment</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-power_factor">Load Power Factor (cos θ)</label>
+                <span class="param-symbol">power_factor</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-power_factor" class="number-input omni-calc-input" data-id="power_factor" value="0.85" step="0.05" min="0.5" max="1.0">
+                <span class="input-suffix" id="unit-suffix-power_factor" data-imp="PF" data-met="PF">PF</span>
+              </div>
+              <input type="range" id="slider-power_factor" class="param-slider omni-calc-slider" data-id="power_factor" min="0.5" max="1.0" step="0.05" value="0.85">
+              <div class="param-hint">Inductive motor load typically 0.80 - 0.85; resistive is 1.0</div>
+            </div>
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-safety_margin_pct">Continuous Duty & Growth Margin</label>
+                <span class="param-symbol">safety_margin_pct</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-safety_margin_pct" class="number-input omni-calc-input" data-id="safety_margin_pct" value="25" step="5" min="0" max="50">
+                <span class="input-suffix" id="unit-suffix-safety_margin_pct" data-imp="%" data-met="%">%</span>
+              </div>
+              <input type="range" id="slider-safety_margin_pct" class="param-slider omni-calc-slider" data-id="safety_margin_pct" min="0" max="50" step="5" value="25">
+              <div class="param-hint">NEC Article 215/450 requires 125% factor for continuous duty</div>
+            </div>
+            
+            </div>
+          </div>
+
+          <div class="results-column">
+            <h2 class="section-title">Calculated Outputs</h2>
+            <div class="metrics-grid">
+              
+        <div class="metric-card">
+          <span class="metric-label">Operating Load Demand (kVA)</span>
+          <span class="metric-value" id="disp-calculated_demand_kva" style="color:var(--accent-cyan);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Standard NEC Transformer Size</span>
+          <span class="metric-value" id="disp-standard_nec_kva" style="color:var(--accent-emerald);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Primary Full-Load Amperes (FLA)</span>
+          <span class="metric-value" id="disp-primary_fla" style="color:var(--text-bright);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Secondary Full-Load Amperes (FLA)</span>
+          <span class="metric-value" id="disp-secondary_fla" style="color:var(--accent-purple);">—</span>
+        </div>
+        
+        <div class="metric-card">
+          <span class="metric-label">Full-Load Heat Loss Dissipation</span>
+          <span class="metric-value" id="disp-loss_heat_kw" style="color:var(--text-bright);">—</span>
+        </div>
+        
+            </div>
+
+            <div class="blueprint-card" style="margin-top:1.5rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; padding:1.25rem;">
+              <h3 style="font-size:0.95rem; font-weight:700; color:var(--text-bright); margin-bottom:0.75rem;">Verified Mathematical Identity</h3>
+              <div class="formula-box" style="font-family:var(--font-mono); font-size:0.85rem; line-height:1.5; color:var(--accent-cyan); background:var(--bg-card); padding:0.75rem; border-radius:8px; border:1px solid var(--border-subtle);">
+                kVA = kW / PF | FLA = (kVA · 1,000) / (√3 · V_LL) | P_heat ≈ kVA · 0.015
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step-by-Step Proofs & Derivations -->
+      <section class="proof-section" style="margin-top:3.5rem;">
+        <h2 style="font-size:1.35rem; color:var(--text-bright); margin-bottom:1.25rem;">Analytical Derivation &amp; Methodology</h2>
+        <div class="proof-steps-container">
+          
+        <div class="proof-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <strong>1. Apparent Power from Active Load</strong>
+            <p>In AC systems, apparent power S (in kVA) accounts for reactive currents: S_load = P_kW / PowerFactor. Applying the continuous duty safety margin gives design capacity: S_design = S_load × (1 + Margin%).</p>
+          </div>
+        </div>
+        
+        <div class="proof-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <strong>2. Three-Phase Voltage & Current Relation</strong>
+            <p>For a balanced 3-phase system, apparent power is S = √3 × V_LL × I_line. Inverting for full-load amperes yields: FLA = (kVA × 1,000) / (√3 × V_LL), where √3 ≈ 1.7320508.</p>
+          </div>
+        </div>
+        
+        <div class="proof-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <strong>3. NEC Standard Rating Selection & Heat Dissipation</strong>
+            <p>Commercial dry-type transformers follow standard NEMA/NEC step ratings: 15, 30, 45, 75, 112.5, 150, 225, 300, 500 kVA. Core hysteresis and I²R winding resistance dissipate approx 1.5% to 2.5% of rated capacity as heat under full load.</p>
+          </div>
+        </div>
+        
+        </div>
+      </section>
+
+      <!-- Dual AI Prompt & REST API Integration Box -->
+      <section class="ai-box" style="margin-top:3.5rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:16px; padding:2rem;">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:1rem;">
+          <span style="font-size:1.5rem;">🤖</span>
+          <h2 style="font-size:1.25rem; color:var(--text-bright); margin:0;">AI Agent &amp; LLM Integration</h2>
+        </div>
+        <p style="color:var(--text-secondary); font-size:0.9rem; line-height:1.5; margin-bottom:1.5rem;">
+          Feed verified mathematical context directly into ChatGPT, Claude, and Gemini, or call our programmatic REST endpoint.
+        </p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+          <div style="background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:12px; padding:1.25rem; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="font-weight:700; color:var(--text-bright); font-size:0.95rem; margin-bottom:0.4rem;">Human Chat Prompt</div>
+              <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.4; margin-bottom:0.75rem;">Copy active parameters and system instructions to eliminate model hallucinations.</p>
+            </div>
+            <button type="button" class="btn-action" id="copy-ai-prompt-btn" style="width:100%; display:inline-flex; align-items:center; justify-content:center; gap:0.5rem; padding:0.6rem; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); border-radius:8px; color:var(--accent-cyan); font-weight:600; font-size:0.85rem; cursor:pointer;">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy Prompt for AI</span>
+            </button>
+          </div>
+
+          <div style="background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:12px; padding:1.25rem; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="font-weight:700; color:var(--text-bright); font-size:0.95rem; margin-bottom:0.4rem;">Programmatic REST API</div>
+              <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.4; margin-bottom:0.75rem;">Sub-15ms edge compute endpoint returning floating-point &amp; radical invariants.</p>
+            </div>
+            <button type="button" class="btn-action" id="copy-api-url-btn" style="width:100%; display:inline-flex; align-items:center; justify-content:center; gap:0.5rem; padding:0.6rem; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); border-radius:8px; color:var(--accent-emerald); font-weight:600; font-size:0.85rem; cursor:pointer;">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+              <span>Copy API Endpoint</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="faq-section" style="margin-top:3.5rem;">
+        <h2 style="font-size:1.35rem; color:var(--text-bright); margin-bottom:1.25rem;">Frequently Asked Questions</h2>
+        <div class="faq-accordion">
+          
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>What is the formula to calculate 3-phase kVA to Amps?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>To find Amps from 3-phase kVA: Amps = (kVA × 1,000) / (1.732 × Voltage). For example, a 75 kVA transformer at 208V delivers: (75 × 1,000) / (1.732 × 208) = 208.2 Amperes.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>Why is square root of 3 (1.732) used in three-phase calculations?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>In a 3-phase system, the line-to-line voltage is vectorially 120° out of phase with line-to-neutral voltage. The geometric vector difference between any two phases is 2 × sin(60°) = √3 ≈ 1.732.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>What size transformer do I need for a 100 kW load?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Assuming an 0.85 power factor, 100 kW equals 117.6 kVA. Adding a 25% continuous duty factor requires 147 kVA. The nearest standard commercial transformer rating is 150 kVA.</p>
+          </div>
+        </div>
+        
+        </div>
+      </section>
+
+      <!-- Related Solvers -->
+      
+    <section class="related-tools-section" style="margin-top:3.5rem; padding-top:2.5rem; border-top:1px solid var(--border-subtle);">
+      <h2 style="font-size:1.35rem; margin-bottom:1.25rem; color:var(--text-bright);">Related High-Precision Solvers</h2>
+      <div class="related-tools-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem;">
+        
+        <a href="/engineering/generator-sizing/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">⚡</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Generator Sizing Calculator</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Running watts, peak surge kVA, and generator rating.</span>
+        </a>
+        
+        <a href="/engineering/wire-gauge-voltage-drop/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🔌</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Wire Gauge & Voltage Drop (NEC)</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">NEC 3% limit, conductor size AWG/mm², and drop %.</span>
+        </a>
+        
+        <a href="/engineering/column-slenderness-buckling/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🏛️</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Column Slenderness & Critical Buckling</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Euler critical buckling load, effective length K, and AISC 360.</span>
+        </a>
+        
+        <a href="/engineering/hydraulic-cylinder-flow/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">💧</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Hydraulic Cylinder Force & Fluid Flow</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Push/pull force, rod velocity, and pump flow GPM.</span>
+        </a>
+        
+      </div>
+    </section>
+    
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem; padding:2rem 0; border-top:1px solid var(--border-subtle);">
+      <div class="footer-brand">
+        <div style="font-weight:700; color:var(--text-bright); margin-bottom:0.5rem;">OmniOperand</div>
+        <p style="font-size:0.8rem; color:var(--text-muted); max-width:320px; line-height:1.4;">
+          Deterministic computational engines, verified mathematical proofs, and programmatic APIs for technical professionals.
+        </p>
+      </div>
+      <div class="footer-links-grid" style="display:flex; gap:2.5rem; font-size:0.85rem;">
+        <div class="footer-col" style="display:flex; flex-direction:column; gap:0.4rem;">
+          <span style="font-weight:600; color:var(--text-primary); margin-bottom:4px;">Platform</span>
+          <a href="/about/" style="color:var(--text-secondary); text-decoration:none;">About &amp; Methodology</a>
+          <a href="/mcp/" style="color:var(--text-secondary); text-decoration:none;">MCP Server</a>
+          <a href="/api/" style="color:var(--text-secondary); text-decoration:none;">REST API</a>
+        </div>
+        <div class="footer-col" style="display:flex; flex-direction:column; gap:0.4rem;">
+          <span style="font-weight:600; color:var(--text-primary); margin-bottom:4px;">Legal &amp; Trust</span>
+          <a href="/privacy/" style="color:var(--text-secondary); text-decoration:none;">Privacy Policy</a>
+          <a href="/terms/" style="color:var(--text-secondary); text-decoration:none;">Terms of Service</a>
+          <a href="/disclaimer/" style="color:var(--text-secondary); text-decoration:none;">Affiliate Disclosure</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
+      <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/omni-search.js?v=2.4" defer></script>
+  <script src="/assets/js/embed-modal.js?v=1.1" defer></script>
+  <script>
+    function getNum(id) {
+      const el = document.getElementById('param-' + id);
+      return el ? parseFloat(el.value) || 0 : 0;
+    }
+    function setDisp(id, val) {
+      const el = document.getElementById('disp-' + id);
+      if (el) el.textContent = val;
+    }
+    function fmt(num, dec = 2) {
+      return Number(num).toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+    }
+
+    function calculate() {
+
+          const v1 = parseFloat(document.getElementById('param-primary_voltage_v').value) || 480;
+          const v2 = parseFloat(document.getElementById('param-secondary_voltage_v').value) || 208;
+          const kw = getNum('load_kw') || 60;
+          const pf = getNum('power_factor') || 0.85;
+          const margin = (getNum('safety_margin_pct') || 25) / 100;
+          
+          const rawKva = kw / pf;
+          const designKva = rawKva * (1 + margin);
+          
+          const stdKvaList = [15, 30, 45, 75, 112.5, 150, 225, 300, 500, 750, 1000, 1500, 2000, 2500];
+          let selectedKva = 3000;
+          for (const s of stdKvaList) {
+            if (s >= designKva) {
+              selectedKva = s;
+              break;
+            }
+          }
+          
+          const sqrt3 = Math.sqrt(3);
+          const priFla = (selectedKva * 1000) / (sqrt3 * v1);
+          const secFla = (selectedKva * 1000) / (sqrt3 * v2);
+          const heatLossKw = selectedKva * 0.016;
+          const heatBtuHr = heatLossKw * 3412.14;
+          
+          setDisp('calculated_demand_kva', fmt(rawKva, 1) + ' kVA (Design: ' + fmt(designKva, 1) + ' kVA)');
+          setDisp('standard_nec_kva', selectedKva + ' kVA Standard Unit');
+          setDisp('primary_fla', fmt(priFla, 1) + ' A (at ' + v1 + 'V)');
+          setDisp('secondary_fla', fmt(secFla, 1) + ' A (at ' + v2 + 'V)');
+          setDisp('loss_heat_kw', fmt(heatLossKw, 2) + ' kW (' + fmt(heatBtuHr, 0) + ' BTU/hr)');
+        
+    }
+
+    // Sync input and sliders
+    document.querySelectorAll('.omni-calc-input').forEach(input => {
+      const id = input.dataset.id;
+      const slider = document.getElementById('slider-' + id);
+      input.addEventListener('input', () => {
+        if (slider) slider.value = input.value;
+        calculate();
+      });
+      if (slider) {
+        slider.addEventListener('input', () => {
+          input.value = slider.value;
+          calculate();
+        });
+      }
+    });
+
+    // URL parameter sharing
+    function getShareUrl() {
+      const params = new URLSearchParams();
+      document.querySelectorAll('.omni-calc-input').forEach(inp => {
+        params.set(inp.dataset.id, inp.value);
+      });
+      return window.location.origin + window.location.pathname + '?' + params.toString();
+    }
+
+    const shareBtn = document.getElementById('share-calc-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(getShareUrl()).then(() => {
+          const txt = document.getElementById('share-btn-text');
+          txt.textContent = 'Link Copied!';
+          setTimeout(() => txt.textContent = 'Share', 2000);
+        });
+      });
+    }
+
+    // AI Prompt Copy
+    const copyPromptBtn = document.getElementById('copy-ai-prompt-btn');
+    if (copyPromptBtn) {
+      copyPromptBtn.addEventListener('click', () => {
+        const LF = String.fromCharCode(10);
+        let promptLines = ['Problem Context for 3-Phase Transformer kVA & Amps Calculator:'];
+        document.querySelectorAll('.omni-calc-input').forEach(inp => {
+          promptLines.push('- ' + inp.dataset.id + ': ' + inp.value);
+        });
+        promptLines.push('');
+        promptLines.push('Please verify using exact formulas: kVA = kW / PF | FLA = (kVA · 1,000) / (√3 · V_LL) | P_heat ≈ kVA · 0.015' );
+        const promptText = promptLines.join(LF);
+        navigator.clipboard.writeText(promptText).then(() => {
+          const span = copyPromptBtn.querySelector('span');
+          span.textContent = 'Prompt Copied!';
+          setTimeout(() => span.textContent = 'Copy Prompt for AI', 2000);
+        });
+      });
+    }
+
+    // API URL Copy
+    const copyApiBtn = document.getElementById('copy-api-url-btn');
+    if (copyApiBtn) {
+      copyApiBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText('https://omnioperand.com/api/v1/engineering/three-phase-transformer-kva').then(() => {
+          const span = copyApiBtn.querySelector('span');
+          span.textContent = 'Endpoint Copied!';
+          setTimeout(() => span.textContent = 'Copy API Endpoint', 2000);
+        });
+      });
+    }
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.closest('.faq-item');
+        item.classList.toggle('active');
+      });
+    });
+
+    window.addEventListener('DOMContentLoaded', calculate);
+  </script>
+</body>
+</html>

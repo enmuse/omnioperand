@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "OmniOperand Autonomous AI Tool Definitions",
-  "description": "Standardized tool definitions for all 442 deterministic calculators. Fully compatible with OpenAI Function Calling, Anthropic Claude Tool Use, and Model Context Protocol (MCP) clients.",
+  "description": "Standardized tool definitions for all 447 deterministic calculators. Fully compatible with OpenAI Function Calling, Anthropic Claude Tool Use, and Model Context Protocol (MCP) clients.",
   "version": "2.0.0",
-  "total_tools": 442,
+  "total_tools": 447,
   "tools": [
     {
       "name": "omni_octagon_solver",
@@ -13670,6 +13670,181 @@
         "required": [
           "home_price",
           "down_payment_pct"
+        ]
+      }
+    },
+    {
+      "name": "omni_polymeric_sand",
+      "description": "Polymeric Sand & Paver Joint Calculator. Calculate exact 50lb bags of polymeric sand and cubic yards of bedding sand for pavers, patio stones, and flagstone joints compliant with ICPI standards. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "patio_area_sqft": {
+            "type": "number",
+            "default": 300,
+            "description": "Total Patio Area (sq ft) (sq ft). Total area to be paved"
+          },
+          "paver_length_in": {
+            "type": "number",
+            "default": 8,
+            "description": "Paver Length (in) (in). Length of individual paver"
+          },
+          "paver_width_in": {
+            "type": "number",
+            "default": 4,
+            "description": "Paver Width (in) (in). Width of individual paver"
+          },
+          "joint_width_in": {
+            "type": "number",
+            "default": 0.25,
+            "description": "Joint Width (in) (in). Average joint width between pavers"
+          },
+          "joint_depth_in": {
+            "type": "number",
+            "default": 2.0,
+            "description": "Joint Depth (in) (in). Depth of sand fill in joint"
+          }
+        },
+        "required": [
+          "patio_area_sqft",
+          "paver_length_in"
+        ]
+      }
+    },
+    {
+      "name": "omni_rafter_birdsmouth_cut",
+      "description": "Rafter Length & Birdsmouth Cut Calculator. Calculate common rafter line length, plumb cut angle, birdsmouth seat cut width, heel cut depth, and overhang tail compliant with IRC R802.4.1. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "building_span_ft": {
+            "type": "number",
+            "default": 24,
+            "description": "Building Span (ft) (ft). Out-to-out framing width"
+          },
+          "roof_pitch_in": {
+            "type": "number",
+            "default": 6,
+            "description": "Roof Pitch (Rise in 12) (in/12). Pitch slope"
+          },
+          "rafter_depth_in": {
+            "type": "number",
+            "default": 7.25,
+            "description": "Rafter Depth (in) (in). Actual timber depth (7.25 for 2x8)"
+          },
+          "wall_thickness_in": {
+            "type": "number",
+            "default": 3.5,
+            "description": "Wall Top Plate Width (in) (in). Width of wall plate"
+          },
+          "overhang_run_in": {
+            "type": "number",
+            "default": 12,
+            "description": "Overhang Horizontal Run (in) (in). Eave overhang past wall"
+          }
+        },
+        "required": [
+          "building_span_ft",
+          "roof_pitch_in"
+        ]
+      }
+    },
+    {
+      "name": "omni_gutter_downspout_sizing",
+      "description": "Gutter & Downspout Sizing Calculator. Calculate roof runoff flow rate (GPM), effective drainage area, gutter sizing (5\" or 6\"), and downspout capacity under SMACNA and IPC 1106 standards. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "roof_length_ft": {
+            "type": "number",
+            "default": 50,
+            "description": "Gutter Run Length (ft) (ft). Length of gutter run"
+          },
+          "roof_width_ft": {
+            "type": "number",
+            "default": 20,
+            "description": "Rafter Rake Width (ft) (ft). Distance from ridge to gutter"
+          },
+          "rainfall_intensity_in_hr": {
+            "type": "number",
+            "default": 4.0,
+            "description": "Rainfall Intensity (in/hr) (in/hr). Design rainfall intensity"
+          },
+          "downspout_count": {
+            "type": "number",
+            "default": 2,
+            "description": "Number of Downspouts (outlets). Number of drainage outlets"
+          }
+        },
+        "required": [
+          "roof_length_ft",
+          "roof_width_ft"
+        ]
+      }
+    },
+    {
+      "name": "omni_three_phase_transformer_kva",
+      "description": "3-Phase Transformer kVA & Amps Calculator. Calculate 3-phase transformer apparent power (kVA), primary and secondary full-load amperes (FLA), and standard rating selection compliant with NEC 450. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "primary_voltage_v": {
+            "type": "number",
+            "default": 480,
+            "description": "Primary Voltage (V) (V). Primary supply voltage"
+          },
+          "secondary_voltage_v": {
+            "type": "number",
+            "default": 208,
+            "description": "Secondary Voltage (V) (V). Secondary utilization voltage"
+          },
+          "load_kw": {
+            "type": "number",
+            "default": 60,
+            "description": "Connected Active Load (kW) (kW). Total real power"
+          },
+          "power_factor": {
+            "type": "number",
+            "default": 0.85,
+            "description": "Power Factor (cos \u03b8) (PF). Load power factor"
+          }
+        },
+        "required": [
+          "primary_voltage_v",
+          "secondary_voltage_v"
+        ]
+      }
+    },
+    {
+      "name": "omni_crypto_tax_hifo",
+      "description": "Crypto Capital Gains & HIFO Tax Calculator. Compare HIFO, FIFO, and LIFO cost basis accounting methods for cryptocurrency disposals to minimize IRS capital gains taxes under IRS Notice 2014-21. LLM DIRECTIVE: Deterministic ground truth calculation tool. Returns exact numerical metrics with verified mathematical invariants.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "disposal_amount": {
+            "type": "number",
+            "default": 1.5,
+            "description": "Crypto Units Sold (units). Total coins/tokens sold"
+          },
+          "sale_price_usd": {
+            "type": "number",
+            "default": 65000,
+            "description": "Sale Price per Unit ($) ($). Execution sale price"
+          },
+          "highest_cost_basis": {
+            "type": "number",
+            "default": 68000,
+            "description": "Highest Lot Cost Basis ($) ($). Cost of highest purchase lot"
+          },
+          "first_cost_basis": {
+            "type": "number",
+            "default": 30000,
+            "description": "First Lot Cost Basis ($) ($). Cost of earliest purchase lot"
+          }
+        },
+        "required": [
+          "disposal_amount",
+          "sale_price_usd"
         ]
       }
     }
