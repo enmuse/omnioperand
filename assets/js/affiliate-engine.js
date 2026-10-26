@@ -220,9 +220,14 @@
 
       container.setAttribute('data-active-partner', partner.id);
 
+      const disclosureBadge = `
+<div class="affiliate-disclosure-badge" style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.35rem;">
+  <span>ℹ️ Sponsored: We may receive compensation from partners featured below. <a href="/disclaimer/" style="color: inherit; text-decoration: underline;">Details</a></span>
+</div>`;
+
       if (partner.type === 'heloc_card') {
-        container.innerHTML = `
-<div class="contextual-action-card" style="background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.25); border-radius:10px; padding:1.25rem; margin-top:1.25rem;">
+        container.innerHTML = disclosureBadge + `
+<div class="contextual-action-card" style="background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.25); border-radius:10px; padding:1.25rem; margin-top:0.5rem;">
   <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
     <div>
       <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:#38bdf8; font-weight:700; margin-bottom:0.25rem;">Verified Rate Comparison</div>
@@ -254,7 +259,7 @@
         return;
       }
 
-      container.innerHTML = `
+      container.innerHTML = disclosureBadge + `
         <div class="omni-affiliate-card">
           <div class="omni-affiliate-top">
             <span class="omni-affiliate-badge">${partner.badge}</span>

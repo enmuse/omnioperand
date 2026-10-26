@@ -105,6 +105,20 @@
 - [x] **Dual AI Integration Architecture Enforced Across All Calculators**:
   - Unified AI integration box across all calculators: provides **BOTH** copyable human chat prompt for ChatGPT, Claude, and Gemini with live parameters, AND programmatic REST API endpoint URL (`https://omnioperand.com/api/v1/{slug}`) aligned with `llms.txt`.
   - Added real-time dynamic prompt updating on input change with 1-click clipboard copy feedback.
+- [x] **Trust & Compliance Architecture Fully Deployed**:
+  - Published comprehensive statutory legal & methodology pages: `/about/` (editorial standards, peer-review methodology), `/privacy/` (GDPR/CCPA/CPRA, edge analytics, cookie disclosures), `/terms/` (binding terms of service), and `/disclaimer/` (FTC affiliate disclosures, financial/medical safe harbors).
+  - Configured corporate identity under **Bare Bones 3D, L.L.C.** (DBA **OmniOperand**), North Carolina LLC.
+  - Linked compliance infrastructure site-wide across all 1,000+ localized page footers with Schema.org `AboutPage` and `WebPage` structured data.
+- [x] **GSC Striking-Distance & Click-Through Rate (CTR) Optimization**:
+  - Refined `<title>` and `<meta name="description">` tags on top-ranking and high-impression pages to maximize CTR from organic search queries:
+    - `/biotech/centrifuge-rcf-g-force/`: Targeted high-volume `rpm to rcf`, `g to rpm converter`, and `rcf to rpm calculator` queries (297 imp).
+    - `/finance/sepp-72t-distribution/`: Optimized for `72t sepp calculator`, `rule 72t ira`, and early withdrawal schedules (123 imp).
+    - `/health/pregnancy-due-date/`: Aligned with striking-distance query `omni gestational calculator` (Pos 5.3, 81 imp).
+    - `/health/mean-arterial-pressure/`: Tailored for systolic/diastolic blood pressure to MAP queries (Pos 6.0, 74 imp).
+    - `/biotech/pcr-primer-tm/`: Enhanced for `qpcr tm calculator` and Ta annealing calculations (Pos 3.0, 59 imp).
+    - `/finance/roas/`: Front-loaded `ROAS Calculator` for striking-distance query ranking at Pos 16.8.
+    - `/finance/reverse-mortgage/`: Highlighted `"No Personal Info Required"` to capture searchers seeking reverse mortgage calculators without lead-gen forms (Pos 74).
+    - `/construction/paint-coverage/`: Targeted exterior and interior gallon coverage per square foot queries (50 imp).
 - [x] **Automated Tooling & Test Suite**:
   - `scripts/test_site.py`: Automated testing suite passing with 34 mathematical precision tests, zero raw LaTeX compliance, i18n hreflang integrity, schema validation, and partitioned sitemap tests.
   - `scripts/generate_i18n.py`: Automated multilingual static compiler with native mathematical dictionaries.
@@ -276,4 +290,25 @@ To export all captured leads into a CSV file (`data/leads/exported-leads.csv`) f
 ```bash
 python3 scripts/export_pending_leads.py --csv
 ```
+
+---
+
+### Trust & Compliance Action Items (Owner Required)
+1. **Domain Email Setup (Cloudflare Free Email Routing)**:
+   - [x] **Active & Forwarding to `brandonpassmore@gmail.com`**:
+     - `contact@omnioperand.com` ➔ `brandonpassmore@gmail.com`
+     - `partners@omnioperand.com` ➔ `brandonpassmore@gmail.com`
+     - Catch-all `*@omnioperand.com` ➔ `brandonpassmore@gmail.com`
+     - DNS MX records (`isaac`, `linda`, `amir.mx.cloudflare.net`) and SPF TXT record active.
+
+2. **Legal Entity / Jurisdiction**:
+   - [x] Configured as **Bare Bones 3D, L.L.C.** (DBA **OmniOperand**), a North Carolina limited liability company. Updated across `/terms/`, `/privacy/`, `/about/`, and `/disclaimer/`.
+
+3. **Reapplying to Impact & Other Networks**:
+   - Wait until the site reaches ~3,000 to 5,000 monthly pageviews in Google Search Console.
+   - When reapplying to Impact, CJ Affiliate, or ShareASale:
+     - Apply using your `@omnioperand.com` email address.
+     - Direct reviewers to [https://omnioperand.com/about/](https://omnioperand.com/about/) and [https://omnioperand.com/privacy/](https://omnioperand.com/privacy/).
+     - Include a screenshot of your GSC performance graph showing healthy daily impression/click growth.
+
 

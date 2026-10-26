@@ -266,64 +266,49 @@
           <span class="llm-badge">Interactive Console</span>
           <h2 style="margin-top:0.4rem; font-size:1.45rem;">Live Edge API Playground</h2>
         </div>
-        <div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <span id="play-method-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-family:var(--font-mono); font-size:0.75rem; font-weight:700; padding:4px 8px; border-radius:4px; text-transform:uppercase; border:1px solid rgba(56,189,248,0.3);">GET</span>
           <button class="btn btn-primary btn-sm" id="send-request-btn">
-            <span>Execute GET Request ➔</span>
+            <span id="send-btn-label">Execute GET Request ➔</span>
           </button>
         </div>
       </div>
 
       <p style="color:var(--text-secondary); font-size:0.95rem; margin-bottom:1.5rem;">
-        Test live queries against the Cloudflare edge network directly in your browser. All parameters dynamically execute at the edge.
+        Test live queries against the Cloudflare edge network directly in your browser. Select any dedicated solver, statutory compliance engine, protocol endpoint, or universal solver from the catalog below.
       </p>
 
-      <!-- Playground Controls -->
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:1.25rem;">
-        <div>
-          <label for="play-endpoint" style="font-size:0.85rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:0.35rem;">Endpoint Route:</label>
-          <select id="play-endpoint" class="driver-dropdown" style="width:100%; padding:0.6rem; background:var(--bg-surface); border:1px solid var(--border-active); color:var(--text-primary); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.85rem;">
-            <option value="regular-polygon" selected>/api/v1/geometry/2d/shapes/regular-polygon</option>
-            <option value="octagon">/api/v1/geometry/2d/shapes/octagon</option>
-          </select>
-        </div>
-
-        <div id="play-n-group">
-          <label for="play-n" style="font-size:0.85rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:0.35rem;">Number of Sides (n):</label>
-          <input type="number" id="play-n" min="3" max="1000" value="8" style="width:100%; padding:0.6rem; background:var(--bg-surface); border:1px solid var(--border-active); color:var(--accent-cyan); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.9rem; font-weight:700;">
-        </div>
-
-        <div>
-          <label for="play-driver" style="font-size:0.85rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:0.35rem;">Known Driver Input:</label>
-          <select id="play-driver" class="driver-dropdown" style="width:100%; padding:0.6rem; background:var(--bg-surface); border:1px solid var(--border-active); color:var(--text-primary); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.85rem;">
-            <option value="side" selected>side (a)</option>
-            <option value="area">area (A)</option>
-            <option value="perimeter">perimeter (P)</option>
-            <option value="apothem">apothem / inradius (r_i)</option>
-            <option value="circumradius">circumradius (R)</option>
-            <option value="span">span (S)</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="play-value" style="font-size:0.85rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:0.35rem;">Input Value:</label>
-          <input type="number" id="play-value" step="any" value="10" style="width:100%; padding:0.6rem; background:var(--bg-surface); border:1px solid var(--border-active); color:var(--text-primary); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.9rem;">
-        </div>
-
-        <div>
-          <label for="play-prec" style="font-size:0.85rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:0.35rem;">Precision (Decimals):</label>
-          <input type="number" id="play-prec" min="2" max="14" value="8" style="width:100%; padding:0.6rem; background:var(--bg-surface); border:1px solid var(--border-active); color:var(--text-primary); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.9rem;">
-        </div>
+      <!-- Endpoint Selector -->
+      <div style="margin-bottom:1.25rem;">
+        <label for="play-endpoint" style="font-size:0.85rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:0.35rem;">API Endpoint Route:</label>
+        <select id="play-endpoint" class="driver-dropdown" style="width:100%; padding:0.65rem; background:var(--bg-surface); border:1px solid var(--border-active); color:var(--text-primary); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.875rem;">
+          <!-- Dynamically populated with optgroups -->
+        </select>
       </div>
 
-      <!-- Live Generated URL -->
+      <!-- Dynamic Playground Controls Container -->
+      <div id="play-params-container" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:1.25rem;">
+        <!-- Dynamically injected parameter inputs -->
+      </div>
+
+      <!-- Live Generated URL / Route Bar -->
       <div style="background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:0.65rem 1rem; margin-bottom:1rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; font-family:var(--font-mono); font-size:0.85rem; color:var(--accent-cyan); overflow-x:auto;">
-        <span id="play-url-preview">https://omnioperand.com/api/v1/geometry/2d/shapes/regular-polygon?n=8&driver=side&value=10&precision=8</span>
-        <button class="btn btn-secondary btn-sm" id="copy-url-btn" style="padding:0.25rem 0.6rem; font-size:0.75rem;">Copy URL</button>
+        <span id="play-url-preview">https://omnioperand.com/api/v1/geometry/2d/shapes/regular-polygon?n=8&amp;driver=side&amp;value=10&amp;precision=8</span>
+        <button class="btn btn-secondary btn-sm" id="copy-url-btn" style="padding:0.25rem 0.6rem; font-size:0.75rem; white-space:nowrap;">Copy URL</button>
+      </div>
+
+      <!-- POST Payload JSON Preview (shown when method is POST) -->
+      <div id="play-json-payload-group" style="display:none; margin-bottom:1rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
+          <label style="font-size:0.85rem; font-weight:700; color:var(--text-muted);">Request Payload (JSON Body):</label>
+          <span style="font-size:0.75rem; color:var(--accent-cyan); font-family:var(--font-mono);">application/json</span>
+        </div>
+        <textarea id="play-json-body" rows="4" style="width:100%; padding:0.6rem; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.82rem; color:var(--text-primary); resize:vertical;"></textarea>
       </div>
 
       <!-- Result Terminal Display -->
       <div style="position:relative;">
-        <pre class="llm-prompt-code" id="play-response-display" style="min-height:220px; max-height:400px; margin:0;">Click "Execute GET Request ➔" to fetch live JSON from Cloudflare Edge Network...</pre>
+        <pre class="llm-prompt-code" id="play-response-display" style="min-height:220px; max-height:420px; margin:0; line-height:1.45;">Click "Execute Request ➔" to fetch live JSON from Cloudflare Edge Network...</pre>
       </div>
 
       <div style="margin-top:0.75rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; font-size:0.8rem; color:var(--text-muted);">
@@ -421,11 +406,33 @@ curl https://omnioperand.com/api/v1/prompts</pre>
 
   <!-- Site Footer -->
   <footer class="site-footer">
-    <div class="container footer-bottom">
-      <div>© 2026 OmniOperand. All mathematical proofs and calculations rigorously verified.</div>
-      <div>Hosted on Cloudflare Edge Network • Built with Zero External Dependencies</div>
+  <div class="container footer-content" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem; padding:2rem 0; border-top:1px solid var(--border-subtle);">
+    <div class="footer-brand">
+      <div style="font-weight:700; color:var(--text-bright); margin-bottom:0.5rem;">OmniOperand</div>
+      <p style="font-size:0.8rem; color:var(--text-muted); max-width:320px; line-height:1.4;">
+        Deterministic computational engines, verified mathematical proofs, and programmatic APIs for technical professionals.
+      </p>
     </div>
-  </footer>
+    <div class="footer-links-grid" style="display:flex; gap:2.5rem; font-size:0.85rem;">
+      <div class="footer-col" style="display:flex; flex-direction:column; gap:0.4rem;">
+        <span style="font-weight:600; color:var(--text-primary); margin-bottom:4px;">Platform</span>
+        <a href="/about/" style="color:var(--text-secondary); text-decoration:none;">About &amp; Methodology</a>
+        <a href="/mcp/" style="color:var(--text-secondary); text-decoration:none;">MCP Server</a>
+        <a href="/api/" style="color:var(--text-secondary); text-decoration:none;">REST API</a>
+      </div>
+      <div class="footer-col" style="display:flex; flex-direction:column; gap:0.4rem;">
+        <span style="font-weight:600; color:var(--text-primary); margin-bottom:4px;">Legal &amp; Trust</span>
+        <a href="/privacy/" style="color:var(--text-secondary); text-decoration:none;">Privacy Policy</a>
+        <a href="/terms/" style="color:var(--text-secondary); text-decoration:none;">Terms of Service</a>
+        <a href="/disclaimer/" style="color:var(--text-secondary); text-decoration:none;">Affiliate Disclosure</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
+    <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
+    <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+  </div>
+</footer>
 
   <!-- Search Modal Overlay -->
   <div class="search-modal" id="search-modal">
@@ -440,61 +447,551 @@ curl https://omnioperand.com/api/v1/prompts</pre>
 
   <script src="/assets/js/omni-search.js?v=2.4"></script>
   <script>
-  // Interactive API Playground Logic
+  // Comprehensive Dynamic API Playground Engine
   (function() {
+    const ENDPOINTS = {
+      // 1. Dedicated Geometry Solvers
+      'geom-reg-polygon': {
+        name: '/api/v1/geometry/2d/shapes/regular-polygon',
+        display: 'Regular n-Gon (3-1000)',
+        category: 'Dedicated Geometry Solvers',
+        path: '/api/v1/geometry/2d/shapes/regular-polygon',
+        method: 'GET',
+        params: [
+          { id: 'n', label: 'Sides (n):', type: 'number', default: 8, min: 3, max: 1000 },
+          { id: 'driver', label: 'Driver Parameter:', type: 'select', options: ['side', 'area', 'perimeter', 'apothem', 'circumradius', 'span'], default: 'side' },
+          { id: 'value', label: 'Input Value:', type: 'number', default: 10, step: 'any' },
+          { id: 'precision', label: 'Precision (Decimals):', type: 'number', default: 8, min: 2, max: 14 }
+        ]
+      },
+      'geom-octagon': {
+        name: '/api/v1/geometry/2d/shapes/octagon',
+        display: 'Regular Octagon (8-Variable)',
+        category: 'Dedicated Geometry Solvers',
+        path: '/api/v1/geometry/2d/shapes/octagon',
+        method: 'GET',
+        params: [
+          { id: 'driver', label: 'Driver Parameter:', type: 'select', options: ['side', 'area', 'perimeter', 'apothem', 'circumradius', 'span', 'short_diagonal', 'long_diagonal'], default: 'side' },
+          { id: 'value', label: 'Input Value:', type: 'number', default: 10, step: 'any' },
+          { id: 'precision', label: 'Precision (Decimals):', type: 'number', default: 8, min: 2, max: 14 }
+        ]
+      },
+      'geom-right-triangle': {
+        name: '/api/v1/geometry/2d/right-triangle',
+        display: 'Right Triangle & Pythagorean',
+        category: 'Dedicated Geometry Solvers',
+        path: '/api/v1/geometry/2d/right-triangle',
+        method: 'GET',
+        params: [
+          { id: 'leg_a', label: 'Leg a:', type: 'number', default: 3, step: 'any' },
+          { id: 'leg_b', label: 'Leg b:', type: 'number', default: 4, step: 'any' }
+        ]
+      },
+      'geom-circle-sector': {
+        name: '/api/v1/geometry/2d/circle-sector',
+        display: 'Circle Sector & Segment',
+        category: 'Dedicated Geometry Solvers',
+        path: '/api/v1/geometry/2d/circle-sector',
+        method: 'GET',
+        params: [
+          { id: 'radius', label: 'Radius (r):', type: 'number', default: 10, step: 'any' },
+          { id: 'angle_deg', label: 'Central Angle (Deg):', type: 'number', default: 60, min: 0.1, max: 360 }
+        ]
+      },
+      'geom-roof-pitch': {
+        name: '/api/v1/geometry/2d/roof-pitch',
+        display: 'Roof Pitch & Rafter Length',
+        category: 'Dedicated Geometry Solvers',
+        path: '/api/v1/geometry/2d/roof-pitch',
+        method: 'GET',
+        params: [
+          { id: 'rise', label: 'Rise (Inches in 12):', type: 'number', default: 6, step: 'any' },
+          { id: 'run', label: 'Run (Base Inches):', type: 'number', default: 12, step: 'any' },
+          { id: 'building_run_feet', label: 'Building Run (Feet):', type: 'number', default: 16, step: 'any' }
+        ]
+      },
+      'geom-concrete': {
+        name: '/api/v1/geometry/3d/concrete-volume',
+        display: 'Concrete Volume & Bag Counts',
+        category: 'Dedicated Geometry Solvers',
+        path: '/api/v1/geometry/3d/concrete-volume',
+        method: 'GET',
+        params: [
+          { id: 'shape', label: 'Shape:', type: 'select', options: ['slab', 'footing', 'column', 'cylinder'], default: 'slab' },
+          { id: 'length', label: 'Length (Feet):', type: 'number', default: 20, step: 'any' },
+          { id: 'width', label: 'Width (Feet):', type: 'number', default: 10, step: 'any' },
+          { id: 'depth', label: 'Thickness / Depth (Inches):', type: 'number', default: 4, step: 'any' }
+        ]
+      },
+
+      // 2. Quantitative Finance Solvers
+      'fin-mortgage': {
+        name: '/api/v1/finance/mortgage',
+        display: 'Mortgage Amortization & P&I',
+        category: 'Quantitative Finance Solvers',
+        path: '/api/v1/finance/mortgage',
+        method: 'GET',
+        params: [
+          { id: 'principal', label: 'Principal Loan ($):', type: 'number', default: 400000, step: 5000 },
+          { id: 'annual_rate', label: 'Interest Rate (%):', type: 'number', default: 6.5, step: 0.125 },
+          { id: 'term_years', label: 'Loan Term (Years):', type: 'number', default: 30, min: 1, max: 50 },
+          { id: 'extra_monthly', label: 'Extra Principal / Mo ($):', type: 'number', default: 0, step: 50 }
+        ]
+      },
+      'fin-compound-interest': {
+        name: '/api/v1/finance/compound-interest',
+        display: 'Compound Interest & APY',
+        category: 'Quantitative Finance Solvers',
+        path: '/api/v1/finance/compound-interest',
+        method: 'GET',
+        params: [
+          { id: 'principal', label: 'Initial Deposit ($):', type: 'number', default: 10000, step: 500 },
+          { id: 'annual_rate', label: 'Annual Rate (%):', type: 'number', default: 7.0, step: 0.1 },
+          { id: 'years', label: 'Duration (Years):', type: 'number', default: 10, min: 1, max: 100 },
+          { id: 'monthly_contribution', label: 'Monthly Addition ($):', type: 'number', default: 500, step: 50 },
+          { id: 'compound_frequency', label: 'Compounding Frequency:', type: 'select', options: [
+            { label: 'Monthly (12x/yr)', value: '12' },
+            { label: 'Quarterly (4x/yr)', value: '4' },
+            { label: 'Semi-Annually (2x/yr)', value: '2' },
+            { label: 'Annually (1x/yr)', value: '1' },
+            { label: 'Daily (365x/yr)', value: '365' }
+          ], default: '12' }
+        ]
+      },
+      'fin-auto-loan': {
+        name: '/api/v1/finance/auto-loan',
+        display: 'Auto Loan Amortization',
+        category: 'Quantitative Finance Solvers',
+        path: '/api/v1/finance/auto-loan',
+        method: 'GET',
+        params: [
+          { id: 'vehicle_price', label: 'Vehicle Price ($):', type: 'number', default: 35000, step: 500 },
+          { id: 'down_payment', label: 'Down Payment ($):', type: 'number', default: 5000, step: 250 },
+          { id: 'trade_in', label: 'Trade-In Value ($):', type: 'number', default: 2000, step: 250 },
+          { id: 'interest_rate', label: 'Interest Rate (%):', type: 'number', default: 5.9, step: 0.1 },
+          { id: 'term_months', label: 'Term (Months):', type: 'number', default: 60, min: 12, max: 96 }
+        ]
+      },
+      'fin-cagr': {
+        name: '/api/v1/finance/cagr',
+        display: 'CAGR (Growth Rate)',
+        category: 'Quantitative Finance Solvers',
+        path: '/api/v1/finance/cagr',
+        method: 'GET',
+        params: [
+          { id: 'initial_value', label: 'Initial Value ($):', type: 'number', default: 10000, step: 500 },
+          { id: 'final_value', label: 'Final Value ($):', type: 'number', default: 25000, step: 500 },
+          { id: 'years', label: 'Duration (Years):', type: 'number', default: 5, step: 0.5 }
+        ]
+      },
+
+      // 3. Statutory & Engineering Compliance
+      'eng-hvac-manual-j': {
+        name: '/api/hvac-manual-j',
+        display: 'ACCA Manual J Heat Loss Sizing',
+        category: 'Statutory Engineering Engines',
+        path: '/api/hvac-manual-j',
+        method: 'POST',
+        params: [
+          { id: 'conditioned_sqft', label: 'Conditioned Area (Sq Ft):', type: 'number', default: 2400, step: 50 },
+          { id: 'ceiling_height_ft', label: 'Ceiling Height (Feet):', type: 'number', default: 9, step: 1 },
+          { id: 'insulation_grade', label: 'Insulation Grade:', type: 'select', options: [
+            { label: 'Standard IECC Modern (R-15 / R-38)', value: 'standard_iecc' },
+            { label: 'Historic Uninsulated (R-7 / R-11)', value: 'historic_uninsulated' },
+            { label: 'High-Performance Spray Foam (R-24 / R-49)', value: 'high_performance_sprayfoam' }
+          ], default: 'standard_iecc' },
+          { id: 'winter_design_temp_f', label: '99% Winter Temp (°F):', type: 'number', default: 14, step: 1 },
+          { id: 'window_sqft', label: 'Window Area (Sq Ft):', type: 'number', default: 280, step: 10 }
+        ]
+      },
+      'eng-nec-load': {
+        name: '/api/nec-load',
+        display: 'NEC 220 Residential Service Load',
+        category: 'Statutory Engineering Engines',
+        path: '/api/nec-load',
+        method: 'POST',
+        params: [
+          { id: 'sqft', label: 'Living Area (Sq Ft):', type: 'number', default: 2600, step: 50 },
+          { id: 'small_appliance_circuits', label: 'Small Appliance Circuits:', type: 'number', default: 3, min: 2, max: 10 },
+          { id: 'laundry_circuits', label: 'Laundry Circuits:', type: 'number', default: 1, min: 1, max: 5 },
+          { id: 'range_va', label: 'Electric Range (VA):', type: 'number', default: 12000, step: 500 },
+          { id: 'dryer_va', label: 'Dryer (VA):', type: 'number', default: 5000, step: 500 },
+          { id: 'water_heater_va', label: 'Water Heater (VA):', type: 'number', default: 4500, step: 500 },
+          { id: 'ev_charger_va', label: 'EV Charger Nameplate (VA):', type: 'number', default: 9600, step: 800 },
+          { id: 'hvac_kw', label: 'Heat Pump Compressor (kW):', type: 'number', default: 5.5, step: 0.5 },
+          { id: 'aux_heat_kw', label: 'Aux Heat Strip (kW):', type: 'number', default: 10, step: 5 }
+        ]
+      },
+      'eng-feasibility': {
+        name: '/api/feasibility',
+        display: 'Civil Site Feasibility & Zoning',
+        category: 'Statutory Engineering Engines',
+        path: '/api/feasibility',
+        method: 'POST',
+        params: [
+          { id: 'lot_sqft', label: 'Parcel Area (Sq Ft):', type: 'number', default: 43560, step: 1000 },
+          { id: 'slope_pct', label: 'Natural Slope (%):', type: 'number', default: 18, min: 0, max: 70 },
+          { id: 'proposed_footprint_sqft', label: 'Footprint (Sq Ft):', type: 'number', default: 3200, step: 100 },
+          { id: 'soil_class', label: 'Soil Class:', type: 'select', options: ['Class B (Granular)', 'Class C (Sandy Silt)', 'Class D (Clay)'], default: 'Class D (Clay)' }
+        ]
+      },
+      'eng-restoration-scope': {
+        name: '/api/restoration-scope',
+        display: 'Disaster Restoration Scope (IICRC)',
+        category: 'Statutory Engineering Engines',
+        path: '/api/restoration-scope',
+        method: 'POST',
+        params: [
+          { id: 'affected_sqft', label: 'Affected Flood Area (Sq Ft):', type: 'number', default: 1200, step: 50 },
+          { id: 'ceiling_height', label: 'Ceiling Height (Feet):', type: 'number', default: 8, step: 1 },
+          { id: 'water_category', label: 'Water Category:', type: 'select', options: [
+            { label: 'Category 1: Clean Water', value: 'cat1' },
+            { label: 'Category 2: Grey Water', value: 'cat2' },
+            { label: 'Category 3: Black Water', value: 'cat3' }
+          ], default: 'cat3' }
+        ]
+      },
+      'eng-clinical-triage': {
+        name: '/api/clinical-triage',
+        display: 'Clinical Psychiatric Triage',
+        category: 'Statutory Engineering Engines',
+        path: '/api/clinical-triage',
+        method: 'POST',
+        params: [
+          { id: 'phq9_score', label: 'PHQ-9 Depression Score (0-27):', type: 'number', default: 14, min: 0, max: 27 },
+          { id: 'gad7_score', label: 'GAD-7 Anxiety Score (0-21):', type: 'number', default: 11, min: 0, max: 21 },
+          { id: 'cssrs_screener', label: 'C-SSRS Risk Profile:', type: 'select', options: [
+            { label: 'Low Risk (No Ideation)', value: 'none' },
+            { label: 'Moderate Risk (Passive Ideation)', value: 'passive' },
+            { label: 'High Risk (Active Intent)', value: 'active_intent' }
+          ], default: 'none' }
+        ]
+      },
+
+      // 4. Platform & AI Agent Protocols
+      'sys-prompts': {
+        name: '/api/v1/prompts',
+        display: 'AI Agent Prompt Directives',
+        category: 'Platform & Agent Protocols',
+        path: '/api/v1/prompts',
+        method: 'GET',
+        params: []
+      },
+      'sys-mcp': {
+        name: '/api/v1/mcp',
+        display: 'MCP Server Capabilities & Handshake',
+        category: 'Platform & Agent Protocols',
+        path: '/api/v1/mcp',
+        method: 'GET',
+        params: []
+      },
+      'sys-solve-dir': {
+        name: '/api/v1/solve',
+        display: 'Universal Solvers Index (428 Solvers)',
+        category: 'Platform & Agent Protocols',
+        path: '/api/v1/solve',
+        method: 'GET',
+        params: []
+      },
+      'sys-usage': {
+        name: '/api/v1/usage',
+        display: 'Edge Rate Limits & Quotas',
+        category: 'Platform & Agent Protocols',
+        path: '/api/v1/usage',
+        method: 'GET',
+        params: []
+      },
+      'sys-keys': {
+        name: '/api/v1/auth/keys',
+        display: 'Instant API Key Provisioning',
+        category: 'Platform & Agent Protocols',
+        path: '/api/v1/auth/keys',
+        method: 'POST',
+        params: [
+          { id: 'tier', label: 'Key Tier:', type: 'select', options: ['free', 'pro', 'enterprise'], default: 'free' },
+          { id: 'name', label: 'Agent Identifier:', type: 'text', default: 'Omni Agent Demo Key' }
+        ]
+      },
+      'sys-openapi': {
+        name: '/api/v1/openapi.json',
+        display: 'OpenAPI 3.1.0 Specification',
+        category: 'Platform & Agent Protocols',
+        path: '/api/v1/openapi.json',
+        method: 'GET',
+        params: []
+      },
+
+      // 5. Universal Domain Solvers
+      'uni-calc-integrals': {
+        name: '/api/v1/solve/calculus/integrals',
+        display: 'Calculus: Definite & Indefinite Integrals',
+        category: 'Universal Solvers Catalog (428 Solvers)',
+        path: '/api/v1/solve/calculus/integrals',
+        method: 'GET',
+        params: []
+      },
+      'uni-calc-derivatives': {
+        name: '/api/v1/solve/calculus/derivatives',
+        display: 'Calculus: Polynomial Derivatives',
+        category: 'Universal Solvers Catalog (428 Solvers)',
+        path: '/api/v1/solve/calculus/derivatives',
+        method: 'GET',
+        params: []
+      },
+      'uni-phys-kinetic': {
+        name: '/api/v1/solve/physics/kinetic-energy',
+        display: 'Physics: Kinetic Energy & Velocity',
+        category: 'Universal Solvers Catalog (428 Solvers)',
+        path: '/api/v1/solve/physics/kinetic-energy',
+        method: 'GET',
+        params: []
+      },
+      'uni-phys-ohms-law': {
+        name: '/api/v1/solve/physics/ohms-law',
+        display: 'Physics: Ohm\'s Law (V, I, R, P)',
+        category: 'Universal Solvers Catalog (428 Solvers)',
+        path: '/api/v1/solve/physics/ohms-law',
+        method: 'GET',
+        params: []
+      },
+      'uni-stat-bayes': {
+        name: '/api/v1/solve/statistics/bayes-theorem',
+        display: 'Statistics: Bayes\' Theorem',
+        category: 'Universal Solvers Catalog (428 Solvers)',
+        path: '/api/v1/solve/statistics/bayes-theorem',
+        method: 'GET',
+        params: []
+      },
+      'uni-const-rebar': {
+        name: '/api/v1/solve/construction/rebar-grid-spacing',
+        display: 'Construction: Rebar Grid & Spacing',
+        category: 'Universal Solvers Catalog (428 Solvers)',
+        path: '/api/v1/solve/construction/rebar-grid-spacing',
+        method: 'GET',
+        params: []
+      },
+      'uni-energy-solar': {
+        name: '/api/v1/solve/energy/solar-panel-sizing',
+        display: 'Energy: Solar Panel System Sizing',
+        category: 'Universal Solvers Catalog (428 Solvers)',
+        path: '/api/v1/solve/energy/solar-panel-sizing',
+        method: 'GET',
+        params: []
+      }
+    };
+
     const endpointSelect = document.getElementById('play-endpoint');
-    const nInput = document.getElementById('play-n');
-    const nGroup = document.getElementById('play-n-group');
-    const driverSelect = document.getElementById('play-driver');
-    const valInput = document.getElementById('play-value');
-    const precInput = document.getElementById('play-prec');
+    const paramsContainer = document.getElementById('play-params-container');
     const urlPreview = document.getElementById('play-url-preview');
+    const methodBadge = document.getElementById('play-method-badge');
+    const sendBtn = document.getElementById('send-request-btn');
+    const sendBtnLabel = document.getElementById('send-btn-label');
+    const jsonPayloadGroup = document.getElementById('play-json-payload-group');
+    const jsonBodyInput = document.getElementById('play-json-body');
     const responseDisplay = document.getElementById('play-response-display');
     const latencyDisplay = document.getElementById('play-latency-display');
-    const sendBtn = document.getElementById('send-request-btn');
     const copyUrlBtn = document.getElementById('copy-url-btn');
     const copyResponseBtn = document.getElementById('copy-response-btn');
 
-    function updateUrl() {
-      const ep = endpointSelect.value;
-      const params = new URLSearchParams();
-      if (ep === 'regular-polygon') {
-        params.set('n', nInput.value || '8');
-        nGroup.style.display = 'block';
-      } else {
-        nGroup.style.display = 'none';
-      }
-      params.set('driver', driverSelect.value);
-      params.set('value', valInput.value || '10');
-      params.set('precision', precInput.value || '8');
-
-      const fullUrl = `${window.location.origin}/api/v1/geometry/2d/shapes/${ep}?${params.toString()}`;
-      urlPreview.textContent = fullUrl;
-      return fullUrl;
+    // Populate grouped options in endpoint select
+    const categories = {};
+    for (const [key, conf] of Object.entries(ENDPOINTS)) {
+      if (!categories[conf.category]) categories[conf.category] = [];
+      categories[conf.category].push({ key, conf });
     }
 
-    [endpointSelect, nInput, driverSelect, valInput, precInput].forEach(el => {
-      el.addEventListener('input', updateUrl);
-      el.addEventListener('change', updateUrl);
-    });
+    endpointSelect.innerHTML = '';
+    for (const [catName, items] of Object.entries(categories)) {
+      const optGroup = document.createElement('optgroup');
+      optGroup.label = catName;
+      for (const item of items) {
+        const opt = document.createElement('option');
+        opt.value = item.key;
+        opt.textContent = `${item.conf.method} ${item.conf.path} — ${item.conf.display}`;
+        optGroup.appendChild(opt);
+      }
+      endpointSelect.appendChild(optGroup);
+    }
+
+    // Render parameters based on selected endpoint
+    function renderParams() {
+      const selectedKey = endpointSelect.value || 'geom-reg-polygon';
+      const conf = ENDPOINTS[selectedKey];
+      if (!conf) return;
+
+      // Update Method badge & button text
+      methodBadge.textContent = conf.method;
+      if (conf.method === 'POST') {
+        methodBadge.style.background = 'rgba(16,185,129,0.15)';
+        methodBadge.style.color = 'var(--accent-emerald)';
+        methodBadge.style.borderColor = 'rgba(16,185,129,0.3)';
+        sendBtnLabel.textContent = 'Execute POST Request ➔';
+        jsonPayloadGroup.style.display = 'block';
+      } else {
+        methodBadge.style.background = 'rgba(56,189,248,0.15)';
+        methodBadge.style.color = 'var(--accent-cyan)';
+        methodBadge.style.borderColor = 'rgba(56,189,248,0.3)';
+        sendBtnLabel.textContent = 'Execute GET Request ➔';
+        jsonPayloadGroup.style.display = 'none';
+      }
+
+      paramsContainer.innerHTML = '';
+
+      if (!conf.params || conf.params.length === 0) {
+        const noParamNotice = document.createElement('div');
+        noParamNotice.style.gridColumn = '1 / -1';
+        noParamNotice.style.fontSize = '0.85rem';
+        noParamNotice.style.color = 'var(--text-muted)';
+        noParamNotice.style.padding = '0.5rem 0';
+        noParamNotice.textContent = 'No input parameters required for this endpoint. Click execute to fetch live metadata from the edge.';
+        paramsContainer.appendChild(noParamNotice);
+      } else {
+        for (const p of conf.params) {
+          const wrapper = document.createElement('div');
+
+          const label = document.createElement('label');
+          label.htmlFor = `play-param-${p.id}`;
+          label.style.fontSize = '0.85rem';
+          label.style.fontWeight = '700';
+          label.style.color = 'var(--text-muted)';
+          label.style.display = 'block';
+          label.style.marginBottom = '0.35rem';
+          label.textContent = p.label;
+          wrapper.appendChild(label);
+
+          if (p.type === 'select') {
+            const sel = document.createElement('select');
+            sel.id = `play-param-${p.id}`;
+            sel.dataset.id = p.id;
+            sel.className = 'play-input-field';
+            sel.style.width = '100%';
+            sel.style.padding = '0.6rem';
+            sel.style.background = 'var(--bg-surface)';
+            sel.style.border = '1px solid var(--border-active)';
+            sel.style.color = 'var(--text-primary)';
+            sel.style.borderRadius = 'var(--radius-sm)';
+            sel.style.fontFamily = 'var(--font-mono)';
+            sel.style.fontSize = '0.85rem';
+
+            for (const opt of p.options) {
+              const optEl = document.createElement('option');
+              if (typeof opt === 'object') {
+                optEl.value = opt.value;
+                optEl.textContent = opt.label;
+              } else {
+                optEl.value = opt;
+                optEl.textContent = opt;
+              }
+              if (optEl.value === String(p.default)) optEl.selected = true;
+              sel.appendChild(optEl);
+            }
+            sel.addEventListener('change', updateRequestPreview);
+            wrapper.appendChild(sel);
+          } else {
+            const inp = document.createElement('input');
+            inp.type = p.type || 'text';
+            inp.id = `play-param-${p.id}`;
+            inp.dataset.id = p.id;
+            inp.className = 'play-input-field';
+            inp.value = p.default ?? '';
+            if (p.min !== undefined) inp.min = p.min;
+            if (p.max !== undefined) inp.max = p.max;
+            if (p.step !== undefined) inp.step = p.step;
+            inp.style.width = '100%';
+            inp.style.padding = '0.6rem';
+            inp.style.background = 'var(--bg-surface)';
+            inp.style.border = '1px solid var(--border-active)';
+            inp.style.color = 'var(--text-primary)';
+            inp.style.borderRadius = 'var(--radius-sm)';
+            inp.style.fontFamily = 'var(--font-mono)';
+            inp.style.fontSize = '0.85rem';
+            inp.addEventListener('input', updateRequestPreview);
+            inp.addEventListener('change', updateRequestPreview);
+            wrapper.appendChild(inp);
+          }
+
+          paramsContainer.appendChild(wrapper);
+        }
+      }
+
+      updateRequestPreview();
+    }
+
+    function collectParams() {
+      const inputs = paramsContainer.querySelectorAll('.play-input-field');
+      const data = {};
+      inputs.forEach(el => {
+        const id = el.dataset.id;
+        const val = el.value.trim();
+        if (val !== '') {
+          data[id] = el.type === 'number' ? (parseFloat(val) || val) : val;
+        }
+      });
+      return data;
+    }
+
+    function updateRequestPreview() {
+      const selectedKey = endpointSelect.value || 'geom-reg-polygon';
+      const conf = ENDPOINTS[selectedKey];
+      if (!conf) return;
+
+      const params = collectParams();
+      const origin = window.location.origin;
+
+      if (conf.method === 'GET') {
+        const search = new URLSearchParams();
+        for (const [k, v] of Object.entries(params)) {
+          search.set(k, v);
+        }
+        const qs = search.toString();
+        const fullUrl = `${origin}${conf.path}${qs ? '?' + qs : ''}`;
+        urlPreview.textContent = fullUrl;
+      } else {
+        urlPreview.textContent = `${origin}${conf.path}`;
+        jsonBodyInput.value = JSON.stringify(params, null, 2);
+      }
+    }
+
+    endpointSelect.addEventListener('change', renderParams);
 
     async function executeRequest() {
-      const url = updateUrl();
-      responseDisplay.textContent = 'Executing request across Cloudflare edge network...';
+      const selectedKey = endpointSelect.value || 'geom-reg-polygon';
+      const conf = ENDPOINTS[selectedKey];
+      if (!conf) return;
+
+      updateRequestPreview();
+      const origin = window.location.origin;
+      const url = urlPreview.textContent;
+
+      responseDisplay.textContent = `Executing ${conf.method} request across Cloudflare edge network isolates...`;
       sendBtn.disabled = true;
       const t0 = performance.now();
 
       try {
-        const res = await fetch(url);
+        const opts = { method: conf.method };
+        if (conf.method === 'POST') {
+          opts.headers = {
+            'Content-Type': 'application/json; charset=utf-8'
+          };
+          opts.body = jsonBodyInput.value || '{}';
+        }
+
+        const res = await fetch(url, opts);
         const t1 = performance.now();
         const duration = Math.round(t1 - t0);
-        latencyDisplay.textContent = `Latency: ${duration} ms • Status: ${res.status} ${res.statusText}`;
+
+        latencyDisplay.textContent = `Latency: ${duration} ms • Status: ${res.status} ${res.statusText} • Edge: Cloudflare V8`;
 
         const data = await res.json();
         responseDisplay.textContent = JSON.stringify(data, null, 2);
       } catch (err) {
-        latencyDisplay.textContent = 'Error: Failed to connect';
-        responseDisplay.textContent = `Error: ${err.message}`;
+        latencyDisplay.textContent = 'Status: Network/Client Error';
+        responseDisplay.textContent = JSON.stringify({
+          error: true,
+          message: err.message,
+          endpoint: conf.path,
+          method: conf.method
+        }, null, 2);
       } finally {
         sendBtn.disabled = false;
       }
@@ -516,7 +1013,8 @@ curl https://omnioperand.com/api/v1/prompts</pre>
       });
     });
 
-    updateUrl();
+    // Initialize with first endpoint
+    renderParams();
   })();
   </script>
 </body>
