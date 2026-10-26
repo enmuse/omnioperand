@@ -83,15 +83,23 @@ def main():
         print(f"⚠️  Google Sheet Status: {err}\n")
     else:
         print(f"✅ Google Sheet Status: Accessible")
-        if len(rows) <= 1:
-            print("   Rows recorded: 0 leads (sheet is initialized or has headers only)\n")
+        if not rows:
+            print("   Rows recorded: 0 leads (sheet is empty)\n")
         else:
-            headers = rows[0]
-            leads = rows[1:]
+            first_cell = rows[0][0].strip().lower() if rows[0] else ""
+            has_header = first_cell in ("lead id", "id", "timestamp", "date", "lead_id")
+            leads = rows[1:] if has_header else rows
+            
             print(f"   Total Recorded Leads in Sheet: {len(leads)}\n")
-            print("   Recent 5 Leads in Google Sheet:")
+            print("   Recent Leads in Google Sheet:")
             for idx, r in enumerate(leads[-5:], 1):
-                print(f"   [{idx}] " + " | ".join(r[:6]))
+                # Try to extract key fields
+                lid = r[0] if len(r) > 0 else "N/A"
+                name = r[2] if len(r) > 2 else (r[1] if len(r) > 1 else "")
+                email = r[3] if len(r) > 3 else ""
+                phone = r[4] if len(r) > 4 else ""
+                val = r[8] if len(r) > 8 else ""
+                print(f"   [{idx}] ID: {lid} | Name: {name} | Contact: {email} / {phone} | Property: {val}")
             print()
 
     local = inspect_local_leads()
