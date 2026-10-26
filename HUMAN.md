@@ -98,6 +98,13 @@
     - `finance/incremental-borrowing-rate-lease`: ASC 842 / IFRS 16 lease liability discount rate
     - `physics/circumferential-surface-speed`: Machining surface feet per minute (SFM) and RPM
     - `engineering/hydraulic-cylinder-flow`: Push/pull force, rod velocity, and pump flow GPM
+- [x] **5 High-Intent GSC Gap Calculators Added (Batch 3)**:
+  - Discovered 5 specific query clusters in live Google Search Console where searchers sought granular estimators:
+    - `construction/polymeric-sand`: Polymeric sand 50-lb bags, joint void volume, and 1-inch ASTM C33 bedding sand base (ICPI Tech Spec 9).
+    - `construction/rafter-birdsmouth-cut`: Common rafter line length, birdsmouth seat cut, plumb cut angle, and IRC R802.4.1 1/3 depth safety limits.
+    - `construction/gutter-downspout-sizing`: Peak runoff flow rate (GPM), SMACNA pitch adjustment, 5"/6" K-style vs half-round gutter sizing, and IPC Chapter 11 downspout capacity.
+    - `engineering/three-phase-transformer-kva`: 3-phase apparent power (kVA), primary/secondary full-load amperes (FLA), standard commercial NEMA ratings, and heat dissipation.
+    - `finance/crypto-tax-hifo`: Cryptocurrency capital gains tax comparison (HIFO vs FIFO vs LIFO), specific identification cost basis, and immediate tax savings under IRS Notice 2014-21 and Rev. Rul. 2019-24.
 - [x] **Universal Embed Modal & Iframe Security Architecture Fixed**:
   - Fixed root cause of embed modal failures: resolved `X-Frame-Options: SAMEORIGIN` block in `_headers` by designating `/embed/*` with `X-Frame-Options: ALLOWALL` and `Content-Security-Policy: frame-ancestors *`.
   - Upgraded `assets/js/embed-modal.js` and `assets/js/omni-search.js` with responsive modal controller and iframe links pointing to `https://omnioperand.com/embed/{slug}/`.
