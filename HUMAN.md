@@ -137,7 +137,7 @@
 │  2. Review Initial Live Deployment on Cloudflare (~1 min)    │
 │  3. Sign Up for Affiliate Networks (~45-60 mins)             │
 │  4. Dedicated Stripe Profile for OmniOperand (~2 mins) [Done]│
-│  5. Connect Lead Webhook (Zapier/Make/Phonexa) (~2 mins)     │
+│  5. Connect Lead Webhook (Make.com) (~2 mins) [Done]         │
 │  6. Send Halal Lender Outreach Emails (~10 mins)             │
 └──────────────────────────────────────────────────────────────┘
 ```
@@ -222,6 +222,7 @@ Add your webhook endpoint (from Zapier, Make, LeadExec, or Phonexa) to `.env` an
 LEAD_WEBHOOK_URL="https://hooks.zapier.com/hooks/catch/XXXXXX/YYYYYY/"
 ```
 Whenever a prospective homebuyer completes the pre-qualification drawer, the payload is immediately dispatched to this webhook with property price, down payment, monthly budget, contact details, and TCPA consent verification.
+Completed 10/26/26 via Make.com webhook (`https://hook.us2.make.com/...`). Configured in `.env` and Cloudflare Pages production environment.
 
 #### B. Partner Outreach & Affiliate Agreement Templates
 Copy and send the following pre-written emails to partner desks to establish Cost-Per-Lead (CPL: typically $75–$250 per verified inquiry) or monthly sponsorship arrangements:
