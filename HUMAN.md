@@ -303,11 +303,13 @@ python3 scripts/export_pending_leads.py --csv
 
 ### Trust & Compliance Action Items (Owner Required)
 1. **Domain Email Setup (Cloudflare Free Email Routing)**:
-   - [x] **Active & Forwarding to `brandonpassmore@gmail.com`**:
-     - `contact@omnioperand.com` ➔ `brandonpassmore@gmail.com`
-     - `partners@omnioperand.com` ➔ `brandonpassmore@gmail.com`
-     - Catch-all `*@omnioperand.com` ➔ `brandonpassmore@gmail.com`
-     - DNS MX records (`isaac`, `linda`, `amir.mx.cloudflare.net`) and SPF TXT record active.
+   - [x] **Configured for Dedicated Inbox `omnioperand@gmail.com`**:
+     - `brandon@omnioperand.com` ➔ `omnioperand@gmail.com`
+     - `contact@omnioperand.com` ➔ `omnioperand@gmail.com`
+     - DNS MX records active: `route1.mx.cloudflare.net` (92), `route2.mx.cloudflare.net` (55), `route3.mx.cloudflare.net` (39).
+     - SPF TXT record active: `v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all`
+     - DMARC TXT record active: `v=DMARC1; p=none; sp=none; aspf=r;`
+   - [ ] **Pending Action**: Click Cloudflare verification link in `omnioperand@gmail.com` inbox, then run `python3 scripts/apply_email_rules.py`.
 
 2. **Legal Entity / Jurisdiction**:
    - [x] Configured as **Bare Bones 3D, L.L.C.** (DBA **OmniOperand**), a North Carolina limited liability company. Updated across `/terms/`, `/privacy/`, `/about/`, and `/disclaimer/`.
@@ -318,5 +320,45 @@ python3 scripts/export_pending_leads.py --csv
      - Apply using your `@omnioperand.com` email address.
      - Direct reviewers to [https://omnioperand.com/about/](https://omnioperand.com/about/) and [https://omnioperand.com/privacy/](https://omnioperand.com/privacy/).
      - Include a screenshot of your GSC performance graph showing healthy daily impression/click growth.
+
+---
+
+## Email Routing & Outbound SMTP Setup (Action Required)
+
+### 1. Verify Cloudflare Destination Email
+- Check the inbox for `omnioperand@gmail.com`.
+- Find the verification email from **Cloudflare** and click the link to authorize `omnioperand@gmail.com` as a verified destination.
+- Once verified, run:
+  ```bash
+  python3 scripts/apply_email_rules.py
+  ```
+  *(This automatically creates/updates `brandon@omnioperand.com` and `contact@omnioperand.com` to forward to `omnioperand@gmail.com`).*
+
+### 2. Generate a Google 16-Character App Password
+1. Log into your Google Account for `omnioperand@gmail.com` at [https://myaccount.google.com/security](https://myaccount.google.com/security).
+2. Confirm **2-Step Verification** is turned ON.
+3. In the search bar at the top, type `App passwords` and select it.
+4. Name the app: `OmniOperand Domain SMTP` and click **Create**.
+5. Copy the generated **16-character password**.
+
+### 3. Add `brandon@omnioperand.com` to Gmail ("Send Mail As")
+1. Open Gmail (`omnioperand@gmail.com`) -> Click **Settings (⚙️)** -> **See all settings**.
+2. Go to the **Accounts and Import** tab.
+3. Under **Send mail as:**, click **Add another email address**.
+4. In the pop-up window:
+   - Name: `Brandon | OmniOperand`
+   - Email address: `brandon@omnioperand.com`
+   - Check **Treat as an alias** -> Click **Next Step**.
+5. Configure SMTP credentials:
+   - SMTP Server: `smtp.gmail.com`
+   - Port: `587`
+   - Username: `omnioperand@gmail.com`
+   - Password: `[Paste your 16-character App Password here]`
+   - Select: **Secured connection using TLS**
+   - Click **Add Account**.
+6. Gmail will send a confirmation code to `brandon@omnioperand.com`.
+   - Because Cloudflare routing is active, this confirmation email will arrive inside your `omnioperand@gmail.com` inbox within seconds.
+   - Copy the code, enter it into the verification box, and confirm.
+7. Under **When replying to a message**, select **Reply from the same address the message was sent to**.
 
 

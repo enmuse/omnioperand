@@ -1,18 +1,15 @@
 #!/usr/bin/env python3
 """
-scripts/setup_email_routing.py — Cloudflare Free Email Routing Automator for OmniOperand
-Configures incoming email forwarding from:
-  - contact@omnioperand.com -> brandonpassmore@gmail.com
-  - partners@omnioperand.com -> brandonpassmore@gmail.com
-  - catch-all (*@omnioperand.com) -> brandonpassmore@gmail.com
-
-Cloudflare Email Routing is 100% free.
+scripts/setup_email_routing.py
+Automates Cloudflare Email Routing, SPF, DMARC, and MX records for omnioperand.com.
+Target destination: omnioperand@gmail.com
+Inbound aliases: brandon@omnioperand.com, contact@omnioperand.com
+Outbound authorization: Cloudflare + Google SMTP (include:_spf.google.com)
 """
 
 import os
 import sys
 import json
-import ssl
 import urllib.request
 import urllib.error
 from pathlib import Path
@@ -20,222 +17,290 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 ENV_FILE = REPO_ROOT / ".env"
 
-DESTINATION_EMAIL = "brandonpassmore@gmail.com"
-DOMAIN = "omnioperand.com"
-
 def load_env():
-    env = {}
+    env_vars = {}
     if ENV_FILE.exists():
         with open(ENV_FILE, "r", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if line and not line.startswith("#") and "=" in line:
                     k, v = line.split("=", 1)
-                    env[k.strip()] = v.strip().strip('"').strip("'")
-    return env
+                    env_vars[k.strip()] = v.strip().strip('"').strip("'")
+    return env_vars
 
-def make_request(url, method="GET", data=None, token=""):
-    ctx = ssl.create_default_context()
-    ctx.check_hostname = False
-    ctx.verify_mode = ssl.CERT_NONE
+env = load_env()
+TOKEN = env.get("CLOUD_FLARE_API_TOKEN") or env.get("CLOUD_FLARE_PAGES_API_TOKEN")
+ACCOUNT_ID = env.get("CLOUDFLARE_ACCOUNT_ID", "2bbe914ca4d82460c51d668407bb3dbd")
+ZONE_ID = env.get("CLOUDFLARE_ZONE_ID", "3c5297e2d6de7e4e858fd2679201e85d")
 
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Content-Type": "application/json"
-    }
-    payload = json.dumps(data).encode("utf-8") if data else None
-    req = urllib.request.Request(url, data=payload, headers=headers, method=method)
-    
+if not TOKEN:
+    print("❌ Error: No Cloudflare API token found in .env")
+    sys.exit(1)
+
+HEADERS = {
+    "Authorization": f"Bearer {TOKEN}",
+    "Content-Type": "application/json"
+}
+
+def cf_api(endpoint, method="GET", data=None):
+    url = f"https://api.cloudflare.com/client/v4{endpoint}"
+    req_data = json.dumps(data).encode("utf-8") if data is not None else None
+    req = urllib.request.Request(url, data=req_data, headers=HEADERS, method=method)
     try:
-        with urllib.request.urlopen(req, context=ctx, timeout=10) as resp:
-            return json.loads(resp.read().decode("utf-8")), None
+        with urllib.request.urlopen(req) as resp:
+            return json.loads(resp.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
-        err_body = e.read().decode("utf-8")
+        error_body = e.read().decode("utf-8")
         try:
-            return None, json.loads(err_body)
+            return json.loads(error_body)
         except Exception:
-            return None, {"error": err_body, "status": e.code}
+            return {"success": False, "status_code": e.code, "error": error_body}
     except Exception as e:
-        return None, {"error": str(e)}
-
-def ensure_dns_records(zone_id, token):
-    print("1. Verifying DNS MX and SPF records on omnioperand.com...")
-    dns_url = f"https://api.cloudflare.com/client/v4/zones/{zone_id}/dns_records"
-    res, err = make_request(dns_url, method="GET", token=token)
-    if err:
-        print(f"  ⚠️ Could not query DNS records: {err}")
-        return False
-    
-    existing = res.get("result", [])
-    existing_mx = [r["content"].lower() for r in existing if r["type"] == "MX"]
-    existing_spf = [r["content"] for r in existing if r["type"] == "TXT" and "spf" in r["content"].lower()]
-
-    needed_mx = [
-        ("isaac.mx.cloudflare.net", 11),
-        ("linda.mx.cloudflare.net", 9),
-        ("amir.mx.cloudflare.net", 73)
-    ]
-
-    for server, prio in needed_mx:
-        if server.lower() not in existing_mx:
-            payload = {
-                "type": "MX",
-                "name": DOMAIN,
-                "content": server,
-                "priority": prio,
-                "ttl": 1
-            }
-            res_mx, err_mx = make_request(dns_url, method="POST", data=payload, token=token)
-            if not err_mx:
-                print(f"  ✅ Added MX record: {server} (priority {prio})")
-            else:
-                print(f"  ⚠️ Could not add MX {server}: {err_mx}")
-        else:
-            print(f"  ✅ MX record active: {server} (priority {prio})")
-
-    if not existing_spf:
-        payload = {
-            "type": "TXT",
-            "name": DOMAIN,
-            "content": "v=spf1 include:_spf.mx.cloudflare.net ~all",
-            "ttl": 1
-        }
-        res_spf, err_spf = make_request(dns_url, method="POST", data=payload, token=token)
-        if not err_spf:
-            print("  ✅ Added SPF TXT record.")
-        else:
-            print(f"  ⚠️ Could not add SPF TXT record: {err_spf}")
-    else:
-        print("  ✅ SPF TXT record active.")
-    return True
-
-def check_destination_verification(account_id, token):
-    dest_url = f"https://api.cloudflare.com/client/v4/accounts/{account_id}/email/routing/addresses"
-    res, err = make_request(dest_url, method="GET", token=token)
-    if err:
-        print(f"  ⚠️ Could not check destination addresses: {err}")
-        return False
-    for addr in res.get("result", []):
-        if addr.get("email") == DESTINATION_EMAIL:
-            verified = addr.get("verified")
-            if verified:
-                return True
-            return False
-    return False
-
-def add_destination(account_id, token):
-    dest_url = f"https://api.cloudflare.com/client/v4/accounts/{account_id}/email/routing/addresses"
-    res, err = make_request(dest_url, method="POST", data={"email": DESTINATION_EMAIL}, token=token)
-    if err:
-        if "already exists" in str(err):
-            print(f"  ℹ️ {DESTINATION_EMAIL} is registered in Account.")
-        else:
-            print(f"  ⚠️ Destination registration notice: {err}")
-    else:
-        print(f"  ✅ Registered {DESTINATION_EMAIL} with Cloudflare.")
-
-def configure_rules(zone_id, token):
-    print("\n3. Creating forwarding rules for contact@, partners@, and catch-all...")
-    rules_url = f"https://api.cloudflare.com/client/v4/zones/{zone_id}/email/routing/rules"
-    
-    # Check existing rules
-    res, err = make_request(rules_url, method="GET", token=token)
-    existing_rules = {}
-    if res and res.get("result"):
-        for r in res["result"]:
-            existing_rules[r.get("name")] = r.get("id")
-
-    rules_to_create = [
-        {"name": "Forward Contact", "match": f"contact@{DOMAIN}"},
-        {"name": "Forward Partners", "match": f"partners@{DOMAIN}"}
-    ]
-    for r in rules_to_create:
-        if r["name"] in existing_rules:
-            print(f"  ✅ Rule '{r['name']}' already exists.")
-            continue
-        payload = {
-            "name": r["name"],
-            "enabled": True,
-            "matchers": [
-                {
-                    "type": "literal",
-                    "field": "to",
-                    "value": r["match"]
-                }
-            ],
-            "actions": [
-                {
-                    "type": "forward",
-                    "value": [DESTINATION_EMAIL]
-                }
-            ]
-        }
-        res_r, err_r = make_request(rules_url, method="POST", data=payload, token=token)
-        if err_r:
-            print(f"  ⚠️ Could not create rule for {r['match']}: {err_r}")
-        else:
-            print(f"  ✅ Forwarding rule created: {r['match']} -> {DESTINATION_EMAIL}")
-
-    # Catch-all rule
-    catch_url = f"https://api.cloudflare.com/client/v4/zones/{zone_id}/email/routing/rules/catch_all"
-    catch_payload = {
-        "name": "Catch-all Forwarding",
-        "enabled": True,
-        "matchers": [
-            {
-                "type": "all"
-            }
-        ],
-        "actions": [
-            {
-                "type": "forward",
-                "value": [DESTINATION_EMAIL]
-            }
-        ]
-    }
-    res_c, err_c = make_request(catch_url, method="PUT", data=catch_payload, token=token)
-    if err_c:
-        print(f"  ⚠️ Catch-all notice: {err_c}")
-    else:
-        print(f"  ✅ Catch-all rule active: *@omnioperand.com -> {DESTINATION_EMAIL}")
+        return {"success": False, "error": str(e)}
 
 def main():
     print("=========================================================")
-    print("📧 Cloudflare Free Email Routing Setup: OmniOperand")
-    print(f"Target Destination: {DESTINATION_EMAIL}")
-    print(f"Domain: {DOMAIN}")
+    print("📧 Cloudflare Email Routing & Outbound SMTP Infrastructure")
     print("=========================================================\n")
 
-    env = load_env()
-    token = env.get("CLOUD_FLARE_API_TOKEN") or env.get("CLOUD_FLARE_PAGES_API_TOKEN")
-    account_id = env.get("CLOUDFLARE_ACCOUNT_ID", "2bbe914ca4d82460c51d668407bb3dbd")
-    zone_id = env.get("CLOUDFLARE_ZONE_ID", "3c5297e2d6de7e4e858fd2679201e85d")
-
-    if not token:
-        print("❌ Error: No Cloudflare API token found in .env")
+    # Step A: Verify Zone
+    print(f"Step A: Verifying Zone (ID: {ZONE_ID})...")
+    zone_resp = cf_api(f"/zones/{ZONE_ID}")
+    if not zone_resp.get("success"):
+        print(f"❌ Failed to query zone: {zone_resp}")
         sys.exit(1)
+    zone_name = zone_resp["result"]["name"]
+    print(f"  ✅ Confirmed Zone: {zone_name} (Status: {zone_resp['result']['status']})")
 
-    # 1. DNS Records
-    ensure_dns_records(zone_id, token)
-
-    # 2. Destination Address
-    print(f"\n2. Verifying destination address {DESTINATION_EMAIL}...")
-    add_destination(account_id, token)
-    is_verified = check_destination_verification(account_id, token)
-    
-    if not is_verified:
-        print("\n⏳ ACTION REQUIRED IN GMAIL:")
-        print(f"  Cloudflare has sent a verification email to: {DESTINATION_EMAIL}")
-        print("  Please open Gmail, click 'Verify email address', and then rerun this script.")
-        print("  (Cloudflare will not allow forwarding rules until you verify destination ownership).")
-        return False
+    # Step B1: Destination Address (omnioperand@gmail.com)
+    # Cloudflare accounts endpoint: /accounts/{account_id}/email/routing/addresses
+    # or zone endpoint: /zones/{zone_id}/email/routing/destination_addresses
+    print("\nStep B1: Checking Destination Addresses...")
+    dest_resp = cf_api(f"/zones/{ZONE_ID}/email/routing/destination_addresses")
+    if not dest_resp.get("success"):
+        # Try accounts endpoint
+        print(f"  Trying account-level destination endpoint: /accounts/{ACCOUNT_ID}/email/routing/addresses")
+        dest_resp = cf_api(f"/accounts/{ACCOUNT_ID}/email/routing/addresses")
+        dest_endpoint = f"/accounts/{ACCOUNT_ID}/email/routing/addresses"
     else:
-        print(f"  ✅ Destination {DESTINATION_EMAIL} is verified and active!")
+        dest_endpoint = f"/zones/{ZONE_ID}/email/routing/destination_addresses"
 
-    # 3. Forwarding Rules
-    configure_rules(zone_id, token)
-    print("\n🎉 Email Routing setup is 100% complete!")
-    return True
+    destinations = dest_resp.get("result", [])
+    print(f"  Existing destination addresses: {len(destinations)}")
+    for d in destinations:
+        print(f"    - {d.get('email')} (Verified: {d.get('verified', False)})")
+
+    target_email = "omnioperand@gmail.com"
+    existing_target = next((d for d in destinations if d.get("email") == target_email), None)
+
+    if not existing_target:
+        print(f"  Adding destination address {target_email}...")
+        add_dest_resp = cf_api(dest_endpoint, method="POST", data={"email": target_email})
+        print(f"  Response: {add_dest_resp}")
+        if add_dest_resp.get("success"):
+            print(f"  ✅ Added {target_email}. Verification email triggered!")
+        else:
+            print(f"  ⚠️ Could not add {target_email}: {add_dest_resp.get('errors')}")
+    else:
+        print(f"  ℹ️ {target_email} is already registered. (Verified: {existing_target.get('verified')})")
+
+    # Step B2: Enable Email Routing on Zone
+    print("\nStep B2: Checking Email Routing Status on Zone...")
+    status_resp = cf_api(f"/zones/{ZONE_ID}/email/routing/enabled")
+    if status_resp.get("success") and status_resp.get("result", {}).get("enabled"):
+        print(f"  ✅ Email routing is already ENABLED on {zone_name}.")
+    else:
+        print("  Enabling email routing on zone...")
+        enable_resp = cf_api(f"/zones/{ZONE_ID}/email/routing/enable", method="POST")
+        print(f"  Result: {enable_resp.get('success', False)}")
+
+    # Step B3: Routing Rules
+    print("\nStep B3: Inspecting & Configuring Custom Routing Rules...")
+    rules_resp = cf_api(f"/zones/{ZONE_ID}/email/routing/rules")
+    existing_rules = rules_resp.get("result", [])
+    print(f"  Found {len(existing_rules)} existing rules:")
+    for r in existing_rules:
+        name = r.get("name")
+        matchers = r.get("matchers", [])
+        actions = r.get("actions", [])
+        print(f"    Rule [{r.get('id')}]: '{name}' | Matchers: {matchers} | Actions: {actions} | Enabled: {r.get('enabled')}")
+
+    rules_to_ensure = [
+        {
+            "name": "Forward Brandon to Gmail",
+            "alias": "brandon@omnioperand.com",
+            "priority": 1
+        },
+        {
+            "name": "Forward Contact to Gmail",
+            "alias": "contact@omnioperand.com",
+            "priority": 2
+        }
+    ]
+
+    for req_rule in rules_to_ensure:
+        alias = req_rule["alias"]
+        rule_name = req_rule["name"]
+        prio = req_rule["priority"]
+
+        # Check if a rule for this alias exists
+        rule_match = None
+        for r in existing_rules:
+            for m in r.get("matchers", []):
+                if m.get("field") == "to" and m.get("value") == alias:
+                    rule_match = r
+                    break
+            if rule_match:
+                break
+
+        rule_body = {
+            "name": rule_name,
+            "enabled": True,
+            "priority": prio,
+            "matchers": [{"type": "literal", "field": "to", "value": alias}],
+            "actions": [{"type": "forward", "value": [target_email]}]
+        }
+
+        if rule_match:
+            rule_id = rule_match["id"]
+            print(f"  Updating existing rule for {alias} (Rule ID: {rule_id}) to point to {target_email}...")
+            up_resp = cf_api(f"/zones/{ZONE_ID}/email/routing/rules/{rule_id}", method="PUT", data=rule_body)
+            if up_resp.get("success"):
+                print(f"  ✅ Updated rule for {alias} -> {target_email}")
+            else:
+                print(f"  ⚠️ Update failed: {up_resp.get('errors')}")
+        else:
+            print(f"  Creating new routing rule for {alias} -> {target_email}...")
+            create_resp = cf_api(f"/zones/{ZONE_ID}/email/routing/rules", method="POST", data=rule_body)
+            if create_resp.get("success"):
+                print(f"  ✅ Created rule '{rule_name}' for {alias} -> {target_email}")
+            else:
+                print(f"  ⚠️ Creation failed: {create_resp.get('errors')}")
+
+    # Step C: DNS Records (MX, SPF, DMARC)
+    print("\nStep C: Checking & Configuring DNS Records...")
+    dns_resp = cf_api(f"/zones/{ZONE_ID}/dns_records?per_page=100")
+    if not dns_resp.get("success"):
+        print(f"❌ Failed to fetch DNS records: {dns_resp}")
+        return
+
+    dns_records = dns_resp.get("result", [])
+    print(f"  Loaded {len(dns_records)} DNS records.")
+
+    # 1. MX Records for Email Routing
+    expected_mx = [
+        {"content": "route1.mx.cloudflare.net", "priority": 92},
+        {"content": "route2.mx.cloudflare.net", "priority": 55},
+        {"content": "route3.mx.cloudflare.net", "priority": 39}
+    ]
+
+    current_mx = [r for r in dns_records if r.get("type") == "MX" and r.get("name") in ["omnioperand.com", "@"]]
+    print(f"  Existing MX records ({len(current_mx)}):")
+    for mx in current_mx:
+        print(f"    - {mx.get('content')} (Priority: {mx.get('priority')}) [ID: {mx.get('id')}]")
+
+    # If old or incorrect MX records exist that aren't the expected route*.mx.cloudflare.net, replace or clean them
+    expected_hosts = {e["content"]: e["priority"] for e in expected_mx}
+    for mx in current_mx:
+        content = mx.get("content")
+        prio = mx.get("priority")
+        if content in expected_hosts:
+            if prio != expected_hosts[content]:
+                print(f"  Updating priority for {content} from {prio} to {expected_hosts[content]}...")
+                cf_api(f"/zones/{ZONE_ID}/dns_records/{mx['id']}", method="PATCH", data={"priority": expected_hosts[content]})
+            del expected_hosts[content]
+        else:
+            print(f"  ℹ️ Found non-standard or legacy MX record: {content} (Priority {prio})")
+
+    for host, prio in expected_hosts.items():
+        print(f"  Creating missing MX record: {host} (Priority {prio})...")
+        rec_data = {
+            "type": "MX",
+            "name": "@",
+            "content": host,
+            "priority": prio,
+            "ttl": 1
+        }
+        res = cf_api(f"/zones/{ZONE_ID}/dns_records", method="POST", data=rec_data)
+        if res.get("success"):
+            print(f"  ✅ Created MX record: {host}")
+        else:
+            print(f"  ⚠️ Error creating MX record: {res.get('errors')}")
+
+    # 2. SPF Record (Allow Cloudflare + Google SMTP)
+    target_spf = "v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all"
+    current_spf = [r for r in dns_records if r.get("type") == "TXT" and "v=spf1" in r.get("content", "")]
+
+    if current_spf:
+        for spf_rec in current_spf:
+            rec_id = spf_rec["id"]
+            rec_content = spf_rec["content"]
+            if rec_content == target_spf:
+                print(f"  ✅ SPF record is already optimal: \"{rec_content}\"")
+            else:
+                print(f"  Updating SPF record from \"{rec_content}\" to \"{target_spf}\"...")
+                up_res = cf_api(f"/zones/{ZONE_ID}/dns_records/{rec_id}", method="PUT", data={
+                    "type": "TXT",
+                    "name": "@",
+                    "content": target_spf,
+                    "ttl": 1
+                })
+                if up_res.get("success"):
+                    print(f"  ✅ Successfully updated SPF record!")
+                else:
+                    print(f"  ⚠️ SPF update error: {up_res.get('errors')}")
+    else:
+        print(f"  Creating SPF record: \"{target_spf}\"...")
+        res = cf_api(f"/zones/{ZONE_ID}/dns_records", method="POST", data={
+            "type": "TXT",
+            "name": "@",
+            "content": target_spf,
+            "ttl": 1
+        })
+        if res.get("success"):
+            print(f"  ✅ Created SPF record successfully!")
+        else:
+            print(f"  ⚠️ SPF creation error: {res.get('errors')}")
+
+    # 3. DMARC Record
+    target_dmarc = "v=DMARC1; p=none; sp=none; aspf=r;"
+    current_dmarc = [r for r in dns_records if r.get("type") == "TXT" and r.get("name", "").startswith("_dmarc")]
+
+    if current_dmarc:
+        for dmarc_rec in current_dmarc:
+            rec_id = dmarc_rec["id"]
+            rec_content = dmarc_rec["content"]
+            print(f"  Existing DMARC record found: \"{rec_content}\"")
+            if rec_content != target_dmarc:
+                print(f"  Updating DMARC record to \"{target_dmarc}\"...")
+                up_res = cf_api(f"/zones/{ZONE_ID}/dns_records/{rec_id}", method="PUT", data={
+                    "type": "TXT",
+                    "name": "_dmarc",
+                    "content": target_dmarc,
+                    "ttl": 1
+                })
+                if up_res.get("success"):
+                    print(f"  ✅ Successfully updated DMARC record!")
+                else:
+                    print(f"  ⚠️ DMARC update error: {up_res.get('errors')}")
+            else:
+                print("  ✅ DMARC record is already exact match.")
+    else:
+        print(f"  Creating DMARC record for _dmarc: \"{target_dmarc}\"...")
+        res = cf_api(f"/zones/{ZONE_ID}/dns_records", method="POST", data={
+            "type": "TXT",
+            "name": "_dmarc",
+            "content": target_dmarc,
+            "ttl": 1
+        })
+        if res.get("success"):
+            print(f"  ✅ Created DMARC record successfully!")
+        else:
+            print(f"  ⚠️ DMARC creation error: {res.get('errors')}")
+
+    print("\n=========================================================")
+    print("🎉 Cloudflare Email Routing & DNS Automation Complete!")
+    print("=========================================================")
 
 if __name__ == "__main__":
     main()
