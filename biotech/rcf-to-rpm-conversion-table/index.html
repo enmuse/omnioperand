@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centrifuge g-Force Conversion Chart: RCF to RPM Lookup Table | OmniOperand</title>
+  <meta name="description" content="Quick laboratory reference table converting Relative Centrifugal Force (g-force / RCF) to RPM across 75mm, 85mm, 100mm, 120mm, and 150mm rotor radii.">
+  <link rel="canonical" href="https://omnioperand.com/biotech/rcf-to-rpm-conversion-table/">
+
+  <meta property="og:title" content="g to RPM Calculator: Convert RCF to RPM &amp; Vice Versa | OmniOperand">
+  <meta property="og:description" content="Convert RPM to RCF (g-force) and RCF to RPM using rotor radius. Instant laboratory formula, bidirectional calculation, and rotor nomogram guide.">
+  <meta property="og:url" content="https://omnioperand.com/biotech/rcf-to-rpm-conversion-table/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://omnioperand.com/biotech/rcf-to-rpm-conversion-table/#app",
+      "name": "Centrifuge Relative Centrifugal Force (RCF / g-Force) & RPM Calculator",
+      "url": "https://omnioperand.com/biotech/rcf-to-rpm-conversion-table/",
+      "applicationCategory": "BiotechApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Convert between rotational speed (RPM) and Relative Centrifugal Force (RCF in ×g) using exact rotor radius geometry to reproduce centrifugation protocols."
+    ,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }},
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://omnioperand.com/biotech/rcf-to-rpm-conversion-table/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OmniOperand",
+          "item": "https://omnioperand.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Biotech",
+          "item": "https://omnioperand.com/biotech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Centrifuge Relative Centrifugal Force (RCF / g-Force) & RPM Calculator",
+          "item": "https://omnioperand.com/biotech/rcf-to-rpm-conversion-table/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://omnioperand.com/biotech/rcf-to-rpm-conversion-table/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you convert RCF (xg) to RPM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To convert RCF (relative centrifugal force) to RPM, use the formula: RPM = √[RCF / (1.118 × 10⁻⁵ × r)], where r is the rotor radius in centimeters. For an 8.5 cm rotor, 300 ×g equals 1,777 RPM, 1,000 ×g equals 3,244 RPM, and 10,000 ×g equals 10,259 RPM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is 300 xg to RPM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a standard 8.5 cm benchtop rotor, 300 ×g corresponds to approximately 1,777 RPM. For a 10 cm rotor, 300 ×g is 1,638 RPM; for a 12 cm rotor, it is 1,496 RPM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is 1000 xg to RPM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a standard 8.5 cm benchtop rotor, 1,000 ×g corresponds to approximately 3,244 RPM. For a 10 cm rotor, 1,000 ×g is 2,991 RPM; for a 12 cm rotor, it is 2,731 RPM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is it dangerous to report centrifugation speeds in RPM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RPM describes only how fast the rotor spins, ignoring the physical size of the rotor. Two centrifuges running at the same 5,000 RPM will exert drastically different forces if one has an 8 cm rotor (2,236 ×g) and the other has a 16 cm rotor (4,472 ×g)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between r_min, r_av, and r_max in centrifuge rotors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "r_min is the distance from the spindle to the liquid surface, r_max is the distance to the tube tip, and r_av is the midpoint. RCF is typically reported at r_max (pellet force)."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="omni-body">
+
+                  <!-- Critical Navigation Dropdown CSS (0ms FOUC & Cache-Proof) -->
+  <style id="omni-nav-dropdown-css">
+    .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.925rem; font-weight: 500; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); background: transparent; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: color 0.15s ease, background 0.15s ease; }
+    .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active, .nav-dropdown:hover .nav-dropdown-trigger, .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.08); }
+    .nav-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg, .nav-dropdown.is-open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: 440px; max-width: 90vw; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(6, 182, 212, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.75rem; grid-template-columns: repeat(2, 1fr); gap: 0.25rem 0.5rem; z-index: 1000; }
+    .nav-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu, .nav-dropdown.is-open .nav-dropdown-menu { display: grid; }
+    .nav-dropdown-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.65rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .nav-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); transform: translateX(2px); }
+    .nav-dropdown-item .item-icon { font-size: 1rem; line-height: 1; width: 1.25rem; text-align: center; }
+    
+    /* Internationalization Language Switcher Dropdown */
+    .lang-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .lang-dropdown-trigger { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); font-size: 0.825rem; font-weight: 600; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); cursor: pointer; font-family: inherit; transition: all 0.15s ease; }
+    .lang-dropdown-trigger:hover, .lang-dropdown-trigger.active, .lang-dropdown:hover .lang-dropdown-trigger, .lang-dropdown:focus-within .lang-dropdown-trigger { color: var(--text-primary); background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.35); }
+    .lang-dropdown-trigger svg { transition: transform 0.2s ease; }
+    .lang-dropdown:hover .lang-dropdown-trigger svg, .lang-dropdown:focus-within .lang-dropdown-trigger svg, .lang-dropdown.is-open .lang-dropdown-trigger svg { transform: rotate(180deg); }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; width: 330px; background: #101726; background: var(--bg-surface-elevated, #101726); border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12)); border-radius: 10px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.5rem; z-index: 1000; grid-template-columns: repeat(2, 1fr); gap: 2px 6px; }
+    .lang-dropdown-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .lang-dropdown:hover .lang-dropdown-menu, .lang-dropdown:focus-within .lang-dropdown-menu, .lang-dropdown.is-open .lang-dropdown-menu { display: grid; }
+    .lang-dropdown-item { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; padding: 0.35rem 0.5rem; border-radius: 6px; color: var(--text-secondary); font-size: 0.825rem; font-weight: 500; text-decoration: none; transition: all 0.12s ease; }
+    .lang-dropdown-item:hover { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); }
+    .lang-dropdown-item.active { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.12); font-weight: 600; }
+    .lang-dropdown-item .lang-flag { font-size: 0.95rem; line-height: 1; }
+    .lang-code-pill { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); padding: 1px 4px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); }
+    .lang-dropdown-item.active .lang-code-pill { color: var(--accent-cyan); background: rgba(6, 182, 212, 0.25); }
+
+    @media (max-width: 768px) {
+      body.mobile-nav-open .nav-dropdown { flex-direction: column; align-items: stretch; width: 100%; }
+      body.mobile-nav-open .nav-dropdown-menu { position: static; transform: none; width: 100%; max-width: 100%; display: grid; box-shadow: none; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); margin-top: 0.5rem; }
+      .lang-dropdown-menu { right: auto; left: 0; width: 100%; max-width: 310px; }
+    }
+  </style>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Biotech</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/physics/" class="nav-link">Physics</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger active" type="button" aria-expanded="false" aria-haspopup="true">
+            <span>Disciplines</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/geometry/" class="nav-dropdown-item"><span class="item-icon">📐</span><span>Geometry</span></a>
+            <a href="/calculus/" class="nav-dropdown-item"><span class="item-icon">∫</span><span>Calculus</span></a>
+            <a href="/finance/" class="nav-dropdown-item"><span class="item-icon">💵</span><span>Finance</span></a>
+            <a href="/physics/" class="nav-dropdown-item"><span class="item-icon">⚡</span><span>Physics</span></a>
+            <a href="/statistics/" class="nav-dropdown-item"><span class="item-icon">📊</span><span>Statistics</span></a>
+            <a href="/construction/" class="nav-dropdown-item"><span class="item-icon">🏗️</span><span>Construction</span></a>
+            <a href="/health/" class="nav-dropdown-item"><span class="item-icon">🩺</span><span>Health</span></a>
+            <a href="/engineering/" class="nav-dropdown-item"><span class="item-icon">🌉</span><span>Engineering</span></a>
+            <a href="/energy/" class="nav-dropdown-item"><span class="item-icon">☀️</span><span>Energy &amp; Solar</span></a>
+            <a href="/logistics/" class="nav-dropdown-item"><span class="item-icon">🚢</span><span>Logistics</span></a>
+            <a href="/crypto/" class="nav-dropdown-item"><span class="item-icon">🪙</span><span>Crypto &amp; DeFi</span></a>
+            <a href="/ecommerce/" class="nav-dropdown-item"><span class="item-icon">🛒</span><span>E-Commerce</span></a>
+            <a href="/biotech/" class="nav-dropdown-item"><span class="item-icon">🧬</span><span>Biotech</span></a>
+            <a href="/legal/" class="nav-dropdown-item"><span class="item-icon">⚖️</span><span>Legal &amp; Risk</span></a>
+            <a href="/agriculture/" class="nav-dropdown-item"><span class="item-icon">🌾</span><span>Agriculture</span></a>
+            <a href="/embed/" class="nav-dropdown-item"><span class="item-icon">🔌</span><span>Embed Widgets</span></a>
+          </div>
+        </div>
+        <a href="/geometry/2d/shapes/regular-polygon/" class="nav-link nav-link-featured">Universal N-Gon</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Multi-Language Switcher -->
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">EN</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="lang-dropdown-menu">
+            <a href="/biotech/centrifuge-rcf-g-force/" class="lang-dropdown-item active"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span><span class="lang-code-pill">EN</span></a>
+            <a href="/es/biotech/centrifuge-rcf-g-force/" class="lang-dropdown-item"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code-pill">ES</span></a>
+            <a href="/fr/biotech/centrifuge-rcf-g-force/" class="lang-dropdown-item"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code-pill">FR</span></a>
+            <a href="/de/biotech/centrifuge-rcf-g-force/" class="lang-dropdown-item"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code-pill">DE</span></a>
+            <a href="/it/biotech/centrifuge-rcf-g-force/" class="lang-dropdown-item"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span><span class="lang-code-pill">IT</span></a>
+            <a href="/pt/biotech/centrifuge-rcf-g-force/" class="lang-dropdown-item"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span><span class="lang-code-pill">PT</span></a>
+            <a href="/nl/biotech/centrifuge-rcf-g-force/" class="lang-dropdown-item"><span class="lang-flag">🇳🇱</span><span class="lang-name">Nederlands</span><span class="lang-code-pill">NL</span></a>
+            <a href="/pl/biotech/centrifuge-rcf-g-force/" class="lang-dropdown-item"><span class="lang-flag">🇵🇱</span><span class="lang-name">Polski</span><span class="lang-code-pill">PL</span></a>
+            <a href="/sv/biotech/centrifuge-rcf-g-force/" class="lang-dropdown-item"><span class="lang-flag">🇸🇪</span><span class="lang-name">Svenska</span><span class="lang-code-pill">SV</span></a>
+            <a href="/no/biotech/centrifuge-rcf-g-force/" class="lang-dropdown-item"><span class="lang-flag">🇳🇴</span><span class="lang-name">Norsk</span><span class="lang-code-pill">NO</span></a>
+            <a href="/fi/biotech/centrifuge-rcf-g-force/" class="lang-dropdown-item"><span class="lang-flag">🇫🇮</span><span class="lang-name">Suomi</span><span class="lang-code-pill">FI</span></a>
+            <a href="/ro/biotech/centrifuge-rcf-g-force/" class="lang-dropdown-item"><span class="lang-flag">🇷🇴</span><span class="lang-name">Română</span><span class="lang-code-pill">RO</span></a>
+          </div>
+        </div>
+
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button class="btn-icon mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/biotech/">Biotech</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active" aria-current="page">Centrifuge Relative Centrifugal Force (RCF / g-Force) & RPM Calculator</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- Hero Header -->
+    <section class="solver-hero">
+      <div class="hero-badge">Laboratory Centrifugation • RCF & RPM Inversions</div>
+      <h1>Centrifuge g to RPM Conversion Table & Protocol Nomogram</h1>
+      <p class="hero-subtext">
+        Convert between rotational speed (RPM) and Relative Centrifugal Force (RCF in ×g) using exact rotor radius geometry to reproduce centrifugation protocols.
+      </p>
+      <div class="calculator-actions-toolbar">
+        <button type="button" class="btn-secondary btn-open-embed btn-embed-calculator" id="btn-embed" aria-label="Embed this calculator widget">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Embed Calculator</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Position 0 Direct Answer Box -->
+    <div class="direct-answer-box" style="background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.25); border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:2rem;">
+      <div style="font-size:0.75rem; text-transform:uppercase; font-weight:700; letter-spacing:0.06em; color:var(--accent-cyan); margin-bottom:0.4rem;">Direct Answer • RCF (×g) to RPM Inversion</div>
+      <p style="margin:0; font-size:1.025rem; line-height:1.6; color:var(--text-primary);">
+        To convert between <strong>RCF (×g)</strong> and <strong>RPM</strong>, use the standard laboratory formula: 
+        <code style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px; font-weight:600; color:var(--accent-cyan);">RCF = 1.118 × 10⁻⁵ · r · RPM²</code> 
+        or solve for RPM: 
+        <code style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px; font-weight:600; color:var(--accent-cyan);">RPM = √[RCF / (1.118 × 10⁻⁵ · r)]</code>, 
+        where <strong>r</strong> is the rotor radius in centimeters. For an <strong>8.5 cm</strong> benchtop rotor: 
+        <strong>300 ×g = 1,777 RPM</strong>, <strong>1,000 ×g = 3,244 RPM</strong>, <strong>3,000 ×g = 5,619 RPM</strong>, and <strong>10,000 ×g = 10,259 RPM</strong>.
+      </p>
+    </div>
+
+<!-- Master Solver Grid -->
+    <div class="calculator-grid">
+
+      <!-- Left Column: Input Parameters -->
+      <div class="solver-column">
+        <div class="hud-panel">
+          <div class="hud-panel-header">
+            <h2>Parameters & Inversions</h2>
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <button id="btn-share-link" type="button" class="btn btn-secondary" style="font-size:0.75rem; padding:0.25rem 0.6rem; display:inline-flex; align-items:center; gap:0.3rem;">
+                <span>🔗 Share Link</span>
+              </button>
+              <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Deterministic Engine</span>
+            </div>
+          </div>
+
+          <div class="param-card-grid">
+            
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-centrifuge_rotor_speed_rpm">Rotational Speed (RPM)</label>
+                <span class="param-symbol">RPM</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-centrifuge_rotor_speed_rpm" class="number-input omni-calc-input" data-id="centrifuge_rotor_speed_rpm" value="14000" step="250" min="100">
+                <span class="input-suffix">RPM</span>
+              </div>
+              <input type="range" id="slider-centrifuge_rotor_speed_rpm" class="param-slider omni-calc-slider" data-id="centrifuge_rotor_speed_rpm" min="100" max="100000" step="250" value="14000">
+              <div class="param-hint">Rotor revolutions per minute</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-relative_centrifugal_force_input">Target RCF (g-Force)</label>
+                <span class="param-symbol">×g</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-relative_centrifugal_force_input" class="number-input omni-calc-input" data-id="relative_centrifugal_force_input" value="18625" step="50" min="10">
+                <span class="input-suffix">×g</span>
+              </div>
+              <input type="range" id="slider-relative_centrifugal_force_input" class="param-slider omni-calc-slider" data-id="relative_centrifugal_force_input" min="10" max="100000" step="50" value="18625">
+              <div class="param-hint">Enter target g-force to solve for RPM</div>
+            </div>
+        
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-rotor_radius_centimeters">Rotor Radius (r in cm)</label>
+                <span class="param-symbol">r_cm</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-rotor_radius_centimeters" class="number-input omni-calc-input" data-id="rotor_radius_centimeters" value="8.5" step="0.5" min="1.0">
+                <span class="input-suffix">cm</span>
+              </div>
+              <input type="range" id="slider-rotor_radius_centimeters" class="param-slider omni-calc-slider" data-id="rotor_radius_centimeters" min="1.0" max="50.0" step="0.5" value="8.5">
+              <div class="param-hint">Spindle axis to bottom of tube (r_max)</div>
+            </div>
+        
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
+            
+            <div class="metric-card">
+              <span class="metric-label">Relative Centrifugal Force (RCF)</span>
+              <span class="metric-value" id="disp-relative_centrifugal_force_rcf" style="color:var(--accent-cyan);">18,624 ×g</span>
+            </div>
+        
+            <div class="metric-card">
+              <span class="metric-label">Tube Tangential Velocity</span>
+              <span class="metric-value" id="disp-tangential_linear_velocity" style="color:var(--accent-cyan);">124.6 m/s (448.6 km/h)</span>
+            </div>
+        
+            <div class="metric-card">
+              <span class="metric-label">Centrifugation Application Tier</span>
+              <span class="metric-value" id="disp-protocol_centrifugation_tier" >Microcentrifuge (DNA / RNA / Protein Pelleting)</span>
+            </div>
+        
+            <div class="metric-card">
+              <span class="metric-label">Rotor Radius Metric</span>
+              <span class="metric-value" id="disp-radius_variance_factor" >85 mm Radius</span>
+            </div>
+        
+          </div>
+
+          <!-- Contextual Result-Driven Recommendation Target -->
+          <div id="affiliate-recommendation-target"></div>
+        </div>
+      </div>
+
+      <!-- Right Column: Formula & Proof Panel -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Analytical Proof & Invariants</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);">Machine Precision</span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">Governing Mathematical Formula:</div>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0;">RCF (×g) = 1.118 × 10⁻⁵ · r_cm · (RPM)² | RPM = √[RCF / (1.118 × 10⁻⁵ · r_cm)]</code>
+          </div>
+
+          <!-- Step-by-Step Proof -->
+          <div class="proof-card open">
+            <div class="proof-header">
+              <h3><span>Step-by-Step Mathematical Derivation</span></h3>
+            </div>
+            <div class="proof-body" style="display:block;">
+              
+          <div class="proof-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <strong>Centrifugal Acceleration Formula</strong>
+              <p>Centrifugal acceleration a = ω² · r, where angular velocity ω = 2π · RPM / 60. Normalizing to Earth gravity (g = 9.80665 m/s²) yields the constant 1.118 × 10⁻⁵.</p>
+            </div>
+          </div>
+        
+          <div class="proof-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <strong>RCF Calculation</strong>
+              <p>RCF = 1.118 × 10⁻⁵ × Radius (8.5 cm) × (14,000 RPM)² = 1.118 × 10⁻⁵ × 8.5 × 196,000,000 = 18,624.76 ≈ 18,625 ×g.</p>
+            </div>
+          </div>
+        
+          <div class="proof-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <strong>Peripheral Speed</strong>
+              <p>Linear Velocity v = (2π · 8.5 cm / 100) × (14,000 / 60) = 0.534 m × 233.33 rev/s = 124.6 m/s (448.6 km/h).</p>
+            </div>
+          </div>
+        
+          <div class="proof-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <strong>Protocol Reproducibility Rule</strong>
+              <p>Scientific protocols must always specify g-force (RCF), never RPM alone. Running 14,000 RPM on a larger 12 cm rotor produces 26,295 ×g (+41% higher force), potentially lysing delicate organelles.</p>
+            </div>
+          </div>
+        
+            </div>
+          </div>
+
+          <!-- AI Agent Invocation Directive -->
+                    <!-- Dual AI Agent & Prompt Integration Box -->
+          <section class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
+              <div>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive & API Spec</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence & Prompt Integration</h3>
+              </div>
+              <div class="llm-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <button type="button" class="btn-action" id="copy-llm-prompt-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); border-radius:6px; color:var(--accent-cyan); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span id="copy-prompt-text">Copy Prompt for AI</span>
+                </button>
+                <button type="button" class="btn-action" id="copy-api-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.35); border-radius:6px; color:var(--accent-emerald); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <span id="copy-api-text">Copy API Endpoint</span>
+                </button>
+              </div>
+            </div>
+
+            <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem;">
+              Paste this verified mathematical prompt directly into ChatGPT, Claude, or Gemini to eliminate arithmetic hallucination, or invoke the programmatic API endpoint for automated workflows.
+            </p>
+
+            <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
+              <span><span style="color:var(--accent-cyan); font-weight:700;">GET / POST</span> https://omnioperand.com/api/v1/biotech/centrifuge-rcf-g-force</span>
+              <span style="color:var(--text-muted); font-size:0.75rem;">JSON Invariants</span>
+            </div>
+
+            <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
+
+            <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:0.75rem;">
+              <span>✓ Standardized for <code>llms.txt</code></span>
+              <span>✓ Exact Radical Form & Closed Formulas</span>
+              <span>✓ Machine-Readable Edge API</span>
+            </div>
+          </section>
+      </div>
+
+    </div>
+
+<!-- Quick Reference Lookup Table -->
+    <section class="calc-table-section" style="margin-top:3rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:0.75rem;">Centrifuge RCF (×g) to RPM Conversion Chart</h2>
+      <p style="color:var(--text-secondary); margin-bottom:1.5rem; font-size:0.95rem;">
+        Pre-calculated rotational speeds (RPM) required to achieve standard laboratory g-forces across common benchtop and microcentrifuge rotor radii.
+      </p>
+      <div style="overflow-x:auto; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; padding:0.5rem;">
+        <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.9rem;">
+          <thead>
+            <tr style="border-bottom:1px solid var(--border-subtle); color:var(--text-bright);">
+              <th style="padding:0.75rem 1rem;">Target Force (RCF)</th>
+              <th style="padding:0.75rem 1rem;">r = 8.5 cm (Standard)</th>
+              <th style="padding:0.75rem 1rem;">r = 10.0 cm (Benchtop)</th>
+              <th style="padding:0.75rem 1rem;">r = 12.0 cm (Large Rotor)</th>
+              <th style="padding:0.75rem 1rem;">Common Biological Application</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">300 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">1,777 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">1,638 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">1,496 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Whole blood separation, cell washing, gentle mammalian cells</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">500 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">2,294 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">2,115 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">1,931 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Yeast harvesting, intact tissue cultures</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">1,000 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">3,244 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">2,991 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">2,731 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Platelet-rich plasma (PRP), bacterial pelleting</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">2,000 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">4,588 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">4,230 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">3,862 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Clarifying cellular lysates, post-nuclear supernatants</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">3,000 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">5,619 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">5,180 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">4,729 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Membrane fractionation, dense cell homogenates</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">5,000 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">7,255 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">6,688 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">6,106 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Dense bacterial pellets, fungal spores, protein precipitates</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">10,000 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">10,259 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">9,458 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">8,635 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">Mitochondria, chloroplasts, intact nuclei separation</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--accent-cyan);">14,000 ×g</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">12,139 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">11,190 RPM</td>
+              <td style="padding:0.75rem 1rem; font-family:monospace;">10,217 RPM</td>
+              <td style="padding:0.75rem 1rem; color:var(--text-secondary);">DNA / RNA / Protein silica spin columns, ethanol precipitation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<!-- High-Intent FAQ Section -->
+    <section class="calc-faq-section" style="margin-top:3rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do you convert RCF (×g) to RPM?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            To convert RCF (relative centrifugal force) to RPM, use the inverted formula: <code>RPM = √[RCF / (1.118 × 10⁻⁵ × r)]</code>, where <code>r</code> is the rotor radius in centimeters. For an 8.5 cm rotor, 300 ×g equals 1,777 RPM, 1,000 ×g equals 3,244 RPM, and 10,000 ×g equals 10,259 RPM.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is 300 xg to RPM?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            For a standard 8.5 cm benchtop rotor, 300 ×g corresponds to approximately <strong>1,777 RPM</strong>. For a 10 cm rotor, 300 ×g is <strong>1,638 RPM</strong>; for a 12 cm rotor, it is <strong>1,496 RPM</strong>.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is 1000 xg to RPM?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            For a standard 8.5 cm benchtop rotor, 1,000 ×g corresponds to approximately <strong>3,244 RPM</strong>. For a 10 cm rotor, 1,000 ×g is <strong>2,991 RPM</strong>; for a 12 cm rotor, it is <strong>2,731 RPM</strong>.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Why is it dangerous to report centrifugation speeds in RPM?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            RPM describes only how fast the rotor spins, ignoring the physical size of the rotor. Two centrifuges running at the same 5,000 RPM will exert drastically different forces if one has an 8 cm rotor (2,236 ×g) and the other has a 16 cm rotor (4,472 ×g).
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is the difference between r_min, r_av, and r_max in centrifuge rotors?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            r_min is the distance from the spindle to the liquid surface, r_max is the distance to the tube tip, and r_av is the midpoint. RCF is typically reported at r_max (pellet force).
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+  
+    <section class="related-tools-section" style="margin-top:3.5rem; padding-top:2.5rem; border-top:1px solid var(--border-subtle);">
+      <h2 style="font-size:1.35rem; margin-bottom:1.25rem; color:var(--text-bright);">Related High-Precision Solvers</h2>
+      <div class="related-tools-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem;">
+        
+        <a href="/biotech/qpcr-primer-tm/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🧬</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">qPCR Primer Tm Calculator</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Nearest-neighbor melting temperature and annealing Ta.</span>
+        </a>
+        
+        <a href="/biotech/pcr-primer-tm/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🔬</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">PCR Primer Tm & GC Formula</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Thermodynamic salt-corrected primer melting temp.</span>
+        </a>
+        
+        <a href="/biotech/cockcroft-gault-crcl/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">💊</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Cockcroft-Gault CrCl Calculator</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Creatinine clearance and renal dosing adjustment.</span>
+        </a>
+        
+        <a href="/biotech/cell-culture-doubling-time/" class="related-tool-card" style="display:flex; flex-direction:column; padding:1.25rem; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; text-decoration:none; transition:all 0.15s ease;">
+          <div style="font-size:1.5rem; margin-bottom:0.5rem;">🧫</div>
+          <strong style="color:var(--text-bright); font-size:0.95rem; margin-bottom:0.35rem;">Cell Culture Doubling Time</strong>
+          <span style="color:var(--text-secondary); font-size:0.825rem; line-height:1.4;">Cell proliferation kinetics and growth rate.</span>
+        </a>
+        
+      </div>
+    </section>
+    
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+  <div class="container footer-content" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem; padding:2rem 0; border-top:1px solid var(--border-subtle);">
+    <div class="footer-brand">
+      <div style="font-weight:700; color:var(--text-bright); margin-bottom:0.5rem;">OmniOperand</div>
+      <p style="font-size:0.8rem; color:var(--text-muted); max-width:320px; line-height:1.4;">
+        Deterministic computational engines, verified mathematical proofs, and programmatic APIs for technical professionals.
+      </p>
+    </div>
+    <div class="footer-links-grid" style="display:flex; gap:2.5rem; font-size:0.85rem;">
+      <div class="footer-col" style="display:flex; flex-direction:column; gap:0.4rem;">
+        <span style="font-weight:600; color:var(--text-primary); margin-bottom:4px;">Platform</span>
+        <a href="/about/" style="color:var(--text-secondary); text-decoration:none;">About &amp; Methodology</a>
+        <a href="/mcp/" style="color:var(--text-secondary); text-decoration:none;">MCP Server</a>
+        <a href="/api/" style="color:var(--text-secondary); text-decoration:none;">REST API</a>
+      </div>
+      <div class="footer-col" style="display:flex; flex-direction:column; gap:0.4rem;">
+        <span style="font-weight:600; color:var(--text-primary); margin-bottom:4px;">Legal &amp; Trust</span>
+        <a href="/privacy/" style="color:var(--text-secondary); text-decoration:none;">Privacy Policy</a>
+        <a href="/terms/" style="color:var(--text-secondary); text-decoration:none;">Terms of Service</a>
+        <a href="/disclaimer/" style="color:var(--text-secondary); text-decoration:none;">Affiliate Disclosure</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
+    <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
+    <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+  </div>
+</footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.4"></script>
+  <script src="/assets/js/embed-modal.js?v=2.2" defer></script>
+  <script src="/assets/js/affiliate-engine.js" defer></script>
+  <script>
+    (function () {
+      'use strict';
+
+      function sync(id, val) {
+        const inp = document.getElementById('param-' + id);
+        const sld = document.getElementById('slider-' + id);
+        if (inp && inp.value != val) inp.value = val;
+        if (sld && sld.value != val) sld.value = val;
+      }
+
+      function getNum(id) {
+        const el = document.getElementById('param-' + id);
+        return el ? (parseFloat(el.value) || 0) : 0;
+      }
+
+      function setDisp(id, text) {
+        const el = document.getElementById('disp-' + id);
+        if (el) el.innerText = text;
+      }
+
+      function setMetric(id, text) {
+        setDisp(id, text);
+      }
+
+      let activeInput = 'rpm';
+
+      function recalculate() {
+        const r = getNum('rotor_radius_centimeters');
+        if (r <= 0) return;
+
+        let rpm = getNum('centrifuge_rotor_speed_rpm');
+        let rcf = getNum('relative_centrifugal_force_input');
+
+        if (activeInput === 'rcf') {
+          if (rcf > 0) {
+            rpm = Math.round(Math.sqrt(rcf / (0.00001118 * r)));
+            sync('centrifuge_rotor_speed_rpm', rpm);
+          }
+        } else {
+          if (rpm > 0) {
+            rcf = Math.round(0.00001118 * r * Math.pow(rpm, 2));
+            sync('relative_centrifugal_force_input', rcf);
+          }
+        }
+
+        if (rpm > 0 && r > 0) {
+          const vMs = (2 * Math.PI * (r / 100) * (rpm / 60));
+          const vKmh = vMs * 3.6;
+
+          let tier = 'Low-Speed Clinical (Blood / Cell Separation)';
+          if (rcf >= 10000 && rcf < 30000) tier = 'Microcentrifuge (DNA / RNA / Protein Pelleting)';
+          else if (rcf >= 30000 && rcf < 100000) tier = 'High-Speed Subcellular Fractionation';
+          else if (rcf >= 100000) tier = 'Ultracentrifugation (Ribosomes / Viruses)';
+
+          setMetric('relative_centrifugal_force_rcf', rcf.toLocaleString() + ' ×g');
+          setMetric('tangential_linear_velocity', vMs.toFixed(1) + ' m/s (' + vKmh.toFixed(1) + ' km/h)');
+          setMetric('protocol_centrifugation_tier', tier);
+          setMetric('radius_variance_factor', (r * 10).toFixed(0) + ' mm Radius');
+        }
+      }
+
+      // Bind input events
+      document.querySelectorAll('.omni-calc-input, .omni-calc-slider').forEach(el => {
+        const id = el.getAttribute('data-id');
+        el.addEventListener('input', (e) => {
+          if (id === 'relative_centrifugal_force_input') {
+            activeInput = 'rcf';
+          } else if (id === 'centrifuge_rotor_speed_rpm') {
+            activeInput = 'rpm';
+          }
+          sync(id, e.target.value);
+          recalculate();
+        });
+      });
+
+      // Share Link Handler
+      const shareBtn = document.getElementById('btn-share-link');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          const rpm = getNum('centrifuge_rotor_speed_rpm');
+          const r = getNum('rotor_radius_centimeters');
+          const rcf = getNum('relative_centrifugal_force_input');
+          const url = new URL(window.location.href);
+          url.searchParams.set('rpm', rpm);
+          url.searchParams.set('r', r);
+          url.searchParams.set('rcf', rcf);
+          window.history.replaceState({}, '', url);
+          navigator.clipboard.writeText(url.href).then(() => {
+            const originalText = shareBtn.innerHTML;
+            shareBtn.innerHTML = '<span>✅ Copied!</span>';
+            setTimeout(() => { shareBtn.innerHTML = originalText; }, 2000);
+          });
+        });
+      }
+
+      // Parse URL parameters
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('rcf')) {
+        activeInput = 'rcf';
+        const rcfVal = parseFloat(params.get('rcf'));
+        if (rcfVal) sync('relative_centrifugal_force_input', rcfVal);
+      }
+      if (params.has('rpm')) {
+        activeInput = 'rpm';
+        const rpmVal = parseFloat(params.get('rpm'));
+        if (rpmVal) sync('centrifuge_rotor_speed_rpm', rpmVal);
+      }
+      if (params.has('r')) {
+        const rVal = parseFloat(params.get('r'));
+        if (rVal) sync('rotor_radius_centimeters', rVal);
+      }
+
+      // Accordion toggle
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+          q.parentElement.classList.toggle('open');
+        });
+      });
+
+      // Run on page load
+      recalculate();
+    })();
+  </script>
+</body>
+</html>
