@@ -25,15 +25,56 @@
     const isSpanish = document.documentElement.lang === 'es' || window.location.pathname.startsWith('/es/');
     const isItin = window.location.pathname.includes('itin');
     const isIslamic = window.location.pathname.includes('islamic');
+    const isDscr = window.location.pathname.includes('dscr');
+    const isBankStmt = window.location.pathname.includes('bank-statement');
+    const isChattel = window.location.pathname.includes('chattel');
+    const isTherapy = window.location.pathname.includes('therapy');
+    const isLocum = window.location.pathname.includes('locum');
+    const isSection179 = window.location.pathname.includes('section-179');
 
     // Drawer text localization & specialization
-    const titleText = isItin
+    let titleText = isItin
       ? (isSpanish ? 'Pre-Aprobación de Hipoteca ITIN' : 'ITIN Mortgage Pre-Approval')
       : (isSpanish ? 'Consulta de Financiamiento Shariah' : 'Halal Financing Pre-Approval');
     
-    const subTitle = isItin
+    let subTitle = isItin
       ? (isSpanish ? 'Compare prestamistas especializados en préstamos sin Seguro Social (solo ITIN/W-2/1099).' : 'Connect with licensed Non-QM lenders specializing in ITIN loans with no SSN required.')
       : (isSpanish ? 'Verifique disponibilidad con entidades certificadas bajo normas AAOIFI sin usura (Riba).' : 'Compare certified AAOIFI-compliant financing partners with zero compounding interest (Riba-free).');
+
+    let badgeText = isItin ? '🏛️ Non-QM / ITIN Partner Network' : '🕌 AAOIFI Shariah Lending Network';
+    let btnText = isSpanish ? 'Verificar Pre-Aprobación Ahora' : 'Request Partner Pre-Approval Match';
+
+    if (isDscr) {
+      badgeText = '🏢 Wholesale Non-QM DSCR Network';
+      titleText = 'Wholesale Non-QM DSCR Lending Desk';
+      subTitle = 'Connect with wholesale Non-QM lenders funding DSCR down to 0.75x with no tax returns or personal income needed.';
+      btnText = 'Connect with DSCR Lenders (Down to 0.75x)';
+    } else if (isBankStmt) {
+      badgeText = '💼 1099 & Self-Employed Lending Network';
+      titleText = 'Bank Statement Loan Pre-Approval Desk';
+      subTitle = 'Request rates and pre-approval from licensed Non-QM loan officers in your state (12 or 24-month bank statements).';
+      btnText = 'Request Bank Statement Rates in Your State';
+    } else if (isChattel) {
+      badgeText = '🏡 Manufactured & Modular Lending Network';
+      titleText = 'Manufactured & Modular Home Lending Desk';
+      subTitle = 'Find specialized chattel lenders and 30-year land-home package mortgage officers.';
+      btnText = 'Find Specialized Manufactured Home Lenders';
+    } else if (isTherapy) {
+      badgeText = '🩺 Behavioral Health Practice Network';
+      titleText = 'Therapy Practice Management & Credentialing Match';
+      subTitle = 'Compare top EHR software (SimplePractice, TherapyNotes) and medical billing credentialing services.';
+      btnText = 'Get EHR & Credentialing Guidance';
+    } else if (isLocum) {
+      badgeText = '🩺 Healthcare Tax & Financial Network';
+      titleText = 'Healthcare Locum CPA & Solo 401(k) Advisory';
+      subTitle = 'Connect with specialized healthcare CPAs to audit tax homes, optimize GSA per diems, and set up maximum Solo 401(k) shelters.';
+      btnText = 'Connect with Specialized Healthcare CPAs';
+    } else if (isSection179) {
+      badgeText = '🚜 Commercial Equipment Financing Network';
+      titleText = 'Commercial Equipment Leasing & Financing Desk';
+      subTitle = 'Get pre-approved for heavy machinery, yellow iron, and commercial equipment financing to lock in Year 1 tax shields.';
+      btnText = 'Get Pre-Approved for Equipment Financing';
+    }
 
     const drawerHTML = `
 <div id="omni-lead-drawer-overlay" class="lead-drawer-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(2,6,23,0.78); backdrop-filter:blur(6px); z-index:99999; opacity:0; transition:opacity 0.3s ease;">
@@ -42,11 +83,11 @@
     <!-- Header -->
     <div style="padding:22px 24px; border-bottom:1px solid #1e293b; display:flex; justify-content:space-between; align-items:flex-start; background:#0b1120;">
       <div>
-        <div style="display:inline-flex; align-items:center; gap:6px; background:${isItin ? 'rgba(56,189,248,0.15)' : 'rgba(16,185,129,0.15)'}; color:${isItin ? '#38bdf8' : '#34d399'}; padding:3px 10px; border-radius:999px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">
-          <span>${isItin ? '🏛️ Non-QM / ITIN Partner Network' : '🕌 AAOIFI Shariah Lending Network'}</span>
+        <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(56,189,248,0.15); color:#38bdf8; padding:3px 10px; border-radius:999px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">
+          <span id="lead-drawer-badge">${badgeText}</span>
         </div>
         <h3 id="lead-drawer-title" style="margin:0; font-size:1.25rem; font-weight:800; color:#fff;">${titleText}</h3>
-        <p style="margin:6px 0 0 0; font-size:0.82rem; color:#94a3b8; line-height:1.4;">${subTitle}</p>
+        <p id="lead-drawer-subtitle" style="margin:6px 0 0 0; font-size:0.82rem; color:#94a3b8; line-height:1.4;">${subTitle}</p>
       </div>
       <button id="lead-drawer-close" aria-label="Close Drawer" style="background:#1e293b; border:1px solid #334155; color:#94a3b8; width:34px; height:34px; border-radius:8px; cursor:pointer; font-size:20px; line-height:1; display:flex; align-items:center; justify-content:center; margin-left:12px; transition:all 0.2s;">&times;</button>
     </div>
@@ -55,7 +96,7 @@
     <div style="padding:16px 24px; background:#1e293b; border-bottom:1px solid #334155;">
       <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:#94a3b8; font-weight:700; margin-bottom:10px; display:flex; justify-content:space-between;">
         <span>Attached Calculator Scenario</span>
-        <span style="color:${isItin ? '#38bdf8' : '#34d399'};">✓ Live State Synced</span>
+        <span style="color:#38bdf8;">✓ Live State Synced</span>
       </div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:12px;">
         <div style="background:#0f172a; padding:8px 12px; border-radius:6px; border:1px solid #334155;">
@@ -292,7 +333,12 @@
       let leadRef = 'OPO-' + Math.floor(100000 + Math.random() * 900000);
 
       try {
-        const endpoint = isItin ? '/api/leads/itin-mortgage' : '/api/leads/islamic-finance';
+        let endpoint = '/api/leads/specialized-finance';
+        if (isItin) endpoint = '/api/leads/itin-mortgage';
+        else if (isIslamic) endpoint = '/api/leads/islamic-finance';
+
+        payload.niche = isDscr ? 'dscr' : (isBankStmt ? 'bank-statement' : (isChattel ? 'chattel' : (isTherapy ? 'therapy' : (isLocum ? 'locum' : (isSection179 ? 'section179' : 'specialized-finance')))));
+
         const res = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

@@ -1,0 +1,394 @@
+{
+  "site": "sc-domain:omnioperand.com",
+  "retrieved_at": "2026-10-30T20:09:37.573046",
+  "date_range": {
+    "start": "2026-09-28",
+    "end": "2026-10-28"
+  },
+  "summary": {
+    "recent_5d_avg_impressions": 1504,
+    "prior_period_avg_impressions": 656,
+    "impression_change_pct": 129.3
+  },
+  "daily_rows": [
+    {
+      "date": "2026-10-18",
+      "impressions": 0,
+      "clicks": 0,
+      "ctr_pct": 0,
+      "position": 0
+    },
+    {
+      "date": "2026-10-19",
+      "impressions": 0,
+      "clicks": 0,
+      "ctr_pct": 0,
+      "position": 0
+    },
+    {
+      "date": "2026-10-20",
+      "impressions": 12,
+      "clicks": 0,
+      "ctr_pct": 0,
+      "position": 35.5
+    },
+    {
+      "date": "2026-10-21",
+      "impressions": 181,
+      "clicks": 1,
+      "ctr_pct": 0.55,
+      "position": 51.0
+    },
+    {
+      "date": "2026-10-22",
+      "impressions": 1145,
+      "clicks": 2,
+      "ctr_pct": 0.17,
+      "position": 59.7
+    },
+    {
+      "date": "2026-10-23",
+      "impressions": 1577,
+      "clicks": 2,
+      "ctr_pct": 0.13,
+      "position": 60.4
+    },
+    {
+      "date": "2026-10-24",
+      "impressions": 1680,
+      "clicks": 1,
+      "ctr_pct": 0.06,
+      "position": 58.7
+    },
+    {
+      "date": "2026-10-25",
+      "impressions": 1865,
+      "clicks": 1,
+      "ctr_pct": 0.05,
+      "position": 60.4
+    },
+    {
+      "date": "2026-10-26",
+      "impressions": 2001,
+      "clicks": 3,
+      "ctr_pct": 0.15,
+      "position": 47.5
+    },
+    {
+      "date": "2026-10-27",
+      "impressions": 1637,
+      "clicks": 3,
+      "ctr_pct": 0.18,
+      "position": 48.3
+    },
+    {
+      "date": "2026-10-28",
+      "impressions": 512,
+      "clicks": 0,
+      "ctr_pct": 0,
+      "position": 45.1
+    }
+  ],
+  "page_deltas_worst_first": [
+    {
+      "page": "https://omnioperand.com/de/",
+      "curr_impressions": 1,
+      "curr_clicks": 1,
+      "curr_ctr": 100,
+      "curr_position": 1,
+      "prior_impressions": 0,
+      "delta_impressions": 1,
+      "delta_pct": 100.0
+    },
+    {
+      "page": "https://omnioperand.com/ro/statistics/z-score/",
+      "curr_impressions": 1,
+      "curr_clicks": 1,
+      "curr_ctr": 100,
+      "curr_position": 1,
+      "prior_impressions": 0,
+      "delta_impressions": 1,
+      "delta_pct": 100.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/manure-nutrient-fertilizer-credit/",
+      "curr_impressions": 1,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 291,
+      "prior_impressions": 0,
+      "delta_impressions": 1,
+      "delta_pct": 100.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/silage-bunker-density/",
+      "curr_impressions": 1,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 26,
+      "prior_impressions": 0,
+      "delta_impressions": 1,
+      "delta_pct": 100.0
+    },
+    {
+      "page": "https://omnioperand.com/biotech/chromatography-resolution/",
+      "curr_impressions": 1,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 58,
+      "prior_impressions": 0,
+      "delta_impressions": 1,
+      "delta_pct": 100.0
+    },
+    {
+      "page": "https://omnioperand.com/",
+      "curr_impressions": 2,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 3.5,
+      "prior_impressions": 0,
+      "delta_impressions": 2,
+      "delta_pct": 200.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/farmland-cash-rent-equivalent/",
+      "curr_impressions": 2,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 10,
+      "prior_impressions": 0,
+      "delta_impressions": 2,
+      "delta_pct": 200.0
+    },
+    {
+      "page": "https://omnioperand.com/api/",
+      "curr_impressions": 2,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 7.5,
+      "prior_impressions": 0,
+      "delta_impressions": 2,
+      "delta_pct": 200.0
+    },
+    {
+      "page": "https://omnioperand.com/biotech/drug-volume-of-distribution/",
+      "curr_impressions": 2,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 71,
+      "prior_impressions": 0,
+      "delta_impressions": 2,
+      "delta_pct": 200.0
+    },
+    {
+      "page": "https://omnioperand.com/de/geometry/",
+      "curr_impressions": 3,
+      "curr_clicks": 1,
+      "curr_ctr": 33.33,
+      "curr_position": 31.3,
+      "prior_impressions": 0,
+      "delta_impressions": 3,
+      "delta_pct": 300.0
+    },
+    {
+      "page": "https://omnioperand.com/finance/self-employment-tax/",
+      "curr_impressions": 3,
+      "curr_clicks": 1,
+      "curr_ctr": 33.33,
+      "curr_position": 145,
+      "prior_impressions": 0,
+      "delta_impressions": 3,
+      "delta_pct": 300.0
+    },
+    {
+      "page": "https://omnioperand.com/health/ovulation/",
+      "curr_impressions": 3,
+      "curr_clicks": 1,
+      "curr_ctr": 33.33,
+      "curr_position": 4.3,
+      "prior_impressions": 0,
+      "delta_impressions": 3,
+      "delta_pct": 300.0
+    },
+    {
+      "page": "https://omnioperand.com/nl/geometry/frustum-cone/",
+      "curr_impressions": 3,
+      "curr_clicks": 1,
+      "curr_ctr": 33.33,
+      "curr_position": 16.3,
+      "prior_impressions": 0,
+      "delta_impressions": 3,
+      "delta_pct": 300.0
+    },
+    {
+      "page": "https://omnioperand.com/biotech/cohen-d-effect-size/",
+      "curr_impressions": 3,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 57.3,
+      "prior_impressions": 0,
+      "delta_impressions": 3,
+      "delta_pct": 300.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/",
+      "curr_impressions": 4,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 79,
+      "prior_impressions": 0,
+      "delta_impressions": 4,
+      "delta_pct": 400.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/beehive-honey-yield-feeding/",
+      "curr_impressions": 5,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 77.6,
+      "prior_impressions": 0,
+      "delta_impressions": 5,
+      "delta_pct": 500.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/broiler-flock-epef-efficiency/",
+      "curr_impressions": 5,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 29.8,
+      "prior_impressions": 0,
+      "delta_impressions": 5,
+      "delta_pct": 500.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/hay-bale-livestock-forage/",
+      "curr_impressions": 5,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 67,
+      "prior_impressions": 0,
+      "delta_impressions": 5,
+      "delta_pct": 500.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/tractor-fuel-consumption-pto/",
+      "curr_impressions": 5,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 7.8,
+      "prior_impressions": 0,
+      "delta_impressions": 5,
+      "delta_pct": 500.0
+    },
+    {
+      "page": "https://omnioperand.com/biotech/clinical-trial-sample-size/",
+      "curr_impressions": 5,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 35.2,
+      "prior_impressions": 0,
+      "delta_impressions": 5,
+      "delta_pct": 500.0
+    },
+    {
+      "page": "https://omnioperand.com/fr/geometry/2d/shapes/decagon/",
+      "curr_impressions": 6,
+      "curr_clicks": 1,
+      "curr_ctr": 16.67,
+      "curr_position": 8.2,
+      "prior_impressions": 0,
+      "delta_impressions": 6,
+      "delta_pct": 600.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/combine-harvester-grain-loss/",
+      "curr_impressions": 6,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 46.2,
+      "prior_impressions": 0,
+      "delta_impressions": 6,
+      "delta_pct": 600.0
+    },
+    {
+      "page": "https://omnioperand.com/biotech/diagnostic-sensitivity-specificity/",
+      "curr_impressions": 6,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 68.2,
+      "prior_impressions": 0,
+      "delta_impressions": 6,
+      "delta_pct": 600.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/drainage-tile-spacing/",
+      "curr_impressions": 7,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 47.7,
+      "prior_impressions": 0,
+      "delta_impressions": 7,
+      "delta_pct": 700.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/greenhouse-dli-lighting/",
+      "curr_impressions": 7,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 48.7,
+      "prior_impressions": 0,
+      "delta_impressions": 7,
+      "delta_pct": 700.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/pesticide-tank-mix-dilution/",
+      "curr_impressions": 7,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 133,
+      "prior_impressions": 0,
+      "delta_impressions": 7,
+      "delta_pct": 700.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/timber-volume-doyle-scribner/",
+      "curr_impressions": 7,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 49.9,
+      "prior_impressions": 0,
+      "delta_impressions": 7,
+      "delta_pct": 700.0
+    },
+    {
+      "page": "https://omnioperand.com/energy/geothermal-ground-loop/",
+      "curr_impressions": 8,
+      "curr_clicks": 1,
+      "curr_ctr": 12.5,
+      "curr_position": 65.8,
+      "prior_impressions": 0,
+      "delta_impressions": 8,
+      "delta_pct": 800.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/pig-average-daily-gain/",
+      "curr_impressions": 8,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 7.2,
+      "prior_impressions": 0,
+      "delta_impressions": 8,
+      "delta_pct": 800.0
+    },
+    {
+      "page": "https://omnioperand.com/agriculture/soil-lime-requirement-cce/",
+      "curr_impressions": 9,
+      "curr_clicks": 0,
+      "curr_ctr": 0,
+      "curr_position": 45.9,
+      "prior_impressions": 0,
+      "delta_impressions": 9,
+      "delta_pct": 900.0
+    }
+  ]
+}

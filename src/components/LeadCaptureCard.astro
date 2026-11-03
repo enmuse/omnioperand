@@ -1,0 +1,122 @@
+---
+/**
+ * src/components/LeadCaptureCard.astro
+ * High-Converting Specialized Financial & Commercial Lead Capture Component
+ *
+ * Supports niches:
+ * - dscr: Non-QM DSCR Wholesale Lenders (Down to 0.75x)
+ * - bank-statement: 12/24-Month Bank Statement Loan Officers
+ * - chattel: Manufactured Home & Chattel Specialists
+ * - therapy: Practice Management & Medical Credentialing
+ * - locum: Healthcare CPAs & Solo 401(k) Providers
+ * - section179: Commercial Equipment Leasing & Loans
+ */
+
+export interface Props {
+  niche: 'dscr' | 'bank-statement' | 'chattel' | 'therapy' | 'locum' | 'section179';
+  ctaText?: string;
+  subtext?: string;
+  badgeText?: string;
+  accentColor?: string;
+}
+
+const {
+  niche,
+  ctaText,
+  subtext,
+  badgeText,
+  accentColor,
+} = Astro.props;
+
+const nicheConfigs = {
+  'dscr': {
+    badge: '🏛️ Wholesale Non-QM Lending Network',
+    title: 'Connect with Wholesale Non-QM Lenders Funding DSCR Down to 0.75x',
+    desc: 'No personal tax returns, W-2s, or employment verification required. Underwritten 100% on property cash flow.',
+    btnText: 'Connect with Wholesale DSCR Lenders',
+    tag: 'DSCR Down to 0.75x',
+    disclaimer: 'Zero impact on credit score during pre-check • Verified Non-QM wholesale network'
+  },
+  'bank-statement': {
+    badge: '💼 1099 & Self-Employed Lending Network',
+    title: 'Request Rates from Bank Statement Loan Officers in Your State',
+    desc: 'Qualify using 12 or 24 months of bank deposits without writing off your legitimate business deductions.',
+    btnText: 'Request Bank Statement Rates in Your State',
+    tag: 'Up to 90% LTV • No Tax Returns',
+    disclaimer: 'Personal & business bank statement programs • Fast pre-qualification'
+  },
+  'chattel': {
+    badge: '🏡 Manufactured & Modular Lending Network',
+    title: 'Find Specialized Manufactured Home & Chattel Lenders',
+    desc: 'Compare chattel personal property financing on leased land vs. 30-year FHA/conventional land-home mortgage packages.',
+    btnText: 'Find Specialized Manufactured Home Lenders',
+    tag: 'Chattel & Land-Home Programs',
+    disclaimer: 'Direct access to national and regional manufactured home loan officers'
+  },
+  'therapy': {
+    badge: '🩺 Behavioral Health Practice Network',
+    title: 'Upgrade Practice EHR & Streamline Medical Credentialing',
+    desc: 'Save 5–10 hours per week on billing friction. Discover top EHR platforms and credentialing services tailored to cash & hybrid practices.',
+    btnText: 'Compare EHR & Credentialing Partners',
+    tag: 'SimplePractice • TherapyNotes • Credentialing',
+    disclaimer: 'Eliminate billing denials • Maximize session take-home revenue'
+  },
+  'locum': {
+    badge: '🩺 Healthcare CPA & Financial Advisory',
+    title: 'Connect with Specialized Healthcare CPAs & Solo 401(k) Providers',
+    desc: 'Audit your IRS tax home substantiation, optimize tax-free GSA per diems, and shield up to $69,000 in a Solo 401(k).',
+    btnText: 'Connect with Healthcare CPAs & Wealth Advisors',
+    tag: 'IRS Rev. Rul. 73-529 Compliance',
+    disclaimer: 'Specialized for traveling MDs, DOs, CRNAs, PAs, and Travel Nurses'
+  },
+  'section179': {
+    badge: '🚜 Commercial Equipment Financing Network',
+    title: 'Get Pre-Approved for Commercial Equipment Leasing & Loans',
+    desc: 'Finance heavy machinery, yellow iron, or commercial vehicles with low down payments to unlock your immediate Year 1 tax shield.',
+    btnText: 'Get Pre-Approved for Equipment Financing',
+    tag: 'Application-Only up to $350k',
+    disclaimer: 'Competitive commercial rates • 24–72 month flexible amortization terms'
+  }
+};
+
+const config = nicheConfigs[niche] || nicheConfigs['dscr'];
+const displayBadge = badgeText || config.badge;
+const displayTitle = config.title;
+const displayDesc = subtext || config.desc;
+const displayBtnText = ctaText || config.btnText;
+---
+
+<div class="lead-capture-card" data-niche={niche} style="margin: 2rem 0; padding: 1.75rem 2rem; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 14px; box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.08); position: relative; overflow: hidden;">
+  <!-- Glow Accent -->
+  <div style="position: absolute; top: -50px; right: -50px; width: 140px; height: 140px; background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%); pointer-events: none;"></div>
+
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+    <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.12); color: var(--accent-cyan, #38bdf8); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
+      <span>{displayBadge}</span>
+    </div>
+    <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">{config.tag}</span>
+  </div>
+
+  <h3 style="margin: 0.25rem 0 0.5rem 0; font-size: 1.35rem; font-weight: 800; color: #f8fafc; line-height: 1.35;">
+    {displayTitle}
+  </h3>
+  <p style="margin: 0 0 1.25rem 0; font-size: 0.9rem; color: #94a3b8; line-height: 1.5; max-width: 680px;">
+    {displayDesc}
+  </p>
+
+  <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+    <button
+      type="button"
+      class="btn-lead-drawer"
+      data-niche={niche}
+      style="width: 100%; max-width: 580px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; padding: 14px 22px; border-radius: 10px; font-weight: 800; font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 24px -6px rgba(2, 132, 199, 0.45); transition: all 0.2s ease;"
+    >
+      <span>⚡</span>
+      <span>{displayBtnText}</span>
+      <span style="background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 999px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em;">Zero Obligation</span>
+    </button>
+    <div style="font-size: 0.75rem; color: #64748b; line-height: 1.4; margin-top: 4px;">
+      {config.disclaimer}
+    </div>
+  </div>
+</div>

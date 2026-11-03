@@ -1,0 +1,49 @@
+---
+import LeadCaptureCard from '../../components/LeadCaptureCard.astro';
+
+const pageTitle = "12/24-Month Bank Statement Loan Calculator for 1099 & Self-Employed | OmniOperand";
+const pageDescription = "Calculate maximum home purchasing power from 12 or 24 months of bank deposits. Non-QM mortgage qualification for business owners without tax returns.";
+const canonicalUrl = "https://omnioperand.com/calculators/bank-statement-mortgage/";
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription}>
+  <link rel="canonical" href={canonicalUrl}>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://omnioperand.com/calculators/bank-statement-mortgage/#software",
+        "name": "12/24-Month Bank Statement Loan Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "description": "Calculates monthly qualifying income and backsolves maximum purchasing power for self-employed and 1099 borrowers from 12 or 24 months of bank deposits.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FinancialProduct",
+        "@id": "https://omnioperand.com/calculators/bank-statement-mortgage/#product",
+        "name": "Non-QM Bank Statement Mortgage",
+        "description": "Non-conforming self-employed mortgage program qualifying borrowers on gross deposits with standard 50% expense ratios or CPA attestation letters."
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="omni-body">
+  <div id="bank-statement-calculator" class="calculator-wrapper">
+    <LeadCaptureCard niche="bank-statement" />
+  </div>
+
+  <script src="/assets/js/lead-drawer.js" defer></script>
+  <script src="/assets/js/bank-statement-solver.js" defer></script>
+</body>
+</html>

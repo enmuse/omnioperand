@@ -26,6 +26,7 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
 - [Civil, Structural, Geotechnical & Hydraulic Engineering Hub](https://omnioperand.com/engineering/): Rigorous solvers for beam elastic deflection, Manning open channel flow, reinforced concrete rebar ratio, retaining wall lateral earth pressure, and column buckling.
 - [E-Commerce, Direct-to-Consumer & Retail Operations Hub](https://omnioperand.com/ecommerce/): Comprehensive unit economics models: true landed costs, inventory turnover DSI, cart abandonment recovery, Amazon FBA fee margins, GMROI, and LTV:CAC.
 - [Biotechnology, Pharmacology & Laboratory Medicine Hub](https://omnioperand.com/biotech/): Clinical pharmacology and molecular biology solvers: drug elimination half-life, Cockcroft-Gault CrCl, PCR primer Tm, Michaelis-Menten kinetics, and qPCR 2^(-ΔΔCt).
+- [Specialized Financing & Commercial Solvers](https://omnioperand.com/calculators/): High-intent computational directory for Non-QM mortgages, equipment tax shields, and clinical practice economics.
 
 ### Quantitative Finance & Lending Hub
 - [Mortgage Refinance & Breakeven Calculator](https://omnioperand.com/finance/refinance/): Calculate monthly payment savings, lifetime interest reduction, and closing cost breakeven horizon when refinancing a home mortgage.
@@ -155,6 +156,15 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
 - [RV & Camper Loan Calculator](https://omnioperand.com/finance/rv-loan/): Calculate RV and motorhome loan monthly payments, interest cost, and amortization schedules for terms up to 20 years. Free, instant loan estimates.
 - [Equity IRR & Real Estate Return Calculator](https://omnioperand.com/finance/equity-irr/): Calculate levered equity Internal Rate of Return (IRR), Equity Multiple (MOIC), and Net Present Value (NPV) for real estate syndications and private equity.
 - [ASC 842 / IFRS 16 Incremental Borrowing Rate (IBR) Calculator](https://omnioperand.com/finance/incremental-borrowing-rate-lease/): Calculate corporate lease incremental borrowing rates (IBR), synthetic credit rating spreads, and right-of-use (ROU) asset present value schedules.
+
+### Specialized Non-QM, Commercial & Healthcare Solvers
+- [Specialized Financing Directory](https://omnioperand.com/calculators/): High-intent computational directory for Non-QM mortgages, equipment tax shields, and clinical practice economics.
+- [DSCR Rental Property Investor Loan Calculator](https://omnioperand.com/calculators/dscr-loan/): Calculate Debt Service Coverage Ratio (DSCR), monthly PITIA, net cash flow, and qualifying thresholds down to 0.75x for non-QM real estate investor loans.
+- [12/24-Month Bank Statement Loan Calculator](https://omnioperand.com/calculators/bank-statement-mortgage/): Calculate self-employed qualifying monthly income from 12 or 24 months of gross bank deposits and determine maximum home purchasing power under non-QM guidelines.
+- [Chattel Loan vs Land-Home Modular Mortgage Comparison](https://omnioperand.com/calculators/chattel-vs-land-home/): Compare personal property chattel financing against real property land-home mortgage packages, analyzing 10-year equity build and park lot rent breakeven horizons.
+- [Private Practice Breakeven: Cash-Pay vs Insurance Credentialing](https://omnioperand.com/calculators/therapy-private-practice-breakeven/): Calculate clinical and administrative session hour parity between private cash-pay and in-network insurance credentialed healthcare practices.
+- [1099 Travel Healthcare & Locum Tenens Tax Arbitrage Solver](https://omnioperand.com/calculators/locum-tenens-tax-calculator/): Calculate true net after-tax take-home pay comparing W-2 permanent salaries against 1099 locum tenens rates with tax-free per diem stipends and Solo 401(k) shelters.
+- [Section 179 Heavy Equipment Tax Shield & Cash-Flow Sizer](https://omnioperand.com/calculators/section-179-equipment/): Calculate first-year Section 179 expensing deductions, bonus depreciation tax savings, financed cash outflows, and net cash-in-pocket benefit for commercial equipment.
 
 ### Construction & Trades Engineering Hub
 - [Square Footage & Area Calculator](https://omnioperand.com/construction/square-footage/): Calculate square footage for single rooms, multi-room floorplans, and landscaping with perimeter and area conversion.

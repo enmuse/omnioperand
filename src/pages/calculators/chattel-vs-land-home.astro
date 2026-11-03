@@ -1,0 +1,49 @@
+---
+import LeadCaptureCard from '../../components/LeadCaptureCard.astro';
+
+const pageTitle = "Chattel Loan vs. Land-Home Modular Mortgage Comparison Calculator | OmniOperand";
+const pageDescription = "Compare manufactured home personal property chattel loans with 30-year titled land-home mortgages. Analyze lot rent inflation, interest, and equity breakeven.";
+const canonicalUrl = "https://omnioperand.com/calculators/chattel-vs-land-home/";
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription}>
+  <link rel="canonical" href={canonicalUrl}>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://omnioperand.com/calculators/chattel-vs-land-home/#software",
+        "name": "Chattel Loan vs. Land-Home Modular Mortgage Comparison Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "description": "Side-by-side financial evaluation of manufactured home chattel personal property loans versus 30-year real estate mortgages.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FinancialProduct",
+        "@id": "https://omnioperand.com/calculators/chattel-vs-land-home/#product",
+        "name": "Manufactured Home Financing",
+        "description": "Personal property chattel loans and real estate land-home modular package loans."
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="omni-body">
+  <div id="chattel-land-home-calculator" class="calculator-wrapper">
+    <LeadCaptureCard niche="chattel" />
+  </div>
+
+  <script src="/assets/js/lead-drawer.js" defer></script>
+  <script src="/assets/js/chattel-vs-land-home-solver.js" defer></script>
+</body>
+</html>

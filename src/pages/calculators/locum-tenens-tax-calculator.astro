@@ -1,0 +1,49 @@
+---
+import LeadCaptureCard from '../../components/LeadCaptureCard.astro';
+
+const pageTitle = "1099 Travel Healthcare / Locum Tenens Tax Arbitrage Solver | OmniOperand";
+const pageDescription = "Calculate 1099 locum tenens vs. W-2 net take-home pay, GSA non-taxable per diems, self-employment tax, duplicated living expenses, and Solo 401(k) shelters.";
+const canonicalUrl = "https://omnioperand.com/calculators/locum-tenens-tax-calculator/";
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription}>
+  <link rel="canonical" href={canonicalUrl}>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://omnioperand.com/calculators/locum-tenens-tax-calculator/#software",
+        "name": "1099 Travel Healthcare / Locum Tenens Tax Arbitrage Solver",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "description": "Models tax arbitrage, IRS tax home compliance, self-employment tax, and Solo 401(k) deferrals for traveling medical professionals.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FinancialProduct",
+        "@id": "https://omnioperand.com/calculators/locum-tenens-tax-calculator/#product",
+        "name": "Locum Tenens CPA & Solo 401(k) Financial Services",
+        "description": "Tax planning, tax home defense audits, and specialized solo retirement plans for traveling healthcare providers."
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="omni-body">
+  <div id="locum-tenens-calculator" class="calculator-wrapper">
+    <LeadCaptureCard niche="locum" />
+  </div>
+
+  <script src="/assets/js/lead-drawer.js" defer></script>
+  <script src="/assets/js/locum-tenens-solver.js" defer></script>
+</body>
+</html>

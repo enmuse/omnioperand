@@ -1,0 +1,22 @@
+{
+  "summary": {
+    "total_queries_analyzed": 1000,
+    "striking_distance_count": 0,
+    "low_ctr_count": 1
+  },
+  "recommendations": {
+    "page_2_striking_distance": [],
+    "title_meta_tuneups": [
+      {
+        "query": "auto loans",
+        "page": "https://omnioperand.com/pl/finance/auto-loan/",
+        "clicks": 0,
+        "impressions": 266,
+        "ctr_percent": 0,
+        "position": 5.5
+      }
+    ]
+  },
+  "site": "sc-domain:omnioperand.com",
+  "retrieved_at": "2026-10-31T14:19:18.845803"
+}

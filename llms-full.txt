@@ -26,6 +26,7 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
 - [Civil, Structural, Geotechnical & Hydraulic Engineering Hub](https://omnioperand.com/engineering/): Rigorous solvers for beam elastic deflection, Manning open channel flow, reinforced concrete rebar ratio, retaining wall lateral earth pressure, and column buckling.
 - [E-Commerce, Direct-to-Consumer & Retail Operations Hub](https://omnioperand.com/ecommerce/): Comprehensive unit economics models: true landed costs, inventory turnover DSI, cart abandonment recovery, Amazon FBA fee margins, GMROI, and LTV:CAC.
 - [Biotechnology, Pharmacology & Laboratory Medicine Hub](https://omnioperand.com/biotech/): Clinical pharmacology and molecular biology solvers: drug elimination half-life, Cockcroft-Gault CrCl, PCR primer Tm, Michaelis-Menten kinetics, and qPCR 2^(-ΔΔCt).
+- [Specialized Financing & Commercial Solvers](https://omnioperand.com/calculators/): High-intent computational directory for Non-QM mortgages, equipment tax shields, and clinical practice economics.
 
 ### Quantitative Finance & Lending Hub
 - [Mortgage Refinance & Breakeven Calculator](https://omnioperand.com/finance/refinance/): Calculate monthly payment savings, lifetime interest reduction, and closing cost breakeven horizon when refinancing a home mortgage.
@@ -155,6 +156,15 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
 - [RV & Camper Loan Calculator](https://omnioperand.com/finance/rv-loan/): Calculate RV and motorhome loan monthly payments, interest cost, and amortization schedules for terms up to 20 years. Free, instant loan estimates.
 - [Equity IRR & Real Estate Return Calculator](https://omnioperand.com/finance/equity-irr/): Calculate levered equity Internal Rate of Return (IRR), Equity Multiple (MOIC), and Net Present Value (NPV) for real estate syndications and private equity.
 - [ASC 842 / IFRS 16 Incremental Borrowing Rate (IBR) Calculator](https://omnioperand.com/finance/incremental-borrowing-rate-lease/): Calculate corporate lease incremental borrowing rates (IBR), synthetic credit rating spreads, and right-of-use (ROU) asset present value schedules.
+
+### Specialized Non-QM, Commercial & Healthcare Solvers
+- [Specialized Financing Directory](https://omnioperand.com/calculators/): High-intent computational directory for Non-QM mortgages, equipment tax shields, and clinical practice economics.
+- [DSCR Rental Property Investor Loan Calculator](https://omnioperand.com/calculators/dscr-loan/): Calculate Debt Service Coverage Ratio (DSCR), monthly PITIA, net cash flow, and qualifying thresholds down to 0.75x for non-QM real estate investor loans.
+- [12/24-Month Bank Statement Loan Calculator](https://omnioperand.com/calculators/bank-statement-mortgage/): Calculate self-employed qualifying monthly income from 12 or 24 months of gross bank deposits and determine maximum home purchasing power under non-QM guidelines.
+- [Chattel Loan vs Land-Home Modular Mortgage Comparison](https://omnioperand.com/calculators/chattel-vs-land-home/): Compare personal property chattel financing against real property land-home mortgage packages, analyzing 10-year equity build and park lot rent breakeven horizons.
+- [Private Practice Breakeven: Cash-Pay vs Insurance Credentialing](https://omnioperand.com/calculators/therapy-private-practice-breakeven/): Calculate clinical and administrative session hour parity between private cash-pay and in-network insurance credentialed healthcare practices.
+- [1099 Travel Healthcare & Locum Tenens Tax Arbitrage Solver](https://omnioperand.com/calculators/locum-tenens-tax-calculator/): Calculate true net after-tax take-home pay comparing W-2 permanent salaries against 1099 locum tenens rates with tax-free per diem stipends and Solo 401(k) shelters.
+- [Section 179 Heavy Equipment Tax Shield & Cash-Flow Sizer](https://omnioperand.com/calculators/section-179-equipment/): Calculate first-year Section 179 expensing deductions, bonus depreciation tax savings, financed cash outflows, and net cash-in-pocket benefit for commercial equipment.
 
 ### Construction & Trades Engineering Hub
 - [Square Footage & Area Calculator](https://omnioperand.com/construction/square-footage/): Calculate square footage for single rooms, multi-room floorplans, and landscaping with perimeter and area conversion.
@@ -1243,6 +1253,49 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
   - **1. ASC 842 & IFRS 16 IBR Definition**: The Incremental Borrowing Rate is the rate of interest that a lessee would have to pay to borrow on a collateralized basis over a similar term an amount equal to the lease payments in a similar economic environment.
   - **2. Synthetic Build-Up Method**: Auditors and Big 4 accounting firms require a 4-component synthetic derivation: IBR = Risk-Free Reference Rate + Financing Entity Credit Spread + Asset Collateral Adjustment + Term/Currency Adjustment.
   - **3. Right-of-Use (ROU) Asset Balance Sheet Capitalization**: Lease payments discounted at the derived IBR create the initial lease liability recognized on the corporate balance sheet. Undiscounted payments minus present value equals total financing interest.
+
+### DSCR Rental Property Investor Loan Calculator (`https://omnioperand.com/calculators/dscr-loan/`)
+- Governing Formula: `DSCR = Gross Monthly Rental Income / Total Monthly PITIA`
+  - **Monthly Principal & Interest (P&I)**: M = P · [r(1 + r)ⁿ] / [(1 + r)ⁿ - 1], where P is loan principal, r = annual_rate / 12, and n = term_years × 12.
+  - **Total Monthly PITIA**: PITIA = M + (Annual Taxes / 12) + (Annual Insurance / 12) + Monthly HOA.
+  - **Debt Service Coverage Ratio (DSCR)**: DSCR = Gross Monthly Rent / PITIA. Ratios below 1.0 indicate negative operating cash flow; 1.0–1.19 tight; 1.20–1.49 standard underwriting; 1.50+ strong.
+  - **Net Operating Monthly Cash Flow**: Net Cash Flow = Gross Monthly Rent - PITIA.
+  - **Target Max PITIA Thresholds**: Max PITIA_target = Gross Monthly Rent / Target_DSCR (e.g. for 1.0x, 1.20x, 1.25x).
+
+### 12/24-Month Bank Statement Loan Calculator (`https://omnioperand.com/calculators/bank-statement-mortgage/`)
+- Governing Formula: `Qualifying Monthly Income = [Total Deposits · (1 - Expense Ratio)] / Months`
+  - **Total Qualifying Revenue**: Total Qualifying Revenue = Total Deposits × (1 - Expense Ratio). Standard business account default is 50% (or CPA letter %); personal accounts default to 100% (0% expense ratio).
+  - **Monthly Qualifying Income**: Monthly Qualifying Income = Total Qualifying Revenue / n_months (12 or 24).
+  - **Maximum Allowable Housing Expense**: Max Housing = (Monthly Qualifying Income × Max_DTI) - Monthly Personal Debt Obligations.
+  - **Backsolved Maximum Purchasing Power**: Loan Principal = Max Housing · [(1 + r)ⁿ - 1] / [r(1 + r)ⁿ]. Max Purchase Price = Loan Principal / (1 - Down_Payment_Pct).
+
+### Chattel Loan vs Land-Home Modular Mortgage Comparison (`https://omnioperand.com/calculators/chattel-vs-land-home/`)
+- Governing Formula: `Chattel Monthly Outlay = M_chattel + Lot Rent; Land-Home Monthly Outlay = M_mortgage + Taxes`
+  - **Chattel Personal Property Monthly Cost**: M_chattel = P_home · [r_c(1 + r_c)ⁿᶜ] / [(1 + r_c)ⁿᶜ - 1]. Total monthly outlay = M_chattel + Lot Rent.
+  - **Land-Home Real Property Mortgage**: P_total = Home Cost + Land Cost. M_real = P_total · [r_m(1 + r_m)ⁿᵐ] / [(1 + r_m)ⁿᵐ - 1]. Total monthly outlay = M_real + (Property Taxes / 12).
+  - **10-Year Equity Modeling**: Chattel home depreciates (typically -2%/year on personal property structure) with $0 land equity. Real property modular home appreciates with land (+3%/year on real estate package).
+  - **Lot Rent Breakeven Horizon**: Cumulative lot rent paid escalates at inflation (3%/yr), crossing the cumulative land carrying cost over time.
+
+### Private Practice Breakeven: Cash-Pay vs Insurance Credentialing (`https://omnioperand.com/calculators/therapy-private-practice-breakeven/`)
+- Governing Formula: `Clinical Parity: Sessions_Cash = Target Gross / Cash_Fee; Sessions_Insurance = Target Gross / Effective_Insurance_Rate`
+  - **Effective In-Network Insurance Reimbursement**: Effective Rate = Contracted Rate × (1 - Denial Rate) × (1 - Billing Fee Pct).
+  - **Gross Revenue Requirement**: Target Gross = Target Net Take-Home + Fixed Practice Overhead.
+  - **Annual & Weekly Session Load**: Weekly Sessions = (Target Gross / Session Fee) / Weeks Worked.
+  - **Total Professional Working Hours**: Total Hours = Clinical Hours + (Sessions × Admin Minutes / 60). Insurance administrative overhead (unpaid credentialing, documentation, denials, appeals) creates substantial opportunity cost.
+
+### 1099 Travel Healthcare & Locum Tenens Tax Arbitrage Solver (`https://omnioperand.com/calculators/locum-tenens-tax-calculator/`)
+- Governing Formula: `Net 1099 = Non-Taxable Stipends + (Taxable Earnings - SE Tax - Federal Tax - State Tax) - Duplicated Housing`
+  - **Income Decomposition**: Total Compensation = Annual Taxable Hourly Earnings + Annual Non-Taxable GSA Per Diem Stipends.
+  - **Self-Employment Tax**: Net SE Earnings = Taxable Earnings × 0.9235. SE Tax = 15.3% on earnings up to Social Security wage base + 2.9% on excess + 0.9% Additional Medicare above threshold.
+  - **Tax Shelter Capacity**: Solo 401(k) / SEP-IRA deferral allows shielding up to $23,000 employee elective deferral + 20% of net self-employment earnings (up to $69,000 statutory cap).
+  - **True Net Arbitrage**: Net Take-Home = Gross Earnings - Taxes - Duplicated Tax Home Living Costs.
+
+### Section 179 Heavy Equipment Tax Shield & Cash-Flow Sizer (`https://omnioperand.com/calculators/section-179-equipment/`)
+- Governing Formula: `Net Year 1 Cash Flow = Immediate Tax Savings - Year 1 Outlay`
+  - **Immediate Eligible Write-Off**: Section 179 expensing (up to statutory ceiling $1,220,000) + Bonus Depreciation (60%) on remaining basis. Heavy machinery (>6,000 lbs GVWR) qualifies for 100% Section 179.
+  - **Year 1 Tax Shield Savings**: Immediate Tax Savings = Total Year 1 Deduction × Entity Marginal Tax Bracket.
+  - **Year 1 Financed Outlay**: Outlay = Cash Down Payment + (Monthly Loan Payment × Months Active in Year 1).
+  - **Net Cash-in-Pocket Benefit**: Net Benefit = Year 1 Tax Shield Savings - Year 1 Financed Outlay. When Net Benefit > 0, the tax shield generates day-one positive liquidity surpassing total cash paid to acquire the equipment.
 
 ### Square Footage & Area Calculator (`https://omnioperand.com/construction/square-footage/`)
 - Governing Formula: `Square Footage = Length (ft) × Width (ft)`

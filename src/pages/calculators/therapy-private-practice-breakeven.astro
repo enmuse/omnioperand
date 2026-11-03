@@ -1,0 +1,49 @@
+---
+import LeadCaptureCard from '../../components/LeadCaptureCard.astro';
+
+const pageTitle = "Private Practice Breakeven: Cash-Pay vs. Insurance Credentialing | OmniOperand";
+const pageDescription = "Calculate private practice working hours and revenue needed under cash vs. insurance models. Accounts for claim denials, billing fees, and unpaid admin time.";
+const canonicalUrl = "https://omnioperand.com/calculators/therapy-private-practice-breakeven/";
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription}>
+  <link rel="canonical" href={canonicalUrl}>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://omnioperand.com/calculators/therapy-private-practice-breakeven/#software",
+        "name": "Private Practice Breakeven: Cash-Pay vs. Insurance Credentialing",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "description": "Calculates practice economics, working hour requirements, and opportunity costs between cash-pay and in-network insurance models for mental health providers.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FinancialProduct",
+        "@id": "https://omnioperand.com/calculators/therapy-private-practice-breakeven/#product",
+        "name": "Therapy Practice Billing & EHR Solutions",
+        "description": "Electronic health record software, revenue cycle management, and credentialing services for counselors and psychologists."
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="omni-body">
+  <div id="therapy-practice-calculator" class="calculator-wrapper">
+    <LeadCaptureCard niche="therapy" />
+  </div>
+
+  <script src="/assets/js/lead-drawer.js" defer></script>
+  <script src="/assets/js/therapy-practice-solver.js" defer></script>
+</body>
+</html>

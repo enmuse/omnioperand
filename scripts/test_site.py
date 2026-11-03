@@ -513,6 +513,105 @@ def test_mathematical_precision():
     assert st_loss_hifo == -1500.0, "HIFO tax-loss harvest mismatch"
     print("  ✅ Crypto Capital Gains & HIFO: Specific identification and basis optimization verified!")
 
+    # 35. DSCR Rental Property Investor Loan ($400k price, 20% down, 7.0% APR, 30 yr, $3,200/mo rent, $400 taxes, $150 ins, $50 HOA)
+    loan_dscr = 400000.0 * 0.80  # $320,000
+    r_dscr = 0.07 / 12.0
+    n_dscr = 30 * 12
+    f_dscr = math.pow(1 + r_dscr, n_dscr)
+    m_pi_dscr = loan_dscr * (r_dscr * f_dscr) / (f_dscr - 1)
+    assert math.isclose(m_pi_dscr, 2128.97, rel_tol=1e-3), f"DSCR monthly PI mismatch: {m_pi_dscr}"
+    pitia_dscr = m_pi_dscr + 400.0 + 150.0 + 50.0
+    assert math.isclose(pitia_dscr, 2728.97, rel_tol=1e-3), f"DSCR monthly PITIA mismatch: {pitia_dscr}"
+    ratio_dscr = 3200.0 / pitia_dscr
+    assert math.isclose(ratio_dscr, 1.1726, rel_tol=1e-3), f"DSCR ratio mismatch: {ratio_dscr}"
+    cash_flow_dscr = 3200.0 - pitia_dscr
+    assert math.isclose(cash_flow_dscr, 471.03, rel_tol=1e-2), f"DSCR cash flow mismatch: {cash_flow_dscr}"
+    max_pitia_125 = 3200.0 / 1.25
+    assert math.isclose(max_pitia_125, 2560.0), f"DSCR 1.25x threshold mismatch: {max_pitia_125}"
+    print("  ✅ DSCR Investor Loan: Debt service coverage, PITIA, and threshold bounds verified!")
+
+    # 36. 12/24-Month Bank Statement Loan ($300k deposits, 12 mo, 50% expense ratio, $1,500 debt, 50% DTI, 7.25% APR, 30 yr, 20% down)
+    qualifying_rev_bs = 300000.0 * 0.50  # $150,000
+    monthly_inc_bs = qualifying_rev_bs / 12.0  # $12,500
+    max_housing_bs = (monthly_inc_bs * 0.50) - 1500.0  # $4,750
+    assert math.isclose(monthly_inc_bs, 12500.0), f"Bank statement monthly income mismatch: {monthly_inc_bs}"
+    assert math.isclose(max_housing_bs, 4750.0), f"Bank statement max housing mismatch: {max_housing_bs}"
+    r_bs = 0.0725 / 12.0
+    n_bs = 30 * 12
+    f_bs = math.pow(1 + r_bs, n_bs)
+    factor_bs = (r_bs * f_bs) / (f_bs - 1)
+    loan_principal_bs = max_housing_bs / factor_bs
+    max_purchase_bs = loan_principal_bs / 0.80
+    assert math.isclose(loan_principal_bs, 696299.16, rel_tol=1e-2), f"Bank statement loan principal mismatch: {loan_principal_bs}"
+    assert math.isclose(max_purchase_bs, 870373.95, rel_tol=1e-2), f"Bank statement max purchase mismatch: {max_purchase_bs}"
+    print("  ✅ Bank Statement Mortgage: 12-month deposit qualifying income and backsolved purchase power verified!")
+
+    # 37. Chattel Loan vs Land-Home Modular Mortgage ($140k home, Chattel: 9.5%, 20 yr, $650 lot rent vs Land-Home: $70k land, 6.75%, 30 yr, $200 taxes)
+    chattel_loan = 140000.0 * 0.90  # $126,000
+    r_chattel = 0.095 / 12.0
+    n_chattel = 20 * 12
+    f_chattel = math.pow(1 + r_chattel, n_chattel)
+    m_chattel = chattel_loan * (r_chattel * f_chattel) / (f_chattel - 1)
+    assert math.isclose(m_chattel, 1173.61, rel_tol=1e-2), f"Chattel monthly loan mismatch: {m_chattel}"
+    total_chattel_outlay = m_chattel + 650.0
+    assert math.isclose(total_chattel_outlay, 1823.61, rel_tol=1e-2), f"Chattel total outlay mismatch: {total_chattel_outlay}"
+
+    real_loan = (140000.0 + 70000.0) * 0.90  # $189,000
+    r_real = 0.0675 / 12.0
+    n_real = 30 * 12
+    f_real = math.pow(1 + r_real, n_real)
+    m_real = real_loan * (r_real * f_real) / (f_real - 1)
+    assert math.isclose(m_real, 1225.86, rel_tol=1e-2), f"Land-home monthly mortgage mismatch: {m_real}"
+    total_real_outlay = m_real + 200.0
+    assert math.isclose(total_real_outlay, 1425.86, rel_tol=1e-2), f"Land-home total outlay mismatch: {total_real_outlay}"
+    assert total_real_outlay < total_chattel_outlay, "Land-home total outlay should be lower than chattel plus lot rent"
+    print("  ✅ Chattel vs Land-Home: Modular housing finance, lot rent drag, and outlay comparison verified!")
+
+    # 38. Therapy Private Practice Breakeven ($120k target net, $18k overhead, 48 wks, Cash: $160/session, 10 min admin; Ins: $115 rate, 7% denial, 6% fee, 25 min admin)
+    gross_needed_practice = 120000.0 + 18000.0  # $138,000
+    cash_sessions_yr = gross_needed_practice / 160.0  # 862.5
+    cash_sessions_wk = cash_sessions_yr / 48.0  # ~17.97
+    cash_total_hrs_wk = cash_sessions_wk + (cash_sessions_wk * 10.0 / 60.0)  # ~20.96 hrs/wk
+    assert math.isclose(cash_sessions_wk, 17.96875, rel_tol=1e-3), f"Cash weekly sessions mismatch: {cash_sessions_wk}"
+
+    eff_ins_rate = 115.0 * (1.0 - 0.07) * (1.0 - 0.06)  # $100.533
+    ins_sessions_yr = gross_needed_practice / eff_ins_rate
+    ins_sessions_wk = ins_sessions_yr / 48.0
+    ins_total_hrs_wk = ins_sessions_wk + (ins_sessions_wk * 25.0 / 60.0)
+    assert math.isclose(eff_ins_rate, 100.533, rel_tol=1e-3), f"Effective insurance rate mismatch: {eff_ins_rate}"
+    assert ins_total_hrs_wk > cash_total_hrs_wk, "Insurance model should require significantly more total working hours"
+    hrs_diff_wk = ins_total_hrs_wk - cash_total_hrs_wk
+    assert math.isclose(hrs_diff_wk, 19.5, rel_tol=0.1), f"Practice hours parity differential mismatch: {hrs_diff_wk}"
+    print("  ✅ Therapy Private Practice Breakeven: Cash-pay vs insurance session and admin hours parity verified!")
+
+    # 39. 1099 Travel Healthcare / Locum Tenens Tax Arbitrage ($240k W-2 vs $165/hr 1,840 hrs locum, $1,800/wk non-taxable stipend, $2,200/mo duplicate housing, $15k deductions)
+    gross_hourly_locum = 165.0 * 1840.0  # $303,600
+    stipends_non_tax = 1800.0 * 46.0  # $82,800
+    taxable_locum = gross_hourly_locum - stipends_non_tax  # $220,800
+    net_se_income = taxable_locum - 15000.0  # $205,800
+    net_se_earnings = net_se_income * 0.9235  # $190,056.30
+    ss_tax = 168600.0 * 0.124  # $20,906.40
+    med_tax = net_se_earnings * 0.029  # $5,511.63
+    total_se_tax = ss_tax + med_tax  # $26,418.03
+    assert math.isclose(taxable_locum, 220800.0), f"Taxable locum earnings mismatch: {taxable_locum}"
+    assert math.isclose(total_se_tax, 26418.03, rel_tol=1e-2), f"Locum SE tax mismatch: {total_se_tax}"
+    print("  ✅ Locum Tenens Tax Arbitrage: GSA non-taxable stipends and self-employment tax shields verified!")
+
+    # 40. Section 179 Heavy Equipment Tax Shield ($250k purchase, 100% S179 eligible, 10% down, 7.5% loan, 5 yr, 10 mo active Yr 1, 35% tax rate)
+    loan_equip = 250000.0 * 0.90  # $225,000
+    r_eq = 0.075 / 12.0
+    n_eq = 60
+    f_eq = math.pow(1 + r_eq, n_eq)
+    m_loan_eq = loan_equip * (r_eq * f_eq) / (f_eq - 1)
+    assert math.isclose(m_loan_eq, 4510.89, rel_tol=1e-2), f"Equipment loan payment mismatch: {m_loan_eq}"
+    yr1_outlay_eq = (250000.0 * 0.10) + (10 * m_loan_eq)
+    assert math.isclose(yr1_outlay_eq, 70108.92, rel_tol=1e-2), f"Year 1 outlay mismatch: {yr1_outlay_eq}"
+    tax_savings_yr1_eq = 250000.0 * 0.35  # $87,500
+    net_cash_benefit_eq = tax_savings_yr1_eq - yr1_outlay_eq  # +$17,391.08
+    assert net_cash_benefit_eq > 0, "Year 1 equipment tax shield should yield net cash-in-pocket benefit"
+    assert math.isclose(net_cash_benefit_eq, 17391.08, rel_tol=1e-2), f"Net cash benefit mismatch: {net_cash_benefit_eq}"
+    print("  ✅ Section 179 Equipment Tax Shield: Deduction ceiling, Year 1 financed cash outlay, and net cash-in-pocket verified!")
+
 def test_file_integrity():
     print("Testing File & Asset Integrity...")
     required_files = [
@@ -613,7 +712,22 @@ def test_file_integrity():
         "construction/rafter-birdsmouth-cut/index.html",
         "construction/gutter-downspout-sizing/index.html",
         "engineering/three-phase-transformer-kva/index.html",
-        "finance/crypto-tax-hifo/index.html"
+        "finance/crypto-tax-hifo/index.html",
+        # Specialized Financial & Business Solvers
+        "assets/js/dscr-loan-solver.js",
+        "assets/js/bank-statement-solver.js",
+        "assets/js/chattel-vs-land-home-solver.js",
+        "assets/js/therapy-practice-solver.js",
+        "assets/js/locum-tenens-solver.js",
+        "assets/js/section-179-solver.js",
+        "calculators/index.html",
+        "calculators/dscr-loan/index.html",
+        "calculators/bank-statement-mortgage/index.html",
+        "calculators/chattel-vs-land-home/index.html",
+        "calculators/therapy-private-practice-breakeven/index.html",
+        "calculators/locum-tenens-tax-calculator/index.html",
+        "calculators/section-179-equipment/index.html",
+        "functions/api/leads/specialized-finance.js"
     ]
 
     for rel_path in required_files:
@@ -813,6 +927,22 @@ def test_schema_and_distribution_engine():
     assert "Guidance Residential" in human_content, "HUMAN.md missing Guidance Residential outreach template"
     assert "UIF Corporation" in human_content, "HUMAN.md missing UIF Corporation outreach template"
     assert "pending-leads.json" in human_content, "HUMAN.md missing pending-leads.json retrieval instructions"
+
+    # 11. Verify Specialized Financial & Business Solvers Schemas and Lead Architecture
+    assert (REPO_ROOT / "functions" / "api" / "leads" / "specialized-finance.js").exists(), "Missing functions/api/leads/specialized-finance.js"
+    specialized_slugs = [
+        "dscr-loan",
+        "bank-statement-mortgage",
+        "chattel-vs-land-home",
+        "therapy-private-practice-breakeven",
+        "locum-tenens-tax-calculator",
+        "section-179-equipment"
+    ]
+    for slug in specialized_slugs:
+        calc_html = (REPO_ROOT / "calculators" / slug / "index.html").read_text(encoding="utf-8")
+        assert ('"@type": "FinancialProduct"' in calc_html or '"@type": "SoftwareApplication"' in calc_html), f"Missing Structured Schema in /calculators/{slug}/"
+        assert 'id="btn-open-lead-drawer"' in calc_html, f"Missing lead drawer button in /calculators/{slug}/"
+        assert "lead-drawer.js" in calc_html, f"Missing lead-drawer.js script tag in /calculators/{slug}/"
 
     print("  ✅ Semantic schemas, Distribution Engine, Lead Webhook Engine, & human.md Protocol verified!")
 

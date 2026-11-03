@@ -1,0 +1,49 @@
+---
+import LeadCaptureCard from '../../components/LeadCaptureCard.astro';
+
+const pageTitle = "Section 179 Heavy Equipment Tax Shield & Cash-Flow Sizer | OmniOperand";
+const pageDescription = "Calculate Section 179 and bonus depreciation write-offs, immediate Year 1 tax savings, commercial equipment loan payments, and net cash-in-pocket arbitrage.";
+const canonicalUrl = "https://omnioperand.com/calculators/section-179-equipment/";
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription}>
+  <link rel="canonical" href={canonicalUrl}>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://omnioperand.com/calculators/section-179-equipment/#software",
+        "name": "Section 179 Heavy Equipment Tax Shield & Cash-Flow Sizer",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "description": "Calculates immediate Year 1 Section 179 tax deductions, equipment financing outlays, and net cash flow benefit for commercial machinery purchases.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FinancialProduct",
+        "@id": "https://omnioperand.com/calculators/section-179-equipment/#product",
+        "name": "Commercial Equipment Financing & Leasing",
+        "description": "Equipment loans and lease structures for heavy machinery, yellow iron, commercial trailers, and business vehicles."
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="omni-body">
+  <div id="section-179-calculator" class="calculator-wrapper">
+    <LeadCaptureCard niche="section179" />
+  </div>
+
+  <script src="/assets/js/lead-drawer.js" defer></script>
+  <script src="/assets/js/section-179-solver.js" defer></script>
+</body>
+</html>

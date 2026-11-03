@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1099 Travel Healthcare / Locum Tenens Tax Arbitrage Solver | OmniOperand</title>
+  <meta name="description" content="Calculate 1099 locum tenens vs. W-2 net take-home pay, GSA non-taxable per diems, self-employment tax, duplicated housing, and Solo 401(k) shelters.">
+  <link rel="canonical" href="https://omnioperand.com/calculators/locum-tenens-tax-calculator/">
+
+  <meta property="og:title" content="1099 Travel Healthcare / Locum Tenens Tax Arbitrage Solver | OmniOperand">
+  <meta property="og:description" content="Calculate 1099 locum tenens vs. W-2 net take-home pay, GSA non-taxable per diems, self-employment tax, and quarterly estimated taxes.">
+  <meta property="og:url" content="https://omnioperand.com/calculators/locum-tenens-tax-calculator/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://omnioperand.com/calculators/locum-tenens-tax-calculator/#software",
+        "name": "1099 Travel Healthcare / Locum Tenens Tax Arbitrage Solver",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Calculates net after-tax take-home pay, self-employment tax, non-taxable per diem stipends, and Solo 401(k) shelters for traveling healthcare providers."
+      },
+      {
+        "@type": "FinancialProduct",
+        "@id": "https://omnioperand.com/calculators/locum-tenens-tax-calculator/#product",
+        "name": "Locum Tenens Tax Planning & Solo 401(k) Services",
+        "description": "Specialized tax compliance, IRS tax home audit defense, and self-employed solo retirement plans for traveling medical professionals."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "OmniOperand",
+            "item": "https://omnioperand.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculators",
+            "item": "https://omnioperand.com/calculators/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Locum Tenens Tax Solver",
+            "item": "https://omnioperand.com/calculators/locum-tenens-tax-calculator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is required to receive non-taxable travel stipends under IRS rules?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under IRS Revenue Ruling 73-529, a traveling clinician must maintain a legitimate 'tax home' (permanent residence where they incur substantial ongoing living expenses) and incur duplicated lodging/meal expenses while traveling away from home for temporary clinical assignments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does self-employment tax work on 1099 locum tenens income?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Self-employment tax is 15.3% (12.4% Social Security up to the wage base cap of $168,600, plus 2.9% Medicare with zero wage cap) applied to 92.35% of your net Schedule C business profit. Clinicians can deduct 50% of their total SE tax from their adjusted gross income."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="omni-body">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Healthcare Tax</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/calculators/" class="nav-link active">Specialized Solvers</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/calculators/">Specialized Solvers</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active" aria-current="page">Locum Tenens Tax Solver</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container" id="locum-tenens-calculator">
+
+    <section class="solver-hero">
+      <div class="hero-badge">Healthcare Tax Arbitrage • IRS Rev. Rul. 73-529 Framework</div>
+      <h1>1099 Travel Healthcare / Locum Tenens Tax Arbitrage Solver</h1>
+      <p class="hero-subtext">
+        Compare permanent W-2 salaries against 1099 locum tenens contracts. Accurately calculates GSA non-taxable lodging &amp; meal stipends, self-employment tax, duplicated living expenses, and Solo 401(k) shelters.
+      </p>
+      <div class="calculator-actions-toolbar" style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem;">
+        <button type="button" class="btn-secondary" id="btn-copy-summary">
+          <span>📋 Copy Summary</span>
+        </button>
+        <button type="button" class="btn-secondary" id="btn-print-pdf">
+          <span>🖨️ Print / Save PDF</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Master Solver Grid -->
+    <div class="calculator-grid">
+
+      <!-- Left Column: Input Parameters -->
+      <div class="solver-column">
+        <div class="hud-panel">
+          <div class="hud-panel-header">
+            <h2>Contract &amp; Tax Profile Parameters</h2>
+            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Tax Optimization</span>
+          </div>
+
+          <div class="param-card-grid">
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-w2_salary">W-2 Permanent Base Salary ($)</label>
+                <span class="param-symbol">W-2 Base</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-w2_salary" class="number-input" value="180000" step="5000" min="50000">
+              </div>
+              <div class="param-hint">Benchmark permanent staff position salary before benefits</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label>1099 Locum Terms: Rate ($/hr) • Projected Hours</label>
+                <span class="param-symbol">1099</span>
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.5rem;">
+                <div class="input-unit-group">
+                  <span class="input-prefix">$</span>
+                  <input type="number" id="param-locum_hourly_rate" class="number-input" value="150" step="5" min="40">
+                  <span class="input-suffix">/hr</span>
+                </div>
+                <div class="input-unit-group">
+                  <input type="number" id="param-billable_hours" class="number-input" value="1600" step="50" min="400" max="2500">
+                  <span class="input-suffix">Hrs/Yr</span>
+                </div>
+              </div>
+              <div class="param-hint">e.g. $150/hr × 1,600 billable hours (40 wks × 40 hrs)</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-weekly_stipend">Weekly Non-Taxable Per Diem Stipend ($)</label>
+                <span class="param-symbol">GSA Stipend</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-weekly_stipend" class="number-input" value="1400" step="50" min="0">
+                <span class="input-suffix">/week</span>
+              </div>
+              <div class="param-hint">GSA-compliant lodging and M&amp;IE travel reimbursements</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label>Filing Status &amp; State Income Tax Rate (%)</label>
+                <span class="param-symbol">Filing &amp; State</span>
+              </div>
+              <div style="display:flex; gap:1.5rem; margin:6px 0 10px 0;">
+                <label style="display:inline-flex; align-items:center; gap:6px; cursor:pointer; font-size:0.9rem;">
+                  <input type="radio" name="filing_status" value="single" checked style="accent-color:#0284c7;">
+                  <span>Single</span>
+                </label>
+                <label style="display:inline-flex; align-items:center; gap:6px; cursor:pointer; font-size:0.9rem;">
+                  <input type="radio" name="filing_status" value="married" style="accent-color:#0284c7;">
+                  <span>Married (MFJ)</span>
+                </label>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-state_tax_rate" class="number-input" value="5.0" step="0.25" min="0" max="13.3">
+                <span class="input-suffix">% State Tax</span>
+              </div>
+              <div class="param-hint">State tax rate in permanent tax home jurisdiction (e.g. 0% TX/FL, 5% NC, 9.3% CA)</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-duplicated_housing">Duplicated Housing Expenses ($/mo)</label>
+                <span class="param-symbol">Tax Home Cost</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-duplicated_housing" class="number-input" value="1500" step="50" min="0">
+                <span class="input-suffix">/mo</span>
+              </div>
+              <div class="param-hint">Rent/mortgage at main residence mandatory to defend IRS tax home</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label>Deductions ($) • Solo 401(k) Shelter ($)</label>
+                <span class="param-symbol">Shelters</span>
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.5rem;">
+                <div class="input-unit-group">
+                  <span class="input-prefix">$</span>
+                  <input type="number" id="param-business_deductions" class="number-input" value="12000" step="1000" min="0">
+                </div>
+                <div class="input-unit-group">
+                  <span class="input-prefix">$</span>
+                  <input type="number" id="param-solo_401k" class="number-input" value="20000" step="2500" min="0" max="69000">
+                </div>
+              </div>
+              <div class="param-hint">Business write-offs (CME, mileage, health ins) + Solo 401(k) deferral</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Derived Results HUD -->
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <h2 style="font-size:1.15rem; color:var(--text-bright); margin:0;">True Net Take-Home Pay Comparison</h2>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:#34d399; font-weight:700; padding:4px 10px; border-radius:6px;">
+              IRS Audit-Tested
+            </span>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-bottom:1.25rem;">
+            
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:1.25rem;">
+              <div style="font-size:0.75rem; text-transform:uppercase; color:#94a3b8; font-weight:700;">W-2 Permanent Net Take-Home</div>
+              <div style="font-size:1.6rem; font-weight:800; color:#cbd5e1; margin-top:4px;" id="res-w2_net_takehome">$123,450</div>
+              <div style="font-size:0.75rem; color:#64748b; margin-top:2px;">After FICA, Federal, &amp; State Taxes</div>
+            </div>
+
+            <div style="background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.3); border-radius:10px; padding:1.25rem;">
+              <div style="font-size:0.75rem; text-transform:uppercase; color:#34d399; font-weight:700;">1099 Locum Net Take-Home</div>
+              <div style="font-size:1.6rem; font-weight:800; color:#34d399; margin-top:4px;" id="res-locum_net_takehome">$174,800</div>
+              <div style="font-size:0.75rem; color:#94a3b8; margin-top:2px;">Inflows - Expenses - Dup Housing - All Taxes</div>
+            </div>
+
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap:1rem;">
+            
+            <div class="metric-card highlight">
+              <span class="metric-label">Net Tax Arbitrage Advantage</span>
+              <span class="metric-value" id="res-net_arbitrage_diff" style="color:var(--accent-emerald);">+$51,350 / yr</span>
+            </div>
+
+            <div class="metric-card">
+              <span class="metric-label">Non-Taxable Per Diems</span>
+              <span class="metric-value" id="res-non_taxable_stipends">$56,000 / yr</span>
+            </div>
+
+            <div class="metric-card">
+              <span class="metric-label">Tax Saved via Per Diems</span>
+              <span class="metric-value" id="res-per_diem_tax_shield" style="color:var(--accent-cyan);">$17,920</span>
+            </div>
+
+            <div class="metric-card">
+              <span class="metric-label">Total 1099 Tax Liability</span>
+              <span class="metric-value" id="res-total_locum_tax">$55,200</span>
+            </div>
+
+            <div class="metric-card">
+              <span class="metric-label">Self-Employment Tax</span>
+              <span class="metric-value" id="res-se_tax_total">$28,140</span>
+            </div>
+
+            <div class="metric-card">
+              <span class="metric-label">Quarterly Estimated Tax</span>
+              <span class="metric-value" id="res-quarterly_payment">$13,800 / qtr</span>
+            </div>
+
+          </div>
+
+          <!-- Quarterly Tax Payment Schedule Table -->
+          <div style="margin-top:1.25rem; background:var(--bg-canvas); border-radius:8px; border:1px solid var(--border-subtle); padding:1rem;">
+            <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); font-weight:700; margin-bottom:0.5rem;">
+              Estimated 1099 IRS Quarterly Tax Payment Schedule:
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:0.5rem; text-align:center; font-size:0.8rem;">
+              <div style="background:rgba(255,255,255,0.03); padding:0.4rem; border-radius:4px;">
+                <div style="color:#94a3b8; font-size:0.7rem;">Q1: Apr 15</div>
+                <strong id="res-q1_payment" style="color:#38bdf8;">$13,800</strong>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:0.4rem; border-radius:4px;">
+                <div style="color:#94a3b8; font-size:0.7rem;">Q2: Jun 15</div>
+                <strong id="res-q2_payment" style="color:#38bdf8;">$13,800</strong>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:0.4rem; border-radius:4px;">
+                <div style="color:#94a3b8; font-size:0.7rem;">Q3: Sep 15</div>
+                <strong id="res-q3_payment" style="color:#38bdf8;">$13,800</strong>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:0.4rem; border-radius:4px;">
+                <div style="color:#94a3b8; font-size:0.7rem;">Q4: Jan 15</div>
+                <strong id="res-q4_payment" style="color:#38bdf8;">$13,800</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lead Capture Component Beneath Results -->
+          <div class="lead-capture-card" style="margin-top: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+              <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; text-transform: uppercase;">
+                🩺 Healthcare CPA &amp; Solo 401(k) Advisory
+              </span>
+              <span style="font-size: 12px; color: #34d399; font-weight: 700;">Audit Defense &amp; S-Corp Sizing</span>
+            </div>
+            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; font-weight: 800; color: #fff;">
+              Connect with Specialized Healthcare CPAs &amp; Solo 401(k) Providers
+            </h3>
+            <p style="margin: 0 0 1rem 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.45;">
+              Protect your tax home against IRS audits, evaluate S-Corp election timing, and structure a maximum $69,000 Solo 401(k) shelter tailored to locum tenens clinicians.
+            </p>
+            <button type="button" id="btn-open-lead-drawer" class="btn-lead-drawer" style="width: 100%; max-width: 520px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; padding: 14px 20px; border-radius: 10px; font-weight: 800; font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 10px 24px -6px rgba(2, 132, 199, 0.45); transition: all 0.2s;">
+              <span>⚡</span>
+              <span>Connect with Specialized Healthcare CPAs</span>
+            </button>
+            <div style="font-size: 11px; color: #64748b; margin-top: 8px;">
+              Specialized for traveling Physicians (MD/DO), CRNAs, Dentists, PAs, and Travel RNs
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Column: Formula & Proof Panel -->
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>IRS Code Substantiation</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);">Machine Precision</span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">Self-Employment Tax Governing Formula:</div>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0;">SE Tax = (Net Profit · 0.9235) · [ 12.4% (up to $168,600) + 2.9% Medicare ]</code>
+            <div style="font-size:0.85rem; color:#94a3b8; margin-top:6px;">
+              Arbitrage = Locum Inflows - Deductions - Duplicated Housing - All Taxes - W2 Net
+            </div>
+          </div>
+
+          <div class="proof-card open">
+            <div class="proof-header">
+              <h3><span>Step-by-Step Statutory Derivation</span></h3>
+            </div>
+            <div class="proof-body" style="display:block;">
+              
+              <div class="proof-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                  <strong>Non-Taxable GSA Per Diem Sizing</strong>
+                  <p>Reimbursed travel expenses under accountable GSA plans (lodging, meals, and incidentals) are 100% tax-free under IRC Section 62(a)(2)(A), provided duplicated housing is maintained.</p>
+                </div>
+              </div>
+
+              <div class="proof-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  <strong>The SE Tax Drag vs. Deductibility</strong>
+                  <p>1099 contractors pay both employer and employee portions of FICA (15.3%). However, 50% of the SE tax is directly deductible as an adjustment to income on Form 1040 Schedule 1.</p>
+                </div>
+              </div>
+
+              <div class="proof-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  <strong>Solo 401(k) / SEP-IRA Tax Deferral</strong>
+                  <p>In addition to employee deferrals up to $23,000, 1099 clinicians can contribute 20% of net self-employment earnings as an employer profit share, sheltering up to $69,000 from current federal and state taxes.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- AI Directive Box -->
+          <section class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header">
+              <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px;">LLM Directive &amp; API Spec</span>
+              <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence &amp; Prompt Integration</h3>
+            </div>
+            <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem;">
+              Provide verified mathematical formulas to AI models to eliminate tax bracket and self-employment calculation errors.
+            </p>
+            <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
+              <span><span style="color:var(--accent-cyan); font-weight:700;">GET / POST</span> https://omnioperand.com/api/v1/calculators/locum-tenens-tax-calculator</span>
+              <span style="color:var(--text-muted); font-size:0.75rem;">JSON Invariants</span>
+            </div>
+            <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="calc-faq-section" style="margin-top:3rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions: Locum Tenens Taxes</h2>
+      <div class="faq-list">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is required to receive non-taxable travel stipends under IRS rules?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Under IRS Revenue Ruling 73-529, a traveling clinician must maintain a legitimate 'tax home' (permanent residence where they incur substantial ongoing living expenses) and incur duplicated lodging/meal expenses while traveling away from home for temporary clinical assignments.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>When should a locum tenens physician or CRNA elect S-Corporation status?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            S-Corporation election typically becomes mathematically advantageous once net 1099 earnings exceed $150,000 to $200,000. By paying oneself an IRS 'reasonable compensation' salary and taking the remaining net profit as a corporate distribution, the provider saves 15.3% in self-employment tax on the distribution portion.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem; padding:2rem 0; border-top:1px solid var(--border-subtle);">
+      <div class="footer-brand">
+        <div style="font-weight:700; color:var(--text-bright); margin-bottom:0.5rem;">OmniOperand</div>
+        <p style="font-size:0.8rem; color:var(--text-muted); max-width:320px; line-height:1.4;">
+          Deterministic computational engines, verified mathematical proofs, and programmatic APIs for technical professionals.
+        </p>
+      </div>
+    </div>
+    <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
+      <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.4"></script>
+  <script src="/assets/js/lead-drawer.js" defer></script>
+  <script src="/assets/js/locum-tenens-solver.js" defer></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

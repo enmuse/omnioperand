@@ -1,0 +1,106 @@
+---
+import LeadCaptureCard from '../../components/LeadCaptureCard.astro';
+
+const pageTitle = "DSCR Rental Property Investor Loan Calculator | OmniOperand";
+const pageDescription = "Calculate Debt Service Coverage Ratio (DSCR), monthly PITIA, and net cash flow for real estate investor loans. No personal tax returns or W-2s required.";
+const canonicalUrl = "https://omnioperand.com/calculators/dscr-loan/";
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription}>
+  <link rel="canonical" href={canonicalUrl}>
+
+  <meta property="og:title" content={pageTitle}>
+  <meta property="og:description" content={pageDescription}>
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://omnioperand.com/calculators/dscr-loan/#software",
+        "name": "DSCR Rental Property Investor Loan Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "description": "Calculates Debt Service Coverage Ratio (DSCR), PITIA escrows, and maximum allowable debt thresholds for wholesale Non-QM investor lending.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FinancialProduct",
+        "@id": "https://omnioperand.com/calculators/dscr-loan/#product",
+        "name": "Non-QM DSCR Real Estate Investor Loan",
+        "description": "Non-conforming rental property mortgage qualified solely on property lease cash flow without personal employment verification.",
+        "feesAndCommissionsSpecification": "No W-2 or personal tax return verification required. DSCR ratios funded down to 0.75x."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://omnioperand.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculators",
+            "item": "https://omnioperand.com/calculators/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "DSCR Loan Calculator",
+            "item": "https://omnioperand.com/calculators/dscr-loan/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the minimum DSCR ratio required to qualify for an investor loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most wholesale Non-QM lenders require a DSCR between 1.20x and 1.25x for standard pricing. However, specialty non-QM programs fund down to 1.00x, and niche no-ratio or sub-1.00x programs fund down to 0.75x with 25% to 30% down payments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do DSCR loans verify personal income, W-2s, or tax returns?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. DSCR loans are strictly asset-based Non-QM mortgages where underwriting qualification is determined exclusively by the property's gross monthly rental income relative to its monthly PITIA debt service."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="omni-body">
+  <div id="dscr-loan-calculator" class="calculator-wrapper">
+    <LeadCaptureCard niche="dscr" />
+  </div>
+
+  <script src="/assets/js/lead-drawer.js" defer></script>
+  <script src="/assets/js/dscr-loan-solver.js" defer></script>
+</body>
+</html>
