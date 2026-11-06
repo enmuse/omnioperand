@@ -1,10 +1,10 @@
 {
   "solvers_count": 446,
   "mcp_tools_count": 447,
-  "calculators_count": 969,
+  "calculators_count": 980,
   "categories_count": 15,
-  "total_html_pages": 1011,
-  "sitemap_urls_count": 1008,
+  "total_html_pages": 1022,
+  "sitemap_urls_count": 1019,
   "supported_languages": [
     "en",
     "es",
@@ -36,5 +36,5 @@
     "statistics": 4,
     "calculus": 2
   },
-  "last_updated": "2026-10-31T00:36:09Z"
+  "last_updated": "2026-11-06T23:20:15Z"
 }

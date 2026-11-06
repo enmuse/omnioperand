@@ -10,7 +10,7 @@
  *    Executes the calculation via CALCULATOR_REGISTRY or returns solver JSON schema.
  */
 
-import { CALCULATOR_REGISTRY, executeCalculator } from '../../../../api/solvers/calculator_registry.js';
+import { CALCULATOR_REGISTRY, executeCalculator } from '../../../api/solvers/calculator_registry.js';
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
