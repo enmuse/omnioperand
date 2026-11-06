@@ -134,3 +134,4 @@ export function calculateSbaLoan(inputs: SbaLoanInputs): SbaLoanOutputs {
     splitDetails
   };
 }
+

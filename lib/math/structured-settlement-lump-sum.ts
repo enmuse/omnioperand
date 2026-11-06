@@ -63,3 +63,4 @@ export function calculateStructuredSettlement(inputs: StructuredSettlementInputs
     breakEvenReinvestmentRatePct: inputs.factoringDiscountRatePct ?? 12
   };
 }
+

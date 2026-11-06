@@ -105,3 +105,4 @@ export function calculate1031Exchange(inputs: Exchange1031Inputs): Exchange1031O
     closingDeadlineDays: 180
   };
 }
+

@@ -100,3 +100,4 @@ export function calculateHardMoney(inputs: HardMoneyInputs): HardMoneyOutputs {
     is70RuleMet
   };
 }
+

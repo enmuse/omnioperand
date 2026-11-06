@@ -94,3 +94,4 @@ export function calculatePersonalInjury(inputs: PersonalInjuryInputs): PersonalI
     clientTakeHomePercentage
   };
 }
+

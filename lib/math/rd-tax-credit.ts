@@ -76,3 +76,4 @@ export function calculateRdTaxCredit(inputs: RdTaxCreditInputs): RdTaxCreditOutp
     isPayrollOffsetAllowed: isQsb
   };
 }
+

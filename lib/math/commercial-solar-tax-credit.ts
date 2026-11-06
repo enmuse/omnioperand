@@ -91,3 +91,4 @@ export function calculateCommercialSolar(inputs: CommercialSolarInputs): Commerc
     twentyFiveYearSavings
   };
 }
+

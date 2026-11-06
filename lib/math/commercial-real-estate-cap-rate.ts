@@ -98,3 +98,4 @@ export function calculateCreCapRate(inputs: CreCapRateInputs): CreCapRateOutputs
     isDscrAcceptable: dscr >= 1.25
   };
 }
+

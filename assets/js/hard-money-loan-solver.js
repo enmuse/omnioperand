@@ -141,3 +141,4 @@ Cash-on-Cash ROI: ${roiPct.toFixed(1)}% (${annualizedRoiPct.toFixed(1)}% Annuali
     init();
   }
 })();
+

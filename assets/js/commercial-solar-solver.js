@@ -122,3 +122,4 @@ Projected Simple Capital Payback: ${paybackYears.toFixed(1)} Years (25-Yr Cumula
     init();
   }
 })();
+

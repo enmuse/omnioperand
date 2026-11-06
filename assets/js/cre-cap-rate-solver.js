@@ -138,3 +138,4 @@ Net Cash-on-Cash Return: ${cocReturnPct.toFixed(2)}% (+$${Math.round(netCashFlow
     init();
   }
 })();
+
