@@ -1,0 +1,982 @@
+[
+  {
+    "id": "dscr-loan",
+    "title": "DSCR Investor Loan: Qualify With $0 Tax Returns",
+    "category": "NON-QM REAL ESTATE",
+    "cpl": "$250 \u2013 $500 CPL",
+    "target_url": "/calculators/dscr-loan/",
+    "duration": 38.7,
+    "video_path": "/assets/videos/faceless/dscr-loan.mp4",
+    "poster_path": "/assets/videos/faceless/dscr-loan-poster.png",
+    "accent_hex": "#10b981",
+    "social_tags": [
+      "#realestateinvesting",
+      "#dscrloan",
+      "#passiveincome",
+      "#mortgagetips",
+      "#realestatelife",
+      "#wealthbuilding"
+    ],
+    "full_script": "Stop giving banks two years of personal tax returns to buy rental properties. Traditional mortgage lenders look at your personal DTI. If you write off expenses on your taxes, banks claim you make zero dollars. Instead, smart investors use a DSCR loan. The formula is: Gross Monthly Rent divided by the monthly PITIA mortgage payment. If a fourplex rents for 4,500 dollars and the mortgage is 3,600, your DSCR is 1.25. That is an instant approval, with closing in as little as 21 days. Calculate your exact DSCR, monthly cash flow, and borrowing power for free at omnioperand.com.",
+    "scenes": [
+      {
+        "type": "hook",
+        "narration": "Stop giving banks two years of personal tax returns to buy rental properties.",
+        "badge": "\ud83d\udd25 REAL ESTATE FINANCING HACK",
+        "headline": "QUALIFY WITH\nZERO TAX RETURNS",
+        "card_title": "NON-QM DEBT SERVICE UNDERWRITING",
+        "lines": [
+          "\u2022 No Personal W-2 Paystubs",
+          "\u2022 No Tax Return Scrutiny",
+          "\u2022 Unlimited Portfolio Scaling"
+        ],
+        "metric_label": "MAX BORROWING CEILING",
+        "metric_val": "$2,500,000",
+        "status": "BORROWER DTI EXEMPT"
+      },
+      {
+        "type": "problem",
+        "narration": "Traditional mortgage lenders look at your personal DTI. If you write off expenses on your taxes, banks claim you make zero dollars.",
+        "badge": "\u26a0\ufe0f THE CONVENTIONAL LENDER TRAP",
+        "headline": "WHY WRITE-OFFS\nKILL YOUR LOAN",
+        "card_title": "SCHEDULE C TAX PENALTY",
+        "lines": [
+          "\u274c Write-offs reduce taxable income",
+          "\u274c Personal DTI capped at 43%",
+          "\u274c Portfolio capped at 4-10 properties"
+        ],
+        "metric_label": "CONVENTIONAL BORROWING LIMIT",
+        "metric_val": "CAPPED OUT",
+        "status": "DENIED BY FANNIE MAE"
+      },
+      {
+        "type": "formula",
+        "narration": "Instead, smart investors use a DSCR loan. The formula is: Gross Monthly Rent divided by the monthly PITIA mortgage payment.",
+        "badge": "\ud83d\udcd0 THE UNDERWRITING FORMULA",
+        "headline": "HOW DSCR IS\nCALCULATED",
+        "card_title": "DEBT SERVICE COVERAGE RATIO",
+        "lines": [
+          "DSCR = Gross Rent \u00f7 Monthly PITIA",
+          "Gross Monthly Rent = $4,500",
+          "Monthly PITIA Payment = $3,600",
+          "\u2794 4,500 \u00f7 3,600 = 1.25"
+        ],
+        "metric_label": "CALCULATED DSCR",
+        "metric_val": "1.25x",
+        "status": "INSTANT APPROVAL (\u2265 1.20)"
+      },
+      {
+        "type": "results",
+        "narration": "If a fourplex rents for 4,500 dollars and the mortgage is 3,600, your DSCR is 1.25. That is an instant approval, with closing in as little as 21 days.",
+        "badge": "\ud83d\udcca BOTTOM LINE EXECUTION",
+        "headline": "THE INVESTOR\nADVANTAGE",
+        "card_title": "LOAN TERMS & APPROVAL",
+        "lines": [
+          "\u2713 80% LTV Purchase & Cash-Out",
+          "\u2713 30-Year Fixed or Interest-Only",
+          "\u2713 Entity Title (LLC / Trust Allowed)"
+        ],
+        "metric_label": "QUALIFYING PERSONAL INCOME",
+        "metric_val": "$0 REQUIRED",
+        "status": "100% ASSET-BASED UNDERWRITING"
+      },
+      {
+        "type": "cta",
+        "narration": "Calculate your exact DSCR, monthly cash flow, and borrowing power for free at omnioperand.com.",
+        "badge": "\ud83d\ude80 FREE INTERACTIVE CALCULATOR",
+        "headline": "MODEL YOUR DEAL\nIN SECONDS",
+        "card_title": "OMNIOPERAND SOLVER SUITE",
+        "lines": [
+          "\u2022 Instant Bidirectional Solving",
+          "\u2022 LTV & Interest-Only Toggles",
+          "\u2022 Exact Amortization & Cash Flow"
+        ],
+        "metric_label": "ACCESS ENGINE",
+        "metric_val": "omnioperand.com",
+        "status": "FREE \u2022 NO SIGNUP REQUIRED"
+      }
+    ]
+  },
+  {
+    "id": "cost-segregation",
+    "title": "Cost Segregation: The $184,000 Real Estate Tax Shield",
+    "category": "IRS TAX CODE \u00a7168(k)",
+    "cpl": "$300 \u2013 $750 CPL",
+    "target_url": "/calculators/cost-segregation/",
+    "duration": 44.9,
+    "video_path": "/assets/videos/faceless/cost-segregation.mp4",
+    "poster_path": "/assets/videos/faceless/cost-segregation-poster.png",
+    "accent_hex": "#38bdf8",
+    "social_tags": [
+      "#costsegregation",
+      "#taxstrategy",
+      "#realestatetax",
+      "#depreciation",
+      "#cpa",
+      "#wealthpreservation"
+    ],
+    "full_script": "Did you know you can legally wipe out over one hundred thousand dollars in income taxes in year one of buying real estate? Normally, the IRS forces you to depreciate commercial buildings over 39 years, or residential rentals over 27.5 years. That gives you tiny tax deductions. With a Cost Segregation study, you carve out five-year and fifteen-year assets. Reclassifying 25% of an eight-hundred-thousand-dollar building yields a 184,000 dollar first-year write-off. At a 37% tax bracket, that puts 68,000 dollars of pure cash back in your pocket right now. That is capital you can reinvest into your next deal. Model your property's 5-year and 15-year tax shield on the OmniOperand Cost Segregation calculator.",
+    "scenes": [
+      {
+        "type": "hook",
+        "narration": "Did you know you can legally wipe out over one hundred thousand dollars in income taxes in year one of buying real estate?",
+        "badge": "\ud83d\udca1 IRS WEALTH SECRET",
+        "headline": "WIPE OUT $100K+\nIN INCOME TAXES",
+        "card_title": "COST SEGREGATION ACCELERATION",
+        "lines": [
+          "\u2022 Front-load 27.5-year depreciation",
+          "\u2022 Deduct carpets, lighting, HVAC",
+          "\u2022 100% legal IRS tax code strategy"
+        ],
+        "metric_label": "YEAR 1 ACCELERATED DEDUCTION",
+        "metric_val": "$184,000",
+        "status": "IRS \u00a7168(k) APPROVED"
+      },
+      {
+        "type": "problem",
+        "narration": "Normally, the IRS forces you to depreciate commercial buildings over 39 years, or residential rentals over 27.5 years. That gives you tiny tax deductions.",
+        "badge": "\u23f3 THE 39-YEAR TRICKLE",
+        "headline": "WHY NORMAL\nDEPRECIATION SUCKS",
+        "card_title": "STANDARD STRAIGHT-LINE MACRS",
+        "lines": [
+          "\u274c 27.5 Years: Residential Rentals",
+          "\u274c 39 Years: Commercial Property",
+          "\u274c Tiny 2.5% to 3.6% deduction/year"
+        ],
+        "metric_label": "STANDARD ANNUAL DEDUCTION",
+        "metric_val": "ONLY 2.5%",
+        "status": "LOSING VALUE TO INFLATION"
+      },
+      {
+        "type": "formula",
+        "narration": "With a Cost Segregation study, you carve out five-year and fifteen-year assets. Reclassifying 25% of an eight-hundred-thousand-dollar building yields a 184,000 dollar first-year write-off.",
+        "badge": "\ud83d\udcd0 THE RECLASSIFICATION MATH",
+        "headline": "HOW ASSETS ARE\nRECLASSIFIED",
+        "card_title": "ASSET ALLOCATION ENGINE",
+        "lines": [
+          "Building Basis (Ex-Land): $800,000",
+          "5-Year Personal Property: 15% ($120k)",
+          "15-Year Land Improvements: 10% ($80k)",
+          "Bonus Depreciation Shield: $184,000"
+        ],
+        "metric_label": "FIRST-YEAR WRITE-OFF",
+        "metric_val": "$184,000",
+        "status": "MACRS 5 & 15 YEAR RECLASS"
+      },
+      {
+        "type": "results",
+        "narration": "At a 37% tax bracket, that puts 68,000 dollars of pure cash back in your pocket right now. That is capital you can reinvest into your next deal.",
+        "badge": "\ud83d\udcb0 PURE CASH RECOVERY",
+        "headline": "NET CASH IN\nYOUR POCKET",
+        "card_title": "TAX LIABILITY SHIELD",
+        "lines": [
+          "\u2713 37% Federal Bracket: $68,080 saved",
+          "\u2713 Real Estate Professional (REPS) Shield",
+          "\u2713 Offsets W-2 or active business income"
+        ],
+        "metric_label": "YEAR 1 HARD CASH SAVED",
+        "metric_val": "+$68,080",
+        "status": "CASH SAVED ON DAY ONE"
+      },
+      {
+        "type": "cta",
+        "narration": "Model your property's 5-year and 15-year tax shield on the OmniOperand Cost Segregation calculator.",
+        "badge": "\ud83d\ude80 RUN YOUR PROPERTY",
+        "headline": "CALCULATE YOUR\nTAX SHIELD",
+        "card_title": "OMNIOPERAND SOLVER SUITE",
+        "lines": [
+          "\u2022 Full Bonus Depreciation Schedule",
+          "\u2022 Tax Bracket Impact Analysis",
+          "\u2022 Engineering Study ROI Estimator"
+        ],
+        "metric_label": "CALCULATE FREE",
+        "metric_val": "omnioperand.com",
+        "status": "INSTANT ACCELERATION MODEL"
+      }
+    ]
+  },
+  {
+    "id": "1031-exchange",
+    "title": "Section 1031 Exchange: Sell Real Estate & Pay $0 Capital Gains",
+    "category": "IRS CODE \u00a71031",
+    "cpl": "$300 \u2013 $800 CPL",
+    "target_url": "/calculators/1031-exchange/",
+    "duration": 46.6,
+    "video_path": "/assets/videos/faceless/1031-exchange.mp4",
+    "poster_path": "/assets/videos/faceless/1031-exchange-poster.png",
+    "accent_hex": "#f59e0b",
+    "social_tags": [
+      "#1031exchange",
+      "#capitalgains",
+      "#realestatesales",
+      "#taxdeferral",
+      "#multifamily",
+      "#commercialre"
+    ],
+    "full_script": "If you sell an investment property, the IRS could take up to 40% of your profits in capital gains and depreciation recapture. On a 500,000 dollar gain, federal capital gains, state taxes, and 25% depreciation recapture can eat 160,000 dollars of your hard-earned equity. Under IRS Section 1031, you can legally defer 100% of the tax by rolling your full net proceeds into a like-kind replacement property. You have 45 days to identify and 180 days to close. You keep 100% of your equity compounding into larger, cash-flowing commercial assets instead of handing it to the government. Calculate your exact tax savings, boot exposure, and 45-day deadlines for free at omnioperand.com.",
+    "scenes": [
+      {
+        "type": "hook",
+        "narration": "If you sell an investment property, the IRS could take up to 40% of your profits in capital gains and depreciation recapture.",
+        "badge": "\u26a0\ufe0f TAX CRUNCH ALERT",
+        "headline": "DON'T LOSE 40%\nTO CAPITAL GAINS",
+        "card_title": "LIKE-KIND TAX DEFERRAL",
+        "lines": [
+          "\u2022 20% Federal Long-Term Capital Gains",
+          "\u2022 25% Section 1250 Depreciation Recapture",
+          "\u2022 3.8% Net Investment Income Tax (NIIT)"
+        ],
+        "metric_label": "POTENTIAL TAX EROSION",
+        "metric_val": "UP TO 40%",
+        "status": "EROSION OF COMPOUND WEALTH"
+      },
+      {
+        "type": "problem",
+        "narration": "On a 500,000 dollar gain, federal capital gains, state taxes, and 25% depreciation recapture can eat 160,000 dollars of your hard-earned equity.",
+        "badge": "\ud83d\udcb8 THE PROFIT DRAIN",
+        "headline": "A $160,000 TAX\nSURPRISE",
+        "card_title": "SALE TAX LIQUIDATION TRAP",
+        "lines": [
+          "Relinquished Sale: $1,200,000",
+          "Realized Capital Gain: $500,000",
+          "Depreciation Recaptured: $120,000",
+          "Tax Bill Owed: -$160,000"
+        ],
+        "metric_label": "LOST INVESTMENT CAPITAL",
+        "metric_val": "-$160,000",
+        "status": "OUT-OF-POCKET CASH PAYMENT"
+      },
+      {
+        "type": "formula",
+        "narration": "Under IRS Section 1031, you can legally defer 100% of the tax by rolling your full net proceeds into a like-kind replacement property. You have 45 days to identify and 180 days to close.",
+        "badge": "\ud83d\udcdc THE LIKE-KIND MECHANISM",
+        "headline": "DEFER 100% OF\nTHE TAX BILL",
+        "card_title": "SECTION 1031 RULES",
+        "lines": [
+          "45-Day Identification Window",
+          "180-Day Final Closing Deadline",
+          "Reinvest 100% of Net Cash Equity",
+          "Acquire Equal or Greater Debt"
+        ],
+        "metric_label": "CAPITAL GAINS DEFERRED",
+        "metric_val": "100%",
+        "status": "ZERO CURRENT TAX LIABILITY"
+      },
+      {
+        "type": "results",
+        "narration": "You keep 100% of your equity compounding into larger, cash-flowing commercial assets instead of handing it to the government.",
+        "badge": "\ud83d\udcc8 COMPOUNDING POWER",
+        "headline": "REINVEST THE\nFULL $160,000",
+        "card_title": "WEALTH COMPOUNDING IMPACT",
+        "lines": [
+          "\u2713 Buy $2,000,000+ Replacement Asset",
+          "\u2713 Boost Cash Flow & Tax Deductions",
+          "\u2713 Swap 'Til You Drop Step-Up in Basis"
+        ],
+        "metric_label": "LEVERAGED BUYING POWER",
+        "metric_val": "+$640,000",
+        "status": "4X LEVERAGE PRESERVED"
+      },
+      {
+        "type": "cta",
+        "narration": "Calculate your exact tax savings, boot exposure, and 45-day deadlines for free at omnioperand.com.",
+        "badge": "\ud83d\ude80 1031 EXCHANGE SOLVER",
+        "headline": "CALCULATE YOUR\nDEADLINES & BOOT",
+        "card_title": "OMNIOPERAND SOLVER SUITE",
+        "lines": [
+          "\u2022 Full Depreciation Recapture Breakdown",
+          "\u2022 Cash Boot & Mortgage Boot Calculator",
+          "\u2022 45-Day & 180-Day Calendar Timelines"
+        ],
+        "metric_label": "RUN CALCULATIONS",
+        "metric_val": "omnioperand.com",
+        "status": "INSTANT 1031 ANALYSIS"
+      }
+    ]
+  },
+  {
+    "id": "section-179-equipment",
+    "title": "Section 179: Write Off Up to $1.22M in Equipment Today",
+    "category": "IRS CODE \u00a7179",
+    "cpl": "$300 \u2013 $600 CPL",
+    "target_url": "/calculators/section-179-equipment/",
+    "duration": 42.3,
+    "video_path": "/assets/videos/faceless/section-179-equipment.mp4",
+    "poster_path": "/assets/videos/faceless/section-179-equipment-poster.png",
+    "accent_hex": "#ef4444",
+    "social_tags": [
+      "#section179",
+      "#taxwriteoff",
+      "#equipmentfinancing",
+      "#smallbiztips",
+      "#trucking",
+      "#contractorlife"
+    ],
+    "full_script": "Business owners: stop waiting seven years to write off your machinery, vehicles, and tech hardware. Traditional MACRS depreciation trickles tax deductions out over 5 to 7 years while you pay the full equipment invoice today. Under Section 179, you can write off up to 1,220,000 dollars in qualified equipment in year one. Even better: if you finance the equipment with zero down, the tax shield puts immediate net cash in your pocket. Buy 100,000 dollars of equipment, finance it, and save 35,000 dollars on your taxes. You literally make 13,000 dollars in net cash in year one. Calculate your net equipment cash-flow shield at omnioperand.com.",
+    "scenes": [
+      {
+        "type": "hook",
+        "narration": "Business owners: stop waiting seven years to write off your machinery, vehicles, and tech hardware.",
+        "badge": "\u26a1 SMALL BIZ TAX SHIELD",
+        "headline": "WRITE OFF $1,220,000\nIN YEAR ONE",
+        "card_title": "FIRST-YEAR EQUIPMENT EXPENSING",
+        "lines": [
+          "\u2022 Heavy Trucks & Construction Machinery",
+          "\u2022 Manufacturing & Medical Equipment",
+          "\u2022 Computers, Servers, Software & Tech"
+        ],
+        "metric_label": "MAX EXPENSING DEDUCTION",
+        "metric_val": "$1,220,000",
+        "status": "IRS SECTION 179 CAP"
+      },
+      {
+        "type": "problem",
+        "narration": "Traditional MACRS depreciation trickles tax deductions out over 5 to 7 years while you pay the full equipment invoice today.",
+        "badge": "\ud83d\uded1 THE DEPRECIATION DRAG",
+        "headline": "WHY TRADITIONAL\nWRITE-OFFS FAIL",
+        "card_title": "STANDARD 7-YEAR SCHEDULE",
+        "lines": [
+          "\u274c 100% Cash Paid on Day One",
+          "\u274c Deductions delayed over 7 years",
+          "\u274c Inflation erodes tax shield value"
+        ],
+        "metric_label": "AVERAGE YEAR 1 WRITE-OFF",
+        "metric_val": "ONLY 14.3%",
+        "status": "CASH DRAIN FOR BUSINESS"
+      },
+      {
+        "type": "formula",
+        "narration": "Under Section 179, you can write off up to 1,220,000 dollars in qualified equipment in year one. Even better: if you finance the equipment with zero down, the tax shield puts immediate net cash in your pocket.",
+        "badge": "\ud83d\udcd0 THE FINANCED CASH ARBITRAGE",
+        "headline": "HOW EQUIPMENT\nPAYS YOU CASH",
+        "card_title": "THE FINANCING CASH SHIELD",
+        "lines": [
+          "Equipment Purchase: $100,000",
+          "Year 1 Financed Payments: $22,000",
+          "Tax Savings (35% Bracket): $35,000",
+          "\u2794 Net Cash in Pocket: +$13,000"
+        ],
+        "metric_label": "NET CASH IN POCKET",
+        "metric_val": "+$13,000",
+        "status": "POSITIVE CASH ON DAY ONE"
+      },
+      {
+        "type": "results",
+        "narration": "Buy 100,000 dollars of equipment, finance it, and save 35,000 dollars on your taxes. You literally make 13,000 dollars in net cash in year one.",
+        "badge": "\ud83c\udfc6 THE BOTTOM LINE",
+        "headline": "TAX SAVINGS EXCEED\nYEAR 1 PAYMENTS",
+        "card_title": "YEAR ONE ARBITRAGE SUMMARY",
+        "lines": [
+          "\u2713 100% Tax Write-Off in Year Placed in Service",
+          "\u2713 Zero Out-of-Pocket Down Payment",
+          "\u2713 Boost Productivity & Revenue Immediately"
+        ],
+        "metric_label": "TOTAL TAX SAVED",
+        "metric_val": "$35,000",
+        "status": "IMMEDIATE CASH ARBITRAGE"
+      },
+      {
+        "type": "cta",
+        "narration": "Calculate your net equipment cash-flow shield at omnioperand.com.",
+        "badge": "\ud83d\ude80 FREE SECTION 179 SOLVER",
+        "headline": "CALCULATE YOUR\nCASH SHIELD",
+        "card_title": "OMNIOPERAND SOLVER SUITE",
+        "lines": [
+          "\u2022 Full Section 179 & Bonus Depr Matrix",
+          "\u2022 Phase-Out Threshold Calculator ($3.05M)",
+          "\u2022 Financed vs Cash Purchase Comparison"
+        ],
+        "metric_label": "RUN CALCULATOR",
+        "metric_val": "omnioperand.com",
+        "status": "INSTANT TAX CALCULATION"
+      }
+    ]
+  },
+  {
+    "id": "sba-loan",
+    "title": "SBA 7(a) & 504: Buy a Multi-Million Dollar Business With 10% Down",
+    "category": "COMMERCIAL ACQUISITION",
+    "cpl": "$250 \u2013 $500 CPL",
+    "target_url": "/calculators/sba-loan/",
+    "duration": 46.8,
+    "video_path": "/assets/videos/faceless/sba-loan.mp4",
+    "poster_path": "/assets/videos/faceless/sba-loan-poster.png",
+    "accent_hex": "#a855f7",
+    "social_tags": [
+      "#sbaloan",
+      "#buyabusiness",
+      "#acquisitionentrepreneurship",
+      "#eta",
+      "#mergersandacquisitions",
+      "#smb"
+    ],
+    "full_script": "How do entrepreneurs buy multi-million dollar cash-flowing businesses with only 10% cash down? Conventional commercial banks demand 25% to 35% down and strict real estate collateral before they lend on business acquisitions. The SBA 7(a) program backs up to 75% of the loan. You put down 10%, seller financing can cover up to 10%, and the bank finances the rest. As long as company cash flows support a 1.25 DSCR, the business pays off its own debt. Control a 500,000 dollar a year cash-flowing enterprise with just 200,000 dollars in equity. That is an explosive return on capital. Model SBA 7(a) payments, guaranty fees, and debt service coverage at omnioperand.com.",
+    "scenes": [
+      {
+        "type": "hook",
+        "narration": "How do entrepreneurs buy multi-million dollar cash-flowing businesses with only 10% cash down?",
+        "badge": "\ud83d\udcbc BUSINESS ACQUISITION",
+        "headline": "BUY A $2,000,000\nBIZ WITH 10% DOWN",
+        "card_title": "GOVERNMENT-BACKED LEVERAGE",
+        "lines": [
+          "\u2022 Up to $5,000,000 SBA 7(a) Loan Cap",
+          "\u2022 Only 10% Equity Injection Required",
+          "\u2022 Cash Flow Pays Off the Debt"
+        ],
+        "metric_label": "MAX SBA 7(a) LOAN CEILING",
+        "metric_val": "$5,000,000",
+        "status": "SBA 75% FEDERAL GUARANTY"
+      },
+      {
+        "type": "problem",
+        "narration": "Conventional commercial banks demand 25% to 35% down and strict real estate collateral before they lend on business acquisitions.",
+        "badge": "\ud83d\uded1 CONVENTIONAL BANK ROADBLOCK",
+        "headline": "THE 30% CASH DOWN\nBARRIER",
+        "card_title": "CONVENTIONAL BANK CRITERIA",
+        "lines": [
+          "\u274c 25% to 35% Cash Down Required ($600k+)",
+          "\u274c Strict 100% Real Estate Collateral",
+          "\u274c 5-Year Short Amortization Balloon"
+        ],
+        "metric_label": "CONVENTIONAL CASH DOWN",
+        "metric_val": "$600,000+",
+        "status": "OUT OF REACH FOR MOST BUYERS"
+      },
+      {
+        "type": "formula",
+        "narration": "The SBA 7(a) program backs up to 75% of the loan. You put down 10%, seller financing can cover up to 10%, and the bank finances the rest. As long as company cash flows support a 1.25 DSCR, the business pays off its own debt.",
+        "badge": "\ud83d\udcd0 THE CAPITAL STACK",
+        "headline": "HOW THE DEAL IS\nSTRUCTURED",
+        "card_title": "$2M ACQUISITION CAPITAL STACK",
+        "lines": [
+          "Buyer Equity (10%): $200,000",
+          "Seller Note on Standby (10%): $200,000",
+          "SBA 7(a) Senior Loan (80%): $1,600,000",
+          "Annual EBITDA / SDE: $500,000"
+        ],
+        "metric_label": "DEBT SERVICE COVERAGE",
+        "metric_val": "1.85x DSCR",
+        "status": "WELL ABOVE 1.25x MINIMUM"
+      },
+      {
+        "type": "results",
+        "narration": "Control a 500,000 dollar a year cash-flowing enterprise with just 200,000 dollars in equity. That is an explosive return on capital.",
+        "badge": "\ud83c\udfc6 RETURN ON EQUITY",
+        "headline": "EXPLOSIVE CASH\nON CASH RETURN",
+        "card_title": "ACQUISITION CASH FLOW",
+        "lines": [
+          "\u2713 SDE Cash Flow: $500,000 / year",
+          "\u2713 Debt Service: -$270,000 / year",
+          "\u2713 Net Post-Debt Cash: $230,000 / year"
+        ],
+        "metric_label": "YEAR 1 CASH-ON-CASH ROI",
+        "metric_val": "115% ROI",
+        "status": "FULL PAYBACK IN 10.4 MONTHS"
+      },
+      {
+        "type": "cta",
+        "narration": "Model SBA 7(a) payments, guaranty fees, and debt service coverage at omnioperand.com.",
+        "badge": "\ud83d\ude80 SBA 7(a) & 504 SOLVER",
+        "headline": "TEST YOUR DEAL\nCASH FLOWS",
+        "card_title": "OMNIOPERAND SOLVER SUITE",
+        "lines": [
+          "\u2022 Variable Prime + 2.75% Spread Models",
+          "\u2022 SBA Upfront Guaranty Fee Schedule",
+          "\u2022 Complete 10-Year Amortization Table"
+        ],
+        "metric_label": "RUN CALCULATOR",
+        "metric_val": "omnioperand.com",
+        "status": "INSTANT ACQUISITION MODEL"
+      }
+    ]
+  },
+  {
+    "id": "hard-money-loan",
+    "title": "The 70% Fix-and-Flip Rule: How Private Lenders Fund Flips",
+    "category": "PRIVATE LENDING & FLIPS",
+    "cpl": "$250 \u2013 $500 CPL",
+    "target_url": "/calculators/hard-money-loan/",
+    "duration": 41.8,
+    "video_path": "/assets/videos/faceless/hard-money-loan.mp4",
+    "poster_path": "/assets/videos/faceless/hard-money-loan-poster.png",
+    "accent_hex": "#eab308",
+    "social_tags": [
+      "#hardmoney",
+      "#houseflipping",
+      "#fixandflip",
+      "#realestateinvestor",
+      "#wholesaling",
+      "#brrrr"
+    ],
+    "full_script": "Never buy a house flip without running the hard money 70% rule first. Most amateur flippers overpay for distressed houses because they forget to account for holding costs, points, and lender ARV caps. The Maximum Allowable Offer formula is: After Repair Value times 70%, minus Rehab Costs. On a 400,000 dollar ARV with 60,000 dollars in rehab, your maximum buy price is 220,000 dollars. Lock in a guaranteed 45,000 dollar net profit while protecting yourself from market downturns. Private lenders will fund 90% of purchase and 100% of rehab. Run our bidirectional hard money calculator at omnioperand.com before putting an offer in.",
+    "scenes": [
+      {
+        "type": "hook",
+        "narration": "Never buy a house flip without running the hard money 70% rule first.",
+        "badge": "\ud83d\udd28 FIX-AND-FLIP FORMULA",
+        "headline": "THE 70% RULE\nFOR HOUSE FLIPS",
+        "card_title": "MAXIMUM ALLOWABLE OFFER (MAO)",
+        "lines": [
+          "\u2022 The formula private lenders enforce",
+          "\u2022 Protects against market price drops",
+          "\u2022 Guarantees healthy flip profit margins"
+        ],
+        "metric_label": "PRIVATE LENDER CEILING",
+        "metric_val": "70% OF ARV",
+        "status": "MAXIMUM ALLOWABLE OFFER"
+      },
+      {
+        "type": "problem",
+        "narration": "Most amateur flippers overpay for distressed houses because they forget to account for holding costs, points, and lender ARV caps.",
+        "badge": "\u26a0\ufe0f THE AMATEUR FLIPPER TRAP",
+        "headline": "WHY 80% OF FLIPPERS\nLOSE MONEY",
+        "card_title": "HIDDEN HOLDING COST SHOCK",
+        "lines": [
+          "\u274c 2 to 3 Lender Origination Points",
+          "\u274c 11% to 13% Interest-Only Carry",
+          "\u274c 6% Realtor Sales Commissions"
+        ],
+        "metric_label": "AVERAGE UNPLANNED COSTS",
+        "metric_val": "$35,000+",
+        "status": "EATS ENTIRE PROFIT MARGIN"
+      },
+      {
+        "type": "formula",
+        "narration": "The Maximum Allowable Offer formula is: After Repair Value times 70%, minus Rehab Costs. On a 400,000 dollar ARV with 60,000 dollars in rehab, your maximum buy price is 220,000 dollars.",
+        "badge": "\ud83d\udcd0 THE EXACT MAO MATH",
+        "headline": "HOW TO CALCULATE\nYOUR MAXIMUM OFFER",
+        "card_title": "THE 70% MAO CALCULATION",
+        "lines": [
+          "ARV (After Repair Value): $400,000",
+          "70% ARV Benchmark: $280,000",
+          "Less Estimated Rehab: -$60,000",
+          "\u2794 Maximum Allowable Offer: $220,000"
+        ],
+        "metric_label": "MAX BUY PRICE",
+        "metric_val": "$220,000",
+        "status": "LENDER APPROVED ENTRY PRICE"
+      },
+      {
+        "type": "results",
+        "narration": "Lock in a guaranteed 45,000 dollar net profit while protecting yourself from market downturns. Private lenders will fund 90% of purchase and 100% of rehab.",
+        "badge": "\ud83d\udcb0 PROFIT & LEVERAGE",
+        "headline": "GUARANTEED FLIP\nPROFIT MARGIN",
+        "card_title": "NET FLIP PROFIT SUMMARY",
+        "lines": [
+          "\u2713 Resale Revenue: $400,000",
+          "\u2713 Purchase + Rehab + Carry: -$355,000",
+          "\u2713 Net Flip Profit: $45,000"
+        ],
+        "metric_label": "NET CASH PROFIT",
+        "metric_val": "+$45,000",
+        "status": "PROTECTED RISK-ADJUSTED RETURN"
+      },
+      {
+        "type": "cta",
+        "narration": "Run our bidirectional hard money calculator at omnioperand.com before putting an offer in.",
+        "badge": "\ud83d\ude80 HARD MONEY SOLVER",
+        "headline": "RUN YOUR FLIP\nNUMBERS NOW",
+        "card_title": "OMNIOPERAND SOLVER SUITE",
+        "lines": [
+          "\u2022 Dual LTC (90%) and LTARV (70%) Caps",
+          "\u2022 Monthly Carry Cost Breakdown",
+          "\u2022 Return on Capital & Equity Multiplier"
+        ],
+        "metric_label": "RUN CALCULATOR",
+        "metric_val": "omnioperand.com",
+        "status": "FREE \u2022 NO SIGNUP REQUIRED"
+      }
+    ]
+  },
+  {
+    "id": "bank-statement-mortgage",
+    "title": "Bank Statement Mortgage: Buy a Home Without Tax Returns",
+    "category": "SELF-EMPLOYED HOME LOANS",
+    "cpl": "$250 \u2013 $450 CPL",
+    "target_url": "/calculators/bank-statement-mortgage/",
+    "duration": 43.1,
+    "video_path": "/assets/videos/faceless/bank-statement-mortgage.mp4",
+    "poster_path": "/assets/videos/faceless/bank-statement-mortgage-poster.png",
+    "accent_hex": "#14b8a6",
+    "social_tags": [
+      "#bankstatementloan",
+      "#selfemployed",
+      "#mortgagebroker",
+      "#homebuying",
+      "#businessowner",
+      "#nonqm"
+    ],
+    "full_script": "If you're a business owner or 1099 freelancer, your tax write-offs are probably disqualifying you from buying a house. Traditional mortgage underwriters look at line 31 of your Schedule C. If you write off expenses to lower taxes, your qualifying income shows as zero. With a 12-Month Bank Statement mortgage, lenders calculate qualifying income directly from your business deposits. They total 12 months of gross deposits, apply an industry expense ratio like 50%, and divide by 12. A business owner depositing 40,000 dollars a month qualifies for a 1,200,000 dollar mortgage, even with zero net tax return income. Calculate your exact bank statement qualifying income on OmniOperand.",
+    "scenes": [
+      {
+        "type": "hook",
+        "narration": "If you're a business owner or 1099 freelancer, your tax write-offs are probably disqualifying you from buying a house.",
+        "badge": "\ud83c\udfe0 1099 & OWNER HACK",
+        "headline": "BUY A HOME WITH\nZERO TAX RETURNS",
+        "card_title": "BANK STATEMENT UNDERWRITING",
+        "lines": [
+          "\u2022 12 to 24 Months Business Bank Deposits",
+          "\u2022 Zero W-2 Forms or Tax Returns Required",
+          "\u2022 Qualify Based on Actual Cash Flow"
+        ],
+        "metric_label": "MAX HOME PURCHASE PRICE",
+        "metric_val": "$3,000,000+",
+        "status": "NON-QM SELF-EMPLOYED LOAN"
+      },
+      {
+        "type": "problem",
+        "narration": "Traditional mortgage underwriters look at line 31 of your Schedule C. If you write off expenses to lower taxes, your qualifying income shows as zero.",
+        "badge": "\ud83d\uded1 THE UNDERWRITING TRAP",
+        "headline": "LINE 31 KILLS\nYOUR MORTGAGE",
+        "card_title": "CONVENTIONAL TAX AUDIT",
+        "lines": [
+          "\u274c Gross Revenue: $500,000 / year",
+          "\u274c Tax Write-Offs: -$460,000 / year",
+          "\u274c Net Qualifying Income: $40,000 / year"
+        ],
+        "metric_label": "QUALIFYING HOME LOAN",
+        "metric_val": "DENIED",
+        "status": "UNDERWRITTEN AS 'POOR'"
+      },
+      {
+        "type": "formula",
+        "narration": "With a 12-Month Bank Statement mortgage, lenders calculate qualifying income directly from your business deposits. They total 12 months of gross deposits, apply an industry expense ratio like 50%, and divide by 12.",
+        "badge": "\ud83d\udcd0 THE DEPOSIT FORMULA",
+        "headline": "HOW DEPOSITS BECOME\nQUALIFYING INCOME",
+        "card_title": "DEPOSIT UNDERWRITING MATRIX",
+        "lines": [
+          "Total 12-Month Deposits: $480,000",
+          "Underwriting Expense Ratio: 50%",
+          "Eligible Net Cash Flow: $240,000",
+          "\u2794 Monthly Qualifying Income: $20,000/mo"
+        ],
+        "metric_label": "MONTHLY QUALIFYING INCOME",
+        "metric_val": "$20,000/MO",
+        "status": "APPROVED AT 50% DTI"
+      },
+      {
+        "type": "results",
+        "narration": "A business owner depositing 40,000 dollars a month qualifies for a 1,200,000 dollar mortgage, even with zero net tax return income.",
+        "badge": "\ud83c\udfc6 PURCHASING POWER",
+        "headline": "APPROVE A $1.2M\nMORTGAGE TODAY",
+        "card_title": "APPROVED HOME PURCHASE",
+        "lines": [
+          "\u2713 Maximum Purchase Power: $1,250,000",
+          "\u2713 Down Payment: 10% to 20%",
+          "\u2713 Primary, Second Home, or Investment"
+        ],
+        "metric_label": "MAX MORTGAGE APPROVED",
+        "metric_val": "$1,250,000",
+        "status": "ZERO TAX RETURNS NEEDED"
+      },
+      {
+        "type": "cta",
+        "narration": "Calculate your exact bank statement qualifying income on OmniOperand.",
+        "badge": "\ud83d\ude80 BANK STATEMENT SOLVER",
+        "headline": "CALCULATE YOUR\nBORROWING POWER",
+        "card_title": "OMNIOPERAND SOLVER SUITE",
+        "lines": [
+          "\u2022 12 vs 24 Month Deposit Schedules",
+          "\u2022 Industry Expense Ratio Sliders (30%-60%)",
+          "\u2022 Backsolve Required Monthly Deposits"
+        ],
+        "metric_label": "RUN CALCULATOR",
+        "metric_val": "omnioperand.com",
+        "status": "FREE \u2022 NO SIGNUP REQUIRED"
+      }
+    ]
+  },
+  {
+    "id": "commercial-solar-tax-credit",
+    "title": "Commercial Solar Tax Credit: 30% ITC + 5-Year Depreciation Shield",
+    "category": "CLEAN ENERGY TAX CREDITS",
+    "cpl": "$350 \u2013 $700 CPL",
+    "target_url": "/calculators/commercial-solar-tax-credit/",
+    "duration": 40.9,
+    "video_path": "/assets/videos/faceless/commercial-solar-tax-credit.mp4",
+    "poster_path": "/assets/videos/faceless/commercial-solar-tax-credit-poster.png",
+    "accent_hex": "#f97316",
+    "social_tags": [
+      "#solartaxcredit",
+      "#commercialsolar",
+      "#taxequity",
+      "#cleanenergy",
+      "#sustainability",
+      "#commercialre"
+    ],
+    "full_script": "Commercial building owners: solar is no longer just green energy, it is an IRS tax shield engine. High commercial utility bills and corporate taxes eat directly into net operating income and building valuation. Under Section 48, commercial solar earns an immediate 30% federal tax credit. Furthermore, you depreciate 85% of the system value across 5-year MACRS with 60% bonus depreciation in Year 1. On a 250,000 dollar system, tax incentives pay for over 52% of the project in year one, yielding a rapid 3.8-year payback. Model your commercial solar tax credit and payback timeline at omnioperand.com.",
+    "scenes": [
+      {
+        "type": "hook",
+        "narration": "Commercial building owners: solar is no longer just green energy, it is an IRS tax shield engine.",
+        "badge": "\u26a1 TAX SHIELD ENGINE",
+        "headline": "WIPE OUT 52% OF\nSOLAR COST DAY 1",
+        "card_title": "SECTION 48 ENERGY TAX CREDIT",
+        "lines": [
+          "\u2022 30% Federal Investment Tax Credit (ITC)",
+          "\u2022 5-Year MACRS Accelerated Depreciation",
+          "\u2022 60% First-Year Bonus Depreciation"
+        ],
+        "metric_label": "FIRST-YEAR INCENTIVE VALUE",
+        "metric_val": "52.4% OF COST",
+        "status": "IRS \u00a748 & \u00a7168(k) SHIELD"
+      },
+      {
+        "type": "problem",
+        "narration": "High commercial utility bills and corporate taxes eat directly into net operating income and building valuation.",
+        "badge": "\ud83d\udcc9 THE EXPENSE DRAIN",
+        "headline": "ELECTRICITY BILLS\nDRAIN VALUE",
+        "card_title": "COMMERCIAL OPERATING DRAG",
+        "lines": [
+          "\u274c $3,500/Month Utility Power Bills",
+          "\u274c Utility rates rising 6% to 9% annually",
+          "\u274c Lowers Net Operating Income (NOI)"
+        ],
+        "metric_label": "25-YEAR UTILITY BLEED",
+        "metric_val": "$1,450,000",
+        "status": "PERMANENT CASH BLEED"
+      },
+      {
+        "type": "formula",
+        "narration": "Under Section 48, commercial solar earns an immediate 30% federal tax credit. Furthermore, you depreciate 85% of the system value across 5-year MACRS with 60% bonus depreciation in Year 1.",
+        "badge": "\ud83d\udcd0 THE TAX REDUCTION FORMULA",
+        "headline": "THE 30% ITC +\nMACRS STACK",
+        "card_title": "$250,000 SYSTEM INCENTIVE STACK",
+        "lines": [
+          "System Gross Cost: $250,000",
+          "30% Federal ITC Credit: -$75,000",
+          "Depreciable Basis (85%): $212,500",
+          "Year 1 Depr Tax Savings: -$56,000"
+        ],
+        "metric_label": "YEAR 1 TOTAL TAX BENEFIT",
+        "metric_val": "$131,000",
+        "status": "52.4% RECOVERED IN MONTH 12"
+      },
+      {
+        "type": "results",
+        "narration": "On a 250,000 dollar system, tax incentives pay for over 52% of the project in year one, yielding a rapid 3.8-year payback.",
+        "badge": "\ud83c\udfc6 RAPID PAYBACK ROI",
+        "headline": "3.8-YEAR FULL\nPAYBACK PERIOD",
+        "card_title": "CASH FLOW SUMMARY",
+        "lines": [
+          "\u2713 Net Out-of-Pocket Cost: $119,000",
+          "\u2713 Annual Power Savings: $31,500 / year",
+          "\u2713 25-Year Net ROI: 412%"
+        ],
+        "metric_label": "PAYBACK TIMELINE",
+        "metric_val": "3.8 YEARS",
+        "status": "21.2 YEARS OF FREE POWER"
+      },
+      {
+        "type": "cta",
+        "narration": "Model your commercial solar tax credit and payback timeline at omnioperand.com.",
+        "badge": "\ud83d\ude80 COMMERCIAL SOLAR SOLVER",
+        "headline": "CALCULATE YOUR\nTAX INCENTIVES",
+        "card_title": "OMNIOPERAND SOLVER SUITE",
+        "lines": [
+          "\u2022 30% ITC Base + Domestic Content Adders",
+          "\u2022 5-Year MACRS Amortization Schedule",
+          "\u2022 Internal Rate of Return (IRR) & LCOE"
+        ],
+        "metric_label": "RUN CALCULATOR",
+        "metric_val": "omnioperand.com",
+        "status": "INSTANT SOLAR TAX MODEL"
+      }
+    ]
+  },
+  {
+    "id": "structured-settlement-lump-sum",
+    "title": "Structured Settlement Lump Sum: Don't Let Factoring Firms Rob You",
+    "category": "ANNUITY & SETTLEMENT FACTORING",
+    "cpl": "$500 \u2013 $1,500 CPL",
+    "target_url": "/calculators/structured-settlement-lump-sum/",
+    "duration": 46.2,
+    "video_path": "/assets/videos/faceless/structured-settlement-lump-sum.mp4",
+    "poster_path": "/assets/videos/faceless/structured-settlement-lump-sum-poster.png",
+    "accent_hex": "#ec4899",
+    "social_tags": [
+      "#structuredsettlement",
+      "#annuity",
+      "#lumpsum",
+      "#legalfinance",
+      "#personalinjury",
+      "#settlement"
+    ],
+    "full_script": "If you have a structured settlement or legal annuity, factoring companies are trying to take 60% of your money. Commercial TV commercials offer fast cash for settlements, but they slip in predatory discount rates between 14% and 22%. Under IRC Section 5891, your payout must be discounted to net present value. 250,000 dollars paid over 10 years at a fair 9% rate is worth 157,000 dollars. At an 18% rate, they only give you 98,000 dollars. That is a 59,000 dollar rip-off. Know your actuarial fair market value before talking to factoring brokers so you can negotiate a competitive discount rate under 9%. Calculate your true lump-sum present value for free on OmniOperand.",
+    "scenes": [
+      {
+        "type": "hook",
+        "narration": "If you have a structured settlement or legal annuity, factoring companies are trying to take 60% of your money.",
+        "badge": "\u2696\ufe0f DON'T GET ROBBED",
+        "headline": "FACTORING FIRMS\nSTEAL 60% OF CASH",
+        "card_title": "IRC \u00a75891 ANNUITY VALUATION",
+        "lines": [
+          "\u2022 Predatory Late-Night TV Commercials",
+          "\u2022 Sky-High 14% to 22% Discount Rates",
+          "\u2022 Court Approval Required by Law"
+        ],
+        "metric_label": "PREDATORY DISCOUNT RATE",
+        "metric_val": "18.0% APR",
+        "status": "ROBBING SETTLEMENT HOLDERS"
+      },
+      {
+        "type": "problem",
+        "narration": "Commercial TV commercials offer fast cash for settlements, but they slip in predatory discount rates between 14% and 22%.",
+        "badge": "\ud83d\uded1 THE TV COMMERCIAL SCAM",
+        "headline": "THE 18% DISCOUNT\nRATE TRAP",
+        "card_title": "ANATOMY OF A BAD DEAL",
+        "lines": [
+          "\u274c Future Payments Owed: $250,000",
+          "\u274c Predatory Discount Rate: 18.0%",
+          "\u274c Factoring Cash Offer: $98,000"
+        ],
+        "metric_label": "TOTAL DISCOUNT LOST",
+        "metric_val": "-$152,000",
+        "status": "60.8% EQUITY FORFEITED"
+      },
+      {
+        "type": "formula",
+        "narration": "Under IRC Section 5891, your payout must be discounted to net present value. 250,000 dollars paid over 10 years at a fair 9% rate is worth 157,000 dollars. At an 18% rate, they only give you 98,000 dollars. That is a 59,000 dollar rip-off.",
+        "badge": "\ud83d\udcd0 THE ACTUARIAL DISCOUNT MATH",
+        "headline": "FAIR VALUE VS\nPREDATORY OFFERS",
+        "card_title": "$250K OVER 10 YEARS COMPARISON",
+        "lines": [
+          "Actuarial Fair Value (9% Rate): $157,000",
+          "Predatory Offer (18% Rate): $98,000",
+          "\u2794 Hidden Broker Fee Spread: $59,000"
+        ],
+        "metric_label": "PREDATORY BROKER PROFIT",
+        "metric_val": "$59,000",
+        "status": "MONEY TAKEN FROM YOUR POCKET"
+      },
+      {
+        "type": "results",
+        "narration": "Know your actuarial fair market value before talking to factoring brokers so you can negotiate a competitive discount rate under 9%.",
+        "badge": "\ud83d\udee1\ufe0f PROTECT YOUR PAYOUT",
+        "headline": "NEGOTIATE A FAIR\n9% TO 10% RATE",
+        "card_title": "LEGAL PROTECTIONS & STANDARDS",
+        "lines": [
+          "\u2713 Judicial 'Best Interest' Hearing Rule",
+          "\u2713 Demand Competitive Factoring Bids",
+          "\u2713 Save $59,000+ in Lump Sum Payout"
+        ],
+        "metric_label": "PROTECTED CASH PROCEEDS",
+        "metric_val": "+$59,000",
+        "status": "NEVER ACCEPT FIRST OFFER"
+      },
+      {
+        "type": "cta",
+        "narration": "Calculate your true lump-sum present value for free on OmniOperand.",
+        "badge": "\ud83d\ude80 LUMP SUM SOLVER",
+        "headline": "CHECK YOUR FAIR\nMARKET VALUE",
+        "card_title": "OMNIOPERAND SOLVER SUITE",
+        "lines": [
+          "\u2022 Discount Rate Sensitivity Slider (6%-22%)",
+          "\u2022 IRC \u00a75891 Compliance Audit",
+          "\u2022 Full Monthly Discount Amortization"
+        ],
+        "metric_label": "RUN CALCULATOR",
+        "metric_val": "omnioperand.com",
+        "status": "FREE \u2022 INDEPENDENT VALUATION"
+      }
+    ]
+  },
+  {
+    "id": "commercial-real-estate-cap-rate",
+    "title": "Cap Rate & Debt Yield: How Commercial Banks Value Buildings",
+    "category": "COMMERCIAL SYNDICATION",
+    "cpl": "$300 \u2013 $600 CPL",
+    "target_url": "/calculators/commercial-real-estate-cap-rate/",
+    "duration": 41.7,
+    "video_path": "/assets/videos/faceless/commercial-real-estate-cap-rate.mp4",
+    "poster_path": "/assets/videos/faceless/commercial-real-estate-cap-rate-poster.png",
+    "accent_hex": "#6366f1",
+    "social_tags": [
+      "#caprate",
+      "#debtyield",
+      "#commercialrealestate",
+      "#apartmentbuilding",
+      "#syndication",
+      "#cre"
+    ],
+    "full_script": "Want to know how commercial banks and syndicators price 10-million-dollar apartment buildings? Beginners only look at Cap Rate. But institutional lenders don't care about cap rate; they size loans using Debt Yield and DSCR. Cap Rate equals Net Operating Income divided by Purchase Price. But lenders require a minimum 9.5% to 10% Debt Yield, calculated as NOI divided by Loan Amount. Even if your Cap Rate is 6%, a low debt yield will slash your loan proceeds by hundreds of thousands of dollars. Accurately forecast loan proceeds, cash-on-cash yield, and valuation before signing a purchase agreement. Run institutional CRE underwriting calculations for free at omnioperand.com.",
+    "scenes": [
+      {
+        "type": "hook",
+        "narration": "Want to know how commercial banks and syndicators price 10-million-dollar apartment buildings?",
+        "badge": "\ud83c\udfe2 INSTITUTIONAL CRE",
+        "headline": "HOW BANKS PRICE\n$10M APARTMENTS",
+        "card_title": "UNDERWRITING TWIN ENGINES",
+        "lines": [
+          "\u2022 Cap Rate Determines Valuation",
+          "\u2022 Debt Yield Sizes the Maximum Loan",
+          "\u2022 DSCR Ensures Solvency"
+        ],
+        "metric_label": "INSTITUTIONAL BENCHMARK",
+        "metric_val": "10.0% DEBT YIELD",
+        "status": "COMMERCIAL UNDERWRITING STANDARD"
+      },
+      {
+        "type": "problem",
+        "narration": "Beginners only look at Cap Rate. But institutional lenders don't care about cap rate; they size loans using Debt Yield and DSCR.",
+        "badge": "\u26a0\ufe0f THE AMATEUR CRE MISTAKE",
+        "headline": "CAP RATE DOES NOT\nGUARANTEE A LOAN",
+        "card_title": "THE REFINANCE SHORTFALL",
+        "lines": [
+          "\u274c Low 5% Cap Rate inflates price",
+          "\u274c Bank requires 10% minimum Debt Yield",
+          "\u274c Loan slashed by $800,000 at closing"
+        ],
+        "metric_label": "FINANCING SHORTFALL",
+        "metric_val": "-$800,000",
+        "status": "FORCED CASH RECTIFICATION"
+      },
+      {
+        "type": "formula",
+        "narration": "Cap Rate equals Net Operating Income divided by Purchase Price. But lenders require a minimum 9.5% to 10% Debt Yield, calculated as NOI divided by Loan Amount. Even if your Cap Rate is 6%, a low debt yield will slash your loan proceeds by hundreds of thousands of dollars.",
+        "badge": "\ud83d\udcd0 THE DUAL FORMULAS",
+        "headline": "CAP RATE VS\nDEBT YIELD MATH",
+        "card_title": "CRITICAL UNDERWRITING RATIOS",
+        "lines": [
+          "Cap Rate = NOI \u00f7 Property Price",
+          "Debt Yield = NOI \u00f7 Loan Amount",
+          "NOI: $500,000 | Price: $8,000,000 (6.25% Cap)",
+          "Max Loan at 10% Debt Yield: $5,000,000"
+        ],
+        "metric_label": "MAX SENIOR DEBT SIZED",
+        "metric_val": "$5,000,000",
+        "status": "DEBT YIELD SIZING APPLIED"
+      },
+      {
+        "type": "results",
+        "narration": "Accurately forecast loan proceeds, cash-on-cash yield, and valuation before signing a purchase agreement.",
+        "badge": "\ud83c\udfc6 DEAL CERTAINTY",
+        "headline": "ELIMINATE CLOSING\nSURPRISES",
+        "card_title": "UNDERWRITING ASSURANCE",
+        "lines": [
+          "\u2713 Exact Maximum Loan Proceeds Known",
+          "\u2713 True Cash-on-Cash Return Modeled",
+          "\u2713 Secure Financing with Zero Capital Gaps"
+        ],
+        "metric_label": "PREDICTABLE CLOSING",
+        "metric_val": "100% CERTAINTY",
+        "status": "BANK-READY UNDERWRITING"
+      },
+      {
+        "type": "cta",
+        "narration": "Run institutional CRE underwriting calculations for free at omnioperand.com.",
+        "badge": "\ud83d\ude80 CRE CAP RATE SOLVER",
+        "headline": "MODEL YOUR CRE\nDEAL PROCEEDS",
+        "card_title": "OMNIOPERAND SOLVER SUITE",
+        "lines": [
+          "\u2022 Bidirectional Cap Rate & NOI Inversion",
+          "\u2022 Debt Yield & DSCR Sensitivity Matrix",
+          "\u2022 Levered Cash-on-Cash Return Schedule"
+        ],
+        "metric_label": "RUN CALCULATOR",
+        "metric_val": "omnioperand.com",
+        "status": "INSTANT CRE VALUATION"
+      }
+    ]
+  }
+]

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Structured Settlement &amp; Annuity Lump-Sum Factoring Calculator | OmniOperand</title>
+  <meta name="description" content="Calculate the immediate lump-sum cash buyout value of structured settlements and annuities under IRC §5891 using court-approved market discount rates.">
+  <link rel="canonical" href="https://omnioperand.com/calculators/structured-settlement-lump-sum/">
+
+  <meta property="og:title" content="Structured Settlement &amp; Annuity Lump-Sum Factoring Calculator | OmniOperand">
+  <meta property="og:description" content="Calculate immediate cash buyout values of structured settlements and annuities under IRC §5891 using market discount rates.">
+  <meta property="og:url" content="https://omnioperand.com/calculators/structured-settlement-lump-sum/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://omnioperand.com/calculators/structured-settlement-lump-sum/#software",
+        "name": "Structured Settlement & Annuity Lump-Sum Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Calculates present value lump-sum buyouts for structured legal settlements and guaranteed insurance annuities under IRC §5891."
+      },
+      {
+        "@type": "FinancialProduct",
+        "@id": "https://omnioperand.com/calculators/structured-settlement-lump-sum/#product",
+        "name": "Court-Approved Structured Settlement Factoring",
+        "description": "Secondary market cash liquidity factoring for structured legal settlement annuities compliant with state Structured Settlement Protection Acts.",
+        "feesAndCommissionsSpecification": "Market discount rates typically 9% to 15% with statutory judicial approval."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "OmniOperand",
+            "item": "https://omnioperand.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculators",
+            "item": "https://omnioperand.com/calculators/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Structured Settlement Calculator",
+            "item": "https://omnioperand.com/calculators/structured-settlement-lump-sum/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why is the cash buyout offer lower than the total future payments?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Factoring companies apply the time value of money discount rate (typically 9% to 15%) because receiving a lump sum today carries inflation risk, capital cost, and administrative/legal overhead compared to waiting 10 to 20 years for monthly installments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does selling a structured settlement require court approval?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Under federal IRC §5891 and state Structured Settlement Protection Acts (SSPA), a judge must hold a formal court hearing and issue a written finding that the transfer is in the best interest of the payee and their dependents before any funds can be disbursed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are structured settlement cash buyouts taxable?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If the underlying structured settlement originated from a personal physical injury or wrongful death lawsuit under IRC Section 104(a)(2), the cash payout remains 100% exempt from federal and state income taxes when processed via a Qualified Order under IRC §5891."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="omni-body">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Liquidity</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/calculators/" class="nav-link active">Specialized Solvers</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/calculators/">Specialized Solvers</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active" aria-current="page">Structured Settlement Lump Sum</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container" id="structured-settlement-calculator">
+
+    <section class="solver-hero">
+      <div class="hero-badge">IRC §5891 • State Structured Settlement Protection Acts</div>
+      <h1>Structured Settlement &amp; Annuity Lump-Sum Factoring Calculator</h1>
+      <p class="hero-subtext">
+        Calculate the present market value (NPV) of scheduled periodic annuity cash flows. Compare guaranteed future payments against immediate court-approved lump-sum cash buyout offers.
+      </p>
+      <div class="calculator-actions-toolbar" style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem;">
+        <button type="button" class="btn-secondary" id="btn-copy-summary">
+          <span>📋 Copy Summary</span>
+        </button>
+        <button type="button" class="btn-secondary" id="btn-print-pdf">
+          <span>🖨️ Print / Save PDF</span>
+        </button>
+        <button type="button" class="btn-secondary btn-open-embed" id="btn-embed">
+          <span>🔌 Embed Calculator</span>
+        </button>
+      </div>
+    </section>
+
+    <div class="calculator-grid">
+
+      <div class="solver-column">
+        <div class="hud-panel">
+          <div class="hud-panel-header">
+            <h2>Annuity Stream Parameters</h2>
+            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Court Discounting</span>
+          </div>
+
+          <div class="param-card-grid">
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-monthly_payment">Monthly Annuity Payment ($)</label>
+                <span class="param-symbol">Payment</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-monthly_payment" class="number-input omni-calc-input" value="2500" step="100" min="100">
+              </div>
+              <div class="param-hint">Guaranteed monthly payment amount received from insurance carrier</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-remaining_years">Remaining Duration (Years)</label>
+                <span class="param-symbol">Years</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-remaining_years" class="number-input omni-calc-input" value="10" step="1" min="1" max="40">
+                <span class="input-suffix">Yrs</span>
+              </div>
+              <div class="param-hint">Number of years of remaining scheduled payments</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-discount_rate">Factoring Discount Rate (%)</label>
+                <span class="param-symbol">Discount%</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-discount_rate" class="number-input omni-calc-input" value="12.0" step="0.5" min="5" max="25">
+                <span class="input-suffix">%</span>
+              </div>
+              <div class="param-hint">Market factoring APR (typically 9%–15% in competitive bids)</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-annual_cola">Annual COLA Escalation (%)</label>
+                <span class="param-symbol">COLA</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-annual_cola" class="number-input omni-calc-input" value="0.0" step="0.5" min="0" max="6">
+                <span class="input-suffix">%</span>
+              </div>
+              <div class="param-hint">Annual Cost-of-Living increase if structured into annuity contract</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-admin_fee">Legal &amp; Court Administrative Fee ($)</label>
+                <span class="param-symbol">Fee</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-admin_fee" class="number-input omni-calc-input" value="2500" step="250" min="0">
+              </div>
+              <div class="param-hint">Court filing, legal notice, and underwriting administrative fee</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <h2 style="font-size:1.15rem; color:var(--text-bright); margin:0;">Buyout Cash Offer Metrics</h2>
+            <span class="badge" id="res-effective_payout_pct" style="background:rgba(56,189,248,0.15); color:#38bdf8; font-weight:700; padding:4px 10px; border-radius:6px;">
+              58.2% Payout
+            </span>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap:1rem;">
+            <div class="metric-card highlight">
+              <span class="metric-label">Estimated Cash Lump Sum</span>
+              <span class="metric-value" id="res-net_cash_offer" style="color:var(--accent-emerald); font-size:1.85rem;">$172,019</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Total Future Payments</span>
+              <span class="metric-value" id="res-nominal_future_value">$300,000</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Discount Surrendered</span>
+              <span class="metric-value" id="res-dollar_discount" style="color:#ef4444;">-$127,981</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Gross Present Value</span>
+              <span class="metric-value" id="res-gross_pv">$174,519</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Payment Count</span>
+              <span class="metric-value" id="res-total_payments">120 Payments</span>
+            </div>
+          </div>
+
+          <div class="lead-capture-card" style="margin-top: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+              <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; text-transform: uppercase;">
+                🏛️ Top Structured Settlement Buyer Network
+              </span>
+              <span style="font-size: 12px; color: #34d399; font-weight: 700;">Guaranteed Highest Cash Offer</span>
+            </div>
+            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; font-weight: 800; color: #fff;">
+              Compare Competing Cash Offers for Your Structured Settlement
+            </h3>
+            <p style="margin: 0 0 1rem 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.45;">
+              Never accept the first buyout quote. Pit certified institutional buyers against each other to drive discount rates down to 9% and maximize your immediate cash payout.
+            </p>
+            <button type="button" id="btn-open-lead-drawer" class="btn-lead-drawer" style="width: 100%; max-width: 520px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; padding: 14px 20px; border-radius: 10px; font-weight: 800; font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 10px 24px -6px rgba(2, 132, 199, 0.45); transition: all 0.2s;">
+              <span>⚡</span>
+              <span>Compare Top Settlement Cash Buyout Offers</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Actuarial Present Value Formula</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);">IRC §5891 Standard</span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">Discounted Cash Flow Equation:</div>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0;">PV = ∑ [ PMT · (1 + g)ᵗ / (1 + r/12)ᵗ ] - Fees</code>
+            <div style="font-size:0.85rem; color:#94a3b8; margin-top:6px;">
+              Net Cash Offer = Gross Present Value - Legal &amp; Administrative Holdback
+            </div>
+          </div>
+
+          <div class="proof-card open">
+            <div class="proof-header">
+              <h3><span>Step-by-Step Factoring Derivation</span></h3>
+            </div>
+            <div class="proof-body" style="display:block;">
+              <div class="proof-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                  <strong>Future Nominal Payment Sum</strong>
+                  <p>10 years of $2,500 monthly payments = 120 payments totaling $300,000 nominal dollars.</p>
+                </div>
+              </div>
+
+              <div class="proof-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  <strong>Monthly Discounting Rate</strong>
+                  <p>A 12.00% annual discount rate yields a monthly discounting factor r = 0.0100. Each subsequent monthly payment is discounted back to present value using (1 + 0.01)⁻ᵗ.</p>
+                </div>
+              </div>
+
+              <div class="proof-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  <strong>Net Lump-Sum Calculation</strong>
+                  <p>Sum of discounted payments = $174,519. Deducting $2,500 in statutory legal and administrative court costs produces a net immediate cash offer of $172,019 (57.3% of nominal future value).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <section class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
+              <div>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive &amp; API Spec</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence &amp; Prompt Integration</h3>
+              </div>
+            </div>
+
+            <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
+              <span><span style="color:var(--accent-cyan); font-weight:700;">GET / POST</span> https://omnioperand.com/api/v1/calculators/structured-settlement-lump-sum</span>
+              <span style="color:var(--text-muted); font-size:0.75rem;">JSON Invariants</span>
+            </div>
+
+            <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+
+    <section class="calc-faq-section" style="margin-top:3rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions: Annuity Factoring</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Why is the cash buyout offer lower than the total future payments?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Factoring companies apply the time value of money discount rate (typically 9% to 15%) because receiving a lump sum today carries inflation risk, capital cost, and administrative/legal overhead compared to waiting 10 to 20 years for monthly installments.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Does selling a structured settlement require court approval?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes. Under federal IRC §5891 and state Structured Settlement Protection Acts (SSPA), a judge must hold a formal court hearing and issue a written finding that the transfer is in the best interest of the payee and their dependents before any funds can be disbursed.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Are structured settlement cash buyouts taxable?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            If the underlying structured settlement originated from a personal physical injury or wrongful death lawsuit under IRC Section 104(a)(2), the cash payout remains 100% exempt from federal and state income taxes when processed via a Qualified Order under IRC §5891.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem; padding:2rem 0; border-top:1px solid var(--border-subtle);">
+      <div class="footer-brand">
+        <div style="font-weight:700; color:var(--text-bright); margin-bottom:0.5rem;">OmniOperand</div>
+        <p style="font-size:0.8rem; color:var(--text-muted); max-width:320px; line-height:1.4;">
+          Deterministic computational engines, verified mathematical proofs, and programmatic APIs for technical professionals.
+        </p>
+      </div>
+    </div>
+    <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
+      <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.4"></script>
+  <script src="/assets/js/lead-drawer.js" defer></script>
+  <script src="/assets/js/structured-settlement-solver.js" defer></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

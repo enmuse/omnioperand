@@ -1,0 +1,279 @@
+{
+  "summary": {
+    "audited_at": "2026-11-04T13:01:15.867784",
+    "total_properties": 1,
+    "total_urls_inspected": 10,
+    "total_indexed": 10,
+    "total_not_indexed": 0,
+    "coverage_breakdown": {
+      "Submitted and indexed": 10
+    },
+    "verdict_breakdown": {
+      "PASS": 10
+    },
+    "canonical_mismatches_count": 0,
+    "properties_with_indexing_issues": 0,
+    "issues_by_reason": {}
+  },
+  "properties": [
+    {
+      "summary": {
+        "total_queries_analyzed": 1000,
+        "striking_distance_count": 0,
+        "low_ctr_count": 1
+      },
+      "recommendations": {
+        "page_2_striking_distance": [],
+        "title_meta_tuneups": [
+          {
+            "query": "auto loans",
+            "page": "https://omnioperand.com/pl/finance/auto-loan/",
+            "clicks": 0,
+            "impressions": 266,
+            "ctr_percent": 0,
+            "position": 5.5
+          }
+        ]
+      },
+      "site": "sc-domain:omnioperand.com",
+      "domain": "omnioperand.com",
+      "retrieved_at": "2026-11-04T13:01:16.729747",
+      "indexing_audit": {
+        "total_inspected": 10,
+        "indexed_count": 10,
+        "not_indexed_count": 0,
+        "verdict_summary": {
+          "PASS": 10
+        },
+        "coverage_summary": {
+          "Submitted and indexed": 10
+        },
+        "canonical_mismatches_count": 0,
+        "canonical_mismatches": [],
+        "indexing_issues_count": 0,
+        "indexing_issues": [],
+        "inspected_details": [
+          {
+            "url": "https://omnioperand.com/",
+            "is_indexed": true,
+            "verdict": "PASS",
+            "coverage_state": "Submitted and indexed",
+            "indexing_state": "INDEXING_ALLOWED",
+            "page_fetch_state": "SUCCESSFUL",
+            "robots_txt_state": "ALLOWED",
+            "user_canonical": "https://omnioperand.com/",
+            "google_canonical": "https://omnioperand.com/",
+            "canonical_match": true,
+            "referring_urls": [
+              "https://omnioperand.com/no/",
+              "https://omnioperand.com/finance/",
+              "https://omnioperand.com/engineering/",
+              "https://omnioperand.com/pl/",
+              "https://omnioperand.com/finance/self-storage-roi/",
+              "https://omnioperand.com/api/"
+            ],
+            "sitemap": [],
+            "last_crawl_time": "2026-10-28T13:12:23Z",
+            "crawled_as": "MOBILE",
+            "gsc_inspect_link": "https://search.google.com/search-console/inspect?resource_id=sc-domain:omnioperand.com&id=T0mUGTunco_PLP669DqwBg&utm_medium=link&utm_source=api"
+          },
+          {
+            "url": "https://omnioperand.com/ro/",
+            "is_indexed": true,
+            "verdict": "PASS",
+            "coverage_state": "Submitted and indexed",
+            "indexing_state": "INDEXING_ALLOWED",
+            "page_fetch_state": "SUCCESSFUL",
+            "robots_txt_state": "ALLOWED",
+            "user_canonical": "https://omnioperand.com/ro/",
+            "google_canonical": "https://omnioperand.com/ro/",
+            "canonical_match": true,
+            "referring_urls": [
+              "https://www.omnioperand.com/ro/calculus/",
+              "https://omnioperand.com/es/",
+              "https://omnioperand.com/pt/"
+            ],
+            "sitemap": [
+              "https://omnioperand.com/sitemap-index.xml",
+              "https://omnioperand.com/sitemap-ro.xml",
+              "https://omnioperand.com/sitemap.xml"
+            ],
+            "last_crawl_time": "2026-10-24T15:42:01Z",
+            "crawled_as": "MOBILE",
+            "gsc_inspect_link": "https://search.google.com/search-console/inspect?resource_id=sc-domain:omnioperand.com&id=RAqgXnDc_mmhEiQ5U-XR_A&utm_medium=link&utm_source=api"
+          },
+          {
+            "url": "https://omnioperand.com/ro/calculus/",
+            "is_indexed": true,
+            "verdict": "PASS",
+            "coverage_state": "Submitted and indexed",
+            "indexing_state": "INDEXING_ALLOWED",
+            "page_fetch_state": "SUCCESSFUL",
+            "robots_txt_state": "ALLOWED",
+            "user_canonical": "https://omnioperand.com/ro/calculus/",
+            "google_canonical": "https://omnioperand.com/ro/calculus/",
+            "canonical_match": true,
+            "referring_urls": [
+              "https://omnioperand.com/pt/calculus/"
+            ],
+            "sitemap": [],
+            "last_crawl_time": "2026-10-24T20:53:54Z",
+            "crawled_as": "MOBILE",
+            "gsc_inspect_link": "https://search.google.com/search-console/inspect?resource_id=sc-domain:omnioperand.com&id=SJYW7zsAz-RBrgsjawJqJg&utm_medium=link&utm_source=api"
+          },
+          {
+            "url": "https://omnioperand.com/ro/calculus/derivatives/",
+            "is_indexed": true,
+            "verdict": "PASS",
+            "coverage_state": "Submitted and indexed",
+            "indexing_state": "INDEXING_ALLOWED",
+            "page_fetch_state": "SUCCESSFUL",
+            "robots_txt_state": "ALLOWED",
+            "user_canonical": "https://omnioperand.com/ro/calculus/derivatives/",
+            "google_canonical": "https://omnioperand.com/ro/calculus/derivatives/",
+            "canonical_match": true,
+            "referring_urls": [
+              "https://www.omnioperand.com/calculus/derivatives/"
+            ],
+            "sitemap": [],
+            "last_crawl_time": "2026-10-24T22:22:05Z",
+            "crawled_as": "MOBILE",
+            "gsc_inspect_link": "https://search.google.com/search-console/inspect?resource_id=sc-domain:omnioperand.com&id=xWdJjbhHIJadH8VPrwqU-g&utm_medium=link&utm_source=api"
+          },
+          {
+            "url": "https://omnioperand.com/ro/calculus/integrals/",
+            "is_indexed": true,
+            "verdict": "PASS",
+            "coverage_state": "Submitted and indexed",
+            "indexing_state": "INDEXING_ALLOWED",
+            "page_fetch_state": "SUCCESSFUL",
+            "robots_txt_state": "ALLOWED",
+            "user_canonical": "https://omnioperand.com/ro/calculus/integrals/",
+            "google_canonical": "https://omnioperand.com/ro/calculus/integrals/",
+            "canonical_match": true,
+            "referring_urls": [
+              "https://omnioperand.com/sitemap.xml"
+            ],
+            "sitemap": [
+              "https://omnioperand.com/sitemap-index.xml",
+              "https://omnioperand.com/sitemap-ro.xml",
+              "https://omnioperand.com/sitemap.xml"
+            ],
+            "last_crawl_time": "2026-10-25T05:21:21Z",
+            "crawled_as": "MOBILE",
+            "gsc_inspect_link": "https://search.google.com/search-console/inspect?resource_id=sc-domain:omnioperand.com&id=jb1dyD5EHN3Q_LKQwRPARA&utm_medium=link&utm_source=api"
+          },
+          {
+            "url": "https://omnioperand.com/ro/construction/",
+            "is_indexed": true,
+            "verdict": "PASS",
+            "coverage_state": "Submitted and indexed",
+            "indexing_state": "INDEXING_ALLOWED",
+            "page_fetch_state": "SUCCESSFUL",
+            "robots_txt_state": "ALLOWED",
+            "user_canonical": "https://omnioperand.com/ro/construction/",
+            "google_canonical": "https://omnioperand.com/ro/construction/",
+            "canonical_match": true,
+            "referring_urls": [
+              "https://omnioperand.com/ro/calculus/",
+              "https://omnioperand.com/ro/geometry/",
+              "https://omnioperand.com/pt/construction/"
+            ],
+            "sitemap": [
+              "https://omnioperand.com/sitemap-index.xml",
+              "https://omnioperand.com/sitemap-ro.xml",
+              "https://omnioperand.com/sitemap.xml"
+            ],
+            "last_crawl_time": "2026-10-24T21:20:37Z",
+            "crawled_as": "MOBILE",
+            "gsc_inspect_link": "https://search.google.com/search-console/inspect?resource_id=sc-domain:omnioperand.com&id=4_ZQ93jCpm9MJleD8YJgug&utm_medium=link&utm_source=api"
+          },
+          {
+            "url": "https://omnioperand.com/ro/finance/",
+            "is_indexed": true,
+            "verdict": "PASS",
+            "coverage_state": "Submitted and indexed",
+            "indexing_state": "INDEXING_ALLOWED",
+            "page_fetch_state": "SUCCESSFUL",
+            "robots_txt_state": "ALLOWED",
+            "user_canonical": "https://omnioperand.com/ro/finance/",
+            "google_canonical": "https://omnioperand.com/ro/finance/",
+            "canonical_match": true,
+            "referring_urls": [
+              "https://omnioperand.com/finance/",
+              "https://omnioperand.com/ro/geometry/parallelogram/",
+              "https://omnioperand.com/no/finance/"
+            ],
+            "sitemap": [
+              "https://omnioperand.com/sitemap-index.xml",
+              "https://omnioperand.com/sitemap-ro.xml",
+              "https://omnioperand.com/sitemap.xml"
+            ],
+            "last_crawl_time": "2026-10-24T23:07:52Z",
+            "crawled_as": "MOBILE",
+            "gsc_inspect_link": "https://search.google.com/search-console/inspect?resource_id=sc-domain:omnioperand.com&id=PF_Vp4l2qPSPnwUqvttCeA&utm_medium=link&utm_source=api"
+          },
+          {
+            "url": "https://omnioperand.com/ro/finance/auto-loan/",
+            "is_indexed": true,
+            "verdict": "PASS",
+            "coverage_state": "Submitted and indexed",
+            "indexing_state": "INDEXING_ALLOWED",
+            "page_fetch_state": "SUCCESSFUL",
+            "robots_txt_state": "ALLOWED",
+            "user_canonical": "https://omnioperand.com/ro/finance/auto-loan/",
+            "google_canonical": "https://omnioperand.com/ro/finance/auto-loan/",
+            "canonical_match": true,
+            "referring_urls": [
+              "https://omnioperand.com/pt/finance/auto-loan/"
+            ],
+            "sitemap": [],
+            "last_crawl_time": "2026-10-25T08:11:31Z",
+            "crawled_as": "MOBILE",
+            "gsc_inspect_link": "https://search.google.com/search-console/inspect?resource_id=sc-domain:omnioperand.com&id=fTVFRDAyVptJlGxByIpQvQ&utm_medium=link&utm_source=api"
+          },
+          {
+            "url": "https://omnioperand.com/ro/finance/cagr/",
+            "is_indexed": true,
+            "verdict": "PASS",
+            "coverage_state": "Submitted and indexed",
+            "indexing_state": "INDEXING_ALLOWED",
+            "page_fetch_state": "SUCCESSFUL",
+            "robots_txt_state": "ALLOWED",
+            "user_canonical": "https://omnioperand.com/ro/finance/cagr/",
+            "google_canonical": "https://omnioperand.com/ro/finance/cagr/",
+            "canonical_match": true,
+            "referring_urls": [
+              "https://omnioperand.com/sitemap.xml"
+            ],
+            "sitemap": [],
+            "last_crawl_time": "2026-10-28T01:09:03Z",
+            "crawled_as": "MOBILE",
+            "gsc_inspect_link": "https://search.google.com/search-console/inspect?resource_id=sc-domain:omnioperand.com&id=iq6Yj8LZbeyE5c1lv3m2kQ&utm_medium=link&utm_source=api"
+          },
+          {
+            "url": "https://omnioperand.com/ro/finance/compound-interest/",
+            "is_indexed": true,
+            "verdict": "PASS",
+            "coverage_state": "Submitted and indexed",
+            "indexing_state": "INDEXING_ALLOWED",
+            "page_fetch_state": "SUCCESSFUL",
+            "robots_txt_state": "ALLOWED",
+            "user_canonical": "https://omnioperand.com/ro/finance/compound-interest/",
+            "google_canonical": "https://omnioperand.com/ro/finance/compound-interest/",
+            "canonical_match": true,
+            "referring_urls": [],
+            "sitemap": [
+              "https://omnioperand.com/sitemap-index.xml",
+              "https://omnioperand.com/sitemap-ro.xml",
+              "https://omnioperand.com/sitemap.xml"
+            ],
+            "last_crawl_time": "2026-10-25T05:46:21Z",
+            "crawled_as": "MOBILE",
+            "gsc_inspect_link": "https://search.google.com/search-console/inspect?resource_id=sc-domain:omnioperand.com&id=ty732ifoY7u2elTZ0QqbuQ&utm_medium=link&utm_source=api"
+          }
+        ]
+      }
+    }
+  ]
+}

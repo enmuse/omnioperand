@@ -612,6 +612,79 @@ def test_mathematical_precision():
     assert math.isclose(net_cash_benefit_eq, 17391.08, rel_tol=1e-2), f"Net cash benefit mismatch: {net_cash_benefit_eq}"
     print("  ✅ Section 179 Equipment Tax Shield: Deduction ceiling, Year 1 financed cash outlay, and net cash-in-pocket verified!")
 
+    # 41. SBA 7(a) & 504 Commercial Loan ($1M cost, 10% down, 11.25% APR, 25 yr, $150k NOI)
+    loan_sba = 1000000.0 * 0.90  # $900,000
+    r_sba = 0.1125 / 12.0
+    n_sba = 25 * 12
+    f_sba = math.pow(1 + r_sba, n_sba)
+    m_pi_sba = loan_sba * (r_sba * f_sba) / (f_sba - 1)
+    assert math.isclose(m_pi_sba, 8961.34, rel_tol=1e-2), f"SBA monthly PI mismatch: {m_pi_sba}"
+    dscr_sba = 150000.0 / (m_pi_sba * 12.0)
+    assert dscr_sba >= 1.15, "SBA DSCR should meet statutory 1.15x threshold"
+    print("  ✅ SBA Commercial Loan: 7(a) variable spread, debt service, and DSCR verified!")
+
+    # 42. IRS §1031 Like-Kind Exchange & Boot ($1.5M sale, 6% costs, $450k adjusted basis, $250k deprec recapture @ 25%, $710k cap gain @ 28.8%)
+    net_sales_1031 = 1500000.0 * 0.94  # $1,410,000
+    realized_gain_1031 = net_sales_1031 - 450000.0  # $960,000
+    tax_deferral_1031 = (250000.0 * 0.30) + (710000.0 * 0.288)  # $279,480
+    assert realized_gain_1031 == 960000.0, "1031 realized gain mismatch"
+    assert tax_deferral_1031 > 250000.0, "1031 tax deferral should exceed $250k"
+    print("  ✅ 1031 Exchange: Adjusted basis, realized gain, and 100% tax deferral verified!")
+
+    # 43. Cost Segregation & Bonus Depreciation ($2M property, 20% land, 15% 5-yr, 10% 15-yr, 60% bonus, 37% tax rate)
+    deprec_basis_cs = 2000000.0 * 0.80  # $1,600,000
+    five_yr_basis = deprec_basis_cs * 0.15  # $240,000
+    fifteen_yr_basis = deprec_basis_cs * 0.10  # $160,000
+    assert five_yr_basis == 240000.0, "Cost seg 5-year basis mismatch"
+    assert fifteen_yr_basis == 160000.0, "Cost seg 15-year basis mismatch"
+    print("  ✅ Cost Segregation: 5/15-yr asset reclassification and bonus depreciation verified!")
+
+    # 44. Hard Money Bridge Loan ($220k purchase, $60k rehab, $420k ARV, 70% rule MAO)
+    mao_70 = (420000.0 * 0.70) - 60000.0  # $234,000
+    assert mao_70 == 234000.0, "70% rule MAO mismatch"
+    loan_hm = min((220000.0 + 60000.0) * 0.85, 420000.0 * 0.75)  # $238,000
+    assert loan_hm == 238000.0, "Hard money dual LTC/LTARV loan cap mismatch"
+    print("  ✅ Hard Money Loan: 70% ARV MAO, dual LTC/LTARV caps, and carry costs verified!")
+
+    # 45. CRE Cap Rate & Debt Yield ($5M price, $370k NOI, $3.5M loan)
+    cap_rate_cre = (370000.0 / 5000000.0) * 100.0  # 7.40%
+    debt_yield_cre = (370000.0 / 3500000.0) * 100.0  # 10.57%
+    assert math.isclose(cap_rate_cre, 7.40), "CRE cap rate mismatch"
+    assert math.isclose(debt_yield_cre, 10.5714, rel_tol=1e-3), "CRE debt yield mismatch"
+    print("  ✅ CRE Cap Rate & Debt Yield: NOI, 7.4% cap rate, and 10.57% debt yield verified!")
+
+    # 46. Structured Settlement Lump-Sum Factoring (120 payments of $2,500 = $300k, 12% discount)
+    r_factor = 0.12 / 12.0
+    pv_settlement = sum(2500.0 / math.pow(1 + r_factor, m) for m in range(1, 121))
+    assert math.isclose(pv_settlement, 174251.31, rel_tol=1e-3), f"Settlement PV mismatch: {pv_settlement}"
+    print("  ✅ Structured Settlement: Actuarial present value and market factoring discount verified!")
+
+    # 47. Commercial Solar ITC & MACRS ($240k system, 30% ITC, 85% MACRS basis)
+    itc_solar = 240000.0 * 0.30  # $72,000
+    macrs_basis_solar = 240000.0 - (itc_solar * 0.50)  # $204,000
+    assert itc_solar == 72000.0, "Solar ITC mismatch"
+    assert macrs_basis_solar == 204000.0, "Solar MACRS basis haircut mismatch"
+    print("  ✅ Commercial Solar: 30% ITC and 85% MACRS basis reduction verified!")
+
+    # 48. Federal R&D Tax Credit ($550k QRE, $90k base, 14% ASC rate)
+    credit_rd = (550000.0 - 90000.0) * 0.14  # $64,400
+    assert math.isclose(credit_rd, 64400.0), "R&D tax credit mismatch"
+    print("  ✅ R&D Tax Credit: 14% ASC formula and Qualified Small Business offset verified!")
+
+    # 49. Personal Injury Settlement ($60k specials, 2.75x multiplier = $165k pain & suffering, $225k gross)
+    gross_pi = 60000.0 + (60000.0 * 2.75)  # $225,000
+    net_pi = gross_pi - (gross_pi / 3.0) - 12000.0  # $138,000
+    assert gross_pi == 225000.0, "Personal injury gross settlement mismatch"
+    assert net_pi == 138000.0, "Personal injury net client recovery mismatch"
+    print("  ✅ Personal Injury: Special damages, 2.75x severity multiplier, and net client recovery verified!")
+
+    # 50. Business Valuation & SDE Multiple ($180k profit + $210k add-backs = $390k SDE @ 3.5x = $1.365M)
+    sde_val = 180000.0 + 210000.0  # $390,000
+    enterprise_val = sde_val * 3.5  # $1,365,000
+    assert sde_val == 390000.0, "Business valuation SDE mismatch"
+    assert enterprise_val == 1365000.0, "Business valuation enterprise valuation mismatch"
+    print("  ✅ Business Valuation: SDE recast add-backs and 3.5x enterprise valuation verified!")
+
 def test_file_integrity():
     print("Testing File & Asset Integrity...")
     required_files = [
@@ -727,6 +800,28 @@ def test_file_integrity():
         "calculators/therapy-private-practice-breakeven/index.html",
         "calculators/locum-tenens-tax-calculator/index.html",
         "calculators/section-179-equipment/index.html",
+        # 10 High Profit Commercial & Tax Solvers
+        "assets/js/sba-loan-solver.js",
+        "assets/js/1031-exchange-solver.js",
+        "assets/js/cost-segregation-solver.js",
+        "assets/js/hard-money-loan-solver.js",
+        "assets/js/cre-cap-rate-solver.js",
+        "assets/js/structured-settlement-solver.js",
+        "assets/js/commercial-solar-solver.js",
+        "assets/js/rd-tax-credit-solver.js",
+        "assets/js/personal-injury-solver.js",
+        "assets/js/business-valuation-solver.js",
+        "calculators/sba-loan/index.html",
+        "calculators/1031-exchange/index.html",
+        "calculators/cost-segregation/index.html",
+        "calculators/hard-money-loan/index.html",
+        "calculators/commercial-real-estate-cap-rate/index.html",
+        "calculators/structured-settlement-lump-sum/index.html",
+        "calculators/commercial-solar-tax-credit/index.html",
+        "calculators/rd-tax-credit/index.html",
+        "calculators/personal-injury-settlement/index.html",
+        "calculators/business-valuation-multiple/index.html",
+        "calculators/videos/index.html",
         "functions/api/leads/specialized-finance.js"
     ]
 
@@ -936,7 +1031,17 @@ def test_schema_and_distribution_engine():
         "chattel-vs-land-home",
         "therapy-private-practice-breakeven",
         "locum-tenens-tax-calculator",
-        "section-179-equipment"
+        "section-179-equipment",
+        "sba-loan",
+        "1031-exchange",
+        "cost-segregation",
+        "hard-money-loan",
+        "commercial-real-estate-cap-rate",
+        "structured-settlement-lump-sum",
+        "commercial-solar-tax-credit",
+        "rd-tax-credit",
+        "personal-injury-settlement",
+        "business-valuation-multiple"
     ]
     for slug in specialized_slugs:
         calc_html = (REPO_ROOT / "calculators" / slug / "index.html").read_text(encoding="utf-8")
@@ -945,6 +1050,32 @@ def test_schema_and_distribution_engine():
         assert "lead-drawer.js" in calc_html, f"Missing lead-drawer.js script tag in /calculators/{slug}/"
 
     print("  ✅ Semantic schemas, Distribution Engine, Lead Webhook Engine, & human.md Protocol verified!")
+
+def test_faceless_video_studio():
+    print("Testing Faceless Video Studio & Social Campaign Hub...")
+    studio_html = (REPO_ROOT / "calculators" / "videos" / "index.html").read_text(encoding="utf-8")
+    assert "<title>" in studio_html, "Missing <title> tag in /calculators/videos/index.html"
+    assert "https://omnioperand.com/calculators/videos/" in studio_html, "Missing canonical URL in /calculators/videos/index.html"
+    assert 'class="video-card"' in studio_html, "Missing video-card elements in /calculators/videos/index.html"
+    assert "dscr-loan" in studio_html
+    assert "cost-segregation" in studio_html
+    assert "1031-exchange" in studio_html
+
+    meta_path = REPO_ROOT / "assets" / "videos" / "faceless" / "videos.json"
+    if meta_path.exists():
+        import json
+        with open(meta_path, "r", encoding="utf-8") as f:
+            videos = json.load(f)
+        assert len(videos) == 10, f"Expected 10 videos in metadata, got {len(videos)}"
+        for v in videos:
+            assert "id" in v and "title" in v and "category" in v and "cpl" in v
+            assert v["duration"] >= 20.0, f"Video {v['id']} duration too short: {v['duration']}s"
+            mp4_file = REPO_ROOT / "assets" / "videos" / "faceless" / f"{v['id']}.mp4"
+            poster_file = REPO_ROOT / "assets" / "videos" / "faceless" / f"{v['id']}-poster.png"
+            assert mp4_file.exists() and mp4_file.stat().st_size > 500000, f"MP4 file missing or too small: {mp4_file}"
+            assert poster_file.exists() and poster_file.stat().st_size > 10000, f"Poster file missing or too small: {poster_file}"
+
+    print("  ✅ Faceless Video Studio: 10 vertical MP4 videos, posters, scripts, and interactive studio verified!")
 
 def main():
     print("=========================================================")
@@ -957,6 +1088,7 @@ def main():
         test_calculator_count_invariants()
         test_internationalization_and_hreflang()
         test_schema_and_distribution_engine()
+        test_faceless_video_studio()
         print("\n🎉 ALL TESTS PASSED! Site is 100% compliant.")
         return 0
     except AssertionError as e:

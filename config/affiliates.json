@@ -323,6 +323,166 @@
           "value": 18.0
         }
       }
+    ],
+    "sba_loan": [
+      {
+        "id": "smartbiz_sba",
+        "name": "SmartBiz Loans",
+        "headline": "Pre-Qualify for SBA 7(a) & 504 Financing up to $5M with Expedited PLP Underwriting",
+        "cta_text": "Check SBA Pre-Approval",
+        "referral_url": "https://www.smartbizloans.com/?ref=omnioperand",
+        "badge": "Top SBA Market Leader",
+        "disclosure": "Fast 5-minute pre-qualification with no impact on personal credit score.",
+        "threshold_rules": {
+          "field": "project_cost",
+          "operator": ">=",
+          "value": 100000
+        }
+      }
+    ],
+    "1031_exchange": [
+      {
+        "id": "ipx_1031",
+        "name": "Investment Property Exchange Services (IPX1031)",
+        "headline": "Nationwide Qualified Intermediary (QI) with $100M Fidelity Bond & Full Safe Harbor",
+        "cta_text": "Initiate 1031 Exchange",
+        "referral_url": "https://www.ipx1031.com/?ref=omnioperand",
+        "badge": "Bonded Intermediary",
+        "disclosure": "Fidelity National Financial subsidiary with audited institutional segregation.",
+        "threshold_rules": {
+          "field": "sales_price",
+          "operator": ">=",
+          "value": 250000
+        }
+      }
+    ],
+    "cost_segregation": [
+      {
+        "id": "kbkg_cost_seg",
+        "name": "KBKG Tax Credits & Cost Segregation",
+        "headline": "Engineering-Based Cost Segregation Studies Generating 10x–30x First-Year Tax ROI",
+        "cta_text": "Get Free Preliminary Estimate",
+        "referral_url": "https://www.kbkg.com/cost-segregation?ref=omnioperand",
+        "badge": "National CPA Partner",
+        "disclosure": "Compliant with IRS Cost Segregation Audit Techniques Guide (ATG).",
+        "threshold_rules": {
+          "field": "purchase_price",
+          "operator": ">=",
+          "value": 500000
+        }
+      }
+    ],
+    "hard_money": [
+      {
+        "id": "kiavi_hard_money",
+        "name": "Kiavi Private Money Lending",
+        "headline": "Fund Up to 90% Purchase & 100% Rehab for Fix-and-Flip Projects in Under 10 Days",
+        "cta_text": "Get Instant Rate Quote",
+        "referral_url": "https://www.kiavi.com/?ref=omnioperand",
+        "badge": "Fix & Flip Leader",
+        "disclosure": "No personal income verification required. Lends based on property ARV.",
+        "threshold_rules": {
+          "field": "arv",
+          "operator": ">=",
+          "value": 150000
+        }
+      }
+    ],
+    "cre_financing": [
+      {
+        "id": "cre_direct_lending",
+        "name": "Commercial Real Estate Capital Hub",
+        "headline": "Wholesale CMBS, Agency & Debt Fund Term Sheets with Debt Yield Sizing down to 9.0%",
+        "cta_text": "Request Commercial Term Sheet",
+        "referral_url": "https://www.crecapital.com/?ref=omnioperand",
+        "badge": "Wholesale Debt Desk",
+        "disclosure": "Institutional commercial mortgage financing for multifamily, retail, and industrial.",
+        "threshold_rules": {
+          "field": "loan_amount",
+          "operator": ">=",
+          "value": 1000000
+        }
+      }
+    ],
+    "structured_settlement": [
+      {
+        "id": "jg_wentworth_annuity",
+        "name": "JG Wentworth Liquidity Network",
+        "headline": "Unlock Lump-Sum Cash from Structured Settlements with Lowest Market Discount Rates",
+        "cta_text": "Get Top Cash Offer",
+        "referral_url": "https://www.jgwentworth.com/?ref=omnioperand",
+        "badge": "Statutory Court Approved",
+        "disclosure": "Court approval required under IRC §5891. Transparent written disclosures.",
+        "threshold_rules": {
+          "field": "future_value",
+          "operator": ">=",
+          "value": 25000
+        }
+      }
+    ],
+    "commercial_solar": [
+      {
+        "id": "energysage_commercial",
+        "name": "EnergySage Commercial Marketplace",
+        "headline": "Compare 3+ Vetted Commercial Solar EPC Quotes to Monetize 30% Section 48 ITC",
+        "cta_text": "Request Commercial Bids",
+        "referral_url": "https://www.energysage.com/commercial/?ref=omnioperand",
+        "badge": "Independent Solar Network",
+        "disclosure": "Supported by U.S. Department of Energy. Free competitive proposal analysis.",
+        "threshold_rules": {
+          "field": "system_size_kw",
+          "operator": ">=",
+          "value": 25
+        }
+      }
+    ],
+    "rd_tax": [
+      {
+        "id": "mainstreet_rd",
+        "name": "MainStreet R&D Credit Platform",
+        "headline": "Claim Up to $500k in Startup Payroll Tax Cash Refunds with Full Audit Substantiation",
+        "cta_text": "Scan Eligible R&D Credits",
+        "referral_url": "https://www.mainstreet.com/?ref=omnioperand",
+        "badge": "Automated Tax Credit",
+        "disclosure": "Integrates with Gusto, QuickBooks, and payroll providers for IRC §41 documentation.",
+        "threshold_rules": {
+          "field": "w2_wages",
+          "operator": ">=",
+          "value": 100000
+        }
+      }
+    ],
+    "personal_injury": [
+      {
+        "id": "top_injury_lawyers",
+        "name": "National Trial Attorney Network",
+        "headline": "Free Confidential Case Evaluation: Maximize Pain & Suffering Multiplier Payouts",
+        "cta_text": "Get Free Case Review",
+        "referral_url": "https://www.legalmatch.com/personal-injury/?ref=omnioperand",
+        "badge": "Top Litigator Match",
+        "disclosure": "No fees unless you win. Licensed trial attorneys in all 50 states.",
+        "threshold_rules": {
+          "field": "medical_bills",
+          "operator": ">=",
+          "value": 5000
+        }
+      }
+    ],
+    "business_brokerage": [
+      {
+        "id": "bizbuysell_valuation",
+        "name": "BizBuySell Valuation Network",
+        "headline": "Confidential Valuation Opinion & Direct Connection to Qualified Pre-Approved Buyers",
+        "cta_text": "Request Valuation Report",
+        "referral_url": "https://www.bizbuysell.com/valuation/?ref=omnioperand",
+        "badge": "Largest Business Marketplace",
+        "disclosure": "Over 100,000 active business buyer searches every month.",
+        "threshold_rules": {
+          "field": "annual_revenue",
+          "operator": ">=",
+          "value": 250000
+        }
+      }
     ]
   }
 }

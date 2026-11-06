@@ -159,12 +159,23 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
 
 ### Specialized Non-QM, Commercial & Healthcare Solvers
 - [Specialized Financing Directory](https://omnioperand.com/calculators/): High-intent computational directory for Non-QM mortgages, equipment tax shields, and clinical practice economics.
+- [Faceless Video Studio & Social Campaign Hub](https://omnioperand.com/calculators/videos/): Production 9:16 vertical video assets (1080x1920), teleprompter scripts, and multi-channel social campaign kits for the top 10 most profitable financial solvers.
 - [DSCR Rental Property Investor Loan Calculator](https://omnioperand.com/calculators/dscr-loan/): Calculate Debt Service Coverage Ratio (DSCR), monthly PITIA, net cash flow, and qualifying thresholds down to 0.75x for non-QM real estate investor loans.
 - [12/24-Month Bank Statement Loan Calculator](https://omnioperand.com/calculators/bank-statement-mortgage/): Calculate self-employed qualifying monthly income from 12 or 24 months of gross bank deposits and determine maximum home purchasing power under non-QM guidelines.
 - [Chattel Loan vs Land-Home Modular Mortgage Comparison](https://omnioperand.com/calculators/chattel-vs-land-home/): Compare personal property chattel financing against real property land-home mortgage packages, analyzing 10-year equity build and park lot rent breakeven horizons.
 - [Private Practice Breakeven: Cash-Pay vs Insurance Credentialing](https://omnioperand.com/calculators/therapy-private-practice-breakeven/): Calculate clinical and administrative session hour parity between private cash-pay and in-network insurance credentialed healthcare practices.
 - [1099 Travel Healthcare & Locum Tenens Tax Arbitrage Solver](https://omnioperand.com/calculators/locum-tenens-tax-calculator/): Calculate true net after-tax take-home pay comparing W-2 permanent salaries against 1099 locum tenens rates with tax-free per diem stipends and Solo 401(k) shelters.
 - [Section 179 Heavy Equipment Tax Shield & Cash-Flow Sizer](https://omnioperand.com/calculators/section-179-equipment/): Calculate first-year Section 179 expensing deductions, bonus depreciation tax savings, financed cash outflows, and net cash-in-pocket benefit for commercial equipment.
+- [SBA 7(a) & SBA 504 Commercial Loan Calculator](https://omnioperand.com/calculators/sba-loan/): Underwrite small business acquisitions and commercial real estate with variable spread and 50/40/10 debenture splits, guaranty fees, and 1.15x DSCR hurdles.
+- [1031 Exchange Tax & Boot Replacement Property Calculator](https://omnioperand.com/calculators/1031-exchange/): Calculate IRS §1031 capital gains deferral, 25% depreciation recapture tax shields, mortgage relief boot, and cash boot liabilities.
+- [Cost Segregation & Bonus Depreciation Sizer](https://omnioperand.com/calculators/cost-segregation/): Accelerate Year 1 tax savings via 5-year and 15-year MACRS asset reclassification and IRC §168(k) bonus depreciation with engineering study ROI.
+- [Hard Money & Fix-and-Flip Bridge Loan Calculator](https://omnioperand.com/calculators/hard-money-loan/): Underwrite real estate flips with private lending terms, 70% ARV Maximum Allowable Offers, dual LTC/LTARV loan caps, interest-only carry, and net ROI.
+- [Commercial Real Estate Cap Rate, NOI & Debt Yield Sizer](https://omnioperand.com/calculators/commercial-real-estate-cap-rate/): Institutional underwriting for multifamily and commercial real estate calculating Effective Gross Income, Net Operating Income, Cap Rates, and 9.5% wholesale debt yield hurdles.
+- [Structured Settlement & Annuity Lump-Sum Factoring Sizer](https://omnioperand.com/calculators/structured-settlement-lump-sum/): Calculate present value lump-sum buyouts for structured legal settlements and guaranteed annuities under IRC §5891 using court-approved market discount rates.
+- [Commercial Solar ITC & MACRS Depreciation Sizer](https://omnioperand.com/calculators/commercial-solar-tax-credit/): Model 30% federal Section 48 ITC credits, 85% MACRS basis reduction schedules, corporate tax shields, and levelized payback periods.
+- [Federal R&D Tax Credit (IRC §41) Estimator](https://omnioperand.com/calculators/rd-tax-credit/): Calculate federal R&D tax credits under the Alternative Simplified Credit (ASC 14%) and Qualified Small Business $500,000 payroll tax offset against employer FICA.
+- [Personal Injury Settlement Value & Multiplier Calculator](https://omnioperand.com/calculators/personal-injury-settlement/): Calculate accident claim settlement values, economic specials, pain and suffering insurance multipliers (1.5x to 5.0x), comparative fault, and net client recovery.
+- [Business Valuation & SDE / EBITDA Multiple Sizer](https://omnioperand.com/calculators/business-valuation-multiple/): Recast tax return profits into Seller's Discretionary Earnings (SDE), apply industry valuation multiples, and model M&A acquisition deal structuring.
 
 ### Construction & Trades Engineering Hub
 - [Square Footage & Area Calculator](https://omnioperand.com/construction/square-footage/): Calculate square footage for single rooms, multi-room floorplans, and landscaping with perimeter and area conversion.
@@ -1296,6 +1307,69 @@ OmniOperand provides rigorously verified computational solvers across Pure and A
   - **Year 1 Tax Shield Savings**: Immediate Tax Savings = Total Year 1 Deduction × Entity Marginal Tax Bracket.
   - **Year 1 Financed Outlay**: Outlay = Cash Down Payment + (Monthly Loan Payment × Months Active in Year 1).
   - **Net Cash-in-Pocket Benefit**: Net Benefit = Year 1 Tax Shield Savings - Year 1 Financed Outlay. When Net Benefit > 0, the tax shield generates day-one positive liquidity surpassing total cash paid to acquire the equipment.
+
+### SBA 7(a) & SBA 504 Commercial Loan Calculator (`https://omnioperand.com/calculators/sba-loan/`)
+- Governing Formula: `DSCR = Annual Net Operating Income / Annual Debt Service ≥ 1.15x`
+  - **SBA 7(a) Variable Spread Rate**: Prime Rate + Lender Spread (up to 2.75%). Monthly payment M = P · [r(1+r)ⁿ] / [(1+r)ⁿ - 1].
+  - **SBA 504 50/40/10 Debenture Split**: 50% Senior Bank First Mortgage + 40% CDC Debenture + 10% Borrower Equity Injection.
+  - **SBA Statutory Guaranty Fees**: 0% under $150k, 2.77% up to $700k, 3.27% up to $1M, 3.75% above $1M.
+  - **Underwriting Coverage Metric**: Net Operating Income must achieve minimum 1.15x DSCR against combined annual debt service.
+
+### 1031 Exchange Tax & Boot Replacement Property Calculator (`https://omnioperand.com/calculators/1031-exchange/`)
+- Governing Formula: `Recognized Taxable Gain = Min(Realized Gain, Total Boot Received)`
+  - **Realized Gain Calculation**: Realized Gain = Net Sales Proceeds - (Original Basis + Improvements - Depreciation).
+  - **Tax Outlay if Sold Outright**: Depreciation Recapture Tax (25% §1250) + Capital Gains Tax (20% federal + 3.8% NIIT + state).
+  - **Mortgage & Cash Boot**: Mortgage Boot = Max(0, Old Mortgage Payoff - New Replacement Mortgage). Cash Boot = Cash pocketed.
+  - **Taxes Deferred**: 100% of realized capital gains and depreciation recapture tax deferred if full replacement value acquired without boot.
+
+### Cost Segregation & Bonus Depreciation Sizer (`https://omnioperand.com/calculators/cost-segregation/`)
+- Governing Formula: `Immediate Tax Savings = Incremental Year 1 Depreciation · Marginal Tax Rate`
+  - **Asset Reclassification**: Reallocates 27.5-yr/39-yr straight line into 5-year personal property (10%–20%) and 15-year land improvements (8%–15%).
+  - **§168(k) Bonus Depreciation**: Applies statutory bonus depreciation rate to 5-year and 15-year reclassified buckets.
+  - **NPV Timing Arbitrage**: Front-loads depreciation write-offs into Year 1, creating a 10x to 30x return on engineering study investment.
+
+### Hard Money & Fix-and-Flip Bridge Loan Calculator (`https://omnioperand.com/calculators/hard-money-loan/`)
+- Governing Formula: `70% Rule MAO = (ARV · 0.70) - Rehab Budget`
+  - **Financed Debt Sizing**: Loan Amount = Min(Total Cost · LTC%, ARV · LTARV%).
+  - **Carrying Costs**: Monthly Interest-Only Carry = Loan Amount · (APR / 12). Points = Loan Amount · Points%.
+  - **Net Flip Profit & ROI**: Net Profit = ARV - (Purchase + Rehab + Points + Holding Interest + Utilities + Realtor Resale Fees).
+
+### Commercial Real Estate Cap Rate, NOI & Debt Yield Sizer (`https://omnioperand.com/calculators/commercial-real-estate-cap-rate/`)
+- Governing Formula: `Cap Rate = NOI / Property Price; Debt Yield = NOI / Loan Amount`
+  - **Effective Gross Income (EGI)**: EGI = Gross Potential Rent - Vacancy Loss + Auxiliary Income.
+  - **Net Operating Income (NOI)**: NOI = EGI - Annual Operating Expenses (OpEx).
+  - **Institutional Debt Yield**: Debt Yield = (NOI / Total Loan Amount) · 100%. Institutional threshold target ≥ 9.50%.
+  - **Debt Service Coverage Ratio (DSCR)**: DSCR = NOI / Annual Principal & Interest Debt Service.
+
+### Structured Settlement & Annuity Lump-Sum Factoring Sizer (`https://omnioperand.com/calculators/structured-settlement-lump-sum/`)
+- Governing Formula: `Net Lump Sum = ∑ [ PMT · (1 + g)ᵗ / (1 + r/12)ᵗ ] - Fees`
+  - **Actuarial Present Value**: Discounts monthly future guaranteed payments at market factoring discount rates (9%–18%).
+  - **Discount Surrendered**: Dollar discount sacrificed for immediate cash liquidity = Future Nominal Payments - Net Cash Offer.
+  - **IRC §5891 Compliance**: Court-approved judicial transfer maintaining tax-free status under IRC §104(a)(2).
+
+### Commercial Solar ITC & MACRS Depreciation Sizer (`https://omnioperand.com/calculators/commercial-solar-tax-credit/`)
+- Governing Formula: `Year 1 Tax Relief = Section 48 ITC + (MACRS Basis · 20% · Corporate Tax Rate)`
+  - **Section 48 ITC Credit**: 30% dollar-for-dollar federal tax credit on turnkey EPC capital expenditure.
+  - **85% Depreciable MACRS Basis**: Depreciable basis reduced by 50% of ITC claimed (100% - 15% = 85%).
+  - **5-Year MACRS Recovery**: Year 1 half-year convention deduction = 20% of 85% basis.
+  - **Levelized Payback**: Net System Cost / Annual Electricity Generation Offset Value.
+
+### Federal R&D Tax Credit (IRC §41) Estimator (`https://omnioperand.com/calculators/rd-tax-credit/`)
+- Governing Formula: `ASC Credit = 14% · [ Current QRE - (50% · Average Prior 3-Year QRE) ]`
+  - **Qualified Research Expenses (QRE)**: 100% W-2 engineering wages + 65% US 1099 contractor fees + 100% cloud/supplies.
+  - **Section 41(h) Payroll Offset**: Startups (< $5M revenue, < 5 yrs) can elect up to $500,000 cash offset against employer FICA.
+
+### Personal Injury Settlement Value & Multiplier Calculator (`https://omnioperand.com/calculators/personal-injury-settlement/`)
+- Governing Formula: `Gross Settlement = Special Damages + (Special Damages · Severity Multiplier)`
+  - **Special Damages**: Past/future medical bills + documented lost earnings.
+  - **General Damages (Pain & Suffering)**: 1.5x–2.0x minor, 2.0x–3.5x moderate, 3.5x–4.5x severe, 4.5x–5.0x catastrophic.
+  - **Net Client Recovery**: Gross Settlement · (1 - Fault%) - Attorney Contingency (33.3%) - Medical Liens.
+
+### Business Valuation & SDE / EBITDA Multiple Sizer (`https://omnioperand.com/calculators/business-valuation-multiple/`)
+- Governing Formula: `Enterprise Valuation = Seller's Discretionary Earnings (SDE) · Multiple`
+  - **SDE Recast Schedule**: Reported Net Profit + Owner Salary + Discretionary Perks + Depreciation + Interest + One-Time Costs.
+  - **Adjusted EBITDA**: SDE minus fair market replacement General Manager salary ($120k).
+  - **Deal Structuring**: 70% Cash at Closing + 15% 5-Year Seller Note (@ 8% APR) + 15% Contingent Earnout.
 
 ### Square Footage & Area Calculator (`https://omnioperand.com/construction/square-footage/`)
 - Governing Formula: `Square Footage = Length (ft) × Width (ft)`

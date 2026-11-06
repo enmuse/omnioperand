@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faceless Video Studio & Social Campaign Hub | OmniOperand</title>
+  <meta name="description" content="Faceless 9:16 vertical video production studio and viral social campaign assets for the top 10 most profitable financial, tax, and commercial solvers on OmniOperand.">
+  <link rel="canonical" href="https://omnioperand.com/calculators/videos/">
+
+  <meta property="og:title" content="Faceless Video Studio & Social Campaign Hub | OmniOperand">
+  <meta property="og:description" content="High-retention 9:16 vertical video assets, timecoded voiceover scripts, and multi-platform social campaigns for top-tier financial calculators.">
+  <meta property="og:url" content="https://omnioperand.com/calculators/videos/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+
+  <style>
+    .studio-hero {
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+      background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.08) 0%, rgba(10, 15, 29, 0) 70%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .studio-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #10b981;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .studio-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .studio-subtitle {
+      max-width: 820px;
+      margin: 0 auto 2rem;
+      color: #94a3b8;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .metrics-ribbon {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .metric-pill {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 0.75rem 1.25rem;
+      text-align: left;
+    }
+    .metric-pill-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #64748b;
+      margin-bottom: 0.2rem;
+    }
+    .metric-pill-val {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #f1f5f9;
+    }
+
+    /* Filter Controls */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 2rem auto;
+      max-width: 900px;
+    }
+    .filter-btn {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #94a3b8;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-btn:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      color: #e2e8f0;
+    }
+    .filter-btn.active {
+      background: #0284c7;
+      border-color: #38bdf8;
+      color: #ffffff;
+      box-shadow: 0 0 15px rgba(2, 132, 199, 0.4);
+    }
+
+    /* Video Studio Grid */
+    .video-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+    }
+    .video-card {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 2rem;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 2rem;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    @media (max-width: 960px) {
+      .video-card {
+        grid-template-columns: 1fr;
+        max-width: 540px;
+        margin: 0 auto;
+      }
+    }
+
+    /* Video Player Column */
+    .video-player-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .video-phone-frame {
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 9 / 16;
+      background: #000;
+      border-radius: 28px;
+      border: 4px solid #1e293b;
+      overflow: hidden;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+    .video-phone-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .video-actions {
+      display: flex;
+      gap: 0.75rem;
+      width: 100%;
+      max-width: 320px;
+    }
+    .btn-download-mp4 {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 0.8rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-radius: 10px;
+      color: #10b981;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-download-mp4:hover {
+      background: #10b981;
+      color: #000;
+    }
+
+    /* Video Content Dossier */
+    .video-dossier {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .dossier-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 1rem;
+    }
+    .badge-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .category-badge {
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .cpl-badge {
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: #f59e0b;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .video-card-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #f8fafc;
+      line-height: 1.3;
+    }
+    .video-concept-box {
+      background: rgba(2, 6, 23, 0.5);
+      border-left: 3px solid #38bdf8;
+      padding: 0.85rem 1rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    /* Tabbed Asset Boxes */
+    .asset-block {
+      background: rgba(2, 6, 23, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+    .asset-block-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+    .asset-block-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #94a3b8;
+    }
+    .btn-copy-asset {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #38bdf8;
+      border-radius: 6px;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: all 0.2s ease;
+    }
+    .btn-copy-asset:hover {
+      background: #0284c7;
+      color: #ffffff;
+    }
+    .asset-content-pre {
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: #e2e8f0;
+      background: transparent;
+      margin: 0;
+      white-space: pre-wrap;
+      line-height: 1.5;
+      max-height: 120px;
+      overflow-y: auto;
+    }
+
+    .dossier-footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .btn-open-solver {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #0284c7;
+      color: #ffffff;
+      padding: 0.65rem 1.25rem;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .btn-open-solver:hover {
+      background: #0369a1;
+    }
+
+    /* Toast Notification */
+    #copy-toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #10b981;
+      color: #000;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 9999;
+    }
+    #copy-toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://omnioperand.com/calculators/videos/#webpage",
+        "url": "https://omnioperand.com/calculators/videos/",
+        "name": "Faceless Video Studio & Social Campaign Hub",
+        "description": "Production short-form 9:16 vertical videos, teleprompter scripts, and multi-channel social campaigns for top-tier commercial calculators."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "OmniOperand",
+            "item": "https://omnioperand.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Specialized Solvers",
+            "item": "https://omnioperand.com/calculators/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Faceless Video Studio",
+            "item": "https://omnioperand.com/calculators/videos/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="omni-body">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Studio</span>
+      </a>
+
+      <nav class="site-nav">
+        <a href="/calculators/" class="nav-link">Specialized Solvers</a>
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/api/" class="nav-link">REST API</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="studio-hero">
+      <div class="studio-badge">
+        <span>⚡ Production Media Suite</span>
+      </div>
+      <h1 class="studio-title">Faceless Video Studio &amp; Social Campaigns</h1>
+      <p class="studio-subtitle">
+        High-retention 9:16 vertical video assets (1080x1920), synchronized narration scripts, and multi-platform social media distribution kits for the top 10 most profitable commercial calculators on OmniOperand.
+      </p>
+
+      <div class="metrics-ribbon">
+        <div class="metric-pill">
+          <div class="metric-pill-label">Video Format</div>
+          <div class="metric-pill-val">1080×1920 (9:16)</div>
+        </div>
+        <div class="metric-pill">
+          <div class="metric-pill-label">Campaign Count</div>
+          <div class="metric-pill-val">10 Master Solvers</div>
+        </div>
+        <div class="metric-pill">
+          <div class="metric-pill-label">Monetization Tier</div>
+          <div class="metric-pill-val">$250 – $1,500 CPL</div>
+        </div>
+        <div class="metric-pill">
+          <div class="metric-pill-label">Platform Targets</div>
+          <div class="metric-pill-val">Shorts • Reels • TikTok</div>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Solvers (10)</button>
+        <button class="filter-btn" data-filter="non-qm">Non-QM &amp; Real Estate (3)</button>
+        <button class="filter-btn" data-filter="tax-code">IRS Tax Codes &amp; Shelters (3)</button>
+        <button class="filter-btn" data-filter="commercial">Commercial M&amp;A &amp; Private Money (2)</button>
+        <button class="filter-btn" data-filter="specialized">Clean Energy &amp; Settlements (2)</button>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="video-grid" id="videoGrid">
+
+        <!-- 1. DSCR Investor Loan -->
+        <article class="video-card" data-category="non-qm">
+          <div class="video-player-wrap">
+            <div class="video-phone-frame">
+              <video controls playsinline preload="metadata" poster="/assets/videos/faceless/dscr-loan-poster.png">
+                <source src="/assets/videos/faceless/dscr-loan.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-actions">
+              <a href="/assets/videos/faceless/dscr-loan.mp4" download="OmniOperand-DSCR-Loan-Short.mp4" class="btn-download-mp4">
+                ⬇ Download MP4 (1080x1920)
+              </a>
+            </div>
+          </div>
+          <div class="video-dossier">
+            <div class="dossier-header">
+              <div class="badge-row">
+                <span class="category-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4);">
+                  Non-QM Real Estate
+                </span>
+                <span class="cpl-badge">$250 – $500 CPL</span>
+              </div>
+              <span style="font-size: 0.85rem; color: #64748b;">38.7s • 1080x1920 HD</span>
+            </div>
+            <h2 class="video-card-title">DSCR Investor Loan: Qualify With $0 Tax Returns</h2>
+            <div class="video-concept-box">
+              <strong>Viral Angle:</strong> Shows real estate investors why personal tax write-offs kill conventional mortgage approvals, and reveals how DSCR bypasses personal tax returns entirely using rental cash flow.
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Teleprompter Narration Script</span>
+                <button class="btn-copy-asset" data-copy-target="script-dscr">📋 Copy Script</button>
+              </div>
+              <pre class="asset-content-pre" id="script-dscr">Stop giving banks two years of personal tax returns to buy rental properties. Traditional mortgage lenders look at your personal DTI. If you write off expenses on your taxes, banks claim you make zero dollars. Instead, smart investors use a DSCR loan. The formula is: Gross Monthly Rent divided by the monthly PITIA mortgage payment. If a fourplex rents for 4,500 dollars and the mortgage is 3,600, your DSCR is 1.25. That is an instant approval, with closing in as little as 21 days. Calculate your exact DSCR, monthly cash flow, and borrowing power for free at omnioperand.com.</pre>
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Social Media Post Copy (YouTube / TikTok / IG)</span>
+                <button class="btn-copy-asset" data-copy-target="social-dscr">📋 Copy Post</button>
+              </div>
+              <pre class="asset-content-pre" id="social-dscr">How Real Estate Investors Qualify for $1M+ With $0 Tax Returns (DSCR Loan Hack) 🏠🔑
+
+Did you know tax write-offs can disqualify you from conventional mortgages? Traditional lenders look at personal DTI, but DSCR loans underwrite the PROPERTY, not your W-2.
+
+Formula: DSCR = Gross Monthly Rent ÷ PITIA Payment
+Example: $4,500 Rent ÷ $3,600 PITIA = 1.25 DSCR (Instant Approval!)
+
+👉 Run your exact rental numbers for free on our interactive solver: https://omnioperand.com/calculators/dscr-loan/
+
+#realestateinvesting #dscrloan #passiveincome #mortgagetips #wealthbuilding #realestatelife</pre>
+            </div>
+
+            <div class="dossier-footer">
+              <span style="font-size: 0.85rem; color: #94a3b8;">Primary Solver: <code>/calculators/dscr-loan/</code></span>
+              <a href="/calculators/dscr-loan/" class="btn-open-solver">Open Interactive Solver ➔</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Cost Segregation -->
+        <article class="video-card" data-category="tax-code">
+          <div class="video-player-wrap">
+            <div class="video-phone-frame">
+              <video controls playsinline preload="metadata" poster="/assets/videos/faceless/cost-segregation-poster.png">
+                <source src="/assets/videos/faceless/cost-segregation.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-actions">
+              <a href="/assets/videos/faceless/cost-segregation.mp4" download="OmniOperand-Cost-Segregation-Short.mp4" class="btn-download-mp4">
+                ⬇ Download MP4 (1080x1920)
+              </a>
+            </div>
+          </div>
+          <div class="video-dossier">
+            <div class="dossier-header">
+              <div class="badge-row">
+                <span class="category-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4);">
+                  IRS Code §168(k)
+                </span>
+                <span class="cpl-badge">$300 – $750 CPL</span>
+              </div>
+              <span style="font-size: 0.85rem; color: #64748b;">44.9s • 1080x1920 HD</span>
+            </div>
+            <h2 class="video-card-title">Cost Segregation: The $184,000 Real Estate Tax Shield</h2>
+            <div class="video-concept-box">
+              <strong>Viral Angle:</strong> Demonstrates how to carve out 5-year and 15-year building improvements under Section 168(k) bonus depreciation to produce an immediate $68,000+ cash refund in Year 1.
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Teleprompter Narration Script</span>
+                <button class="btn-copy-asset" data-copy-target="script-costseg">📋 Copy Script</button>
+              </div>
+              <pre class="asset-content-pre" id="script-costseg">Did you know you can legally wipe out over one hundred thousand dollars in income taxes in year one of buying real estate? Normally, the IRS forces you to depreciate commercial buildings over 39 years, or residential rentals over 27.5 years. That gives you tiny tax deductions. With a Cost Segregation study, you carve out five-year and fifteen-year assets. Reclassifying 25% of an eight-hundred-thousand-dollar building yields a 184,000 dollar first-year write-off. At a 37% tax bracket, that puts 68,000 dollars of pure cash back in your pocket right now. Model your property's 5-year and 15-year tax shield on the OmniOperand Cost Segregation calculator.</pre>
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Social Media Post Copy (YouTube / TikTok / IG)</span>
+                <button class="btn-copy-asset" data-copy-target="social-costseg">📋 Copy Post</button>
+              </div>
+              <pre class="asset-content-pre" id="social-costseg">The IRS $184,000 Real Estate Tax Shield: Cost Segregation Explained 🏢📉
+
+Instead of depreciating your real estate over 27.5 or 39 years at a tiny 2.5% per year, an engineering cost segregation study reclassifies 20%-30% of your basis into 5-year and 15-year property!
+
+Example on $800k Building Basis:
+• 15% in 5-Yr Personal Property = $120,000
+• 10% in 15-Yr Land Improvements = $80,000
+• Year 1 Bonus Depreciation = $184,000
+• Cash in Pocket (37% Bracket) = +$68,080!
+
+👉 Calculate your property's exact tax shield: https://omnioperand.com/calculators/cost-segregation/
+
+#costsegregation #taxstrategy #realestatetax #depreciation #cpa #wealthpreservation</pre>
+            </div>
+
+            <div class="dossier-footer">
+              <span style="font-size: 0.85rem; color: #94a3b8;">Primary Solver: <code>/calculators/cost-segregation/</code></span>
+              <a href="/calculators/cost-segregation/" class="btn-open-solver">Open Interactive Solver ➔</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Section 1031 Exchange -->
+        <article class="video-card" data-category="tax-code">
+          <div class="video-player-wrap">
+            <div class="video-phone-frame">
+              <video controls playsinline preload="metadata" poster="/assets/videos/faceless/1031-exchange-poster.png">
+                <source src="/assets/videos/faceless/1031-exchange.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-actions">
+              <a href="/assets/videos/faceless/1031-exchange.mp4" download="OmniOperand-1031-Exchange-Short.mp4" class="btn-download-mp4">
+                ⬇ Download MP4 (1080x1920)
+              </a>
+            </div>
+          </div>
+          <div class="video-dossier">
+            <div class="dossier-header">
+              <div class="badge-row">
+                <span class="category-badge" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4);">
+                  IRS Code §1031
+                </span>
+                <span class="cpl-badge">$300 – $800 CPL</span>
+              </div>
+              <span style="font-size: 0.85rem; color: #64748b;">40.5s • 1080x1920 HD</span>
+            </div>
+            <h2 class="video-card-title">Section 1031 Exchange: Sell Real Estate &amp; Pay $0 Capital Gains</h2>
+            <div class="video-concept-box">
+              <strong>Viral Angle:</strong> Shows how ordinary real estate sales can surrender 40% in taxes, and breaks down the 45-day identification and 180-day closing rules to roll 100% of equity tax-deferred.
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Teleprompter Narration Script</span>
+                <button class="btn-copy-asset" data-copy-target="script-1031">📋 Copy Script</button>
+              </div>
+              <pre class="asset-content-pre" id="script-1031">If you sell an investment property, the IRS could take up to 40% of your profits in capital gains and depreciation recapture. On a 500,000 dollar gain, federal capital gains, state taxes, and 25% depreciation recapture can eat 160,000 dollars of your hard-earned equity. Under IRS Section 1031, you can legally defer 100% of the tax by rolling your full net proceeds into a like-kind replacement property. You have 45 days to identify and 180 days to close. You keep 100% of your equity compounding into larger, cash-flowing commercial assets. Calculate your exact tax savings, boot exposure, and 45-day deadlines for free at omnioperand.com.</pre>
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Social Media Post Copy (YouTube / TikTok / IG)</span>
+                <button class="btn-copy-asset" data-copy-target="social-1031">📋 Copy Post</button>
+              </div>
+              <pre class="asset-content-pre" id="social-1031">How to Sell Real Estate and Pay $0 in Capital Gains Tax (Section 1031 Exchange) 🏛️📈
+
+Selling a rental? Don't let 20% capital gains, 3.8% NIIT, and 25% depreciation recapture take 40% of your equity!
+
+IRS Section 1031 rules:
+1. Reinvest 100% of net equity through a Qualified Intermediary
+2. Acquire equal or greater debt on replacement property
+3. 45 Days to identify up to 3 replacement properties
+4. 180 Days to close
+
+👉 Calculate your exact capital gains tax deferral and boot exposure: https://omnioperand.com/calculators/1031-exchange/
+
+#1031exchange #capitalgains #realestatesales #taxdeferral #multifamily #commercialre</pre>
+            </div>
+
+            <div class="dossier-footer">
+              <span style="font-size: 0.85rem; color: #94a3b8;">Primary Solver: <code>/calculators/1031-exchange/</code></span>
+              <a href="/calculators/1031-exchange/" class="btn-open-solver">Open Interactive Solver ➔</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Section 179 Equipment -->
+        <article class="video-card" data-category="tax-code">
+          <div class="video-player-wrap">
+            <div class="video-phone-frame">
+              <video controls playsinline preload="metadata" poster="/assets/videos/faceless/section-179-equipment-poster.png">
+                <source src="/assets/videos/faceless/section-179-equipment.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-actions">
+              <a href="/assets/videos/faceless/section-179-equipment.mp4" download="OmniOperand-Section-179-Short.mp4" class="btn-download-mp4">
+                ⬇ Download MP4 (1080x1920)
+              </a>
+            </div>
+          </div>
+          <div class="video-dossier">
+            <div class="dossier-header">
+              <div class="badge-row">
+                <span class="category-badge" style="background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.4);">
+                  IRS Code §179
+                </span>
+                <span class="cpl-badge">$300 – $600 CPL</span>
+              </div>
+              <span style="font-size: 0.85rem; color: #64748b;">42.1s • 1080x1920 HD</span>
+            </div>
+            <h2 class="video-card-title">Section 179: Write Off Up to $1.22M in Equipment Today</h2>
+            <div class="video-concept-box">
+              <strong>Viral Angle:</strong> Details the financed cash arbitrage where small business owners purchase $100,000 of equipment with $0 down, pay $22,000 in Year 1 notes, and save $35,000 in taxes—netting +$13,000 in cash.
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Teleprompter Narration Script</span>
+                <button class="btn-copy-asset" data-copy-target="script-s179">📋 Copy Script</button>
+              </div>
+              <pre class="asset-content-pre" id="script-s179">Business owners: stop waiting seven years to write off your machinery, vehicles, and tech hardware. Traditional MACRS depreciation trickles tax deductions out over 5 to 7 years while you pay the full equipment invoice today. Under Section 179, you can write off up to 1,220,000 dollars in qualified equipment in year one. Even better: if you finance the equipment with zero down, the tax shield puts immediate net cash in your pocket. Buy 100,000 dollars of equipment, finance it, and save 35,000 dollars on your taxes. You literally make 13,000 dollars in net cash in year one. Calculate your net equipment cash-flow shield at omnioperand.com.</pre>
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Social Media Post Copy (YouTube / TikTok / IG)</span>
+                <button class="btn-copy-asset" data-copy-target="social-s179">📋 Copy Post</button>
+              </div>
+              <pre class="asset-content-pre" id="social-s179">How Equipment Purchases Put Positive Net Cash in Your Pocket (Section 179 Hack) 🚜💻
+
+If you buy vehicles over 6,000 lbs GVWR, construction equipment, CNC machines, or enterprise software, the IRS Section 179 deduction allows up to $1,220,000 in instant expensing!
+
+The Financing Arbitrage:
+• Buy $100k Equipment with $0 Down
+• Year 1 Financed Loan Payments = -$22,000
+• Tax Savings at 35% Bracket = +$35,000
+• Net First-Year Cash in Pocket = +$13,000!
+
+👉 Model your exact equipment tax shield: https://omnioperand.com/calculators/section-179-equipment/
+
+#section179 #taxwriteoff #equipmentfinancing #smallbiztips #trucking #contractorlife</pre>
+            </div>
+
+            <div class="dossier-footer">
+              <span style="font-size: 0.85rem; color: #94a3b8;">Primary Solver: <code>/calculators/section-179-equipment/</code></span>
+              <a href="/calculators/section-179-equipment/" class="btn-open-solver">Open Interactive Solver ➔</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. SBA 7(a) & 504 Loan -->
+        <article class="video-card" data-category="commercial">
+          <div class="video-player-wrap">
+            <div class="video-phone-frame">
+              <video controls playsinline preload="metadata" poster="/assets/videos/faceless/sba-loan-poster.png">
+                <source src="/assets/videos/faceless/sba-loan.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-actions">
+              <a href="/assets/videos/faceless/sba-loan.mp4" download="OmniOperand-SBA-Loan-Short.mp4" class="btn-download-mp4">
+                ⬇ Download MP4 (1080x1920)
+              </a>
+            </div>
+          </div>
+          <div class="video-dossier">
+            <div class="dossier-header">
+              <div class="badge-row">
+                <span class="category-badge" style="background: rgba(168, 85, 247, 0.15); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.4);">
+                  Commercial Acquisition
+                </span>
+                <span class="cpl-badge">$250 – $500 CPL</span>
+              </div>
+              <span style="font-size: 0.85rem; color: #64748b;">41.8s • 1080x1920 HD</span>
+            </div>
+            <h2 class="video-card-title">SBA 7(a) &amp; 504: Buy a Multi-Million Dollar Business With 10% Down</h2>
+            <div class="video-concept-box">
+              <strong>Viral Angle:</strong> Shows how acquisition entrepreneurs use the federal 75% SBA guaranty to acquire a $2,000,000 cash-flowing business with only $200,000 in equity and achieve a 115% cash-on-cash return.
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Teleprompter Narration Script</span>
+                <button class="btn-copy-asset" data-copy-target="script-sba">📋 Copy Script</button>
+              </div>
+              <pre class="asset-content-pre" id="script-sba">How do entrepreneurs buy multi-million dollar cash-flowing businesses with only 10% cash down? Conventional commercial banks demand 25% to 35% down and strict real estate collateral before they lend on business acquisitions. The SBA 7(a) program backs up to 75% of the loan. You put down 10%, seller financing can cover up to 10%, and the bank finances the rest. As long as company cash flows support a 1.25 DSCR, the business pays off its own debt. Control a 500,000 dollar a year cash-flowing enterprise with just 200,000 dollars in equity. Model SBA 7(a) payments, guaranty fees, and debt service coverage at omnioperand.com.</pre>
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Social Media Post Copy (YouTube / TikTok / IG)</span>
+                <button class="btn-copy-asset" data-copy-target="social-sba">📋 Copy Post</button>
+              </div>
+              <pre class="asset-content-pre" id="social-sba">How to Buy a $2,000,000 Business with Only 10% Down (SBA 7a Acquisition Hack) 🏢💼
+
+Instead of building a startup from scratch, acquisition entrepreneurs buy existing profitable companies using SBA 7(a) government-guaranteed financing.
+
+The $2M Capital Stack:
+• 10% Buyer Cash Equity = $200,000
+• 10% Seller Note (Standby) = $200,000
+• 80% SBA 7(a) Senior Loan = $1,600,000
+• Net Annual SDE = $500,000 (1.85x DSCR!)
+
+👉 Model your deal cash flow, guaranty fees, and debt service coverage: https://omnioperand.com/calculators/sba-loan/
+
+#sbaloan #buyabusiness #acquisitionentrepreneurship #eta #mergersandacquisitions #smb</pre>
+            </div>
+
+            <div class="dossier-footer">
+              <span style="font-size: 0.85rem; color: #94a3b8;">Primary Solver: <code>/calculators/sba-loan/</code></span>
+              <a href="/calculators/sba-loan/" class="btn-open-solver">Open Interactive Solver ➔</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Hard Money 70% Rule -->
+        <article class="video-card" data-category="commercial">
+          <div class="video-player-wrap">
+            <div class="video-phone-frame">
+              <video controls playsinline preload="metadata" poster="/assets/videos/faceless/hard-money-loan-poster.png">
+                <source src="/assets/videos/faceless/hard-money-loan.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-actions">
+              <a href="/assets/videos/faceless/hard-money-loan.mp4" download="OmniOperand-Hard-Money-Short.mp4" class="btn-download-mp4">
+                ⬇ Download MP4 (1080x1920)
+              </a>
+            </div>
+          </div>
+          <div class="video-dossier">
+            <div class="dossier-header">
+              <div class="badge-row">
+                <span class="category-badge" style="background: rgba(234, 179, 8, 0.15); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.4);">
+                  Private Lending &amp; Flips
+                </span>
+                <span class="cpl-badge">$250 – $500 CPL</span>
+              </div>
+              <span style="font-size: 0.85rem; color: #64748b;">41.5s • 1080x1920 HD</span>
+            </div>
+            <h2 class="video-card-title">The 70% Fix-and-Flip Rule: How Private Lenders Fund Flips</h2>
+            <div class="video-concept-box">
+              <strong>Viral Angle:</strong> Breaks down why 80% of house flippers fail due to unbudgeted holding points and carry costs, and explains how to compute Maximum Allowable Offer (MAO) using private money math.
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Teleprompter Narration Script</span>
+                <button class="btn-copy-asset" data-copy-target="script-hardmoney">📋 Copy Script</button>
+              </div>
+              <pre class="asset-content-pre" id="script-hardmoney">Never buy a house flip without running the hard money 70% rule first. Most amateur flippers overpay for distressed houses because they forget to account for holding costs, points, and lender ARV caps. The Maximum Allowable Offer formula is: After Repair Value times 70%, minus Rehab Costs. On a 400,000 dollar ARV with 60,000 dollars in rehab, your maximum buy price is 220,000 dollars. Lock in a guaranteed 45,000 dollar net profit while protecting yourself from market downturns. Private lenders will fund 90% of purchase and 100% of rehab. Run our bidirectional hard money calculator at omnioperand.com before putting an offer in.</pre>
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Social Media Post Copy (YouTube / TikTok / IG)</span>
+                <button class="btn-copy-asset" data-copy-target="social-hardmoney">📋 Copy Post</button>
+              </div>
+              <pre class="asset-content-pre" id="social-hardmoney">The 70% Rule That Hard Money Lenders Enforce on House Flips 🔨💰
+
+Don't let unexpected carry costs, 2-3 points, and 12% interest turn a profitable flip into a nightmare loss.
+
+Formula: MAO = (ARV × 70%) - Rehab Budget
+Example:
+• ARV: $400,000
+• 70% ARV Benchmark: $280,000
+• Less Rehab Budget: -$60,000
+➔ Maximum Allowable Offer: $220,000
+
+👉 Calculate your exact MAO, carry costs, and net flip ROI: https://omnioperand.com/calculators/hard-money-loan/
+
+#hardmoney #houseflipping #fixandflip #realestateinvestor #wholesaling #brrrr</pre>
+            </div>
+
+            <div class="dossier-footer">
+              <span style="font-size: 0.85rem; color: #94a3b8;">Primary Solver: <code>/calculators/hard-money-loan/</code></span>
+              <a href="/calculators/hard-money-loan/" class="btn-open-solver">Open Interactive Solver ➔</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Bank Statement Mortgage -->
+        <article class="video-card" data-category="non-qm">
+          <div class="video-player-wrap">
+            <div class="video-phone-frame">
+              <video controls playsinline preload="metadata" poster="/assets/videos/faceless/bank-statement-mortgage-poster.png">
+                <source src="/assets/videos/faceless/bank-statement-mortgage.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-actions">
+              <a href="/assets/videos/faceless/bank-statement-mortgage.mp4" download="OmniOperand-Bank-Statement-Short.mp4" class="btn-download-mp4">
+                ⬇ Download MP4 (1080x1920)
+              </a>
+            </div>
+          </div>
+          <div class="video-dossier">
+            <div class="dossier-header">
+              <div class="badge-row">
+                <span class="category-badge" style="background: rgba(20, 184, 166, 0.15); color: #14b8a6; border: 1px solid rgba(20, 184, 166, 0.4);">
+                  Self-Employed Home Loans
+                </span>
+                <span class="cpl-badge">$250 – $450 CPL</span>
+              </div>
+              <span style="font-size: 0.85rem; color: #64748b;">40.2s • 1080x1920 HD</span>
+            </div>
+            <h2 class="video-card-title">Bank Statement Mortgage: Buy a Home Without Tax Returns</h2>
+            <div class="video-concept-box">
+              <strong>Viral Angle:</strong> Explains how 1099 contractors and business owners depositing $40k/month qualify for $1.2M+ home purchases based solely on 12-month business bank deposits.
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Teleprompter Narration Script</span>
+                <button class="btn-copy-asset" data-copy-target="script-bsm">📋 Copy Script</button>
+              </div>
+              <pre class="asset-content-pre" id="script-bsm">If you're a business owner or 1099 freelancer, your tax write-offs are probably disqualifying you from buying a house. Traditional mortgage underwriters look at line 31 of your Schedule C. If you write off expenses to lower taxes, your qualifying income shows as zero. With a 12-Month Bank Statement mortgage, lenders calculate qualifying income directly from your business deposits. They total 12 months of gross deposits, apply an industry expense ratio like 50%, and divide by 12. A business owner depositing 40,000 dollars a month qualifies for a 1,200,000 dollar mortgage, even with zero net tax return income. Calculate your exact bank statement qualifying income on OmniOperand.</pre>
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Social Media Post Copy (YouTube / TikTok / IG)</span>
+                <button class="btn-copy-asset" data-copy-target="social-bsm">📋 Copy Post</button>
+              </div>
+              <pre class="asset-content-pre" id="social-bsm">Self-Employed? How to Buy a Home with $0 Tax Returns (Bank Statement Loan) 🏠✍️
+
+Traditional banks look at Line 31 of Schedule C. If your CPA wrote off your vehicle, travel, and tech expenses, your income looks like $0!
+
+Non-QM Bank Statement Solution:
+• Lenders average 12 or 24 months of actual bank deposits
+• Apply a 50% default expense factor (or CPA letter)
+• $40,000/mo in deposits = $20,000/mo in qualifying income!
+• Qualifies for a $1,200,000+ mortgage!
+
+👉 Backsolve your exact deposit requirement: https://omnioperand.com/calculators/bank-statement-mortgage/
+
+#bankstatementloan #selfemployed #mortgagebroker #homebuying #businessowner #nonqm</pre>
+            </div>
+
+            <div class="dossier-footer">
+              <span style="font-size: 0.85rem; color: #94a3b8;">Primary Solver: <code>/calculators/bank-statement-mortgage/</code></span>
+              <a href="/calculators/bank-statement-mortgage/" class="btn-open-solver">Open Interactive Solver ➔</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Commercial Solar Tax Credit -->
+        <article class="video-card" data-category="specialized">
+          <div class="video-player-wrap">
+            <div class="video-phone-frame">
+              <video controls playsinline preload="metadata" poster="/assets/videos/faceless/commercial-solar-tax-credit-poster.png">
+                <source src="/assets/videos/faceless/commercial-solar-tax-credit.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-actions">
+              <a href="/assets/videos/faceless/commercial-solar-tax-credit.mp4" download="OmniOperand-Commercial-Solar-Short.mp4" class="btn-download-mp4">
+                ⬇ Download MP4 (1080x1920)
+              </a>
+            </div>
+          </div>
+          <div class="video-dossier">
+            <div class="dossier-header">
+              <div class="badge-row">
+                <span class="category-badge" style="background: rgba(249, 115, 22, 0.15); color: #f97316; border: 1px solid rgba(249, 115, 22, 0.4);">
+                  Clean Energy Tax Credits
+                </span>
+                <span class="cpl-badge">$350 – $700 CPL</span>
+              </div>
+              <span style="font-size: 0.85rem; color: #64748b;">42.7s • 1080x1920 HD</span>
+            </div>
+            <h2 class="video-card-title">Commercial Solar Tax Credit: 30% ITC + 5-Year Depreciation Shield</h2>
+            <div class="video-concept-box">
+              <strong>Viral Angle:</strong> Shows commercial building owners how combining the Section 48 30% ITC with 85% basis 5-year MACRS recovers 52.4% of total project costs in Month 12 with a 3.8-year payback.
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Teleprompter Narration Script</span>
+                <button class="btn-copy-asset" data-copy-target="script-solar">📋 Copy Script</button>
+              </div>
+              <pre class="asset-content-pre" id="script-solar">Commercial building owners: solar is no longer just green energy, it is an IRS tax shield engine. High commercial utility bills and corporate taxes eat directly into net operating income and building valuation. Under Section 48, commercial solar earns an immediate 30% federal tax credit. Furthermore, you depreciate 85% of the system value across 5-year MACRS with 60% bonus depreciation in Year 1. On a 250,000 dollar system, tax incentives pay for over 52% of the project in year one, yielding a rapid 3.8-year payback. Model your commercial solar tax credit and payback timeline at omnioperand.com.</pre>
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Social Media Post Copy (YouTube / TikTok / IG)</span>
+                <button class="btn-copy-asset" data-copy-target="social-solar">📋 Copy Post</button>
+              </div>
+              <pre class="asset-content-pre" id="social-solar">How Commercial Solar Recovers 52% of Its Cost in Year 1 (IRS Section 48) ☀️⚡
+
+Commercial solar is an aggressive corporate tax shelter that slashes operating costs and boosts Net Operating Income!
+
+$250,000 System Incentive Stack:
+• 30% Federal ITC Credit: -$75,000
+• 85% Depreciable Basis ($212,500)
+• Year 1 MACRS Bonus Tax Shield: -$56,000
+➔ Total Year 1 Incentive: $131,000 (52.4% of cost!)
+➔ Payback: Only 3.8 Years!
+
+👉 Run your building's solar IRR and payback schedule: https://omnioperand.com/calculators/commercial-solar-tax-credit/
+
+#solartaxcredit #commercialsolar #taxequity #cleanenergy #sustainability #commercialre</pre>
+            </div>
+
+            <div class="dossier-footer">
+              <span style="font-size: 0.85rem; color: #94a3b8;">Primary Solver: <code>/calculators/commercial-solar-tax-credit/</code></span>
+              <a href="/calculators/commercial-solar-tax-credit/" class="btn-open-solver">Open Interactive Solver ➔</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Structured Settlement Lump Sum -->
+        <article class="video-card" data-category="specialized">
+          <div class="video-player-wrap">
+            <div class="video-phone-frame">
+              <video controls playsinline preload="metadata" poster="/assets/videos/faceless/structured-settlement-lump-sum-poster.png">
+                <source src="/assets/videos/faceless/structured-settlement-lump-sum.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-actions">
+              <a href="/assets/videos/faceless/structured-settlement-lump-sum.mp4" download="OmniOperand-Structured-Settlement-Short.mp4" class="btn-download-mp4">
+                ⬇ Download MP4 (1080x1920)
+              </a>
+            </div>
+          </div>
+          <div class="video-dossier">
+            <div class="dossier-header">
+              <div class="badge-row">
+                <span class="category-badge" style="background: rgba(236, 72, 153, 0.15); color: #ec4899; border: 1px solid rgba(236, 72, 153, 0.4);">
+                  Annuity &amp; Settlement Factoring
+                </span>
+                <span class="cpl-badge">$500 – $1,500 CPL</span>
+              </div>
+              <span style="font-size: 0.85rem; color: #64748b;">42.3s • 1080x1920 HD</span>
+            </div>
+            <h2 class="video-card-title">Structured Settlement Lump Sum: Don't Let Factoring Firms Rob You</h2>
+            <div class="video-concept-box">
+              <strong>Viral Angle:</strong> Exposes predatory 18% factoring discount rates that rob injury victims of $59,000+ on a $250k annuity, and provides the actuarial Net Present Value (NPV) benchmark under IRC §5891.
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Teleprompter Narration Script</span>
+                <button class="btn-copy-asset" data-copy-target="script-settle">📋 Copy Script</button>
+              </div>
+              <pre class="asset-content-pre" id="script-settle">If you have a structured settlement or legal annuity, factoring companies are trying to take 60% of your money. Commercial TV commercials offer fast cash for settlements, but they slip in predatory discount rates between 14% and 22%. Under IRC Section 5891, your payout must be discounted to net present value. 250,000 dollars paid over 10 years at a fair 9% rate is worth 157,000 dollars. At an 18% rate, they only give you 98,000 dollars. That is a 59,000 dollar rip-off. Know your actuarial fair market value before talking to factoring brokers so you can negotiate a competitive discount rate under 9%. Calculate your true lump-sum present value for free on OmniOperand.</pre>
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Social Media Post Copy (YouTube / TikTok / IG)</span>
+                <button class="btn-copy-asset" data-copy-target="social-settle">📋 Copy Post</button>
+              </div>
+              <pre class="asset-content-pre" id="social-settle">Selling an Annuity or Structured Settlement? Don't Get Robbed by Discount Rates! ⚖️📉
+
+Late-night TV factoring commercials promise instant lump-sum cash, but secretly apply predatory 14%-22% discount rates that take over half your settlement!
+
+Comparison on $250k over 10 Years:
+• Fair Market Actuarial Value (9% Rate) = $157,000
+• Predatory TV Commercial Offer (18% Rate) = $98,000
+➔ That's a $59,000 difference taken from your pocket!
+
+👉 Calculate your true actuarial lump-sum value before accepting an offer: https://omnioperand.com/calculators/structured-settlement-lump-sum/
+
+#structuredsettlement #annuity #lumpsum #legalfinance #personalinjury #settlement</pre>
+            </div>
+
+            <div class="dossier-footer">
+              <span style="font-size: 0.85rem; color: #94a3b8;">Primary Solver: <code>/calculators/structured-settlement-lump-sum/</code></span>
+              <a href="/calculators/structured-settlement-lump-sum/" class="btn-open-solver">Open Interactive Solver ➔</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Commercial Real Estate Cap Rate -->
+        <article class="video-card" data-category="commercial">
+          <div class="video-player-wrap">
+            <div class="video-phone-frame">
+              <video controls playsinline preload="metadata" poster="/assets/videos/faceless/commercial-real-estate-cap-rate-poster.png">
+                <source src="/assets/videos/faceless/commercial-real-estate-cap-rate.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-actions">
+              <a href="/assets/videos/faceless/commercial-real-estate-cap-rate.mp4" download="OmniOperand-CRE-Cap-Rate-Short.mp4" class="btn-download-mp4">
+                ⬇ Download MP4 (1080x1920)
+              </a>
+            </div>
+          </div>
+          <div class="video-dossier">
+            <div class="dossier-header">
+              <div class="badge-row">
+                <span class="category-badge" style="background: rgba(99, 102, 241, 0.15); color: #6366f1; border: 1px solid rgba(99, 102, 241, 0.4);">
+                  Commercial Syndication
+                </span>
+                <span class="cpl-badge">$300 – $600 CPL</span>
+              </div>
+              <span style="font-size: 0.85rem; color: #64748b;">42.4s • 1080x1920 HD</span>
+            </div>
+            <h2 class="video-card-title">Cap Rate &amp; Debt Yield: How Commercial Banks Value Buildings</h2>
+            <div class="video-concept-box">
+              <strong>Viral Angle:</strong> Shows why Cap Rate alone doesn't guarantee a loan, and reveals how institutional lenders enforce 9.5% - 10% Debt Yield constraints to size senior debt.
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Teleprompter Narration Script</span>
+                <button class="btn-copy-asset" data-copy-target="script-cre">📋 Copy Script</button>
+              </div>
+              <pre class="asset-content-pre" id="script-cre">Want to know how commercial banks and syndicators price 10-million-dollar apartment buildings? Beginners only look at Cap Rate. But institutional lenders don't care about cap rate; they size loans using Debt Yield and DSCR. Cap Rate equals Net Operating Income divided by Purchase Price. But lenders require a minimum 9.5% to 10% Debt Yield, calculated as NOI divided by Loan Amount. Even if your Cap Rate is 6%, a low debt yield will slash your loan proceeds by hundreds of thousands of dollars. Accurately forecast loan proceeds, cash-on-cash yield, and valuation before signing a purchase agreement. Run institutional CRE underwriting calculations for free at omnioperand.com.</pre>
+            </div>
+
+            <div class="asset-block">
+              <div class="asset-block-header">
+                <span class="asset-block-label">Social Media Post Copy (YouTube / TikTok / IG)</span>
+                <button class="btn-copy-asset" data-copy-target="social-cre">📋 Copy Post</button>
+              </div>
+              <pre class="asset-content-pre" id="social-cre">Cap Rate vs Debt Yield: How Commercial Banks ACTUALLY Value Real Estate 🏢📊
+
+Amateur investors only analyze Cap Rate. But institutional lenders don't size loans based on Cap Rate—they size loans using DEBT YIELD!
+
+The Underwriting Contrast:
+• Cap Rate = NOI ÷ Property Price
+• Debt Yield = NOI ÷ Senior Loan Amount
+Example:
+• NOI: $500,000 | Purchase Price: $8,000,000 (6.25% Cap)
+• If lender enforces a 10% Debt Yield, max senior loan is $5,000,000 (regardless of your LTV request!)
+
+👉 Calculate your property's exact loan proceeds and debt yield: https://omnioperand.com/calculators/commercial-real-estate-cap-rate/
+
+#caprate #debtyield #commercialrealestate #apartmentbuilding #syndication #cre</pre>
+            </div>
+
+            <div class="dossier-footer">
+              <span style="font-size: 0.85rem; color: #94a3b8;">Primary Solver: <code>/calculators/commercial-real-estate-cap-rate/</code></span>
+              <a href="/calculators/commercial-real-estate-cap-rate/" class="btn-open-solver">Open Interactive Solver ➔</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h3>OmniOperand</h3>
+        <p>Deterministic mathematical engines and automated high-authority media suites for engineers, investors, and AI agents.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Video Showcase</h4>
+        <ul>
+          <li><a href="/calculators/dscr-loan/">DSCR Loan Solver</a></li>
+          <li><a href="/calculators/cost-segregation/">Cost Segregation Solver</a></li>
+          <li><a href="/calculators/1031-exchange/">1031 Exchange Solver</a></li>
+          <li><a href="/calculators/sba-loan/">SBA Loan Solver</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Disciplines</h4>
+        <ul>
+          <li><a href="/calculators/">Specialized Solvers</a></li>
+          <li><a href="/geometry/">Geometry Directory</a></li>
+          <li><a href="/calculus/">Calculus Solvers</a></li>
+          <li><a href="/finance/">Finance Engines</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Compliance &amp; API</h4>
+        <ul>
+          <li><a href="/api/">REST API Docs</a></li>
+          <li><a href="/llms.txt">llms.txt Specification</a></li>
+          <li><a href="/sitemap.xml">XML Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      <p>&copy; 2026 OmniOperand. All mathematical rights reserved. Zero external tracking. Deterministic execution.</p>
+    </div>
+  </footer>
+
+  <div id="copy-toast">Copied to clipboard!</div>
+
+  <script>
+    // Category Filtering Logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.video-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'grid';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Auto pause other videos when one plays
+    const allVideos = document.querySelectorAll('video');
+    allVideos.forEach(v => {
+      v.addEventListener('play', () => {
+        allVideos.forEach(other => {
+          if (other !== v && !other.paused) {
+            other.pause();
+          }
+        });
+      });
+    });
+
+    // Clipboard Copy Handler with Toast
+    const toast = document.getElementById('copy-toast');
+    let toastTimeout;
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    document.querySelectorAll('.btn-copy-asset').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.dataset.copyTarget;
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          const textToCopy = targetEl.textContent;
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalText = btn.textContent;
+            btn.textContent = '✓ Copied!';
+            showToast('✓ Copied to clipboard!');
+            setTimeout(() => {
+              btn.textContent = originalText;
+            }, 2000);
+          }).catch(err => {
+            console.error('Clipboard copy failed:', err);
+            showToast('Error copying to clipboard');
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

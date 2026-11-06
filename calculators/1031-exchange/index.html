@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1031 Exchange Tax &amp; Boot Replacement Property Calculator | OmniOperand</title>
+  <meta name="description" content="Calculate IRS §1031 like-kind exchange capital gains deferral, depreciation recapture, mortgage boot, cash boot, and 45/180-day exchange deadlines.">
+  <link rel="canonical" href="https://omnioperand.com/calculators/1031-exchange/">
+
+  <meta property="og:title" content="1031 Exchange Tax &amp; Boot Replacement Property Calculator | OmniOperand">
+  <meta property="og:description" content="Calculate IRS §1031 like-kind exchange capital gains deferral, depreciation recapture, and mortgage/cash boot liabilities.">
+  <meta property="og:url" content="https://omnioperand.com/calculators/1031-exchange/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://omnioperand.com/calculators/1031-exchange/#software",
+        "name": "1031 Exchange Tax & Boot Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Calculates capital gains tax deferral, 25% depreciation recapture, mortgage boot, cash boot, and reinvestment requirements under IRS Section 1031."
+      },
+      {
+        "@type": "FinancialProduct",
+        "@id": "https://omnioperand.com/calculators/1031-exchange/#product",
+        "name": "Qualified Intermediary 1031 Exchange Routing",
+        "description": "IRS-compliant Qualified Intermediary (QI) escrow handling for forward, reverse, and improvement 1031 exchanges.",
+        "feesAndCommissionsSpecification": "Bonded QI exchange accommodation fees typically $1,000 to $1,500."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "OmniOperand",
+            "item": "https://omnioperand.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculators",
+            "item": "https://omnioperand.com/calculators/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "1031 Exchange Calculator",
+            "item": "https://omnioperand.com/calculators/1031-exchange/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is 'boot' in a 1031 exchange?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Boot is non-like-kind property received in an exchange that triggers immediate tax liability. Cash boot occurs when net sales cash is pocketed instead of reinvested. Mortgage boot occurs when the replacement property debt is lower than the debt paid off on the relinquished property, resulting in taxable debt relief."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the strict deadlines for a 1031 exchange?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The investor has exactly 45 calendar days from the sale closing date to formally identify potential replacement properties in writing to the Qualified Intermediary (QI), and exactly 180 calendar days (or until the tax return due date, whichever is earlier) to complete the acquisition."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is depreciation recapture taxed during a real estate sale?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under IRC Section 1250, all cumulative straight-line depreciation claimed on real property is unrecaptured and taxed at a maximum federal rate of 25%, plus state income taxes. A 1031 exchange completely defers this 25% recapture tax."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="omni-body">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Tax Deferral</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/calculators/" class="nav-link active">Specialized Solvers</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/calculators/">Specialized Solvers</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active" aria-current="page">1031 Exchange Tax &amp; Boot Sizer</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container" id="1031-exchange-calculator">
+
+    <section class="solver-hero">
+      <div class="hero-badge">Internal Revenue Code §1031 • Treasury Reg §1.1031</div>
+      <h1>1031 Exchange Tax &amp; Boot Replacement Property Calculator</h1>
+      <p class="hero-subtext">
+        Calculate federal capital gains deferral, 25% depreciation recapture tax shields, mortgage relief boot, and cash boot liabilities. Verified 45-day identification and 180-day closing deadlines.
+      </p>
+      <div class="calculator-actions-toolbar" style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem;">
+        <button type="button" class="btn-secondary" id="btn-copy-summary">
+          <span>📋 Copy Summary</span>
+        </button>
+        <button type="button" class="btn-secondary" id="btn-print-pdf">
+          <span>🖨️ Print / Save PDF</span>
+        </button>
+        <button type="button" class="btn-secondary btn-open-embed" id="btn-embed">
+          <span>🔌 Embed Calculator</span>
+        </button>
+      </div>
+    </section>
+
+    <div class="calculator-grid">
+
+      <div class="solver-column">
+        <div class="hud-panel">
+          <div class="hud-panel-header">
+            <h2>Relinquished &amp; Replacement Property Parameters</h2>
+            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">IRC §1031</span>
+          </div>
+
+          <div class="param-card-grid">
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-sales_price">Relinquished Property Sale Price ($)</label>
+                <span class="param-symbol">Sale</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-sales_price" class="number-input omni-calc-input" value="1500000" step="25000" min="50000">
+              </div>
+              <div class="param-hint">Contract sales price of property being sold</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-original_basis">Original Purchase Basis ($) &amp; Improvements ($)</label>
+                <span class="param-symbol">Basis</span>
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.5rem;">
+                <div class="input-unit-group">
+                  <span class="input-prefix">$</span>
+                  <input type="number" id="param-original_basis" class="number-input omni-calc-input" value="600000" step="10000" min="0">
+                </div>
+                <div class="input-unit-group">
+                  <span class="input-prefix">$</span>
+                  <input type="number" id="param-improvements" class="number-input omni-calc-input" value="100000" step="5000" min="0">
+                </div>
+              </div>
+              <div class="param-hint">Original purchase price + capital improvements</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-depreciation">Cumulative Depreciation Taken ($)</label>
+                <span class="param-symbol">Deprec</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-depreciation" class="number-input omni-calc-input" value="250000" step="5000" min="0">
+              </div>
+              <div class="param-hint">Total 27.5-yr or 39-yr MACRS depreciation claimed (taxed at 25%)</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-relinquished_debt">Relinquished Mortgage Payoff ($)</label>
+                <span class="param-symbol">Old Debt</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-relinquished_debt" class="number-input omni-calc-input" value="500000" step="10000" min="0">
+              </div>
+              <div class="param-hint">Existing loan balance to be paid off at closing</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-replacement_price">Replacement Property Price ($)</label>
+                <span class="param-symbol">New Price</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-replacement_price" class="number-input omni-calc-input" value="1600000" step="25000" min="0">
+              </div>
+              <div class="param-hint">Target acquisition price (must exceed net sales proceeds for zero boot)</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-replacement_debt">New Mortgage on Replacement Property ($)</label>
+                <span class="param-symbol">New Debt</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-replacement_debt" class="number-input omni-calc-input" value="600000" step="10000" min="0">
+              </div>
+              <div class="param-hint">Debt on new property (must equal or exceed old debt to avoid mortgage boot)</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <h2 style="font-size:1.15rem; color:var(--text-bright); margin:0;">1031 Tax Deferral Summary</h2>
+            <span class="badge" id="res-exchange_badge" style="background:rgba(16,185,129,0.15); color:#10b981; font-weight:700; padding:4px 10px; border-radius:6px;">
+              100% Tax-Deferred Full Exchange
+            </span>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap:1rem;">
+            <div class="metric-card highlight">
+              <span class="metric-label">Taxes Deferred via §1031</span>
+              <span class="metric-value" id="res-taxes_deferred" style="color:var(--accent-emerald); font-size:1.85rem;">$284,400</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Immediate Tax Due (Boot)</span>
+              <span class="metric-value" id="res-taxes_due" style="color:#f8fafc;">$0</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Total Realized Gain</span>
+              <span class="metric-value" id="res-realized_gain">$960,000</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Adjusted Tax Basis</span>
+              <span class="metric-value" id="res-adjusted_basis">$450,000</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Taxable Boot Incurred</span>
+              <span class="metric-value" id="res-total_boot">$0</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Net Sales Proceeds</span>
+              <span class="metric-value" id="res-net_proceeds">$1,410,000</span>
+            </div>
+          </div>
+
+          <div class="lead-capture-card" style="margin-top: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+              <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; text-transform: uppercase;">
+                🏛️ Bonded Qualified Intermediary (QI) Network
+              </span>
+              <span style="font-size: 12px; color: #34d399; font-weight: 700;">Zero-Risk Escrow Accommodator</span>
+            </div>
+            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; font-weight: 800; color: #fff;">
+              Lock In a Bonded Qualified Intermediary (QI) Before Closing
+            </h3>
+            <p style="margin: 0 0 1rem 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.45;">
+              IRS rules require a Qualified Intermediary to be assigned to the purchase contract prior to closing. Funds cannot touch the seller's account. Connect with bonded 1031 accommodators.
+            </p>
+            <button type="button" id="btn-open-lead-drawer" class="btn-lead-drawer" style="width: 100%; max-width: 520px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; padding: 14px 20px; border-radius: 10px; font-weight: 800; font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 10px 24px -6px rgba(2, 132, 199, 0.45); transition: all 0.2s;">
+              <span>⚡</span>
+              <span>Connect with Bonded 1031 Qualified Intermediaries</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Analytical Proof &amp; Invariants</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);">Machine Precision</span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">Section 1031 Governing Formula:</div>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0;">Recognized Gain = Min(Realized Gain, Boot Received)</code>
+            <div style="font-size:0.85rem; color:#94a3b8; margin-top:6px;">
+              Realized Gain = Net Sales Proceeds - (Original Basis + Improvements - Depreciation)
+            </div>
+          </div>
+
+          <div class="proof-card open">
+            <div class="proof-header">
+              <h3><span>Step-by-Step 1031 Derivation</span></h3>
+            </div>
+            <div class="proof-body" style="display:block;">
+              <div class="proof-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                  <strong>Adjusted Tax Basis</strong>
+                  <p>Basis = Purchase Price ($600,000) + Capital Improvements ($100,000) - Depreciation ($250,000) = $450,000.</p>
+                </div>
+              </div>
+
+              <div class="proof-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  <strong>Realized Capital Gain</strong>
+                  <p>Net Proceeds = $1,500,000 - 6% closing costs ($90,000) = $1,410,000. Realized Gain = $1,410,000 - $450,000 = $960,000.</p>
+                </div>
+              </div>
+
+              <div class="proof-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  <strong>Tax Liability Outright vs 1031 Deferral</strong>
+                  <p>Without 1031: 25% depreciation recapture tax on $250k = $75,000 + 28.8% federal/state capital gains on $710k = $204,480 (Total: $279,480). Through a full 1031 exchange, 100% of this tax is deferred.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <section class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
+              <div>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive &amp; API Spec</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence &amp; Prompt Integration</h3>
+              </div>
+            </div>
+
+            <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
+              <span><span style="color:var(--accent-cyan); font-weight:700;">GET / POST</span> https://omnioperand.com/api/v1/calculators/1031-exchange</span>
+              <span style="color:var(--text-muted); font-size:0.75rem;">JSON Invariants</span>
+            </div>
+
+            <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+
+    <section class="calc-faq-section" style="margin-top:3rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions: IRS Section 1031 Exchanges</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is 'boot' in a 1031 exchange?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Boot is non-like-kind property received in an exchange that triggers immediate tax liability. Cash boot occurs when net sales cash is pocketed instead of reinvested. Mortgage boot occurs when the replacement property debt is lower than the debt paid off on the relinquished property, resulting in taxable debt relief.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What are the strict deadlines for a 1031 exchange?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            The investor has exactly 45 calendar days from the sale closing date to formally identify potential replacement properties in writing to the Qualified Intermediary (QI), and exactly 180 calendar days (or until the tax return due date, whichever is earlier) to complete the acquisition.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How is depreciation recapture taxed during a real estate sale?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Under IRC Section 1250, all cumulative straight-line depreciation claimed on real property is unrecaptured and taxed at a maximum federal rate of 25%, plus state income taxes. A 1031 exchange completely defers this 25% recapture tax.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem; padding:2rem 0; border-top:1px solid var(--border-subtle);">
+      <div class="footer-brand">
+        <div style="font-weight:700; color:var(--text-bright); margin-bottom:0.5rem;">OmniOperand</div>
+        <p style="font-size:0.8rem; color:var(--text-muted); max-width:320px; line-height:1.4;">
+          Deterministic computational engines, verified mathematical proofs, and programmatic APIs for technical professionals.
+        </p>
+      </div>
+    </div>
+    <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
+      <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.4"></script>
+  <script src="/assets/js/lead-drawer.js" defer></script>
+  <script src="/assets/js/1031-exchange-solver.js" defer></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

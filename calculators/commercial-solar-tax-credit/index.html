@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Solar ITC &amp; MACRS Depreciation Calculator | OmniOperand</title>
+  <meta name="description" content="Calculate commercial solar Section 48 Investment Tax Credits (ITC), 5-year MACRS accelerated depreciation tax shields, and capital payback periods.">
+  <link rel="canonical" href="https://omnioperand.com/calculators/commercial-solar-tax-credit/">
+
+  <meta property="og:title" content="Commercial Solar ITC &amp; MACRS Depreciation Calculator | OmniOperand">
+  <meta property="og:description" content="Calculate commercial solar 30% Section 48 ITC credits, 5-year MACRS tax shields, and levelized payback periods.">
+  <meta property="og:url" content="https://omnioperand.com/calculators/commercial-solar-tax-credit/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://omnioperand.com/calculators/commercial-solar-tax-credit/#software",
+        "name": "Commercial Solar ITC & MACRS Depreciation Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Calculates Section 48 Investment Tax Credits (ITC), 85% MACRS basis reduction, corporate tax shields, and solar ROI."
+      },
+      {
+        "@type": "FinancialProduct",
+        "@id": "https://omnioperand.com/calculators/commercial-solar-tax-credit/#product",
+        "name": "Commercial Solar EPC & Capital Financing",
+        "description": "Turnkey commercial solar installation, Power Purchase Agreements (PPA), and equipment financing capturing Section 48 ITC credits.",
+        "feesAndCommissionsSpecification": "Direct EPC turnkey proposals with 30% to 40% federal tax offset."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "OmniOperand",
+            "item": "https://omnioperand.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculators",
+            "item": "https://omnioperand.com/calculators/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Commercial Solar Tax Credit",
+            "item": "https://omnioperand.com/calculators/commercial-solar-tax-credit/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the Section 48 Investment Tax Credit (ITC) work for commercial solar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under the Inflation Reduction Act (IRA), commercial businesses claiming the Section 48 ITC receive a dollar-for-dollar tax credit equal to 30% of the turnkey system cost (plus potential 10% bonus adders for domestic content or energy communities)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is MACRS depreciation calculated on solar equipment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "IRS rules require the depreciable basis of commercial solar assets to be reduced by 50% of the federal ITC claimed. If a 30% ITC is claimed, the depreciable basis is 100% - 15% = 85% of total system cost. This 85% basis is then depreciated over a 5-year MACRS recovery schedule (20% Year 1, 32% Year 2, 19.2% Year 3, 11.52% Year 4, 11.52% Year 5, 5.76% Year 6)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the typical commercial solar payback period?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When combining the 30% ITC with Year 1 MACRS accelerated depreciation tax savings, businesses frequently recover 50% to 60% of total system costs in Year 1 tax relief alone, leading to a simple capital payback of 3.5 to 6.0 years."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="omni-body">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Clean Energy</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/calculators/" class="nav-link active">Specialized Solvers</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/calculators/">Specialized Solvers</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active" aria-current="page">Commercial Solar ITC &amp; MACRS</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container" id="commercial-solar-calculator">
+
+    <section class="solver-hero">
+      <div class="hero-badge">Inflation Reduction Act §48 • 5-Year MACRS Asset Recovery</div>
+      <h1>Commercial Solar ITC &amp; MACRS Depreciation Calculator</h1>
+      <p class="hero-subtext">
+        Quantify the corporate tax shield from commercial solar investments. Models 30% federal Section 48 ITC credits, 85% MACRS basis reduction schedules, utility bill offsets, and capital payback periods.
+      </p>
+      <div class="calculator-actions-toolbar" style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem;">
+        <button type="button" class="btn-secondary" id="btn-copy-summary">
+          <span>📋 Copy Summary</span>
+        </button>
+        <button type="button" class="btn-secondary" id="btn-print-pdf">
+          <span>🖨️ Print / Save PDF</span>
+        </button>
+        <button type="button" class="btn-secondary btn-open-embed" id="btn-embed">
+          <span>🔌 Embed Calculator</span>
+        </button>
+      </div>
+    </section>
+
+    <div class="calculator-grid">
+
+      <div class="solver-column">
+        <div class="hud-panel">
+          <div class="hud-panel-header">
+            <h2>Solar System &amp; Corporate Tax Inputs</h2>
+            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">IRC §48</span>
+          </div>
+
+          <div class="param-card-grid">
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-system_size_kw">System Capacity (kW DC)</label>
+                <span class="param-symbol">kW</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-system_size_kw" class="number-input omni-calc-input" value="100" step="10" min="10" max="2000">
+                <span class="input-suffix">kW</span>
+              </div>
+              <div class="param-hint">Commercial rooftop or carport solar capacity (e.g. 100 kW = 250 panels)</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-cost_per_watt">Turnkey Installed Cost ($ / Watt)</label>
+                <span class="param-symbol">$/W</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-cost_per_watt" class="number-input omni-calc-input" value="2.40" step="0.10" min="1.00">
+                <span class="input-suffix">/W</span>
+              </div>
+              <div class="param-hint">Commercial EPC equipment, permitting, and installation cost</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-itc_pct">Federal ITC Credit (%)</label>
+                <span class="param-symbol">ITC%</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-itc_pct" class="number-input omni-calc-input" value="30" step="10" min="30" max="50">
+                <span class="input-suffix">%</span>
+              </div>
+              <div class="param-hint">30% statutory base (up to 40% with Energy Community bonus)</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-corporate_tax_rate">Corporate Income Tax Rate (%)</label>
+                <span class="param-symbol">Tax%</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-corporate_tax_rate" class="number-input omni-calc-input" value="28" step="1" min="15" max="45">
+                <span class="input-suffix">%</span>
+              </div>
+              <div class="param-hint">Combined federal (21%) and state corporate income tax rate</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-utility_rate">Current Utility Electricity Rate ($ / kWh)</label>
+                <span class="param-symbol">Rate</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-utility_rate" class="number-input omni-calc-input" value="0.16" step="0.01" min="0.05">
+                <span class="input-suffix">/kWh</span>
+              </div>
+              <div class="param-hint">Commercial grid tariff replaced by solar generation</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <h2 style="font-size:1.15rem; color:var(--text-bright); margin:0;">Solar Tax Shield &amp; ROI Deliverables</h2>
+            <span class="badge" id="res-payback_badge" style="background:rgba(16,185,129,0.15); color:#10b981; font-weight:700; padding:4px 10px; border-radius:6px;">
+              Fast Payback (&lt; 5 Yrs)
+            </span>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap:1rem;">
+            <div class="metric-card highlight">
+              <span class="metric-label">Year 1 Combined Tax Relief</span>
+              <span class="metric-value" id="res-year1_tax_relief" style="color:var(--accent-emerald); font-size:1.85rem;">$83,424</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Section 48 ITC Credit</span>
+              <span class="metric-value" id="res-itc_credit_amount" style="color:var(--accent-cyan);">$72,000</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Net System Cost Post-Taxes</span>
+              <span class="metric-value" id="res-net_system_cost">$110,880</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Simple Payback Period</span>
+              <span class="metric-value" id="res-payback_years">4.9 Years</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Year 1 Energy Bill Savings</span>
+              <span class="metric-value" id="res-year1_electric_savings">$22,400/yr</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">25-Year Energy Savings</span>
+              <span class="metric-value" id="res-25yr_savings">$771,940</span>
+            </div>
+          </div>
+
+          <div class="lead-capture-card" style="margin-top: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+              <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; text-transform: uppercase;">
+                🏛️ Commercial Solar EPC &amp; PPA Network
+              </span>
+              <span style="font-size: 12px; color: #34d399; font-weight: 700;">Zero-CapEx PPAs Available</span>
+            </div>
+            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; font-weight: 800; color: #fff;">
+              Get a Turnkey Engineering Feasibility Study &amp; Solar Proposal
+            </h3>
+            <p style="margin: 0 0 1rem 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.45;">
+              Connect with vetted commercial solar EPC contractors. Receive preliminary shading, structural roof feasibility, and IRA tax monetization blueprints with zero obligation.
+            </p>
+            <button type="button" id="btn-open-lead-drawer" class="btn-lead-drawer" style="width: 100%; max-width: 520px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; padding: 14px 20px; border-radius: 10px; font-weight: 800; font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 10px 24px -6px rgba(2, 132, 199, 0.45); transition: all 0.2s;">
+              <span>⚡</span>
+              <span>Connect with Commercial Solar EPC Contractors</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>MACRS &amp; ITC Governing Formulas</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);">IRA §48 Invariant</span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">Basis Reduction Standard:</div>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0;">MACRS Depreciable Basis = Gross Cost - (0.50 · Federal ITC) = 85%</code>
+            <div style="font-size:0.85rem; color:#94a3b8; margin-top:6px;">
+              Year 1 MACRS Half-Year Convention = 85% Basis · 20.00%
+            </div>
+          </div>
+
+          <div class="proof-card open">
+            <div class="proof-header">
+              <h3><span>Step-by-Step Solar Tax Derivation</span></h3>
+            </div>
+            <div class="proof-body" style="display:block;">
+              <div class="proof-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                  <strong>Gross Turnkey Capital Cost</strong>
+                  <p>100 kW system @ $2.40/W = 100,000 W · $2.40 = $240,000 turnkey installed cost.</p>
+                </div>
+              </div>
+
+              <div class="proof-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  <strong>Section 48 ITC Credit &amp; Basis Haircut</strong>
+                  <p>30% ITC delivers an immediate $72,000 tax credit. Depreciable basis is reduced by half of the credit ($36,000) = $204,000 depreciable MACRS basis.</p>
+                </div>
+              </div>
+
+              <div class="proof-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  <strong>Combined Year 1 Tax Shield</strong>
+                  <p>Year 1 MACRS deduction is 20% of $204,000 = $40,800. At a 28% corporate tax rate, this saves $11,424 in cash taxes. Total Year 1 tax relief = $72,000 + $11,424 = $83,424 (34.8% of gross system cost).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <section class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
+              <div>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive &amp; API Spec</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence &amp; Prompt Integration</h3>
+              </div>
+            </div>
+
+            <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
+              <span><span style="color:var(--accent-cyan); font-weight:700;">GET / POST</span> https://omnioperand.com/api/v1/calculators/commercial-solar-tax-credit</span>
+              <span style="color:var(--text-muted); font-size:0.75rem;">JSON Invariants</span>
+            </div>
+
+            <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+
+    <section class="calc-faq-section" style="margin-top:3rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions: Commercial Solar Tax Credits</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does the Section 48 Investment Tax Credit (ITC) work for commercial solar?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Under the Inflation Reduction Act (IRA), commercial businesses claiming the Section 48 ITC receive a dollar-for-dollar tax credit equal to 30% of the turnkey system cost (plus potential 10% bonus adders for domestic content or energy communities).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How is MACRS depreciation calculated on solar equipment?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            IRS rules require the depreciable basis of commercial solar assets to be reduced by 50% of the federal ITC claimed. If a 30% ITC is claimed, the depreciable basis is 100% - 15% = 85% of total system cost. This 85% basis is then depreciated over a 5-year MACRS recovery schedule (20% Year 1, 32% Year 2, 19.2% Year 3, 11.52% Year 4, 11.52% Year 5, 5.76% Year 6).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is the typical commercial solar payback period?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            When combining the 30% ITC with Year 1 MACRS accelerated depreciation tax savings, businesses frequently recover 50% to 60% of total system costs in Year 1 tax relief alone, leading to a simple capital payback of 3.5 to 6.0 years.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem; padding:2rem 0; border-top:1px solid var(--border-subtle);">
+      <div class="footer-brand">
+        <div style="font-weight:700; color:var(--text-bright); margin-bottom:0.5rem;">OmniOperand</div>
+        <p style="font-size:0.8rem; color:var(--text-muted); max-width:320px; line-height:1.4;">
+          Deterministic computational engines, verified mathematical proofs, and programmatic APIs for technical professionals.
+        </p>
+      </div>
+    </div>
+    <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
+      <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.4"></script>
+  <script src="/assets/js/lead-drawer.js" defer></script>
+  <script src="/assets/js/commercial-solar-solver.js" defer></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

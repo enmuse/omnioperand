@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hard Money &amp; Fix-and-Flip Bridge Loan Calculator | OmniOperand</title>
+  <meta name="description" content="Calculate hard money real estate flip loans, 70% ARV Maximum Allowable Offer (MAO), LTC vs LTARV debt limits, interest-only carry, points, and net ROI.">
+  <link rel="canonical" href="https://omnioperand.com/calculators/hard-money-loan/">
+
+  <meta property="og:title" content="Hard Money &amp; Fix-and-Flip Bridge Loan Calculator | OmniOperand">
+  <meta property="og:description" content="Calculate hard money flip financing, 70% ARV rule, LTC/LTARV loan caps, interest-only carrying costs, and net annualized ROI.">
+  <meta property="og:url" content="https://omnioperand.com/calculators/hard-money-loan/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/assets/css/omni-core.css?v=2.2">
+  <link rel="stylesheet" href="/assets/css/calculator.css?v=1.3">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://omnioperand.com/calculators/hard-money-loan/#software",
+        "name": "Hard Money & Fix-and-Flip Loan Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Calculates private money real estate bridge debt, 70% ARV Maximum Allowable Offer, interest-only carry, points, and net cash-on-cash ROI."
+      },
+      {
+        "@type": "FinancialProduct",
+        "@id": "https://omnioperand.com/calculators/hard-money-loan/#product",
+        "name": "Private Money Real Estate Bridge & Rehab Financing",
+        "description": "Short-term bridge loans for real estate investors funding up to 90% LTC and 75% LTARV with fast closing times.",
+        "feesAndCommissionsSpecification": "1 to 3 origination points and interest-only monthly financing."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "OmniOperand",
+            "item": "https://omnioperand.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculators",
+            "item": "https://omnioperand.com/calculators/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Hard Money Loan Calculator",
+            "item": "https://omnioperand.com/calculators/hard-money-loan/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the 70% Rule in real estate flipping?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 70% Rule states that an investor should pay no more than 70% of the After-Repair Value (ARV) minus estimated repair costs: Maximum Allowable Offer (MAO) = (ARV · 0.70) - Rehab Budget. This ensures adequate margin for loan interest, closing fees, holding costs, and investor profit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Loan-to-Cost (LTC) differ from Loan-to-ARV (LTARV)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Loan-to-Cost (LTC) caps financing based on actual capital deployed (typically 80% to 90% of purchase price + 100% of rehab budget). Loan-to-ARV (LTARV) caps the loan against the future appraised value after renovations (typically capped at 70% to 75% of ARV). Lenders lend the lesser of the two caps."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How are hard money loan payments structured?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most hard money loans are short-term (6 to 12 months) and require interest-only monthly payments with the entire principal due at maturity upon the sale or refinancing of the completed property."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="omni-body">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link">
+        <img src="/assets/images/logo.png" alt="OmniOperand Logo" class="brand-logo-img" width="32" height="32">
+        <span>OmniOperand</span>
+        <span class="brand-badge">Private Lending</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="/geometry/" class="nav-link">Geometry</a>
+        <a href="/calculus/" class="nav-link">Calculus</a>
+        <a href="/finance/" class="nav-link">Finance</a>
+        <a href="/calculators/" class="nav-link active">Specialized Solvers</a>
+        <a href="/mcp/" class="nav-link nav-link-mcp">MCP Server</a>
+        <a href="/api/" class="nav-link">REST API</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn-trigger" id="global-search-trigger" aria-label="Search calculators">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item"><a href="/calculators/">Specialized Solvers</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active" aria-current="page">Hard Money &amp; Fix-and-Flip Loan</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container" id="hard-money-loan-calculator">
+
+    <section class="solver-hero">
+      <div class="hero-badge">Private Money Debt • 70% ARV Underwriting Standards</div>
+      <h1>Hard Money &amp; Fix-and-Flip Bridge Loan Calculator</h1>
+      <p class="hero-subtext">
+        Underwrite real estate rehab projects with private money capital. Calculate 70% ARV Maximum Allowable Offers (MAO), LTC/LTARV financing limits, interest-only carrying costs, points, and net cash-on-cash ROI.
+      </p>
+      <div class="calculator-actions-toolbar" style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem;">
+        <button type="button" class="btn-secondary" id="btn-copy-summary">
+          <span>📋 Copy Summary</span>
+        </button>
+        <button type="button" class="btn-secondary" id="btn-print-pdf">
+          <span>🖨️ Print / Save PDF</span>
+        </button>
+        <button type="button" class="btn-secondary btn-open-embed" id="btn-embed">
+          <span>🔌 Embed Calculator</span>
+        </button>
+      </div>
+    </section>
+
+    <div class="calculator-grid">
+
+      <div class="solver-column">
+        <div class="hud-panel">
+          <div class="hud-panel-header">
+            <h2>Rehab Project Inputs</h2>
+            <span class="badge" style="background:rgba(56,189,248,0.15); color:#38bdf8;">Bridge Underwriting</span>
+          </div>
+
+          <div class="param-card-grid">
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-purchase_price">Acquisition Purchase Price ($)</label>
+                <span class="param-symbol">Purchase</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-purchase_price" class="number-input omni-calc-input" value="220000" step="5000" min="20000">
+              </div>
+              <div class="param-hint">Contract acquisition cost of distressed property</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-rehab_budget">Rehabilitation &amp; Renovation Budget ($)</label>
+                <span class="param-symbol">Rehab</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-rehab_budget" class="number-input omni-calc-input" value="60000" step="5000" min="5000">
+              </div>
+              <div class="param-hint">Materials, contractor labor, permits, and contingency</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-after_repair_value">After-Repair Value (ARV) ($)</label>
+                <span class="param-symbol">ARV</span>
+              </div>
+              <div class="input-unit-group">
+                <span class="input-prefix">$</span>
+                <input type="number" id="param-after_repair_value" class="number-input omni-calc-input" value="420000" step="5000" min="50000">
+              </div>
+              <div class="param-hint">Projected fair market retail value after completed renovations</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-interest_rate">Interest Rate (%) &amp; Points (%)</label>
+                <span class="param-symbol">Rate / Pts</span>
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.5rem;">
+                <div class="input-unit-group">
+                  <input type="number" id="param-interest_rate" class="number-input omni-calc-input" value="11.50" step="0.25" min="5">
+                  <span class="input-suffix">%</span>
+                </div>
+                <div class="input-unit-group">
+                  <input type="number" id="param-points_pct" class="number-input omni-calc-input" value="2.0" step="0.5" min="0">
+                  <span class="input-suffix">Pts</span>
+                </div>
+              </div>
+              <div class="param-hint">Typical private lender terms: 10%–13% APR and 1–3 origination points</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-holding_months">Project Holding Period (Months)</label>
+                <span class="param-symbol">Months</span>
+              </div>
+              <div class="input-unit-group">
+                <input type="number" id="param-holding_months" class="number-input omni-calc-input" value="6" step="1" min="1" max="24">
+                <span class="input-suffix">Mo</span>
+              </div>
+              <div class="param-hint">Total timeline from acquisition to finished resale</div>
+            </div>
+
+            <div class="param-card">
+              <div class="param-label-row">
+                <label for="param-max_ltc_pct">Lending Caps: LTC (%) &amp; LTARV (%)</label>
+                <span class="param-symbol">LTC / LTARV</span>
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.5rem;">
+                <div class="input-unit-group">
+                  <input type="number" id="param-max_ltc_pct" class="number-input omni-calc-input" value="85" step="5" min="50" max="95">
+                  <span class="input-suffix">% LTC</span>
+                </div>
+                <div class="input-unit-group">
+                  <input type="number" id="param-max_ltarv_pct" class="number-input omni-calc-input" value="75" step="5" min="50" max="85">
+                  <span class="input-suffix">% ARV</span>
+                </div>
+              </div>
+              <div class="param-hint">Maximum Loan-to-Cost vs Maximum Loan-to-ARV</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hud-panel" style="margin-top: 1.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <h2 style="font-size:1.15rem; color:var(--text-bright); margin:0;">Underwriting Profitability Metrics</h2>
+            <span class="badge" id="res-mao_badge" style="background:rgba(16,185,129,0.15); color:#10b981; font-weight:700; padding:4px 10px; border-radius:6px;">
+              Passes 70% ARV Rule
+            </span>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap:1rem;">
+            <div class="metric-card highlight">
+              <span class="metric-label">Net Investor Flip Profit</span>
+              <span class="metric-value" id="res-net_flip_profit" style="color:var(--accent-emerald); font-size:1.85rem;">+$69,270</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Cash-on-Cash Return (ROI)</span>
+              <span class="metric-value" id="res-roi_pct" style="color:var(--accent-cyan);">101.9%</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Annualized ROI</span>
+              <span class="metric-value" id="res-annualized_roi">203.7% Ann.</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Financed Loan Amount</span>
+              <span class="metric-value" id="res-loan_amount">$238,000</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Borrower Equity Down</span>
+              <span class="metric-value" id="res-borrower_equity">$42,000</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Monthly Interest Payment</span>
+              <span class="metric-value" id="res-monthly_interest">$2,281/mo</span>
+            </div>
+          </div>
+
+          <div class="lead-capture-card" style="margin-top: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+              <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; text-transform: uppercase;">
+                🏛️ Direct Hard Money Lender Network
+              </span>
+              <span style="font-size: 12px; color: #34d399; font-weight: 700;">48-Hour Term Sheet Dispatches</span>
+            </div>
+            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; font-weight: 800; color: #fff;">
+              Get Instant Proof of Funds &amp; Hard Money Bridge Loan Quotes
+            </h3>
+            <p style="margin: 0 0 1rem 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.45;">
+              Zero personal income verification. Direct private debt funds lending up to 90% purchase + 100% rehab. Fast closings in as few as 5 to 7 days.
+            </p>
+            <button type="button" id="btn-open-lead-drawer" class="btn-lead-drawer" style="width: 100%; max-width: 520px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; padding: 14px 20px; border-radius: 10px; font-weight: 800; font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 10px 24px -6px rgba(2, 132, 199, 0.45); transition: all 0.2s;">
+              <span>⚡</span>
+              <span>Connect with Direct Hard Money Lenders</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="solver-column">
+        <div class="blueprint-card">
+          <div class="blueprint-header">
+            <h3>Underwriting Proof &amp; Invariants</h3>
+            <span class="badge" style="background:rgba(16,185,129,0.15); color:var(--accent-emerald);">Machine Precision</span>
+          </div>
+
+          <div style="background:var(--bg-canvas); border-radius:var(--radius-md); padding:1.25rem; border:1px solid var(--border-subtle); margin-bottom:1.5rem;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:6px;">70% ARV Maximum Allowable Offer:</div>
+            <code style="font-size:1.05rem; color:#38bdf8; font-family:monospace; display:block; padding:8px 0;">MAO = (After-Repair Value · 0.70) - Rehab Budget</code>
+            <div style="font-size:0.85rem; color:#94a3b8; margin-top:6px;">
+              Loan Sizing = Min(Total Cost · LTC%, ARV · LTARV%)
+            </div>
+          </div>
+
+          <div class="proof-card open">
+            <div class="proof-header">
+              <h3><span>Step-by-Step Flip Derivation</span></h3>
+            </div>
+            <div class="proof-body" style="display:block;">
+              <div class="proof-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                  <strong>70% Rule MAO Benchmark</strong>
+                  <p>For an ARV of $420,000 and a $60,000 rehab, MAO = ($420,000 · 0.70) - $60,000 = $234,000. At an actual purchase price of $220,000, the deal meets the 70% threshold.</p>
+                </div>
+              </div>
+
+              <div class="proof-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  <strong>Financing Sizing &amp; Dual Caps</strong>
+                  <p>LTC Cap: 85% of ($220k + $60k) = $238,000. LTARV Cap: 75% of $420,000 = $315,000. Loan amount is capped at $238,000, requiring $42,000 borrower equity down.</p>
+                </div>
+              </div>
+
+              <div class="proof-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  <strong>Carry Costs &amp; Net Resale Profit</strong>
+                  <p>6 months of interest ($13,685) + 2 points ($4,760) + holding ($2,400) + 6% realtor sales commissions ($25,200) = $46,045 total transaction drag. Net profit = $420,000 - $280,000 - $46,045 = +$69,270.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <section class="llm-box" style="margin-top:1.5rem;">
+            <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
+              <div>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive &amp; API Spec</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence &amp; Prompt Integration</h3>
+              </div>
+            </div>
+
+            <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
+              <span><span style="color:var(--accent-cyan); font-weight:700;">GET / POST</span> https://omnioperand.com/api/v1/calculators/hard-money-loan</span>
+              <span style="color:var(--text-muted); font-size:0.75rem;">JSON Invariants</span>
+            </div>
+
+            <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+
+    <section class="calc-faq-section" style="margin-top:3rem;">
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions: Hard Money &amp; Bridge Financing</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is the 70% Rule in real estate flipping?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            The 70% Rule states that an investor should pay no more than 70% of the After-Repair Value (ARV) minus estimated repair costs: Maximum Allowable Offer (MAO) = (ARV · 0.70) - Rehab Budget. This ensures adequate margin for loan interest, closing fees, holding costs, and investor profit.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does Loan-to-Cost (LTC) differ from Loan-to-ARV (LTARV)?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Loan-to-Cost (LTC) caps financing based on actual capital deployed (typically 80% to 90% of purchase price + 100% of rehab budget). Loan-to-ARV (LTARV) caps the loan against the future appraised value after renovations (typically capped at 70% to 75% of ARV). Lenders lend the lesser of the two caps.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How are hard money loan payments structured?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Most hard money loans are short-term (6 to 12 months) and require interest-only monthly payments with the entire principal due at maturity upon the sale or refinancing of the completed property.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem; padding:2rem 0; border-top:1px solid var(--border-subtle);">
+      <div class="footer-brand">
+        <div style="font-weight:700; color:var(--text-bright); margin-bottom:0.5rem;">OmniOperand</div>
+        <p style="font-size:0.8rem; color:var(--text-muted); max-width:320px; line-height:1.4;">
+          Deterministic computational engines, verified mathematical proofs, and programmatic APIs for technical professionals.
+        </p>
+      </div>
+    </div>
+    <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
+      <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
+      <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-modal-input" placeholder="Search calculators...">
+      </div>
+      <ul class="search-results" id="search-modal-results"></ul>
+    </div>
+  </div>
+
+  <script src="/assets/js/omni-search.js?v=2.4"></script>
+  <script src="/assets/js/lead-drawer.js" defer></script>
+  <script src="/assets/js/hard-money-loan-solver.js" defer></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
