@@ -8,3 +8,44 @@
 /energy/battery-backup-storage/                     /engineering/battery-backup-storage/                         301
 /construction/grading                              /construction/excavation-trench/                             301
 /go/heloc-rates                                    https://www.lendingtree.com/home-equity/heloc/               302!
+
+# Specific Slug Aliases & Typo Fixes
+/energy/solar-panel-payback/         /energy/solar-payback/             301
+/energy/solar-panel-payback          /energy/solar-payback/             301
+/logistics/pallet-load/              /logistics/pallet-ti-hi-optimizer/ 301
+/logistics/pallet-load               /logistics/pallet-ti-hi-optimizer/ 301
+/logistics/air-freight-volumetric/   /logistics/air-freight-chargeable-weight/ 301
+/logistics/air-freight-volumetric    /logistics/air-freight-chargeable-weight/ 301
+/ingegneria/dimensionamento-gruppo-elettrogeno/ /engineering/generator-sizing/ 301
+/ingegneria/dimensionamento-gruppo-elettrogeno  /engineering/generator-sizing/ 301
+
+# Translated Finance Slugs (GSC 404 Resolution)
+/finance/rule-de-72/*                /finance/rule-of-72/               301
+/finance/rule-di-72/*                /finance/rule-of-72/               301
+/finance/rule-av-72/*                /finance/rule-of-72/               301
+/finance/rule-z-72/*                 /finance/rule-of-72/               301
+/finance/rule-van-72/*               /finance/rule-of-72/               301
+/finance/rule-von-72/*               /finance/rule-of-72/               301
+/finance/rule-n-72/*                 /finance/rule-of-72/               301
+/finance/saas-rule-de-40/*           /finance/saas-rule-of-40/          301
+/finance/saas-rule-di-40/*           /finance/saas-rule-of-40/          301
+/finance/saas-rule-av-40/*           /finance/saas-rule-of-40/          301
+/finance/saas-rule-z-40/*            /finance/saas-rule-of-40/          301
+/finance/saas-rule-van-40/*          /finance/saas-rule-of-40/          301
+/finance/saas-rule-von-40/*          /finance/saas-rule-of-40/          301
+/finance/saas-rule-n-40/*            /finance/saas-rule-of-40/          301
+/finance/internal-rate-de-return/*   /finance/internal-rate-of-return/  301
+/finance/internal-rate-di-return/*   /finance/internal-rate-of-return/  301
+/finance/internal-rate-av-return/*   /finance/internal-rate-of-return/  301
+/finance/internal-rate-z-return/*    /finance/internal-rate-of-return/  301
+/finance/internal-rate-van-return/*  /finance/internal-rate-of-return/  301
+/finance/internal-rate-von-return/*  /finance/internal-rate-of-return/  301
+/finance/internal-rate-n-return/*    /finance/internal-rate-of-return/  301
+/finance/fsa-use-it-o-lose-it/*      /finance/fsa-use-it-or-lose-it/    301
+/finance/fsa-use-it-ou-lose-it/*     /finance/fsa-use-it-or-lose-it/    301
+/finance/fsa-use-it-eller-lose-it/*  /finance/fsa-use-it-or-lose-it/    301
+/finance/fsa-use-it-oder-lose-it/*   /finance/fsa-use-it-or-lose-it/    301
+/finance/fsa-use-it-lub-lose-it/*    /finance/fsa-use-it-or-lose-it/    301
+/finance/fsa-use-it-tai-lose-it/*    /finance/fsa-use-it-or-lose-it/    301
+/finance/fsa-use-it-sau-lose-it/*    /finance/fsa-use-it-or-lose-it/    301
+/finance/fsa-use-it-van-lose-it/*    /finance/fsa-use-it-or-lose-it/    301

@@ -1077,6 +1077,63 @@ def test_faceless_video_studio():
 
     print("  ✅ Faceless Video Studio: 10 vertical MP4 videos, posters, scripts, and interactive studio verified!")
 
+def test_internal_links_and_gsc_compliance():
+    print("Testing Internal Links & GSC 404 Prevention Invariants...")
+    import re
+    import os
+    # 1. Map all valid existing paths
+    valid_paths = set()
+    for dirpath, dirnames, filenames in os.walk(REPO_ROOT):
+        if any(ignored in dirpath for ignored in ['.git', 'node_modules', '.wrangler']):
+            continue
+        rel_dir = os.path.relpath(dirpath, REPO_ROOT)
+        if rel_dir == '.':
+            rel_dir = ''
+        for fn in filenames:
+            rel_file = os.path.join(rel_dir, fn) if rel_dir else fn
+            valid_paths.add('/' + rel_file)
+            if fn == 'index.html':
+                if rel_dir:
+                    valid_paths.add('/' + rel_dir + '/')
+                    valid_paths.add('/' + rel_dir)
+                else:
+                    valid_paths.add('/')
+            elif fn.endswith('.html'):
+                valid_paths.add('/' + rel_file[:-5])
+                valid_paths.add('/' + rel_file[:-5] + '/')
+
+    # 2. Check for broken internal links
+    broken = []
+    for html_file in REPO_ROOT.glob("**/*.html"):
+        if any(ignored in html_file.parts for ignored in ['.git', 'node_modules', '.wrangler']):
+            continue
+        rel_f = html_file.relative_to(REPO_ROOT)
+        content = html_file.read_text(encoding="utf-8", errors="ignore")
+        hrefs = re.findall(r'href=[\"\'](/[^\"\'#?]+)', content)
+        for h in hrefs:
+            if h.startswith('/api/') or h.startswith('/go/'):
+                continue
+            if h in valid_paths or (h + '/' in valid_paths) or (h.endswith('/') and h[:-1] in valid_paths):
+                continue
+            broken.append((str(rel_f), h))
+
+    assert len(broken) == 0, f"Found {len(broken)} broken internal links! Sample: {broken[:5]}"
+
+    # 3. Verify edge middleware exists and contains fallback routing
+    middleware_file = REPO_ROOT / "functions" / "_middleware.js"
+    assert middleware_file.exists(), "functions/_middleware.js missing!"
+    middleware_content = middleware_file.read_text(encoding="utf-8")
+    assert "UNTRANSLATED_CATEGORIES" in middleware_content, "Missing UNTRANSLATED_CATEGORIES router in _middleware.js"
+    assert "404 Interceptor" in middleware_content, "Missing 404 Interceptor in _middleware.js"
+
+    # 4. Verify _redirects exists and contains static rules
+    redirects_file = REPO_ROOT / "_redirects"
+    assert redirects_file.exists(), "_redirects file missing!"
+    redirects_content = redirects_file.read_text(encoding="utf-8")
+    assert "/finance/rule-of-72/" in redirects_content, "Missing rule-of-72 redirect rules in _redirects"
+
+    print("  ✅ Zero broken internal links across all HTML files and edge 301 fallbacks verified!")
+
 def main():
     print("=========================================================")
     print("🧪 Running OmniOperand Integrity Test Suite")
@@ -1089,6 +1146,7 @@ def main():
         test_internationalization_and_hreflang()
         test_schema_and_distribution_engine()
         test_faceless_video_studio()
+        test_internal_links_and_gsc_compliance()
         print("\n🎉 ALL TESTS PASSED! Site is 100% compliant.")
         return 0
     except AssertionError as e:
