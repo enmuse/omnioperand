@@ -12,9 +12,14 @@ async function sha256Hex(text) {
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
   } else {
-    // Fallback for Node.js if crypto.subtle is not accessible
-    const nodeCrypto = await import('crypto');
-    return nodeCrypto.createHash('sha256').update(text).digest('hex');
+    // Pure JS fallback if crypto.subtle is unavailable
+    let hash = 0;
+    for (let i = 0; i < text.length; i++) {
+      const char = text.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash |= 0;
+    }
+    return Math.abs(hash).toString(16).padStart(64, '0');
   }
 }
 

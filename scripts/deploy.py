@@ -78,6 +78,11 @@ def deploy_pages():
     except Exception as e:
         print(f"⚠️ Pre-deploy metrics sync notice: {e}")
 
+    # 1. Compile Edge Functions into _worker.js
+    print("⚡ Compiling Cloudflare Pages edge functions into _worker.js...")
+    compile_cmd = ["npx", "--yes", "wrangler", "pages", "functions", "build", "--outfile=_worker.js"]
+    subprocess.run(compile_cmd, cwd=str(REPO_ROOT), check=False)
+
     env = os.environ.copy()
     env["CLOUDFLARE_API_TOKEN"] = token
     env["CLOUDFLARE_ACCOUNT_ID"] = account_id
