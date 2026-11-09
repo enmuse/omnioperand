@@ -41,7 +41,7 @@ export const METRICS = {
     "statistics": 4,
     "calculus": 2
   },
-  "last_updated": "2026-11-06T23:20:15Z"
+  "last_updated": "2026-11-09T03:03:36Z"
 };
 
 export const SOLVERS_COUNT = 446;
