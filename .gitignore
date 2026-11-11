@@ -7,6 +7,9 @@
 .wrangler/
 dist/
 .pages/
+_worker.js
+_worker.bundle
+wrangler.toml
 
 # Dependencies
 node_modules/
@@ -17,3 +20,6 @@ __pycache__/
 .DS_Store
 Thumbs.db
 *.code-workspace
+
+# Audit data caches
+data/gsc_*.json

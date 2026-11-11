@@ -78,10 +78,19 @@ def deploy_pages():
     except Exception as e:
         print(f"⚠️ Pre-deploy metrics sync notice: {e}")
 
-    # 1. Compile Edge Functions into _worker.js
+    # Compile Functions into root _worker.js
     print("⚡ Compiling Cloudflare Pages edge functions into _worker.js...")
-    compile_cmd = ["npx", "--yes", "wrangler", "pages", "functions", "build", "--outfile=_worker.js"]
-    subprocess.run(compile_cmd, cwd=str(REPO_ROOT), check=False)
+    try:
+        dist_dir = REPO_ROOT / ".wrangler" / "dist"
+        dist_dir.mkdir(parents=True, exist_ok=True)
+        subprocess.run(["npx", "--yes", "wrangler", "pages", "functions", "build", f"--outdir={dist_dir}"], cwd=str(REPO_ROOT), check=True)
+        compiled_worker = dist_dir / "_worker.js"
+        if compiled_worker.exists():
+            import shutil
+            shutil.copy(str(compiled_worker), str(REPO_ROOT / "_worker.js"))
+            print("✅ Successfully bundled and staged _worker.js")
+    except Exception as e:
+        print(f"⚠️ Functions compile notice: {e}")
 
     env = os.environ.copy()
     env["CLOUDFLARE_API_TOKEN"] = token

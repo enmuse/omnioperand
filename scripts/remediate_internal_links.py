@@ -242,3 +242,4 @@ if __name__ == "__main__":
     paths = build_valid_path_index()
     create_italian_engineering_hub(paths)
     fix_html_files(paths)
+
