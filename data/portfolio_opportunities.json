@@ -1,0 +1,547 @@
+{
+  "striking_distance": [
+    {
+      "domain": "omnioperand.com",
+      "query": "auto loans",
+      "page": "https://omnioperand.com/pl/finance/auto-loan/",
+      "clicks": 0,
+      "impressions": 266,
+      "ctr": 0,
+      "position": 5.5
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "whole home surge protector installation concord nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 38,
+      "ctr": 0,
+      "position": 10.8
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protector installation concord nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 31,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "domain": "wnccrawlspace.com",
+      "query": "rutherfordton house lifting",
+      "page": "https://wnccrawlspace.com/east-foothills/rutherfordton-nc//",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 19.5
+    },
+    {
+      "domain": "wncsepticrepair.com",
+      "query": "banner elk nc septic installation & repair",
+      "page": "https://wncsepticrepair.com/toe-river-valley/banner-elk-nc//",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 19.7
+    },
+    {
+      "domain": "wncroofingrepair.com",
+      "query": "emergency roof repair near me",
+      "page": "https://wncroofingrepair.com/asheville-nc-roofing-repair.html",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 15.5
+    },
+    {
+      "domain": "wncsepticrepair.com",
+      "query": "sewer pump service",
+      "page": "https://wncsepticrepair.com/southern-plateau/hendersonville-nc//",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 18.4
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protection winston-salem nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 19,
+      "ctr": 0,
+      "position": 11.1
+    },
+    {
+      "domain": "wnccrawlspace.com",
+      "query": "crawl space encapsulation near me",
+      "page": "https://wnccrawlspace.com/east-foothills/rutherfordton-nc/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 5.7
+    },
+    {
+      "domain": "wnccrawlspace.com",
+      "query": "crawl space repair near me",
+      "page": "https://wnccrawlspace.com/mills-river-nc-crawlspace.html",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 9.6
+    },
+    {
+      "domain": "wncemergencyplumbing.com",
+      "query": "emergency plumber",
+      "page": "https://wncemergencyplumbing.com/metro-asheville/asheville-nc/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 10.6
+    },
+    {
+      "domain": "wncemergencyplumbing.com",
+      "query": "emergency plumber",
+      "page": "https://wncemergencyplumbing.com/southern-plateau/hendersonville-nc/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 7.7
+    },
+    {
+      "domain": "wncsepticrepair.com",
+      "query": "septic repair services banner elk nc",
+      "page": "https://wncsepticrepair.com/toe-river-valley/banner-elk-nc//",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 18.3
+    },
+    {
+      "domain": "wnccrawlspace.com",
+      "query": "crawl space waterproofing near me",
+      "page": "https://wnccrawlspace.com/mills-river-nc-crawlspace.html",
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 5.5
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protection durham nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 18.2
+    },
+    {
+      "domain": "wncpoolandspa.com",
+      "query": "custom pool design highlands-cashiers nc",
+      "page": "https://wncpoolandspa.com/luxury-crest/cashiers-nc/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 6.5
+    },
+    {
+      "domain": "wnccrawlspace.com",
+      "query": "crawl space encapsulation near me",
+      "page": "https://wnccrawlspace.com/mills-river-nc-crawlspace.html",
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": 0,
+      "position": 6.1
+    },
+    {
+      "domain": "wncemergencyplumbing.com",
+      "query": "emergency plumbing",
+      "page": "https://wncemergencyplumbing.com/metro-asheville/asheville-nc/",
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": 0,
+      "position": 15.7
+    },
+    {
+      "domain": "wncpoolandspa.com",
+      "query": "custom pools boone nc",
+      "page": "https://wncpoolandspa.com/high-country/boone-nc//",
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": 0,
+      "position": 7.4
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protector installation gastonia nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 9.3
+    },
+    {
+      "domain": "wncpoolandspa.com",
+      "query": "custom pool build highlands-cashiers nc",
+      "page": "https://wncpoolandspa.com/luxury-crest/cashiers-nc/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 7.8
+    },
+    {
+      "domain": "wncsolarpower.com",
+      "query": "solar power system site prep burnsville",
+      "page": "https://wncsolarpower.com/toe-river-valley/burnsville-nc/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 7.2
+    },
+    {
+      "domain": "wncwatersystems.com",
+      "query": "wnc water",
+      "page": "https://wncwatersystems.com/",
+      "clicks": 1,
+      "impressions": 15,
+      "ctr": 6.67,
+      "position": 5.1
+    },
+    {
+      "domain": "wnccrawlspace.com",
+      "query": "crawl space encapsulation near me",
+      "page": "https://wnccrawlspace.com/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 19.7
+    },
+    {
+      "domain": "wnccrawlspace.com",
+      "query": "how to fix ponding west jefferson nc",
+      "page": "https://wnccrawlspace.com/high-country/west-jefferson-nc//",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 5.3
+    },
+    {
+      "domain": "wnccrawlspace.com",
+      "query": "what to do about wet basement west jefferson nc",
+      "page": "https://wnccrawlspace.com/high-country/west-jefferson-nc//",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 8.6
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protection mt pleasant sc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 13.2
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protector installation mooresville",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 11.2
+    },
+    {
+      "domain": "wnccrawlspace.com",
+      "query": "crawl space insulation near me",
+      "page": "https://wnccrawlspace.com/mills-river-nc-crawlspace.html",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protection fuquay-varina nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 11.2
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protection installation smithfield",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 10.2
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protection jacksonville nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 12.6
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protection new bern nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 9.9
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protector installation chapel hill",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 16.4
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protector installation new hill",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 17.6
+    },
+    {
+      "domain": "wncemergencyplumbing.com",
+      "query": "emergency plumber",
+      "page": "https://wncemergencyplumbing.com/hendersonville-nc-emergency-plumbing.html",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "domain": "wncsepticrepair.com",
+      "query": "septic installation & repair banner elk nc",
+      "page": "https://wncsepticrepair.com/toe-river-valley/banner-elk-nc//",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 17.2
+    },
+    {
+      "domain": "wncsolarpower.com",
+      "query": "ground-mounted solar arrays burnsville",
+      "page": "https://wncsolarpower.com/toe-river-valley/burnsville-nc/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 19.6
+    },
+    {
+      "domain": "wncbackupgenerators.com",
+      "query": "backup generator maintenance stallings nc",
+      "page": "https://wncbackupgenerators.com/east-foothills/marion-nc//",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 9.7
+    },
+    {
+      "domain": "wnccrawlspace.com",
+      "query": "crawl space waterproofing near me",
+      "page": "https://wnccrawlspace.com/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 18.8
+    },
+    {
+      "domain": "wnccrawlspace.com",
+      "query": "crawl space waterproofing near me",
+      "page": "https://wnccrawlspace.com/hendersonville-nc-crawlspace.html",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 19.7
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protection garner nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 11.2
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "whole house surge protector installation hendersonville nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 16.8
+    },
+    {
+      "domain": "wncemergencyplumbing.com",
+      "query": "emergency plumber",
+      "page": "https://wncemergencyplumbing.com/asheville-nc-emergency-plumbing.html",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 17.2
+    },
+    {
+      "domain": "wncpoolandspa.com",
+      "query": "custom pool design highlands-cashiers nc",
+      "page": "https://wncpoolandspa.com/luxury-crest/highlands-nc//",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "domain": "barebones3d.com",
+      "query": "bare bones 3d",
+      "page": "https://barebones3d.com/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "domain": "wncbackupgenerators.com",
+      "query": "commercial load bank testing company in columbia",
+      "page": "https://wncbackupgenerators.com/services/generator-load-bank-testing.html",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 19.8
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protection asheville nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 13
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protection hendersonville nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 12.1
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "whole home surge protector hickory nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 10.2
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "whole home surge protector installation gastonia nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "whole home surge protector installation mooresville",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 9.5
+    },
+    {
+      "domain": "wnccrawlspace.com",
+      "query": "crawl space encapsulation near me",
+      "page": "https://wnccrawlspace.com/east-foothills/morganton-nc/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 13.6
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "generator interlock installation concord",
+      "page": "https://wncelectrical.com/services/generator-interlock-switch.html",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 16.5
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protection sneads ferry nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 10.9
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "surge protection williston nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 12.3
+    },
+    {
+      "domain": "wncelectrical.com",
+      "query": "whole home surge protection gastonia nc",
+      "page": "https://wncelectrical.com/services/whole-home-surge-protection.html",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 16.6
+    },
+    {
+      "domain": "wncsolarpower.com",
+      "query": "solar system installation yancey county nc",
+      "page": "https://wncsolarpower.com/toe-river-valley/burnsville-nc/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 13.9
+    },
+    {
+      "domain": "wncwaterdamage.com",
+      "query": "water extraction morganton nc",
+      "page": "https://wncwaterdamage.com/east-foothills/morganton-nc//",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 7.1
+    }
+  ],
+  "low_ctr": [
+    {
+      "domain": "omnioperand.com",
+      "query": "auto loans",
+      "page": "https://omnioperand.com/pl/finance/auto-loan/",
+      "clicks": 0,
+      "impressions": 266,
+      "ctr": 0,
+      "position": 5.5
+    }
+  ],
+  "top_queries": []
+}
