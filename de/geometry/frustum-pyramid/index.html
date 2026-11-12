@@ -74,18 +74,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Why is the Moscow Papyrus Problem 14 so historically famous?",
+          "name": "Warum ist Aufgabe 14 des Papyrus Moskau historisch so bedeutend?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It is widely considered the pinnacle of ancient Egyptian mathematics, proving that ancient geometers knew the exact non-trivial formula for a truncated pyramid millennia before calculus was formalized."
+            "text": "Aufgabe 14 des altägyptischen Papyrus Moskau (ca. 1850 v. Chr.) liefert den ältesten bekannten Beweis für die exakte Pyramidenstumpfformel: V = ⅓ · h · (a² + ab + b²)."
           }
         },
         {
           "@type": "Question",
-          "name": "What structures use truncated pyramid geometry?",
+          "name": "Welche Bauwerke nutzen die Form eines Pyramidenstumpfes?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mayan and Aztec step pyramids (such as El Castillo at Chichen Itza), obelisk pedestals, and concrete civil bridge piers."
+            "text": "Mesoamerikanische Stufenpyramiden (wie in Chichén Itzá), Sockelbauwerke und Stützmauern im Erdbau."
           }
         }
       ]
@@ -301,7 +301,7 @@
 
         <!-- Derived Results HUD -->
         <div class="hud-panel" style="margin-top: 1.5rem;">
-          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Berechnete Ausgangsmetriken</h2>
           <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
             
             <div class="metric-card">
@@ -354,24 +354,24 @@
           <div class="proof-step">
             <div class="step-num">1</div>
             <div class="step-content">
-              <strong>The Moscow Mathematical Papyrus (Problem 14)</strong>
-              <p>Dating to 1850 BC, Problem 14 in the Egyptian Moscow Papyrus provides the exact modern formula: V = ⅓ · h · (a₁² + a₁a₂ + a₂²).</p>
+              <strong>Der Papyrus Moskau (Aufgabe 14)</strong>
+              <p>Die altägyptische Herleitung beweist: V = ⅓ · h · (a² + a·b + b²).</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">2</div>
             <div class="step-content">
-              <strong>Geometric Mean Base Cross-Section</strong>
-              <p>For any truncated pyramid with top area A₂ and bottom area A₁: Volume V = ⅓ · h · [A₁ + A₂ + √(A₁ · A₂)].</p>
+              <strong>Geometrisches Mittel der Schnittflächen</strong>
+              <p>Für jeden Pyramidenstumpf mit Grundflächen A₁ und A₂ gilt: V = ⅓ · h · (A₁ + √(A₁A₂) + A₂).</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">3</div>
             <div class="step-content">
-              <strong>Lateral Trapezoidal Faces</strong>
-              <p>Each of the 4 lateral faces is an isosceles trapezoid with bases a₁ and a₂ and altitude s = √[h² + ((a₁ - a₂)/2)²]. Lateral Area = 4 × [½(a₁ + a₂)s] = 2(a₁ + a₂)s.</p>
+              <strong>Trapezförmige Seitenflächen</strong>
+              <p>Jede der vier Seitenflächen ist ein gleichschenkliges Trapez: A_Mantel = 2(a + b) · s_seite. Gesamtoberfläche = A_Mantel + a² + b².</p>
             </div>
           </div>
         
@@ -383,23 +383,23 @@
           <section class="llm-box" style="margin-top:1.5rem;">
             <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
               <div>
-                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive & API Spec</span>
-                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence & Prompt Integration</h3>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM-Direktive & API-Spezifikation</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Künstliche Intelligenz & Prompt-Integration</h3>
               </div>
               <div class="llm-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                 <button type="button" class="btn-action" id="copy-llm-prompt-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); border-radius:6px; color:var(--accent-cyan); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                  <span id="copy-prompt-text">Copy Prompt for AI</span>
+                  <span id="copy-prompt-text">Prompt für KI kopieren</span>
                 </button>
                 <button type="button" class="btn-action" id="copy-api-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.35); border-radius:6px; color:var(--accent-emerald); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                  <span id="copy-api-text">Copy API Endpoint</span>
+                  <span id="copy-api-text">API-Endpunkt kopieren</span>
                 </button>
               </div>
             </div>
 
             <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem;">
-              Paste this verified mathematical prompt directly into ChatGPT, Claude, or Gemini to eliminate arithmetic hallucination, or invoke the programmatic API endpoint for automated workflows.
+              Fügen Sie diesen verifizierten mathematischen Prompt direkt in ChatGPT, Claude oder Gemini ein, um arithmetische Halluzinationen auszuschließen, oder nutzen Sie den API-Endpunkt.
             </p>
 
             <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
@@ -410,9 +410,9 @@
             <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
 
             <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:0.75rem;">
-              <span>✓ Standardized for <code>llms.txt</code></span>
-              <span>✓ Exact Radical Form & Closed Formulas</span>
-              <span>✓ Machine-Readable Edge API</span>
+              <span>✓ Standardisiert für <code>llms.txt</code></span>
+              <span>✓ Exakte Wurzelformeln & geschlossene Lösungen</span>
+              <span>✓ Maschinenlesbare Edge-API</span>
             </div>
           </section>
       </div>
@@ -421,26 +421,26 @@
 
 <!-- High-Intent FAQ Section -->
     <section class="calc-faq-section" style="margin-top:3rem;">
-      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Häufig gestellte Fragen</h2>
       <div class="faq-list">
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>Why is the Moscow Papyrus Problem 14 so historically famous?</span>
+            <span>Warum ist Aufgabe 14 des Papyrus Moskau historisch so bedeutend?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            It is widely considered the pinnacle of ancient Egyptian mathematics, proving that ancient geometers knew the exact non-trivial formula for a truncated pyramid millennia before calculus was formalized.
+            Aufgabe 14 des altägyptischen Papyrus Moskau (ca. 1850 v. Chr.) liefert den ältesten bekannten Beweis für die exakte Pyramidenstumpfformel: V = ⅓ · h · (a² + ab + b²).
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>What structures use truncated pyramid geometry?</span>
+            <span>Welche Bauwerke nutzen die Form eines Pyramidenstumpfes?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Mayan and Aztec step pyramids (such as El Castillo at Chichen Itza), obelisk pedestals, and concrete civil bridge piers.
+            Mesoamerikanische Stufenpyramiden (wie in Chichén Itzá), Sockelbauwerke und Stützmauern im Erdbau.
           </div>
         </div>
         
@@ -474,8 +474,8 @@
     </div>
   </div>
   <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
-    <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
-    <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    <div>© 2026 OmniOperand. Alle mathematischen Beweise und Berechnungen verifiziert.</div>
+    <div>Gehostet auf dem Cloudflare-Edge • Reine clientseitige Mathematik</div>
   </div>
 </footer>
 

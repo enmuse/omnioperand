@@ -319,16 +319,16 @@
         </div>
 
         <div class="driver-selector-bar">
-          <label for="driver-select">Select Known Input (Driver):</label>
+          <label for="driver-select">Seleccionar variable conocida (conductor):</label>
           <select id="driver-select" class="driver-dropdown">
-            <option value="side" selected>Side Length (a)</option>
-            <option value="area">Area (A)</option>
-            <option value="perimeter">Perimeter (P)</option>
-            <option value="apothem">Apothem / Inradius (r_i)</option>
-            <option value="circumradius">Circumradius (R)</option>
+            <option value="side" selected>Longitud del lado (a)</option>
+            <option value="area">Área (A)</option>
+            <option value="perimeter">Perímetro (P)</option>
+            <option value="apothem">Apotema / Radio inscrito (r_i)</option>
+            <option value="circumradius">Circunradio (R)</option>
             <option value="span">Span / Flat-to-Flat Width (S)</option>
-            <option value="long_diag">Long Diagonal / Vertex-to-Vertex (d_L)</option>
-            <option value="short_diag">Short Diagonal (d_S)</option>
+            <option value="long_diag">Diagonal larga / Vértice a vértice (d_L)</option>
+            <option value="short_diag">Diagonal corta (d_S)</option>
           </select>
         </div>
 
@@ -338,7 +338,7 @@
           <div class="param-card is-driver" id="card-side">
             <div class="param-header">
               <span class="param-title">Side Length <span class="param-symbol">a</span></span>
-              <span class="param-status-tag input" id="status-side">Input (Driver)</span>
+              <span class="param-status-tag input" id="status-side">Entrada (Conductor)</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-side" class="param-input" value="10" step="any" min="0.0001" aria-label="Side Length">
@@ -355,7 +355,7 @@
           <div class="param-card" id="card-area">
             <div class="param-header">
               <span class="param-title">Area <span class="param-symbol">A</span></span>
-              <span class="param-status-tag calculated" id="status-area">Calculated</span>
+              <span class="param-status-tag calculated" id="status-area">Calculado</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-area" class="param-input" value="259.8076" step="any" min="0.0001" aria-label="Area">
@@ -372,7 +372,7 @@
           <div class="param-card" id="card-perimeter">
             <div class="param-header">
               <span class="param-title">Perimeter <span class="param-symbol">P</span></span>
-              <span class="param-status-tag calculated" id="status-perimeter">Calculated</span>
+              <span class="param-status-tag calculated" id="status-perimeter">Calculado</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-perimeter" class="param-input" value="60" step="any" min="0.0001" aria-label="Perimeter">
@@ -389,7 +389,7 @@
           <div class="param-card" id="card-apothem">
             <div class="param-header">
               <span class="param-title">Apothem (Inradius) <span class="param-symbol">r<sub>i</sub></span></span>
-              <span class="param-status-tag calculated" id="status-apothem">Calculated</span>
+              <span class="param-status-tag calculated" id="status-apothem">Calculado</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-apothem" class="param-input" value="8.6603" step="any" min="0.0001" aria-label="Apothem">
@@ -406,7 +406,7 @@
           <div class="param-card" id="card-circumradius">
             <div class="param-header">
               <span class="param-title">Circumradius <span class="param-symbol">R</span></span>
-              <span class="param-status-tag calculated" id="status-circumradius">Calculated</span>
+              <span class="param-status-tag calculated" id="status-circumradius">Calculado</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-circumradius" class="param-input" value="10" step="any" min="0.0001" aria-label="Circumradius">
@@ -423,7 +423,7 @@
           <div class="param-card" id="card-long_diag">
             <div class="param-header">
               <span class="param-title">Long Diagonal <span class="param-symbol">d<sub>L</sub></span></span>
-              <span class="param-status-tag calculated" id="status-long_diag">Calculated</span>
+              <span class="param-status-tag calculated" id="status-long_diag">Calculado</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-long_diag" class="param-input" value="20" step="any" min="0.0001" aria-label="Long Diagonal">
@@ -440,7 +440,7 @@
           <div class="param-card" id="card-span">
             <div class="param-header">
               <span class="param-title">Span / Flat-to-Flat <span class="param-symbol">S</span></span>
-              <span class="param-status-tag calculated" id="status-span">Calculated</span>
+              <span class="param-status-tag calculated" id="status-span">Calculado</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-span" class="param-input" value="17.3205" step="any" min="0.0001" aria-label="Span">
@@ -457,7 +457,7 @@
           <div class="param-card" id="card-short_diag">
             <div class="param-header">
               <span class="param-title">Short Diagonal <span class="param-symbol">d<sub>S</sub></span></span>
-              <span class="param-status-tag calculated" id="status-short_diag">Calculated</span>
+              <span class="param-status-tag calculated" id="status-short_diag">Calculado</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-short_diag" class="param-input" value="17.3205" step="any" min="0.0001" aria-label="Short Diagonal">
@@ -624,7 +624,7 @@
     <section class="llm-box">
       <div class="llm-header">
         <div>
-          <span class="llm-badge">LLM Directive & API Spec</span>
+          <span class="llm-badge">Directiva LLM y Especificación de API</span>
           <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
         </div>
         <div class="llm-actions">
@@ -689,8 +689,8 @@
     </div>
   </div>
   <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
-    <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
-    <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    <div>© 2026 OmniOperand. Todas las demostraciones y cálculos matemáticos verificados.</div>
+    <div>Alojado en Cloudflare Edge • Cálculo puro en el cliente</div>
   </div>
 </footer>
 

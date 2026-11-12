@@ -74,18 +74,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "When should I use sample standard deviation vs population standard deviation?",
+          "name": "Wann sollte man die Stichproben-Standardabweichung (n - 1) verwenden?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Use sample standard deviation (n - 1) whenever your dataset is a sample representing a larger population. Use population standard deviation (N) only when your data represents 100% of the entire target population."
+            "text": "Verwenden Sie die Stichproben-Standardabweichung s (Bessel-Korrektur n - 1), wann immer Sie eine Teilmenge analysieren. Die Populationsformel (N) gilt nur, wenn der vollständige Datensatz vorliegt."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the 68-95-99.7 empirical rule?",
+          "name": "Was besagt die empirische 68-95-99,7-Regel?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For a normal bell-curve distribution, approximately 68.27% of observations fall within ±1 standard deviation of the mean, 95.45% fall within ±2 standard deviations, and 99.73% fall within ±3 standard deviations."
+            "text": "Bei einer Normalverteilung liegen ca. 68,27% aller Werte innerhalb von ±1σ um den Mittelwert, ca. 95,45% innerhalb von ±2σ und ca. 99,73% innerhalb von ±3σ."
           }
         }
       ]
@@ -329,7 +329,7 @@
 
         <!-- Derived Results HUD -->
         <div class="hud-panel" style="margin-top: 1.5rem;">
-          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Berechnete Ausgangsmetriken</h2>
           <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
             
             <div class="metric-card">
@@ -382,24 +382,24 @@
           <div class="proof-step">
             <div class="step-num">1</div>
             <div class="step-content">
-              <strong>Mean Centering Transformation</strong>
-              <p>The sample mean x̄ = (1/n) ∑ xᵢ. Deviations from mean dᵢ = xᵢ - x̄.</p>
+              <strong>Transformation durch Zentrierung am Mittelwert</strong>
+              <p>Stichprobenmittelwert x̄ = (1/n) ∑ xᵢ. Abweichungen vom Mittelwert dᵢ = xᵢ - x̄ mit der Eigenschaft ∑ dᵢ ≡ 0.</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">2</div>
             <div class="step-content">
-              <strong>Bessel's Correction for Unbiased Variance</strong>
-              <p>Dividing by n underestimates population variance because deviations are calculated from the sample mean rather than true population mean μ. Bessel's correction divides by (n - 1) degrees of freedom to yield an unbiased estimator: s² = ∑ dᵢ² / (n - 1).</p>
+              <strong>Besselsche Korrektur für erwartungstreue Varianz</strong>
+              <p>Die Division durch n unterschätzt die Populationsvarianz, da der Stichprobenmittelwert bereits aus denselben Daten geschätzt wurde: s² = [1/(n - 1)] ∑ (xᵢ - x̄)².</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">3</div>
             <div class="step-content">
-              <strong>Standard Deviation Metric</strong>
-              <p>Standard deviation s = √(s²) returns dispersion back to original measurement units.</p>
+              <strong>Metrik der Standardabweichung</strong>
+              <p>Die Standardabweichung s = √(s²) überführt die Streuung wieder in die ursprüngliche physikalische Maßeinheit der Daten.</p>
             </div>
           </div>
         
@@ -411,23 +411,23 @@
           <section class="llm-box" style="margin-top:1.5rem;">
             <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
               <div>
-                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive & API Spec</span>
-                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence & Prompt Integration</h3>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM-Direktive & API-Spezifikation</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Künstliche Intelligenz & Prompt-Integration</h3>
               </div>
               <div class="llm-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                 <button type="button" class="btn-action" id="copy-llm-prompt-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); border-radius:6px; color:var(--accent-cyan); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                  <span id="copy-prompt-text">Copy Prompt for AI</span>
+                  <span id="copy-prompt-text">Prompt für KI kopieren</span>
                 </button>
                 <button type="button" class="btn-action" id="copy-api-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.35); border-radius:6px; color:var(--accent-emerald); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                  <span id="copy-api-text">Copy API Endpoint</span>
+                  <span id="copy-api-text">API-Endpunkt kopieren</span>
                 </button>
               </div>
             </div>
 
             <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem;">
-              Paste this verified mathematical prompt directly into ChatGPT, Claude, or Gemini to eliminate arithmetic hallucination, or invoke the programmatic API endpoint for automated workflows.
+              Fügen Sie diesen verifizierten mathematischen Prompt direkt in ChatGPT, Claude oder Gemini ein, um arithmetische Halluzinationen auszuschließen, oder nutzen Sie den API-Endpunkt.
             </p>
 
             <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
@@ -438,9 +438,9 @@
             <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
 
             <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:0.75rem;">
-              <span>✓ Standardized for <code>llms.txt</code></span>
-              <span>✓ Exact Radical Form & Closed Formulas</span>
-              <span>✓ Machine-Readable Edge API</span>
+              <span>✓ Standardisiert für <code>llms.txt</code></span>
+              <span>✓ Exakte Wurzelformeln & geschlossene Lösungen</span>
+              <span>✓ Maschinenlesbare Edge-API</span>
             </div>
           </section>
       </div>
@@ -449,26 +449,26 @@
 
 <!-- High-Intent FAQ Section -->
     <section class="calc-faq-section" style="margin-top:3rem;">
-      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Häufig gestellte Fragen</h2>
       <div class="faq-list">
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>When should I use sample standard deviation vs population standard deviation?</span>
+            <span>Wann sollte man die Stichproben-Standardabweichung (n - 1) verwenden?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Use sample standard deviation (n - 1) whenever your dataset is a sample representing a larger population. Use population standard deviation (N) only when your data represents 100% of the entire target population.
+            Verwenden Sie die Stichproben-Standardabweichung s (Bessel-Korrektur n - 1), wann immer Sie eine Teilmenge analysieren. Die Populationsformel (N) gilt nur, wenn der vollständige Datensatz vorliegt.
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>What is the 68-95-99.7 empirical rule?</span>
+            <span>Was besagt die empirische 68-95-99,7-Regel?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            For a normal bell-curve distribution, approximately 68.27% of observations fall within ±1 standard deviation of the mean, 95.45% fall within ±2 standard deviations, and 99.73% fall within ±3 standard deviations.
+            Bei einer Normalverteilung liegen ca. 68,27% aller Werte innerhalb von ±1σ um den Mittelwert, ca. 95,45% innerhalb von ±2σ und ca. 99,73% innerhalb von ±3σ.
           </div>
         </div>
         
@@ -502,8 +502,8 @@
     </div>
   </div>
   <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
-    <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
-    <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    <div>© 2026 OmniOperand. Alle mathematischen Beweise und Berechnungen verifiziert.</div>
+    <div>Gehostet auf dem Cloudflare-Edge • Reine clientseitige Mathematik</div>
   </div>
 </footer>
 

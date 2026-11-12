@@ -74,18 +74,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is an isosceles trapezoid?",
+          "name": "Qu'est-ce qu'un trapèze isocèle ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An isosceles trapezoid is a trapezoid where the two non-parallel legs are congruent (c = d), base angles are equal, and both internal diagonals have equal length."
+            "text": "Un trapèze isocèle est un trapèze dont les deux côtés non parallèles sont égaux (c = d), les angles à la base sont identiques et les diagonales ont la même longueur."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the difference between a trapezoid and a trapezium?",
+          "name": "Qu'est-ce que la base moyenne d'un trapèze ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "In American English, a trapezoid has at least one pair of parallel sides. In British English, this shape is called a trapezium, while a trapezoid refers to a quadrilateral with no parallel sides."
+            "text": "La base moyenne relie les milieux des côtés non parallèles. Sa longueur est la moyenne arithmétique des deux bases parallèles : m = (a + b) / 2."
           }
         }
       ]
@@ -329,7 +329,7 @@
 
         <!-- Derived Results HUD -->
         <div class="hud-panel" style="margin-top: 1.5rem;">
-          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Métriques calculées</h2>
           <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
             
             <div class="metric-card">
@@ -382,24 +382,24 @@
           <div class="proof-step">
             <div class="step-num">1</div>
             <div class="step-content">
-              <strong>Triangulation Area Proof</strong>
-              <p>Partitioning the trapezoid along a diagonal divides it into two triangles with identical altitude h and respective bases a and b: Area = ½ · a · h + ½ · b · h = ½(a + b)h.</p>
+              <strong>Démonstration d'aire par triangulation</strong>
+              <p>Une diagonale divise le trapèze en deux triangles de hauteur commune h : Aire = ½ah + ½bh = ½h(a + b).</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">2</div>
             <div class="step-content">
-              <strong>Midline Theorem</strong>
-              <p>The median connecting the midpoints of non-parallel legs is parallel to both bases with length exactly equal to their arithmetic mean: m = ½(a + b). Hence, Area = m · h.</p>
+              <strong>Théorème de la base moyenne</strong>
+              <p>Le segment joignant les milieux des côtés est parallèle aux bases avec m = (a + b)/2, d'où Aire = m · h.</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">3</div>
             <div class="step-content">
-              <strong>Boundary Perimeter</strong>
-              <p>Perimeter P = a + b + c + d.</p>
+              <strong>Périmètre de contour</strong>
+              <p>Le périmètre est la somme des quatre côtés : P = a + b + c + d.</p>
             </div>
           </div>
         
@@ -411,23 +411,23 @@
           <section class="llm-box" style="margin-top:1.5rem;">
             <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
               <div>
-                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive & API Spec</span>
-                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence & Prompt Integration</h3>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">Directive LLM & Spécification API</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Intelligence Artificielle & Intégration de Prompts</h3>
               </div>
               <div class="llm-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                 <button type="button" class="btn-action" id="copy-llm-prompt-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); border-radius:6px; color:var(--accent-cyan); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                  <span id="copy-prompt-text">Copy Prompt for AI</span>
+                  <span id="copy-prompt-text">Copier le prompt pour l'IA</span>
                 </button>
                 <button type="button" class="btn-action" id="copy-api-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.35); border-radius:6px; color:var(--accent-emerald); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                  <span id="copy-api-text">Copy API Endpoint</span>
+                  <span id="copy-api-text">Copier le point d'accès API</span>
                 </button>
               </div>
             </div>
 
             <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem;">
-              Paste this verified mathematical prompt directly into ChatGPT, Claude, or Gemini to eliminate arithmetic hallucination, or invoke the programmatic API endpoint for automated workflows.
+              Collez cette invite mathématique vérifiée directement dans ChatGPT, Claude ou Gemini pour éliminer les hallucinations de calcul, ou appelez l'API programmatique.
             </p>
 
             <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
@@ -438,9 +438,9 @@
             <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
 
             <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:0.75rem;">
-              <span>✓ Standardized for <code>llms.txt</code></span>
-              <span>✓ Exact Radical Form & Closed Formulas</span>
-              <span>✓ Machine-Readable Edge API</span>
+              <span>✓ Standardisé pour <code>llms.txt</code></span>
+              <span>✓ Formes radicales exactes & solutions fermées</span>
+              <span>✓ API Edge lisible par machine</span>
             </div>
           </section>
       </div>
@@ -449,26 +449,26 @@
 
 <!-- High-Intent FAQ Section -->
     <section class="calc-faq-section" style="margin-top:3rem;">
-      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Foire aux questions</h2>
       <div class="faq-list">
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>What is an isosceles trapezoid?</span>
+            <span>Qu'est-ce qu'un trapèze isocèle ?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            An isosceles trapezoid is a trapezoid where the two non-parallel legs are congruent (c = d), base angles are equal, and both internal diagonals have equal length.
+            Un trapèze isocèle est un trapèze dont les deux côtés non parallèles sont égaux (c = d), les angles à la base sont identiques et les diagonales ont la même longueur.
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>What is the difference between a trapezoid and a trapezium?</span>
+            <span>Qu'est-ce que la base moyenne d'un trapèze ?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            In American English, a trapezoid has at least one pair of parallel sides. In British English, this shape is called a trapezium, while a trapezoid refers to a quadrilateral with no parallel sides.
+            La base moyenne relie les milieux des côtés non parallèles. Sa longueur est la moyenne arithmétique des deux bases parallèles : m = (a + b) / 2.
           </div>
         </div>
         
@@ -502,8 +502,8 @@
     </div>
   </div>
   <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
-    <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
-    <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    <div>© 2026 OmniOperand. Toutes les démonstrations et calculs mathématiques vérifiés.</div>
+    <div>Hébergé sur Cloudflare Edge • Mathématiques côté client pures</div>
   </div>
 </footer>
 

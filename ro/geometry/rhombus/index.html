@@ -74,18 +74,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Is every square a rhombus?",
+          "name": "Care este diferența dintre un romb și un pătrat?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes! A square is a special equilateral rhombus where both diagonals are equal (d₁ = d₂) and all four internal angles are right angles (90°)."
+            "text": "Un romb are toate cele patru laturi congruente, dar unghiurile nu sunt neapărat drepte. Un pătrat este un romb cu unghiuri de 90°."
           }
         },
         {
           "@type": "Question",
-          "name": "Can you calculate rhombus area with side and angle?",
+          "name": "Pot diagonalele unui romb să aibă lungimi egale?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. If you know side length a and internal angle θ, Area = a² · sin(θ)."
+            "text": "Da, doar atunci când toate unghiurile interioare sunt de 90°, caz în care rombul devine pătrat."
           }
         }
       ]
@@ -287,7 +287,7 @@
 
         <!-- Derived Results HUD -->
         <div class="hud-panel" style="margin-top: 1.5rem;">
-          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Valori calculate</h2>
           <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
             
             <div class="metric-card">
@@ -340,24 +340,24 @@
           <div class="proof-step">
             <div class="step-num">1</div>
             <div class="step-content">
-              <strong>Orthogonal Bisection Property</strong>
-              <p>The diagonals of a rhombus bisect each other at right angles (90°), creating 4 congruent right triangles with legs d₁/2 and d₂/2.</p>
+              <strong>Înjumătățirea ortogonală a diagonalelor</strong>
+              <p>Diagonalele unui romb se înjumătățesc reciproc sub un unghi drept de 90°.</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">2</div>
             <div class="step-content">
-              <strong>Pythagorean Side Derivation</strong>
-              <p>By the Pythagorean theorem on each quadrant triangle: a² = (d₁/2)² + (d₂/2)² = (d₁² + d₂²) / 4, yielding a = ½√(d₁² + d₂²).</p>
+              <strong>Deducerea pitagoreică a laturii</strong>
+              <p>În fiecare din cele patru triunghiuri dreptunghice: a² = (d₁/2)² + (d₂/2)² ⟹ a = ½√(d₁² + d₂²).</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">3</div>
             <div class="step-content">
-              <strong>Diagonal Area Proof</strong>
-              <p>Sum of four right triangles: Area = 4 × [½ · (d₁/2) · (d₂/2)] = ½(d₁ · d₂). Inradius r = (d₁ · d₂) / [2√(d₁² + d₂²)].</p>
+              <strong>Demonstrația ariei din diagonale</strong>
+              <p>Suma celor patru triunghiuri dreptunghice dă: Arie = 4 × [½ · (d₁/2) · (d₂/2)] = ½ · d₁ · d₂.</p>
             </div>
           </div>
         
@@ -369,23 +369,23 @@
           <section class="llm-box" style="margin-top:1.5rem;">
             <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
               <div>
-                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive & API Spec</span>
-                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence & Prompt Integration</h3>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">Directivă LLM & Specificație API</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Inteligență Artificială și Integrare Prompt</h3>
               </div>
               <div class="llm-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                 <button type="button" class="btn-action" id="copy-llm-prompt-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); border-radius:6px; color:var(--accent-cyan); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                  <span id="copy-prompt-text">Copy Prompt for AI</span>
+                  <span id="copy-prompt-text">Copiază promptul pentru AI</span>
                 </button>
                 <button type="button" class="btn-action" id="copy-api-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.35); border-radius:6px; color:var(--accent-emerald); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                  <span id="copy-api-text">Copy API Endpoint</span>
+                  <span id="copy-api-text">Copiază endpointul API</span>
                 </button>
               </div>
             </div>
 
             <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem;">
-              Paste this verified mathematical prompt directly into ChatGPT, Claude, or Gemini to eliminate arithmetic hallucination, or invoke the programmatic API endpoint for automated workflows.
+              Lipiți acest prompt matematic verificat direct în ChatGPT, Claude sau Gemini pentru a elimina halucinațiile de calcul, sau apelați endpointul API.
             </p>
 
             <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
@@ -396,9 +396,9 @@
             <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
 
             <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:0.75rem;">
-              <span>✓ Standardized for <code>llms.txt</code></span>
-              <span>✓ Exact Radical Form & Closed Formulas</span>
-              <span>✓ Machine-Readable Edge API</span>
+              <span>✓ Standardizat pentru <code>llms.txt</code></span>
+              <span>✓ Forme radicale exacte și formule închise</span>
+              <span>✓ API Edge accesibil mașinilor</span>
             </div>
           </section>
       </div>
@@ -407,26 +407,26 @@
 
 <!-- High-Intent FAQ Section -->
     <section class="calc-faq-section" style="margin-top:3rem;">
-      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Întrebări frecvente</h2>
       <div class="faq-list">
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>Is every square a rhombus?</span>
+            <span>Care este diferența dintre un romb și un pătrat?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Yes! A square is a special equilateral rhombus where both diagonals are equal (d₁ = d₂) and all four internal angles are right angles (90°).
+            Un romb are toate cele patru laturi congruente, dar unghiurile nu sunt neapărat drepte. Un pătrat este un romb cu unghiuri de 90°.
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>Can you calculate rhombus area with side and angle?</span>
+            <span>Pot diagonalele unui romb să aibă lungimi egale?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Yes. If you know side length a and internal angle θ, Area = a² · sin(θ).
+            Da, doar atunci când toate unghiurile interioare sunt de 90°, caz în care rombul devine pătrat.
           </div>
         </div>
         
@@ -460,8 +460,8 @@
     </div>
   </div>
   <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
-    <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
-    <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    <div>© 2026 OmniOperand. Toate demonstrațiile și calculele matematice verificate.</div>
+    <div>Găzduit pe Cloudflare Edge • Matematică pură pe partea de client</div>
   </div>
 </footer>
 

@@ -327,16 +327,16 @@
 
         <!-- Driver Variable Selector -->
         <div class="driver-selector-bar">
-          <label for="driver-select">Select Known Input (Driver):</label>
+          <label for="driver-select">Velg kjent variabel (drivende):</label>
           <select id="driver-select" class="driver-dropdown">
-            <option value="side" selected>Side Length (a)</option>
-            <option value="area">Area (A)</option>
-            <option value="perimeter">Perimeter (P)</option>
-            <option value="apothem">Apothem / Inradius (r_i)</option>
-            <option value="circumradius">Circumradius (R)</option>
-            <option value="span">Span / Flat-to-Flat Medium Diagonal (S)</option>
-            <option value="long_diag">Long Diagonal / Vertex-to-Vertex (d_L)</option>
-            <option value="short_diag">Short Diagonal (d_S)</option>
+            <option value="side" selected>Sidelengde (a)</option>
+            <option value="area">Areal (A)</option>
+            <option value="perimeter">Omkrets (P)</option>
+            <option value="apothem">Apotema / Innskrevet radius (r_i)</option>
+            <option value="circumradius">Omskrevet radius (R)</option>
+            <option value="span">Nøkkelvidde / Flate-til-flate (S)</option>
+            <option value="long_diag">Lang diagonal / Hjørne-til-hjørne (d_L)</option>
+            <option value="short_diag">Kort diagonal (d_S)</option>
           </select>
         </div>
 
@@ -347,7 +347,7 @@
           <div class="param-card is-driver" id="card-side">
             <div class="param-header">
               <span class="param-title">Side Length <span class="param-symbol">a</span></span>
-              <span class="param-status-tag input" id="status-side">Input (Driver)</span>
+              <span class="param-status-tag input" id="status-side">Inndata (Drivende)</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-side" class="param-input" value="10" step="any" min="0.0001" aria-label="Side Length">
@@ -356,7 +356,7 @@
             <input type="range" id="slider-side" class="param-slider" min="1" max="100" value="10" step="0.1" aria-label="Side Length Slider">
             <div class="param-footer">
               <span class="param-exact" id="exact-side">a = 10</span>
-              <button class="copy-param-btn" id="copy-side" title="Copy value">Copy</button>
+              <button class="copy-param-btn" id="copy-side" title="Copy value">Kopier</button>
             </div>
           </div>
 
@@ -364,7 +364,7 @@
           <div class="param-card" id="card-area">
             <div class="param-header">
               <span class="param-title">Area <span class="param-symbol">A</span></span>
-              <span class="param-status-tag calculated" id="status-area">Calculated</span>
+              <span class="param-status-tag calculated" id="status-area">Beregnet</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-area" class="param-input" value="482.8427" step="any" min="0.0001" aria-label="Area">
@@ -373,7 +373,7 @@
             <input type="range" id="slider-area" class="param-slider" min="1" max="5000" value="482.8427" step="1" aria-label="Area Slider">
             <div class="param-footer">
               <span class="param-exact" id="exact-area">A = 2(1+√2)a²</span>
-              <button class="copy-param-btn" id="copy-area" title="Copy value">Copy</button>
+              <button class="copy-param-btn" id="copy-area" title="Copy value">Kopier</button>
             </div>
           </div>
 
@@ -381,7 +381,7 @@
           <div class="param-card" id="card-perimeter">
             <div class="param-header">
               <span class="param-title">Perimeter <span class="param-symbol">P</span></span>
-              <span class="param-status-tag calculated" id="status-perimeter">Calculated</span>
+              <span class="param-status-tag calculated" id="status-perimeter">Beregnet</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-perimeter" class="param-input" value="80" step="any" min="0.0001" aria-label="Perimeter">
@@ -390,7 +390,7 @@
             <input type="range" id="slider-perimeter" class="param-slider" min="1" max="800" value="80" step="0.5" aria-label="Perimeter Slider">
             <div class="param-footer">
               <span class="param-exact" id="exact-perimeter">P = 8a</span>
-              <button class="copy-param-btn" id="copy-perimeter" title="Copy value">Copy</button>
+              <button class="copy-param-btn" id="copy-perimeter" title="Copy value">Kopier</button>
             </div>
           </div>
 
@@ -398,7 +398,7 @@
           <div class="param-card" id="card-apothem">
             <div class="param-header">
               <span class="param-title">Apothem (Inradius) <span class="param-symbol">r<sub>i</sub></span></span>
-              <span class="param-status-tag calculated" id="status-apothem">Calculated</span>
+              <span class="param-status-tag calculated" id="status-apothem">Beregnet</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-apothem" class="param-input" value="12.0711" step="any" min="0.0001" aria-label="Apothem">
@@ -407,7 +407,7 @@
             <input type="range" id="slider-apothem" class="param-slider" min="1" max="150" value="12.0711" step="0.1" aria-label="Apothem Slider">
             <div class="param-footer">
               <span class="param-exact" id="exact-apothem">r<sub>i</sub> = a(1+√2)/2</span>
-              <button class="copy-param-btn" id="copy-apothem" title="Copy value">Copy</button>
+              <button class="copy-param-btn" id="copy-apothem" title="Copy value">Kopier</button>
             </div>
           </div>
 
@@ -415,7 +415,7 @@
           <div class="param-card" id="card-circumradius">
             <div class="param-header">
               <span class="param-title">Circumradius <span class="param-symbol">R</span></span>
-              <span class="param-status-tag calculated" id="status-circumradius">Calculated</span>
+              <span class="param-status-tag calculated" id="status-circumradius">Beregnet</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-circumradius" class="param-input" value="13.0656" step="any" min="0.0001" aria-label="Circumradius">
@@ -424,7 +424,7 @@
             <input type="range" id="slider-circumradius" class="param-slider" min="1" max="160" value="13.0656" step="0.1" aria-label="Circumradius Slider">
             <div class="param-footer">
               <span class="param-exact" id="exact-circumradius">R = a√(4+2√2)/2</span>
-              <button class="copy-param-btn" id="copy-circumradius" title="Copy value">Copy</button>
+              <button class="copy-param-btn" id="copy-circumradius" title="Copy value">Kopier</button>
             </div>
           </div>
 
@@ -432,7 +432,7 @@
           <div class="param-card" id="card-long_diag">
             <div class="param-header">
               <span class="param-title">Long Diagonal <span class="param-symbol">d<sub>L</sub></span></span>
-              <span class="param-status-tag calculated" id="status-long_diag">Calculated</span>
+              <span class="param-status-tag calculated" id="status-long_diag">Beregnet</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-long_diag" class="param-input" value="26.1313" step="any" min="0.0001" aria-label="Long Diagonal">
@@ -441,7 +441,7 @@
             <input type="range" id="slider-long_diag" class="param-slider" min="1" max="320" value="26.1313" step="0.2" aria-label="Long Diagonal Slider">
             <div class="param-footer">
               <span class="param-exact" id="exact-long_diag">d<sub>L</sub> = 2R = a√(4+2√2)</span>
-              <button class="copy-param-btn" id="copy-long_diag" title="Copy value">Copy</button>
+              <button class="copy-param-btn" id="copy-long_diag" title="Copy value">Kopier</button>
             </div>
           </div>
 
@@ -449,7 +449,7 @@
           <div class="param-card" id="card-span">
             <div class="param-header">
               <span class="param-title">Span / Flat-to-Flat <span class="param-symbol">S</span></span>
-              <span class="param-status-tag calculated" id="status-span">Calculated</span>
+              <span class="param-status-tag calculated" id="status-span">Beregnet</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-span" class="param-input" value="24.1421" step="any" min="0.0001" aria-label="Span">
@@ -458,7 +458,7 @@
             <input type="range" id="slider-span" class="param-slider" min="1" max="300" value="24.1421" step="0.2" aria-label="Span Slider">
             <div class="param-footer">
               <span class="param-exact" id="exact-span">S = 2r<sub>i</sub> = a(1+√2)</span>
-              <button class="copy-param-btn" id="copy-span" title="Copy value">Copy</button>
+              <button class="copy-param-btn" id="copy-span" title="Copy value">Kopier</button>
             </div>
           </div>
 
@@ -466,7 +466,7 @@
           <div class="param-card" id="card-short_diag">
             <div class="param-header">
               <span class="param-title">Short Diagonal <span class="param-symbol">d<sub>S</sub></span></span>
-              <span class="param-status-tag calculated" id="status-short_diag">Calculated</span>
+              <span class="param-status-tag calculated" id="status-short_diag">Beregnet</span>
             </div>
             <div class="param-input-wrap">
               <input type="number" id="input-short_diag" class="param-input" value="18.4776" step="any" min="0.0001" aria-label="Short Diagonal">
@@ -475,7 +475,7 @@
             <input type="range" id="slider-short_diag" class="param-slider" min="1" max="250" value="18.4776" step="0.1" aria-label="Short Diagonal Slider">
             <div class="param-footer">
               <span class="param-exact" id="exact-short_diag">d<sub>S</sub> = a√(2+√2)</span>
-              <button class="copy-param-btn" id="copy-short_diag" title="Copy value">Copy</button>
+              <button class="copy-param-btn" id="copy-short_diag" title="Copy value">Kopier</button>
             </div>
           </div>
 
@@ -644,7 +644,7 @@
     <section class="llm-box">
       <div class="llm-header">
         <div>
-          <span class="llm-badge">LLM Directive & API Spec</span>
+          <span class="llm-badge">LLM-direktiv & API-spesifikasjon</span>
           <h3 style="margin-top:0.4rem; font-size:1.35rem;">Artificial Intelligence & Prompt Engineering Integration</h3>
         </div>
         <div class="llm-actions">
@@ -666,7 +666,7 @@
       </div>
     </section>
 
-    <!-- Frequently Asked Questions (FAQ) Section -->
+    <!-- Ofte stilte spørsmål (FAQ) Section -->
     <section class="faq-section">
       <h2>FAQ</h2>
       <div class="faq-item open">
@@ -714,8 +714,8 @@
     </div>
   </div>
   <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
-    <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
-    <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    <div>© 2026 OmniOperand. Alle matematiske bevis og beregninger verifisert.</div>
+    <div>Drift på Cloudflare Edge • Ren matematikk på klientsiden</div>
   </div>
 </footer>
 

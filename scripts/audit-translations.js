@@ -198,7 +198,10 @@ function auditFile(filePath, langCode) {
   if (words.length > 50) {
     let engCount = 0;
     for (const w of words) {
-      if (ENGLISH_STOPWORDS.has(w.toLowerCase())) {
+      const lw = w.toLowerCase();
+      // Exempt native words in specific languages that happen to collide with English stopwords
+      if (langCode === 'ro' && lw === 'calculator') continue;
+      if (ENGLISH_STOPWORDS.has(lw)) {
         engCount++;
       }
     }

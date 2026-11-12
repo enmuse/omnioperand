@@ -74,18 +74,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Why is there no simple closed-form formula for the perimeter of an ellipse?",
+          "name": "Pourquoi n'y a-t-il pas de formule fermée simple pour le périmètre d'une ellipse ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Unlike a circle where curvature is constant, an ellipse's curvature varies continuously. Integrating the arc length differential ds = √[dx² + dy²] yields a non-elementary elliptic integral that cannot be expressed with basic algebraic functions."
+            "text": "Contrairement au cercle dont la courbure est constante, celle d'une ellipse varie continuellement. L'intégration de l'élément d'arc mène à une intégrale elliptique de deuxième espèce non réductible à des fonctions élémentaires."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the error of Ramanujan's second perimeter formula?",
+          "name": "Quelle est l'erreur de la seconde formule de périmètre de Ramanujan ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ramanujan's second approximation has an extraordinary maximum relative error of less than 0.0015% even for extremely flattened ellipses with eccentricity near 1."
+            "text": "La seconde formule approchée de Ramanujan présente une erreur relative maximale inférieure à 0,0015 %, même pour des ellipses extrêmement aplaties dont l'excentricité approche 1."
           }
         }
       ]
@@ -287,7 +287,7 @@
 
         <!-- Derived Results HUD -->
         <div class="hud-panel" style="margin-top: 1.5rem;">
-          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Métriques calculées</h2>
           <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
             
             <div class="metric-card">
@@ -340,24 +340,24 @@
           <div class="proof-step">
             <div class="step-num">1</div>
             <div class="step-content">
-              <strong>Affine Stretching Area Integral</strong>
-              <p>An ellipse x²/a² + y²/b² = 1 is the linear transformation of a unit circle x² + y² = 1 stretched by factor a horizontally and b vertically: Area = ∫∫ dx dy = π · a · b.</p>
+              <strong>Intégrale d'aire par étirement affine</strong>
+              <p>Une ellipse x²/a² + y²/b² = 1 est la transformation affine du cercle unité étiré de a horizontalement et de b verticalement : Aire = ∫∫ dx dy = π · a · b.</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">2</div>
             <div class="step-content">
-              <strong>Ramanujan's Second Perimeter Formula</strong>
-              <p>Because the exact perimeter requires an incomplete elliptic integral of the second kind E(e), Srinivasa Ramanujan formulated the famously accurate closed-form approximation: P ≈ π(a + b)[1 + 3h / (10 + √(4 - 3h))], where h = (a - b)² / (a + b)².</p>
+              <strong>Seconde formule de périmètre de Ramanujan</strong>
+              <p>Le périmètre exact exigeant une intégrale elliptique, Srinivasa Ramanujan a formulé l'approximation fermée : P ≈ π(a + b)[1 + 3h / (10 + √(4 - 3h))], où h = (a - b)² / (a + b)².</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">3</div>
             <div class="step-content">
-              <strong>Foci and Orbital Eccentricity</strong>
-              <p>Linear focal distance c = √(a² - b²). First eccentricity e = c / a = √(1 - b²/a²). When e = 0, the ellipse collapses to a perfect circle; as e ➔ 1, it elongates into a parabola.</p>
+              <strong>Foyers et excentricité orbitale</strong>
+              <p>Distance focale linéaire c = √(a² - b²). Excentricité e = c / a = √(1 - b²/a²). Si e = 0 l'ellipse est un cercle parfait ; si e ➔ 1 elle tend vers une parabole.</p>
             </div>
           </div>
         
@@ -369,23 +369,23 @@
           <section class="llm-box" style="margin-top:1.5rem;">
             <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
               <div>
-                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive & API Spec</span>
-                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence & Prompt Integration</h3>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">Directive LLM & Spécification API</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Intelligence Artificielle & Intégration de Prompts</h3>
               </div>
               <div class="llm-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                 <button type="button" class="btn-action" id="copy-llm-prompt-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); border-radius:6px; color:var(--accent-cyan); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                  <span id="copy-prompt-text">Copy Prompt for AI</span>
+                  <span id="copy-prompt-text">Copier le prompt pour l'IA</span>
                 </button>
                 <button type="button" class="btn-action" id="copy-api-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.35); border-radius:6px; color:var(--accent-emerald); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                  <span id="copy-api-text">Copy API Endpoint</span>
+                  <span id="copy-api-text">Copier le point d'accès API</span>
                 </button>
               </div>
             </div>
 
             <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem;">
-              Paste this verified mathematical prompt directly into ChatGPT, Claude, or Gemini to eliminate arithmetic hallucination, or invoke the programmatic API endpoint for automated workflows.
+              Collez cette invite mathématique vérifiée directement dans ChatGPT, Claude ou Gemini pour éliminer les hallucinations de calcul, ou appelez l'API programmatique.
             </p>
 
             <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
@@ -396,9 +396,9 @@
             <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
 
             <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:0.75rem;">
-              <span>✓ Standardized for <code>llms.txt</code></span>
-              <span>✓ Exact Radical Form & Closed Formulas</span>
-              <span>✓ Machine-Readable Edge API</span>
+              <span>✓ Standardisé pour <code>llms.txt</code></span>
+              <span>✓ Formes radicales exactes & solutions fermées</span>
+              <span>✓ API Edge lisible par machine</span>
             </div>
           </section>
       </div>
@@ -407,26 +407,26 @@
 
 <!-- High-Intent FAQ Section -->
     <section class="calc-faq-section" style="margin-top:3rem;">
-      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Foire aux questions</h2>
       <div class="faq-list">
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>Why is there no simple closed-form formula for the perimeter of an ellipse?</span>
+            <span>Pourquoi n'y a-t-il pas de formule fermée simple pour le périmètre d'une ellipse ?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Unlike a circle where curvature is constant, an ellipse's curvature varies continuously. Integrating the arc length differential ds = √[dx² + dy²] yields a non-elementary elliptic integral that cannot be expressed with basic algebraic functions.
+            Contrairement au cercle dont la courbure est constante, celle d'une ellipse varie continuellement. L'intégration de l'élément d'arc mène à une intégrale elliptique de deuxième espèce non réductible à des fonctions élémentaires.
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>What is the error of Ramanujan's second perimeter formula?</span>
+            <span>Quelle est l'erreur de la seconde formule de périmètre de Ramanujan ?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Ramanujan's second approximation has an extraordinary maximum relative error of less than 0.0015% even for extremely flattened ellipses with eccentricity near 1.
+            La seconde formule approchée de Ramanujan présente une erreur relative maximale inférieure à 0,0015 %, même pour des ellipses extrêmement aplaties dont l'excentricité approche 1.
           </div>
         </div>
         
@@ -460,8 +460,8 @@
     </div>
   </div>
   <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
-    <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
-    <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    <div>© 2026 OmniOperand. Toutes les démonstrations et calculs mathématiques vérifiés.</div>
+    <div>Hébergé sur Cloudflare Edge • Mathématiques côté client pures</div>
   </div>
 </footer>
 

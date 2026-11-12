@@ -74,18 +74,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What cylinder dimensions maximize volume for a given surface area?",
+          "name": "Vilka cylindermått maximerar volymen för en given mantelyta och totalarea?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For a closed cylinder of fixed surface area, volume is maximized when height equals diameter (h = 2r). This geometric ratio minimizes thermal loss and material cost."
+            "text": "För en sluten cylinder med fast totalarea maximeras volymen när höjden är lika med diametern (h = 2r)."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you calculate liquid volume in a partially filled horizontal cylinder?",
+          "name": "Hur beräknas vätskevolymen i en delvis fylld horisontell cylinder?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Calculating liquid volume in a horizontal tank requires finding the area of the circular segment filled with fluid: A_segment = r² · arccos[(r - d)/r] - (r - d)√(2rd - d²), multiplied by length L."
+            "text": "Vätskevolymen är lika med cirkelsegmentets area multiplicerat med cylinderns längd L: V = L · [r² arccos((r-h)/r) - (r-h)√(2rh - h²)]."
           }
         }
       ]
@@ -287,7 +287,7 @@
 
         <!-- Derived Results HUD -->
         <div class="hud-panel" style="margin-top: 1.5rem;">
-          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Beräknade utdatamått</h2>
           <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
             
             <div class="metric-card">
@@ -340,24 +340,24 @@
           <div class="proof-step">
             <div class="step-num">1</div>
             <div class="step-content">
-              <strong>Cavalieri's Volumetric Principle</strong>
-              <p>The volume of a right circular cylinder is the product of its circular base area and its perpendicular height: V = A_base · h = (π · r²) · h.</p>
+              <strong>Cavalieris volymprincip</strong>
+              <p>Volymen av en rät cirkulär cylinder är produkten av dess basarea och höjd: V = π · r² · h.</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">2</div>
             <div class="step-content">
-              <strong>Unrolled Net Lateral Area</strong>
-              <p>Unrolling the curved lateral boundary yields a flat rectangle with width equal to base circumference 2πr and height h: A_lateral = 2π · r · h.</p>
+              <strong>Mantelytans utbredning</strong>
+              <p>Utbredningen av den krökta mantelytan bildar en rektangel med bredden 2πr och höjden h: A_mantel = 2πr · h.</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">3</div>
             <div class="step-content">
-              <strong>Total Enclosed Boundary</strong>
-              <p>Summing the lateral wall plus top and bottom circular caps: A_total = 2πrh + 2(πr²) = 2πr(r + h).</p>
+              <strong>Total innesluten area</strong>
+              <p>Summan av mantelytan och de två cirkulära basytorna: A_total = 2πrh + 2πr² = 2πr(h + r).</p>
             </div>
           </div>
         
@@ -369,23 +369,23 @@
           <section class="llm-box" style="margin-top:1.5rem;">
             <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
               <div>
-                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive & API Spec</span>
-                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence & Prompt Integration</h3>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM-direktiv & API-specifikation</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificiell Intelligens och Promptintegration</h3>
               </div>
               <div class="llm-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                 <button type="button" class="btn-action" id="copy-llm-prompt-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); border-radius:6px; color:var(--accent-cyan); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                  <span id="copy-prompt-text">Copy Prompt for AI</span>
+                  <span id="copy-prompt-text">Kopiera prompt för AI</span>
                 </button>
                 <button type="button" class="btn-action" id="copy-api-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.35); border-radius:6px; color:var(--accent-emerald); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                  <span id="copy-api-text">Copy API Endpoint</span>
+                  <span id="copy-api-text">Kopiera API-slutpunkt</span>
                 </button>
               </div>
             </div>
 
             <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem;">
-              Paste this verified mathematical prompt directly into ChatGPT, Claude, or Gemini to eliminate arithmetic hallucination, or invoke the programmatic API endpoint for automated workflows.
+              Klistra in denna verifierade matematiska prompt direkt i ChatGPT, Claude eller Gemini för att eliminera hallucinationer, eller anropa API-slutpunkten.
             </p>
 
             <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
@@ -396,9 +396,9 @@
             <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
 
             <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:0.75rem;">
-              <span>✓ Standardized for <code>llms.txt</code></span>
-              <span>✓ Exact Radical Form & Closed Formulas</span>
-              <span>✓ Machine-Readable Edge API</span>
+              <span>✓ Standardiserad för <code>llms.txt</code></span>
+              <span>✓ Exakta rotformer och slutna formler</span>
+              <span>✓ Maskinläsbar Edge-API</span>
             </div>
           </section>
       </div>
@@ -407,26 +407,26 @@
 
 <!-- High-Intent FAQ Section -->
     <section class="calc-faq-section" style="margin-top:3rem;">
-      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Vanliga frågor</h2>
       <div class="faq-list">
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>What cylinder dimensions maximize volume for a given surface area?</span>
+            <span>Vilka cylindermått maximerar volymen för en given mantelyta och totalarea?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            For a closed cylinder of fixed surface area, volume is maximized when height equals diameter (h = 2r). This geometric ratio minimizes thermal loss and material cost.
+            För en sluten cylinder med fast totalarea maximeras volymen när höjden är lika med diametern (h = 2r).
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>How do you calculate liquid volume in a partially filled horizontal cylinder?</span>
+            <span>Hur beräknas vätskevolymen i en delvis fylld horisontell cylinder?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Calculating liquid volume in a horizontal tank requires finding the area of the circular segment filled with fluid: A_segment = r² · arccos[(r - d)/r] - (r - d)√(2rd - d²), multiplied by length L.
+            Vätskevolymen är lika med cirkelsegmentets area multiplicerat med cylinderns längd L: V = L · [r² arccos((r-h)/r) - (r-h)√(2rh - h²)].
           </div>
         </div>
         
@@ -460,8 +460,8 @@
     </div>
   </div>
   <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
-    <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
-    <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    <div>© 2026 OmniOperand. Alla matematiska bevis och beräkningar verifierade.</div>
+    <div>Drift på Cloudflare Edge • Ren matematik på klientsidan</div>
   </div>
 </footer>
 

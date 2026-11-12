@@ -74,18 +74,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the Base Rate Fallacy?",
+          "name": "Wat is de base rate fallacy (basisfout)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The base rate fallacy is the cognitive error of judging conditional probability without factoring in background prior probability. If a rare disease affects 1 in 1,000 people, a 95% accurate test will still be wrong over 95% of the time on a positive result."
+            "text": "Het is de denkfout waarbij de a priori kans P(A) wordt genegeerd. Bij een zeldzame aandoening (1 op 1.000) levert een 99% nauwkeurige test na een positieve uitslag slechts ~9% werkelijke trefkans op."
           }
         },
         {
           "@type": "Question",
-          "name": "How is Bayes' theorem used in machine learning and AI?",
+          "name": "Hoe wordt de stelling van Bayes toegepast in machine learning en AI?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Bayesian inference powers spam filters, medical diagnostic AI, Markov Chain Monte Carlo (MCMC) simulations, and Kalman filters in autonomous vehicle navigation by continuously updating probabilities as new evidence arrives."
+            "text": "Bayesiaanse inferentie vormt de basis van Naive Bayes spamfilters, medische expertsystemen en Kalman-filters in robotica."
           }
         }
       ]
@@ -301,7 +301,7 @@
 
         <!-- Derived Results HUD -->
         <div class="hud-panel" style="margin-top: 1.5rem;">
-          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Berekende outputparameters</h2>
           <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
             
             <div class="metric-card">
@@ -354,24 +354,24 @@
           <div class="proof-step">
             <div class="step-num">1</div>
             <div class="step-content">
-              <strong>Conditional Probability Definition</strong>
-              <p>Joint probability P(A ∩ B) = P(A|B) · P(B) = P(B|A) · P(A). Equating both sides yields Bayes' Theorem: P(A|B) = [P(B|A) · P(A)] / P(B).</p>
+              <strong>Definitie van voorwaardelijke kans</strong>
+              <p>Gezamenlijke kans P(A ∩ B) = P(A|B) · P(B) = P(B|A) · P(A). Gelijkstellen geeft: P(A|B) = [P(B|A) · P(A)] / P(B).</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">2</div>
             <div class="step-content">
-              <strong>Law of Total Probability</strong>
-              <p>The marginal evidence probability partitions across mutually exclusive hypotheses: P(B) = P(B|A) · P(A) + P(B|¬A) · P(¬A), where P(¬A) = 1 - P(A).</p>
+              <strong>Wet van de totale kans</strong>
+              <p>De marginale evidentie splitst over disjuncte hypothesen: P(B) = P(B|A)P(A) + P(B|¬A)P(¬A).</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">3</div>
             <div class="step-content">
-              <strong>Base Rate Fallacy Resolution</strong>
-              <p>When prior probability P(A) is very low (e.g. rare disease or rare defect), even a test with 95% sensitivity produces predominantly false positive signals.</p>
+              <strong>Verklaring van de basisfout</strong>
+              <p>Wanneer de a priori kans P(A) zeer klein is, domineren de vals-positieven van ¬A de noemer.</p>
             </div>
           </div>
         
@@ -383,23 +383,23 @@
           <section class="llm-box" style="margin-top:1.5rem;">
             <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
               <div>
-                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive & API Spec</span>
-                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence & Prompt Integration</h3>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM-richtlijn & API-specificatie</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Kunstmatige Intelligentie & Prompt-integratie</h3>
               </div>
               <div class="llm-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                 <button type="button" class="btn-action" id="copy-llm-prompt-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); border-radius:6px; color:var(--accent-cyan); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                  <span id="copy-prompt-text">Copy Prompt for AI</span>
+                  <span id="copy-prompt-text">Kopieer prompt voor AI</span>
                 </button>
                 <button type="button" class="btn-action" id="copy-api-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.35); border-radius:6px; color:var(--accent-emerald); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                  <span id="copy-api-text">Copy API Endpoint</span>
+                  <span id="copy-api-text">Kopieer API-eindpunt</span>
                 </button>
               </div>
             </div>
 
             <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem;">
-              Paste this verified mathematical prompt directly into ChatGPT, Claude, or Gemini to eliminate arithmetic hallucination, or invoke the programmatic API endpoint for automated workflows.
+              Plak deze geverifieerde wiskundige prompt rechtstreeks in ChatGPT, Claude of Gemini om rekenfouten te voorkomen, of roep het API-eindpunt aan.
             </p>
 
             <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
@@ -410,9 +410,9 @@
             <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
 
             <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:0.75rem;">
-              <span>✓ Standardized for <code>llms.txt</code></span>
-              <span>✓ Exact Radical Form & Closed Formulas</span>
-              <span>✓ Machine-Readable Edge API</span>
+              <span>✓ Gestandaardiseerd voor <code>llms.txt</code></span>
+              <span>✓ Exacte wortelvormen & gesloten formules</span>
+              <span>✓ Machinaal leesbare Edge-API</span>
             </div>
           </section>
       </div>
@@ -421,26 +421,26 @@
 
 <!-- High-Intent FAQ Section -->
     <section class="calc-faq-section" style="margin-top:3rem;">
-      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Veelgestelde vragen</h2>
       <div class="faq-list">
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>What is the Base Rate Fallacy?</span>
+            <span>Wat is de base rate fallacy (basisfout)?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            The base rate fallacy is the cognitive error of judging conditional probability without factoring in background prior probability. If a rare disease affects 1 in 1,000 people, a 95% accurate test will still be wrong over 95% of the time on a positive result.
+            Het is de denkfout waarbij de a priori kans P(A) wordt genegeerd. Bij een zeldzame aandoening (1 op 1.000) levert een 99% nauwkeurige test na een positieve uitslag slechts ~9% werkelijke trefkans op.
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>How is Bayes' theorem used in machine learning and AI?</span>
+            <span>Hoe wordt de stelling van Bayes toegepast in machine learning en AI?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Bayesian inference powers spam filters, medical diagnostic AI, Markov Chain Monte Carlo (MCMC) simulations, and Kalman filters in autonomous vehicle navigation by continuously updating probabilities as new evidence arrives.
+            Bayesiaanse inferentie vormt de basis van Naive Bayes spamfilters, medische expertsystemen en Kalman-filters in robotica.
           </div>
         </div>
         
@@ -474,8 +474,8 @@
     </div>
   </div>
   <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
-    <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
-    <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    <div>© 2026 OmniOperand. Alle wiskundige bewijzen en berekeningen geverifieerd.</div>
+    <div>Gehost op Cloudflare Edge • Pure wiskunde aan clientzijde</div>
   </div>
 </footer>
 

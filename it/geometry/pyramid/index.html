@@ -74,18 +74,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What are the dimensions of the Great Pyramid of Giza?",
+          "name": "Perché il volume di una piramide quadrata è un terzo del prisma?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The Great Pyramid of Giza originally had a base side of ~230.3 meters (~755.6 ft) and a height of ~146.6 meters (~481 ft), yielding a volume of ~2.59 million cubic meters."
+            "text": "Un cubo può essere scomposto in tre piramidi congruenti a base quadrata: V = ⅓ · a² · h."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the difference between slant height and pyramid height?",
+          "name": "Qual è la pendenza della Grande Piramide di Giza?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vertical height is the perpendicular altitude from the apex straight down to the base center. Slant height is the altitude running along the sloping surface of an exterior triangular face to the edge midpoint."
+            "text": "Presenta una pendenza di circa 51,85° (51° 50′), legata alla sezione aurea φ."
           }
         }
       ]
@@ -287,7 +287,7 @@
 
         <!-- Derived Results HUD -->
         <div class="hud-panel" style="margin-top: 1.5rem;">
-          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Calculated Output Metrics</h2>
+          <h2 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-bright);">Metriche calcolate</h2>
           <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:1rem;">
             
             <div class="metric-card">
@@ -340,24 +340,24 @@
           <div class="proof-step">
             <div class="step-num">1</div>
             <div class="step-content">
-              <strong>Pyramidal Volume Proof</strong>
-              <p>Three congruent pyramids assemble exactly into a cube or square prism of identical base and height: Volume = ⅓ · a² · h.</p>
+              <strong>Dimostrazione del volume della piramide</strong>
+              <p>Tre piramidi congruenti formano un prisma retto: V = ⅓ · a² · h.</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">2</div>
             <div class="step-content">
-              <strong>Lateral Face Altitude via Pythagorean Theorem</strong>
-              <p>The vertical height h, apothem of base a/2, and slant height s form a right triangle: s = √[h² + (a/2)²].</p>
+              <strong>Apotema laterale con il teorema di Pitagora</strong>
+              <p>L'altezza h, l'apotema di base a/2 e l'apotema s formano un triangolo rettangolo: s = √[h² + (a/2)²].</p>
             </div>
           </div>
         
           <div class="proof-step">
             <div class="step-num">3</div>
             <div class="step-content">
-              <strong>Four Triangular Faces Net</strong>
-              <p>Lateral Area = 4 × [½ · a · s] = 2 · a · s. Total Area = a² + 2as.</p>
+              <strong>Sviluppo di quattro facce triangolari</strong>
+              <p>Area laterale = 4 × [½ · a · s] = 2 · a · s. Area Totale = a² + 2 · a · s.</p>
             </div>
           </div>
         
@@ -369,23 +369,23 @@
           <section class="llm-box" style="margin-top:1.5rem;">
             <div class="llm-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
               <div>
-                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">LLM Directive & API Spec</span>
-                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Artificial Intelligence & Prompt Integration</h3>
+                <span class="llm-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:3px 8px; border-radius:4px; letter-spacing:0.5px;">Direttiva LLM & Specifica API</span>
+                <h3 style="margin:0.35rem 0 0 0; font-size:1.15rem; color:var(--text-bright);">Intelligenza Artificiale & Integrazione Prompt</h3>
               </div>
               <div class="llm-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                 <button type="button" class="btn-action" id="copy-llm-prompt-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.35); border-radius:6px; color:var(--accent-cyan); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                  <span id="copy-prompt-text">Copy Prompt for AI</span>
+                  <span id="copy-prompt-text">Copia prompt per IA</span>
                 </button>
                 <button type="button" class="btn-action" id="copy-api-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.35); border-radius:6px; color:var(--accent-emerald); font-size:0.825rem; font-weight:600; cursor:pointer; transition:all 0.15s ease;">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                  <span id="copy-api-text">Copy API Endpoint</span>
+                  <span id="copy-api-text">Copia endpoint API</span>
                 </button>
               </div>
             </div>
 
             <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.5; margin-bottom:0.75rem;">
-              Paste this verified mathematical prompt directly into ChatGPT, Claude, or Gemini to eliminate arithmetic hallucination, or invoke the programmatic API endpoint for automated workflows.
+              Incolla questo prompt matematico verificato direttamente in ChatGPT, Claude o Gemini per eliminare allucinazioni aritmetiche, oppure richiama l'endpoint API.
             </p>
 
             <div class="api-endpoint-pill" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:6px 12px; margin-bottom:0.75rem; font-family:monospace; font-size:0.82rem; color:var(--text-bright);">
@@ -396,9 +396,9 @@
             <pre class="llm-prompt-code" id="llm-prompt-display" style="background:var(--bg-canvas); border:1px solid var(--border-subtle); border-radius:6px; padding:10px 14px; font-size:0.8rem; color:var(--text-secondary); font-family:monospace; white-space:pre-wrap; max-height:160px; overflow-y:auto; line-height:1.45;">Generating verified mathematical prompt...</pre>
 
             <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:0.75rem;">
-              <span>✓ Standardized for <code>llms.txt</code></span>
-              <span>✓ Exact Radical Form & Closed Formulas</span>
-              <span>✓ Machine-Readable Edge API</span>
+              <span>✓ Standardizzato per <code>llms.txt</code></span>
+              <span>✓ Forme radicali esatte & soluzioni chiuse</span>
+              <span>✓ API Edge leggibile da macchine</span>
             </div>
           </section>
       </div>
@@ -407,26 +407,26 @@
 
 <!-- High-Intent FAQ Section -->
     <section class="calc-faq-section" style="margin-top:3rem;">
-      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+      <h2 style="font-size:1.75rem; margin-bottom:1.5rem;">Domande frequenti</h2>
       <div class="faq-list">
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>What are the dimensions of the Great Pyramid of Giza?</span>
+            <span>Perché il volume di una piramide quadrata è un terzo del prisma?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            The Great Pyramid of Giza originally had a base side of ~230.3 meters (~755.6 ft) and a height of ~146.6 meters (~481 ft), yielding a volume of ~2.59 million cubic meters.
+            Un cubo può essere scomposto in tre piramidi congruenti a base quadrata: V = ⅓ · a² · h.
           </div>
         </div>
         
         <div class="faq-item">
           <div class="faq-question">
-            <span>What is the difference between slant height and pyramid height?</span>
+            <span>Qual è la pendenza della Grande Piramide di Giza?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Vertical height is the perpendicular altitude from the apex straight down to the base center. Slant height is the altitude running along the sloping surface of an exterior triangular face to the edge midpoint.
+            Presenta una pendenza di circa 51,85° (51° 50′), legata alla sezione aurea φ.
           </div>
         </div>
         
@@ -460,8 +460,8 @@
     </div>
   </div>
   <div class="container footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:0.75rem; color:var(--text-muted);">
-    <div>© 2026 OmniOperand. All mathematical proofs and calculations verified.</div>
-    <div>Hosted on Cloudflare Edge • Pure Client-Side Math</div>
+    <div>© 2026 OmniOperand. Tutte le dimostrazioni matematiche e i calcoli verificati.</div>
+    <div>Ospitato su Cloudflare Edge • Matematica pura lato client</div>
   </div>
 </footer>
 

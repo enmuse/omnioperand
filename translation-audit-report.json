@@ -1,6 +1,6 @@
 {
-  "total_audited": 486,
-  "total_passed": 486,
+  "total_audited": 487,
+  "total_passed": 487,
   "total_failed": 0,
   "results": [
     {
@@ -1202,6 +1202,13 @@
     },
     {
       "file": "it/ingegneria/dimensionamento-gruppo-elettrogeno/index.html",
+      "lang": "it",
+      "status": "PASSED",
+      "failures": [],
+      "details": {}
+    },
+    {
+      "file": "it/ingegneria/index.html",
       "lang": "it",
       "status": "PASSED",
       "failures": [],
