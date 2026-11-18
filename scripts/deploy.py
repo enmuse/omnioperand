@@ -85,10 +85,12 @@ def deploy_pages():
         dist_dir.mkdir(parents=True, exist_ok=True)
         subprocess.run(["npx", "--yes", "wrangler", "pages", "functions", "build", f"--outdir={dist_dir}"], cwd=str(REPO_ROOT), check=True)
         compiled_worker = dist_dir / "_worker.js"
+        if not compiled_worker.exists():
+            compiled_worker = dist_dir / "index.js"
         if compiled_worker.exists():
             import shutil
             shutil.copy(str(compiled_worker), str(REPO_ROOT / "_worker.js"))
-            print("✅ Successfully bundled and staged _worker.js")
+            print(f"✅ Successfully bundled and staged _worker.js from {compiled_worker.name}")
     except Exception as e:
         print(f"⚠️ Functions compile notice: {e}")
 
