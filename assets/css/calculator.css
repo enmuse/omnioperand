@@ -1114,3 +1114,98 @@ body.is-embed .omni-container {
   max-width: 100% !important;
   margin: 0 auto !important;
 }
+
+/* ==========================================================================
+   OmniOperand Institutional Underwriting Print & PDF Stylesheet
+   ========================================================================== */
+@media print {
+  @page {
+    size: letter portrait;
+    margin: 0.5in;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Hide Web chrome, navbars, footers, search, action buttons, drawers */
+  .site-header,
+  .site-footer,
+  .breadcrumb-wrapper,
+  .polygon-switcher-bar,
+  .calculator-actions-toolbar,
+  .lead-capture-card,
+  #omni-lead-drawer-overlay,
+  .search-modal,
+  .affiliate-disclosure,
+  .affiliate-container,
+  .contextual-action-card,
+  .contractor-dispatch-callout,
+  .faq-section,
+  .calc-faq-section,
+  .llm-box,
+  .btn-primary,
+  .btn-secondary {
+    display: none !important;
+  }
+
+  /* Make sure main layout expands cleanly on page */
+  main, .container, .omni-container, .calculator-layout {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .calculator-hud,
+  .blueprint-card,
+  .proof-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    margin-bottom: 1rem !important;
+    border-radius: 6px !important;
+  }
+
+  .hud-metric-card,
+  .parameter-card {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #0f172a !important;
+  }
+
+  .hud-metric-val,
+  .hud-val {
+    color: #0369a1 !important;
+    font-weight: 800 !important;
+  }
+
+  .hud-metric-label {
+    color: #475569 !important;
+  }
+
+  a {
+    color: #0284c7 !important;
+    text-decoration: none !important;
+  }
+
+  /* Add Institutional Header on Print */
+  body::before {
+    content: "OmniOperand Certified Underwriting Brief • https://omnioperand.com • Confidential";
+    display: block;
+    font-size: 8.5pt;
+    color: #64748b;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 4px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+  }
+}

@@ -304,7 +304,29 @@
     const submitText = document.getElementById('lead-submit-text');
     const submitSpinner = document.getElementById('lead-submit-spinner');
 
-    function openDrawer() {
+    function openDrawer(mode) {
+      if (mode === 'pdf') {
+        window.isPdfDownloadIntent = true;
+        const b = document.getElementById('lead-drawer-badge');
+        const t = document.getElementById('lead-drawer-title');
+        const s = document.getElementById('lead-drawer-subtitle');
+        const btn = document.getElementById('lead-submit-text');
+        if (b) b.innerText = '📄 Certified 1-Page Underwriting PDF';
+        if (t) t.innerText = 'Download Your CPA-Ready Underwriting Brief';
+        if (s) s.innerText = 'Enter your details below to instantly generate and print/save your certified 1-page financial scenario summary.';
+        if (btn) btn.innerText = '⚡ Generate & Download PDF Report';
+      } else {
+        window.isPdfDownloadIntent = false;
+        const b = document.getElementById('lead-drawer-badge');
+        const t = document.getElementById('lead-drawer-title');
+        const s = document.getElementById('lead-drawer-subtitle');
+        const btn = document.getElementById('lead-submit-text');
+        if (b) b.innerText = badgeText;
+        if (t) t.innerText = titleText;
+        if (s) s.innerText = subTitle;
+        if (btn) btn.innerText = isSpanish ? 'Verificar Pre-Aprobación Ahora' : btnText;
+      }
+
       // Pull current live state from calculator DOM
       const priceInput = document.getElementById('param-purchase_price') 
         || document.getElementById('param-property_price') 
@@ -472,9 +494,20 @@
         console.warn('Lead dispatch note:', networkErr);
       }
 
+      sessionStorage.setItem('omni_lead_captured', 'true');
+
       formContainer.style.display = 'none';
       successContainer.style.display = 'flex';
       document.getElementById('lead-confirmation-id').innerText = leadRef;
+
+      // If user requested PDF download, auto-trigger print after short delay
+      if (window.isPdfDownloadIntent) {
+        window.isPdfDownloadIntent = false;
+        setTimeout(() => {
+          closeDrawer();
+          window.print();
+        }, 750);
+      }
     });
 
     // Expose openLeadDrawer globally
@@ -486,6 +519,18 @@
         e.preventDefault();
         openDrawer();
       });
+    });
+
+    // Intercept all Print / Save PDF buttons across commercial calculators
+    document.querySelectorAll('#btn-print-pdf, .btn-print-pdf, [data-action="download-pdf"]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (sessionStorage.getItem('omni_lead_captured') === 'true') {
+          return; // Let native window.print() execute
+        }
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        openDrawer('pdf');
+      }, true);
     });
   }
 
