@@ -14,14 +14,20 @@ export async function dispatchLeadAlerts(structuredLead, context) {
   const promises = [];
 
   // 1. Webhook Dispatch (Discord, Slack, Zapier, Make)
-  const webhookUrl = env.LEAD_WEBHOOK_URL || env.DISCORD_WEBHOOK_URL;
-  if (webhookUrl) {
-    promises.push(sendWebhookAlert(webhookUrl, structuredLead));
+  const webhookUrls = new Set();
+  if (env.DISCORD_WEBHOOK_URL) webhookUrls.add(env.DISCORD_WEBHOOK_URL);
+  if (env.LEAD_WEBHOOK_URL) webhookUrls.add(env.LEAD_WEBHOOK_URL);
+
+  for (const url of webhookUrls) {
+    if (url && url.startsWith("http")) {
+      promises.push(sendWebhookAlert(url, structuredLead));
+    }
   }
 
   // 2. Email Alert via Resend
-  if (env.RESEND_API_KEY) {
-    promises.push(sendResendEmailAlert(env.RESEND_API_KEY, env.LEAD_ALERT_EMAIL || "brandon@omnioperand.com", structuredLead));
+  const resendKey = env.RESEND_API_KEY || env.RESEND_API_TOKEN;
+  if (resendKey) {
+    promises.push(sendResendEmailAlert(resendKey, env.LEAD_ALERT_EMAIL || "brandon@omnioperand.com", structuredLead));
   } else if (env.SENDGRID_API_KEY) {
     promises.push(sendSendGridEmailAlert(env.SENDGRID_API_KEY, env.LEAD_ALERT_EMAIL || "brandon@omnioperand.com", structuredLead));
   }
