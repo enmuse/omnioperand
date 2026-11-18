@@ -78,16 +78,10 @@ def deploy_pages():
     except Exception as e:
         print(f"⚠️ Pre-deploy metrics sync notice: {e}")
 
-    # Compile Functions into root _worker.js
-    print("⚡ Compiling Cloudflare Pages edge functions into _worker.js...")
-    try:
-        worker_file = REPO_ROOT / "_worker.js"
-        if worker_file.exists():
-            worker_file.unlink()
-        subprocess.run(["npx", "--yes", "wrangler", "pages", "functions", "build", f"--outfile={worker_file}"], cwd=str(REPO_ROOT), check=True)
-        print(f"✅ Successfully compiled functions into _worker.js")
-    except Exception as e:
-        print(f"⚠️ Functions compile notice: {e}")
+    # Remove any stray _worker.js so Wrangler deploys native functions/ cleanly
+    worker_file = REPO_ROOT / "_worker.js"
+    if worker_file.exists():
+        worker_file.unlink()
 
     env = os.environ.copy()
     env["CLOUDFLARE_API_TOKEN"] = token
