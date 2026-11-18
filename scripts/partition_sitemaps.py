@@ -40,6 +40,22 @@ def main():
     print("🗺️ OmniOperand Partitioned Sitemap Generator")
     print("=========================================================")
 
+    # Load redirect sources from _redirects to guarantee zero 301/302 redirects in sitemaps
+    redirect_sources = set()
+    redirects_file = REPO_ROOT / "_redirects"
+    if redirects_file.exists():
+        with open(redirects_file, "r", encoding="utf-8") as f:
+            for line in f:
+                clean = line.strip()
+                if not clean or clean.startswith("#"):
+                    continue
+                parts = clean.split()
+                if len(parts) >= 2:
+                    src = parts[0].strip("/")
+                    status = parts[2] if len(parts) >= 3 else "301"
+                    if status.startswith("301") or status.startswith("302"):
+                        redirect_sources.add(src)
+
     # Buckets
     buckets = {
         "en": [],
@@ -55,6 +71,10 @@ def main():
             continue
         rel = p.parent.relative_to(REPO_ROOT)
         rel_str = str(rel)
+
+        # Exclude paths that are redirected in _redirects
+        if rel_str in redirect_sources:
+            continue
 
         if rel_str == ".":
             url = "https://omnioperand.com/"

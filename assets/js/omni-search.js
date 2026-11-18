@@ -1111,7 +1111,7 @@
   {
     "title": "Concrete Slab & Footing Volume Calculator",
     "category": "Construction > Ready-Mix Concrete • Volume & Bag Matrix",
-    "url": "/construction/concrete-slab/",
+    "url": "/construction/concrete-volume/",
     "keywords": [
       "concrete",
       "slab",
@@ -1510,7 +1510,7 @@
   {
     "title": "Generator Sizing & Starting Watts Calculator",
     "category": "Construction > Emergency Power • Generator Sizing Matrix",
-    "url": "/construction/generator-sizing/",
+    "url": "/engineering/generator-sizing/",
     "keywords": [
       "generator",
       "sizing",
@@ -4512,7 +4512,7 @@
   {
     "title": "Home Battery Backup Duration & Storage Calculator",
     "category": "Energy > Energy Storage • Runtime Matrix",
-    "url": "/energy/battery-backup-storage/",
+    "url": "/engineering/battery-backup-storage/",
     "keywords": [
       "home",
       "battery",
@@ -4702,7 +4702,7 @@
   {
     "title": "Electrical Wire Gauge & Voltage Drop Calculator (NEC)",
     "category": "Energy > NEC Electrical Code • Conductor Sizing",
-    "url": "/energy/wire-gauge-voltage-drop/",
+    "url": "/engineering/wire-gauge-voltage-drop/",
     "keywords": [
       "electrical",
       "wire",
