@@ -33,7 +33,8 @@ export async function onRequest(context) {
   const isPublicDocOrPrompt = path.endsWith('/openapi.json') ||
                               path.endsWith('/prompts') ||
                               path.includes('/auth/keys') ||
-                              path.includes('/leads');
+                              path.includes('/leads') ||
+                              path.includes('/mcp');
 
   // 3. Extract API Key (Header or query param fallback)
   let rawKey = extractApiKey(request);
@@ -73,7 +74,11 @@ export async function onRequest(context) {
     }
   }
 
-  // 4. Rate Limiting Check
+  // 4. Rate Limiting Check (MCP endpoint is public and exempt from tight per-minute throttling)
+  if (path.includes('/mcp')) {
+    return context.next();
+  }
+
   const rateCheck = rateLimiter.checkRateLimit(consumerId, tier);
   const rateHeaders = {
     "X-RateLimit-Limit": String(rateCheck.limit),

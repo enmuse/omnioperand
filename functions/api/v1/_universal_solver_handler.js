@@ -11,6 +11,7 @@
  */
 
 import { CALCULATOR_REGISTRY, executeCalculator } from '../../../api/solvers/calculator_registry.js';
+import { onRequestGet as mcpGet, onRequestPost as mcpPost, onRequestOptions as mcpOptions } from './mcp.js';
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
@@ -46,6 +47,13 @@ export async function handleUniversalApiRequest(context, category, slugParts) {
   if (!slug) {
     const segments = url.pathname.split("/").filter(Boolean);
     slug = segments[segments.length - 1] || "";
+  }
+
+  // MCP Gateway Delegation (ensure /api/v1/mcp resolves directly to MCP JSON-RPC server)
+  if (category === "mcp" || slug === "mcp" || url.pathname.includes("/api/v1/mcp")) {
+    if (request.method === "POST") return mcpPost(context);
+    if (request.method === "OPTIONS") return mcpOptions(context);
+    return mcpGet(context);
   }
 
   // Find in registry if available
