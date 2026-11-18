@@ -4,6 +4,8 @@
  * Adheres to Fannie Mae DU Non-Permanent Resident Alien and IRS Notice 2026-ITIN standards.
  */
 
+import { dispatchLeadAlerts } from "./_dispatcher.js";
+
 const IP_SUBMISSION_HISTORY = new Map();
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
 const MAX_SUBMISSIONS_PER_WINDOW = 3;
@@ -125,6 +127,19 @@ export async function onRequestPost(context) {
         fs.writeFileSync(leadsFile, JSON.stringify(existing, null, 2), "utf-8");
       } catch (fsErr) {}
     }
+
+    // Trigger unified multi-channel alerts (webhook, email, KV)
+    await dispatchLeadAlerts({
+      ...leadPayload,
+      dispatch_id: leadId,
+      niche: "itin-mortgage",
+      scenario_summary: {
+        property_value: leadPayload.property_value,
+        down_payment: leadPayload.down_payment,
+        financing_model: leadPayload.financing_model,
+        monthly_budget: leadPayload.monthly_budget
+      }
+    }, context);
 
     return new Response(JSON.stringify({
       success: true,

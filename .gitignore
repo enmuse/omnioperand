@@ -23,3 +23,5 @@ Thumbs.db
 
 # Audit data caches
 data/gsc_*.json
+data/forum_research_*.json
+data/reddit_*.json

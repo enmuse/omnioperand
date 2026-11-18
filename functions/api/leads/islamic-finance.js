@@ -4,6 +4,8 @@
  * Adheres to RESPA Section 8 safe-harbor standards and TCPA consent verification.
  */
 
+import { dispatchLeadAlerts } from "./_dispatcher.js";
+
 // In-memory rate limiting map across warm V8 isolates
 const IP_SUBMISSION_HISTORY = new Map();
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
@@ -135,6 +137,19 @@ export async function onRequestPost(context) {
         // Safe failover in serverless runtime
       }
     }
+
+    // Trigger unified multi-channel alerts (webhook, email, KV)
+    await dispatchLeadAlerts({
+      ...leadPayload,
+      dispatch_id: leadId,
+      niche: "islamic-finance",
+      scenario_summary: {
+        property_value: leadPayload.property_value,
+        down_payment: leadPayload.down_payment,
+        financing_model: leadPayload.financing_model,
+        monthly_budget: leadPayload.monthly_budget
+      }
+    }, context);
 
     return new Response(JSON.stringify({
       success: true,

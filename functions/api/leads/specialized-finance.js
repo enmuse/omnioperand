@@ -11,6 +11,8 @@
  * - Section 179 Commercial Equipment Financing
  */
 
+import { dispatchLeadAlerts } from "./_dispatcher.js";
+
 const IP_SUBMISSION_HISTORY = new Map();
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
 const MAX_SUBMISSIONS_PER_WINDOW = 4;
@@ -102,6 +104,9 @@ export async function onRequestPost(context) {
 
     // Telemetry logging for edge analytics
     console.log(`[Specialized Finance Lead] Dispatched ${leadId} for niche ${structuredLead.niche} to partner desk.`);
+
+    // Trigger instant webhook, email, and KV alerts
+    await dispatchLeadAlerts(structuredLead, context);
 
     return new Response(JSON.stringify({
       success: true,

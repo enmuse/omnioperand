@@ -1,0 +1,35 @@
+{
+  "name": "omnioperand-mcp",
+  "version": "1.0.0",
+  "description": "Official Model Context Protocol (MCP) server for OmniOperand — 447 deterministic mathematical, engineering, financial, and scientific solvers for Claude Desktop, Cursor, and AI agents.",
+  "main": "index.js",
+  "bin": {
+    "omnioperand-mcp": "./index.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enmuse/omnioperand-mcp.git"
+  },
+  "homepage": "https://omnioperand.com",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude-desktop",
+    "cursor-ai",
+    "calculators",
+    "math",
+    "engineering",
+    "hvac",
+    "finance",
+    "biotech",
+    "geometry",
+    "deterministic-math"
+  ],
+  "author": "Brandon <brandon@omnioperand.com> (https://omnioperand.com)",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.2"
+  }
+}
