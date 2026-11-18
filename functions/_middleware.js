@@ -29,10 +29,21 @@ export async function onRequest(context) {
     return Response.redirect(`${url.origin}${cleanPath}${url.search}`, 301);
   }
 
-  // 3. Normalize legacy /calculators/ prefix
+  // 3. Normalize legacy /calculators/ prefix (protecting valid high-ticket commercial calculators in /calculators/)
+  const VALID_CALCULATORS_PATHS = new Set([
+    "", "1031-exchange", "bank-statement-mortgage", "business-valuation-multiple",
+    "chattel-vs-land-home", "commercial-real-estate-cap-rate", "commercial-solar-tax-credit",
+    "cost-segregation", "dscr-loan", "hard-money-loan", "locum-tenens-tax-calculator",
+    "personal-injury-settlement", "rd-tax-credit", "sba-loan", "section-179-equipment",
+    "structured-settlement-lump-sum", "therapy-private-practice-breakeven", "videos"
+  ]);
+
   if (url.pathname.startsWith("/calculators/")) {
-    const normalized = url.pathname.replace(/^\/calculators/, "");
-    return Response.redirect(`${url.origin}${normalized || "/"}${url.search}`, 301);
+    const sub = url.pathname.replace(/^\/calculators\/?/, "").split("/")[0];
+    if (!VALID_CALCULATORS_PATHS.has(sub)) {
+      const normalized = url.pathname.replace(/^\/calculators/, "");
+      return Response.redirect(`${url.origin}${normalized || "/"}${url.search}`, 301);
+    }
   }
 
   // 4. Specific slug typo redirects

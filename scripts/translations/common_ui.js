@@ -170,3 +170,4 @@ export const COMMON_UI = {
     footer_hosting: "Găzduit pe Cloudflare Edge • Matematică pură pe partea de client"
   }
 };
+

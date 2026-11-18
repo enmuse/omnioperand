@@ -165,6 +165,149 @@
         disclosure: "Save hundreds in interest charges by consolidating high-rate balances at 0% intro APR.",
         check: (inputs, res) => (inputs.interest_rate >= 18.0) || (res.total_interest >= 1000)
       }
+    ],
+
+    cost_segregation: [
+      {
+        id: "kbkg_cost_seg",
+        name: "KBKG Tax Credits & Cost Segregation",
+        badge: "National CPA Partner",
+        headline: "Engineering-Based Cost Segregation Studies Generating 10x–30x First-Year Tax ROI",
+        cta: "Request Feasibility Analysis",
+        url: "https://www.kbkg.com/cost-segregation?ref=omnioperand",
+        disclosure: "Licensed engineers and certified CPAs providing full IRS audit defense.",
+        check: () => true
+      }
+    ],
+
+    exchange_1031: [
+      {
+        id: "ipx1031",
+        name: "Investment Property Exchange Services (IPX1031)",
+        badge: "Bonded Intermediary",
+        headline: "Nationwide Qualified Intermediary (QI) with $100M Fidelity Bond & Full Safe Harbor",
+        cta: "Initiate 1031 Exchange",
+        url: "https://www.ipx1031.com/?ref=omnioperand",
+        disclosure: "Fidelity National Financial backed. Full safe harbor compliance for 45/180-day deadlines.",
+        check: () => true
+      }
+    ],
+
+    sba_loan: [
+      {
+        id: "smartbiz_sba",
+        name: "SmartBiz Loans",
+        badge: "Top SBA Market Leader",
+        headline: "Pre-Qualify for SBA 7(a) & 504 Financing up to $5M with Expedited PLP Underwriting",
+        cta: "Check SBA Pre-Approval",
+        url: "https://www.smartbizloans.com/sba-loans/?ref=omnioperand",
+        disclosure: "Preferred SBA lender network funding working capital and commercial real estate.",
+        check: () => true
+      }
+    ],
+
+    dscr_loan: [
+      {
+        id: "kiavi_dscr",
+        name: "Kiavi Private Money & DSCR",
+        badge: "Wholesale Non-QM",
+        headline: "Fund DSCR Rental Loans Down to 0.75x with No Personal Tax Returns Needed",
+        cta: "View DSCR Rates",
+        url: "https://www.kiavi.com/dscr-rental-loans?ref=omnioperand",
+        disclosure: "Nationwide asset-based lending for real estate investors and LLCs.",
+        check: () => true
+      }
+    ],
+
+    hard_money: [
+      {
+        id: "kiavi_hard_money",
+        name: "Kiavi Private Money Lending",
+        badge: "Fix & Flip Leader",
+        headline: "Fund Up to 90% Purchase & 100% Rehab for Fix-and-Flip Projects in Under 10 Days",
+        cta: "Get Hard Money Quote",
+        url: "https://www.kiavi.com/fix-and-flip?ref=omnioperand",
+        disclosure: "Fast closing, zero prepay penalties, up to 75% after-repair value (ARV).",
+        check: () => true
+      }
+    ],
+
+    cre_financing: [
+      {
+        id: "cre_capital_hub",
+        name: "Commercial Real Estate Capital Hub",
+        badge: "Wholesale Debt Desk",
+        headline: "Wholesale CMBS, Agency & Debt Fund Term Sheets Sized Down to 9.0% Debt Yield",
+        cta: "Request CRE Term Sheets",
+        url: "https://omnioperand.com/calculators/commercial-real-estate-cap-rate/?ref=omnioperand",
+        disclosure: "Institutional financing desk for commercial acquisitions and refinances.",
+        check: () => true
+      }
+    ],
+
+    structured_settlement: [
+      {
+        id: "jg_wentworth",
+        name: "JG Wentworth Liquidity Network",
+        badge: "Statutory Court Approved",
+        headline: "Unlock Lump-Sum Cash from Structured Settlements with Lowest Market Discount Rates",
+        cta: "Request Lump-Sum Quote",
+        url: "https://www.jgwentworth.com/structured-settlements?ref=omnioperand",
+        disclosure: "Statutory state-court approved transactions with zero upfront out-of-pocket costs.",
+        check: () => true
+      }
+    ],
+
+    commercial_solar: [
+      {
+        id: "energysage_commercial",
+        name: "EnergySage Commercial Marketplace",
+        badge: "Independent Solar Network",
+        headline: "Compare 3+ Vetted Commercial Solar EPC Quotes to Monetize 30% Section 48 ITC",
+        cta: "Compare Solar Quotes",
+        url: "https://www.energysage.com/commercial/?ref=omnioperand",
+        disclosure: "Monetize federal tax equity, accelerated MACRS depreciation, and local SRECs.",
+        check: () => true
+      }
+    ],
+
+    rd_tax: [
+      {
+        id: "mainstreet_rd",
+        name: "MainStreet R&D Credit Platform",
+        badge: "Automated Tax Credit",
+        headline: "Claim Up to $500k in Startup Payroll Tax Cash Refunds with Full Audit Substantiation",
+        cta: "Calculate Payroll Tax Refund",
+        url: "https://www.mainstreet.com/?ref=omnioperand",
+        disclosure: "IRS Section 41 QSB payroll tax credit offset against employer FICA taxes.",
+        check: () => true
+      }
+    ],
+
+    personal_injury: [
+      {
+        id: "trial_attorney_network",
+        name: "National Trial Attorney Network",
+        badge: "Top Litigator Match",
+        headline: "Free Confidential Case Evaluation: Maximize Pain & Suffering Multiplier Payouts",
+        cta: "Request Free Evaluation",
+        url: "https://omnioperand.com/calculators/personal-injury-settlement/?ref=omnioperand",
+        disclosure: "Zero fee unless compensation is recovered. Matches with local trial lawyers.",
+        check: () => true
+      }
+    ],
+
+    business_brokerage: [
+      {
+        id: "bizbuysell",
+        name: "BizBuySell Valuation Network",
+        badge: "Largest Business Marketplace",
+        headline: "Confidential Valuation Opinion & Direct Connection to Qualified Pre-Approved Buyers",
+        cta: "Request Valuation Report",
+        url: "https://www.bizbuysell.com/valuation/?ref=omnioperand",
+        disclosure: "Over 100,000 active business buyer searches every month.",
+        check: () => true
+      }
     ]
   };
 
@@ -187,6 +330,17 @@
 
     getCategoryFromPage() {
       const path = window.location.pathname.toLowerCase();
+      if (path.includes('cost-segregation')) return 'cost_segregation';
+      if (path.includes('1031-exchange') || path.includes('exchange-1031')) return 'exchange_1031';
+      if (path.includes('sba-loan')) return 'sba_loan';
+      if (path.includes('dscr')) return 'dscr_loan';
+      if (path.includes('hard-money')) return 'hard_money';
+      if (path.includes('commercial-real-estate') || path.includes('cap-rate')) return 'cre_financing';
+      if (path.includes('commercial-solar')) return 'commercial_solar';
+      if (path.includes('rd-tax')) return 'rd_tax';
+      if (path.includes('structured-settlement')) return 'structured_settlement';
+      if (path.includes('personal-injury')) return 'personal_injury';
+      if (path.includes('business-valuation')) return 'business_brokerage';
       if (path.includes('islamic') || path.includes('musharaka') || path.includes('murabaha') || path.includes('ijara')) return 'islamic_finance';
       if (path.includes('itin')) return 'itin_mortgage';
       if (path.includes('credit-card') || path.includes('payoff') || path.includes('debt')) return 'credit_card_payoff';

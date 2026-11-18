@@ -31,6 +31,16 @@
     const isTherapy = window.location.pathname.includes('therapy');
     const isLocum = window.location.pathname.includes('locum');
     const isSection179 = window.location.pathname.includes('section-179');
+    const isCostSeg = window.location.pathname.includes('cost-segregation');
+    const is1031 = window.location.pathname.includes('1031-exchange') || window.location.pathname.includes('exchange-1031');
+    const isSba = window.location.pathname.includes('sba-loan');
+    const isHardMoney = window.location.pathname.includes('hard-money');
+    const isCre = window.location.pathname.includes('commercial-real-estate') || window.location.pathname.includes('cap-rate');
+    const isSolar = window.location.pathname.includes('commercial-solar');
+    const isRdTax = window.location.pathname.includes('rd-tax');
+    const isSettlement = window.location.pathname.includes('structured-settlement');
+    const isInjury = window.location.pathname.includes('personal-injury');
+    const isBizVal = window.location.pathname.includes('business-valuation');
 
     // Drawer text localization & specialization
     let titleText = isItin
@@ -44,7 +54,57 @@
     let badgeText = isItin ? '🏛️ Non-QM / ITIN Partner Network' : '🕌 AAOIFI Shariah Lending Network';
     let btnText = isSpanish ? 'Verificar Pre-Aprobación Ahora' : 'Request Partner Pre-Approval Match';
 
-    if (isDscr) {
+    if (isCostSeg) {
+      badgeText = '🏛️ Certified Cost Segregation Engineering Network';
+      titleText = 'Order an Audit-Ready Cost Segregation Study';
+      subTitle = 'IRS-compliant engineering studies conducted by licensed engineers and certified CPAs with written audit defense.';
+      btnText = 'Connect with Certified Cost Segregation Engineers';
+    } else if (is1031) {
+      badgeText = '🏛️ Bonded Qualified Intermediary (QI) Network';
+      titleText = 'Section 1031 Exchange Intermediary Desk';
+      subTitle = 'Connect with bonded Qualified Intermediaries ($100M+ fidelity bond) to execute like-kind exchange safe harbor.';
+      btnText = 'Connect with Bonded 1031 Exchange Intermediaries';
+    } else if (isSba) {
+      badgeText = '🏛️ SBA Preferred Lender (PLP) Network';
+      titleText = 'SBA 7(a) & 504 Commercial Lending Desk';
+      subTitle = 'Pre-qualify for SBA commercial real estate and working capital loans up to $5M with expedited PLP underwriting.';
+      btnText = 'Pre-Qualify for SBA 7(a) / 504 Financing';
+    } else if (isHardMoney) {
+      badgeText = '⚡ Private Money & Fix-and-Flip Debt Desk';
+      titleText = 'Direct Hard Money Lending Match';
+      subTitle = 'Fund up to 90% purchase and 100% rehab for residential fix-and-flip or BRRRR projects in under 10 days.';
+      btnText = 'Request Hard Money Term Sheets';
+    } else if (isCre) {
+      badgeText = '🏢 Wholesale Commercial Real Estate Debt Desk';
+      titleText = 'Commercial Real Estate Capital Desk';
+      subTitle = 'Compare wholesale CMBS, agency, and institutional debt fund term sheets sized by debt yield and DSCR.';
+      btnText = 'Request Wholesale CRE Term Sheets';
+    } else if (isSolar) {
+      badgeText = '☀️ Commercial Solar EPC & Tax Equity Desk';
+      titleText = 'Commercial Solar ITC & Depreciation Match';
+      subTitle = 'Monetize 30% Section 48 ITC and 85% MACRS basis reduction with vetted commercial solar installers.';
+      btnText = 'Request Commercial Solar EPC Term Sheets';
+    } else if (isRdTax) {
+      badgeText = '💰 Qualified Small Business Tax Credit Network';
+      titleText = 'IRS §41 R&D Payroll Tax Credit Recovery';
+      subTitle = 'Claim up to $500k in payroll tax cash refunds with full engineering audit substantiation.';
+      btnText = 'Check R&D Payroll Tax Credit Eligibility';
+    } else if (isSettlement) {
+      badgeText = '⚖️ Court-Approved Statutory Liquidity Network';
+      titleText = 'Structured Settlement Lump-Sum Desk';
+      subTitle = 'Compare buyout term sheets with lowest factoring discount rates from court-approved institutional funders.';
+      btnText = 'Request Lump-Sum Cash Buyout Quote';
+    } else if (isInjury) {
+      badgeText = '⚖️ Top Litigator Case Evaluation Desk';
+      titleText = 'Free Confidential Case Review';
+      subTitle = 'Connect with verified trial attorneys in your state to maximize pain and suffering settlement multipliers.';
+      btnText = 'Request Free Attorney Case Review';
+    } else if (isBizVal) {
+      badgeText = '📈 M&A Advisory & Valuation Network';
+      titleText = 'Confidential Business Valuation Opinion';
+      subTitle = 'Connect with qualified M&A advisors and pre-approved commercial buyers for mid-market businesses.';
+      btnText = 'Request Confidential Business Valuation';
+    } else if (isDscr) {
       badgeText = '🏢 Wholesale Non-QM DSCR Network';
       titleText = 'Wholesale Non-QM DSCR Lending Desk';
       subTitle = 'Connect with wholesale Non-QM lenders funding DSCR down to 0.75x with no tax returns or personal income needed.';
@@ -246,16 +306,45 @@
 
     function openDrawer() {
       // Pull current live state from calculator DOM
-      const priceInput = document.getElementById('param-home_price');
-      const downInput = document.getElementById('param-down_payment_pct');
-      const monthlyRes = document.getElementById('res-monthly_installment') || document.getElementById('res-monthly_piti');
+      const priceInput = document.getElementById('param-purchase_price') 
+        || document.getElementById('param-property_price') 
+        || document.getElementById('param-home_price') 
+        || document.getElementById('param-sales_price') 
+        || document.getElementById('param-project_cost') 
+        || document.getElementById('param-equipment_cost') 
+        || document.getElementById('param-annual_revenue')
+        || document.getElementById('param-w2_wages')
+        || document.getElementById('param-medical_bills')
+        || document.getElementById('param-future_value')
+        || document.getElementById('param-arv');
+
+      const downInput = document.getElementById('param-down_payment_pct')
+        || document.getElementById('param-down_payment')
+        || document.getElementById('param-bonus_depreciation_pct');
+
+      const monthlyRes = document.getElementById('res-monthly_installment') 
+        || document.getElementById('res-monthly_piti')
+        || document.getElementById('res-monthly_pitia')
+        || document.getElementById('res-monthly_pi')
+        || document.getElementById('res-year1_tax_savings')
+        || document.getElementById('res-taxes_deferred')
+        || document.getElementById('res-enterprise_value')
+        || document.getElementById('res-net_client_recovery')
+        || document.getElementById('res-tax_credit');
+
       const modelTitle = document.querySelector('h1')?.innerText || (isItin ? 'ITIN Mortgage' : 'Islamic Financing');
 
-      const priceVal = priceInput ? Number(priceInput.value || 400000) : 400000;
-      const downPct = downInput ? Number(downInput.value || 20) : 20;
+      let rawVal = priceInput ? String(priceInput.value).replace(/[^0-9.-]+/g, '') : '';
+      let priceVal = parseFloat(rawVal);
+      if (isNaN(priceVal) || priceVal <= 0) {
+        priceVal = isCostSeg ? 2000000 : (is1031 ? 1200000 : (isSba ? 1500000 : 400000));
+      }
+
+      let downPct = downInput ? parseFloat(String(downInput.value).replace(/[^0-9.-]+/g, '')) : 20;
+      if (isNaN(downPct)) downPct = 20;
       const downAmount = Math.round(priceVal * (downPct / 100));
 
-      document.getElementById('lead-snap-price').innerText = '$' + priceVal.toLocaleString('en-US');
+      document.getElementById('lead-snap-price').innerText = '$' + Math.round(priceVal).toLocaleString('en-US');
       document.getElementById('lead-snap-down').innerText = `${downPct}% ($${downAmount.toLocaleString('en-US')})`;
       document.getElementById('lead-snap-model').innerText = modelTitle.split('(')[0].replace('Calculator', '').trim();
       if (monthlyRes) {
@@ -337,7 +426,37 @@
         if (isItin) endpoint = '/api/leads/itin-mortgage';
         else if (isIslamic) endpoint = '/api/leads/islamic-finance';
 
-        payload.niche = isDscr ? 'dscr' : (isBankStmt ? 'bank-statement' : (isChattel ? 'chattel' : (isTherapy ? 'therapy' : (isLocum ? 'locum' : (isSection179 ? 'section179' : 'specialized-finance')))));
+        payload.niche = isCostSeg ? 'cost-segregation' : (
+          is1031 ? '1031-exchange' : (
+            isSba ? 'sba-loan' : (
+              isHardMoney ? 'hard-money' : (
+                isCre ? 'cre-financing' : (
+                  isSolar ? 'commercial-solar' : (
+                    isRdTax ? 'rd-tax' : (
+                      isSettlement ? 'structured-settlement' : (
+                        isInjury ? 'personal-injury' : (
+                          isBizVal ? 'business-brokerage' : (
+                            isDscr ? 'dscr' : (
+                              isBankStmt ? 'bank-statement' : (
+                                isChattel ? 'chattel' : (
+                                  isTherapy ? 'therapy' : (
+                                    isLocum ? 'locum' : (
+                                      isSection179 ? 'section179' : 'specialized-finance'
+                                    )
+                                  )
+                                )
+                              )
+                            )
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        );
 
         const res = await fetch(endpoint, {
           method: 'POST',

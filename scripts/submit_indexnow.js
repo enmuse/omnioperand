@@ -33,18 +33,29 @@ if (fs.existsSync(ENV_FILE)) {
   }
 }
 
-// 2. Parse all <loc> URLs from sitemap.xml
-if (!fs.existsSync(SITEMAP_FILE)) {
-  console.error(`❌ sitemap.xml not found at: ${SITEMAP_FILE}`);
+// 2. Parse all <loc> URLs from all sitemap files (partitioned sitemaps + root)
+const sitemapFiles = fs.readdirSync(REPO_ROOT).filter(f => 
+  f.startsWith('sitemap') && f.endsWith('.xml') && f !== 'sitemap-index.xml'
+);
+
+if (sitemapFiles.length === 0) {
+  console.error(`❌ No sitemap.xml files found at: ${REPO_ROOT}`);
   process.exit(1);
 }
 
-const sitemapContent = fs.readFileSync(SITEMAP_FILE, 'utf8');
-const urlMatches = sitemapContent.match(/<loc>(.*?)<\/loc>/g) || [];
-const urls = urlMatches.map(m => m.replace(/<\/?loc>/g, '').trim());
+const urlSet = new Set();
+for (const file of sitemapFiles) {
+  const filePath = path.join(REPO_ROOT, file);
+  const content = fs.readFileSync(filePath, 'utf8');
+  const matches = content.match(/<loc>(.*?)<\/loc>/g) || [];
+  for (const m of matches) {
+    urlSet.add(m.replace(/<\/?loc>/g, '').trim());
+  }
+}
+const urls = Array.from(urlSet);
 
 if (urls.length === 0) {
-  console.error('❌ No URLs found in sitemap.xml');
+  console.error('❌ No URLs found across sitemap files');
   process.exit(1);
 }
 
