@@ -90,51 +90,14 @@ export async function onRequestGet(context) {
   const origin = (context && context.request && new URL(context.request.url).origin) || "https://omnioperand.com";
   const pathname = (context && context.request && new URL(context.request.url).pathname) || "/mcp";
 
-  // Handle RFC 9728 & OIDC discovery requests routed to MCP path
+  // Public server without OAuth front-door auth
   if (pathname.includes(".well-known")) {
-    if (pathname.includes("oauth-protected-resource")) {
-      return new Response(JSON.stringify({
-        resource: `${origin}/mcp`,
-        authorization_servers: ["https://auth.arcade.dev", origin],
-        scopes_supported: ["tools:read", "tools:call", "resources:read", "prompts:read", "mcp", "read", "write"],
-        bearer_methods_supported: ["header"],
-        resource_documentation: `${origin}/mcp`
-      }, null, 2), { status: 200, headers: CORS_HEADERS });
-    }
-    if (pathname.includes("oauth-authorization-server")) {
-      return new Response(JSON.stringify({
-        issuer: origin,
-        authorization_endpoint: "https://auth.arcade.dev/oauth2/auth",
-        device_authorization_endpoint: "https://auth.arcade.dev/oauth2/device/auth",
-        token_endpoint: "https://auth.arcade.dev/oauth2/token",
-        userinfo_endpoint: "https://auth.arcade.dev/userinfo",
-        revocation_endpoint: "https://auth.arcade.dev/oauth2/revoke",
-        jwks_uri: "https://auth.arcade.dev/.well-known/jwks.json",
-        response_types_supported: ["code", "token"],
-        subject_types_supported: ["public"],
-        grant_types_supported: ["authorization_code", "client_credentials", "refresh_token"],
-        token_endpoint_auth_methods_supported: ["client_secret_post", "client_secret_basic", "none"],
-        scopes_supported: ["openid", "offline_access", "tools", "mcp"],
-        code_challenge_methods_supported: ["S256"]
-      }, null, 2), { status: 200, headers: CORS_HEADERS });
-    }
-    if (pathname.includes("openid-configuration")) {
-      return new Response(JSON.stringify({
-        issuer: origin,
-        authorization_endpoint: "https://auth.arcade.dev/oauth2/auth",
-        device_authorization_endpoint: "https://auth.arcade.dev/oauth2/device/auth",
-        token_endpoint: "https://auth.arcade.dev/oauth2/token",
-        userinfo_endpoint: "https://auth.arcade.dev/userinfo",
-        jwks_uri: "https://auth.arcade.dev/.well-known/jwks.json",
-        response_types_supported: ["code", "id_token", "token id_token"],
-        subject_types_supported: ["public"],
-        id_token_signing_alg_values_supported: ["RS256"],
-        scopes_supported: ["openid", "offline_access", "tools", "mcp"],
-        token_endpoint_auth_methods_supported: ["client_secret_post", "client_secret_basic", "none"],
-        claims_supported: ["sub", "iss", "aud", "exp", "iat"],
-        code_challenge_methods_supported: ["S256"]
-      }, null, 2), { status: 200, headers: CORS_HEADERS });
-    }
+    return new Response(JSON.stringify({
+      status: "unprotected",
+      authentication_required: false,
+      message: "OmniOperand MCP server is a public calculation engine and does not require OAuth authentication.",
+      mcp_endpoint: `${origin}/mcp`
+    }, null, 2), { status: 404, headers: CORS_HEADERS });
   }
 
   // Support MCP Server-Sent Events (SSE) remote transport

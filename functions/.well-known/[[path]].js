@@ -38,76 +38,15 @@ export async function onRequestGet(context) {
   const origin = url.origin || "https://omnioperand.com";
   const path = url.pathname.toLowerCase();
 
-  // 1. RFC 9728: Protected Resource Metadata
-  if (path.includes("oauth-protected-resource")) {
-    const resourcePayload = {
-      resource: `${origin}/mcp`,
-      authorization_servers: [
-        "https://auth.arcade.dev",
-        origin
-      ],
-      scopes_supported: [
-        "tools:read",
-        "tools:call",
-        "resources:read",
-        "prompts:read",
-        "mcp",
-        "read",
-        "write"
-      ],
-      bearer_methods_supported: [
-        "header"
-      ],
-      resource_documentation: `${origin}/mcp`
-    };
-    return new Response(JSON.stringify(resourcePayload, null, 2), {
-      status: 200,
-      headers: CORS_HEADERS
-    });
-  }
-
-  // 2. RFC 8414: OAuth Authorization Server Metadata
-  if (path.includes("oauth-authorization-server")) {
-    const authServerPayload = {
-      issuer: origin,
-      authorization_endpoint: "https://auth.arcade.dev/oauth2/auth",
-      device_authorization_endpoint: "https://auth.arcade.dev/oauth2/device/auth",
-      token_endpoint: "https://auth.arcade.dev/oauth2/token",
-      userinfo_endpoint: "https://auth.arcade.dev/userinfo",
-      revocation_endpoint: "https://auth.arcade.dev/oauth2/revoke",
-      jwks_uri: "https://auth.arcade.dev/.well-known/jwks.json",
-      response_types_supported: ["code", "token"],
-      subject_types_supported: ["public"],
-      grant_types_supported: ["authorization_code", "client_credentials", "refresh_token"],
-      token_endpoint_auth_methods_supported: ["client_secret_post", "client_secret_basic", "none"],
-      scopes_supported: ["openid", "offline_access", "tools", "mcp"],
-      code_challenge_methods_supported: ["S256"]
-    };
-    return new Response(JSON.stringify(authServerPayload, null, 2), {
-      status: 200,
-      headers: CORS_HEADERS
-    });
-  }
-
-  // 3. OpenID Connect Discovery 1.0 (openid-configuration)
-  if (path.includes("openid-configuration")) {
-    const oidcPayload = {
-      issuer: origin,
-      authorization_endpoint: "https://auth.arcade.dev/oauth2/auth",
-      device_authorization_endpoint: "https://auth.arcade.dev/oauth2/device/auth",
-      token_endpoint: "https://auth.arcade.dev/oauth2/token",
-      userinfo_endpoint: "https://auth.arcade.dev/userinfo",
-      jwks_uri: "https://auth.arcade.dev/.well-known/jwks.json",
-      response_types_supported: ["code", "id_token", "token id_token"],
-      subject_types_supported: ["public"],
-      id_token_signing_alg_values_supported: ["RS256"],
-      scopes_supported: ["openid", "offline_access", "tools", "mcp"],
-      token_endpoint_auth_methods_supported: ["client_secret_post", "client_secret_basic", "none"],
-      claims_supported: ["sub", "iss", "aud", "exp", "iat"],
-      code_challenge_methods_supported: ["S256"]
-    };
-    return new Response(JSON.stringify(oidcPayload, null, 2), {
-      status: 200,
+  // 1. OAuth / OIDC Discovery: Public server without front-door auth
+  if (path.includes("oauth-protected-resource") || path.includes("oauth-authorization-server") || path.includes("openid-configuration")) {
+    return new Response(JSON.stringify({
+      status: "unprotected",
+      authentication_required: false,
+      message: "OmniOperand MCP server is a public calculation engine and does not require OAuth authentication.",
+      mcp_endpoint: `${origin}/mcp`
+    }, null, 2), {
+      status: 404,
       headers: CORS_HEADERS
     });
   }
@@ -132,12 +71,7 @@ export async function onRequestGet(context) {
       },
       authentication: {
         required: false,
-        methods: ["none", "oauth2"],
-        oauth2: {
-          authorization_endpoint: "https://auth.arcade.dev/oauth2/auth",
-          token_endpoint: "https://auth.arcade.dev/oauth2/token",
-          scopes_supported: ["tools", "mcp"]
-        }
+        methods: ["none"]
       }
     };
     return new Response(JSON.stringify(mcpCardPayload, null, 2), {
