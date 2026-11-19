@@ -38,20 +38,56 @@ export async function onRequestGet(context) {
   const origin = url.origin || "https://omnioperand.com";
   const path = url.pathname.toLowerCase();
 
-  // 1. OAuth / OIDC Discovery: Public server without front-door auth
-  if (path.includes("oauth-protected-resource") || path.includes("oauth-authorization-server") || path.includes("openid-configuration")) {
-    return new Response(JSON.stringify({
-      status: "unprotected",
-      authentication_required: false,
-      message: "OmniOperand MCP server is a public calculation engine and does not require OAuth authentication.",
-      mcp_endpoint: `${origin}/mcp`
-    }, null, 2), {
-      status: 404,
+  // 1. RFC 9728: Protected Resource Metadata
+  if (path.includes("oauth-protected-resource")) {
+    const resourcePayload = {
+      resource: `${origin}/mcp`,
+      authorization_servers: [
+        origin
+      ],
+      scopes_supported: [
+        "tools:read",
+        "tools:call",
+        "resources:read",
+        "prompts:read",
+        "mcp"
+      ],
+      bearer_methods_supported: [
+        "header"
+      ],
+      resource_documentation: `${origin}/mcp`
+    };
+    return new Response(JSON.stringify(resourcePayload, null, 2), {
+      status: 200,
       headers: CORS_HEADERS
     });
   }
 
-  // 4. MCP Discovery Card (mcp, mcp.json, server-card.json)
+  // 2. RFC 8414 & OIDC: OAuth Authorization Server Metadata with RFC 7591 Dynamic Registration
+  if (path.includes("oauth-authorization-server") || path.includes("openid-configuration")) {
+    const authServerPayload = {
+      issuer: origin,
+      authorization_endpoint: `${origin}/mcp/oauth/authorize`,
+      device_authorization_endpoint: `${origin}/mcp/oauth/authorize`,
+      token_endpoint: `${origin}/mcp/oauth/token`,
+      registration_endpoint: `${origin}/mcp/oauth/register`,
+      userinfo_endpoint: `${origin}/mcp/oauth/userinfo`,
+      revocation_endpoint: `${origin}/mcp/oauth/revoke`,
+      jwks_uri: "https://auth.arcade.dev/.well-known/jwks.json",
+      response_types_supported: ["code", "token", "id_token"],
+      subject_types_supported: ["public"],
+      grant_types_supported: ["authorization_code", "client_credentials", "refresh_token"],
+      token_endpoint_auth_methods_supported: ["client_secret_post", "client_secret_basic", "none"],
+      scopes_supported: ["openid", "offline_access", "tools", "mcp"],
+      code_challenge_methods_supported: ["S256"]
+    };
+    return new Response(JSON.stringify(authServerPayload, null, 2), {
+      status: 200,
+      headers: CORS_HEADERS
+    });
+  }
+
+  // 3. MCP Discovery Card (mcp, mcp.json, server-card.json)
   if (path.includes("mcp")) {
     const mcpCardPayload = {
       mcp_version: "2024-11-05",
@@ -71,7 +107,13 @@ export async function onRequestGet(context) {
       },
       authentication: {
         required: false,
-        methods: ["none"]
+        methods: ["none", "oauth2"],
+        oauth2: {
+          authorization_endpoint: `${origin}/mcp/oauth/authorize`,
+          token_endpoint: `${origin}/mcp/oauth/token`,
+          registration_endpoint: `${origin}/mcp/oauth/register`,
+          scopes_supported: ["tools", "mcp"]
+        }
       }
     };
     return new Response(JSON.stringify(mcpCardPayload, null, 2), {
