@@ -22,8 +22,8 @@ import { AI_PROMPTS } from './prompts.js';
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS, HEAD",
-  "Access-Control-Allow-Headers": "Content-Type, Authorization, x-api-key, mcp-session-id",
-  "Access-Control-Expose-Headers": "mcp-session-id",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization, x-api-key, mcp-session-id, mcp-method, mcp-protocol-version, baggage, traceparent",
+  "Access-Control-Expose-Headers": "mcp-session-id, mcp-protocol-version",
   "Content-Type": "application/json"
 };
 
@@ -178,11 +178,6 @@ export async function onRequestGet(context) {
 export async function onRequestPost(context) {
   const reqSessionId = (context && context.request && context.request.headers && context.request.headers.get("mcp-session-id")) || null;
   const sessionId = reqSessionId || "omni-" + Math.random().toString(36).slice(2, 10);
-  const responseHeaders = {
-    ...CORS_HEADERS,
-    "mcp-session-id": sessionId
-  };
-
   let body;
   try {
     body = await context.request.json();
@@ -192,12 +187,23 @@ export async function onRequestPost(context) {
       jsonrpc: "2.0",
       id: null,
       error: { code: -32700, message: "Parse error: Invalid JSON payload" }
-    }), { status: 400, headers: responseHeaders });
+    }), { status: 400, headers: CORS_HEADERS });
   }
 
   const id = body.id ?? null;
   const method = body.method;
   const params = body.params || {};
+
+  const reqProtoVersion = (context && context.request && context.request.headers && context.request.headers.get("mcp-protocol-version"))
+    || (params && params._meta && params._meta["io.modelcontextprotocol/protocolVersion"])
+    || (params && params.protocolVersion)
+    || "2026-07-28";
+
+  const responseHeaders = {
+    ...CORS_HEADERS,
+    "mcp-session-id": sessionId,
+    "mcp-protocol-version": reqProtoVersion
+  };
 
   if (context && context.waitUntil) {
     context.waitUntil(logToWebhook(context.request, 200, body, `Method: ${method}`));
@@ -209,7 +215,8 @@ export async function onRequestPost(context) {
         jsonrpc: "2.0",
         id,
         result: {
-          protocolVersion: (params && params.protocolVersion) || "2024-11-05",
+          protocolVersion: reqProtoVersion,
+          supportedVersions: ["2026-07-28", "2025-11-25", "2024-11-05"],
           capabilities: {
             tools: { listChanged: false },
             resources: { listChanged: false },
@@ -218,7 +225,14 @@ export async function onRequestPost(context) {
           serverInfo: {
             name: "omnioperand-mcp-server",
             version: "2.0.0"
-          }
+          },
+          _meta: {
+            "io.modelcontextprotocol/serverInfo": {
+              name: "omnioperand-mcp-server",
+              version: "2.0.0"
+            }
+          },
+          instructions: "OmniOperand deterministic mathematical, financial, scientific, and engineering calculation coprocessor with 447 precision solvers."
         }
       }), { status: 200, headers: responseHeaders });
 
@@ -234,16 +248,24 @@ export async function onRequestPost(context) {
         jsonrpc: "2.0",
         id,
         result: {
-          protocolVersion: "2024-11-05",
-          serverInfo: {
-            name: "omnioperand-mcp-server",
-            version: "2.0.0"
-          },
+          protocolVersion: reqProtoVersion,
+          supportedVersions: ["2026-07-28", "2025-11-25", "2024-11-05"],
           capabilities: {
             tools: { listChanged: false },
             resources: { listChanged: false },
             prompts: { listChanged: false }
-          }
+          },
+          serverInfo: {
+            name: "omnioperand-mcp-server",
+            version: "2.0.0"
+          },
+          _meta: {
+            "io.modelcontextprotocol/serverInfo": {
+              name: "omnioperand-mcp-server",
+              version: "2.0.0"
+            }
+          },
+          instructions: "OmniOperand deterministic mathematical, financial, scientific, and engineering calculation coprocessor with 447 precision solvers."
         }
       }), { status: 200, headers: responseHeaders });
 

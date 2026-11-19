@@ -16,8 +16,8 @@ import { onRequestGet as wellKnownGet, onRequestOptions as wellKnownOptions } fr
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS, HEAD",
-  "Access-Control-Allow-Headers": "Content-Type, Authorization, x-api-key, mcp-session-id",
-  "Access-Control-Expose-Headers": "mcp-session-id",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization, x-api-key, mcp-session-id, mcp-method, mcp-protocol-version, baggage, traceparent",
+  "Access-Control-Expose-Headers": "mcp-session-id, mcp-protocol-version",
   "Content-Type": "application/json"
 };
 
