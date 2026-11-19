@@ -4,8 +4,8 @@
  */
 
 export const METRICS = {
-  "solvers_count": 446,
-  "mcp_tools_count": 447,
+  "solvers_count": 428,
+  "mcp_tools_count": 429,
   "calculators_count": 977,
   "categories_count": 15,
   "total_html_pages": 1019,
@@ -25,26 +25,26 @@ export const METRICS = {
     "ro"
   ],
   "category_breakdown": {
-    "finance": 133,
-    "construction": 31,
+    "finance": 125,
     "ecommerce": 30,
-    "health": 27,
-    "engineering": 27,
-    "biotech": 26,
+    "construction": 27,
+    "health": 25,
     "energy": 25,
     "logistics": 25,
     "crypto": 25,
     "legal": 25,
     "agriculture": 25,
+    "engineering": 25,
+    "biotech": 25,
     "physics": 23,
-    "geometry": 18,
+    "geometry": 17,
     "statistics": 4,
     "calculus": 2
   },
-  "last_updated": "2026-11-19T21:37:13Z"
+  "last_updated": "2026-11-19T22:17:53Z"
 };
 
-export const SOLVERS_COUNT = 446;
-export const MCP_TOOLS_COUNT = 447;
+export const SOLVERS_COUNT = 428;
+export const MCP_TOOLS_COUNT = 429;
 export const CALCULATORS_COUNT = 977;
 export const CATEGORIES_COUNT = 15;

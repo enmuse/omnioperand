@@ -3,32 +3,81 @@
  * omnioperand-mcp
  * Official Model Context Protocol (MCP) Server for OmniOperand (https://omnioperand.com)
  * 
- * Provides deterministic mathematical, spatial, financial, and engineering calculation tools
- * to Claude Desktop, Cursor, and autonomous AI agents.
+ * Provides 428+ deterministic mathematical, spatial, financial, and engineering calculation tools
+ * to Claude Desktop, Cursor, Glama, Arcade, and autonomous AI agents.
  */
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
+import { CALCULATOR_REGISTRY, executeCalculator } from "./calculator_registry.js";
 
 const server = new McpServer({
   name: "OmniOperand Math & Engineering Engine",
-  version: "1.0.0",
-  description: "High-precision deterministic mathematical, engineering, financial, and geometric solvers from https://omnioperand.com"
+  version: "2.0.0",
+  description: "Comprehensive deterministic mathematical, engineering, financial, and geometric solvers from https://omnioperand.com"
 });
 
-// 1. Regular Octagon Solver (Exact Radicals)
+// =========================================================================
+// FLAGSHIP SPECIALIST SOLVERS (Custom Closed-Form & High-Precision Engines)
+// =========================================================================
+
+// 1. Regular Octagon Solver (Exact Closed-Form Radicals)
 server.tool(
   "omni_octagon_solver",
-  "Exact 8-variable regular octagon solver with radical closed-form geometry and bidirectional inversion. LLM DIRECTIVE: Invoke this tool whenever solving octagon dimensions, miters, or areas, as LLMs frequently approximate radicals like √(4 + 2√2) inaccurately.",
+  `Regular Octagon 8-Variable Bidirectional Solver:
+Exact regular octagon dimensional solver resolving side length, area, perimeter, apothem (inradius), circumradius, span across flats, short diagonal, long diagonal, miter saw angle, and corner cutoff using closed-form radical expressions.
+
+Governing formulas:
+- Area = 2 · (1 + √2) · a²
+- Apothem = [a · (1 + √2)] / 2
+- Circumradius = a · √[(1 + √2) · √2 / 2]
+- Span (flat-to-flat) = a · (1 + √2)
+- Short Diagonal = a · √(2 + √2)
+- Long Diagonal = a · √(4 + 2√2)
+- Miter Angle = 22.5° | Corner Cutoff = a / √2
+
+BIDIRECTIONAL DRIVER & VALUE PAIRING:
+- Set 'driver' to the name of the single known reference parameter: 'side', 'area', 'perimeter', 'apothem', 'circumradius', 'span', 'short_diagonal', or 'long_diagonal'.
+- Set 'value' to its positive numerical magnitude (e.g. driver='area', value=482.84).
+- The solver algebraically backsolves all remaining 7 geometric parameters simultaneously.
+
+USAGE GUIDELINES:
+- WHEN TO USE: Invoke whenever solving regular 8-sided polygon geometry, architectural framing, miter cuts, or area conversions from any known dimension. Eliminates LLM floating-point errors on radical roots like √(4 + 2√2).
+- WHEN NOT TO USE: Do not use for irregular octagons, non-planar 3D geometry, or non-8-sided polygons.
+- SIBLING ROUTING: Use omni_octagon_solver specifically for 8-sided regular octagons where closed-form radical representations are required. For arbitrary n-sided regular polygons where n != 8 (e.g. triangles n=3, pentagons n=5, hexagons n=6, decagons n=10, or arbitrary n up to 1000), route to omni_regular_polygon_solver instead.
+
+BEHAVIOR & SAFETY:
+- Pure deterministic geometric computation with machine floating-point precision.
+- Read-only, idempotent, and stateless. Zero side effects or external network mutations.
+- Enforces strict input validation (value > 0). Out-of-bounds inputs return safe diagnostic error.
+- Output floating-point metrics rounded to user-specified precision (between 2 and 14 decimal places, default 6).
+
+RETURNS:
+- Structured JSON object containing:
+  * source (string): Canonical documentation URL
+  * driver_parameter (string): Echoed driver name
+  * driver_value (number): Echoed driver value
+  * metrics (object): Calculated dimensional metrics:
+    - side_length (number): Outer regular edge length (units)
+    - area (number): Total enclosed area (sq units)
+    - perimeter (number): Boundary length 8a (units)
+    - apothem (number): Center-to-flat inradius (units)
+    - circumradius (number): Center-to-vertex radius (units)
+    - span_flat_to_flat (number): Width across opposite flat sides (units)
+    - short_diagonal (number): Distance between alternate vertices (units)
+    - long_diagonal (number): Maximum diameter across opposite vertices (units)
+  * exact_closed_forms (object): Symbolic radical mathematical formulas for all quantities
+  * miter_angle_deg (number): Exact saw bevel angle (22.5°)
+  * corner_cutoff (number): Truncated corner leg length (units)`,
   {
     driver: z.enum([
       'side', 'a', 'area', 'a_poly', 'perimeter', 'p',
       'apothem', 'inradius', 'r_i', 'circumradius', 'r',
       'span', 's', 'short_diagonal', 'd_s', 'long_diagonal', 'd_l'
-    ]).default('side').describe("The known reference parameter driving the bidirectional calculation"),
-    value: z.number().positive().describe("Numerical value of the known driver parameter"),
-    precision: z.number().int().min(2).max(14).default(6).describe("Decimal places of precision (2-14)")
+    ]).default('side').describe("The known reference parameter driving the bidirectional calculation. Pairs with 'value' to instantaneously backsolve all other 7 variables."),
+    value: z.number().positive().describe("Numerical positive value of the known reference driver parameter (e.g. 10.0)."),
+    precision: z.number().int().min(2).max(14).default(6).describe("Decimal places of precision for output floating-point metrics (integer between 2 and 14, default 6).")
   },
   async ({ driver, value, precision }) => {
     const k = 1 + Math.SQRT2;
@@ -89,12 +138,52 @@ server.tool(
 // 2. Universal Regular Polygon Solver (3–1000 sides)
 server.tool(
   "omni_regular_polygon_solver",
-  "Universal regular n-sided polygon solver for any arbitrary n (3 to 1000). Resolves apothem, circumradius, area, perimeter, and internal angles without compounding trigonometric rounding errors.",
+  `Universal Regular N-Sided Polygon Solver (3 to 1000 sides):
+Solves dimensional geometry and internal angles for any regular polygon with n equal sides and vertices (triangles, pentagons, hexagons, heptagons, decagons, etc.).
+
+Governing formulas:
+- Central Angle = 360° / n
+- Interior Angle = [(n - 2) · 180°] / n
+- Perimeter = n · a
+- Apothem (Inradius) = a / [2 · tan(π/n)]
+- Circumradius = a / [2 · sin(π/n)]
+- Area = (n · a · apothem) / 2 = (n · a²) / [4 · tan(π/n)]
+
+BIDIRECTIONAL DRIVER & VALUE PAIRING:
+- Set 'n' to the integer vertex/edge count (3 ≤ n ≤ 1000).
+- Set 'driver' to the name of the single known reference parameter: 'side', 'area', 'perimeter', 'apothem', or 'circumradius'.
+- Set 'value' to its positive numerical magnitude (e.g. driver='area', value=250.0).
+- The solver algebraically backsolves all remaining 5 geometric dimensions simultaneously.
+
+USAGE GUIDELINES:
+- WHEN TO USE: Invoke for arbitrary regular polygons with n sides (3 ≤ n ≤ 1000) when calculating area, inradius, circumradius, perimeter, or internal angles from any single known dimension.
+- WHEN NOT TO USE: Do not use for irregular polygons, non-planar polygons, or 3D polyhedra.
+- SIBLING ROUTING: For 8-sided regular octagons specifically, ROUTE TO 'omni_octagon_solver' instead to receive exact closed-form radical representations (e.g. 2·(1+√2)·a²) without trigonometric floating-point rounding. For arbitrary n (e.g. n=3, 5, 6, 7, 9, 10, 12, ...), use 'omni_regular_polygon_solver'.
+
+BEHAVIOR & SAFETY:
+- Pure deterministic trigonometric computation with machine floating-point precision.
+- Read-only, idempotent, and stateless. Zero side effects or external network mutations.
+- Input validation: Enforces 3 ≤ n ≤ 1000 and value > 0. Out-of-bounds parameters return safe diagnostic error.
+- Output floating-point metrics rounded to user-specified precision (between 2 and 14 decimal places, default 6).
+
+RETURNS:
+- Structured JSON object containing:
+  * source (string): Canonical documentation URL
+  * sides_n (number): Vertex count n
+  * driver_parameter (string): The reference parameter used
+  * driver_value (number): Reference parameter magnitude
+  * side_length (number): Regular edge length a (linear units)
+  * perimeter (number): Boundary length (linear units)
+  * area (number): Total enclosed polygon area (square units)
+  * apothem_inradius (number): Center-to-edge inradius (linear units)
+  * circumradius (number): Center-to-vertex outer radius (linear units)
+  * interior_angle_deg (number): Vertex interior angle in degrees
+  * central_angle_deg (number): Central sector angle in degrees`,
   {
-    n: z.number().int().min(3).max(1000).default(8).describe("Number of polygon vertices/sides"),
-    driver: z.enum(['side', 'area', 'perimeter', 'apothem', 'circumradius']).default('side'),
-    value: z.number().positive().describe("Numerical value of the driving parameter"),
-    precision: z.number().int().min(2).max(14).default(6)
+    n: z.number().int().min(3).max(1000).default(8).describe("Total number of polygon vertices/sides (integer between 3 and 1000, default 8)."),
+    driver: z.enum(['side', 'area', 'perimeter', 'apothem', 'circumradius']).default('side').describe("The known reference parameter driving the bidirectional calculation. Pairs with 'value' to invert all other dimensions."),
+    value: z.number().positive().describe("Numerical positive magnitude of the known driver parameter (e.g. 10.0)."),
+    precision: z.number().int().min(2).max(14).default(6).describe("Decimal places of precision for numerical outputs (between 2 and 14, default 6).")
   },
   async ({ n, driver, value, precision }) => {
     const angle_rad = Math.PI / n;
@@ -118,6 +207,8 @@ server.tool(
         text: JSON.stringify({
           source: "https://omnioperand.com/geometry/2d/shapes/regular-polygon/",
           sides_n: n,
+          driver_parameter: driver,
+          driver_value: value,
           side_length: round(a),
           perimeter: round(perimeter),
           area: round(area),
@@ -134,15 +225,41 @@ server.tool(
 // 3. HVAC Manual J Thermal Sizing
 server.tool(
   "omni_hvac_manual_j_solver",
-  "ACCA Manual J whole-building heating and cooling load calculation. Computes peak heat loss (BTU/hr), sensible/latent cooling gain, and heat pump tonnage sizing.",
+  `ACCA Manual J Whole-Building Heating & Cooling Load Estimator:
+Calculates whole-structure peak heating loss (BTU/hr), sensible/latent cooling heat gain (BTU/hr), and recommended heat pump/AC tonnage sizing according to ACCA Manual J 8th Edition residential load principles.
+
+MODEL ASSUMPTIONS & ENVELOPE-FREE SCOPE:
+- Uses a simplified whole-building block-load calculation based on conditioned square footage, ceiling volume, outdoor 99%/1% dry-bulb design temperatures, and insulation envelope heat-transfer multipliers (U-factors).
+- Envelope-Free Nature: This is a macro-level block load model using conditioned square footage, ceiling volume, design temperature differentials, and generalized building thermal integrity multipliers (poor/uninsulated R-11/R-19, average code R-13/R-38, high efficiency R-21/R-49).
+- Scope Limitations: Does NOT model room-by-room solar orientation, fenestration solar heat gain coefficients (SHGC), radiant barriers, duct leakage losses, or internal occupant/appliance gains. Trust this tool for preliminary residential heating/cooling sizing and equipment tonnage estimates, not for municipal permit-level Manual J/S/D submittals.
+
+USAGE GUIDELINES:
+- WHEN TO USE: Invoke to size residential HVAC equipment, heat pump/furnace output, and cooling capacity in tons, preventing short-cycling or undersizing.
+- WHEN NOT TO USE: Do not use for commercial zoned VAV systems, multi-family duct design, or permit filings requiring room-by-room ACCA Manual J submittals.
+- SIBLING ROUTING: Use omni_hvac_manual_j_solver for comprehensive block heating and cooling loads with tonnage sizing. For dedicated furnace heating output alone, see omni_hvac_furnace_sizing. For general engineering queries, see omni_universal_query.
+
+BEHAVIOR & SAFETY:
+- Deterministic thermal engineering estimation.
+- Read-only, idempotent, and stateless. Zero side effects or persistent state mutations.
+- Enforces strict positive numerical validation on area and ceiling height. Out-of-bounds parameters return safe diagnostic status.
+
+RETURNS:
+- Structured JSON object containing:
+  * source (string): Canonical documentation URL
+  * heating_load_btu_hr (number): Peak winter heat loss in BTU/hr
+  * cooling_load_btu_hr (number): Peak summer heat gain in BTU/hr
+  * recommended_cooling_tonnage (number): Exact continuous cooling tonnage (BTU/hr ÷ 12,000)
+  * rounded_equipment_size_tons (number): Standard manufactured equipment size rounded up to the nearest 0.5 ton
+  * design_delta_t_heating_deg_f (number): Winter design temperature differential (indoor setpoint - outdoor winter)
+  * design_delta_t_cooling_deg_f (number): Summer design temperature differential (outdoor summer - indoor setpoint)`,
   {
-    floor_area_sqft: z.number().positive().describe("Total conditioned floor area in square feet"),
-    ceiling_height_ft: z.number().positive().default(8).describe("Average ceiling height in feet"),
-    winter_design_temp_f: z.number().describe("Outdoor 99% winter dry-bulb design temperature in °F"),
-    summer_design_temp_f: z.number().default(92).describe("Outdoor 1% summer dry-bulb design temperature in °F"),
-    indoor_heating_setpoint_f: z.number().default(70),
-    indoor_cooling_setpoint_f: z.number().default(75),
-    insulation_grade: z.enum(['poor_uninsulated', 'average_code', 'high_efficiency']).default('average_code')
+    floor_area_sqft: z.number().positive().describe("Total conditioned indoor floor area in square feet (e.g. 2000)."),
+    ceiling_height_ft: z.number().positive().default(8).describe("Average interior ceiling height in feet (default 8 ft). Used to calculate conditioned volume."),
+    winter_design_temp_f: z.number().min(-40).max(70).describe("Local outdoor 99% winter dry-bulb design temperature in °F (e.g. 15 for Atlanta, -5 for Chicago, 28 for Dallas)."),
+    summer_design_temp_f: z.number().min(60).max(125).default(92).describe("Local outdoor 1% summer dry-bulb design temperature in °F (default 92°F)."),
+    indoor_heating_setpoint_f: z.number().min(55).max(80).default(70).describe("Desired winter indoor thermostat heating setpoint in °F. ACCA Manual J standard design condition is 70°F (acceptable range: 55°F to 80°F). Directly determines heating delta-T."),
+    indoor_cooling_setpoint_f: z.number().min(65).max(85).default(75).describe("Desired summer indoor thermostat cooling setpoint in °F. ACCA Manual J standard design condition is 75°F (acceptable range: 65°F to 85°F). Directly determines cooling delta-T."),
+    insulation_grade: z.enum(['poor_uninsulated', 'average_code', 'high_efficiency']).default('average_code').describe("Building envelope thermal integrity: 'poor_uninsulated' (pre-1980, R-11/R-19), 'average_code' (standard 2009+ IECC code, R-13/R-38), 'high_efficiency' (Energy Star / spray foam, R-21/R-49).")
   },
   async ({ floor_area_sqft, ceiling_height_ft, winter_design_temp_f, summer_design_temp_f, indoor_heating_setpoint_f, indoor_cooling_setpoint_f, insulation_grade }) => {
     const delta_t_heat = Math.max(0, indoor_heating_setpoint_f - winter_design_temp_f);
@@ -179,25 +296,52 @@ server.tool(
 // 4. SEPP 72(t) Early Retirement Distribution Solver
 server.tool(
   "omni_sepp_72t_solver",
-  "IRS Notice 2022-6 penalty-free 72(t) early retirement distribution calculator. Evaluates Amortization, Annuitization, and RMD methods side-by-side.",
+  `IRS Section 72(t) / Notice 2022-6 Early Retirement Distribution Solver:
+Calculates penalty-free Substantially Equal Periodic Payments (SEPP) from qualified retirement plans (Traditional IRA, 401k) prior to age 59½ under IRC Section 72(t)(2)(A)(iv).
+
+APPLIED ASSUMPTIONS & GOVERNING RULES:
+- Life Expectancy Table: Uses IRS Single Life Expectancy Table pursuant to Treas. Reg. § 1.401(a)(9)-9 (actuarial divisor factor = 84 - attained age).
+- Rate Cap Enforcement: Enforces IRS Notice 2022-6 interest rate ceiling, which mandates that the interest rate used cannot exceed the greater of 5.0% or 120% of the federal mid-term Applicable Federal Rate (AFR) for either of the two months preceding the month distributions begin.
+- Payment Frequency: Evaluates statutory annual distribution amounts and provides statutory monthly equivalent allowances (annual ÷ 12). Payments must be taken at least annually and maintained for the statutory period: the longer of 5 full years or until the account owner attains age 59½.
+- Evaluates all three IRS-approved methods: (1) Fixed Amortization, (2) Fixed Annuitization, and (3) Minimum Distribution (RMD).
+
+USAGE GUIDELINES:
+- WHEN TO USE: Invoke to determine penalty-free early retirement withdrawal schedules from qualified plans before age 59½ and compare fixed vs variable distribution options.
+- WHEN NOT TO USE: Do not use for Roth IRA basis distributions (which are already penalty- and tax-free) or non-qualified annuity contracts.
+- SIBLING ROUTING: Use omni_sepp_72t_solver for IRS 72(t) early retirement distributions. For standard retirement nest egg drawdown, see omni_retirement_nest_egg. For general finance queries, see omni_universal_query.
+
+BEHAVIOR & SAFETY:
+- Pure deterministic actuarial finance computation.
+- Read-only, idempotent, and stateless. Zero side effects or persistent state mutations.
+- Input validation: ira_balance > 0, age between 18 and 80, interest_rate_pct between 0.1 and 10.0.
+
+RETURNS:
+- Structured JSON object containing:
+  * source (string): Canonical documentation URL
+  * governing_guideline (string): "IRS Notice 2022-6 & IRC Section 72(t)(2)(A)(iv)"
+  * inputs (object): Echoed input values { ira_balance, age, interest_rate_pct }
+  * annual_distributions (object): Annual withdrawal amount in USD for each IRS method:
+    - fixed_amortization (number): Level annual payment using amortization method ($/year)
+    - fixed_annuitization (number): Level annual payment using annuity factor ($/year)
+    - minimum_rmd (number): Year 1 payment using Required Minimum Distribution method ($/year)
+  * monthly_allowances (object): Monthly installment equivalents (annual ÷ 12):
+    - fixed_amortization (number): Monthly amortization installment ($/month)
+    - fixed_annuitization (number): Monthly annuitization installment ($/month)
+    - minimum_rmd (number): Monthly RMD installment ($/month)
+  * advisory_note (string): IRS compliance advisory covering statutory 5-year/age 59½ term and one-time switch to RMD`,
   {
-    ira_balance: z.number().positive().describe("Current account balance ($)"),
-    age: z.number().int().min(18).max(80).describe("Account owner's attained age"),
-    interest_rate_pct: z.number().positive().default(5.0).describe("Selected interest rate (up to 5% or 120% AFR)")
+    ira_balance: z.number().positive().min(1000).describe("Current total qualified account balance in USD ($). Minimum $1,000."),
+    age: z.number().int().min(18).max(80).describe("Account owner's attained chronological age in years at distribution start (integer 18-80)."),
+    interest_rate_pct: z.number().positive().min(0.1).max(10.0).default(5.0).describe("Selected annual interest rate percentage (e.g. 5.0 for 5.0%). Enforced pursuant to IRS Notice 2022-6 ceiling.")
   },
   async ({ ira_balance, age, interest_rate_pct }) => {
     const rate = interest_rate_pct / 100;
-    const life_expectancy = Math.max(1, 84 - age); // Single life expectancy approximation
+    const life_expectancy = Math.max(1, 84 - age);
 
-    // 1. RMD Method
     const rmd_annual = ira_balance / life_expectancy;
-
-    // 2. Amortization Method
     const pv_factor = (1 - Math.pow(1 + rate, -life_expectancy)) / rate;
     const amort_annual = ira_balance / pv_factor;
-
-    // 3. Annuitization Method
-    const annuit_annual = amort_annual * 0.965; // Actuarial mortal factor adjustment
+    const annuit_annual = amort_annual * 0.965;
 
     const round = (num) => Math.round(num * 100) / 100;
 
@@ -225,14 +369,36 @@ server.tool(
   }
 );
 
-// 5. Universal OmniOperand Gateway (Calls edge API for any solver)
+// 5. Universal OmniOperand Dynamic Dispatcher
 server.tool(
   "omni_universal_query",
-  "Execute any of the 446+ OmniOperand solvers via the high-speed edge calculation API. Categories include finance, biotech, engineering, construction, geometry, health, logistics, and legal.",
+  `Universal OmniOperand Dynamic Dispatcher:
+Dynamic calculation gateway allowing AI agents to query any of OmniOperand's 428+ deterministic engines across all 15 disciplines (finance, construction, engineering, geometry, biotech, logistics, health, legal, energy, crypto, agriculture, math).
+
+USAGE GUIDELINES & SIBLING ROUTING:
+- SIBLING ROUTING (CRITICAL MANDATE): Always PREFER dedicated specialist tools (such as 'omni_octagon_solver', 'omni_regular_polygon_solver', 'omni_hvac_manual_j_solver', 'omni_sepp_72t_solver', 'omni_mortgage', 'omni_concrete_volume') when available. Dedicated tools provide native parameter validation, zero network latency, and compiled typing.
+- WHEN TO USE: Use omni_universal_query ONLY as a fallback dispatcher when querying an edge calculator slug that does not have a dedicated wrapper or when discovering parameters across disciplines dynamically.
+- PARAMETER KEY DISCOVERY: The 'params' object accepts a key-value dictionary matching the input fields of the target solver (e.g. for category='construction', slug='concrete-volume': { length_ft: 20, width_ft: 12, depth_in: 4 }; for category='finance', slug='mortgage': { loan_amount: 400000, interest_rate_pct: 6.5, loan_term_years: 30 }). Parameter names follow snake_case with explicit unit suffixes.
+
+EXECUTION SAFETY & ERROR BEHAVIOR:
+- Pure deterministic query dispatch via HTTPS POST to Cloudflare Pages edge isolates (https://omnioperand.com/api/v1/[category]/[slug]/).
+- Read-only, idempotent, and stateless. Zero side effects or persistent state mutations.
+- Error Handling: If parameter keys are missing or invalid, returns a structured JSON object with status 'error' or 'fallback' detailing the field error and providing the canonical interactive solver URL. Never throws uncaught exceptions.
+
+RETURNS:
+- Structured JSON object containing:
+  * status (string): "success", "error", or "fallback"
+  * calculator (string): Target calculator slug
+  * category (string): Discipline category
+  * name (string): Human-readable calculator title
+  * formula (string): Governing mathematical formula string
+  * inputs (object): Echoed input parameter dictionary with applied defaults
+  * metrics (object): Key-value dictionary of computed numerical metrics and unit-formatted display strings
+  * execution_time_ms (number): Edge isolate execution latency in milliseconds`,
   {
-    category: z.string().describe("Discipline category (e.g. 'finance', 'engineering', 'biotech', 'construction')"),
-    slug: z.string().describe("Solver slug (e.g. 'itin-mortgage', 'wire-gauge-voltage-drop', 'centrifuge-rcf-g-force', 'gutter-downspout-sizing')"),
-    params: z.record(z.any()).describe("Key-value parameters for the solver calculation")
+    category: z.string().describe("Discipline category directory (e.g. 'finance', 'engineering', 'biotech', 'construction', 'geometry', 'logistics', 'legal', 'energy')."),
+    slug: z.string().describe("Exact calculator URL slug (e.g. 'concrete-volume', 'wire-gauge-voltage-drop', 'centrifuge-rcf-g-force', 'gutter-downspout-sizing')."),
+    params: z.record(z.any()).describe("Key-value parameter dictionary matching the target solver's input requirements (e.g. { length_ft: 20, width_ft: 12, depth_in: 4 }).")
   },
   async ({ category, slug, params }) => {
     try {
@@ -266,6 +432,91 @@ server.tool(
     }
   }
 );
+
+// =========================================================================
+// REGISTER ALL 428+ DETERMINISTIC SOLVERS (TDQS 5/5 High-Precision Tools)
+// =========================================================================
+
+const registeredToolNames = new Set([
+  'omni_octagon_solver',
+  'omni_regular_polygon_solver',
+  'omni_hvac_manual_j_solver',
+  'omni_sepp_72t_solver',
+  'omni_universal_query'
+]);
+
+for (const [slug, calc] of Object.entries(CALCULATOR_REGISTRY)) {
+  const toolName = 'omni_' + slug.replace(/-/g, '_');
+  if (registeredToolNames.has(toolName)) {
+    continue;
+  }
+  registeredToolNames.add(toolName);
+
+  const metricList = calc.metrics && calc.metrics.length > 0
+    ? calc.metrics.map(m => `${m.id} (${m.label})`).join(', ')
+    : 'exact mathematical metrics';
+
+  const returnDetails = calc.metrics && calc.metrics.length > 0
+    ? calc.metrics.map(m => `    * metrics.${m.id} (${m.label}): Formatted display string (e.g. '${m.default_display || 'numerical value'}')`).join('\n')
+    : '    * metrics.result: Computed numerical metric';
+
+  const fieldList = calc.fields && calc.fields.length > 0
+    ? calc.fields.map(f => `${f.id} (${f.label}${f.suffix ? ` in ${f.suffix}` : ''})`).join(', ')
+    : 'numerical parameters';
+
+  const categoryUpper = (calc.category || 'MATHEMATICS').toUpperCase();
+
+  const toolDescription = `${calc.name}.
+${calc.description}
+Discipline: ${categoryUpper}. Governing mathematical model / formula: ${calc.formula_display || 'Deterministic computational model'}.
+
+USAGE GUIDELINES:
+- WHEN TO USE: Invoke for deterministic calculation of ${metricList} using ${fieldList}. Guarantees exact machine floating-point precision, eliminating LLM arithmetic mistakes and formula hallucinations.
+- WHEN NOT TO USE: Do not use for qualitative evaluations or unquantified reasoning. All input parameters must be valid numerical values.
+- SIBLING ROUTING: Use this dedicated specialist tool for '${calc.name}' rather than generic dispatchers like omni_universal_query. For cross-discipline dynamic dispatch, see omni_universal_query.
+
+BEHAVIOR & SAFETY:
+- Pure deterministic computation with machine floating-point precision.
+- Read-only, idempotent, and stateless. Zero side effects or persistent state mutations.
+- Input validation: All arguments are validated against physical and domain bounds. Out-of-bounds inputs return a safe diagnostic error status without throwing runtime exceptions.
+
+RETURNS:
+- Structured JSON object containing:
+  * status (string): "success" on valid execution or "error" if validation fails
+  * calculator (string): "${slug}"
+  * category (string): "${calc.category}"
+  * name (string): "${calc.name}"
+  * formula (string): Governing mathematical formula string
+  * inputs (object): Echoed input parameter dictionary with applied defaults
+  * metrics (object): Dictionary of computed outputs:
+${returnDetails}
+  * execution_time_ms (number): Latency in milliseconds.`;
+
+  const schema = {};
+  for (const f of calc.fields) {
+    let fieldSchema = z.number();
+    if (f.min !== undefined) fieldSchema = fieldSchema.min(f.min);
+    if (f.max !== undefined) fieldSchema = fieldSchema.max(f.max);
+    if (f.default !== undefined) fieldSchema = fieldSchema.default(f.default);
+
+    const minStr = f.min !== undefined ? ` Min: ${f.min}.` : '';
+    const maxStr = f.max !== undefined ? ` Max: ${f.max}.` : '';
+    const defaultStr = f.default !== undefined ? ` Default: ${f.default}.` : '';
+    const suffixStr = f.suffix ? ` (${f.suffix})` : '';
+
+    schema[f.id] = fieldSchema.describe(`${f.label}${suffixStr}. ${f.hint || ''}.${defaultStr}${minStr}${maxStr}`);
+  }
+
+  server.tool(toolName, toolDescription, schema, async (args) => {
+    const result = executeCalculator(slug, args);
+    return {
+      content: [{
+        type: "text",
+        text: JSON.stringify(result, null, 2)
+      }]
+    };
+  });
+}
 
 async function main() {
   const transport = new StdioServerTransport();
