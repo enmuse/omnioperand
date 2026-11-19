@@ -1,7 +1,6 @@
 {
-  "$schema": "https://glama.co/mcp/schema.json",
-  "name": "omnioperand-mcp",
-  "description": "Deterministic mathematical, financial, scientific, and engineering calculations with machine precision.",
-  "homepage": "https://omnioperand.com",
-  "repository": "https://github.com/enmuse/omnioperand-mcp"
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": [
+    "enmuse"
+  ]
 }
