@@ -76,7 +76,29 @@ export async function onRequestOptions() {
   });
 }
 
-export async function onRequestGet() {
+export async function onRequestGet(context) {
+  const accept = (context && context.request && context.request.headers && context.request.headers.get("Accept")) || "";
+  
+  // Support MCP Server-Sent Events (SSE) remote transport
+  if (accept.includes("text/event-stream")) {
+    const origin = (context && context.request && new URL(context.request.url).origin) || "https://omnioperand.com";
+    const stream = new ReadableStream({
+      start(controller) {
+        controller.enqueue(new TextEncoder().encode(`event: endpoint\ndata: ${origin}/api/v1/mcp\n\n`));
+      }
+    });
+    return new Response(stream, {
+      status: 200,
+      headers: {
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization, x-api-key"
+      }
+    });
+  }
+
   return new Response(JSON.stringify({
     name: "omnioperand-mcp-server",
     protocolVersion: "2024-11-05",
@@ -132,6 +154,31 @@ export async function onRequestPost(context) {
           serverInfo: {
             name: "omnioperand-mcp-server",
             version: "2.0.0"
+          }
+        }
+      }), { status: 200, headers: CORS_HEADERS });
+
+    case "notifications/initialized":
+    case "initialized":
+      if (id !== null && id !== undefined) {
+        return new Response(JSON.stringify({ jsonrpc: "2.0", id, result: {} }), { status: 200, headers: CORS_HEADERS });
+      }
+      return new Response(null, { status: 204, headers: CORS_HEADERS });
+
+    case "server/discover":
+      return new Response(JSON.stringify({
+        jsonrpc: "2.0",
+        id,
+        result: {
+          protocolVersion: "2024-11-05",
+          serverInfo: {
+            name: "omnioperand-mcp-server",
+            version: "2.0.0"
+          },
+          capabilities: {
+            tools: { listChanged: false },
+            resources: { listChanged: false },
+            prompts: { listChanged: false }
           }
         }
       }), { status: 200, headers: CORS_HEADERS });
@@ -261,10 +308,13 @@ export async function onRequestPost(context) {
       }), { status: 200, headers: CORS_HEADERS });
 
     default:
+      if (method && method.startsWith("notifications/")) {
+        return new Response(null, { status: 204, headers: CORS_HEADERS });
+      }
       return new Response(JSON.stringify({
         jsonrpc: "2.0",
         id,
         error: { code: -32601, message: `Method not found: ${method}` }
-      }), { status: 404, headers: CORS_HEADERS });
+      }), { status: 200, headers: CORS_HEADERS });
   }
 }
