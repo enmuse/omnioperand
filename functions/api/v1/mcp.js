@@ -104,8 +104,143 @@ ${returnDetails}
   };
 });
 
-// Ensure flagship specialist tools are prepended with exact TDQS 5/5 specifications
+// Category metadata lookup
+const CATEGORY_NAMES = {
+  geometry: "Geometry & Spatial Analysis",
+  finance: "Quantitative Finance & Actuarial Math",
+  construction: "Construction & Structural Trades",
+  health: "Health, Metabolism & Physiological Metrics",
+  physics: "Classical Mechanics & Thermal Physics",
+  calculus: "Calculus & Mathematical Analysis",
+  statistics: "Probability & Inferential Statistics",
+  energy: "Energy Systems, Solar & Storage",
+  logistics: "Supply Chain, Freight & Logistics",
+  crypto: "Cryptocurrency & Digital Asset Accounting",
+  legal: "Legal Settlements & Statutory Formulas",
+  agriculture: "Agronomy, Irrigation & Livestock Math",
+  engineering: "Mechanical & Civil Engineering",
+  ecommerce: "E-Commerce Unit Economics & Advertising",
+  biotech: "Molecular Biology & Laboratory Biotech"
+};
+
+// Ensure discovery tools and flagship specialist tools are prepended with exact TDQS 5/5 specifications
 ALL_MCP_TOOLS.unshift(
+  {
+    name: "omni_list_categories",
+    description: `List All OmniOperand Computational Disciplines & Categories:
+Enumerates all 15 scientific, mathematical, engineering, and financial categories supported by the OmniOperand platform, including total solver counts and reference URLs.
+
+USAGE GUIDELINES:
+- WHEN TO USE: Invoke at the start of multi-step problem solving or category exploration to discover valid discipline categories for subsequent filtering in 'omni_list_solvers' or 'omni_universal_query'.
+- DISAMBIGUATION & BOUNDARIES: Use 'omni_list_categories' for broad domain navigation; use 'omni_list_solvers' to discover individual calculators within a category.
+
+BEHAVIOR & SAFETY:
+- Pure deterministic metadata query. Read-only, idempotent, and stateless. Zero side effects.
+
+RETURNS:
+- Structured JSON containing:
+  * total_categories (number): Total count of active discipline categories
+  * total_solvers (number): Total count of deterministic calculators across all disciplines
+  * categories (array): List of { id, name, solvers_count, url }`,
+    inputSchema: {
+      type: "object",
+      properties: {}
+    }
+  },
+  {
+    name: "omni_list_solvers",
+    description: `Enumerate & Search OmniOperand Solvers:
+Discovers and lists deterministic calculators across all disciplines with optional category filtering and keyword search matching solver names, descriptions, and formulas.
+
+USAGE GUIDELINES:
+- WHEN TO USE: Invoke to find the exact calculator slug and governing formula before calling 'omni_describe_solver' or executing via a specialized tool or 'omni_universal_query'. Eliminates blind guessing of slugs.
+- DISAMBIGUATION & BOUNDARIES: Returns summary lists of solvers. To inspect exact input field parameter names, types, and bounds for a discovered slug, call 'omni_describe_solver'.
+
+BEHAVIOR & SAFETY:
+- Pure deterministic query. Read-only, idempotent, and stateless. Zero side effects.
+
+RETURNS:
+- Structured JSON containing:
+  * total_matches (number): Count of matching solvers
+  * category_filter (string|null): Applied category filter
+  * search_query (string|null): Applied search query
+  * solvers (array): Array of { slug, name, category, formula_display, fields_count, metrics_count }`,
+    inputSchema: {
+      type: "object",
+      properties: {
+        category: { type: "string", description: "Optional discipline category filter (e.g. 'finance', 'engineering', 'construction', 'geometry', 'biotech', 'health')." },
+        search: { type: "string", description: "Optional keyword search query to match against solver names, descriptions, or mathematical terms (e.g. 'rebar', 'mortgage', 'tonnage', 'voltage drop')." },
+        limit: { type: "integer", default: 50, minimum: 1, maximum: 100, description: "Maximum number of results to return (default 50, max 100)." }
+      }
+    }
+  },
+  {
+    name: "omni_describe_solver",
+    description: `Inspect Solver Parameter Schema & Output Metrics:
+Returns the complete input parameter specification (field IDs, labels, data types, units of measure, default values, min/max bounds, and semantic hints) and output metric definitions for any calculator slug.
+
+USAGE GUIDELINES:
+- WHEN TO USE: Invoke after discovering a calculator slug via 'omni_list_solvers' to learn its exact parameter requirements before calling 'omni_universal_query' or 'omni_batch_calculate'. Eliminates parameter key hallucinations.
+- DISAMBIGUATION & BOUNDARIES: 'omni_describe_solver' provides introspection and parameter documentation; it does not execute calculations. To execute, call the corresponding named tool (e.g. 'omni_mortgage') or 'omni_universal_query'.
+
+BEHAVIOR & SAFETY:
+- Pure deterministic schema introspection. Read-only, idempotent, and stateless.
+
+RETURNS:
+- Structured JSON containing:
+  * slug (string): Calculator slug
+  * name (string): Human-readable title
+  * category (string): Discipline category
+  * description (string): Detailed mathematical description
+  * formula_display (string): Governing formula
+  * fields (array): Detailed input parameter schemas { id, label, default, suffix, min, max, step, hint }
+  * metrics (array): Output metrics specification { id, label, default_display, highlight }`,
+    inputSchema: {
+      type: "object",
+      properties: {
+        slug: { type: "string", description: "The calculator slug to inspect (e.g. 'mortgage', 'concrete-volume', 'wire-gauge-voltage-drop', 'regular-polygon')." }
+      },
+      required: ["slug"]
+    }
+  },
+  {
+    name: "omni_batch_calculate",
+    description: `Execute Batch or Chained Multi-Calculator Jobs:
+Executes multiple deterministic calculations across any discipline in a single atomic request, returning individual status, inputs, and calculated metrics for each job. Enables comparative sensitivity analyses, multi-room building calculations, and chained financial scenarios.
+
+USAGE GUIDELINES:
+- WHEN TO USE: Invoke when solving multi-variable scenarios (e.g. comparing 15-year vs 30-year mortgages, calculating concrete volume across multiple foundation footings, or evaluating multiple regular polygons) in a single round-trip without multiple sequential calls.
+- DISAMBIGUATION & BOUNDARIES: Use 'omni_batch_calculate' for multi-calculation batches; use individual named tools for single one-off calculations.
+
+BEHAVIOR & SAFETY:
+- Pure deterministic batch execution. Read-only, idempotent, and stateless.
+- Isolated job failures: An error in one job (e.g. unknown slug or invalid input) returns an error object for that specific item without failing the entire batch.
+
+RETURNS:
+- Structured JSON containing:
+  * total_jobs (number): Number of submitted jobs
+  * successful_jobs (number): Count of successfully resolved calculations
+  * execution_time_ms (number): Total batch execution latency
+  * results (array): List of calculation result objects matching individual solver outputs`,
+    inputSchema: {
+      type: "object",
+      properties: {
+        jobs: {
+          type: "array",
+          items: {
+            type: "object",
+            properties: {
+              slug: { type: "string", description: "Target calculator slug (e.g. 'mortgage', 'concrete-volume')." },
+              params: { type: "object", description: "Input parameters dictionary for this calculator job." }
+            },
+            required: ["slug"]
+          },
+          description: "Array of calculation jobs (1 to 50 jobs per batch)."
+        }
+      },
+      required: ["jobs"]
+    }
+  },
   {
     name: "omni_octagon_solver",
     description: `Regular Octagon 8-Variable Bidirectional Solver:
@@ -577,6 +712,157 @@ export async function onRequestPost(context) {
           id,
           error: { code: -32602, message: "Invalid params: Missing tool name" }
         }), { status: 400, headers: responseHeaders });
+      }
+
+      // Discovery & Batch Tool Dispatches
+      if (toolName === 'omni_list_categories') {
+        const cats = {};
+        for (const calc of Object.values(CALCULATOR_REGISTRY)) {
+          cats[calc.category] = (cats[calc.category] || 0) + 1;
+        }
+        const categoryList = Object.keys(cats).sort().map(id => ({
+          id,
+          name: CATEGORY_NAMES[id] || id,
+          solvers_count: cats[id],
+          url: `https://omnioperand.com/${id}/`
+        }));
+
+        return new Response(JSON.stringify({
+          jsonrpc: "2.0",
+          id,
+          result: {
+            content: [{
+              type: "text",
+              text: JSON.stringify({
+                total_categories: categoryList.length,
+                total_solvers: Object.keys(CALCULATOR_REGISTRY).length,
+                categories: categoryList
+              }, null, 2)
+            }]
+          }
+        }), { status: 200, headers: responseHeaders });
+      }
+
+      if (toolName === 'omni_list_solvers') {
+        let matches = Object.values(CALCULATOR_REGISTRY);
+        const category = args.category;
+        const search = args.search;
+        const limit = Math.min(100, Math.max(1, parseInt(args.limit || 50, 10)));
+
+        if (category) {
+          const catLower = category.toLowerCase().trim();
+          matches = matches.filter(c => (c.category || '').toLowerCase() === catLower);
+        }
+
+        if (search) {
+          const q = search.toLowerCase().trim();
+          matches = matches.filter(c =>
+            c.slug.includes(q) ||
+            (c.name && c.name.toLowerCase().includes(q)) ||
+            (c.description && c.description.toLowerCase().includes(q)) ||
+            (c.formula_display && c.formula_display.toLowerCase().includes(q))
+          );
+        }
+
+        const results = matches.slice(0, limit).map(c => ({
+          slug: c.slug,
+          name: c.name,
+          category: c.category,
+          formula_display: c.formula_display || 'Deterministic model',
+          fields_count: (c.fields || []).length,
+          metrics_count: (c.metrics || []).length
+        }));
+
+        return new Response(JSON.stringify({
+          jsonrpc: "2.0",
+          id,
+          result: {
+            content: [{
+              type: "text",
+              text: JSON.stringify({
+                total_matches: matches.length,
+                returned_count: results.length,
+                category_filter: category || null,
+                search_query: search || null,
+                solvers: results
+              }, null, 2)
+            }]
+          }
+        }), { status: 200, headers: responseHeaders });
+      }
+
+      if (toolName === 'omni_describe_solver') {
+        const slug = args.slug;
+        const calc = CALCULATOR_REGISTRY[slug];
+        if (!calc) {
+          return new Response(JSON.stringify({
+            jsonrpc: "2.0",
+            id,
+            result: {
+              content: [{
+                type: "text",
+                text: JSON.stringify({
+                  status: "error",
+                  message: `Unknown calculator slug '${slug}'. Call 'omni_list_solvers' to discover valid calculator slugs.`
+                }, null, 2)
+              }]
+            }
+          }), { status: 200, headers: responseHeaders });
+        }
+
+        return new Response(JSON.stringify({
+          jsonrpc: "2.0",
+          id,
+          result: {
+            content: [{
+              type: "text",
+              text: JSON.stringify({
+                status: "success",
+                slug: calc.slug,
+                name: calc.name,
+                category: calc.category,
+                description: calc.description,
+                formula_display: calc.formula_display,
+                fields: calc.fields,
+                metrics: calc.metrics
+              }, null, 2)
+            }]
+          }
+        }), { status: 200, headers: responseHeaders });
+      }
+
+      if (toolName === 'omni_batch_calculate') {
+        const jobs = Array.isArray(args.jobs) ? args.jobs : [];
+        const startTime = Date.now();
+        const results = jobs.map(job => {
+          try {
+            return executeCalculator(job.slug, job.params || {});
+          } catch (e) {
+            return {
+              status: "error",
+              calculator: job.slug,
+              message: e.message
+            };
+          }
+        });
+
+        const successCount = results.filter(r => r.status === 'success').length;
+
+        return new Response(JSON.stringify({
+          jsonrpc: "2.0",
+          id,
+          result: {
+            content: [{
+              type: "text",
+              text: JSON.stringify({
+                total_jobs: jobs.length,
+                successful_jobs: successCount,
+                execution_time_ms: Math.max(0.1, Date.now() - startTime),
+                results
+              }, null, 2)
+            }]
+          }
+        }), { status: 200, headers: responseHeaders });
       }
 
       // Dedicated flagship solver dispatches

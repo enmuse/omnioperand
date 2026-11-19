@@ -18,8 +18,254 @@ const server = new McpServer({
   description: "Comprehensive deterministic mathematical, engineering, financial, and geometric solvers from https://omnioperand.com"
 });
 
+// Category metadata lookup
+const CATEGORY_NAMES = {
+  geometry: "Geometry & Spatial Analysis",
+  finance: "Quantitative Finance & Actuarial Math",
+  construction: "Construction & Structural Trades",
+  health: "Health, Metabolism & Physiological Metrics",
+  physics: "Classical Mechanics & Thermal Physics",
+  calculus: "Calculus & Mathematical Analysis",
+  statistics: "Probability & Inferential Statistics",
+  energy: "Energy Systems, Solar & Storage",
+  logistics: "Supply Chain, Freight & Logistics",
+  crypto: "Cryptocurrency & Digital Asset Accounting",
+  legal: "Legal Settlements & Statutory Formulas",
+  agriculture: "Agronomy, Irrigation & Livestock Math",
+  engineering: "Mechanical & Civil Engineering",
+  ecommerce: "E-Commerce Unit Economics & Advertising",
+  biotech: "Molecular Biology & Laboratory Biotech"
+};
+
 // =========================================================================
-// FLAGSHIP SPECIALIST SOLVERS (Custom Closed-Form & High-Precision Engines)
+// 1. DISCOVERY & BATCH TOOLS (Server Coherence & Exploration Suite)
+// =========================================================================
+
+// Discovery 1: List Categories
+server.tool(
+  "omni_list_categories",
+  `List All OmniOperand Computational Disciplines & Categories:
+Enumerates all 15 scientific, mathematical, engineering, and financial categories supported by the OmniOperand platform, including total solver counts and reference URLs.
+
+USAGE GUIDELINES:
+- WHEN TO USE: Invoke at the start of multi-step problem solving or category exploration to discover valid discipline categories for subsequent filtering in 'omni_list_solvers' or 'omni_universal_query'.
+- DISAMBIGUATION & BOUNDARIES: Use 'omni_list_categories' for broad domain navigation; use 'omni_list_solvers' to discover individual calculators within a category.
+
+BEHAVIOR & SAFETY:
+- Pure deterministic metadata query. Read-only, idempotent, and stateless. Zero side effects.
+
+RETURNS:
+- Structured JSON containing:
+  * total_categories (number): Total count of active discipline categories
+  * total_solvers (number): Total count of deterministic calculators across all disciplines
+  * categories (array): List of { id, name, solvers_count, url }`,
+  {},
+  async () => {
+    const cats = {};
+    for (const calc of Object.values(CALCULATOR_REGISTRY)) {
+      cats[calc.category] = (cats[calc.category] || 0) + 1;
+    }
+    const categoryList = Object.keys(cats).sort().map(id => ({
+      id,
+      name: CATEGORY_NAMES[id] || id,
+      solvers_count: cats[id],
+      url: `https://omnioperand.com/${id}/`
+    }));
+
+    return {
+      content: [{
+        type: "text",
+        text: JSON.stringify({
+          total_categories: categoryList.length,
+          total_solvers: Object.keys(CALCULATOR_REGISTRY).length,
+          categories: categoryList
+        }, null, 2)
+      }]
+    };
+  }
+);
+
+// Discovery 2: List Solvers
+server.tool(
+  "omni_list_solvers",
+  `Enumerate & Search OmniOperand Solvers:
+Discovers and lists deterministic calculators across all disciplines with optional category filtering and keyword search matching solver names, descriptions, and formulas.
+
+USAGE GUIDELINES:
+- WHEN TO USE: Invoke to find the exact calculator slug and governing formula before calling 'omni_describe_solver' or executing via a specialized tool or 'omni_universal_query'. Eliminates blind guessing of slugs.
+- DISAMBIGUATION & BOUNDARIES: Returns summary lists of solvers. To inspect exact input field parameter names, types, and bounds for a discovered slug, call 'omni_describe_solver'.
+
+BEHAVIOR & SAFETY:
+- Pure deterministic query. Read-only, idempotent, and stateless. Zero side effects.
+
+RETURNS:
+- Structured JSON containing:
+  * total_matches (number): Count of matching solvers
+  * category_filter (string|null): Applied category filter
+  * search_query (string|null): Applied search query
+  * solvers (array): Array of { slug, name, category, formula_display, fields_count, metrics_count }`,
+  {
+    category: z.string().optional().describe("Optional discipline category filter (e.g. 'finance', 'engineering', 'construction', 'geometry', 'biotech', 'health')."),
+    search: z.string().optional().describe("Optional keyword search query to match against solver names, descriptions, or mathematical terms (e.g. 'rebar', 'mortgage', 'tonnage', 'voltage drop')."),
+    limit: z.number().int().min(1).max(100).default(50).describe("Maximum number of results to return (default 50, max 100).")
+  },
+  async ({ category, search, limit }) => {
+    let matches = Object.values(CALCULATOR_REGISTRY);
+
+    if (category) {
+      const catLower = category.toLowerCase().trim();
+      matches = matches.filter(c => (c.category || '').toLowerCase() === catLower);
+    }
+
+    if (search) {
+      const q = search.toLowerCase().trim();
+      matches = matches.filter(c =>
+        c.slug.includes(q) ||
+        (c.name && c.name.toLowerCase().includes(q)) ||
+        (c.description && c.description.toLowerCase().includes(q)) ||
+        (c.formula_display && c.formula_display.toLowerCase().includes(q))
+      );
+    }
+
+    const results = matches.slice(0, limit).map(c => ({
+      slug: c.slug,
+      name: c.name,
+      category: c.category,
+      formula_display: c.formula_display || 'Deterministic model',
+      fields_count: (c.fields || []).length,
+      metrics_count: (c.metrics || []).length
+    }));
+
+    return {
+      content: [{
+        type: "text",
+        text: JSON.stringify({
+          total_matches: matches.length,
+          returned_count: results.length,
+          category_filter: category || null,
+          search_query: search || null,
+          solvers: results
+        }, null, 2)
+      }]
+    };
+  }
+);
+
+// Discovery 3: Describe Solver
+server.tool(
+  "omni_describe_solver",
+  `Inspect Solver Parameter Schema & Output Metrics:
+Returns the complete input parameter specification (field IDs, labels, data types, units of measure, default values, min/max bounds, and semantic hints) and output metric definitions for any calculator slug.
+
+USAGE GUIDELINES:
+- WHEN TO USE: Invoke after discovering a calculator slug via 'omni_list_solvers' to learn its exact parameter requirements before calling 'omni_universal_query' or 'omni_batch_calculate'. Eliminates parameter key hallucinations.
+- DISAMBIGUATION & BOUNDARIES: 'omni_describe_solver' provides introspection and parameter documentation; it does not execute calculations. To execute, call the corresponding named tool (e.g. 'omni_mortgage') or 'omni_universal_query'.
+
+BEHAVIOR & SAFETY:
+- Pure deterministic schema introspection. Read-only, idempotent, and stateless.
+
+RETURNS:
+- Structured JSON containing:
+  * slug (string): Calculator slug
+  * name (string): Human-readable title
+  * category (string): Discipline category
+  * description (string): Detailed mathematical description
+  * formula_display (string): Governing formula
+  * fields (array): Detailed input parameter schemas { id, label, default, suffix, min, max, step, hint }
+  * metrics (array): Output metrics specification { id, label, default_display, highlight }`,
+  {
+    slug: z.string().describe("The calculator slug to inspect (e.g. 'mortgage', 'concrete-volume', 'wire-gauge-voltage-drop', 'regular-polygon').")
+  },
+  async ({ slug }) => {
+    const calc = CALCULATOR_REGISTRY[slug];
+    if (!calc) {
+      return {
+        content: [{
+          type: "text",
+          text: JSON.stringify({
+            status: "error",
+            message: `Unknown calculator slug '${slug}'. Call 'omni_list_solvers' to discover valid calculator slugs.`
+          }, null, 2)
+        }]
+      };
+    }
+
+    return {
+      content: [{
+        type: "text",
+        text: JSON.stringify({
+          status: "success",
+          slug: calc.slug,
+          name: calc.name,
+          category: calc.category,
+          description: calc.description,
+          formula_display: calc.formula_display,
+          fields: calc.fields,
+          metrics: calc.metrics
+        }, null, 2)
+      }]
+    };
+  }
+);
+
+// Discovery 4: Batch Calculate
+server.tool(
+  "omni_batch_calculate",
+  `Execute Batch or Chained Multi-Calculator Jobs:
+Executes multiple deterministic calculations across any discipline in a single atomic request, returning individual status, inputs, and calculated metrics for each job. Enables comparative sensitivity analyses, multi-room building calculations, and chained financial scenarios.
+
+USAGE GUIDELINES:
+- WHEN TO USE: Invoke when solving multi-variable scenarios (e.g. comparing 15-year vs 30-year mortgages, calculating concrete volume across multiple foundation footings, or evaluating multiple regular polygons) in a single round-trip without multiple sequential calls.
+- DISAMBIGUATION & BOUNDARIES: Use 'omni_batch_calculate' for multi-calculation batches; use individual named tools for single one-off calculations.
+
+BEHAVIOR & SAFETY:
+- Pure deterministic batch execution. Read-only, idempotent, and stateless.
+- Isolated job failures: An error in one job (e.g. unknown slug or invalid input) returns an error object for that specific item without failing the entire batch.
+
+RETURNS:
+- Structured JSON containing:
+  * total_jobs (number): Number of submitted jobs
+  * successful_jobs (number): Count of successfully resolved calculations
+  * execution_time_ms (number): Total batch execution latency
+  * results (array): List of calculation result objects matching individual solver outputs`,
+  {
+    jobs: z.array(z.object({
+      slug: z.string().describe("Target calculator slug (e.g. 'mortgage', 'concrete-volume')."),
+      params: z.record(z.any()).describe("Input parameters dictionary for this calculator job.")
+    })).min(1).max(50).describe("Array of calculation jobs (1 to 50 jobs per batch).")
+  },
+  async ({ jobs }) => {
+    const startTime = Date.now();
+    const results = jobs.map(job => {
+      try {
+        return executeCalculator(job.slug, job.params || {});
+      } catch (e) {
+        return {
+          status: "error",
+          calculator: job.slug,
+          message: e.message
+        };
+      }
+    });
+
+    const successCount = results.filter(r => r.status === 'success').length;
+
+    return {
+      content: [{
+        type: "text",
+        text: JSON.stringify({
+          total_jobs: jobs.length,
+          successful_jobs: successCount,
+          execution_time_ms: Math.max(0.1, Date.now() - startTime),
+          results
+        }, null, 2)
+      }]
+    };
+  }
+);
+
+// =========================================================================
+// 2. FLAGSHIP SPECIALIST SOLVERS (Custom Closed-Form & High-Precision Engines)
 // =========================================================================
 
 // 1. Regular Octagon Solver (Exact Closed-Form Radicals)
@@ -45,7 +291,11 @@ BIDIRECTIONAL DRIVER & VALUE PAIRING:
 USAGE GUIDELINES:
 - WHEN TO USE: Invoke whenever solving regular 8-sided polygon geometry, architectural framing, miter cuts, or area conversions from any known dimension. Eliminates LLM floating-point errors on radical roots like √(4 + 2√2).
 - WHEN NOT TO USE: Do not use for irregular octagons, non-planar 3D geometry, or non-8-sided polygons.
-- SIBLING ROUTING: Use omni_octagon_solver specifically for 8-sided regular octagons where closed-form radical representations are required. For arbitrary n-sided regular polygons where n != 8 (e.g. triangles n=3, pentagons n=5, hexagons n=6, decagons n=10, or arbitrary n up to 1000), route to omni_regular_polygon_solver instead.
+
+DISAMBIGUATION & BOUNDARIES:
+- DEDICATED SOLELY TO 8-SIDED REGULAR OCTAGONS.
+- Distinct from 'omni_regular_polygon_solver': 'omni_octagon_solver' returns exact closed-form radical representations (e.g. 2(1+√2)a²), carpentry miter angles (22.5°), and corner cutoff dimensions without trigonometric rounding. Conversely, 'omni_regular_polygon_solver' is for arbitrary n-gons where n != 8.
+- Distinct from 'omni_universal_query': Call 'omni_octagon_solver' directly whenever 8-sided geometry is specified to get compile-time validation and radical closed-form outputs.
 
 BEHAVIOR & SAFETY:
 - Pure deterministic geometric computation with machine floating-point precision.
@@ -158,7 +408,11 @@ BIDIRECTIONAL DRIVER & VALUE PAIRING:
 USAGE GUIDELINES:
 - WHEN TO USE: Invoke for arbitrary regular polygons with n sides (3 ≤ n ≤ 1000) when calculating area, inradius, circumradius, perimeter, or internal angles from any single known dimension.
 - WHEN NOT TO USE: Do not use for irregular polygons, non-planar polygons, or 3D polyhedra.
-- SIBLING ROUTING: For 8-sided regular octagons specifically, ROUTE TO 'omni_octagon_solver' instead to receive exact closed-form radical representations (e.g. 2·(1+√2)·a²) without trigonometric floating-point rounding. For arbitrary n (e.g. n=3, 5, 6, 7, 9, 10, 12, ...), use 'omni_regular_polygon_solver'.
+
+DISAMBIGUATION & BOUNDARIES:
+- FOR ARBITRARY N-GONS (n != 8): Use 'omni_regular_polygon_solver' for triangles (n=3), squares (n=4), pentagons (n=5), hexagons (n=6), decagons (n=10), dodecagons (n=12), up to 1000 sides.
+- DO NOT USE FOR REGULAR OCTAGONS (n=8): Route 8-sided regular octagons to 'omni_octagon_solver' instead, which provides exact radical closed-form proofs (e.g. 2·(1+√2)·a²) without trigonometric floating-point approximation.
+- Distinct from 'omni_universal_query': Call 'omni_regular_polygon_solver' directly whenever computing planar n-gon dimensions.
 
 BEHAVIOR & SAFETY:
 - Pure deterministic trigonometric computation with machine floating-point precision.
@@ -236,7 +490,11 @@ MODEL ASSUMPTIONS & ENVELOPE-FREE SCOPE:
 USAGE GUIDELINES:
 - WHEN TO USE: Invoke to size residential HVAC equipment, heat pump/furnace output, and cooling capacity in tons, preventing short-cycling or undersizing.
 - WHEN NOT TO USE: Do not use for commercial zoned VAV systems, multi-family duct design, or permit filings requiring room-by-room ACCA Manual J submittals.
-- SIBLING ROUTING: Use omni_hvac_manual_j_solver for comprehensive block heating and cooling loads with tonnage sizing. For dedicated furnace heating output alone, see omni_hvac_furnace_sizing. For general engineering queries, see omni_universal_query.
+
+DISAMBIGUATION & BOUNDARIES:
+- Use 'omni_hvac_manual_j_solver' for whole-house block heating and cooling loads with heat pump/AC tonnage sizing.
+- For heating furnace capacity alone, see 'omni_hvac_furnace_sizing'.
+- Distinct from 'omni_universal_query': Call 'omni_hvac_manual_j_solver' directly whenever sizing residential heating and cooling equipment.
 
 BEHAVIOR & SAFETY:
 - Deterministic thermal engineering estimation.
@@ -308,7 +566,11 @@ APPLIED ASSUMPTIONS & GOVERNING RULES:
 USAGE GUIDELINES:
 - WHEN TO USE: Invoke to determine penalty-free early retirement withdrawal schedules from qualified plans before age 59½ and compare fixed vs variable distribution options.
 - WHEN NOT TO USE: Do not use for Roth IRA basis distributions (which are already penalty- and tax-free) or non-qualified annuity contracts.
-- SIBLING ROUTING: Use omni_sepp_72t_solver for IRS 72(t) early retirement distributions. For standard retirement nest egg drawdown, see omni_retirement_nest_egg. For general finance queries, see omni_universal_query.
+
+DISAMBIGUATION & BOUNDARIES:
+- Dedicated to IRS Section 72(t) early retirement penalty exemptions from tax-deferred accounts.
+- For general retirement savings drawdown, see 'omni_retirement_nest_egg'.
+- Distinct from 'omni_universal_query': Call 'omni_sepp_72t_solver' directly whenever computing IRS 72(t) / SEPP schedules.
 
 BEHAVIOR & SAFETY:
 - Pure deterministic actuarial finance computation.
@@ -375,9 +637,13 @@ server.tool(
   `Universal OmniOperand Dynamic Dispatcher:
 Dynamic calculation gateway allowing AI agents to query any of OmniOperand's 428+ deterministic engines across all 15 disciplines (finance, construction, engineering, geometry, biotech, logistics, health, legal, energy, crypto, agriculture, math).
 
-USAGE GUIDELINES & SIBLING ROUTING:
-- SIBLING ROUTING (CRITICAL MANDATE): Always PREFER dedicated specialist tools (such as 'omni_octagon_solver', 'omni_regular_polygon_solver', 'omni_hvac_manual_j_solver', 'omni_sepp_72t_solver', 'omni_mortgage', 'omni_concrete_volume') when available. Dedicated tools provide native parameter validation, zero network latency, and compiled typing.
-- WHEN TO USE: Use omni_universal_query ONLY as a fallback dispatcher when querying an edge calculator slug that does not have a dedicated wrapper or when discovering parameters across disciplines dynamically.
+DISAMBIGUATION & BOUNDARIES:
+- ROLE: Catch-all fallback dispatcher for runtime dynamic execution when the calculator slug is determined dynamically by an agent.
+- PREFER SPECIFIC TOOLS: If a named specialist tool (e.g. 'omni_octagon_solver', 'omni_regular_polygon_solver', 'omni_mortgage', 'omni_concrete_volume') is available in the MCP server, ALWAYS call the specialized tool directly for compile-time parameter validation.
+- DISCOVERY BEFORE CALLING: Use 'omni_list_solvers' to discover available slugs and 'omni_describe_solver' to inspect exact parameter keys before calling 'omni_universal_query'.
+
+USAGE GUIDELINES:
+- WHEN TO USE: Use 'omni_universal_query' ONLY as a fallback dispatcher when querying an edge calculator slug that does not have a dedicated wrapper or when dispatching dynamically across multiple disciplines.
 - PARAMETER KEY DISCOVERY: The 'params' object accepts a key-value dictionary matching the input fields of the target solver (e.g. for category='construction', slug='concrete-volume': { length_ft: 20, width_ft: 12, depth_in: 4 }; for category='finance', slug='mortgage': { loan_amount: 400000, interest_rate_pct: 6.5, loan_term_years: 30 }). Parameter names follow snake_case with explicit unit suffixes.
 
 EXECUTION SAFETY & ERROR BEHAVIOR:
@@ -434,10 +700,14 @@ RETURNS:
 );
 
 // =========================================================================
-// REGISTER ALL 428+ DETERMINISTIC SOLVERS (TDQS 5/5 High-Precision Tools)
+// 3. REGISTER ALL 428+ DETERMINISTIC SOLVERS (TDQS 5/5 High-Precision Tools)
 // =========================================================================
 
 const registeredToolNames = new Set([
+  'omni_list_categories',
+  'omni_list_solvers',
+  'omni_describe_solver',
+  'omni_batch_calculate',
   'omni_octagon_solver',
   'omni_regular_polygon_solver',
   'omni_hvac_manual_j_solver',
@@ -473,7 +743,11 @@ Discipline: ${categoryUpper}. Governing mathematical model / formula: ${calc.for
 USAGE GUIDELINES:
 - WHEN TO USE: Invoke for deterministic calculation of ${metricList} using ${fieldList}. Guarantees exact machine floating-point precision, eliminating LLM arithmetic mistakes and formula hallucinations.
 - WHEN NOT TO USE: Do not use for qualitative evaluations or unquantified reasoning. All input parameters must be valid numerical values.
-- SIBLING ROUTING: Use this dedicated specialist tool for '${calc.name}' rather than generic dispatchers like omni_universal_query. For cross-discipline dynamic dispatch, see omni_universal_query.
+
+DISAMBIGUATION & BOUNDARIES:
+- Use this dedicated specialist tool for '${calc.name}' rather than generic dispatchers like omni_universal_query.
+- For multi-calculation chained jobs, use 'omni_batch_calculate'.
+- To inspect schema fields, see 'omni_describe_solver'.
 
 BEHAVIOR & SAFETY:
 - Pure deterministic computation with machine floating-point precision.
