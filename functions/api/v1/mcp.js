@@ -102,17 +102,28 @@ export async function onRequestGet(context) {
 
   // Support MCP Server-Sent Events (SSE) remote transport
   if (accept.includes("text/event-stream")) {
+    let timer;
     const stream = new ReadableStream({
       start(controller) {
         controller.enqueue(new TextEncoder().encode(`event: endpoint\ndata: ${origin}${pathname}\n\n`));
-        controller.close();
+        // Keep-alive heartbeat every 15 seconds to maintain open connection
+        timer = setInterval(() => {
+          try {
+            controller.enqueue(new TextEncoder().encode(`: keep-alive\n\n`));
+          } catch (e) {
+            clearInterval(timer);
+          }
+        }, 15000);
+      },
+      cancel() {
+        if (timer) clearInterval(timer);
       }
     });
     return new Response(stream, {
       status: 200,
       headers: {
         "Content-Type": "text/event-stream",
-        "Cache-Control": "no-cache",
+        "Cache-Control": "no-cache, no-transform",
         "Connection": "keep-alive",
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers": "Content-Type, Authorization, x-api-key, mcp-session-id",
@@ -174,7 +185,7 @@ export async function onRequestPost(context) {
         jsonrpc: "2.0",
         id,
         result: {
-          protocolVersion: "2024-11-05",
+          protocolVersion: (params && params.protocolVersion) || "2024-11-05",
           capabilities: {
             tools: { listChanged: false },
             resources: { listChanged: false },
@@ -333,7 +344,7 @@ export async function onRequestPost(context) {
       return new Response(JSON.stringify({
         jsonrpc: "2.0",
         id,
-        result: { status: "pong", timestamp: new Date().toISOString() }
+        result: {}
       }), { status: 200, headers: responseHeaders });
 
     default:

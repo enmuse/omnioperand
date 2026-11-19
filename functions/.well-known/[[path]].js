@@ -3,10 +3,9 @@
  * OmniOperand Universal Discovery Router
  *
  * Implements:
- * 1. RFC 9728: OAuth 2.0 Protected Resource Metadata (oauth-protected-resource)
- * 2. RFC 8414: OAuth 2.0 Authorization Server Metadata (oauth-authorization-server)
- * 3. OpenID Connect Discovery 1.0 (openid-configuration)
- * 4. Model Context Protocol Discovery (mcp, mcp.json, server-card.json)
+ * 1. RFC 9728: Unprotected Resource Declaration (oauth-protected-resource -> 404)
+ * 2. RFC 8414: No OAuth Server Declaration (oauth-authorization-server -> 404)
+ * 3. Model Context Protocol Discovery (mcp, mcp.json, server-card.json)
  */
 
 const CORS_HEADERS = {
@@ -38,51 +37,28 @@ export async function onRequestGet(context) {
   const origin = url.origin || "https://omnioperand.com";
   const path = url.pathname.toLowerCase();
 
-  // 1. RFC 9728: Protected Resource Metadata
+  // 1. RFC 9728: Return 404 for oauth-protected-resource to declare public unauthenticated server
   if (path.includes("oauth-protected-resource")) {
-    const resourcePayload = {
-      resource: `${origin}/mcp`,
-      authorization_servers: [
-        origin
-      ],
-      scopes_supported: [
-        "tools:read",
-        "tools:call",
-        "resources:read",
-        "prompts:read",
-        "mcp"
-      ],
-      bearer_methods_supported: [
-        "header"
-      ],
-      resource_documentation: `${origin}/mcp`
-    };
-    return new Response(JSON.stringify(resourcePayload, null, 2), {
-      status: 200,
+    return new Response(JSON.stringify({
+      status: "unprotected",
+      authentication_required: false,
+      message: "OmniOperand MCP server is a public computational coprocessor and does not require OAuth authentication.",
+      mcp_endpoint: `${origin}/mcp`
+    }, null, 2), {
+      status: 404,
       headers: CORS_HEADERS
     });
   }
 
-  // 2. RFC 8414 & OIDC: OAuth Authorization Server Metadata with RFC 7591 Dynamic Registration
+  // 2. Return 404 for OAuth authorization server probes
   if (path.includes("oauth-authorization-server") || path.includes("openid-configuration")) {
-    const authServerPayload = {
-      issuer: origin,
-      authorization_endpoint: `${origin}/mcp/oauth/authorize`,
-      device_authorization_endpoint: `${origin}/mcp/oauth/authorize`,
-      token_endpoint: `${origin}/mcp/oauth/token`,
-      registration_endpoint: `${origin}/mcp/oauth/register`,
-      userinfo_endpoint: `${origin}/mcp/oauth/userinfo`,
-      revocation_endpoint: `${origin}/mcp/oauth/revoke`,
-      jwks_uri: "https://auth.arcade.dev/.well-known/jwks.json",
-      response_types_supported: ["code", "token", "id_token"],
-      subject_types_supported: ["public"],
-      grant_types_supported: ["authorization_code", "client_credentials", "refresh_token"],
-      token_endpoint_auth_methods_supported: ["client_secret_post", "client_secret_basic", "none"],
-      scopes_supported: ["openid", "offline_access", "tools", "mcp"],
-      code_challenge_methods_supported: ["S256"]
-    };
-    return new Response(JSON.stringify(authServerPayload, null, 2), {
-      status: 200,
+    return new Response(JSON.stringify({
+      status: "unprotected",
+      authentication_required: false,
+      message: "OmniOperand is a public utility and does not require an OAuth authorization server.",
+      mcp_endpoint: `${origin}/mcp`
+    }, null, 2), {
+      status: 404,
       headers: CORS_HEADERS
     });
   }
@@ -93,7 +69,7 @@ export async function onRequestGet(context) {
       mcp_version: "2024-11-05",
       server_name: "omnioperand-mcp-server",
       server_version: "2.0.0",
-      description: "OmniOperand Multi-Domain Deterministic Mathematical MCP Server with 446 tools",
+      description: "OmniOperand Multi-Domain Deterministic Mathematical MCP Server with 447 precision tools",
       endpoints: {
         streamable_http: `${origin}/mcp`,
         sse: `${origin}/mcp`,
@@ -107,13 +83,7 @@ export async function onRequestGet(context) {
       },
       authentication: {
         required: false,
-        methods: ["none", "oauth2"],
-        oauth2: {
-          authorization_endpoint: `${origin}/mcp/oauth/authorize`,
-          token_endpoint: `${origin}/mcp/oauth/token`,
-          registration_endpoint: `${origin}/mcp/oauth/register`,
-          scopes_supported: ["tools", "mcp"]
-        }
+        methods: ["none"]
       }
     };
     return new Response(JSON.stringify(mcpCardPayload, null, 2), {
@@ -126,6 +96,7 @@ export async function onRequestGet(context) {
   return new Response(JSON.stringify({
     service: "omnioperand-mcp",
     status: "healthy",
+    authentication_required: false,
     mcp_endpoint: `${origin}/mcp`
   }), {
     status: 200,
