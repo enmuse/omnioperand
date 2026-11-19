@@ -1007,7 +1007,10 @@
 }
 
 .btn-embed-calculator,
-.btn-open-embed {
+.btn-open-embed,
+.btn-share-calc,
+.btn-export-csv,
+.btn-print-report {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -1034,16 +1037,83 @@
   box-shadow: 0 4px 14px rgba(6, 182, 212, 0.18);
 }
 
+.btn-share-calc:hover {
+  background: rgba(168, 85, 247, 0.16);
+  border-color: #a855f7;
+  color: #c084fc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(168, 85, 247, 0.2);
+}
+.btn-share-calc svg {
+  stroke: #c084fc;
+}
+
+.btn-export-csv:hover {
+  background: rgba(16, 185, 129, 0.16);
+  border-color: #10b981;
+  color: #34d399;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2);
+}
+.btn-export-csv svg {
+  stroke: #34d399;
+}
+
+.btn-print-report:hover {
+  background: rgba(245, 158, 11, 0.16);
+  border-color: #f59e0b;
+  color: #fbbf24;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.2);
+}
+.btn-print-report svg {
+  stroke: #fbbf24;
+}
+
 .btn-embed-calculator svg,
-.btn-open-embed svg {
+.btn-open-embed svg,
+.btn-share-calc svg,
+.btn-export-csv svg,
+.btn-print-report svg {
   stroke: var(--accent-cyan, #06b6d4);
   transition: transform 0.2s ease;
   flex-shrink: 0;
 }
 
 .btn-embed-calculator:hover svg,
-.btn-open-embed:hover svg {
+.btn-open-embed:hover svg,
+.btn-share-calc:hover svg,
+.btn-export-csv:hover svg,
+.btn-print-report:hover svg {
   transform: scale(1.1);
+}
+
+/* Share & Export Toast Notification */
+.omni-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #f8fafc;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 15px rgba(56, 189, 248, 0.2);
+  z-index: 99999;
+  opacity: 0;
+  transform: translateY(12px) scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.omni-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
 }
 
 /* Embed Modal Styles */

@@ -215,6 +215,14 @@
     // Pre-create the modal DOM
     createModalDOM();
 
+    // Dynamically ensure OmniOperand Universal Share & CSV Export Engine is loaded
+    if (!window.__omniShareEngineLoaded && !document.querySelector('script[src*="share-engine.js"]')) {
+      const shareScript = document.createElement('script');
+      shareScript.src = '/assets/js/share-engine.js?v=1.0';
+      shareScript.defer = true;
+      document.head.appendChild(shareScript);
+    }
+
     // Wire up global click listener on document for maximum reliability
     document.addEventListener('click', function (e) {
       const trigger = e.target.closest('.btn-embed-calculator, .btn-open-embed, #btn-embed, [data-action="embed"]');
