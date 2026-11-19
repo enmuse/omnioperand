@@ -21,8 +21,9 @@ import { AI_PROMPTS } from './prompts.js';
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type, Authorization, x-api-key",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS, HEAD",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization, x-api-key, mcp-session-id",
+  "Access-Control-Expose-Headers": "mcp-session-id",
   "Content-Type": "application/json"
 };
 
@@ -78,13 +79,15 @@ export async function onRequestOptions() {
 
 export async function onRequestGet(context) {
   const accept = (context && context.request && context.request.headers && context.request.headers.get("Accept")) || "";
-  
+  const origin = (context && context.request && new URL(context.request.url).origin) || "https://omnioperand.com";
+  const pathname = (context && context.request && new URL(context.request.url).pathname) || "/mcp";
+
   // Support MCP Server-Sent Events (SSE) remote transport
   if (accept.includes("text/event-stream")) {
-    const origin = (context && context.request && new URL(context.request.url).origin) || "https://omnioperand.com";
     const stream = new ReadableStream({
       start(controller) {
-        controller.enqueue(new TextEncoder().encode(`event: endpoint\ndata: ${origin}/api/v1/mcp\n\n`));
+        controller.enqueue(new TextEncoder().encode(`event: endpoint\ndata: ${origin}${pathname}\n\n`));
+        controller.close();
       }
     });
     return new Response(stream, {
@@ -94,7 +97,8 @@ export async function onRequestGet(context) {
         "Cache-Control": "no-cache",
         "Connection": "keep-alive",
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization, x-api-key"
+        "Access-Control-Allow-Headers": "Content-Type, Authorization, x-api-key, mcp-session-id",
+        "Access-Control-Expose-Headers": "mcp-session-id"
       }
     });
   }
@@ -114,8 +118,8 @@ export async function onRequestGet(context) {
     },
     documentation: "https://omnioperand.com/mcp/",
     endpoints: {
-      mcp: "https://omnioperand.com/api/v1/mcp",
-      openapi: "https://omnioperand.com/api/v1/openapi.json"
+      mcp: `${origin}/mcp`,
+      openapi: `${origin}/api/v1/openapi.json`
     }
   }), {
     status: 200,
@@ -124,6 +128,13 @@ export async function onRequestGet(context) {
 }
 
 export async function onRequestPost(context) {
+  const reqSessionId = (context && context.request && context.request.headers && context.request.headers.get("mcp-session-id")) || null;
+  const sessionId = reqSessionId || "omni-" + Math.random().toString(36).slice(2, 10);
+  const responseHeaders = {
+    ...CORS_HEADERS,
+    "mcp-session-id": sessionId
+  };
+
   let body;
   try {
     body = await context.request.json();
@@ -132,7 +143,7 @@ export async function onRequestPost(context) {
       jsonrpc: "2.0",
       id: null,
       error: { code: -32700, message: "Parse error: Invalid JSON payload" }
-    }), { status: 400, headers: CORS_HEADERS });
+    }), { status: 400, headers: responseHeaders });
   }
 
   const id = body.id ?? null;
@@ -156,14 +167,14 @@ export async function onRequestPost(context) {
             version: "2.0.0"
           }
         }
-      }), { status: 200, headers: CORS_HEADERS });
+      }), { status: 200, headers: responseHeaders });
 
     case "notifications/initialized":
     case "initialized":
       if (id !== null && id !== undefined) {
-        return new Response(JSON.stringify({ jsonrpc: "2.0", id, result: {} }), { status: 200, headers: CORS_HEADERS });
+        return new Response(JSON.stringify({ jsonrpc: "2.0", id, result: {} }), { status: 200, headers: responseHeaders });
       }
-      return new Response(null, { status: 204, headers: CORS_HEADERS });
+      return new Response(null, { status: 204, headers: responseHeaders });
 
     case "server/discover":
       return new Response(JSON.stringify({
@@ -181,7 +192,7 @@ export async function onRequestPost(context) {
             prompts: { listChanged: false }
           }
         }
-      }), { status: 200, headers: CORS_HEADERS });
+      }), { status: 200, headers: responseHeaders });
 
     case "tools/list":
       return new Response(JSON.stringify({
@@ -190,7 +201,7 @@ export async function onRequestPost(context) {
         result: {
           tools: ALL_MCP_TOOLS
         }
-      }), { status: 200, headers: CORS_HEADERS });
+      }), { status: 200, headers: responseHeaders });
 
     case "tools/call": {
       const toolName = params.name;
@@ -201,7 +212,7 @@ export async function onRequestPost(context) {
           jsonrpc: "2.0",
           id,
           error: { code: -32602, message: "Invalid params: Missing tool name" }
-        }), { status: 400, headers: CORS_HEADERS });
+        }), { status: 400, headers: responseHeaders });
       }
 
       // Dedicated flagship solver dispatches
@@ -213,7 +224,7 @@ export async function onRequestPost(context) {
           result: {
             content: [{ type: "text", text: JSON.stringify(octResult, null, 2) }]
           }
-        }), { status: 200, headers: CORS_HEADERS });
+        }), { status: 200, headers: responseHeaders });
       }
 
       if (toolName === 'omni_regular_polygon_solver' || toolName === 'omni_regular_polygon') {
@@ -224,7 +235,7 @@ export async function onRequestPost(context) {
           result: {
             content: [{ type: "text", text: JSON.stringify(polyResult, null, 2) }]
           }
-        }), { status: 200, headers: CORS_HEADERS });
+        }), { status: 200, headers: responseHeaders });
       }
 
       if (toolName === 'omni_mortgage_solver' || toolName === 'omni_mortgage') {
@@ -235,7 +246,7 @@ export async function onRequestPost(context) {
           result: {
             content: [{ type: "text", text: JSON.stringify(mortResult, null, 2) }]
           }
-        }), { status: 200, headers: CORS_HEADERS });
+        }), { status: 200, headers: responseHeaders });
       }
 
       // Universal dynamic solver dispatch for all other calculators
@@ -249,7 +260,7 @@ export async function onRequestPost(context) {
           jsonrpc: "2.0",
           id,
           error: { code: -32601, message: `Tool not found: ${toolName} (slug: ${slug})` }
-        }), { status: 404, headers: CORS_HEADERS });
+        }), { status: 404, headers: responseHeaders });
       }
 
       const result = executeCalculator(slug, args);
@@ -266,7 +277,7 @@ export async function onRequestPost(context) {
           ],
           isError: result.status === "error"
         }
-      }), { status: 200, headers: CORS_HEADERS });
+      }), { status: 200, headers: responseHeaders });
     }
 
     case "resources/list":
@@ -289,7 +300,7 @@ export async function onRequestPost(context) {
             }
           ]
         }
-      }), { status: 200, headers: CORS_HEADERS });
+      }), { status: 200, headers: responseHeaders });
 
     case "prompts/list":
       return new Response(JSON.stringify({
@@ -298,23 +309,23 @@ export async function onRequestPost(context) {
         result: {
           prompts: AI_PROMPTS
         }
-      }), { status: 200, headers: CORS_HEADERS });
+      }), { status: 200, headers: responseHeaders });
 
     case "ping":
       return new Response(JSON.stringify({
         jsonrpc: "2.0",
         id,
         result: { status: "pong", timestamp: new Date().toISOString() }
-      }), { status: 200, headers: CORS_HEADERS });
+      }), { status: 200, headers: responseHeaders });
 
     default:
       if (method && method.startsWith("notifications/")) {
-        return new Response(null, { status: 204, headers: CORS_HEADERS });
+        return new Response(null, { status: 204, headers: responseHeaders });
       }
       return new Response(JSON.stringify({
         jsonrpc: "2.0",
         id,
         error: { code: -32601, message: `Method not found: ${method}` }
-      }), { status: 200, headers: CORS_HEADERS });
+      }), { status: 200, headers: responseHeaders });
   }
 }
