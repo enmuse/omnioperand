@@ -1,7 +1,7 @@
 {
   "name": "omnioperand-mcp",
-  "version": "1.0.0",
-  "description": "Official Model Context Protocol (MCP) server for OmniOperand — 447 deterministic mathematical, engineering, financial, and scientific solvers for Claude Desktop, Cursor, and AI agents.",
+  "version": "2.1.0",
+  "description": "Official Model Context Protocol (MCP) server for OmniOperand — 12 curated flagship mathematical, engineering, financial, and scientific solvers with discovery and batching across 428+ precision engines.",
   "main": "index.js",
   "bin": {
     "omnioperand-mcp": "index.js"
